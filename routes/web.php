@@ -26,8 +26,8 @@ Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'in
     // roles
     Route::prefix('role')->group(function(){
         Route::get('index', [App\Http\Controllers\admin\roleController::class, 'index'])->middleware('permission:show-role');
-        Route::get('create', [App\Http\Controllers\admin\roleController ::class, 'create'])->middleware('permission:show-role');
-        Route::post('store', [App\Http\Controllers\admin\roleController ::class, 'store'])->middleware('permission:show-role');
+        Route::get('create', [App\Http\Controllers\admin\roleController ::class, 'create'])->middleware('permission:create-role');
+        Route::post('store', [App\Http\Controllers\admin\roleController ::class, 'store'])->middleware('permission:create-role');
         Route::get('edit/{id}', [App\Http\Controllers\admin\roleController ::class, 'edit'])->middleware('permission:show-role');
         Route::post('update/{id}', [App\Http\Controllers\admin\roleController ::class, 'update'])->middleware('permission:show-role');
         Route::get('delete/{id}', [App\Http\Controllers\admin\roleController ::class, 'destroy'])->middleware('permission:show-role');
