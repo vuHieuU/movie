@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,17 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 Route::get('/', [App\Http\Controllers\client\homeController::class, 'index']);
+Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index']);
+Route::get('/detail_blog', [App\Http\Controllers\client\Detail_blogController::class, 'index']);
+Route::get('/detail_film', [App\Http\Controllers\client\Detail_filmController::class, 'index']);
+Route::get('/dang-phat', [App\Http\Controllers\client\DangphatController::class, 'index']);
+Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class, 'index']);
+Route::get('/film', [App\Http\Controllers\client\AllfilmController::class, 'index']);
+
+
+
+
+
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Auth::routes();
 
@@ -42,3 +54,7 @@ Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'in
         Route::get('delete/{id}', [App\Http\Controllers\admin\userController ::class, 'destroy'])->middleware('permission:delete-user');
     });
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

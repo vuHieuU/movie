@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<style>
+.category-selection {
+  position: relative;
+  display: inline-block;
+  font-family: Arial, sans-serif;
+}
+
+.selected-category {
+  background-color: #eee;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  user-select: none;
+}
+
+.caret {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  margin-left: 10px;
+}
+
+.category-list {
+  display: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.category-list li {
+  padding: 10px 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.category-list li:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+</style>
+<body>
+     <div class="category-selection">
+          <div class="selected-category" onclick="toggleCategoryList()">
+            <span id="selected-category">Chọn category</span>
+            <span class="caret"></span>
+          </div>
+          <ul id="category-list" class="category-list">
+            <li onclick="selectCategory('category1')">Category 1</li>
+            <li onclick="selectCategory('category2')">Category 2</li>
+            <li onclick="selectCategory('category3')">Category 3</li>
+            <!-- Thêm các category khác vào đây -->
+          </ul>
+        </div>
+        
+        
+        
+        
+        
+
+        <script>
+   function toggleCategoryList() {
+  var categoryList = document.getElementById("category-list");
+  if (categoryList.style.display === "block") {
+    categoryList.style.display = "none";
+  } else {
+    categoryList.style.display = "block";
+  }
+}
+
+function selectCategory(selectedCategory) {
+  var selectedCategorySpan = document.getElementById("selected-category");
+  selectedCategorySpan.textContent = selectedCategory;
+  toggleCategoryList();
+}
+
+
+
+
+
+        </script>
+</body>
+</html>
