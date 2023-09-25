@@ -41,7 +41,7 @@
                     </ul>
                 </li>
             {{-- Role --}}
-          @can('show-role')
+          {{-- @can('show-role') --}}
           <li class="">
             <a href="#role" class="collapsed" data-toggle="collapse" aria-expanded="false">
                 <i class="fa-brands fa-linux"></i>
@@ -63,9 +63,9 @@
                 </li>
             </ul>
         </li>
-          @endcan
+          {{-- @endcan --}}
             {{-- User --}}
-          @can('show-user')
+          {{-- @can('show-user') --}}
           <li class=" ">
             <a href="#user" class="collapsed" data-toggle="collapse" aria-expanded="false">
                 <i class="fa-solid fa-user"></i>
@@ -87,7 +87,7 @@
                 </li>
             </ul>
         </li>
-          @endcan
+          {{-- @endcan --}}
 
             </ul>
         </nav>
