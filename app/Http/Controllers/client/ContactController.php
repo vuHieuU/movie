@@ -12,7 +12,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('client.contact');
+        $title = "contact";
+        return view('client.contact',compact('title'));
     }
 
     /**

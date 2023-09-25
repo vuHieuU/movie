@@ -12,7 +12,8 @@ class DangphatController extends Controller
      */
     public function index()
     {
-      return view("client.dangphat");
+        $title = " now Playing";
+      return view("client.dangphat",compact('title'));
     }
 
     /**

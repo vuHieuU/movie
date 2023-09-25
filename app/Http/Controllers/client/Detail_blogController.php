@@ -12,7 +12,8 @@ class Detail_blogController extends Controller
      */
     public function index()
     {
-        return view('client.detail_blog');
+        $title = "Detail Blog";
+        return view('client.detail_blog',compact('title'));
     }
 
     /**

@@ -1,6 +1,3 @@
-@section('taitel', 'Contact')
-
-
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -10,7 +7,7 @@
 <link rel="pingback" href="https://demo.ovatheme.com/aovis/xmlrpc.php">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<title>@yield('taitel')</title>
+<title>{{ $title }}</title>
 <meta name='robots' content='noindex, nofollow' />
 <link rel='dns-prefetch' href='//demo.ovatheme.com' />
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />

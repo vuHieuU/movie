@@ -12,7 +12,8 @@ class homeController extends Controller
      */
     public function index()
     {
-        return view('client.home');
+        $title = "home";
+        return view('client.home',compact('title'));
     }
 
     /**
