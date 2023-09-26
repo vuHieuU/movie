@@ -42,8 +42,12 @@
                                         <div class="form-group">
                                             <label>Name *</label>
                                             <input type="text" class="form-control" placeholder="name"
-                                                name="name">
-                                            <div class="help-block with-errors"></div>
+                                                name="name" value="{{ old('name') }}">
+                                                @error('name')
+                                                    
+                                                <div class="help-block with-errors">{{ $message }}</div>
+
+                                                @enderror
                                         </div>
                                     </div>
                                   </div>
@@ -53,16 +57,24 @@
                                             <div class="form-group">
                                                 <label>Email *</label>
                                                 <input type="text" class="form-control" placeholder="Enter email"
-                                                    name="email">
-                                                <div class="help-block with-errors"></div>
+                                                    name="email" value="{{ old('email') }}">
+                                                @error('email')
+                                                    
+                                                   <div class="help-block with-errors">{{ $message }}</div>
+
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>phone</label>
                                                 <input type="text" class="form-control" placeholder="phone"
-                                                    name="phone">
-                                                <div class="help-block with-errors"></div>
+                                                    name="phone" value="{{ old('phone') }}">
+                                                @error('phone')
+                                                    
+                                                   <div class="help-block with-errors">{{ $message }}</div>
+
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -71,16 +83,24 @@
                                             <div class="form-group">
                                                 <label>address</label>
                                                 <input type="text" class="form-control" placeholder="address"
-                                                    name="address">
-                                                <div class="help-block with-errors"></div>
+                                                    name="address" value="{{ old('address') }}">
+                                                @error('address')
+                                                    
+                                                   <div class="help-block with-errors">{{ $message }}</div>
+
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>gender</label>
                                                 <input type="text" class="form-control" placeholder="gender"
-                                                    name="gender">
-                                                <div class="help-block with-errors"></div>
+                                                    name="gender" value="{{ old('gender') }}">
+                                                @error('gender')
+                                                    
+                                                   <div class="help-block with-errors">{{ $message }}</div>
+
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -89,7 +109,21 @@
                                             <div class="form-group">
                                                 <label>password</label>
                                                 <input type="password" class="form-control" placeholder="password"
-                                                    name="password">
+                                                    name="password" value="{{ old('password') }}">
+                                                    @error('gender')
+                                                    
+                                                      <div class="help-block with-errors">{{ $message }}</div>
+ 
+                                                    @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>logo</label>
+                                                <input type="file" class="form-control"
+                                                    name="logo">
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>
