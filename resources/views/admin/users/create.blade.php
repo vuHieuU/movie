@@ -118,16 +118,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>logo</label>
-                                                <input type="file" class="form-control"
-                                                    name="logo">
-                                                <div class="help-block with-errors"></div>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="form-group">
                                         <label>Role</label>
                                          <div class="row container m-auto">
