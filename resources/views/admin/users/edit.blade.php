@@ -43,7 +43,11 @@
                                             <label>Name *</label>
                                             <input type="text" class="form-control" placeholder="name"
                                                 name="name" value="{{ $user->name }}">
-                                            <div class="help-block with-errors"></div>
+                                             @error('name')
+                                                    
+                                                <div class="help-block with-errors">{{ $message }}</div>
+
+                                                @enderror
                                         </div>
                                     </div>
                                   </div>
@@ -54,7 +58,11 @@
                                                 <label>Email *</label>
                                                 <input type="text" class="form-control" placeholder="Enter email"
                                                     name="email" value="{{ $user->email }}">
-                                                <div class="help-block with-errors"></div>
+                                                 @error('email')
+                                                    
+                                                <div class="help-block with-errors">{{ $message }}</div>
+
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -62,7 +70,11 @@
                                                 <label>phone</label>
                                                 <input type="text" class="form-control" placeholder="phone"
                                                     name="phone" value="{{ $user->phone }}">
-                                                <div class="help-block with-errors"></div>
+                                                 @error('phone')
+                                                    
+                                                <div class="help-block with-errors">{{ $message }}</div>
+
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -72,7 +84,11 @@
                                                 <label>address</label>
                                                 <input type="text" class="form-control" placeholder="address"
                                                     name="address" value="{{ $user->address }}">
-                                                <div class="help-block with-errors"></div>
+                                                 @error('address')
+                                                    
+                                                <div class="help-block with-errors">{{ $message }}</div>
+
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -80,7 +96,11 @@
                                                 <label>gender</label>
                                                 <input type="text" class="form-control" placeholder="gender"
                                                     name="gender" value="{{ $user->gender }}">
-                                                <div class="help-block with-errors"></div>
+                                                 @error('gender')
+                                                    
+                                                <div class="help-block with-errors">{{ $message }}</div>
+
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -90,7 +110,11 @@
                                                 <label>password</label>
                                                 <input type="password" class="form-control" placeholder="password"
                                                     name="password">
-                                                <div class="help-block with-errors"></div>
+                                                 @error('password')
+                                                    
+                                                <div class="help-block with-errors">{{ $message }}</div>
+
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
