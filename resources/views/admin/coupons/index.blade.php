@@ -3,13 +3,12 @@
 
     <!-- Wrapper Start -->
     <div class="wrapper">
-
         <div class="modal fade" id="new-order" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
                         <div class="popup text-left">
-                            <h4 class="mb-3">New Order</h4>
+                            <h4 class="mb-3">Discount code</h4>
                             <div class="content create-workform bg-body">
                                 <div class="pb-3">
                                     <label class="mb-2">Email</label>
@@ -32,15 +31,19 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Roles List</h4>
+                          <h4 class="mb-3">Coupon List</h4>
                           <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
                       </div>
-                      <a href="/role/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Roles</a>
+                      <a href="/coupon/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Coupon</a>
                   </div>
               </div>
+            
               <div class="col-lg-12">
                   <div class="table-responsive rounded mb-3">
                   <table class="data-tables table mb-0 tbl-server-info">
+                    <p style="color: green">
+                        {{ session('success') }}
+                    </p>
                       <thead class="bg-white text-uppercase">
                           <tr class="ligth ligth-data">
                               <th>
@@ -49,13 +52,16 @@
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
                               </th>
+                              <th>ID</th>
                               <th>Name</th>
-                              <th>Display-name</th>
+                              <th>Type</th>
+                              <th>expiry_date</th>
                               <th>Action</th>
                           </tr>
                       </thead>
+
                       <tbody class="ligth-body">
-                             @foreach ($role as $item)
+                             @foreach ($coupon as $item)
                           <tr>
                               <td>
                                   <div class="checkbox d-inline-block">
@@ -63,16 +69,18 @@
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
                               </td>
+                              <th>{{$item->id}}</th>
                               <td>{{ $item->name }}</td>
-                              <td>{{ $item->display_name }}</td>
+                              <td>{{ $item->type }}</td>
+                              <td>{{ $item->expiry_date }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
                                           href="#"><i class="ri-eye-line mr-0"></i></a>
                                       <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                          href="/role/edit/{{ $item->id }}"><i class="ri-pencil-line mr-0"></i></a>
+                                          href="{{route('coupon.edit',$item->id)}}"><i class="ri-pencil-line mr-0"></i></a>
                                       <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                          href="/role/delete/{{ $item->id }}"><i class="ri-delete-bin-line mr-0"></i></a>
+                                          href="{{route('coupon.delete',$item->id)}}" onclick="return confirm('Xóa là không Ctrl lại cuộc đời ?')"><i class="ri-delete-bin-line mr-0"></i></a>
                                   </div>
                               </td>
                           </tr>
@@ -121,9 +129,5 @@
         </div>
       </div>
       <!-- Wrapper End-->
-      <script>
-        $('.data-tables').DataTable({
-            
-        });
-    </script> 
+    
 @endsection

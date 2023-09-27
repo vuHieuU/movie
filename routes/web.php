@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Controller;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +51,15 @@ Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'in
         Route::get('edit/{id}', [App\Http\Controllers\admin\userController ::class, 'edit']);
         Route::post('update/{id}', [App\Http\Controllers\admin\userController ::class, 'update']);
         Route::get('delete/{id}', [App\Http\Controllers\admin\userController ::class, 'destroy']);
+    });
+      //Coupon (ma giam gia)
+    Route::prefix('coupon')->group(function(){
+        Route::get('index', [App\Http\Controllers\admin\couponController::class, 'index'])->name('coupon.index');
+        Route::get('create', [App\Http\Controllers\admin\couponController ::class, 'create'])->name('coupon.create');
+        Route::post('store', [App\Http\Controllers\admin\couponController ::class, 'store'])->name('coupon.store');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\couponController ::class, 'edit'])->name('coupon.edit');
+        Route::put('update/{id}', [App\Http\Controllers\admin\couponController ::class, 'update'])->name('coupon.update');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\couponController ::class, 'destroy'])->name('coupon.delete');
     });
 });
 
