@@ -12,6 +12,7 @@ class coupon extends Model
     protected $fillable = [
         'name',
         'type',
+        'value',
         'expiry_date',
     ];
 }

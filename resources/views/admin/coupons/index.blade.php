@@ -55,6 +55,7 @@
                               <th>ID</th>
                               <th>Name</th>
                               <th>Type</th>
+                              <th>Value</th>
                               <th>expiry_date</th>
                               <th>Action</th>
                           </tr>
@@ -72,6 +73,7 @@
                               <th>{{$item->id}}</th>
                               <td>{{ $item->name }}</td>
                               <td>{{ $item->type }}</td>
+                              <td>{{ $item->value }}</td>
                               <td>{{ $item->expiry_date }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">

@@ -15,17 +15,28 @@ class CouponSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-        $numberOfRecords = 10;
+        $numberOfRecords = 5;
+        
         for ($i = 0; $i < $numberOfRecords; $i++) {
-            $name = $faker->unique()->regexify('[A-Za-z0-9]{7}'); // Tạo chuỗi ngẫu nhiên có 7 ký tự
+            $name = $faker->unique()->regexify('[A-Za-z0-9]{7}'); 
             $expiryDate = $faker->dateTimeBetween('now', '+1 year'); 
+            $type = $faker->randomElement(['Discount by amount', 'Discount by %']);
+        
+            if ($type === 'Discount by amount') {
+                $value = $faker->numberBetween(10000, 99999);
+            } else {
+                $value = $faker->numberBetween(0, 100);
+            }
+        
             DB::table('coupons')->insert([
                 'name' => $name,
-                'type' => $faker->word,
+                'type' => $type,
+                'value' => $value,
                 'expiry_date' => $expiryDate,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
         }
+        
     }
 }

@@ -46,6 +46,18 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="value">Value *</label>
+                                            <input type="text" class="form-control" placeholder="Value" name="value" value="{{ $coupon->value}}" required
+                                                name="value" required>
+                                            @if ($errors->has('value'))
+                                                <span class="text-danger">{{ $errors->first('value') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
                                 <button type="submit" class="btn btn-primary mr-2" onclick="return confirm('Update? Are you sure :)?')">Update Coupon</button>
                                 <button type="reset" class="btn btn-danger mr-2">Reset</button>
                             </div>
