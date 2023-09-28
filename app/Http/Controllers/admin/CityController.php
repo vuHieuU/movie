@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\client;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\city;
 use Illuminate\Http\Request;
 
-class homeController extends Controller
+class CityController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $title = "home";
-        return view('client.home');
+        $city = city::get();
+        return view("admin.city.index",compact("city"));
     }
 
     /**
@@ -21,7 +22,7 @@ class homeController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.city.create");
     }
 
     /**
@@ -29,7 +30,12 @@ class homeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->input("name");
+        $data = [
+            'name'=>$name,
+        ];
+        city::create($data);
+        return redirect("/city");
     }
 
     /**
@@ -45,7 +51,8 @@ class homeController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $city = city::find($id);
+        return view("admin/city.edit",compact("city"));
     }
 
     /**
@@ -53,7 +60,13 @@ class homeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $city = city::find($id);
+        $name = $request->input("name");
+        $data = [
+            'name'=>$name,
+        ];
+        $city->update($data);
+        return redirect("/city");
     }
 
     /**
@@ -61,6 +74,8 @@ class homeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $city = city::find($id);
+        $city->delete($city);
+        return redirect('/city');
     }
 }

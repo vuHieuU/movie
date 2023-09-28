@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Controllers\cityController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
@@ -24,6 +26,22 @@ Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class
 Route::get('/film', [App\Http\Controllers\client\AllfilmController::class, 'index']);
 
 
+//city
+Route::get('/city',[App\Http\Controllers\admin\cityController::class,"index"]);
+Route::get('/city/create',[App\Http\Controllers\admin\cityController::class,"create"]);
+Route::get('/city/edit/{id}',[App\Http\Controllers\admin\cityController::class,"edit"]);
+
+Route::post('/city/store',[App\Http\Controllers\admin\cityController::class,"store"]);
+Route::post('/city/update/{id}',[App\Http\Controllers\admin\cityController::class,"update"]);
+
+//cinemas
+Route::get('/cinemas',[App\Http\Controllers\admin\CinemasController::class,"index"]);
+Route::get('/cinemas/create',[App\Http\Controllers\admin\CinemasController::class,"create"]);
+Route::get('/cinemas/edit/{id}',[App\Http\Controllers\admin\CinemasController::class,"edit"]);
+Route::get('/cinemas/delete/{id}',[App\Http\Controllers\admin\CinemasController::class,"edit"]);
+
+Route::post('/cinemas/store',[App\Http\Controllers\admin\CinemasController::class,"store"]);
+Route::post('/cinemas/update/{id}',[App\Http\Controllers\admin\CinemasController::class,"update"]);
 
 
 
@@ -62,3 +80,7 @@ Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'in
         Route::get('delete/{id}', [App\Http\Controllers\admin\couponController ::class, 'destroy'])->name('coupon.delete');
     });
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

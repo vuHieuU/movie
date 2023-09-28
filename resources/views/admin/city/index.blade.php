@@ -32,10 +32,10 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Users List</h4>
+                          <h4 class="mb-3">City List</h4>
                           <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
                       </div>
-                      <a href="/user/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add User</a>
+                      <a href="/city/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add City</a>
                   </div>
               </div>
               <div class="col-lg-12">
@@ -50,16 +50,12 @@
                                   </div>
                               </th>
                               <th>Name</th>
-                              <th>Phone</th>
-                              <th>Email</th>
-                              <th>Address</th>
-                              <th>Gender</th>
                               <th>Action</th>
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
 
-                        @foreach ($user as $item)
+                        @foreach ($city as $item)
                             
                     
               
@@ -71,16 +67,12 @@
                                   </div>
                               </td>
                               <td>{{ $item->name }}</td>
-                              <td>{{ $item->phone }}</td>
-                              <td>{{ $item->email }}</td>
-                              <td>{{ $item->address }}</td>
-                              <td>{{ $item->gender  }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
                                           href="#"><i class="ri-eye-line mr-0"></i></a>
                                       <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                          href="/user/edit/{{ $item->id }}"><i class="ri-pencil-line mr-0"></i></a>
+                                          href="/city/edit/{{ $item->id }}"><i class="ri-pencil-line mr-0"></i></a>
                                       <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
                                           href="/user/delete/{{ $item->id }}"><i class="ri-delete-bin-line mr-0"></i></a>
                                   </div>
