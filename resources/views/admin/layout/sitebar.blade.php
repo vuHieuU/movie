@@ -103,7 +103,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="/City">
+                    <a href="/city">
                         <i class="las la-minus"></i><span>City</span>
                     </a>
                 </li>
