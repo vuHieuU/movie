@@ -61,4 +61,25 @@ Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'in
         Route::put('update/{id}', [App\Http\Controllers\admin\couponController ::class, 'update'])->name('coupon.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\couponController ::class, 'destroy'])->name('coupon.delete');
     });
+    // food
+    Route::prefix('food')->group(function(){
+        Route::get('index', [App\Http\Controllers\admin\foodController::class, 'index'])->name('food.index');
+        Route::get('create', [App\Http\Controllers\admin\foodController ::class, 'create'])->name('food.create');
+        Route::post('store', [App\Http\Controllers\admin\foodController ::class, 'store'])->name('food.store');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\foodController ::class, 'edit'])->name('food.edit');
+        Route::put('update/{id}', [App\Http\Controllers\admin\foodController ::class, 'update'])->name('food.update');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\foodController ::class, 'destroy'])->name('food.delete');
+    });
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
