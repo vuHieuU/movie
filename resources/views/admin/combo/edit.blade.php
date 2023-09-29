@@ -48,24 +48,7 @@
                                          
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Food</label>
-                                        <div class="row container m-auto">
-                    
-                                            @foreach ($food as $item)
-                                            <div class="form-check mx-3 d-flex align-items-center">
-                                                <input class="checkbox form-check-input" name="id_food[]" type="checkbox"
-                                                {{ $combo->foods->contains('name',$item->name) ? 'checked':'' }} value="{{ $item->id }}">
-                                                <label class="form-check-label mx-1">
-                                                  {{ $item->name }}
-                                                </label>
-                                              </div>
-                                          @endforeach
-                                        </div>
-                                    </div>
-                                </div>
+                                </div>-
                                 <button type="submit" class="btn btn-primary mr-2">Add Size</button>
                                 <button type="reset" class="btn btn-danger mr-2">Reset</button>
                             </div>
