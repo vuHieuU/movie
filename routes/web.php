@@ -59,7 +59,6 @@ Route::middleware(['auth'])->group(function () {
         Route::put('update/{id}', [App\Http\Controllers\admin\couponController::class, 'update'])->name('coupon.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\couponController::class, 'destroy'])->name('coupon.delete');
     });
-<<<<<<< HEAD
     // food
     Route::prefix('food')->group(function(){
         Route::get('index', [App\Http\Controllers\admin\foodController::class, 'index'])->name('food.index');
@@ -69,10 +68,6 @@ Route::middleware(['auth'])->group(function () {
         Route::put('update/{id}', [App\Http\Controllers\admin\foodController ::class, 'update'])->name('food.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\foodController ::class, 'destroy'])->name('food.delete');
     });
-});
-=======
->>>>>>> 84fdccabd5475ca38266330949aa1b1397d70b1e
-
     // Thể loại Phim
     Route::prefix('categories')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\categoryController::class, 'index'])->name('categories.index');
@@ -82,21 +77,6 @@ Route::middleware(['auth'])->group(function () {
         Route::post('update/{id}', [App\Http\Controllers\admin\categoryController::class, 'update'])->name('categories.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\categoryController::class, 'destroy'])->name('categories.destroy');
     });
-
-<<<<<<< HEAD
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-<<<<<<< HEAD
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
->>>>>>> 8626456f29486ff7dad1f338eb3b6d90a649dccc
-=======
     // Danh sách Phim
     Route::prefix('films')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\filmController::class, 'index'])->name('films.index');
@@ -123,4 +103,3 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
         Route::post('update/{id}',[App\Http\Controllers\admin\CinemasController::class,"update"]);
     });
 });
->>>>>>> 84fdccabd5475ca38266330949aa1b1397d70b1e
