@@ -23,7 +23,7 @@ class filmsRequest extends FormRequest
     {
         return [
             'name' => 'required|string|unique:films',
-            'duration' => 'required|number',
+            'duration' => 'required|numeric',
             'description' => 'required|string',
             'thumb' => 'required',
             'director' => 'required|string',
