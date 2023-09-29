@@ -2574,104 +2574,13 @@
                                                                                 </div>
                                                                                 <div class="clearfix"></div>
                                                                             </div>
-                                                                            <div class="entry-item">
-                                                                                <div class="entry-thumb"><img
-                                                                                        class=""
-                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_17-118x159_c.jpg"
-                                                                                        alt="Jumanji: Welcome to the Jungle" />
-                                                                                </div>
-                                                                                <div class="entry-content">
-                                                                                    <h2 class="entry-title"><a
-                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">Jumanji:
-                                                                                            Welcome to the Jungle</a></h2>
-                                                                                    <div><span class="duration"><i
-                                                                                                class="fa fa-clock-o"></i>02
-                                                                                            hours 30 minutes</span></div>
-                                                                                    <div class="genre"><span><a
-                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                                            <a
-                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/sci-fi/">Sci-fi</a></span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="clearfix"></div>
-                                                                            </div>
-                                                                            <div class="entry-item">
-                                                                                <div class="entry-thumb"><img
-                                                                                        class=""
-                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_18-118x159_c.jpg"
-                                                                                        alt="Death Wish" /></div>
-                                                                                <div class="entry-content">
-                                                                                    <h2 class="entry-title"><a
-                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/death-wish/">Death
-                                                                                            Wish</a></h2>
-                                                                                    <div><span class="duration"><i
-                                                                                                class="fa fa-clock-o"></i>01
-                                                                                            hours 00 minutes</span></div>
-                                                                                    <div class="genre"><span><a
-                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                                            <a
-                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a></span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="clearfix"></div>
-                                                                            </div>
+                                                                      
+                                                                            
                                                                         </div>
                                                                         <div class="clear"></div>
                                                                     </div>
-                                                                    <div class="amy-widget amy-widget-list">
-                                                                        <div class="amy-widget amy-widget-list list-post ">
-                                                                            <h4 class="amy-title amy-widget-title">Recent
-                                                                                Posts</h4>
-                                                                            <div class="entry-item">
-                                                                                <div class="entry-thumb"><img
-                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59-115x85_c.jpg" />
-                                                                                </div>
-                                                                                <div class="entry-content">
-                                                                                    <h2 class="entry-title"><a
-                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/2022/04/28/six-book-to-film-adaptations-to-get-excited-about-this-autumn/">Six
-                                                                                            book-to-film adaptations to get
-                                                                                            excited about this autumn</a>
-                                                                                    </h2>
-                                                                                    <div class="entry-meta"><span
-                                                                                            class="entry-date">April 28,
-                                                                                            2022</span><span> / </span><span
-                                                                                            class="entry-comment">0
-                                                                                            Comments</span></div>
-                                                                                </div>
-                                                                                <div class="clearfix"></div>
-                                                                            </div>
-                                                                            <div class="entry-item">
-                                                                                <div class="entry-thumb"><img
-                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57-115x85_c.jpg" />
-                                                                                </div>
-                                                                                <div class="entry-content">
-                                                                                    <h2 class="entry-title"><a
-                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/2022/04/28/the-beatles-eight-days-a-week-the-touring/">The
-                                                                                            Beatles: Eight Days a Week – The
-                                                                                            Touring</a></h2>
-                                                                                    <div class="entry-meta"><span
-                                                                                            class="entry-date">April 28,
-                                                                                            2022</span><span> / </span><span
-                                                                                            class="entry-comment">0
-                                                                                            Comments</span></div>
-                                                                                </div>
-                                                                                <div class="clearfix"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="clear"></div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="amy-widget widget_block widget_media_image">
-                                                                        <figure class="wp-block-image size-full"><img
-                                                                                loading="lazy" width="350"
-                                                                                height="290"
-                                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63.png"
-                                                                                alt="" class="wp-image-255"
-                                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63.png 350w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63-300x249.png 300w"
-                                                                                sizes="(max-width: 350px) 100vw, 350px" />
-                                                                        </figure>
-                                                                        <div class="clear"></div>
-                                                                    </div>
+                                                                    
+                                                                    
                                                                 </div>
                                                             </div>
                                                         </div>

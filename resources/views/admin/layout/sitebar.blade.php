@@ -41,7 +41,7 @@
                     </ul>
                 </li>
             {{-- Role --}}
-          @can('show-role')
+          {{-- @can('show-role') --}}
           <li class="">
             <a href="#role" class="collapsed" data-toggle="collapse" aria-expanded="false">
                 <i class="fa-brands fa-linux"></i>
@@ -63,9 +63,9 @@
                 </li>
             </ul>
         </li>
-          @endcan
+          {{-- @endcan --}}
             {{-- User --}}
-          @can('show-user')
+          {{-- @can('show-user') --}}
           <li class=" ">
             <a href="#user" class="collapsed" data-toggle="collapse" aria-expanded="false">
                 <i class="fa-solid fa-user"></i>
@@ -87,21 +87,11 @@
                 </li>
             </ul>
         </li>
-          @endcan
+          {{-- @endcan --}}
 
             </ul>
         </nav>
-        <div id="sidebar-bottom" class="position-relative sidebar-bottom">
-            <div class="card border-none">
-                <div class="card-body p-0">
-                    <div class="sidebarbottom-content">
-                        <div class="image"><img src="/template/assets/images/layouts/side-bkg.png" class="img-fluid" alt="side-bkg"></div>
-                        <h6 class="mt-4 px-4 body-title">Get More Feature by Upgrading</h6>
-                        <button type="button" class="btn sidebar-bottom-btn mt-4">Go Premium</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="p-3"></div>
     </div>
     </div>      <div class="iq-top-navbar">
@@ -159,9 +149,8 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#" class="btn border add-btn shadow-none mx-2 d-none d-md-block"
-                                data-toggle="modal" data-target="#new-order"><i class="las la-plus mr-2"></i>New
-                                Order</a>
+                            <a href="/" class="btn border add-btn shadow-none mx-2 d-none d-md-block"
+                                >Home</a>
                         </li>
                         <li class="nav-item nav-icon search-content">
                             <a href="#" class="search-toggle rounded" id="dropdownSearch" data-toggle="dropdown"

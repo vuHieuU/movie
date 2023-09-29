@@ -492,15 +492,113 @@
                         </div>
                         <span class="amy-section-overlay"></span>
                     </section>
+                    
                     <section class="main-content page-layout-">
+                        
                         <div class="container">
                             <div class="row">
 
 
                                 <div class="col-md-12">
+                                    
                                     <div class="page-content">
+                                        
                                         <div data-elementor-type="wp-page" data-elementor-id="142"
                                             class="elementor elementor-142">
+                                            <div class="filter-mv style1">
+                                                <style>
+                                                    .category-selection {
+                                                      position: relative;
+                                                      display: inline-block;
+                                                      font-family: Arial, sans-serif;
+                                                    }
+                                                    
+                                                    .selected-category {
+                                                      background-color: #eee;
+                                                      padding: 10px 15px;
+                                                      cursor: pointer;
+                                                      border: 1px solid #ccc;
+                                                      border-radius: 5px;
+                                                      user-select: none;
+                                                    }
+                                                    
+                                                    .caret {
+                                                      border-left: 5px solid transparent;
+                                                      border-right: 5px solid transparent;
+                                                      border-top: 5px solid #333;
+                                                      margin-left: 10px;
+                                                    }
+                                                    
+                                                    .category-list {
+                                                      display: none;
+                                                      list-style-type: none;
+                                                      margin: 0;
+                                                      padding: 0;
+                                                      position: absolute;
+                                                      top: 100%;
+                                                      left: 0;
+                                                      background-color: #fff;
+                                                      border: 1px solid #ccc;
+                                                      border-top: none;
+                                                      border-radius: 0 0 5px 5px;
+                                                      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                                                      max-height: 200px;
+                                                      overflow-y: auto;
+                                                      z-index: 1;
+                                                    }
+                                                    
+                                                    .category-list li {
+                                                      padding: 10px 15px;
+                                                      cursor: pointer;
+                                                      user-select: none;
+                                                    }
+                                                    
+                                                    .category-list li:hover {
+                                                      background-color: #f0f0f0;
+                                                    }
+                                                    </style>
+                                                 
+                                                         <div class="category-selection" style="width: 150px">
+                                                              <div class="selected-category" onclick="toggleCategoryList()">
+                                                                <span id="selected-category">Chọn category</span>
+                                                             
+                                                              </div>
+                                                              <ul id="category-list" class="category-list">
+                                                             <a href="sap-ra-mat">   <li >Coming Soon</li></a>
+                                                             <a href="">   <li onclick="selectCategory('category1')">Category 1</li></a>
+                                                             <a href="">   <li onclick="selectCategory('category2')">Category 2</li></a>
+                                                             <a href="">   <li onclick="selectCategory('category3')">Category 3</li></a>
+                                                                
+                                                              </ul>
+                                                            </div>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                    
+                                                            <script>
+                                                       function toggleCategoryList() {
+                                                      var categoryList = document.getElementById("category-list");
+                                                      if (categoryList.style.display === "block") {
+                                                        categoryList.style.display = "none";
+                                                      } else {
+                                                        categoryList.style.display = "block";
+                                                      }
+                                                    }
+                                                    
+                                                    function selectCategory(selectedCategory) {
+                                                      var selectedCategorySpan = document.getElementById("selected-category");
+                                                      selectedCategorySpan.textContent = selectedCategory;
+                                                      toggleCategoryList();
+                                                    }
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                            </script>
+                                            </div>
                                             <section
                                                 class="elementor-section elementor-top-section elementor-element elementor-element-19a978c elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                                 data-id="19a978c" data-element_type="section">

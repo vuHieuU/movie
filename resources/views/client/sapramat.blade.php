@@ -513,7 +513,7 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
                                                             <div class="amy-shortcode amy-mv-list ">
 
 
-                                                                <div class="filter-mv style1">
+                                                                {{-- <div class="filter-mv style1">
                                                                     <style>
                                                                         .category-selection {
                                                                           position: relative;
@@ -606,7 +606,7 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
                                                                         
                                                                         
                                                                                 </script>
-                                                                </div>
+                                                                </div> --}}
                                                                 <div class="list-content amy-ajax-content">
 
                                                                     <article class="entry-item clearfix">
@@ -2298,97 +2298,7 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
                                                                 </figure>
                                                                 <div class="clear"></div>
                                                             </div>
-                                                            <div class="amy-widget amy-widget-list">
-                                                                <div
-                                                                    class="amy-widget amy-widget-list list-movie ">
-                                                                    <h4 class="amy-title amy-widget-title">Top
-                                                                        Movie
-                                                                    </h4>
-                                                                    <div class="entry-item">
-                                                                        <div class="entry-thumb"><img
-                                                                                class=""
-                                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_20-118x159_c.jpg"
-                                                                                alt="Kubo and the Two Strings" />
-                                                                        </div>
-                                                                        <div class="entry-content">
-                                                                            <h2 class="entry-title"><a
-                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/kubo-and-the-two-strings/">Kubo
-                                                                                    and the Two Strings</a></h2>
-                                                                            <div><span class="duration"><i
-                                                                                        class="fa fa-clock-o"></i>02
-                                                                                    hours 00 minutes</span></div>
-                                                                            <div class="genre"><span><a
-                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                                    <a
-                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a></span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="clearfix"></div>
-                                                                    </div>
-                                                                    <div class="entry-item">
-                                                                        <div class="entry-thumb"><img
-                                                                                class=""
-                                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_19-118x159_c.jpg"
-                                                                                alt="The Hurricane Heist" /></div>
-                                                                        <div class="entry-content">
-                                                                            <h2 class="entry-title"><a
-                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">The
-                                                                                    Hurricane Heist</a></h2>
-                                                                            <div><span class="duration"><i
-                                                                                        class="fa fa-clock-o"></i>01
-                                                                                    hours 30 minutes</span></div>
-                                                                            <div class="genre"><span><a
-                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a>,
-                                                                                    <a
-                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/magic/">Magic</a></span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="clearfix"></div>
-                                                                    </div>
-                                                                    <div class="entry-item">
-                                                                        <div class="entry-thumb"><img
-                                                                                class=""
-                                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_17-118x159_c.jpg"
-                                                                                alt="Jumanji: Welcome to the Jungle" />
-                                                                        </div>
-                                                                        <div class="entry-content">
-                                                                            <h2 class="entry-title"><a
-                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">Jumanji:
-                                                                                    Welcome to the Jungle</a></h2>
-                                                                            <div><span class="duration"><i
-                                                                                        class="fa fa-clock-o"></i>02
-                                                                                    hours 30 minutes</span></div>
-                                                                            <div class="genre"><span><a
-                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                                    <a
-                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/sci-fi/">Sci-fi</a></span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="clearfix"></div>
-                                                                    </div>
-                                                                    <div class="entry-item">
-                                                                        <div class="entry-thumb"><img
-                                                                                class=""
-                                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_18-118x159_c.jpg"
-                                                                                alt="Death Wish" /></div>
-                                                                        <div class="entry-content">
-                                                                            <h2 class="entry-title"><a
-                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/death-wish/">Death
-                                                                                    Wish</a></h2>
-                                                                            <div><span class="duration"><i
-                                                                                        class="fa fa-clock-o"></i>01
-                                                                                    hours 00 minutes</span></div>
-                                                                            <div class="genre"><span><a
-                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                                    <a
-                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a></span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="clearfix"></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="clear"></div>
-                                                            </div>
+                                                           
                                                             <div class="amy-widget amy-widget-list">
                                                                 <div class="amy-widget amy-widget-list list-post ">
                                                                     <h4 class="amy-title amy-widget-title">Recent

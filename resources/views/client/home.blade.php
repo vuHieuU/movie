@@ -1998,6 +1998,7 @@
                                                             </div>
                                                             <div class="clearfix"></div>
                                                         </div>
+                                                        
                                                         <div class="entry-item">
                                                             <div class="entry-thumb"><img width="750" height="500"
                                                                     src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57.jpg"
