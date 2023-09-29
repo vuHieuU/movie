@@ -52,7 +52,7 @@ class filmController extends Controller
       
         $data->save();
 
-        return redirect()->route('films.index')->with('success', 'Thêm phum thành công');
+        return redirect()->route('films.index')->with('success', 'Thêm phim thành công');
     }
 
     /**
