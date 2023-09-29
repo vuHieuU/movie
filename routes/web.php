@@ -37,7 +37,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'index'])->name('index');
 
     // roles
-<<<<<<< HEAD
     Route::prefix('role')->group(function(){
         Route::get('index', [App\Http\Controllers\admin\roleController::class, 'index']);
         Route::get('create', [App\Http\Controllers\admin\roleController ::class, 'create']);
@@ -54,23 +53,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('edit/{id}', [App\Http\Controllers\admin\userController ::class, 'edit']);
         Route::post('update/{id}', [App\Http\Controllers\admin\userController ::class, 'update']);
         Route::get('delete/{id}', [App\Http\Controllers\admin\userController ::class, 'destroy']);
-=======
-    Route::prefix('role')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\roleController::class, 'index']);
-        Route::get('create', [App\Http\Controllers\admin\roleController::class, 'create']);
-        Route::post('store', [App\Http\Controllers\admin\roleController::class, 'store']);
-        Route::get('edit/{id}', [App\Http\Controllers\admin\roleController::class, 'edit']);
-        Route::post('update/{id}', [App\Http\Controllers\admin\roleController::class, 'update']);
-        Route::get('delete/{id}', [App\Http\Controllers\admin\roleController::class, 'destroy']);
-    });
-    // Users
-    Route::prefix('user')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\userController::class, 'index']);
-        Route::get('create', [App\Http\Controllers\admin\userController::class, 'create']);
-        Route::post('store', [App\Http\Controllers\admin\userController::class, 'store']);
-        Route::get('edit/{id}', [App\Http\Controllers\admin\userController::class, 'edit']);
-        Route::post('update/{id}', [App\Http\Controllers\admin\userController::class, 'update']);
-        Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy']);
     });
     //Coupon (ma giam gia)
     Route::prefix('coupon')->group(function () {
@@ -132,7 +114,6 @@ Route::middleware(['auth'])->group(function () {
         Route::post('store',[App\Http\Controllers\admin\CinemasController::class,"store"]);
         Route::get('edit/{id}',[App\Http\Controllers\admin\CinemasController::class,"edit"]);
         Route::post('update/{id}',[App\Http\Controllers\admin\CinemasController::class,"update"]);
->>>>>>> 96095d84ade1e64c0bae2f88a612468ce4844b55
     });
 });
 
