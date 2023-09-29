@@ -69,7 +69,7 @@ class categoryController extends Controller
         $data->name = $request->input('name');
         $data->save();
         
-        return redirect()->route('categories.index')->with('success', 'Update thành công');
+        return redirect()->route('categories.index')->with('success', 'Cập nhật thành công');
     }
 
     /**
