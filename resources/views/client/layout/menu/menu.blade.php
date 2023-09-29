@@ -10,111 +10,114 @@
 
                 </div>
 
-                <div style="margin-left: 60px">
-                    <style>
-                        .rap-selection {
-                            position: relative;
-                            display: inline-block;
-                            font-family: Arial, sans-serif;
-                        }
 
-                        .selected-rap {
-                            background-color: #eee;
-                            padding: 10px 15px;
-                            cursor: pointer;
-                            border: 1px solid #ccc;
-                            border-radius: 5px;
-                            user-select: none;
-                        }
+            </div>
+            <div style="margin-left: 50px">
+                <style>
+                    .rap-selection {
+                        position: relative;
+                        display: inline-block;
+                        font-family: Arial, sans-serif;
+                    }
 
-                        .caret {
-                            border-left: 5px solid transparent;
-                            border-right: 5px solid transparent;
-                            border-top: 5px solid #333;
-                            margin-left: 10px;
-                        }
+                    .selected-rap {
+                        background-color: #eee;
+                        padding: 10px 15px;
+                        cursor: pointer;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        user-select: none;
+                    }
 
-                        .rap-list {
-                            display: none;
-                            list-style-type: none;
-                            margin: 0;
-                            padding: 0;
-                            position: absolute;
-                            top: 100%;
-                            left: 0;
-                            background-color: #fff;
-                            border: 1px solid #ccc;
-                            border-top: none;
-                            border-radius: 0 0 5px 5px;
-                            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-                            max-height: 200px;
-                            overflow-y: auto;
-                            z-index: 1;
-                        }
+                    .caret {
+                        border-left: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                        border-top: 5px solid #333;
+                        margin-left: 10px;
+                    }
 
-                        .rap-list li {
-                            padding: 10px 15px;
-                            cursor: pointer;
-                            user-select: none;
-                        }
+                    .rap-list {
+                        display: none;
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background-color: #fff;
+                        border: 1px solid #ccc;
+                        border-top: none;
+                        border-radius: 0 0 5px 5px;
+                        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                        max-height: 200px;
+                        overflow-y: auto;
+                        z-index: 1;
+                    }
 
-                        .rap-list li:hover {
-                            background-color: #f0f0f0;
-                        }
-                    </style>
+                    .rap-list li {
+                        padding: 10px 15px;
+                        cursor: pointer;
+                        user-select: none;
+                    }
 
-                    <div class="rap-selection" style="width: 180px;">
-                        <div class="selected-rap" onclick="toggleRapList()">
-                            <span id="selected-rap">Chọn rạp</span>
-                           
-                        </div>
-                        <ul id="rap-list" class="rap-list">
-                            <a href="/"> <li onclick="selectRap('')"> Beta Home</li></a>
-                           <a href="/contact"> <li onclick="selectRap('Beta Thanh Xuân')"> Beta Thanh Xuân</li></a>
-                            <a href="/detail_blog"><li onclick="selectRap('Beta Mỹ Đình')"> Beta Mỹ Đình</li></a>
-                            <a href="/detail_film"><li onclick="selectRap('Beta Đan Phượng')"> Beta Đan Phượng</li></a>
-                            <!-- Thêm các rạp khác vào đây -->
-                        </ul>
+                    .rap-list li:hover {
+                        background-color: #f0f0f0;
+                    }
+                </style>
+
+                <div class="rap-selection " style="width: 160px;">
+                    <div class="selected-rap" onclick="toggleRapList()">
+                        <span id="selected-rap">Chọn rạp</span>
+
                     </div>
-
-                   
-
-
-
-
-
-                    <script>
-                        // Kiểm tra nếu đã có một lựa chọn trước đó trong Local Storage
-var selectedRap = localStorage.getItem("selectedRap");
-if (selectedRap) {
-  document.getElementById("selected-rap").textContent = selectedRap;
-}
-
-function toggleRapList() {
-  var rapList = document.getElementById("rap-list");
-  if (rapList.style.display === "block") {
-    rapList.style.display = "none";
-  } else {
-    rapList.style.display = "block";
-  }
-}
-
-function selectRap(selectedRap) {
-  var selectedRapSpan = document.getElementById("selected-rap");
-  selectedRapSpan.textContent = selectedRap;
-  var selectedRapInfo = document.getElementById("selected-rap-info");
-
-  toggleRapList();
-
-  // Lưu lựa chọn vào Local Storage
-  localStorage.setItem("selectedRap", selectedRap);
-}
-
-                    </script>
+                    <ul id="rap-list" class="rap-list">
+                        <a href="/">
+                            <li onclick="selectRap('')"> Beta Home</li>
+                        </a>
+                        <a href="/contact">
+                            <li onclick="selectRap('Beta Thanh Xuân')"> Beta Thanh Xuân</li>
+                        </a>
+                        <a href="/detail_blog">
+                            <li onclick="selectRap('Beta Mỹ Đình')"> Beta Mỹ Đình</li>
+                        </a>
+                        <a href="/detail_film">
+                            <li onclick="selectRap('Beta Đan Phượng')"> Beta Đan Phượng</li>
+                        </a>
+                        <!-- Thêm các rạp khác vào đây -->
+                    </ul>
                 </div>
+
+                <script>
+                    // Kiểm tra nếu đã có một lựa chọn trước đó trong Local Storage
+                    var selectedRap = localStorage.getItem("selectedRap");
+                    if (selectedRap) {
+                        document.getElementById("selected-rap").textContent = selectedRap;
+                    }
+
+                    function toggleRapList() {
+                        var rapList = document.getElementById("rap-list");
+                        if (rapList.style.display === "block") {
+                            rapList.style.display = "none";
+                        } else {
+                            rapList.style.display = "block";
+                        }
+                    }
+
+                    function selectRap(selectedRap) {
+                        var selectedRapSpan = document.getElementById("selected-rap");
+                        selectedRapSpan.textContent = selectedRap;
+                        var selectedRapInfo = document.getElementById("selected-rap-info");
+
+                        toggleRapList();
+
+                        // Lưu lựa chọn vào Local Storage
+                        localStorage.setItem("selectedRap", selectedRap);
+                    }
+                </script>
             </div>
             <div class="amy-right">
-                <nav id="amy-site-nav" class="amy-site-navigation amy-primary-navigation">
+
+                <nav id="amy-site-nav" class="amy-site-navigation amy-primary-navigation ">
                     <div class="menu-mainnav-container">
                         <ul id="menu-mainnav" class="nav-menu">
                             <li id="menu-item-121"
@@ -206,8 +209,20 @@ function selectRap(selectedRap) {
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
                                 <a href="contact">Contact</a>
                             </li>
-                            <li>
+
+                            <li id="menu-item-278 "
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
                                 <a href="login.html"><i class="fa-solid fa-user"></i></a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-140"
+                                        class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+                                        <a href="">Login</a>
+                                    </li>
+                                    <li id="menu-item-140"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+                                        <a href="">Logup</a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
 

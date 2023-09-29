@@ -64,7 +64,11 @@
                 </li>
             {{-- Role --}}
           {{-- @can('show-role') --}}
+<<<<<<< HEAD
+          <li class="">
+=======
         <li class="">
+>>>>>>> 96095d84ade1e64c0bae2f88a612468ce4844b55
             <a href="#role" class="collapsed" data-toggle="collapse" aria-expanded="false">
                 <i class="fa-brands fa-linux"></i>
                 <span class="ml-4">Roles</span>
@@ -109,6 +113,10 @@
                 </li>
             </ul>
         </li>
+<<<<<<< HEAD
+          {{-- @endcan --}}
+
+=======
         {{-- Cinemas --}}
         <li class="">
             <a href="#cinemas" class="collapse" data-toggle="collapse" aria-expanded="false">
@@ -177,19 +185,10 @@
             </ul>
         </li>
           {{-- @endcan --}}
+>>>>>>> 96095d84ade1e64c0bae2f88a612468ce4844b55
             </ul>
         </nav>
-        <div id="sidebar-bottom" class="position-relative sidebar-bottom">
-            <div class="card border-none">
-                <div class="card-body p-0">
-                    <div class="sidebarbottom-content">
-                        <div class="image"><img src="/template/assets/images/layouts/side-bkg.png" class="img-fluid" alt="side-bkg"></div>
-                        <h6 class="mt-4 px-4 body-title">Get More Feature by Upgrading</h6>
-                        <button type="button" class="btn sidebar-bottom-btn mt-4">Go Premium</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="p-3"></div>
     </div>
     </div>      <div class="iq-top-navbar">
@@ -247,9 +246,8 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#" class="btn border add-btn shadow-none mx-2 d-none d-md-block"
-                                data-toggle="modal" data-target="#new-order"><i class="las la-plus mr-2"></i>New
-                                Order</a>
+                            <a href="/" class="btn border add-btn shadow-none mx-2 d-none d-md-block"
+                                >Home</a>
                         </li>
                         <li class="nav-item nav-icon search-content">
                             <a href="#" class="search-toggle rounded" id="dropdownSearch" data-toggle="dropdown"
