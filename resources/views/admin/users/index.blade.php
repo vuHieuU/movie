@@ -52,7 +52,6 @@
                               <th>Name</th>
                               <th>Phone</th>
                               <th>Email</th>
-                              <th>Image</th>
                               <th>Address</th>
                               <th>Gender</th>
                               <th>Action</th>
@@ -73,10 +72,9 @@
                               </td>
                               <td>{{ $item->name }}</td>
                               <td>{{ $item->phone }}</td>
-                              <td>${{ $item->email }}</td>
-                              <td><img src="{{ $item->imgage }}" alt="Image"></td>
+                              <td>{{ $item->email }}</td>
                               <td>{{ $item->address }}</td>
-                              <td>{{ $item->gender }}</td>
+                              <td>{{ $item->gender  }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"

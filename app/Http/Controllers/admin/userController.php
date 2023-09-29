@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\admin\userRequest;
+use App\Http\Requests\admin\userUpdateRequest;
 use Illuminate\Support\Facades\Hash;
 
 class userController extends Controller
@@ -31,7 +33,7 @@ class userController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(userRequest $request)
     {
         $usersCreate = $request->all();
         $usersCreate['password'] = Hash::make($request->password);
@@ -61,7 +63,7 @@ class userController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(userUpdateRequest $request, string $id)
     {
         $userUpdate = $request->except('password');
         $user = User::FindOrFail($id);

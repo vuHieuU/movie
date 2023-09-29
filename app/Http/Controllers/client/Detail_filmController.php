@@ -12,7 +12,8 @@ class Detail_filmController extends Controller
      */
     public function index()
     {
-        return view('client.detail_film');
+        $title = "Detail";
+        return view('client.detail_film',compact('title'));
     }
 
     /**

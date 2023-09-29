@@ -18,6 +18,28 @@
                         <span class="ml-4">Dashboards</span>
                     </a>
                 </li>
+                {{-- Categories --}}
+                <li class=" ">
+                    <a href="#categories" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                        <i class="fa-solid fa-film"></i>
+                        <span class="ml-4">Categories</span>
+                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                        </svg>
+                    </a>
+                    <ul id="categories" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        <li class="">
+                            <a href="/categories/index">
+                                <i class="las la-minus"></i><span>List Cate</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/categories/create">
+                                <i class="las la-minus"></i><span>Add Cate</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 {{-- film --}}
                 <li class=" ">
                     <a href="#film" class="collapsed" data-toggle="collapse" aria-expanded="false">
@@ -29,12 +51,12 @@
                     </a>
                     <ul id="film" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
-                            <a href="../backend/page-list-product.html">
+                            <a href="{{route("films.index")}}">
                                 <i class="las la-minus"></i><span>List film</span>
                             </a>
                         </li>
                         <li class="">
-                            <a href="../backend/page-add-product.html">
+                            <a href="{{route("films.create")}}">
                                 <i class="las la-minus"></i><span>Add film</span>
                             </a>
                         </li>
@@ -42,7 +64,11 @@
                 </li>
             {{-- Role --}}
           {{-- @can('show-role') --}}
+<<<<<<< HEAD
           <li class="">
+=======
+        <li class="">
+>>>>>>> 96095d84ade1e64c0bae2f88a612468ce4844b55
             <a href="#role" class="collapsed" data-toggle="collapse" aria-expanded="false">
                 <i class="fa-brands fa-linux"></i>
                 <span class="ml-4">Roles</span>
@@ -87,8 +113,101 @@
                 </li>
             </ul>
         </li>
+<<<<<<< HEAD
           {{-- @endcan --}}
 
+=======
+        {{-- Cinemas --}}
+        <li class="">
+            <a href="#cinemas" class="collapse" data-toggle="collapse" aria-expanded="false">
+                <i class="fa-solid fa-city"></i>
+                <span class="ml-4">Cinemas</span>
+                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                </svg>
+            </a>
+            <ul id="cinemas" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                <li class="">
+                    <a href="/cinemas/index">
+                        <i class="las la-minus"></i><span>Cinemas</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/city/index">
+                        <i class="las la-minus"></i><span>City</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+         {{-- Coupon --}}
+        <li class=" ">
+            <a href="#coupon" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                <i class="fa-solid fa-poo fa-flip"></i>
+                <span class="ml-4">Coupon</span>
+                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                </svg>
+            </a>
+            <ul id="coupon" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                <li class="">
+                    <a href="/coupon/index">
+                        <i class="las la-minus"></i><span>List Coupon</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/coupon/create">
+                        <i class="las la-minus"></i><span>Add Coupon</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+          {{-- @endcan --}}
+          {{-- Food --}}
+        <li class=" ">
+            <a href="#food" class="collapsed" data-toggle="collapse" aria-expanded="false">
+            <i class="fa-solid fa-bowl-rice"></i>
+                <span class="ml-4">Food</span>
+                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                </svg>
+            </a>
+            <ul id="food" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                <li class="">
+                    <a href="/food/index">
+                        <i class="las la-minus"></i><span>List Food</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/food/create">
+                        <i class="las la-minus"></i><span>Add Food</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+          {{-- Combo --}}
+        <li class=" ">
+            <a href="#combo" class="collapsed" data-toggle="collapse" aria-expanded="false">
+            <i class="fa-solid fa-bowl-rice"></i>
+                <span class="ml-4">combo</span>
+                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                </svg>
+            </a>
+            <ul id="combo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                <li class="">
+                    <a href="/combo/index">
+                        <i class="las la-minus"></i><span>List combo</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/combo/create">
+                        <i class="las la-minus"></i><span>Add combo</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+          {{-- @endcan --}}
+>>>>>>> 96095d84ade1e64c0bae2f88a612468ce4844b55
             </ul>
         </nav>
         

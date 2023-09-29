@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('films', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('dmid');
             $table->text('duration');
             $table->text('description');
             $table->string('thumb');
@@ -25,10 +24,7 @@ return new class extends Migration
             $table->string('country');
             $table->string('trailer');
             $table->text('status');
-            $table->unsignedBigInteger('cinema_id');
             $table->timestamps();
-            $table->foreign('dmid')->references('id')->on('categories');
-            $table->foreign('cinema_id')->references('id')->on('cinemas');
         });
     }
 

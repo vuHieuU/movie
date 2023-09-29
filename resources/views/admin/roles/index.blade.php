@@ -121,5 +121,9 @@
         </div>
       </div>
       <!-- Wrapper End-->
-    
+      <script>
+        $('.data-tables').DataTable({
+            
+        });
+    </script> 
 @endsection

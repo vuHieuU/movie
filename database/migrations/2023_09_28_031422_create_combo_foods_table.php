@@ -11,16 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('combo_food', function (Blueprint $table) {
+        Schema::create('combo_foods', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('combo_id');
             $table->unsignedBigInteger('food_id');
-            $table->string('name');
-            $table->string('thumb');
-            $table->double('price');
-            $table->text('description');
-            $table->string('size');
-            $table->string('status')->default(1);
+            $table->string('isActive')->default(1);
             $table->timestamps();
+            $table->foreign('combo_id')->references('id')->on('combos');
             $table->foreign('food_id')->references('id')->on('food');
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('combo_food');
+        Schema::dropIfExists('combo_foods');
     }
 };

@@ -12,7 +12,8 @@ class SapramatController extends Controller
      */
     public function index()
     {
-        return view("client.sapramat");
+        $title = "comming soon";
+        return view("client.sapramat",compact('title'));
     }
 
     /**

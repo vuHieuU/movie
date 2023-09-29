@@ -12,7 +12,8 @@ class AllfilmController extends Controller
      */
     public function index()
     {
-       return view("client.film");
+        $title = "Now Playing";
+       return view("client.film",compact('title'));
     }
 
     /**
