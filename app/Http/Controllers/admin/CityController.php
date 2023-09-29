@@ -35,7 +35,7 @@ class CityController extends Controller
             'name'=>$name,
         ];
         city::create($data);
-        return redirect("/city");
+        return redirect("/city/index");
     }
 
     /**
@@ -66,7 +66,7 @@ class CityController extends Controller
             'name'=>$name,
         ];
         $city->update($data);
-        return redirect("/city");
+        return redirect("/city/index");
     }
 
     /**
@@ -76,6 +76,6 @@ class CityController extends Controller
     {
         $city = city::find($id);
         $city->delete($city);
-        return redirect('/city');
+        return redirect("/city/index");
     }
 }
