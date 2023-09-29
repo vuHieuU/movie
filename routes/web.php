@@ -103,3 +103,11 @@ Route::middleware(['auth'])->group(function () {
         Route::post('update/{id}',[App\Http\Controllers\admin\CinemasController::class,"update"]);
     });
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
