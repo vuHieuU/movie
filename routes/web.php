@@ -25,26 +25,6 @@ Route::get('/dang-phat', [App\Http\Controllers\client\DangphatController::class,
 Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class, 'index']);
 Route::get('/film', [App\Http\Controllers\client\AllfilmController::class, 'index']);
 
-
-//city
-Route::get('/city',[App\Http\Controllers\admin\cityController::class,"index"]);
-Route::get('/city/create',[App\Http\Controllers\admin\cityController::class,"create"]);
-Route::get('/city/edit/{id}',[App\Http\Controllers\admin\cityController::class,"edit"]);
-
-Route::post('/city/store',[App\Http\Controllers\admin\cityController::class,"store"]);
-Route::post('/city/update/{id}',[App\Http\Controllers\admin\cityController::class,"update"]);
-
-//cinemas
-Route::get('/cinemas',[App\Http\Controllers\admin\CinemasController::class,"index"]);
-Route::get('/cinemas/create',[App\Http\Controllers\admin\CinemasController::class,"create"]);
-Route::get('/cinemas/edit/{id}',[App\Http\Controllers\admin\CinemasController::class,"edit"]);
-Route::get('/cinemas/delete/{id}',[App\Http\Controllers\admin\CinemasController::class,"edit"]);
-
-Route::post('/cinemas/store',[App\Http\Controllers\admin\CinemasController::class,"store"]);
-Route::post('/cinemas/update/{id}',[App\Http\Controllers\admin\CinemasController::class,"update"]);
-
-
-
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Auth::routes();
 
@@ -79,8 +59,20 @@ Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'in
         Route::put('update/{id}', [App\Http\Controllers\admin\couponController ::class, 'update'])->name('coupon.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\couponController ::class, 'destroy'])->name('coupon.delete');
     });
+      //city
+    Route::prefix('city')->group(function(){
+        Route::get('index',[App\Http\Controllers\admin\CityController::class,"index"]);
+        Route::get('create',[App\Http\Controllers\admin\CityController::class,"create"]);
+        Route::post('store',[App\Http\Controllers\admin\CityController::class,"store"]);
+        Route::get('edit/{id}',[App\Http\Controllers\admin\CityController::class,"edit"]);
+        Route::post('update/{id}',[App\Http\Controllers\admin\CityController::class,"update"]);
+    });
+    // cinemas
+    Route::prefix('cinemas')->group(function(){
+        Route::get('index',[App\Http\Controllers\admin\CinemasController::class,"index"]);
+        Route::get('create',[App\Http\Controllers\admin\CinemasController::class,"create"]);
+        Route::post('store',[App\Http\Controllers\admin\CinemasController::class,"store"]);
+        Route::get('edit/{id}',[App\Http\Controllers\admin\CinemasController::class,"edit"]);
+        Route::post('update/{id}',[App\Http\Controllers\admin\CinemasController::class,"update"]);
+    });
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

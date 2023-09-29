@@ -98,12 +98,12 @@
             </a>
             <ul id="cinemas" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                 <li class="">
-                    <a href="/cinemas">
+                    <a href="/cinemas/index">
                         <i class="las la-minus"></i><span>Cinemas</span>
                     </a>
                 </li>
                 <li class="">
-                    <a href="/city">
+                    <a href="/city/index">
                         <i class="las la-minus"></i><span>City</span>
                     </a>
                 </li>

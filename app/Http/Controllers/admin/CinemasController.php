@@ -43,7 +43,7 @@ class CinemasController extends Controller
             "city"=>$city,
         ];
         cinema::create($data);
-        return redirect("/cinemas");
+        return redirect("/cinemas/index");
     }
 
     /**
@@ -81,7 +81,7 @@ class CinemasController extends Controller
             "city_id"=>$city_id,
         ];
         $cinemas->update($data);
-        return redirect("/cinemas");
+        return redirect("/cinemas/index");
     }
 
     /**
@@ -91,6 +91,6 @@ class CinemasController extends Controller
     {
         $cinemas= cinema::find($id);
         $cinemas->delete($cinemas);
-        return redirect("/cinemas");
+        return redirect("/cinemas/index");
     }
 }
