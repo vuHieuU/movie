@@ -28,6 +28,7 @@ class CouponRequest extends FormRequest
         return [
             'name' => 'required|string|size:7|unique:coupons,name',
             'type' => 'required|string|max:255',
+            'value' => 'required|numeric|gt:0', 
             'expiry_date' => 'required|date|after_or_equal:today',
         ];
     }
@@ -40,17 +41,21 @@ class CouponRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Name is required.',
-            'name.string' => 'Name must be a string.',
-            'name.max' => 'Name must only 7 characters.',
-            'name.unique' => 'This name is already taken.',
-            'type.required' => 'Type is required.',
-            'type.string' => 'Type must be a string.',
-            'type.max' => 'Type must not exceed 255 characters.',
-            'expiry_date.required' => 'Expiry date is required.',
-            'expiry_date.date' => 'Expiry date must be a valid date.',
-            'expiry_date.after_or_equal' => 'Expiry date must be after or equal to today.',
+            'name.required' => 'Tên là trường bắt buộc.',
+            'name.string' => 'Tên phải là một chuỗi.',
+            'name.max' => 'Tên chỉ được tối đa 7 ký tự.',
+            'name.unique' => 'Tên này đã tồn tại.',
+            'type.required' => 'Loại là trường bắt buộc.',
+            'type.string' => 'Loại phải là một chuỗi.',
+            'type.max' => 'Loại không được vượt quá 255 ký tự.',
+            'expiry_date.required' => 'Ngày hết hạn là trường bắt buộc.',
+            'expiry_date.date' => 'Ngày hết hạn phải là ngày hợp lệ.',
+            'expiry_date.after_or_equal' => 'Ngày hết hạn phải sau hoặc bằng ngày hiện tại.',
+            'value.required' => 'Giá trị là trường bắt buộc.',
+            'value.numeric' => 'Giá trị phải là số.',
+            'value.gt' => 'Giá trị phải lớn hơn 0.',
         ];
+        
     }
 }
 

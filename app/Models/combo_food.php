@@ -5,14 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class coupon extends Model
+class combo_food extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'name',
-        'type',
-        'value',
-        'expiry_date',
-    ];
 }

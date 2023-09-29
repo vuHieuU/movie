@@ -38,6 +38,7 @@ class couponController extends Controller
          $newRecord = new coupon(); 
          $newRecord->name = $request->input('name');
          $newRecord->type = $request->input('type');
+         $newRecord->value = $request->input('value');
          $newRecord->expiry_date = $request->input('expiry_date');
      
          $newRecord->save();
@@ -80,6 +81,7 @@ class couponController extends Controller
     
         $coupon->name = $request->input('name');
         $coupon->type = $request->input('type');
+        $coupon->value = $request->input('value');
         $coupon->expiry_date = $request->input('expiry_date');
             $coupon->save();
             return redirect()->route('coupon.index')->with('success', 'Coupon updated successfully');

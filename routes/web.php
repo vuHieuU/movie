@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Controllers\cityController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
@@ -22,10 +24,6 @@ Route::get('/detail_film', [App\Http\Controllers\client\Detail_filmController::c
 Route::get('/dang-phat', [App\Http\Controllers\client\DangphatController::class, 'index']);
 Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class, 'index']);
 Route::get('/film', [App\Http\Controllers\client\AllfilmController::class, 'index']);
-
-
-
-
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Auth::routes();
@@ -80,5 +78,21 @@ Route::middleware(['auth'])->group(function () {
         Route::get('edit/{id}', [App\Http\Controllers\admin\filmController::class, 'edit'])->name('films.edit');
         Route::post('update/{id}', [App\Http\Controllers\admin\filmController::class, 'update'])->name('films.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\filmController::class, 'destroy'])->name('films.destroy');
+    });
+      //city
+    Route::prefix('city')->group(function(){
+        Route::get('index',[App\Http\Controllers\admin\CityController::class,"index"]);
+        Route::get('create',[App\Http\Controllers\admin\CityController::class,"create"]);
+        Route::post('store',[App\Http\Controllers\admin\CityController::class,"store"]);
+        Route::get('edit/{id}',[App\Http\Controllers\admin\CityController::class,"edit"]);
+        Route::post('update/{id}',[App\Http\Controllers\admin\CityController::class,"update"]);
+    });
+    // cinemas
+    Route::prefix('cinemas')->group(function(){
+        Route::get('index',[App\Http\Controllers\admin\CinemasController::class,"index"]);
+        Route::get('create',[App\Http\Controllers\admin\CinemasController::class,"create"]);
+        Route::post('store',[App\Http\Controllers\admin\CinemasController::class,"store"]);
+        Route::get('edit/{id}',[App\Http\Controllers\admin\CinemasController::class,"edit"]);
+        Route::post('update/{id}',[App\Http\Controllers\admin\CinemasController::class,"update"]);
     });
 });
