@@ -66,13 +66,13 @@
                                 <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="">Thumb *</label>
-                                            <img src="{{ $food->thumb?''.Storage::url($food->thumb):''}}" style="width: 50px" />
+                                            <img src="{{ asset('storage/images/'.$item->thumb)}}" style="width: 50px" />
                                             <input type="text" class="form-control" value="{{ $food->thumb }}" disabled>
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <button type="submit" class="btn btn-primary mr-2" onclick="return confirm('Đồng ý là hủy =))')">Update Food</button>
+                                <button type="submit" class="btn btn-primary mr-2">Update Food</button>
                                 <button type="reset" class="btn btn-danger mr-2">Reset</button>
                             </div>
                         </div>

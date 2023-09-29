@@ -68,6 +68,15 @@ Route::middleware(['auth'])->group(function () {
         Route::put('update/{id}', [App\Http\Controllers\admin\foodController ::class, 'update'])->name('food.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\foodController ::class, 'destroy'])->name('food.delete');
     });
+    // combo
+    Route::prefix('combo')->group(function(){
+        Route::get('index', [App\Http\Controllers\admin\comboController::class, 'index'])->name('combo.index');
+        Route::get('create', [App\Http\Controllers\admin\comboController ::class, 'create'])->name('combo.create');
+        Route::post('store', [App\Http\Controllers\admin\comboController ::class, 'store'])->name('combo.store');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\comboController ::class, 'edit'])->name('combo.edit');
+        Route::post('update/{id}', [App\Http\Controllers\admin\comboController ::class, 'update'])->name('combo.update');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\comboController ::class, 'destroy'])->name('combo.delete');
+    });
     // Thể loại Phim
     Route::prefix('categories')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\categoryController::class, 'index'])->name('categories.index');
@@ -104,10 +113,10 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

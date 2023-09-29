@@ -68,69 +68,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <div class="form-floating">
-                                                    <label for="floatingTextarea">Mô tả phim</label>
-                                                    <input type="text" class="form-control" placeholder="Enter Name" data-errors="Please Enter Name." name="description" value="{{ $film->description }}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="formFile" class="form-label">Ảnh Thumbnail</label>
-                                                <input class="form-control" type="file" id="formFile" name="thumb" value="{{ $film->thumb }}">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Đạo diễn *</label>
-                                                <input type="text" class="form-control" placeholder="Enter Name"
-                                                    data-errors="Please Enter Name." name="director" value="{{ $film->director }}">
-                                                <div class="help-block with-errors"></div>
-                                                @if ($errors->has('director'))
-                                                    <span class="text-danger">{{ $errors->first('director') }}</span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Diễn viên *</label>
-                                                <input type="text" class="form-control" placeholder="Enter Name"
-                                                    data-errors="Please Enter Name." name="actor" value="{{ $film->actor }}">
-                                                <div class="help-block with-errors"></div>
-                                                @if ($errors->has('actor'))
-                                                    <span class="text-danger">{{ $errors->first('actor') }}</span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Ngôn ngữ chính *</label>
-                                                <input type="text" class="form-control" placeholder="Enter Name"
-                                                    data-errors="Please Enter Name." name="language" value="{{ $film->language }}">
-                                                <div class="help-block with-errors"></div>
-                                                @if ($errors->has('language'))
-                                                    <span class="text-danger">{{ $errors->first('language') }}</span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -144,8 +81,47 @@
                                         </div>
                                     </div>
 
+                                
+                               
+
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Đạo diễn *</label>
+                                                <input type="text" class="form-control" placeholder="Enter Name"
+                                                    data-errors="Please Enter Name." name="director" value="{{ $film->director }}">
+                                                <div class="help-block with-errors"></div>
+                                                @if ($errors->has('director'))
+                                                    <span class="text-danger">{{ $errors->first('director') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Diễn viên *</label>
+                                                <input type="text" class="form-control" placeholder="Enter Name"
+                                                    data-errors="Please Enter Name." name="actor" value="{{ $film->actor }}">
+                                                <div class="help-block with-errors"></div>
+                                                @if ($errors->has('actor'))
+                                                    <span class="text-danger">{{ $errors->first('actor') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Ngôn ngữ chính *</label>
+                                                <input type="text" class="form-control" placeholder="Enter Name"
+                                                    data-errors="Please Enter Name." name="language" value="{{ $film->language }}">
+                                                <div class="help-block with-errors"></div>
+                                                @if ($errors->has('language'))
+                                                    <span class="text-danger">{{ $errors->first('language') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Quốc gia *</label>
                                                 <input type="text" class="form-control" placeholder="Enter Name"
@@ -182,6 +158,46 @@
                                                 @if ($errors->has('status'))
                                                     <span class="text-danger">{{ $errors->first('status') }}</span>
                                                 @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="formFile" class="form-label">Ảnh Thumbnail</label>
+                                                <input class="form-control" type="file" id="formFile" name="thumb" value="{{ $film->thumb }}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="form-floating">
+                                                    <label for="floatingTextarea">Mô tả phim</label>
+                                                    <input type="text" class="form-control" placeholder="Enter Name" data-errors="Please Enter Name." name="description" value="{{ $film->description }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Thể Loại</label>
+                                            {{-- <input type="checkbox" class="checkbox mx-3" id="checkbox1" data-master-checkbox> --}}
+                                            <div class="row container m-auto">
+                        
+                                                @foreach ($cate as $item)
+                                                <div class="form-check mx-3 d-flex align-items-center">
+                                                    <input class="checkbox form-check-input" name="id_cate[]" type="checkbox"
+                                                    {{ $film->categories->contains('name',$item->name) ? 'checked':'' }} value="{{ $item->id }}">
+                                                    <label class="form-check-label mx-1">
+                                                      {{ $item->name }}
+                                                    </label>
+                                                  </div>
+                                              @endforeach
                                             </div>
                                         </div>
                                     </div>

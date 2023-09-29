@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\admin\filmsRequest;
 use App\Models\film;
+use App\Models\category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\admin\filmsRequest;
+use App\Http\Requests\admin\filmUpdateRequest;
 
 class filmController extends Controller
 {
@@ -24,7 +26,8 @@ class filmController extends Controller
      */
     public function create()
     {
-        return view('admin.films.create');
+        $cate = category::get();
+        return view('admin.films.create',compact('cate'));
     }
 
     /**
@@ -51,7 +54,7 @@ class filmController extends Controller
         $data->premiere_date = $request->input('premiere_date');
       
         $data->save();
-
+        $data->categories()->attach($request->id_cate);
         return redirect()->route('films.index')->with('success', 'Thêm phim thành công');
     }
 
@@ -69,13 +72,14 @@ class filmController extends Controller
     public function edit(string $id)
     {
         $film = film::find($id);
-        return view('admin.films.edit', compact('film'));
+        $cate = category::get();
+        return view('admin.films.edit', compact('film','cate'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(filmsRequest $request, string $id,film $film)
+    public function update(filmUpdateRequest $request, string $id,film $film)
     {   
         $data = film::find($id);
 
@@ -104,7 +108,7 @@ class filmController extends Controller
         }
         
         $data->save();
-
+        $data->categories()->sync($request->id_cate);
 
         return redirect()->route('films.index')->with('success', 'Cập nhật thành công');
     }

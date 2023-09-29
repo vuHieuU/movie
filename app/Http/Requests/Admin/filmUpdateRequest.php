@@ -4,7 +4,7 @@ namespace App\Http\Requests\admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class filmsRequest extends FormRequest
+class filmUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,6 @@ class filmsRequest extends FormRequest
             'name' => 'required|string',
             'duration' => 'required|numeric',
             'description' => 'required|string',
-            'thumb' => 'required',
             'director' => 'required|string',
             'actor' => 'required|string',
             'language' => 'required|string',
@@ -41,9 +40,8 @@ class filmsRequest extends FormRequest
         return [
             'name.required' => ':attribute không được để trống',
             'name.string' => ':attribute phải là ký tự chữ',
-            'name.unique' => 'Đã tồn tại cơ sở dữ liệu.',
             'duration.required' => ':attribute không được để trống',
-            'duration.number' => ':attribute phải là ký tự số',
+            'duration.numeric' => ':attribute phải là ký tự số',
             'thumb.required' => ':attribute không được để trống',
             'director.required' => ':attribute không được để trống',
             'director.string' => ':attribute phải là ký tự chữ',

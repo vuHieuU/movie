@@ -37,12 +37,16 @@ class foodController extends Controller
 
      public function store(FoodRequest $request)
      {
-        $params = $request->except('_token');
-        $params['thumb'] = "";
-        if ($request->hasFile('thumb') && $request->file('thumb')->isValid()) {
-            $params['thumb'] = uploadFile('images',$request->file('thumb'));
-        }
-        $food = Food::create($params);
+        $thumb = $request->file('thumb')->getClientOriginalName();
+        $request->file('thumb')->storeAs('public/images',$thumb);
+         $data = [
+            'name' => $request->name,
+            'thumb' => $thumb,
+            'price' => $request->price,
+            'status' => $request->status,
+         ];
+         food::create($data);
+
 
         return redirect()->route('food.index')->with('success', 'Food created successfully');
      }
@@ -60,7 +64,7 @@ class foodController extends Controller
      */
     public function edit($id)
     {
-        $food = Food::find($id);
+        $food = Food::findOrFail($id);
         return view('admin.foods.edit', compact('food'));
     }
     
@@ -70,22 +74,18 @@ class foodController extends Controller
      */
     public function update(FoodRequest $request, $id)
     {
-        $food_old = Food::find($id);
-        $params = $request->except('_token','_method');
-        if (!$id) {
-            return redirect()->back()->with('error', 'Food not found');
-        }
-
-        if ($request->hasFile('thumb') && $request->file('thumb')->isValid()) {
-            $thumb_old = Storage::delete('/public/'.$food_old->thumb);
-            $params['thumb'] = uploadFile('images',$request->file('thumb'));
-        } else {
-            $params['thumb'] = $food_old->thumb;
-        }
-        
-
-        $food = Food::where('id',$id)
-            ->update($params);
+        $food = Food::findOrFail($id);
+         $dataupdate = [
+            'name' => $request->name,
+            'price' => $request->price,
+            'status' => $request->status,
+         ];
+         if($request->file('thumb') !== null){
+            $thumb = $request->file('thumb')->getClientOriginalName();
+            $request->file('thumb')->storeAs('public/images', $thumb);
+            $dataupdate['thumb'] = $thumb;
+            }
+         $food->update($dataupdate);
 
         return redirect()->route('food.index')->with('success', 'Food updated successfully');
     }
@@ -94,7 +94,7 @@ class foodController extends Controller
      */
     public function destroy($id)
     {
-        $food = Food::find($id);
+        $food = Food::findOrFail($id);
     
         if (!$id) {
             return redirect()->back()->with('error', 'Food not found');

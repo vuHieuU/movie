@@ -31,10 +31,10 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Food List</h4>
+                          <h4 class="mb-3">combo List</h4>
                           <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
                       </div>
-                      <a href="/food/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Food</a>
+                      <a href="/combo/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add combo</a>
                   </div>
               </div>
             
@@ -53,16 +53,15 @@
                                   </div>
                               </th>
                               <th>ID</th>
-                              <th>Thumb</th>
                               <th>Name</th>
                               <th>Price</th>
-                              <th>Status</th>
+                              <th>Size</th>
                               <th>Action</th>
                           </tr>
                       </thead>
 
                       <tbody class="ligth-body">
-                             @foreach ($foods as $item)
+                             @foreach ($combos as $item)
                           <tr>
                               <td>
                                   <div class="checkbox d-inline-block">
@@ -71,18 +70,17 @@
                                   </div>
                               </td>
                               <th>{{$item->id}}</th>
-                              <td><img src="{{ asset('storage/images/'.$item->thumb)}}" style="width: 50px" /></td>
                               <td>{{ $item->name }}</td>
                               <td>{{ $item->price }}</td>
-                              <td>{{ $item->status }}</td>
+                              <td>{{ $item->size }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
                                           href="#"><i class="ri-eye-line mr-0"></i></a>
                                       <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                          href="{{route('food.edit',$item->id)}}"><i class="ri-pencil-line mr-0"></i></a>
+                                          href="{{route('combo.edit',$item->id)}}"><i class="ri-pencil-line mr-0"></i></a>
                                       <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                          href="{{route('food.delete',$item->id)}}" onclick="return confirm('Muốn xóa không?')"><i class="ri-delete-bin-line mr-0"></i></a>
+                                          href="{{route('combo.delete',$item->id)}}" onclick="return confirm('Muốn xóa không?')"><i class="ri-delete-bin-line mr-0"></i></a>
                                   </div>
                               </td>
                           </tr>
