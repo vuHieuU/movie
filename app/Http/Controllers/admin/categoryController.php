@@ -23,7 +23,6 @@ class categoryController extends Controller
      */
     public function create()
     {
-        // $permissions = Permission::all()->groupBy('group');
         return view('admin.categories.create');
     }
 
