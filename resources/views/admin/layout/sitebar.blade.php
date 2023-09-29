@@ -64,11 +64,7 @@
                 </li>
             {{-- Role --}}
           {{-- @can('show-role') --}}
-<<<<<<< HEAD
-          <li class="">
-=======
         <li class="">
->>>>>>> 96095d84ade1e64c0bae2f88a612468ce4844b55
             <a href="#role" class="collapsed" data-toggle="collapse" aria-expanded="false">
                 <i class="fa-brands fa-linux"></i>
                 <span class="ml-4">Roles</span>
@@ -113,10 +109,7 @@
                 </li>
             </ul>
         </li>
-<<<<<<< HEAD
           {{-- @endcan --}}
-
-=======
         {{-- Cinemas --}}
         <li class="">
             <a href="#cinemas" class="collapse" data-toggle="collapse" aria-expanded="false">
@@ -185,7 +178,6 @@
             </ul>
         </li>
           {{-- @endcan --}}
->>>>>>> 96095d84ade1e64c0bae2f88a612468ce4844b55
             </ul>
         </nav>
         
