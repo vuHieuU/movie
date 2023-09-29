@@ -56,8 +56,8 @@ class comboController extends Controller
     public function edit(string $id)
     {
         $combo = combo::findOrFail($id);
-        $foods = food::get();
-        return view('admin.combo.edit',compact('combo','foods'));
+        $food = food::get();
+        return view('admin.combo.edit',compact('combo','food'));
     }
 
     /**
