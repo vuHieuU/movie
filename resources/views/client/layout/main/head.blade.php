@@ -1,78 +1,18 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<!--[if IE]><![endif]-->
-
-<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="profile" href="https://gmpg.org/xfn/11" />
-    {{-- <title>{{$taitel}}</title> --}}
+    {{-- <title>{{ $title }}</title> --}}
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Comments Feed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" />
     <script type="text/javascript">
-        window._wpemojiSettings = {
-            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/",
-            "ext": ".png",
-            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/",
-            "svgExt": ".svg",
-            "source": {
-                "concatemoji": "http:\/\/demo.amytheme.com\/movie\/demo\/elementor-single-cinema\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.7"
-            }
-        };
+        window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "http:\/\/demo.amytheme.com\/movie\/demo\/elementor-single-cinema\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.7" } };
         /*! This file is auto-generated */
-        ! function(e, a, t) {
-            var n, r, o, i = a.createElement("canvas"),
-                p = i.getContext && i.getContext("2d");
-
-            function s(e, t) {
-                var a = String.fromCharCode;
-                p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0);
-                e = i.toDataURL();
-                return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL()
-            }
-
-            function c(e) {
-                var t = a.createElement("script");
-                t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)
-            }
-            for (o = Array("flag", "emoji"), t.supports = {
-                    everything: !0,
-                    everythingExceptFlag: !0
-                }, r = 0; r < o.length; r++) t.supports[o[r]] = function(e) {
-                if (!p || !p.fillText) return !1;
-                switch (p.textBaseline = "top", p.font = "600 32px Arial", e) {
-                    case "flag":
-                        return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([
-                            55356, 56826, 55356, 56819
-                        ], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418,
-                            56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447
-                        ], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203,
-                            56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447
-                        ]);
-                    case "emoji":
-                        return !s([10084, 65039, 8205, 55357, 56613], [10084, 65039, 8203, 55357, 56613])
-                }
-                return !1
-            }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports
-                .everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);
-            t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t
-                .readyCallback = function() {
-                    t.DOMReady = !0
-                }, t.supports.everything || (n = function() {
-                    t.readyCallback()
-                }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !
-                    1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function() {
-                    "complete" === a.readyState && t.readyCallback()
-                })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n
-                    .wpemoji)))
-        }(window, document, window._wpemojiSettings);
+        !function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { var a = String.fromCharCode; p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0); e = i.toDataURL(); return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (!p || !p.fillText) return !1; switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]); case "emoji": return !s([10084, 65039, 8205, 55357, 56613], [10084, 65039, 8203, 55357, 56613]) }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji))) }(window, document, window._wpemojiSettings);
     </script>
     <style type="text/css">
         img.wp-smiley,
@@ -91,8 +31,6 @@
     <link rel='stylesheet' id='wp-block-library-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7'
         type='text/css' media='all' />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        
     <style id='global-styles-inline-css' type='text/css'>
         body {
             --wp--preset--color--black: #000000;
@@ -353,8 +291,8 @@
     <link rel='stylesheet' id='elementor-global-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/global.css?ver=1651538276'
         type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-post-142-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
+    <link rel='stylesheet' id='elementor-post-84-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-84.css?ver=1651785613'
         type='text/css' media='all' />
     <link rel='stylesheet' id='font-awesome-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0'
@@ -389,7 +327,7 @@
         href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css'
         media='all' />
     <link rel='stylesheet' id='google-fonts-1-css'
-        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.9.7'
+        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Condensed%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.9.7'
         type='text/css' media='all' />
     <script type='text/javascript'
         src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery.min.js?ver=3.6.0'
@@ -399,18 +337,18 @@
         id='jquery-migrate-js'></script>
     <link rel="https://api.w.org/" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/" />
     <link rel="alternate" type="application/json"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/wp/v2/pages/142" />
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/wp/v2/pages/84" />
     <link rel="EditURI" type="application/rsd+xml" title="RSD"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/xmlrpc.php?rsd" />
     <link rel="wlwmanifest" type="application/wlwmanifest+xml"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/wlwmanifest.xml" />
     <meta name="generator" content="WordPress 5.9.7" />
-    <link rel="canonical" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/now-playing/" />
-    <link rel='shortlink' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/?p=142' />
+    <link rel="canonical" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/" />
+    <link rel='shortlink' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/' />
     <link rel="alternate" type="application/json+oembed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F" />
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2F" />
     <link rel="alternate" type="text/xml+oembed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" />
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2F&#038;format=xml" />
     <style type="text/css">
         body {
             font-family: "Roboto Condensed";
@@ -461,158 +399,11 @@
         }
 
         .amy-site-footer {
-            background-color: #BABBC3;
+            background-color: #606060;
         }
 
         #amy-page-header {
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
     </style>
-
-
-
-{{-- csss login --}}
-
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/plugincss.css?1681350496696" rel="stylesheet"
-type="text/css" media="all" />
-
-
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/main.scss.css?1681350496696" rel="stylesheet"
-type="text/css" media="all" />
-
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/account_oder_style.scss.css?1681350496696"
-rel="stylesheet" type="text/css" media="all" />
-{{-- csss login --}}
-
-</head>
-
-<body
-    class="page-template-default page page-id-142 amy-header-default  single-author elementor-default elementor-kit-5 elementor-page elementor-page-142">
-    <div id="page" class="hfeed site">
-
-        @extends('client.layout.main.main')
-        @section('contact')
-
-
- <div class="main-index">
-
-
-        <div class="page-content-account mt-5">
-            <div class="container">
-                <div class="row">
-                    
-
-                              <div class="page-content-account">
-                                  <div class="container">
-                                      <div class="row">
-                                          <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-                                              <div class="d-group">
-                                                  <div class="left-col">
-                                                      <div class="group-login group-log">
-                                                          <h1>
-                                                              Đăng nhập tài khoản
-                                                          </h1>
-                                                          <form method="post" action="/account/login" id="customer_login"
-                                                              accept-charset="UTF-8"><input name="FormType" type="hidden"
-                                                                  value="customer_login" /><input name="utf8" type="hidden"
-                                                                  value="true" />
-                                                              <p class="error">
-                      
-                                                              </p>
-                                                              <fieldset class="form-group">
-                                                                  <label>Email <span class="required">*</span></label>
-                                                                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
-                                                                      class="form-control form-control-lg" value="" name="email"
-                                                                      id="customer_email" placeholder="Email" Required>
-                                                              </fieldset>
-                                                              <fieldset class="form-group">
-                                                                  <label>Mật khẩu <span class="required">*</span> </label>
-                                                                  <input type="password" class="form-control form-control-lg"
-                                                                      value="" name="password" id="customer_password"
-                                                                      placeholder="Mật khẩu" Required>
-                                                              </fieldset>
-                                                              <button class="btn-login" type="submit" value="Đăng nhập">Đăng nhập</button>
-                                                          </form>
-                                                          <div class="block social-login--facebooks">
-                                                              <p class="a-center">
-                                                                  <span>Hoặc đăng nhập bằng</span>
-                                                              </p>
-                                                              
-                                                              <a href="javascript:void(0)" class="social-login--facebook"
-                                                                  onclick="loginFacebook()"><img width="129px" height="37px"
-                                                                      alt="facebook-login-button"
-                                                                      src="//bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"></a>
-                                                              <a href="javascript:void(0)" class="social-login--google"
-                                                                  onclick="loginGoogle()"><img width="129px" height="37px"
-                                                                      alt="google-login-button"
-                                                                      src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"></a>
-                                                          </div>
-                                                          <p>
-                                                              Bạn quên mật khẩu bấm <a href="#"
-                                                                  onclick="showRecoverPasswordForm();return false;">vào đây</a>
-                                                          </p>
-                                                      </div>
-                                                      <div class="group-login group-recover d-none">
-                                                          <h2>
-                                                              Quên mật khẩu
-                                                          </h2>
-                                                          <p class="description">
-                                                              Chúng tôi sẽ gửi cho bạn một email để kích hoạt việc đặt lại mật khẩu.
-                                                          </p>
-                                                          <form method="post" action="/account/recover" id="recover_customer_password"
-                                                              accept-charset="UTF-8"><input name="FormType" type="hidden"
-                                                                  value="recover_customer_password" /><input name="utf8" type="hidden"
-                                                                  value="true" />
-                                                              <p class="error">
-                      
-                                                              </p>
-                      
-                                                              <fieldset class="form-group">
-                                                                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
-                                                                      class="form-control form-control-lg" value="" name="Email"
-                                                                      id="recover-email" placeholder="Email" Required>
-                                                              </fieldset>
-                                                              <input class="btn-login" type="submit" value="Gửi yêu cầu" />
-                                                              <a href="#" class="btn-ref"
-                                                                >Hủy</a>
-                                                          </form>
-                                                      </div>
-                                                  </div>
-                                                  <div class="right-col">
-                                                      <h4>
-                                                          Quyền lợi với thành viên
-                                                      </h4>
-                                                      <div>
-                                                          <p>Vận chuyển siêu tốc</p>
-                                                          <p>Sản phẩm đa dạng </p>
-                                                          <p>Đổi trả dễ dàng</p>
-
-                                                          <p>Được giảm giá cho lần đặt vé tiếp theo lên đến 10% </p>
-                      
-                                                      </div>
-                                                      <a href="" class="btn-register-default">Đăng ký</a>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                      
-                      
-            </div>
-        </div>
-
-
-       
-    </div>
-
-    </div>
-           
-          
-
-
-
-
-
-
-        @endsection
+<link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
