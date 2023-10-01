@@ -4,6 +4,7 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\film;
 
 class homeController extends Controller
 {
@@ -13,7 +14,8 @@ class homeController extends Controller
     public function index()
     {
         $title = "home";
-        return view('client.home');
+        $films = film::all();
+        return view('client.home',compact("films"));
     }
 
     /**

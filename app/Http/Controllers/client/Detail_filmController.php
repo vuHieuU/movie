@@ -2,18 +2,32 @@
 
 namespace App\Http\Controllers\client;
 
-use App\Http\Controllers\Controller;
+use App\Models\film;
+use App\Models\Rating;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class Detail_filmController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request, $id)
     {
+        $data = film::find($id);
         $title = "Detail";
-        return view('client.detail_film',compact('title'));
+        $ratings = Rating::where("film_id",$data->id);
+        $rating_sum = Rating::where("film_id",$data->id)->sum("star_rated");
+        $user_rating = Rating::where("film_id",$data->id)->where("user_id",Auth::id())->first();
+
+        if($ratings->count() > 0){
+            $rating_value = $rating_sum / $ratings->count();
+        }
+        else{
+            $rating_value = 0;
+        }
+        return view('client.detail_film',compact('title',"data","ratings","rating_value","user_rating"));
     }
 
     /**
