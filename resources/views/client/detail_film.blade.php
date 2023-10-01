@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -457,14 +458,8 @@
     class="amy_movie-template-default single single-amy_movie postid-74 amy-header-default  single-author elementor-default elementor-kit-5">
     <div id="page" class="hfeed site">
 
-
-
         @extends('client.layout.main.main')
         @section('contact')
-
-
-
-
             <div id="main">
                 <div id="content" class="site-content">
 
@@ -483,7 +478,7 @@
                                             class="post-74 amy_movie type-amy_movie status-publish amy_genre-cartoon amy_genre-sci-fi amy_actor-alexander-cattly amy_actor-cartin-hollia amy_actor-humpray-richard amy_director-gally-peckin amy_director-mae-west">
                                             <div class="entry-top">
                                                 <div class="entry-poster">
-                                                    <img class=""
+                                                    <img class
                                                         src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_17-204x350_c.jpg"
                                                         alt="Jumanji: Welcome to the Jungle" />
                                                 </div>
@@ -491,16 +486,17 @@
                                                     <h1 class="entry-title p-name" itemprop="name headline">
                                                         <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/"
                                                             rel="bookmark" class="u-url url" itemprop="url">
-                                                            Jumanji: Welcome to the Jungle </a>
+                                                            Jumanji: Welcome to
+                                                            the Jungle </a>
                                                     </h1>
-
 
                                                     <div class="entry-pg">
                                                         <span class="pg">G</span>
 
                                                         <span class="duration">
                                                             <i class="fa fa-clock-o"></i>
-                                                            02 hours 30 minutes </span>
+                                                            02 hours 30 minutes
+                                                        </span>
                                                     </div>
 
                                                     <ul class="info-list">
@@ -511,11 +507,14 @@
                                                             <span>
                                                                 <a
                                                                     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/alexander-cattly/">Alexander
-                                                                    Cattly</a>, <a
+                                                                    Cattly</a>,
+                                                                <a
                                                                     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/cartin-hollia/">Cartin
-                                                                    Hollia</a>, <a
+                                                                    Hollia</a>,
+                                                                <a
                                                                     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/humpray-richard/">Humpray
-                                                                    Richard</a> </span>
+                                                                    Richard</a>
+                                                            </span>
                                                         </li>
 
                                                         <li>
@@ -525,9 +524,11 @@
                                                             <span>
                                                                 <a
                                                                     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/gally-peckin/">Gally
-                                                                    Peckin</a>, <a
+                                                                    Peckin</a>,
+                                                                <a
                                                                     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/mae-west/">Mae
-                                                                    West</a> </span>
+                                                                    West</a>
+                                                            </span>
                                                         </li>
 
                                                         <li>
@@ -547,7 +548,8 @@
                                                                 Release:
                                                             </label>
                                                             <span>
-                                                                February 16, 2022 </span>
+                                                                February 16,
+                                                                2022 </span>
                                                         </li>
 
                                                         <li>
@@ -566,17 +568,15 @@
                                                                 8.2 </span>
                                                         </li>
 
-
                                                     </ul>
-                                                    <!-- <a href="#" class="amy-buy-ticket" target="_blank">Buy Ticket</a> -->
 
+                                                    {{-- BUy ticket --}}
                                                     <div class="entry-action">
                                                         <div class="mrate  no-rate">
                                                             <button type="button" data-bs-toggle="modal"
                                                                 data-bs-target="#exampleModal" class="amy-buy-ticket">Buy
                                                                 Ticket</button>
                                                         </div>
-
 
                                                         <div class="modal fade   modal-lg " id="exampleModal"
                                                             tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -585,17 +585,23 @@
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
                                                                         <h1 class="modal-title fs-2  text-muted fw-bold"
-                                                                            id="exampleModalLabel">Lịch Chiếu - <span
-                                                                                class="fs-4">Phim quái Vật 9 Đầu</span>
+                                                                            id="exampleModalLabel">Lịch
+                                                                            Chiếu
+                                                                            -
+                                                                            <span class="fs-4">Phim
+                                                                                quái
+                                                                                Vật
+                                                                                9
+                                                                                Đầu</span>
                                                                         </h1>
-
 
                                                                     </div>
                                                                     <div class="modal-header ">
                                                                         <h1 class="modal-title  text-center modal-dialog"
                                                                             id="exampleModalLabel"
                                                                             style="font-size: 35px ; font-weight: 500">Rạp
-                                                                            Hà Nội</h1>
+                                                                            Hà
+                                                                            Nội</h1>
 
                                                                     </div>
                                                                     <div class="modal-header ">
@@ -613,39 +619,46 @@
                                                                         <div class="row">
 
                                                                             <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class="" href="#"><span
+                                                                                <li><a class href="#"><span
                                                                                             style="font-size: 30px">26</span>/9
-                                                                                        - T2</a></li>
+                                                                                        -
+                                                                                        T2</a></li>
                                                                             </div>
                                                                             <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class="" href="#"><span
+                                                                                <li><a class href="#"><span
                                                                                             style="font-size: 30px">26</span>/9
-                                                                                        - T3</a></li>
+                                                                                        -
+                                                                                        T3</a></li>
                                                                             </div>
                                                                             <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class="" href="#"><span
+                                                                                <li><a class href="#"><span
                                                                                             style="font-size: 30px">26</span>/9
-                                                                                        - T4</a></li>
+                                                                                        -
+                                                                                        T4</a></li>
                                                                             </div>
                                                                             <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class="" href="#"><span
+                                                                                <li><a class href="#"><span
                                                                                             style="font-size: 30px">26</span>/9
-                                                                                        - T5</a></li>
+                                                                                        -
+                                                                                        T5</a></li>
                                                                             </div>
                                                                             <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class="" href="#"><span
+                                                                                <li><a class href="#"><span
                                                                                             style="font-size: 30px">26</span>/9
-                                                                                        - T6</a></li>
+                                                                                        -
+                                                                                        T6</a></li>
                                                                             </div>
                                                                             <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class="" href="#"><span
+                                                                                <li><a class href="#"><span
                                                                                             style="font-size: 30px">26</span>/9
-                                                                                        - T7</a></li>
+                                                                                        -
+                                                                                        T7</a></li>
                                                                             </div>
                                                                             <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class="" href="#"><span
+                                                                                <li><a class href="#"><span
                                                                                             style="font-size: 30px">26</span>/9
-                                                                                        - CN</a></li>
+                                                                                        -
+                                                                                        CN</a></li>
                                                                             </div>
 
                                                                         </div>
@@ -659,89 +672,113 @@
                                                                                     $(this).addClass("active");
                                                                                 });
                                                                             });
-
-
-															 
                                                                         </script>
 
                                                                     </div>
                                                                     <div class="modal-header">
 
-                                                                       
                                                                         <div class="container ">
-															<h1 class="modal-title fs-3 py-3 text-muted fw-bold"id="exampleModalLabel">2D Phụ Đề</h1>
-															<div class="row">
-																
-																<p class="d-inline-flex gap-5 row">
-<div class="col-md-2">
-   
-        <a class="btn btn-secondary option fs-5   " data-bs-toggle="collapse" href="" role="" aria-expanded="false" aria-controls="multiCollapseExample1">11:00</a>
-    
-    <br>
-    <p class="fs-6 mt-2">123 ghế trống</p>
-</div>
-                                                                
-																	
-<div class="col-md-2">
-   
-    <a class="btn btn-secondary option fs-5   " data-bs-toggle="collapse" href="" role="" aria-expanded="false" aria-controls="multiCollapseExample1">11:00</a>
+                                                                            <h1 class="modal-title fs-3 py-3 text-muted fw-bold"
+                                                                                id="exampleModalLabel">2D
+                                                                                Phụ
+                                                                                Đề</h1>
+                                                                            <div class="row">
 
-<br>
-<p class="fs-6 mt-2">123 ghế trống</p>
-</div>
-                                                            
-<div class="col-md-2">
-   
-    <a class="btn btn-secondary option fs-5   " data-bs-toggle="collapse" href="" role="" aria-expanded="false" aria-controls="multiCollapseExample1">11:00</a>
+                                                                                <p class="d-inline-flex gap-5 row">
+                                                                                <div class="col-md-2">
 
-<br>
-<p class="fs-6 mt-2">123 ghế trống</p>
-</div>
-                                                            
-<div class="col-md-2">
-   
-    <a class="btn btn-secondary option fs-5   " data-bs-toggle="collapse" href="" role="" aria-expanded="false" aria-controls="multiCollapseExample1">11:00</a>
+                                                                                    <a class="btn btn-secondary option fs-5   "
+                                                                                        data-bs-toggle="collapse" href role
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="multiCollapseExample1">11:00</a>
 
-<br>
-<p class="fs-6 mt-2">123 ghế trống</p>
-</div>
-                                                            
-<div class="col-md-2">
-   
-    <a class="btn btn-secondary option fs-5   " data-bs-toggle="collapse" href="" role="" aria-expanded="false" aria-controls="multiCollapseExample1">11:00</a>
+                                                                                    <br>
+                                                                                    <p class="fs-6 mt-2">123
+                                                                                        ghế
+                                                                                        trống</p>
+                                                                                </div>
 
-<br>
-<p class="fs-6 mt-2">123 ghế trống</p>
-</div>
-                                                            
-<div class="col-md-2">
-   
-    <a class="btn btn-secondary option fs-5   " data-bs-toggle="collapse" href="" role="" aria-expanded="false" aria-controls="multiCollapseExample1">11:00</a>
+                                                                                <div class="col-md-2">
 
-<br>
-<p class="fs-6 mt-2">123 ghế trống</p>
-</div>
-                                                            
+                                                                                    <a class="btn btn-secondary option fs-5   "
+                                                                                        data-bs-toggle="collapse" href role
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="multiCollapseExample1">11:00</a>
 
-                                                                
-												                                                                                                                                                                                                                                                                                               </p>
-															</div>
-															
-														   </div>
-                                                                        
+                                                                                    <br>
+                                                                                    <p class="fs-6 mt-2">123
+                                                                                        ghế
+                                                                                        trống</p>
+                                                                                </div>
 
-                                                                        
+                                                                                <div class="col-md-2">
+
+                                                                                    <a class="btn btn-secondary option fs-5   "
+                                                                                        data-bs-toggle="collapse" href role
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="multiCollapseExample1">11:00</a>
+
+                                                                                    <br>
+                                                                                    <p class="fs-6 mt-2">123
+                                                                                        ghế
+                                                                                        trống</p>
+                                                                                </div>
+
+                                                                                <div class="col-md-2">
+
+                                                                                    <a class="btn btn-secondary option fs-5   "
+                                                                                        data-bs-toggle="collapse" href role
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="multiCollapseExample1">11:00</a>
+
+                                                                                    <br>
+                                                                                    <p class="fs-6 mt-2">123
+                                                                                        ghế
+                                                                                        trống</p>
+                                                                                </div>
+
+                                                                                <div class="col-md-2">
+
+                                                                                    <a class="btn btn-secondary option fs-5   "
+                                                                                        data-bs-toggle="collapse" href role
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="multiCollapseExample1">11:00</a>
+
+                                                                                    <br>
+                                                                                    <p class="fs-6 mt-2">123
+                                                                                        ghế
+                                                                                        trống</p>
+                                                                                </div>
+
+                                                                                <div class="col-md-2">
+
+                                                                                    <a class="btn btn-secondary option fs-5   "
+                                                                                        data-bs-toggle="collapse" href role
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="multiCollapseExample1">11:00</a>
+
+                                                                                    <br>
+                                                                                    <p class="fs-6 mt-2">123
+                                                                                        ghế
+                                                                                        trống</p>
+                                                                                </div>
+
+                                                                                </p>
+                                                                            </div>
+
+                                                                        </div>
+
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button"
                                                                             class="btn btn-secondary amy-buy-ticket"
                                                                             data-bs-dismiss="modal">Close</button>
-                                                                        <a href="/choose-room" class="amy-buy-ticket">Next</a>
+                                                                        <a href="/choose-room"
+                                                                            class="amy-buy-ticket">Next</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-
 
                                                         <div class="entry-share">
                                                             <label>Share:</label>
@@ -756,39 +793,76 @@
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     </div>
+                                                    {{-- BUy ticket --}}
                                                 </div>
                                             </div>
                                             <div class="clearfix"></div>
 
                                             <div class="entry-content e-content" itemprop="description articleBody">
                                                 <h3 class="info-name amy-title">Synopsis</h3>
-                                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                                    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-                                                    illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                                                <p>Sed ut perspiciatis unde
+                                                    omnis iste natus error sit
+                                                    voluptatem
+                                                    accusantium doloremque
+                                                    laudantium, totam rem
+                                                    aperiam, eaque ipsa quae ab
+                                                    illo inventore veritatis et
+                                                    quasi architecto beatae
+                                                    vitae dicta sunt
                                                     explicabo.</p>
-                                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                                                    fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
-                                                    sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-                                                    sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
-                                                    tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                                                <p>Nemo enim ipsam voluptatem
+                                                    quia voluptas sit aspernatur
+                                                    aut odit aut
+                                                    fugit, sed quia consequuntur
+                                                    magni dolores eos qui
+                                                    ratione voluptatem
+                                                    sequi nesciunt. Neque porro
+                                                    quisquam est, qui dolorem
+                                                    ipsum quia dolor
+                                                    sit amet, consectetur,
+                                                    adipisci velit, sed quia non
+                                                    numquam eius modi
+                                                    tempora incidunt ut labore
+                                                    et dolore magnam aliquam
+                                                    quaerat voluptatem.
                                                 </p>
-                                                <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                                                    suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
-                                                    autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-                                                    nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-                                                    voluptas nulla pariatur Lorem ipsum dolor sit amet, consectetur
-                                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                                <p>Ut enim ad minima veniam,
+                                                    quis nostrum exercitationem
+                                                    ullam corporis
+                                                    suscipit laboriosam, nisi ut
+                                                    aliquid ex ea commodi
+                                                    consequatur? Quis
+                                                    autem vel eum iure
+                                                    reprehenderit qui in ea
+                                                    voluptate velit esse quam
+                                                    nihil molestiae consequatur,
+                                                    vel illum qui dolorem eum
+                                                    fugiat quo
+                                                    voluptas nulla pariatur
+                                                    Lorem ipsum dolor sit amet,
+                                                    consectetur
+                                                    adipiscing elit, sed do
+                                                    eiusmod tempor incididunt ut
+                                                    labore et dolore
                                                     magna aliqua.</p>
-                                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                                                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                <p>Ut enim ad minim veniam, quis
+                                                    nostrud exercitation ullamco
+                                                    laboris nisi
+                                                    ut aliquip ex ea commodo
+                                                    consequat. Duis aute irure
+                                                    dolor in
+                                                    reprehenderit in voluptate
+                                                    velit esse cillum dolore eu
+                                                    fugiat nulla
                                                     pariatur.</p>
                                             </div>
 
                                             <div class="entry-media">
-                                                <h3 class="info-name amy-title">Video &amp; Photo</h3>
+                                                <h3 class="info-name amy-title">Video
+                                                    &amp; Photo</h3>
                                                 <div class="number-media">
-                                                    <span class="gallery"><i></i>5 photos</span>
+                                                    <span class="gallery"><i></i>5
+                                                        photos</span>
                                                 </div>
                                                 <div class="media-carousel">
                                                     <div class="amy-slick"
@@ -845,7 +919,8 @@
                                                 <div class="showtime">
                                                     <div class="showtime-item single-cinema">
                                                         <div class="st-item">
-                                                            <div class="st-title"><label>February 11, 2022</label>
+                                                            <div class="st-title"><label>February
+                                                                    11, 2022</label>
                                                                 <!-- <a href="#" class="amy-buy-ticket" target="_blank">Buy Ticket</a> -->
                                                             </div>
                                                             <ul>
@@ -855,7 +930,8 @@
                                                             </ul>
                                                         </div>
                                                         <div class="st-item">
-                                                            <div class="st-title"><label>February 25, 2022</label>
+                                                            <div class="st-title"><label>February
+                                                                    25, 2022</label>
                                                                 <!-- <a href="#" class="amy-buy-ticket" target="_blank">Buy Ticket</a> -->
                                                             </div>
                                                             <ul>
@@ -866,7 +942,8 @@
                                                             </ul>
                                                         </div>
                                                         <div class="st-item">
-                                                            <div class="st-title"><label>March 10, 2022</label>
+                                                            <div class="st-title"><label>March
+                                                                    10, 2022</label>
                                                                 <!-- <a href="#" class="amy-buy-ticket" target="_blank">Buy Ticket</a> -->
                                                             </div>
                                                             <ul>
@@ -877,13 +954,16 @@
                                                             </ul>
                                                         </div>
                                                         <div class="st-item">
-                                                            <div class="st-title"><label>May 13, 2022</label>
+                                                            <div class="st-title"><label>May
+                                                                    13, 2022</label>
                                                                 <!-- <a href="#" class="amy-buy-ticket" target="_blank">Buy Ticket</a> -->
                                                             </div>
                                                             <ul>
                                                                 <li>07h20</li>
-                                                                <li> 10h10. 15h30</li>
-                                                                <li> 21h00. 23h30</li>
+                                                                <li> 10h10.
+                                                                    15h30</li>
+                                                                <li> 21h00.
+                                                                    23h30</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -894,20 +974,27 @@
 
                                                 <div class="amy-comment-form">
                                                     <div id="respond" class="comment-respond">
-                                                        <h3 id="reply-title" class="comment-reply-title amy-title">Write a
+                                                        <h3 id="reply-title" class="comment-reply-title amy-title">Write
+                                                            a
                                                             comment <small><a rel="nofollow"
                                                                     id="cancel-comment-reply-link"
                                                                     href="/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/#respond"
-                                                                    style="display:none;">Cancel reply</a></small></h3>
+                                                                    style="display:none;">Cancel
+                                                                    reply</a></small></h3>
                                                         <form
                                                             action="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-comments-post.php"
                                                             method="post" id="commentform" class="comment-form">
-                                                            <p class="comment-notes"><span id="email-notes">Your email
-                                                                    address will not be published.</span> <span
-                                                                    class="required-field-message"
-                                                                    aria-hidden="true">Required fields are marked <span
-                                                                        class="required"
-                                                                        aria-hidden="true">*</span></span></p>
+                                                            <p class="comment-notes"><span id="email-notes">Your
+                                                                    email
+                                                                    address will
+                                                                    not be
+                                                                    published.</span>
+                                                                <span class="required-field-message"
+                                                                    aria-hidden="true">Required
+                                                                    fields are
+                                                                    marked <span class="required"
+                                                                        aria-hidden="true">*</span></span>
+                                                            </p>
                                                             <p class="comment-form-comment"><label for="comment">Comment
                                                                     <span class="required">*</span></label>
                                                                 <textarea name="comment" id="comment" cols="45" rows="8" max-length="65525" aria-required="true"
@@ -915,18 +1002,18 @@
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <p class="comment-form-author"><label
-                                                                            for="author">Name <span
-                                                                                class="required">*</span></label><input
-                                                                            type="text" value="" id="author"
+                                                                            for="author">Name
+                                                                            <span class="required">*</span></label><input
+                                                                            type="text" value id="author"
                                                                             name="author" size="30" maxlength="245"
                                                                             aria-required="true" required="required" />
                                                                     </p>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <p class="comment-form-email"><label
-                                                                            for="email">Email <span
-                                                                                class="required">*</span></label><input
-                                                                            type="email" value="" id="email"
+                                                                            for="email">Email
+                                                                            <span class="required">*</span></label><input
+                                                                            type="email" value id="email"
                                                                             name="email" size="30" maxlength="100"
                                                                             aria-describedby="email-notes"
                                                                             aria-required="true" required="required" />
@@ -935,7 +1022,7 @@
                                                                 <div class="col-md-4">
                                                                     <p class="comment-form-url"><label
                                                                             for="url">Website</label><input
-                                                                            type="url" value="" id="url"
+                                                                            type="url" value id="url"
                                                                             name="url" size="30"
                                                                             maxlength="200" /></p>
                                                                 </div>
@@ -943,10 +1030,19 @@
                                                             <p class="comment-form-cookies-consent"><input
                                                                     id="wp-comment-cookies-consent"
                                                                     name="wp-comment-cookies-consent" type="checkbox"
-                                                                    value="yes" /> <label
-                                                                    for="wp-comment-cookies-consent">Save my name, email,
-                                                                    and website in this browser for the next time I
-                                                                    comment.</label></p>
+                                                                    value="yes" />
+                                                                <label for="wp-comment-cookies-consent">Save
+                                                                    my name,
+                                                                    email,
+                                                                    and
+                                                                    website
+                                                                    in this
+                                                                    browser
+                                                                    for the
+                                                                    next
+                                                                    time I
+                                                                    comment.</label>
+                                                            </p>
                                                             <p class="form-submit"><input name="submit" type="submit"
                                                                     id="submit" class="submit" value="Post Comment" />
                                                                 <input type='hidden' name='comment_post_ID'
@@ -970,24 +1066,28 @@
                                                 <figure class="wp-block-image size-full"><img loading="lazy"
                                                         width="350" height="272"
                                                         src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62.png"
-                                                        alt="" class="wp-image-254"
+                                                        alt class="wp-image-254"
                                                         srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62.png 350w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62-300x233.png 300w"
                                                         sizes="(max-width: 350px) 100vw, 350px" /></figure>
                                                 <div class="clear"></div>
                                             </div>
                                             <div class="amy-widget amy-widget-list">
                                                 <div class="amy-widget amy-widget-list list-movie ">
-                                                    <h4 class="amy-title amy-widget-title">Top Movie</h4>
+                                                    <h4 class="amy-title amy-widget-title">Top
+                                                        Movie</h4>
                                                     <div class="entry-item">
-                                                        <div class="entry-thumb"><img class=""
+                                                        <div class="entry-thumb"><img class
                                                                 src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_20-118x159_c.jpg"
                                                                 alt="Kubo and the Two Strings" /></div>
                                                         <div class="entry-content">
                                                             <h2 class="entry-title"><a
                                                                     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/kubo-and-the-two-strings/">Kubo
-                                                                    and the Two Strings</a></h2>
+                                                                    and the
+                                                                    Two
+                                                                    Strings</a></h2>
                                                             <div><span class="duration"><i class="fa fa-clock-o"></i>02
-                                                                    hours 00 minutes</span></div>
+                                                                    hours 00
+                                                                    minutes</span></div>
                                                             <div class="genre"><span><a
                                                                         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
                                                                     <a
@@ -997,15 +1097,17 @@
                                                         <div class="clearfix"></div>
                                                     </div>
                                                     <div class="entry-item">
-                                                        <div class="entry-thumb"><img class=""
+                                                        <div class="entry-thumb"><img class
                                                                 src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_19-118x159_c.jpg"
                                                                 alt="The Hurricane Heist" /></div>
                                                         <div class="entry-content">
                                                             <h2 class="entry-title"><a
                                                                     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">The
-                                                                    Hurricane Heist</a></h2>
+                                                                    Hurricane
+                                                                    Heist</a></h2>
                                                             <div><span class="duration"><i class="fa fa-clock-o"></i>01
-                                                                    hours 30 minutes</span></div>
+                                                                    hours 30
+                                                                    minutes</span></div>
                                                             <div class="genre"><span><a
                                                                         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a>,
                                                                     <a
@@ -1015,15 +1117,18 @@
                                                         <div class="clearfix"></div>
                                                     </div>
                                                     <div class="entry-item">
-                                                        <div class="entry-thumb"><img class=""
+                                                        <div class="entry-thumb"><img class
                                                                 src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_17-118x159_c.jpg"
                                                                 alt="Jumanji: Welcome to the Jungle" /></div>
                                                         <div class="entry-content">
                                                             <h2 class="entry-title"><a
                                                                     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">Jumanji:
-                                                                    Welcome to the Jungle</a></h2>
+                                                                    Welcome
+                                                                    to the
+                                                                    Jungle</a></h2>
                                                             <div><span class="duration"><i class="fa fa-clock-o"></i>02
-                                                                    hours 30 minutes</span></div>
+                                                                    hours 30
+                                                                    minutes</span></div>
                                                             <div class="genre"><span><a
                                                                         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
                                                                     <a
@@ -1033,7 +1138,7 @@
                                                         <div class="clearfix"></div>
                                                     </div>
                                                     <div class="entry-item">
-                                                        <div class="entry-thumb"><img class=""
+                                                        <div class="entry-thumb"><img class
                                                                 src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_18-118x159_c.jpg"
                                                                 alt="Death Wish" /></div>
                                                         <div class="entry-content">
@@ -1041,7 +1146,8 @@
                                                                     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/death-wish/">Death
                                                                     Wish</a></h2>
                                                             <div><span class="duration"><i class="fa fa-clock-o"></i>01
-                                                                    hours 00 minutes</span></div>
+                                                                    hours 00
+                                                                    minutes</span></div>
                                                             <div class="genre"><span><a
                                                                         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
                                                                     <a
@@ -1055,7 +1161,8 @@
                                             </div>
                                             <div class="amy-widget amy-widget-list">
                                                 <div class="amy-widget amy-widget-list list-post ">
-                                                    <h4 class="amy-title amy-widget-title">Recent Posts</h4>
+                                                    <h4 class="amy-title amy-widget-title">Recent
+                                                        Posts</h4>
                                                     <div class="entry-item">
                                                         <div class="entry-thumb"><img
                                                                 src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59-115x85_c.jpg" />
@@ -1063,11 +1170,19 @@
                                                         <div class="entry-content">
                                                             <h2 class="entry-title"><a
                                                                     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/2022/04/28/six-book-to-film-adaptations-to-get-excited-about-this-autumn/">Six
-                                                                    book-to-film adaptations to get excited about this
+                                                                    book-to-film
+                                                                    adaptations
+                                                                    to get
+                                                                    excited
+                                                                    about
+                                                                    this
                                                                     autumn</a></h2>
-                                                            <div class="entry-meta"><span class="entry-date">April 28,
-                                                                    2022</span><span> / </span><span
-                                                                    class="entry-comment">0 Comments</span></div>
+                                                            <div class="entry-meta"><span class="entry-date">April
+                                                                    28,
+                                                                    2022</span><span>
+                                                                    /
+                                                                </span><span class="entry-comment">0
+                                                                    Comments</span></div>
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     </div>
@@ -1078,10 +1193,18 @@
                                                         <div class="entry-content">
                                                             <h2 class="entry-title"><a
                                                                     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/2022/04/28/the-beatles-eight-days-a-week-the-touring/">The
-                                                                    Beatles: Eight Days a Week – The Touring</a></h2>
-                                                            <div class="entry-meta"><span class="entry-date">April 28,
-                                                                    2022</span><span> / </span><span
-                                                                    class="entry-comment">0 Comments</span></div>
+                                                                    Beatles:
+                                                                    Eight
+                                                                    Days a
+                                                                    Week –
+                                                                    The
+                                                                    Touring</a></h2>
+                                                            <div class="entry-meta"><span class="entry-date">April
+                                                                    28,
+                                                                    2022</span><span>
+                                                                    /
+                                                                </span><span class="entry-comment">0
+                                                                    Comments</span></div>
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     </div>
@@ -1092,7 +1215,7 @@
                                                 <figure class="wp-block-image size-full"><img loading="lazy"
                                                         width="350" height="290"
                                                         src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63.png"
-                                                        alt="" class="wp-image-255"
+                                                        alt class="wp-image-255"
                                                         srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63.png 350w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63-300x249.png 300w"
                                                         sizes="(max-width: 350px) 100vw, 350px" /></figure>
                                                 <div class="clear"></div>
@@ -1104,8 +1227,6 @@
                         </div>
                     </section>
 
-
                 </div>
             </div>
-
         @endsection
