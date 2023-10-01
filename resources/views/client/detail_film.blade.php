@@ -740,7 +740,7 @@
                                                                         <button type="button"
                                                                             class="btn btn-secondary amy-buy-ticket"
                                                                             data-bs-dismiss="modal">Close</button>
-                                                                        <a href="/chair-food" class="amy-buy-ticket">Next</a>
+                                                                        <a href="/choose-room" class="amy-buy-ticket">Next</a>
                                                                     </div>
                                                                 </div>
                                                             </div>

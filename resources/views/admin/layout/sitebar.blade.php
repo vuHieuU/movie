@@ -64,11 +64,10 @@
                 </li>
             {{-- Role --}}
           {{-- @can('show-role') --}}
-<<<<<<< HEAD
           <li class="">
-=======
+
         <li class="">
->>>>>>> 96095d84ade1e64c0bae2f88a612468ce4844b55
+
             <a href="#role" class="collapsed" data-toggle="collapse" aria-expanded="false">
                 <i class="fa-brands fa-linux"></i>
                 <span class="ml-4">Roles</span>
@@ -113,10 +112,10 @@
                 </li>
             </ul>
         </li>
-<<<<<<< HEAD
+
           {{-- @endcan --}}
 
-=======
+
         {{-- Cinemas --}}
         <li class="">
             <a href="#cinemas" class="collapse" data-toggle="collapse" aria-expanded="false">
@@ -207,7 +206,7 @@
             </ul>
         </li>
           {{-- @endcan --}}
->>>>>>> 96095d84ade1e64c0bae2f88a612468ce4844b55
+
             </ul>
         </nav>
         
@@ -453,7 +452,7 @@
                                                 class="rounded profile-img img-fluid avatar-70">
                                         </div>
                                         <div class="p-3">
-                                            <h5 class="mb-1">JoanDuo@property.com</h5>
+                                            <h5 class="mb-1">{{Auth::User()->name}}</h5>
                                             <p class="mb-0">Since 10 march, 2020</p>
                                             <div class="d-flex align-items-center justify-content-center mt-3">
                                                 <a href="../app/user-profile.html" class="btn border mr-2">Profile</a>

@@ -522,8 +522,7 @@
 
 
 
-                                                                                <h3 class="col-12 text-center">2. Chọn vị
-                                                                                    trí ghế và đồ ăn</h3>
+                                                                                <h3 class="col-12 text-center">3. Choose chair and food </h3>
                                                                                 <hr>
                                                                                 <div class="row text-center" style="margin-top: 30px">
                                                                                     <div class="col-md-2 col-sm-4">
@@ -620,7 +619,7 @@
                                                                                     @endfor
                                                                                 </div>
                                                                                 <script>
-                                                                                    const maxSeats = 5; // Số lượng ghế tối đa được chọn
+                                                                                    const maxSeats = 8; // Số lượng ghế tối đa được chọn
                                                                                     const selectedSeats = []; // Mảng lưu các ghế đã chọn
 
                                                                                     function toggleSeat(seat) {
@@ -901,7 +900,7 @@
                                                                                 <div
                                                                                     class="d-flex align-items-center gap-2">
                                                                                     <i class="fa-solid fa-tag"></i>
-                                                                                    <span>Thể Loại</span>
+                                                                                    <span>Thể Loại (Category)</span>
                                                                                 </div>
 
                                                                                 <p class="m-0 p-0 fw-bold">Kinh dị</p>
@@ -915,7 +914,7 @@
                                                                                         <i
                                                                                             class="fa-solid fa-building-columns">
                                                                                         </i>
-                                                                                        <span>Rạp</span>
+                                                                                        <span>Rạp (Cinemas)</span>
                                                                                     </div>
 
                                                                                     <p class="m-0 p-0 fw-bold">Rạp Hà Nội
@@ -926,7 +925,7 @@
                                                                                 <div
                                                                                     class="d-flex align-items-center gap-2">
                                                                                     <i class="fa-solid fa-house-user"></i>
-                                                                                    <span>Phòng</span>
+                                                                                    <span>Phòng (Room)</span>
                                                                                 </div>
 
                                                                                 <p class="m-0 p-0 fw-bold">2
@@ -938,7 +937,7 @@
                                                                                         class="d-flex align-items-center gap-2">
                                                                                         <i
                                                                                             class="fa-regular fa-calendar-days"></i>
-                                                                                        <span>Ngày Chiếu</span>
+                                                                                        <span>Ngày Chiếu (Day)</span>
                                                                                     </div>
 
                                                                                     <p class="m-0 p-0 fw-bold">11/10/2003
@@ -950,7 +949,7 @@
                                                                                     <div
                                                                                         class="d-flex align-items-center gap-2">
                                                                                         <i class="fa-regular fa-clock"></i>
-                                                                                        <span>Giờ Chiếu</span>
+                                                                                        <span>Giờ Chiếu (Time)</span>
                                                                                     </div>
 
                                                                                     <p class="m-0 p-0 fw-bold">20:00</p>
@@ -962,7 +961,7 @@
                                                                                         class="d-flex align-items-center gap-2">
                                                                                         <i
                                                                                             class="fa-regular fa-calendar-days"></i>
-                                                                                        <span>Ghế</span>
+                                                                                        <span>Ghế (Chair)</span>
                                                                                     </div>
 
                                                                                     <p class="w-50 m-0 p-0 fw-bold"
@@ -1018,10 +1017,13 @@
 
 
                                                                                 <hr class="border-2 border-black py-4">
+                                                                                <div class="">
                                                                                 <a
-                                                                                    href="/pay"class="btn btn-primary btn-lg fs-4 px-4">Tiếp
+                                                                                    href="/choose_room"class="btn btn-primary btn-lg fs-4 px-4">Quay lại</a>
+                                                                                    <a
+                                                                                    href="/pay"class=" mx-5 btn btn-primary btn-lg fs-4 px-4">Tiếp
                                                                                     Theo</a>
-
+</div>
 
                                                                             </div>
                                                                         </div>

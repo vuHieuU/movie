@@ -548,6 +548,28 @@
                                                 
                                             </tbody>
                                         </table>
+                                        <div class="container mt-5">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-11 mx-0 px-0 ">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <h5 class="card-title">Nhập mã voucher</h5>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <!-- Form nhập voucher -->
+                                                            <form>
+                                                                <div class="form-group">
+                                                                    <label for="voucherCode">Mã voucher:</label>
+                                                                    <input type="text" class="form-control" id="voucherCode" placeholder="Nhập mã voucher">
+                                                                </div>
+                                                                <button type="submit" class="btn btn-primary mt-5">Áp dụng</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
                                     </div>
 
                                     
@@ -555,8 +577,9 @@
                               
                                    <h5 class="display-6 display-md-3 display-lg-2 fw-bold mb-5 mt-5">Phương thức thanh toán :</h5>
 
-                                  
+                                  <label for="momo">
                                    <div class="row d-flex align-items-center mb-3">
+                                
                                     <div class="col-md-1">
                                         <img class="w-100" src="images/MoMo_logo-1.png" alt="MoMo Logo">
                                     </div>
@@ -567,16 +590,17 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label class="form-check-label">
-                                            <input type="radio" name="paymentMethod" value="momo" class="form-check-input">
+                                            <input type="radio" name="paymentMethod" id="momo" value="momo" class="form-check-input">
                                            
                                         </label>
                                     </div>
                                 </div>
+                            </label>
 
-                                
+                                <label for="vnpay">
                                 <div class="row d-flex align-items-center mb-3">
-                                    <div class="col-md-1">
-                                        <img class="w-100" src="images/vnpay-logo-inkythuatso-01-13-16-26-42.jpg" alt="MoMo Logo">
+                                    <div class="col-md-2">
+                                        <img class="w-50" src="images/vnpay-logo-inkythuatso-01-13-16-26-42.jpg" alt="MoMo Logo">
                                     </div>
                                     <div class="col-md-4">
                                         <div class=" text-center  rounded-3" style="background-color: #a3a0a0 ; padding: 1px 0">
@@ -585,11 +609,16 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label class="form-check-label">
-                                            <input type="radio" name="paymentMethod" value="momo" class="form-check-input">
+                                            <input type="radio" id="vnpay" name="paymentMethod" value="momo" class="form-check-input">
                                            
                                         </label>
                                     </div>
                                 </div>
+</label>
+
+
+
+<label for="internet_banking">
                                 <div class="row d-flex align-items-center mb-3">
                                     <div class="col-md-1">
                                         <img class="w-100" src="images/ebnkg2-1024x1024.png" alt="MoMo Logo">
@@ -601,12 +630,12 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label class="form-check-label">
-                                            <input type="radio" name="paymentMethod" value="momo" class="form-check-input">
+                                            <input type="radio" name="paymentMethod" id="internet_banking" value="momo" class="form-check-input">
                                            
                                         </label>
                                     </div>
                                 </div>
-                                     
+                            </label>  
                                 
                                 </div>
 

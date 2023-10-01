@@ -9,7 +9,7 @@
 <body>
     <div class="container mt-5">
         <div class="alert alert-success text-center">
-            <h1 class="display-4">Đặt Vé Thành Công</h1>
+            <h1 class="display-6 ">Đặt Vé Thành Công</h1>
             <p>Cảm ơn bạn đã đặt vé thành công. Dưới đây là thông tin chi tiết về vé và phim:</p>
         </div>
         
@@ -35,7 +35,8 @@
                         <h2>Thông Tin Vé</h2>
                     </div>
                     <div class="card-body">
-                        <p><strong>Mã đơn:</strong> #45678</p>
+                        <p><strong>Mã đơn:</strong><img class="w-25" src="images/MoMo_logo-1.png" alt=""></p>
+                        <p><strong>Phòng:</strong> A1</p>
                         <p><strong>Vị trí ghế:</strong> A1, A2, A3, A4, A5, A6, A7, A8</p>
                         <p><strong>Tổng Vé:</strong> Nợ</p>
                     </div>

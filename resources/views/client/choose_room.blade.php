@@ -473,22 +473,6 @@
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
     </style>
-
-
-
-{{-- csss login --}}
-
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/plugincss.css?1681350496696" rel="stylesheet"
-type="text/css" media="all" />
-
-
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/main.scss.css?1681350496696" rel="stylesheet"
-type="text/css" media="all" />
-
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/account_oder_style.scss.css?1681350496696"
-rel="stylesheet" type="text/css" media="all" />
-{{-- csss login --}}
-
 </head>
 
 <body
@@ -499,123 +483,61 @@ rel="stylesheet" type="text/css" media="all" />
         @section('contact')
 
 
- <div class="main-index">
 
-
-        <div class="page-content-account mt-5">
-            <div class="container">
-                <div class="row">
-                    
-
-                              <div class="page-content-account">
-                                  <div class="container">
-                                      <div class="row">
-                                          <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-                                              <div class="d-group">
-                                                  <div class="left-col">
-                                                      <div class="group-login group-log">
-                                                          <h1>
-                                                              Đăng nhập tài khoản
-                                                          </h1>
-                                                          <form method="post" action="/account/login" id="customer_login"
-                                                              accept-charset="UTF-8"><input name="FormType" type="hidden"
-                                                                  value="customer_login" /><input name="utf8" type="hidden"
-                                                                  value="true" />
-                                                              <p class="error">
-                      
-                                                              </p>
-                                                              <fieldset class="form-group">
-                                                                  <label>Email <span class="required">*</span></label>
-                                                                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
-                                                                      class="form-control form-control-lg" value="" name="email"
-                                                                      id="customer_email" placeholder="Email" Required>
-                                                              </fieldset>
-                                                              <fieldset class="form-group">
-                                                                  <label>Mật khẩu <span class="required">*</span> </label>
-                                                                  <input type="password" class="form-control form-control-lg"
-                                                                      value="" name="password" id="customer_password"
-                                                                      placeholder="Mật khẩu" Required>
-                                                              </fieldset>
-                                                              <button class="btn-login" type="submit" value="Đăng nhập">Đăng nhập</button>
-                                                          </form>
-                                                          <div class="block social-login--facebooks">
-                                                              <p class="a-center">
-                                                                  <span>Hoặc đăng nhập bằng</span>
-                                                              </p>
-                                                              
-                                                              <a href="javascript:void(0)" class="social-login--facebook"
-                                                                  onclick="loginFacebook()"><img width="129px" height="37px"
-                                                                      alt="facebook-login-button"
-                                                                      src="//bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"></a>
-                                                              <a href="javascript:void(0)" class="social-login--google"
-                                                                  onclick="loginGoogle()"><img width="129px" height="37px"
-                                                                      alt="google-login-button"
-                                                                      src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"></a>
-                                                          </div>
-                                                          <p>
-                                                              Bạn quên mật khẩu bấm <a href="#"
-                                                                  onclick="showRecoverPasswordForm();return false;">vào đây</a>
-                                                          </p>
-                                                      </div>
-                                                      <div class="group-login group-recover d-none">
-                                                          <h2>
-                                                              Quên mật khẩu
-                                                          </h2>
-                                                          <p class="description">
-                                                              Chúng tôi sẽ gửi cho bạn một email để kích hoạt việc đặt lại mật khẩu.
-                                                          </p>
-                                                          <form method="post" action="/account/recover" id="recover_customer_password"
-                                                              accept-charset="UTF-8"><input name="FormType" type="hidden"
-                                                                  value="recover_customer_password" /><input name="utf8" type="hidden"
-                                                                  value="true" />
-                                                              <p class="error">
-                      
-                                                              </p>
-                      
-                                                              <fieldset class="form-group">
-                                                                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
-                                                                      class="form-control form-control-lg" value="" name="Email"
-                                                                      id="recover-email" placeholder="Email" Required>
-                                                              </fieldset>
-                                                              <input class="btn-login" type="submit" value="Gửi yêu cầu" />
-                                                              <a href="#" class="btn-ref"
-                                                                >Hủy</a>
-                                                          </form>
-                                                      </div>
-                                                  </div>
-                                                  <div class="right-col">
-                                                      <h4>
-                                                          Quyền lợi với thành viên
-                                                      </h4>
-                                                      <div>
-                                                          <p>Vận chuyển siêu tốc</p>
-                                                          <p>Sản phẩm đa dạng </p>
-                                                          <p>Đổi trả dễ dàng</p>
-
-                                                          <p>Được giảm giá cho lần đặt vé tiếp theo lên đến 10% </p>
-                      
-                                                      </div>
-                                                      <a href="" class="btn-register-default">Đăng ký</a>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                      
-                      
+        <div class="container my-5">
+            <h2 class="mb-5">2. Phòng chiếu</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <a href="/chair-food">
+                            <div class="card-header">
+                                <h4>Phòng 1</h4>
+                            </div>
+                            <div class="card-body">
+                                <span class="card-title">Phòng chiếu đang còn <strong>50 ghế trống</strong></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <a href="/chair-food">
+                            <div class="card-header">
+                                <h4>Phòng 2</h4>
+                            </div>
+                            <div class="card-body">
+                                <span class="card-title">Phòng chiếu đang còn <strong>30 ghế trống</strong></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <a href="/chair-food">
+                            <div class="card-header">
+                                <h4>Phòng 3</h4>
+                            </div>
+                            <div class="card-body">
+                                <span class="card-title">Phòng chiếu đang còn <strong>40 ghế trống</strong></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <a href="/chair-food">
+                            <div class="card-header">
+                                <h4>Phòng 3</h4>
+                            </div>
+                            <div class="card-body">
+                                <span class="card-title">Phòng chiếu đang còn <strong>40 ghế trống</strong></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-       
-    </div>
-
-    </div>
-           
-          
-
-
+        
 
 
 

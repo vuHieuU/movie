@@ -10,7 +10,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="profile" href="https://gmpg.org/xfn/11" />
-    {{-- <title>{{$taitel}}</title> --}}
+    <title>{{$taitel}}</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -390,6 +390,10 @@
             top: 70%;
         }
     </style>
+
+
+{{-- <link rel="stylesheet" href="/template/assets/css/backend.css?v=1.0.0"> --}}
+
     <link rel='stylesheet' id='csf-google-web-fonts-css'
         href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css'
         media='all' />
@@ -473,22 +477,6 @@
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
     </style>
-
-
-
-{{-- csss login --}}
-
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/plugincss.css?1681350496696" rel="stylesheet"
-type="text/css" media="all" />
-
-
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/main.scss.css?1681350496696" rel="stylesheet"
-type="text/css" media="all" />
-
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/account_oder_style.scss.css?1681350496696"
-rel="stylesheet" type="text/css" media="all" />
-{{-- csss login --}}
-
 </head>
 
 <body
@@ -499,77 +487,119 @@ rel="stylesheet" type="text/css" media="all" />
         @section('contact')
 
 
- 
-        <div class="main-index mt-5">
-			
-          <div class="page-content-account">
-               <div class="container">
-                    <div class="row">
-                         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-                              <div class="d-group">
-                                   <div class="left-col">
-                                        <div class="group-login group-log">
-                                             <h1>
-                                                  Đăng ký tài khoản
-                                             </h1>
-                                             <form method="post" action="/account/register" id="customer_register" accept-charset="UTF-8"><input name="FormType" type="hidden" value="customer_register"/><input name="utf8" type="hidden" value="true"/><input type="hidden" id="Token-44a10eed35c1439c8d3f51fdfbaf03e4" name="Token" /><script src="https://www.google.com/recaptcha/api.js?render=6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK"></script><script>grecaptcha.ready(function() {grecaptcha.execute("6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK", {action: "customer_register"}).then(function(token) {document.getElementById("Token-44a10eed35c1439c8d3f51fdfbaf03e4").value = token});});</script>
-                                             <p class="error">
-                                                  
-                                             </p>
-                                             <fieldset class="form-group">
-                                                  <label>Họ <span class="required">*</span></label>
-                                                  <input type="text" class="form-control form-control-lg" value="" name="lastName" id="lastName"  placeholder="Họ" required >
-                                             </fieldset>
-                                             <fieldset class="form-group">
-                                                  <label>Tên <span class="required">*</span></label>
-                                                  <input type="text" class="form-control form-control-lg" value="" name="firstName" id="firstName"  placeholder="Tên" required >
-                                             </fieldset>
-                                             <fieldset class="form-group">	
-                                                  <label>Số điện thoại <span class="required">*</span></label>
-                                                  <input placeholder="Số điện thoại" type="text" pattern="\d+" id="Phone" class="form-control form-control-comment form-control-lg" name="Phone" Required>
-                                             </fieldset>
-                                             <fieldset class="form-group">
-                                                  <label>Email <span class="required">*</span></label>
-                                                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" class="form-control form-control-lg" value="" name="email" id="email"  placeholder="Email" required="">
-                                             </fieldset>
-                                             <fieldset class="form-group">
-                                                  <label>Mật khẩu <span class="required">*</span> </label>
-                                                  <input type="password" class="form-control form-control-lg" value="" name="password" id="password" placeholder="Mật khẩu" required >
-                                             </fieldset>
-                                             <button class="btn-login"  type="submit" value="Đăng ký">Đăng ký</button>
-                                             </form>
-                                             <div class="block social-login--facebooks">
-                                                  <p class="a-center">
-                                                       <span>Hoặc đăng nhập bằng</span>
-                                                  </p>
-                                                  <script>function loginFacebook(){var a={client_id:"947410958642584",redirect_uri:"https://store.mysapo.net/account/facebook_account_callback",state:JSON.stringify({redirect_url:window.location.href}),scope:"email",response_type:"code"},b="https://www.facebook.com/v3.2/dialog/oauth"+encodeURIParams(a,!0);window.location.href=b}function loginGoogle(){var a={client_id:"997675985899-pu3vhvc2rngfcuqgh5ddgt7mpibgrasr.apps.googleusercontent.com",redirect_uri:"https://store.mysapo.net/account/google_account_callback",scope:"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile",access_type:"online",state:JSON.stringify({redirect_url:window.location.href}),response_type:"code"},b="https://accounts.google.com/o/oauth2/v2/auth"+encodeURIParams(a,!0);window.location.href=b}function encodeURIParams(a,b){var c=[];for(var d in a)if(a.hasOwnProperty(d)){var e=a[d];null!=e&&c.push(encodeURIComponent(d)+"="+encodeURIComponent(e))}return 0==c.length?"":(b?"?":"")+c.join("&")}</script>
-                                                  <a href="javascript:void(0)" class="social-login--facebook" onclick="loginFacebook()"><img width="129px" height="37px" alt="facebook-login-button" src="//bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"></a>
-                                                  <a href="javascript:void(0)" class="social-login--google" onclick="loginGoogle()"><img width="129px" height="37px" alt="google-login-button" src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"></a>
-                                             </div>
+        <form  method="POST" data-toggle="validator" enctype="multipart/form-data">
+            @csrf
           
+                    <div class="container my-5 ">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                   <h2 class="p-4">Cập nhật tài khoản cá nhân</h2>
+                                    <div class="card-body p-5">
+                                        <div class="row mt-4">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Tên người dùng *</label>
+                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
+                                                        data-errors="Please Enter Name." name="name">
+                                                    <div class="help-block with-errors"></div>
+                                                   
+                                                </div>
+                                            </div>
                                         </div>
-          
-                                   </div>
-                                   <div class="right-col">
-                                        <h4>
-                                             Quyền lợi với thành viên
-                                        </h4>
-                                        <div>
-                                             <p>Vận chuyển siêu tốc</p>							<p>Sản phẩm đa dạng				</p>							<p>Đổi trả dễ dàng</p>
-          <p>Tích điểm đổi quà</p>						<p>Được giảm giá cho lần mua tiếp theo lên đến 10%						</p>
+    
+                                        <div class="row mt-4">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>User Name *</label>
+                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Duration"
+                                                        data-errors="Please Enter Name." name="duration">
+                                                    <div class="help-block with-errors"></div>
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Số điện thoại *</label>
+                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Duration"
+                                                        data-errors="Please Enter Name." name="duration">
+                                                    <div class="help-block with-errors"></div>
+                                                   
+                                                </div>
+                                            </div>
+                                           
                                         </div>
-                                        <a href="/account/login" class="btn-register-default">Đăng nhập</a>
-                                   </div>
-                              </div>
-                         </div>
+                                     
+    
+                                        <div class="row mt-4">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Email *</label>
+                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
+                                                        data-errors="Please Enter Name." name="director">
+                                                    <div class="help-block with-errors"></div>
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Hình ảnh *</label>
+                                                    <input type="file" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
+                                                        data-errors="Please Enter Name." name="actor">
+                                                    <div class="help-block with-errors"></div>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="row mt-4">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Address *</label>
+                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
+                                                        data-errors="Please Enter Name." name="language">
+                                                    <div class="help-block with-errors"></div>
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Giới tính *</label>
+                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
+                                                        data-errors="Please Enter Name." name="country">
+                                                    <div class="help-block with-errors"></div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="row mt-4">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Password *</label>
+                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
+                                                        data-errors="Please Enter Name." name="trailer">
+                                                    <div class="help-block with-errors"></div>
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                       <div class="mt-5">
+                                          <button type="submit" class="btn btn-primary mr-2 fs-3 rounded-4">Cập Nhật</button>
+                                        <button type="reset" class="btn btn-danger mr-2 fs-3 rounded-4">Reset</button>
+                                       </div>
+                                        
+                                      
+                                        {{-- <a href="/role/index"><button type="submit" class="btn btn-danger">Back</button></a> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Page end  -->
                     </div>
-               </div>	
-          </div>
-                    </div>
-
-
-
-
-
+                
+        </form>
 
         @endsection

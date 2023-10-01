@@ -71,7 +71,7 @@
                                   </div>
                               </td>
                               <th>{{$item->id}}</th>
-                              <td><img src="{{ asset('storage/images/'.$item->thumb)}}" style="width: 50px" /></td>
+                              <td><img src="{{asset('storage/images/'.$item->thumb)}}" style="width: 50px" /></td>
                               <td>{{ $item->name }}</td>
                               <td>{{ $item->price }}</td>
                               <td>{{ $item->status }}</td>

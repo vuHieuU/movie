@@ -15,7 +15,7 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
-                                    <h4 class="card-title">Add Food</h4>
+                                    <h4 class="card-title">Add ComBo</h4>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -65,6 +65,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <button type="submit" class="btn btn-primary mr-2">Add Size</button>
                                 <button type="reset" class="btn btn-danger mr-2">Reset</button>
                             </div>

@@ -10,7 +10,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="profile" href="https://gmpg.org/xfn/11" />
-    {{-- <title>{{$taitel}}</title> --}}
+    <title>{{$taitel}}</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -473,22 +473,6 @@
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
     </style>
-
-
-
-{{-- csss login --}}
-
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/plugincss.css?1681350496696" rel="stylesheet"
-type="text/css" media="all" />
-
-
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/main.scss.css?1681350496696" rel="stylesheet"
-type="text/css" media="all" />
-
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/account_oder_style.scss.css?1681350496696"
-rel="stylesheet" type="text/css" media="all" />
-{{-- csss login --}}
-
 </head>
 
 <body
@@ -499,93 +483,100 @@ rel="stylesheet" type="text/css" media="all" />
         @section('contact')
 
 
- 
-        <div class="main-index mt-5">
-			
-          <div class="page-content-account">
-               <div class="container">
-                    <div class="row">
-                         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-                              <div class="d-group">
-                                   <div class="left-col">
-                                        <div class="group-login group-log">
-                                             <h1>
-                                                  Đăng ký tài khoản
-                                             </h1>
-                                             <form method="post" action="{{ route('register') }}" id="customer_register" accept-charset="UTF-8"><input name="FormType" type="hidden" value="customer_register"/><input name="utf8" type="hidden" value="true"/><input type="hidden" id="Token-44a10eed35c1439c8d3f51fdfbaf03e4" name="Token" /><script src="https://www.google.com/recaptcha/api.js?render=6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK"></script><script>grecaptcha.ready(function() {grecaptcha.execute("6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK", {action: "customer_register"}).then(function(token) {document.getElementById("Token-44a10eed35c1439c8d3f51fdfbaf03e4").value = token});});</script>
-                                             @csrf
-                                                <p class="error">
-                                                  
-                                             </p>
-                                             <fieldset class="form-group">
-                                                  <label>Name <span class="required">*</span></label>
-                                                  <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                             </fieldset>
-                                            
-                                             <fieldset class="form-group">	
-                                                  <label>Email <span class="required">*</span></label>
-                                                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                                  @error('email')
-                                                      <span class="invalid-feedback" role="alert">
-                                                          <strong>{{ $message }}</strong>
-                                                      </span>
-                                                  @enderror
-                                             </fieldset>
-                                             <fieldset class="form-group">
-                                                  <label>Password <span class="required">*</span></label>
-                                                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                                  @error('password')
-                                                      <span class="invalid-feedback" role="alert">
-                                                          <strong>{{ $message }}</strong>
-                                                      </span>
-                                                  @enderror
-                                             </fieldset>
-                                             <fieldset class="form-group">
-                                                  <label>Confirm Password <span class="required">*</span> </label>
-                                                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                                             </fieldset>
-                                             <button class="btn-login"  type="submit" value="Đăng ký">Đăng ký</button>
-                                             </form>
-                                             <div class="block social-login--facebooks">
-                                                  <p class="a-center">
-                                                       <span>Hoặc đăng nhập bằng</span>
-                                                  </p>
-                                                  <script>function loginFacebook(){var a={client_id:"947410958642584",redirect_uri:"https://store.mysapo.net/account/facebook_account_callback",state:JSON.stringify({redirect_url:window.location.href}),scope:"email",response_type:"code"},b="https://www.facebook.com/v3.2/dialog/oauth"+encodeURIParams(a,!0);window.location.href=b}function loginGoogle(){var a={client_id:"997675985899-pu3vhvc2rngfcuqgh5ddgt7mpibgrasr.apps.googleusercontent.com",redirect_uri:"https://store.mysapo.net/account/google_account_callback",scope:"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile",access_type:"online",state:JSON.stringify({redirect_url:window.location.href}),response_type:"code"},b="https://accounts.google.com/o/oauth2/v2/auth"+encodeURIParams(a,!0);window.location.href=b}function encodeURIParams(a,b){var c=[];for(var d in a)if(a.hasOwnProperty(d)){var e=a[d];null!=e&&c.push(encodeURIComponent(d)+"="+encodeURIComponent(e))}return 0==c.length?"":(b?"?":"")+c.join("&")}</script>
-                                                  <a href="javascript:void(0)" class="social-login--facebook" onclick="loginFacebook()"><img width="129px" height="37px" alt="facebook-login-button" src="//bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"></a>
-                                                  <a href="javascript:void(0)" class="social-login--google" onclick="loginGoogle()"><img width="129px" height="37px" alt="google-login-button" src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"></a>
-                                             </div>
-          
-                                        </div>
-          
-                                   </div>
-                                   <div class="right-col">
-                                        <h4>
-                                             Quyền lợi với thành viên
-                                        </h4>
-                                        <div>
-                                             <p>Vận chuyển siêu tốc</p>							<p>Sản phẩm đa dạng				</p>							<p>Đổi trả dễ dàng</p>
-          <p>Tích điểm đổi quà</p>						<p>Được giảm giá cho lần mua tiếp theo lên đến 10%						</p>
-                                        </div>
-                                        <a href="/login" class="btn-register-default">Đăng nhập</a>
-                                   </div>
-                              </div>
-                         </div>
+        <div class="container my-5">
+            <div class=" text-center">
+               
+    
+                <span class="fs-1 fw-bold">Thông tin cá nhân</span>
+                <p>Quản lý thông tin, quyền riêng tư để  hoạt động hiệu quả cho bạn. <a href="/editaccount" class="fs-4 text-danger text-decoration-underline">Cập nhật tài khoản</a></p>
+            </div>
+            <div class="container mt-5">
+                <div class="border border-1 border-gray p-3 rounded">
+                    <h2 class="fs-2">Thông tin cơ bản</h2>
+                    <p>Một số thông tin có thể hiển thị cho những người khác đang sử dụng dịch vụ của Website</p>
+    
+                    <div class="row  border-1 border-bottom align-items-center mx-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Ảnh cá nhân</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-4">Ảnh hồ sơ của bạn</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img class="w-25" src="images/MoMo_logo-1.png" alt="Avatar">
+                        </div>
                     </div>
-               </div>	
-          </div>
+    
+                    <div class="row py-3  border-1 border-bottom align-items-center mx-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Tên</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-3">Nguyễn Văn Minh</p>
+                        </div>
+                        <div class="col-md-4  text-center">
+                            <i class="fas fa-terminal mx-5"></i>
+                        </div>
                     </div>
+    
+                    <div class="row mt-3 py-3 align-items-center mx-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Giới tính</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-3">Không muốn tiết lộ</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <i class="fas fa-terminal mx-5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-
-
-
+            <div class="container mt-5">
+                <div class="border  border-1 border-gray p-3 rounded">
+                    <h2 class="fs-2">Thông tin liên hệ</h2>
+                   
+        
+                    <div class="row py-2 border-1 border-bottom align-items-center  m-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Email</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-3">minh123456789</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fa-solid fa-terminal mx-5"></i>
+                        </div>
+                    </div>
+        
+                    <div class="row  align-items-center border-1 border-bottom mx-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Số điện thoại</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-3">3456789987865</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fa-solid fa-terminal mx-5"></i>
+                        </div>
+                    </div>
+                    <div class="row mt-4 align-items-center mx-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Địa chỉ</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-3">8786534567899878653456789987865</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fa-solid fa-terminal mx-5"></i>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
 
         @endsection
