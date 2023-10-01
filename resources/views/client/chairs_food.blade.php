@@ -1,11 +1,5 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en-US">
-<!--[if IE]><![endif]-->
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -472,16 +466,11 @@
         }
     </style>
 </head>
-
 <body
     class="page-template-default page page-id-142 amy-header-default  single-author elementor-default elementor-kit-5 elementor-page elementor-page-142">
     <div id="page" class="hfeed site">
-
         @extends('client.layout.main.main')
         @section('contact')
-
-
-
             <div id="main">
                 <div id="content" class="site-content">
 
@@ -1177,35 +1166,35 @@
 
 
  <script>
-                                                                                        // Lấy tất cả các card sản phẩm
-                                                                                        const productCards = document.querySelectorAll('.product-card');
+                        // Lấy tất cả các card sản phẩm
+                        const productCards = document.querySelectorAll('.product-card');
 
-                                                                                        // Lặp qua từng card và gắn sự kiện cho từng cái riêng biệt
-                                                                                        productCards.forEach(card => {
-                                                                                            const decreaseBtn = card.querySelector('.decrease-btn');
-                                                                                            const increaseBtn = card.querySelector('.increase-btn');
-                                                                                            const quantityInput = card.querySelector('.product-quantity');
+                        // Lặp qua từng card và gắn sự kiện cho từng cái riêng biệt
+                        productCards.forEach(card => {
+                            const decreaseBtn = card.querySelector('.decrease-btn');
+                            const increaseBtn = card.querySelector('.increase-btn');
+                            const quantityInput = card.querySelector('.product-quantity');
 
-                                                                                            decreaseBtn.addEventListener('click', () => {
-                                                                                                changeQuantity(quantityInput, -1);
-                                                                                            });
+                            decreaseBtn.addEventListener('click', () => {
+                                changeQuantity(quantityInput, -1);
+                            });
 
-                                                                                            increaseBtn.addEventListener('click', () => {
-                                                                                                changeQuantity(quantityInput, 1);
-                                                                                            });
-                                                                                        });
+                            increaseBtn.addEventListener('click', () => {
+                                changeQuantity(quantityInput, 1);
+                            });
+                        });
 
-                                                                                        function changeQuantity(input, change) {
-                                                                                            let currentValue = parseInt(input.value);
-                                                                                            if (!isNaN(currentValue)) {
-                                                                                                let newValue = currentValue + change;
-                                                                                                if (newValue < 1) {
-                                                                                                    newValue = 1;
-                                                                                                }
-                                                                                                input.value = newValue;
-                                                                                            }
-                                                                                        }
-                                                                                    </script>
+                        function changeQuantity(input, change) {
+                            let currentValue = parseInt(input.value);
+                            if (!isNaN(currentValue)) {
+                                let newValue = currentValue + change;
+                                if (newValue < 1) {
+                                    newValue = 1;
+                                }
+                                input.value = newValue;
+                            }
+                        }
+                    </script>
 
 
 

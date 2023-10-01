@@ -202,6 +202,3 @@
  src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.5'
  id='elementor-frontend-js'></script>
 
-</body>
-
-</html>

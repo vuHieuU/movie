@@ -64,10 +64,14 @@
                 </li>
             {{-- Role --}}
           {{-- @can('show-role') --}}
+<<<<<<< HEAD
           <li class="">
 
         <li class="">
 
+=======
+        <li class="">
+>>>>>>> 31e06b68107530251fcf5e9c07fa1f7354357a6b
             <a href="#role" class="collapsed" data-toggle="collapse" aria-expanded="false">
                 <i class="fa-brands fa-linux"></i>
                 <span class="ml-4">Roles</span>
@@ -112,10 +116,14 @@
                 </li>
             </ul>
         </li>
+<<<<<<< HEAD
 
           {{-- @endcan --}}
 
 
+=======
+          {{-- @endcan --}}
+>>>>>>> 31e06b68107530251fcf5e9c07fa1f7354357a6b
         {{-- Cinemas --}}
         <li class="">
             <a href="#cinemas" class="collapse" data-toggle="collapse" aria-expanded="false">
@@ -177,36 +185,17 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="/food/create">
-                        <i class="las la-minus"></i><span>Add Food</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-          {{-- Combo --}}
-        <li class=" ">
-            <a href="#combo" class="collapsed" data-toggle="collapse" aria-expanded="false">
-            <i class="fa-solid fa-bowl-rice"></i>
-                <span class="ml-4">combo</span>
-                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                </svg>
-            </a>
-            <ul id="combo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                <li class="">
                     <a href="/combo/index">
                         <i class="las la-minus"></i><span>List combo</span>
-                    </a>
-                </li>
-                <li class="">
-                    <a href="/combo/create">
-                        <i class="las la-minus"></i><span>Add combo</span>
                     </a>
                 </li>
             </ul>
         </li>
           {{-- @endcan --}}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 31e06b68107530251fcf5e9c07fa1f7354357a6b
             </ul>
         </nav>
         
