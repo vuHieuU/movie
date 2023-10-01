@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\client;
+namespace App\Http\Controllers\client\cart;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class Chairs_FoodController extends Controller
+class Choose_RoomController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $taitel = "Chairs_Food";
-        return view('client.chairs_food',compact('taitel'));
+        $title = "Choose_Room";
+        return view('client.layout.cart.choose_room',compact("title"));
     }
 
     /**

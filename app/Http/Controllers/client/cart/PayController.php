@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\client;
+namespace App\Http\Controllers\client\cart;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,8 +12,8 @@ class PayController extends Controller
      */
     public function index()
     {
-        $taitel = "Pay";
-        return view('client.pay',compact("taitel"));
+        $title = "Pay";
+        return view('client.layout.cart.pay',compact("title"));
     }
 
     /**

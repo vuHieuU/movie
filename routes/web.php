@@ -24,10 +24,10 @@ Route::get('/detail_film', [App\Http\Controllers\client\Detail_filmController::c
 Route::get('/dang-phat', [App\Http\Controllers\client\DangphatController::class, 'index']);
 Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class, 'index']);
 Route::get('/film', [App\Http\Controllers\client\AllfilmController::class, 'index']);
-Route::get('/chair-food', [App\Http\Controllers\client\Chairs_FoodController::class, 'index']);
-Route::get('/pay', [App\Http\Controllers\client\PayController::class, 'index']);
-Route::get('/payment_success', [App\Http\Controllers\client\Payment_successController::class, 'index']);
-Route::get('/choose-room', [App\Http\Controllers\client\Choose_RoomController::class, 'index']);
+Route::get('/chair-food', [App\Http\Controllers\client\cart\Chairs_FoodController::class, 'index']);
+Route::get('/pay', [App\Http\Controllers\client\cart\PayController::class, 'index']);
+Route::get('/payment_success', [App\Http\Controllers\client\cart\Payment_successController::class, 'index']);
+Route::get('/choose-room', [App\Http\Controllers\client\cart\Choose_RoomController::class, 'index']);
 Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class, 'index']);
 Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index']);
 
@@ -40,7 +40,7 @@ Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::c
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Auth::routes();
 
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('admin');
+Route::get('/admin', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('admin');
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'index'])->name('index');
 
@@ -128,11 +128,3 @@ Route::middleware(['auth'])->group(function () {
 
     });
 });
-
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

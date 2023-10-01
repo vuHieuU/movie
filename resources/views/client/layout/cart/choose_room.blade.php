@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en-US">
 <!--[if IE]><![endif]-->
@@ -10,12 +6,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="profile" href="https://gmpg.org/xfn/11" />
-    <title>{{$taitel}}</title>
+    <title>{{$title}}</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
@@ -484,189 +479,60 @@
 
 
 
-            <div id="main">
-                <div id="content" class="site-content">
-
-
-                    <section id="amy-page-header" class="amy-page-header">
-                        <div class="amy-page-title amy-center">
-                            <div class="amy-inner container">
-                                <h1 class="page-title">
-                                   Pay </h1>
+        <div class="container my-5">
+            <h2 class="mb-5">2. Phòng chiếu</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <a href="/chair-food">
+                            <div class="card-header">
+                                <h4>Phòng 1</h4>
                             </div>
-                        </div>
-                        <span class="amy-section-overlay"></span>
-                    </section>
-                    <section class="main-content page-layout-">
-                        <div class="container">
-                            <div class="row">
-
-
-                                <div class="col-md-12">
-                                    {{-- <h3 class="text-center">3. Thanh Toán</h3> --}}
-                                    <h1>Tổng Bill</h1>
-                                    <hr class="border-1 border-black pt-4">
-                                    <div class="d-flex flex-wrap align-items-center gap-3">
-                                        <div class="col-md-4">
-                                            <p class="fs-4"><strong class="fs-2 "> Rạp:</strong> Beta Thái Nguyên</p>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <p class="fs-4"><strong class="fs-2 "> Phim:</strong> Quái Vật 2 đầu</p>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <p class="fs-4"> Thời gian chiếu: 200 tiếng</p>
-                                        </div>
-                                    </div>
-                                    
-                                    
-                                  
-                                    <div class="container ">
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Tên Hàng</th>
-                                                    <th scope="col">Đơn Giá</th>
-                                                    <th scope="col">Thành Tiền</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                
-                                                <tr>
-                                                    <td><span class="fs-3">Tên ghế:</span> <span class="mx-5">A1, A2 ,A1, A2 ,A1, A2 ,A1, A2</span></td>
-                                                    <td><strong >100 VNĐ</strong> x 2</td>
-                                                    <td class="fs-4">100.000.000 VNĐ</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="fs-3">Đồ ăn:</span> <span class="mx-5">Combo1</span></td>
-                                                    <td><span ><strong>100 VNĐ</strong> x 2</span> / <span><strong>100 VNĐ</strong> x 2</span></td>
-                                                    <td class="fs-4">400.000.000 VNĐ</td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="2" class="fs-3 fw-bold">Thành Tiền :</td>
-                                                    <td class="fs-2 fw-bold">100.000 VNĐ</td>
-                                                </tr>
-                                                
-                                            </tbody>
-                                        </table>
-                                        <div class="container mt-5">
-                                            <div class="row justify-content-center">
-                                                <div class="col-md-11 mx-0 px-0 ">
-                                                    <div class="card">
-                                                        <div class="card-header">
-                                                            <h5 class="card-title">Nhập mã voucher</h5>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <!-- Form nhập voucher -->
-                                                            <form>
-                                                                <div class="form-group">
-                                                                    <label for="voucherCode">Mã voucher:</label>
-                                                                    <input type="text" class="form-control" id="voucherCode" placeholder="Nhập mã voucher">
-                                                                </div>
-                                                                <button type="submit" class="btn btn-primary mt-5">Áp dụng</button>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    
-                                    </div>
-
-                                    
-
-                              
-                                   <h5 class="display-6 display-md-3 display-lg-2 fw-bold mb-5 mt-5">Phương thức thanh toán :</h5>
-
-                                  <label for="momo">
-                                   <div class="row d-flex align-items-center mb-3">
-                                
-                                    <div class="col-md-1">
-                                        <img class="w-100" src="images/MoMo_logo-1.png" alt="MoMo Logo">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class=" text-center rounded-3" style="background-color: #c4bfbf; padding: 1px 0">
-                                            <h4 class="text-black-50">Thanh toán bằng MoMo</h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label class="form-check-label">
-                                            <input type="radio" name="paymentMethod" id="momo" value="momo" class="form-check-input">
-                                           
-                                        </label>
-                                    </div>
-                                </div>
-                            </label>
-
-                                <label for="vnpay">
-                                <div class="row d-flex align-items-center mb-3">
-                                    <div class="col-md-2">
-                                        <img class="w-50" src="images/vnpay-logo-inkythuatso-01-13-16-26-42.jpg" alt="MoMo Logo">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class=" text-center  rounded-3" style="background-color: #a3a0a0 ; padding: 1px 0">
-                                            <h4 class="text-black-50">Thanh toán bằng VNPAY</h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label class="form-check-label">
-                                            <input type="radio" id="vnpay" name="paymentMethod" value="momo" class="form-check-input">
-                                           
-                                        </label>
-                                    </div>
-                                </div>
-</label>
-
-
-
-<label for="internet_banking">
-                                <div class="row d-flex align-items-center mb-3">
-                                    <div class="col-md-1">
-                                        <img class="w-100" src="images/ebnkg2-1024x1024.png" alt="MoMo Logo">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class=" text-center  rounded-3" style="background-color: #9b9999; padding: 1px 0">
-                                            <h4 class="text-black-50">Thanh toán bằng Internet Banking</h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label class="form-check-label">
-                                            <input type="radio" name="paymentMethod" id="internet_banking" value="momo" class="form-check-input">
-                                           
-                                        </label>
-                                    </div>
-                                </div>
-                            </label>  
-                                
-                                </div>
-
-                                <hr class="border-1 border-black py-4">
-
-
-                                <div class="row text-center mt-5 gap-3">
-                                    <div class="col-md-2">
-                                        {{-- <button type="button" class="btn btn-primary btn-block px-5 py-2 fs-3">Quay lại</button> --}}
-                                        <a href="/chair-food"class="btn btn-primary btn-block px-5 py-2 fs-3"> Quay lại</a>
-                                    </div>
-                                    <div class="col-md-2">
-                                        {{-- <button type="button" class="btn btn-primary btn-block px-5 py-2 fs-3">Thanh toán</button> --}}
-                                        <a href="/payment_success"class="btn btn-primary btn-block px-5 py-2 fs-3"> Thanh toán</a>
-                                    </div>
-                                </div>
-                                
+                            <div class="card-body">
+                                <span class="card-title">Phòng chiếu đang còn <strong>50 ghế trống</strong></span>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <a href="/chair-food">
+                            <div class="card-header">
+                                <h4>Phòng 2</h4>
                             </div>
-                        </div>
-                    </section>
-
+                            <div class="card-body">
+                                <span class="card-title">Phòng chiếu đang còn <strong>30 ghế trống</strong></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <a href="/chair-food">
+                            <div class="card-header">
+                                <h4>Phòng 3</h4>
+                            </div>
+                            <div class="card-body">
+                                <span class="card-title">Phòng chiếu đang còn <strong>40 ghế trống</strong></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <a href="/chair-food">
+                            <div class="card-header">
+                                <h4>Phòng 3</h4>
+                            </div>
+                            <div class="card-body">
+                                <span class="card-title">Phòng chiếu đang còn <strong>40 ghế trống</strong></span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-
-          
-
-
+        </div>
+        
 
 
 
