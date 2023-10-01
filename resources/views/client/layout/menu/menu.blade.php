@@ -213,7 +213,13 @@
 <li id="menu-item-278 "
 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
 <a href="/myaccount"><i class="fa-solid fa-user"></i></a>
-
+<ul class="sub-menu">
+    <li id="menu-item-140"
+        class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+        <a href="/admin">Trang quản trị</a>
+    </li>
+    
+</ul>
 </li> 
 @else
  <li id="menu-item-278 "
