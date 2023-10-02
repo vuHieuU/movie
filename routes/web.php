@@ -145,6 +145,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('update/{id}', [App\Http\Controllers\admin\TypeSeatController::class, 'update'])->name('typeseats.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\TypeSeatController::class, 'destroy'])->name('typeseats.destroy');
     });
+
     // room
     Route::prefix('rooms')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\RoomController::class, 'index'])->name('rooms.index');
@@ -153,5 +154,15 @@ Route::middleware(['auth'])->group(function () {
         Route::get('edit/{id}', [App\Http\Controllers\admin\RoomController::class, 'edit'])->name('rooms.edit');
         Route::post('update/{id}', [App\Http\Controllers\admin\RoomController::class, 'update'])->name('rooms.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\RoomController::class, 'destroy'])->name('rooms.destroy');
+    });
+    // showtime
+    Route::prefix('showtime')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\showtimeController::class, 'index'])->name('showtime.index');
+        Route::get('create', [App\Http\Controllers\admin\showtimeController::class, 'create'])->name('showtime.create');
+        Route::post('store', [App\Http\Controllers\admin\showtimeController::class, 'store'])->name('showtime.store');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\showtimeController::class, 'edit'])->name('showtime.edit');
+        Route::post('update/{id}', [App\Http\Controllers\admin\showtimeController::class, 'update'])->name('showtime.update');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\showtimeController::class, 'destroy'])->name('showtime.destroy');
+
     });
 });
