@@ -127,4 +127,22 @@ Route::middleware(['auth'])->group(function () {
         Route::post('update/{id}',[App\Http\Controllers\admin\CinemasController::class,"update"]);
 
     });
+    // seats
+    Route::prefix('seats')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\SeatController::class, 'index'])->name('seats.index');
+        Route::get('create', [App\Http\Controllers\admin\SeatController::class, 'create'])->name('seats.create');
+        Route::post('store', [App\Http\Controllers\admin\SeatController::class, 'store'])->name('seats.store');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\SeatController::class, 'edit'])->name('seats.edit');
+        Route::post('update/{id}', [App\Http\Controllers\admin\SeatController::class, 'update'])->name('seats.update');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\SeatController::class, 'destroy'])->name('seats.destroy');
+    });
+    // typeseats
+    Route::prefix('typeseats')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\TypeSeatController::class, 'index'])->name('typeseats.index');
+        Route::get('create', [App\Http\Controllers\admin\TypeSeatController::class, 'create'])->name('typeseats.create');
+        Route::post('store', [App\Http\Controllers\admin\TypeSeatController::class, 'store'])->name('typeseats.store');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\TypeSeatController::class, 'edit'])->name('typeseats.edit');
+        Route::post('update/{id}', [App\Http\Controllers\admin\TypeSeatController::class, 'update'])->name('typeseats.update');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\TypeSeatController::class, 'destroy'])->name('typeseats.destroy');
+    });
 });

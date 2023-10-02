@@ -511,10 +511,10 @@
 
 
 
-                                                                                <h3 class="col-12 text-center">3. Choose chair and food </h3>
-                                                                                <hr>
-                                                                                <div class="row text-center" style="margin-top: 30px">
-                                                                                    <div class="col-md-2 col-sm-4">
+                                                                                <h3 class="col-12 text-center ">3. Choose chair and food </h3>
+                                                                                <hr class="border">
+                                                                                <div class="row text-center " style="margin-top: 30px; ">
+                                                                                    <div class="col-md-3 col-sm-4">
                                                                                         <i class="fa-solid fa-couch" style="font-size: 35px; color: #BABBC3"></i>
                                                                                         <span>Ghế trống</span>
                                                                                     </div>
@@ -522,22 +522,12 @@
                                                                                     <div class="col-md-3 col-sm-4">
                                                                                         <i class="fa-solid fa-couch" style="font-size: 35px; color: #03599D"></i>
                                                                                         <span>Ghế đang chọn</span>
-                                                                                    </div>
-                                                                                
-                                                                                    <div class="col-md-2 col-sm-4">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 35px; color: #3FB7F9"></i>
-                                                                                        <span>Ghế đã bán</span>
-                                                                                    </div>
-                                                                                
+                                                                                    </div>                                                                              
                                                                                     <div class="col-md-3 col-sm-4">
                                                                                         <i class="fa-solid fa-couch" style="font-size: 35px; color: #FD2802"></i>
                                                                                         <span>Ghế đặt trước</span>
                                                                                     </div>
                                                                                 
-                                                                                    <div class="col-md-2 col-sm-4">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 35px; color: #FDCA02"></i>
-                                                                                        <span>Ghế Đôi</span>
-                                                                                    </div>
                                                                                 </div>
                                                                                 
                                                                                 <div class="py-5">
@@ -547,62 +537,63 @@
                                                                                 <div class="row mt-4">
                                                                                     @for ($i = 1; $i < 2; $i++)
                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 30px; color: #BABBC3"></i>
+                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #707174"></i>
+                                                                                       
                                                                                         <p class="">B2</p>
                                                                                     </div>
                                                                                     @endfor
                                                                                     @for ($i = 1; $i < 2; $i++)
                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 30px; color: #BABBC3"></i>
+                                                                                       
                                                                                         <p class="">B3</p>
                                                                                     </div>
                                                                                     @endfor
                                                                                     @for ($i = 1; $i < 2; $i++)
                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 30px; color: #BABBC3"></i>
+                                                                                       
                                                                                         <p class="">B4</p>
                                                                                     </div>
                                                                                     @endfor
                                                                                     @for ($i = 1; $i < 2; $i++)
                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 30px; color: #BABBC3"></i>
+                                                                                       
                                                                                         <p class="">B5</p>
                                                                                     </div>
                                                                                     @endfor
                                                                                     @for ($i = 1; $i < 2; $i++)
                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 30px; color: #BABBC3"></i>
+                                                                                       
                                                                                         <p class="">B6</p>
                                                                                     </div>
                                                                                     @endfor
                                                                                     @for ($i = 1; $i < 2; $i++)
                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 30px; color: #BABBC3"></i>
+                                                                                       
                                                                                         <p class="">B7</p>
                                                                                     </div>
                                                                                     @endfor
                                                                                     @for ($i = 1; $i < 2; $i++)
                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 30px; color: #BABBC3"></i>
+                                                                                       
                                                                                         <p class="">B8</p>
                                                                                     </div>
                                                                                     @endfor
                                                                                     @for ($i = 1; $i < 2; $i++)
                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 30px; color: #BABBC3"></i>
+                                                                                       
                                                                                         <p class="">B9</p>
                                                                                     </div>
                                                                                     @endfor
 
                                                                                     @for ($i = 1; $i < 2; $i++)
                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 30px; color: #BABBC3"></i>
+                                                                                       
                                                                                         <p class="">B10</p>
                                                                                     </div>
                                                                                     @endfor
                                                                                     @for ($i = 1; $i < 2; $i++)
                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 30px; color: #BABBC3"></i>
+                                                                                       
                                                                                         <p class="">B11</p>
                                                                                     </div>
                                                                                     @endfor
@@ -621,7 +612,7 @@
                                                                                             selectedSeats.push(seatNumber);
                                                                                             seat.classList.add("selected");
                                                                                         } else {
-                                                                                            alert("Bạn chỉ được chọn tối đa 5 ghế."); // Hiển thị thông báo khi chọn quá 5 ghế
+                                                                                            alert("Bạn chỉ được chọn tối đa 8 ghế."); // Hiển thị thông báo khi chọn quá 5 ghế
                                                                                         }
 
                                                                                         updateSelectedSeatsList();
@@ -634,7 +625,29 @@
                                                                                 </script>
 
                                                                             </div>
-
+                                                                            <div class="row text-center m-5 mt-5 p-4" style="margin-top: 30px; background-color: #F8F8F8">
+                                                                                <div class="col-md-3 col-sm-4">
+                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #707174"></i>
+                                                                                    <p class="fs-2 mt-3" style="color: gray ;" >Ghế Thường</p >
+                                                                                </div>
+                                                                            
+                                                                                <div class="col-md-3 col-sm-4">
+                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #707174"></i>
+                                                                                    <p  class="fs-2 mt-3" style="color: gray ;">Ghế Víp</p >
+                                                                                </div>
+                                                                            
+                                                                                <div class="col-md-3 col-sm-4">
+                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #707174"></i>
+                                                                                    <p class="fs-2 mt-3" style="color: gray ;" >Ghế Nằm Đơn</p >
+                                                                                </div>
+                                                                            
+                                                                                <div class="col-md-3 col-sm-4">
+                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #707174"></i>
+                                                                                    <p class="fs-2 mt-3" style="color: gray ;" >Ghế Nằm Đôi</p >
+                                                                                </div>
+                                                                            
+                                                                                
+                                                                            </div>
                                                                             <div>
                                                                                 <hr class="border-3 border-black mt-5">
                                                                                 <h3>Đồ ăn</h3>
@@ -1043,19 +1056,15 @@
             </div>
 
             <style>
-                /* .seat {
-            width: 30px;
-            height: 30px;
+                .seat {
+            
             background-color: #ccc;
-            display: inline-block;
-            margin: 5px;
-            text-align: center;
-            line-height: 30px;
-            cursor: pointer;
-        } */
+            
+        }
+       
 
                 .seat.selected {
-                    color: red;
+                    background-color: #03599D;
                 }
 
                 .quantity-container {

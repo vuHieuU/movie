@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('typeseats', function (Blueprint $table) {
+        Schema::create('seats', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->double('price');
+            $table->string('seat_number');
+            $table->unsignedBigInteger('typeSeat_id');
+            $table->double('isActive')->default(1);
             $table->timestamps();
+            $table->foreign('typeSeat_id')->references('id')->on('typeseats');
         });
     }
 
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('typeseats');
+        Schema::dropIfExists('seats');
     }
 };
