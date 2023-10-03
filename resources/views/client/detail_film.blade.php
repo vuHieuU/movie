@@ -477,10 +477,13 @@
                                         <article id="post-74"
                                             class="post-74 amy_movie type-amy_movie status-publish amy_genre-cartoon amy_genre-sci-fi amy_actor-alexander-cattly amy_actor-cartin-hollia amy_actor-humpray-richard amy_director-gally-peckin amy_director-mae-west">
                                             <div class="entry-top">
-                                                <div class="entry-poster">
-                                                    <img class="w-75"
-                                                        src="{{ asset('storage/images/' . $film->thumb) }}"
-                                                        alt="Jumanji: Welcome to the Jungle" />
+                                                <div class="entry-poster mx-5"style="max-width: 250px;width: 100%;">
+                                                    <img  class=""
+                                                                 src="{{ asset('storage/images/'.$film->thumb) }}"
+                                                                 alt="The Hurricane Heist" />
+                                                    {{-- <img class="" 
+                                                        src="{{ asset('storage/images/'.$film->thumb) }}"
+                                                        alt="Jumanji: Welcome to the Jungle" /> --}}
                                                 </div>
                                                 <div class="entry-info">
                                                     <h1 class="entry-title p-name" itemprop="name headline">

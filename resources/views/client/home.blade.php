@@ -238,7 +238,7 @@
 
 
 
-                                            <div class="row amy-ajax-content">
+                                            <div class="row amy-ajax-content" >
 
                                                 @foreach ($film_nowplaying as $item)
                                                     <div class="col-md-15 grid-item">
