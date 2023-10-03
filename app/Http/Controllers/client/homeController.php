@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Models\category;
+use App\Models\film;
+use App\Models\ShowTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class homeController extends Controller
 {
@@ -12,8 +16,13 @@ class homeController extends Controller
      */
     public function index()
     {
+        
+        $film_nowplaying = film::orderByDesc("created_at")->limit(5)->get();
+       $categories =category::get();
+     
+
         $title = "home";
-        return view('client.home');
+        return view('client.home',compact("title","film_nowplaying","categories"));
     }
 
     /**

@@ -20,7 +20,7 @@ use App\Http\Controllers\Controller;
 Route::get('/', [App\Http\Controllers\client\homeController::class, 'index']);
 Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index']);
 Route::get('/detail_blog', [App\Http\Controllers\client\Detail_blogController::class, 'index']);
-Route::get('/detail_film', [App\Http\Controllers\client\Detail_filmController::class, 'index']);
+Route::get('/detail_film/{id}', [App\Http\Controllers\client\Detail_filmController::class, 'index']);
 Route::get('/dang-phat', [App\Http\Controllers\client\DangphatController::class, 'index']);
 Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class, 'index']);
 Route::get('/film', [App\Http\Controllers\client\AllfilmController::class, 'index']);
@@ -32,7 +32,9 @@ Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class
 Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index']);
 
 
+// Route::get('/detail_film/pay/{id}', [App\Http\Controllers\client\Detail_filmController::class, 'show']);
 
+// Route::get('/pay/{id}', [App\Http\Controllers\client\Detail_filmController::class, 'show']);/
 
 
 

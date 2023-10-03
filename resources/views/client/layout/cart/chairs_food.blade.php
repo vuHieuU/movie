@@ -535,68 +535,17 @@
                                                                                         alt="">
                                                                                 </div>
                                                                                 <div class="row mt-4">
-                                                                                    @for ($i = 1; $i < 2; $i++)
+                                                                                    @for ($i = 1; $i < 5; $i++)
                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
                                                                                     <i class="fa-solid fa-couch" style="font-size: 35px; color: #707174"></i>
                                                                                        
                                                                                         <p class="">B2</p>
                                                                                     </div>
                                                                                     @endfor
-                                                                                    @for ($i = 1; $i < 2; $i++)
-                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                       
-                                                                                        <p class="">B3</p>
-                                                                                    </div>
-                                                                                    @endfor
-                                                                                    @for ($i = 1; $i < 2; $i++)
-                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                       
-                                                                                        <p class="">B4</p>
-                                                                                    </div>
-                                                                                    @endfor
-                                                                                    @for ($i = 1; $i < 2; $i++)
-                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                       
-                                                                                        <p class="">B5</p>
-                                                                                    </div>
-                                                                                    @endfor
-                                                                                    @for ($i = 1; $i < 2; $i++)
-                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                       
-                                                                                        <p class="">B6</p>
-                                                                                    </div>
-                                                                                    @endfor
-                                                                                    @for ($i = 1; $i < 2; $i++)
-                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                       
-                                                                                        <p class="">B7</p>
-                                                                                    </div>
-                                                                                    @endfor
-                                                                                    @for ($i = 1; $i < 2; $i++)
-                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                       
-                                                                                        <p class="">B8</p>
-                                                                                    </div>
-                                                                                    @endfor
-                                                                                    @for ($i = 1; $i < 2; $i++)
-                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                       
-                                                                                        <p class="">B9</p>
-                                                                                    </div>
-                                                                                    @endfor
+                                                                                    
+                                                                                    
 
-                                                                                    @for ($i = 1; $i < 2; $i++)
-                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                       
-                                                                                        <p class="">B10</p>
-                                                                                    </div>
-                                                                                    @endfor
-                                                                                    @for ($i = 1; $i < 2; $i++)
-                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                       
-                                                                                        <p class="">B11</p>
-                                                                                    </div>
-                                                                                    @endfor
+                                                                                 
                                                                                 </div>
                                                                                 <script>
                                                                                     const maxSeats = 8; // Số lượng ghế tối đa được chọn
@@ -1056,11 +1005,11 @@
             </div>
 
             <style>
-                .seat {
+                /* .seat {
             
             background-color: #ccc;
             
-        }
+        } */
        
 
                 .seat.selected {

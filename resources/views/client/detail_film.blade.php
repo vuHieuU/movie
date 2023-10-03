@@ -478,16 +478,15 @@
                                             class="post-74 amy_movie type-amy_movie status-publish amy_genre-cartoon amy_genre-sci-fi amy_actor-alexander-cattly amy_actor-cartin-hollia amy_actor-humpray-richard amy_director-gally-peckin amy_director-mae-west">
                                             <div class="entry-top">
                                                 <div class="entry-poster">
-                                                    <img class
-                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_17-204x350_c.jpg"
+                                                    <img class="w-75"
+                                                        src="{{ asset('storage/images/' . $film->thumb) }}"
                                                         alt="Jumanji: Welcome to the Jungle" />
                                                 </div>
                                                 <div class="entry-info">
                                                     <h1 class="entry-title p-name" itemprop="name headline">
-                                                        <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/"
-                                                            rel="bookmark" class="u-url url" itemprop="url">
-                                                            Jumanji: Welcome to
-                                                            the Jungle </a>
+                                                        <a href="" rel="bookmark" class="u-url url"
+                                                            itemprop="url">
+                                                            {{ $film->name }}</a>
                                                     </h1>
 
                                                     <div class="entry-pg">
@@ -495,7 +494,7 @@
 
                                                         <span class="duration">
                                                             <i class="fa fa-clock-o"></i>
-                                                            02 hours 30 minutes
+                                                            {{ $film->duration }} minutess
                                                         </span>
                                                     </div>
 
@@ -505,15 +504,8 @@
                                                                 Actor:
                                                             </label>
                                                             <span>
-                                                                <a
-                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/alexander-cattly/">Alexander
-                                                                    Cattly</a>,
-                                                                <a
-                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/cartin-hollia/">Cartin
-                                                                    Hollia</a>,
-                                                                <a
-                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/humpray-richard/">Humpray
-                                                                    Richard</a>
+                                                                <a href="">{{ $film->actor }}</a>
+
                                                             </span>
                                                         </li>
 
@@ -522,12 +514,8 @@
                                                                 Director:
                                                             </label>
                                                             <span>
-                                                                <a
-                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/gally-peckin/">Gally
-                                                                    Peckin</a>,
-                                                                <a
-                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/mae-west/">Mae
-                                                                    West</a>
+
+                                                                <a href="">{{ $film->director }}</a>
                                                             </span>
                                                         </li>
 
@@ -536,28 +524,21 @@
                                                                 Genre:
                                                             </label>
                                                             <span>
-                                                                <a
-                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                <a
-                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/sci-fi/">Sci-fi</a>
-                                                            </span>
+
+                                                                @foreach ($categoryfilm_category as $category)
+                                                                    <a href="">{{ $category->name }}</a>,
+                                                                @endforeach
+
                                                         </li>
 
-                                                        <li>
-                                                            <label>
-                                                                Release:
-                                                            </label>
-                                                            <span>
-                                                                February 16,
-                                                                2022 </span>
-                                                        </li>
+
 
                                                         <li>
                                                             <label>
                                                                 Language:
                                                             </label>
                                                             <span>
-                                                                English </span>
+                                                                {{ $film->country }}</span>
                                                         </li>
 
                                                         <li>
@@ -589,10 +570,7 @@
                                                                             Chiếu
                                                                             -
                                                                             <span class="fs-4">Phim
-                                                                                quái
-                                                                                Vật
-                                                                                9
-                                                                                Đầu</span>
+                                                                                {{ $film->name }}</span>
                                                                         </h1>
 
                                                                     </div>
@@ -618,61 +596,51 @@
                                                                         </style>
                                                                         <div class="row">
 
-                                                                            <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class href="#"><span
-                                                                                            style="font-size: 30px">26</span>/9
-                                                                                        -
-                                                                                        T2</a></li>
-                                                                            </div>
-                                                                            <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class href="#"><span
-                                                                                            style="font-size: 30px">26</span>/9
-                                                                                        -
-                                                                                        T3</a></li>
-                                                                            </div>
-                                                                            <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class href="#"><span
-                                                                                            style="font-size: 30px">26</span>/9
-                                                                                        -
-                                                                                        T4</a></li>
-                                                                            </div>
-                                                                            <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class href="#"><span
-                                                                                            style="font-size: 30px">26</span>/9
-                                                                                        -
-                                                                                        T5</a></li>
-                                                                            </div>
-                                                                            <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class href="#"><span
-                                                                                            style="font-size: 30px">26</span>/9
-                                                                                        -
-                                                                                        T6</a></li>
-                                                                            </div>
-                                                                            <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class href="#"><span
-                                                                                            style="font-size: 30px">26</span>/9
-                                                                                        -
-                                                                                        T7</a></li>
-                                                                            </div>
-                                                                            <div class="col-md-2 fs-3 navbar-nav A">
-                                                                                <li><a class href="#"><span
-                                                                                            style="font-size: 30px">26</span>/9
-                                                                                        -
-                                                                                        CN</a></li>
-                                                                            </div>
+                                                                            @php $uniqueDates = []; @endphp
+                                                                            @foreach ($show_time as $item)
+                                                                                @if (!in_array($item->day, $uniqueDates))
+                                                                                    <div
+                                                                                        class="col-md-4 fs-3 navbar-nav    w-50 date-button A">
+                                                                                        <li style="background-color: #F8F8F8"
+                                                                                            class=" px-3 py-2 text-white">
+                                                                                            <a class="showtime-day"
+                                                                                                data-showtime-date="{{ $item->day }}">{{ $item->day }}</a>
+                                                                                        </li>
+                                                                                    </div>
+                                                                                @endif
+                                                                                @php $uniqueDates[] = $item->day; @endphp
+                                                                            @endforeach
 
                                                                         </div>
+                                                                        {{-- //chọn giờ theo ngày --}}
                                                                         <script>
-                                                                            $(document).ready(function() {
-                                                                                $(".A").click(function() {
-                                                                                    // Loại bỏ lớp 'active' khỏi tất cả các liên kết
-                                                                                    $(".A").removeClass("active");
+                                                                            var selectedDate = "";
 
-                                                                                    // Thêm lớp 'active' vào liên kết được click
-                                                                                    $(this).addClass("active");
+                                                                            function selectDate(date) {
+                                                                                selectedDate = date;
+
+                                                                            }
+                                                                            var showtimeDayElements = document.querySelectorAll(".showtime-day");
+                                                                            showtimeDayElements.forEach(function(element) {
+                                                                                element.addEventListener("click", function() {
+
+                                                                                    var selectedDay = element.getAttribute("data-showtime-date");
+                                                                                    selectDate(selectedDay);
+                                                                                    console.log(selectedDay);
+                                                                                    // Hiển thị giờ xem tương ứng với ngày được chọn và ẩn giờ xem của các ngày khác
+                                                                                    var hourButtons = document.querySelectorAll(".hour-button");
+                                                                                    hourButtons.forEach(function(button) {
+                                                                                        var showtimeDate = button.getAttribute("data-showtime-date");
+                                                                                        if (showtimeDate === selectedDay) {
+                                                                                            button.style.display = "inline-block";
+                                                                                        } else {
+                                                                                            button.style.display = "none";
+                                                                                        }
+                                                                                    });
                                                                                 });
                                                                             });
                                                                         </script>
+                                                                        {{-- //chọn giờ theo ngày --}}
 
                                                                     </div>
                                                                     <div class="modal-header">
@@ -682,88 +650,31 @@
                                                                                 id="exampleModalLabel">2D
                                                                                 Phụ
                                                                                 Đề</h1>
-                                                                            <div class="row">
+                                                                            <div class="">
+                                                                                <style>
+                                                                                    .option {
+                                                                                        background-color: #fe7b00b3;
 
-                                                                                <p class="d-inline-flex gap-5 row">
-                                                                                <div class="col-md-2">
-
-                                                                                    <a class="btn btn-secondary option fs-5   "
+                                                                                        font-weight: 700
+                                                                                    }
+                                                                                </style>
+                                                                                @foreach ($show_time as $item)
+                                                                                    <a style="display: none"
+                                                                                        class="btn  option    hour-button"
                                                                                         data-bs-toggle="collapse" href role
                                                                                         aria-expanded="false"
-                                                                                        aria-controls="multiCollapseExample1">11:00</a>
+                                                                                        aria-controls="multiCollapseExample1"
+                                                                                        data-showtime-date="{{ $item->day }}">{{ $item->hour }}
+                                                                                    </a>
 
-                                                                                    <br>
-                                                                                    <p class="fs-6 mt-2">123
-                                                                                        ghế
-                                                                                        trống</p>
-                                                                                </div>
+                                                                                    {{-- <br> --}}
+                                                                                    {{-- <p class="fs-6 mt-2">123
+                                                                                                ghế
+                                                                                                trống</p> --}}
+                                                                                @endforeach
 
-                                                                                <div class="col-md-2">
 
-                                                                                    <a class="btn btn-secondary option fs-5   "
-                                                                                        data-bs-toggle="collapse" href role
-                                                                                        aria-expanded="false"
-                                                                                        aria-controls="multiCollapseExample1">11:00</a>
 
-                                                                                    <br>
-                                                                                    <p class="fs-6 mt-2">123
-                                                                                        ghế
-                                                                                        trống</p>
-                                                                                </div>
-
-                                                                                <div class="col-md-2">
-
-                                                                                    <a class="btn btn-secondary option fs-5   "
-                                                                                        data-bs-toggle="collapse" href role
-                                                                                        aria-expanded="false"
-                                                                                        aria-controls="multiCollapseExample1">11:00</a>
-
-                                                                                    <br>
-                                                                                    <p class="fs-6 mt-2">123
-                                                                                        ghế
-                                                                                        trống</p>
-                                                                                </div>
-
-                                                                                <div class="col-md-2">
-
-                                                                                    <a class="btn btn-secondary option fs-5   "
-                                                                                        data-bs-toggle="collapse" href role
-                                                                                        aria-expanded="false"
-                                                                                        aria-controls="multiCollapseExample1">11:00</a>
-
-                                                                                    <br>
-                                                                                    <p class="fs-6 mt-2">123
-                                                                                        ghế
-                                                                                        trống</p>
-                                                                                </div>
-
-                                                                                <div class="col-md-2">
-
-                                                                                    <a class="btn btn-secondary option fs-5   "
-                                                                                        data-bs-toggle="collapse" href role
-                                                                                        aria-expanded="false"
-                                                                                        aria-controls="multiCollapseExample1">11:00</a>
-
-                                                                                    <br>
-                                                                                    <p class="fs-6 mt-2">123
-                                                                                        ghế
-                                                                                        trống</p>
-                                                                                </div>
-
-                                                                                <div class="col-md-2">
-
-                                                                                    <a class="btn btn-secondary option fs-5   "
-                                                                                        data-bs-toggle="collapse" href role
-                                                                                        aria-expanded="false"
-                                                                                        aria-controls="multiCollapseExample1">11:00</a>
-
-                                                                                    <br>
-                                                                                    <p class="fs-6 mt-2">123
-                                                                                        ghế
-                                                                                        trống</p>
-                                                                                </div>
-
-                                                                                </p>
                                                                             </div>
 
                                                                         </div>
@@ -778,6 +689,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+
                                                         </div>
 
                                                         <div class="entry-share">
@@ -912,63 +824,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="entry-showtime single-cinema">
-                                                <div class="clearfix">
-                                                    <h3 class="info-name amy-title">Showtime</h3>
-                                                </div>
-                                                <div class="showtime">
-                                                    <div class="showtime-item single-cinema">
-                                                        <div class="st-item">
-                                                            <div class="st-title"><label>February
-                                                                    11, 2022</label>
-                                                                <!-- <a href="#" class="amy-buy-ticket" target="_blank">Buy Ticket</a> -->
-                                                            </div>
-                                                            <ul>
-                                                                <li>12h30</li>
-                                                                <li> 15h40</li>
-                                                                <li> 19h20</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="st-item">
-                                                            <div class="st-title"><label>February
-                                                                    25, 2022</label>
-                                                                <!-- <a href="#" class="amy-buy-ticket" target="_blank">Buy Ticket</a> -->
-                                                            </div>
-                                                            <ul>
-                                                                <li>09h20</li>
-                                                                <li> 13h10</li>
-                                                                <li> 15h40</li>
-                                                                <li> 17h30</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="st-item">
-                                                            <div class="st-title"><label>March
-                                                                    10, 2022</label>
-                                                                <!-- <a href="#" class="amy-buy-ticket" target="_blank">Buy Ticket</a> -->
-                                                            </div>
-                                                            <ul>
-                                                                <li>09h20</li>
-                                                                <li> 13h10</li>
-                                                                <li> 17h20</li>
-                                                                <li> 21h30</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="st-item">
-                                                            <div class="st-title"><label>May
-                                                                    13, 2022</label>
-                                                                <!-- <a href="#" class="amy-buy-ticket" target="_blank">Buy Ticket</a> -->
-                                                            </div>
-                                                            <ul>
-                                                                <li>07h20</li>
-                                                                <li> 10h10.
-                                                                    15h30</li>
-                                                                <li> 21h00.
-                                                                    23h30</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        
 
                                             <div class="entry-comment">
 

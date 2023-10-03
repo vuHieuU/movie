@@ -3,17 +3,33 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Models\film;
+use App\Models\ShowTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Detail_filmController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($id)
     {
+        $show_time = DB::table('films')
+        ->join('show_times', 'films.id', '=', 'show_times.film_id')
+        ->select('films.*', 'show_times.*')
+        ->where("films.id",$id) 
+        ->get();
+    // dd($show_time);
+    $categoryfilm_category = DB::table("categories")
+    ->join("film_categories", "categories.id", "=", "film_categories.dmid")
+    ->select("categories.*", "film_categories.*")
+    ->where("film_categories.film_id",$id)
+    ->get();
+
+        $film = film::find($id);
         $title = "Detail";
-        return view('client.detail_film',compact('title'));
+        return view('client.detail_film',compact('title',"film","show_time","categoryfilm_category"));
     }
 
     /**
@@ -37,7 +53,8 @@ class Detail_filmController extends Controller
      */
     public function show(string $id)
     {
-        //
+       $day =ShowTime::find($id);
+       return view('client.detail_film',compact('day'));
     }
 
     /**
