@@ -517,6 +517,7 @@
                                                                                     <div class="col-md-3 col-sm-4">
                                                                                         <i class="fa-solid fa-couch" style="font-size: 35px; color: #BABBC3"></i>
                                                                                         <span>Ghế trống</span>
+                                                                                        
                                                                                     </div>
                                                                                 
                                                                                     <div class="col-md-3 col-sm-4">
@@ -535,25 +536,32 @@
                                                                                         alt="">
                                                                                 </div>
                                                                                 <div class="row mt-4">
-                                                                                    @for ($i = 1; $i < 5; $i++)
+                                                                                    {{-- @for ($i = 1; $i < 5; $i++)
                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
                                                                                     <i class="fa-solid fa-couch" style="font-size: 35px; color: #707174"></i>
                                                                                        
                                                                                         <p class="">B2</p>
                                                                                     </div>
-                                                                                    @endfor
-                                                                                    
-                                                                                    
+                                                                                    @endfor --}}
+                                                                                  
 
-                                                                                 
+                            @foreach ($seats as $item)
+                            <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" onclick="" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M248 48V256h48V58.7c23.9 13.8 40 39.7 40 69.3V256h48V128C384 57.3 326.7 0 256 0H192C121.3 0 64 57.3 64 128V256h48V128c0-29.6 16.1-55.5 40-69.3V256h48V48h48zM48 288c-12.1 0-23.2 6.8-28.6 17.7l-16 32c-5 9.9-4.4 21.7 1.4 31.1S20.9 384 32 384l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32V384H352v96c0 17.7 14.3 32 32 32s32-14.3 32-32V384c11.1 0 21.4-5.7 27.2-15.2s6.4-21.2 1.4-31.1l-16-32C423.2 294.8 412.1 288 400 288H48z"/></svg>
+                
+                                    <p class="">{{$item->seat_number}}</p>
+                                    <p class="">{{$item->price}}</p>
+                                    {{-- <p class="">{{$item->id}}</p> --}}
+                                </div>
+                            @endforeach
                                                                                 </div>
                                                                                 <script>
                                                                                     const maxSeats = 8; // Số lượng ghế tối đa được chọn
                                                                                     const selectedSeats = []; // Mảng lưu các ghế đã chọn
-
+                                                                                    const getSeats = [];
                                                                                     function toggleSeat(seat) {
                                                                                         const seatNumber = seat.textContent;
-
+                                                                                        const selectedSeatsSpan = document.getElementById("getSeats");
                                                                                         if (selectedSeats.includes(seatNumber)) {
                                                                                             selectedSeats.splice(selectedSeats.indexOf(seatNumber), 1);
                                                                                             seat.classList.remove("selected");
@@ -563,14 +571,23 @@
                                                                                         } else {
                                                                                             alert("Bạn chỉ được chọn tối đa 8 ghế."); // Hiển thị thông báo khi chọn quá 5 ghế
                                                                                         }
-
                                                                                         updateSelectedSeatsList();
+                                                                                    
+
                                                                                     }
 
                                                                                     function updateSelectedSeatsList() {
                                                                                         const selectedSeatsSpan = document.getElementById("selected-seats");
+                                                                                        
                                                                                         selectedSeatsSpan.textContent = selectedSeats.join(', ');
+                                                                                        
                                                                                     }
+                                                                                    // function getSeat(id){
+                                                                                    //     idSeat = id
+                                                                                    //     var selectSeat = document.getElementById("getseats")
+                                                                                    //     selectSeat.value = idSeat
+                                                                                    //     console.log(selectSeat);
+                                                                                    // }
                                                                                 </script>
 
                                                                             </div>
@@ -581,18 +598,14 @@
                                                                                 </div>
                                                                             
                                                                                 <div class="col-md-3 col-sm-4">
-                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #707174"></i>
-                                                                                    <p  class="fs-2 mt-3" style="color: gray ;">Ghế Víp</p >
+                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #b1ca0f"></i>
+                                                                                    <p  class="fs-2 mt-3" style="color: gray ;">Ghế Vip</p >
                                                                                 </div>
+                                                                        
                                                                             
                                                                                 <div class="col-md-3 col-sm-4">
-                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #707174"></i>
-                                                                                    <p class="fs-2 mt-3" style="color: gray ;" >Ghế Nằm Đơn</p >
-                                                                                </div>
-                                                                            
-                                                                                <div class="col-md-3 col-sm-4">
-                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #707174"></i>
-                                                                                    <p class="fs-2 mt-3" style="color: gray ;" >Ghế Nằm Đôi</p >
+                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #ca0fa1"></i>
+                                                                                    <p class="fs-2 mt-3" style="color: gray ;" >Ghế Đôi</p >
                                                                                 </div>
                                                                             
                                                                                 
@@ -604,6 +617,9 @@
 
                                                                                 <div class="">
                                                                                     <!-- Đoạn mã HTML -->
+                                                                                @foreach ($food as $item)
+                                                                                    
+                                                                              
                                                                                     <div
                                                                                         class="card mb-3 col-md-5 m-5 product-card">
                                                                                         <div class="row g-0">
@@ -616,19 +632,18 @@
                                                                                                 <div class="card-body">
                                                                                                     <h5
                                                                                                         class="card-title product-title">
-                                                                                                        Combo 1</h5>
-                                                                                                    <p
+                                                                                                        {{$item->name}}</h5>
+                                                                                                    {{-- <p
                                                                                                         class="card-text product-description">
                                                                                                         TIẾT KIỆM 46K!!!
                                                                                                         Gồm: 1 Bắp (69oz) +
                                                                                                         2 Nước có gaz (22oz)
-                                                                                                    </p>
+                                                                                                    </p> --}}
                                                                                                     <p
                                                                                                         class="card-text product-price">
                                                                                                         <small
                                                                                                             class="text-body-secondary">Giá:
-                                                                                                            100.000.000.000
-                                                                                                            đ</small>
+                                                                                                            {{$item->price}}đ</small>
                                                                                                     </p>
                                                                                                     <div class="input_number_product  col-md-8 d-flex mb-4"
                                                                                                         style="height: 25px">
@@ -639,7 +654,8 @@
                                                                                                             style="height: 25px"
                                                                                                             type="text"
                                                                                                             name="quantity"
-                                                                                                            value="1"
+                                                                                                            value="0"
+                                                                                                            id="selectedFood"
                                                                                                             maxlength="3"
                                                                                                             class="form-control prd_quantity product-quantity">
                                                                                                         <button
@@ -650,12 +666,71 @@
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
+                                                                                    @endforeach
+                                                                                    @foreach ($combo as $item)
+                                                                                        
+                                                                                    <div
+                                                                                    class="card mb-3 col-md-5 m-5 product-card">
+                                                                                    <div class="row g-0">
+                                                                                        <div class="col-md-4">
+                                                                                            <img src="/images/sweet-combo-154545-150623-48.png"
+                                                                                                class="img-fluid rounded-start"
+                                                                                                alt="...">
+                                                                                        </div>
+                                                                                        <div class="col-md-8">
+                                                                                            <div class="card-body">
+                                                                                                <h5
+                                                                                                    class="card-title product-title">
+                                                                                                    {{$item->name}}</h5>
+                                                                                                <p
+                                                                                                    class="card-text product-description">
+                                                                                                    TIẾT KIỆM 46K!!!
+                                                                                                    Gồm: 1 Bắp (69oz) +
+                                                                                                    2 Nước có gaz (22oz)
+                                                                                                </p>
+                                                                                                <p
+                                                                                                    class="card-text product-price">
+                                                                                                    <small
+                                                                                                        class="text-body-secondary">Giá:
+                                                                                                        {{$item->price}}đ</small>
+                                                                                                </p>
+                                                                                                <div class="input_number_product  col-md-8 d-flex mb-4"
+                                                                                                    style="height: 25px">
+                                                                                                    <button
+                                                                                                        class="btn_num num_1 button button_qty decrease-btn border-0" id="updateCombo"
+                                                                                                        type="button">-</button>
+                                                                                                    <input
+                                                                                                        style="height: 25px"
+                                                                                                        type="text"
+                                                                                                        name="quantity"
+                                                                                                        value="0"
+                                                                                                        id="selectedCombo"
+                                                                                                        maxlength="3"
+                                                                                                        class="form-control prd_quantity product-quantity">
+                                                                                                    <button
+                                                                                                        class="btn_num num_2 button button_qty increase-btn border-0" id="updateCombo"
+                                                                                                        type="button">+</button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    @endforeach
+                                                                                </div>
+                                                                                <input type="text" name="food" id="food123"> dd
 
                                                                                     <!-- Đoạn mã JavaScript -->
-                                                                                   
+                                                        <script>
+                                                            const selectedCombo = document.getElementById("selectedCombo")   
+                                                            const food = document.getElementById("food123")   
+                                                            const updateCombo = document.getElementById("updateCombo")
+                                                            transferButton.addEventListener("click",function(){
+                                                                const combovalue = selectedCombo.value
+                                                                food.value = combovalue
+                                                            })
+                                                        </script>
 
                                                                                     <!-- Đoạn mã HTML -->
-                                                                                    <div
+                                                                                    {{-- <div
                                                                                         class="card mb-3 col-md-5 m-5 product-card">
                                                                                         <div class="row g-0">
                                                                                             <div class="col-md-4">
@@ -804,7 +879,7 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
-                                                                                    </div>
+                                                                                    </div> --}}
 
                                                                                     <!-- Đoạn mã JavaScript -->
                                                                                    
@@ -917,6 +992,7 @@
 
                                                                                     <p class="w-50 m-0 p-0 fw-bold"
                                                                                         id="selected-seats"></p>
+                                                                                        {{-- <input type="text" id="getseats" name="getseats"> --}}
 
                                                                                 </div>
 
@@ -1076,7 +1152,10 @@
 
                     updateSelectedSeatsList();
                 }
+                var getSeat = "";
+                function getseats(){
 
+                }
 
 
                 function decreaseQuantity() {

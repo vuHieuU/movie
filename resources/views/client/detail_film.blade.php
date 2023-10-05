@@ -618,9 +618,26 @@
                                                                         {{-- //chọn giờ theo ngày --}}
                                                                         <script>
                                                                             var selectedDate = "";
-
+                                                                            var selectedHour = "";
                                                                             function selectDate(date) {
                                                                                 selectedDate = date;
+                                            
+                                                                                var selectDateElement = document.getElementById("selectedDate");
+                                                                                selectDateElement.value=selectedDate
+                                                                                console.log(selectDate)
+
+                                                                            }
+                                                                            function selectHour(hour) {
+                                                                                selectedHour = hour;
+                                            
+                                                                                var selectHourElement = document.getElementById("selectedHour");
+                                                                                selectHourElement.value=selectedHour
+                                                                                var selectShowTimeId = event.currentTarget.getAttribute("data-showtime-id");
+                                                                                
+                                                                                var selectShowTimeIdElement = document.getElementById("selectedShowTimeId")
+                                                                                selectShowTimeIdElement.value = selectShowTimeId
+                                                                                
+
 
                                                                             }
                                                                             var showtimeDayElements = document.querySelectorAll(".showtime-day");
@@ -665,9 +682,11 @@
                                                                                     <a style="display: none"
                                                                                         class="btn  option    hour-button"
                                                                                         data-bs-toggle="collapse" href role
-                                                                                        aria-expanded="false"
+                                                                                        aria-expanded="false" onclick="selectHour('{{$item->hour }}')"
                                                                                         aria-controls="multiCollapseExample1"
-                                                                                        data-showtime-date="{{ $item->day }}">{{ $item->hour }}
+                                                                                        data-showtime-date="{{ $item->day }}" 
+                                                                                        data-showtime-id="{{$item->id}}"
+                                                                                        >{{ $item->hour }}
                                                                                     </a>
 
                                                                                     {{-- <br> --}}
@@ -683,13 +702,18 @@
                                                                         </div>
 
                                                                     </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button"
-                                                                            class="btn btn-secondary amy-buy-ticket"
-                                                                            data-bs-dismiss="modal">Close</button>
-                                                                        <a href="/choose-room"
-                                                                            class="amy-buy-ticket">Next</a>
-                                                                    </div>
+                                                                    <form action="{{route('chair',['film_id'=>$film->id])}}" method="GET">
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn btn-secondary amy-buy-ticket"
+                                                                                data-bs-dismiss="modal">Close</button>
+                                                                            <button type="submit" class="amy-buy-ticket">Next</button>
+                                                                            <input type="text" id="selectedDate" name="selectedDate" value="">
+                                                                            <input type="text" id="selectedHour" name="selectedHour" value="">
+                                                                            <input type="text" id="selectedShowTimeId" name="selectedShowTimeId" value="">
+                                                                        </div>
+                                                                        
+                                                                    </form>
                                                                 </div>
                                                             </div>
 
