@@ -66,7 +66,7 @@
                                 <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="">Thumb *</label>
-                                            <img src="{{ asset('storage/images/'.$food->thumb)}}" style="width: 50px" />
+                                            <img src="{{ asset('storage/images/'.$item->thumb)}}" style="width: 50px" />
                                             <input type="text" class="form-control" value="{{ $food->thumb }}" disabled>
                                         </div>
                                     </div>

@@ -56,7 +56,7 @@ class AuthController extends Controller
                 $current_user->update([
                     'password' => bcrypt($request->new_password)
                 ]);
-                return redirect()->back()->with('success', 'Password oke update');
+                return redirect()->route('profile')->with('success', 'Cập nhật hoàn thành');
             } else {
                 return redirect()->back()->with('error', 'Mật khẩu hiện tại không đúng');
             }

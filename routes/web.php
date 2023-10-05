@@ -165,16 +165,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('edit/{id}', [App\Http\Controllers\admin\showtimeController::class, 'edit'])->name('showtime.edit');
         Route::post('update/{id}', [App\Http\Controllers\admin\showtimeController::class, 'update'])->name('showtime.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\showtimeController::class, 'destroy'])->name('showtime.destroy');
-
     });
-    // comment
     Route::prefix('comment')->group(function(){
         Route::get('index', [App\Http\Controllers\admin\commentController::class, 'index'])->name('comment.index');
         Route::get('hidden/{id}', [App\Http\Controllers\admin\commentController ::class, 'hidden'])->name('comment.hidden');
         Route::get('restore/{id}', [App\Http\Controllers\admin\commentController ::class, 'restore'])->name('comment.restore');
     });
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
