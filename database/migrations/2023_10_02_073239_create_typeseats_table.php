@@ -11,21 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('seats', function (Blueprint $table) {
+        Schema::create('typeseats', function (Blueprint $table) {
             $table->id();
-            $table->string('seat_number');
-            $table->unsignedBigInteger('TypeSeat_id');
-            $table->double('isActive')->default(1);
+            $table->string('name');
+            $table->double('price');
+           
             $table->timestamps();
-            $table->foreign('TypeSeat_id')->references('id')->on('typeseats');
+            
         });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('seats');
+        Schema::dropIfExists('typeseats');
     }
 };

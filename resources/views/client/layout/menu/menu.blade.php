@@ -2,8 +2,8 @@
     <div class="container">
         <div class="amy-inner">
             <div class="amy-left">
-                <div id="amy-site-logo">
-                    <a href="/">
+                <div id="amy-site-logo " style="width: 70%;">
+                    <a href="/" >
                         <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_66.png"
                             alt="Elementor Single Cinema" />
                     </a>
@@ -12,7 +12,7 @@
 
 
             </div>
-            <div style="margin-left: 50px">
+            <div style="margin: 0 30px">
                 <style>
                     .rap-selection {
                         position: relative;
@@ -71,18 +71,18 @@
 
                     </div>
                     <ul id="rap-list" class="rap-list">
-                        <a href="/">
-                            <li onclick="selectRap('')"> Beta Home</li>
-                        </a>
-                        <a href="/contact">
-                            <li onclick="selectRap('Beta Thanh Xuân')"> Beta Thanh Xuân</li>
-                        </a>
-                        <a href="/detail_blog">
-                            <li onclick="selectRap('Beta Mỹ Đình')"> Beta Mỹ Đình</li>
-                        </a>
-                        <a href="/detail_film">
-                            <li onclick="selectRap('Beta Đan Phượng')"> Beta Đan Phượng</li>
-                        </a>
+                        
+                            <li onclick="selectRap('Beta Home')"><a href="/"> Beta Home </a></li>
+                       
+                        
+                            <li onclick="selectRap('Beta Thanh Xuân')"><a href="/contact"> Beta Thanh Xuân </a></li>
+                       
+                        
+                            <li onclick="selectRap('Beta Mỹ Đình')"><a href="/detail_blog"> Beta Mỹ Đình </a></li>
+                       
+                       
+                            <li onclick="selectRap('Beta Đan Phượng')"> <a href="/detail_film"> Beta Đan Phượng </a></li>
+                       
                         <!-- Thêm các rạp khác vào đây -->
                     </ul>
                 </div>
@@ -143,32 +143,7 @@
                             <li id="menu-item-277"
                                 class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-277">
                                 <a href="/film">All Movie</a>
-                                {{-- <ul class="sub-menu">
-                                     <li id="menu-item-338"
-                                         class="menu-item menu-item-type-post_type menu-item-object-amy_movie menu-item-338">
-                                         <a
-                                             href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/kubo-and-the-two-strings/">Full
-                                             Width &#038; Banner</a>
-                                     </li>
-                                     <li id="menu-item-365"
-                                         class="menu-item menu-item-type-post_type menu-item-object-amy_movie menu-item-365">
-                                         <a
-                                             href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-girl-with-all-the-gifts/">Full
-                                             Width &#038; No Banner</a>
-                                     </li>
-                                     <li id="menu-item-340"
-                                         class="menu-item menu-item-type-post_type menu-item-object-amy_movie menu-item-340">
-                                         <a
-                                             href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">Sidebar
-                                             &#038; Banner</a>
-                                     </li>
-                                     <li id="menu-item-366"
-                                         class="menu-item menu-item-type-post_type menu-item-object-amy_movie menu-item-366">
-                                         <a
-                                             href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/bad-moms/">Sidebar
-                                             &#038; No Banner</a>
-                                     </li>
-                                 </ul> --}}
+                                
                             </li>
                             <li id="menu-item-278"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
