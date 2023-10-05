@@ -487,7 +487,8 @@
         @section('contact')
 
 
-        <form  method="POST" data-toggle="validator" enctype="multipart/form-data">
+        <form  method="POST" data-toggle="validator" action="{{route('profile')}}" enctype="multipart/form-data">
+            {{-- @method('POST') --}}
             @csrf
           
                     <div class="container my-5 ">
@@ -501,53 +502,49 @@
                                                 <div class="form-group">
                                                     <label>Tên người dùng *</label>
                                                     <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
-                                                        data-errors="Please Enter Name." name="name">
-                                                    <div class="help-block with-errors"></div>
-                                                   
+                                                        data-errors="Please Enter Name." name="name" value="{{Auth::User()->name}}">
+                                                    <div class="help-block with-errors">
+                                                    @if ($errors->has('name'))
+                                                    <span class="text-danger">{{ $errors->first('name') }}</span></div>
+                                                @endif
                                                 </div>
                                             </div>
                                         </div>
     
                                         <div class="row mt-4">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>User Name *</label>
-                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Duration"
-                                                        data-errors="Please Enter Name." name="duration">
-                                                    <div class="help-block with-errors"></div>
-                                                   
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Số điện thoại *</label>
                                                     <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Duration"
-                                                        data-errors="Please Enter Name." name="duration">
-                                                    <div class="help-block with-errors"></div>
-                                                   
+                                                        data-errors="Please Enter Name." name="phone" value="{{Auth::User()->phone}}">
+                                                    <div class="help-block with-errors">
+                                                    @if ($errors->has('phone'))
+                                                    <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                                @endif
+                                            </div>
                                                 </div>
                                             </div>
-                                           
                                         </div>
-                                     
-    
+                    
                                         <div class="row mt-4">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label>Email *</label>
+                                                    <label>Email</label>
                                                     <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
-                                                        data-errors="Please Enter Name." name="director">
+                                                        data-errors="Please Enter Name." name="email" value="{{Auth::User()->email}}" disabled >
                                                     <div class="help-block with-errors"></div>
-                                                   
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Hình ảnh *</label>
                                                     <input type="file" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
-                                                        data-errors="Please Enter Name." name="actor">
-                                                    <div class="help-block with-errors"></div>
-                                                   
+                                                        data-errors="Please Enter Name." name="logo" value="{{Auth::User()->logo}}">
+                                                    <div class="help-block with-errors">
+                                                    @if ($errors->has('logo'))
+                                                    <span class="text-danger">{{ $errors->first('logo') }}</span>
+                                                @endif
+                                            </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -557,35 +554,68 @@
                                                 <div class="form-group">
                                                     <label>Address *</label>
                                                     <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
-                                                        data-errors="Please Enter Name." name="language">
-                                                    <div class="help-block with-errors"></div>
-                                                   
+                                                        data-errors="Please Enter Name." name="address" value="{{Auth::User()->address}}">
+                                                    <div class="help-block with-errors">
+                                                    @if ($errors->has('address'))
+                                                    <span class="text-danger">{{ $errors->first('address') }}</span>
+                                                @endif
+                                            </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label>Giới tính *</label>
-                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
-                                                        data-errors="Please Enter Name." name="country">
-                                                    <div class="help-block with-errors"></div>
-                                                    
-                                                </div>
+                                                    <label for="gender">Giới tính *</label>
+                                                    <select class="py-3 bg-blue rounded-4 border form-control-lg" id="gender" data-errors="Please Select Gender." name="gender">
+                                                        <option value="Nam" {{ Auth::User()->gender === 'male' ? 'selected' : '' }}>Nam</option>
+                                                        <option value="Nữ" {{ Auth::User()->gender === 'female' ? 'selected' : '' }}>Nữ</option>
+                                                        <option value="Khác" {{ Auth::User()->gender === 'other' ? 'selected' : '' }}>Khác</option>
+                                                    </select>
+                                                    <div class="help-block with-errors">
+                                                    </div>
+                                                </div> 
                                             </div>
-                                        </div>
-    
-                                        <div class="row mt-4">
+                                         </div>
+                                         <div class="row mt-4">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label>Password *</label>
-                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
-                                                        data-errors="Please Enter Name." name="trailer">
-                                                    <div class="help-block with-errors"></div>
-                                                    
+                                                    <label for="change_password">
+                                                        <input type="checkbox" id="change_password" name="change_password">
+                                                        Thay đổi mật khẩu
+                                                    </label>
                                                 </div>
                                             </div>
-                                            
                                         </div>
-                                        
+                                        <div class="row mt-4" id="old_passwords" style="display: none;">
+                                            <div class="col-md-12">
+                                                <label for="old_password">Mật khẩu hiện tại *</label>
+                                                <input type="password" class="py-3 bg-blue rounded-4 border form-control" placeholder="Nhập mật khẩu hiện tại" name="old_password">
+                                                @if ($errors->has('old_password'))
+                                                    <span class="text-danger">{{ $errors->first('old_password') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4" id="new_passwords" style="display: none;">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="new_password">Mật khẩu mới *</label>
+                                                    <input type="password" class="py-3 bg-blue rounded-4 border form-control" placeholder="Nhập mật khẩu mới" name="new_password">
+                                                    @if ($errors->has('new_password'))
+                                                    <span class="text-danger">{{ $errors->first('new_password') }}</span>
+                                                @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4" id="confim_passwords" style="display: none;">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="confim_password">Xác nhận mật khẩu *</label>
+                                                    <input type="password" class="py-3 bg-blue rounded-4 border form-control" placeholder="Nhập lại mật khẩu mới" name="new_password_confirmation">
+                                                    @if ($errors->has('new_password_confirmation'))
+                                                    <span class="text-danger">{{ $errors->first('new_password_confirmation') }}</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
                                        <div class="mt-5">
                                           <button type="submit" class="btn btn-primary mr-2 fs-3 rounded-4">Cập Nhật</button>
                                         <button type="reset" class="btn btn-danger mr-2 fs-3 rounded-4">Reset</button>
@@ -601,5 +631,21 @@
                     </div>
                 
         </form>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#change_password').change(function() {
+            if ($(this).is(':checked')) {
+                $('#old_passwords').show();
+                $('#new_passwords').show();
+                $('#confim_passwords').show();
+            } else {
+                $('#old_passwords').hide();
+                $('#new_passwords').hide();
+                $('#confim_passwords').hide();
+            }
+        });
+    });
+</script>
 
         @endsection

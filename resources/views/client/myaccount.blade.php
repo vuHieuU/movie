@@ -481,39 +481,39 @@
 
         @extends('client.layout.main.main')
         @section('contact')
-
-
-
         <div class="container my-5">
             <div class=" text-center">
-               
-    
                 <span class="fs-1 fw-bold">Thông tin cá nhân</span>
-                <p>Quản lý thông tin, quyền riêng tư để  hoạt động hiệu quả cho bạn. <a href="/editaccount" class="fs-4 text-danger text-decoration-underline">Cập nhật tài khoản</a></p>
+                <p>Quản lý thông tin, quyền riêng tư để hoạt động hiệu quả cho bạn. <a href="/editaccount" class="fs-4 text-danger text-decoration-underline">Cập nhật tài khoản</a></p>
             </div>
             <div class="container mt-5">
                 <div class="border border-1 border-gray p-3 rounded">
                     <h2 class="fs-2">Thông tin cơ bản</h2>
                     <p>Một số thông tin có thể hiển thị cho những người khác đang sử dụng dịch vụ của Website</p>
-    
-                    <div class="row  border-1 border-bottom align-items-center mx-5">
+                    <p style="color: green">
+                        {{ session('success') }}
+                    </p>
+                    <div class="row py-3 border-1 border-bottom align-items-center mx-5">
                         <div class="col-md-4">
                             <p class="fs-4 text-gray">Ảnh cá nhân</p>
                         </div>
                         <div class="col-md-4">
-                            <p class="fs-4">Ảnh hồ sơ của bạn</p>
+                            <div class="rounded-circle overflow-hidden" style="width: 150px; height: 150px;">
+                                <img src="{{ asset('/storage/images/' . Auth::user()->logo) }}" style="width: 100%; height: 100%;">
+                            </div>
                         </div>
+                        
                         <div class="col-md-4 text-center">
                             <img class="w-25" src="images/MoMo_logo-1.png" alt="Avatar">
                         </div>
                     </div>
     
-                    <div class="row py-3  border-1 border-bottom align-items-center mx-5">
+                    <div class="row py-3 mt-3 border-1 border-bottom align-items-center mx-5">
                         <div class="col-md-4">
                             <p class="fs-4 text-gray">Tên</p>
                         </div>
                         <div class="col-md-4">
-                            <p class="fs-3">Nguyễn Văn Minh</p>
+                            <p class="fs-3">{{Auth::User()->name}}</p>
                         </div>
                         <div class="col-md-4  text-center">
                             <i class="fas fa-terminal mx-5"></i>
@@ -525,7 +525,7 @@
                             <p class="fs-4 text-gray">Giới tính</p>
                         </div>
                         <div class="col-md-4">
-                            <p class="fs-3">Không muốn tiết lộ</p>
+                            <p class="fs-3">{{Auth::User()->gender}}</p>
                         </div>
                         <div class="col-md-4 text-center">
                             <i class="fas fa-terminal mx-5"></i>
@@ -545,7 +545,7 @@
                             <p class="fs-4 text-gray">Email</p>
                         </div>
                         <div class="col-md-4">
-                            <p class="fs-3">minh123456789</p>
+                            <p class="fs-3">{{Auth::User()->email}}</</p>
                         </div>
                         <div class="col-md-4">
                             <i class="fa-solid fa-terminal mx-5"></i>
@@ -557,7 +557,7 @@
                             <p class="fs-4 text-gray">Số điện thoại</p>
                         </div>
                         <div class="col-md-4">
-                            <p class="fs-3">3456789987865</p>
+                            <p class="fs-3">{{Auth::User()->phone}}</</p>
                         </div>
                         <div class="col-md-4">
                             <i class="fa-solid fa-terminal mx-5"></i>
@@ -568,7 +568,7 @@
                             <p class="fs-4 text-gray">Địa chỉ</p>
                         </div>
                         <div class="col-md-4">
-                            <p class="fs-3">8786534567899878653456789987865</p>
+                            <p class="fs-3">{{Auth::User()->address}}</p>
                         </div>
                         <div class="col-md-4">
                             <i class="fa-solid fa-terminal mx-5"></i>

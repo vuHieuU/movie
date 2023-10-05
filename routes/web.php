@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\cityController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -28,8 +28,7 @@ Route::get('/chair-food', [App\Http\Controllers\client\cart\Chairs_FoodControlle
 Route::get('/pay', [App\Http\Controllers\client\cart\PayController::class, 'index']);
 Route::get('/payment_success', [App\Http\Controllers\client\cart\Payment_successController::class, 'index']);
 Route::get('/choose-room', [App\Http\Controllers\client\cart\Choose_RoomController::class, 'index']);
-Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class, 'index']);
-Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index']);
+
 
 
 
@@ -43,6 +42,11 @@ Auth::routes();
 Route::get('/admin', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('admin');
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'index'])->name('index');
+    //profile của user
+    Route::get('/myaccount', [AuthController::class, 'index']);
+    Route::get('/editaccount', [AuthController::class, 'edit']);
+    Route::post('/myaccount', [AuthController::class, 'profile'])->name('profile');
+
 
     // roles
 
@@ -63,7 +67,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('edit/{id}', [App\Http\Controllers\admin\userController::class, 'edit']);
         Route::post('update/{id}', [App\Http\Controllers\admin\userController::class, 'update']);
         Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy']);
-
     });
     //Coupon (ma giam gia)
     Route::prefix('coupon')->group(function () {
@@ -75,22 +78,22 @@ Route::middleware(['auth'])->group(function () {
         Route::get('delete/{id}', [App\Http\Controllers\admin\couponController::class, 'destroy'])->name('coupon.delete');
     });
     // food
-    Route::prefix('food')->group(function(){
+    Route::prefix('food')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\foodController::class, 'index'])->name('food.index');
-        Route::get('create', [App\Http\Controllers\admin\foodController ::class, 'create'])->name('food.create');
-        Route::post('store', [App\Http\Controllers\admin\foodController ::class, 'store'])->name('food.store');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\foodController ::class, 'edit'])->name('food.edit');
-        Route::put('update/{id}', [App\Http\Controllers\admin\foodController ::class, 'update'])->name('food.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\foodController ::class, 'destroy'])->name('food.delete');
+        Route::get('create', [App\Http\Controllers\admin\foodController::class, 'create'])->name('food.create');
+        Route::post('store', [App\Http\Controllers\admin\foodController::class, 'store'])->name('food.store');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\foodController::class, 'edit'])->name('food.edit');
+        Route::put('update/{id}', [App\Http\Controllers\admin\foodController::class, 'update'])->name('food.update');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\foodController::class, 'destroy'])->name('food.delete');
     });
     // combo
-    Route::prefix('combo')->group(function(){
+    Route::prefix('combo')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\comboController::class, 'index'])->name('combo.index');
-        Route::get('create', [App\Http\Controllers\admin\comboController ::class, 'create'])->name('combo.create');
-        Route::post('store', [App\Http\Controllers\admin\comboController ::class, 'store'])->name('combo.store');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\comboController ::class, 'edit'])->name('combo.edit');
-        Route::post('update/{id}', [App\Http\Controllers\admin\comboController ::class, 'update'])->name('combo.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\comboController ::class, 'destroy'])->name('combo.delete');
+        Route::get('create', [App\Http\Controllers\admin\comboController::class, 'create'])->name('combo.create');
+        Route::post('store', [App\Http\Controllers\admin\comboController::class, 'store'])->name('combo.store');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\comboController::class, 'edit'])->name('combo.edit');
+        Route::post('update/{id}', [App\Http\Controllers\admin\comboController::class, 'update'])->name('combo.update');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\comboController::class, 'destroy'])->name('combo.delete');
     });
     // Thể loại Phim
     Route::prefix('categories')->group(function () {
@@ -110,22 +113,21 @@ Route::middleware(['auth'])->group(function () {
         Route::post('update/{id}', [App\Http\Controllers\admin\filmController::class, 'update'])->name('films.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\filmController::class, 'destroy'])->name('films.destroy');
     });
-      //city
-    Route::prefix('city')->group(function(){
-        Route::get('index',[App\Http\Controllers\admin\CityController::class,"index"]);
-        Route::get('create',[App\Http\Controllers\admin\CityController::class,"create"]);
-        Route::post('store',[App\Http\Controllers\admin\CityController::class,"store"]);
-        Route::get('edit/{id}',[App\Http\Controllers\admin\CityController::class,"edit"]);
-        Route::post('update/{id}',[App\Http\Controllers\admin\CityController::class,"update"]);
+    //city
+    Route::prefix('city')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\CityController::class, "index"]);
+        Route::get('create', [App\Http\Controllers\admin\CityController::class, "create"]);
+        Route::post('store', [App\Http\Controllers\admin\CityController::class, "store"]);
+        Route::get('edit/{id}', [App\Http\Controllers\admin\CityController::class, "edit"]);
+        Route::post('update/{id}', [App\Http\Controllers\admin\CityController::class, "update"]);
     });
     // cinemas
-    Route::prefix('cinemas')->group(function(){
-        Route::get('index',[App\Http\Controllers\admin\CinemasController::class,"index"]);
-        Route::get('create',[App\Http\Controllers\admin\CinemasController::class,"create"]);
-        Route::post('store',[App\Http\Controllers\admin\CinemasController::class,"store"]);
-        Route::get('edit/{id}',[App\Http\Controllers\admin\CinemasController::class,"edit"]);
-        Route::post('update/{id}',[App\Http\Controllers\admin\CinemasController::class,"update"]);
-
+    Route::prefix('cinemas')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\CinemasController::class, "index"]);
+        Route::get('create', [App\Http\Controllers\admin\CinemasController::class, "create"]);
+        Route::post('store', [App\Http\Controllers\admin\CinemasController::class, "store"]);
+        Route::get('edit/{id}', [App\Http\Controllers\admin\CinemasController::class, "edit"]);
+        Route::post('update/{id}', [App\Http\Controllers\admin\CinemasController::class, "update"]);
     });
     // seats
     Route::prefix('seats')->group(function () {
