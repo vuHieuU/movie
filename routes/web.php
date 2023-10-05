@@ -166,6 +166,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('update/{id}', [App\Http\Controllers\admin\showtimeController::class, 'update'])->name('showtime.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\showtimeController::class, 'destroy'])->name('showtime.destroy');
     });
+      // comment
     Route::prefix('comment')->group(function(){
         Route::get('index', [App\Http\Controllers\admin\commentController::class, 'index'])->name('comment.index');
         Route::get('hidden/{id}', [App\Http\Controllers\admin\commentController ::class, 'hidden'])->name('comment.hidden');
