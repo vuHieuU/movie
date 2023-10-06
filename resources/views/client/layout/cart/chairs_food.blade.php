@@ -951,19 +951,19 @@
                                                                                             class=" mx-5 btn btn-primary btn-lg fs-4 px-4">
                                                                                             Tiếp Theo</button>
 
-                                                                                        <input type="text"
+                                                                                        <input type="hidden"
                                                                                             name="selectedSeatsValue"
                                                                                             id="selectedSeatsValue"
                                                                                             value="">
-                                                                                        <input type="text"
+                                                                                        <input type="hidden"
                                                                                             name="selectedPriceSeatsValue"
                                                                                             id="selectedPriceSeatsValue"
                                                                                             value="">
-                                                                                        <input type="text"
+                                                                                        <input type="hidden"
                                                                                             name="totalPriceFoodValue"
                                                                                             id="totalPriceFoodValue"
                                                                                             value="">
-                                                                                        <input type="text"
+                                                                                        <input type="hidden"
                                                                                             name="selectedSeatsValueID"
                                                                                             id="selectedSeatsValueID"
                                                                                             value="">
