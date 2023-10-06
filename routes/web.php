@@ -24,7 +24,6 @@ Route::get('/detail_film/{id}', [App\Http\Controllers\client\Detail_filmControll
 Route::get('/dang-phat', [App\Http\Controllers\client\DangphatController::class, 'index']);
 Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class, 'index']);
 Route::get('/film', [App\Http\Controllers\client\AllfilmController::class, 'index']);
-
 Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class, 'index']);
 Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index']);
 
