@@ -27,7 +27,7 @@ class Detail_filmController extends Controller
     ->where("film_categories.film_id",$id)
     ->get();
 
-        $film = film::find($id);
+        $film = film::findOrFail($id);
         $title = "Detail";
         return view('client.detail_film',compact('title',"film","show_time","categoryfilm_category"));
     }

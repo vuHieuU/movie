@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="profile" href="https://gmpg.org/xfn/11" />
-    <title>{{$title}}</title>
+    <title>{{ $title }}</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -466,6 +467,7 @@
         }
     </style>
 </head>
+
 <body
     class="page-template-default page page-id-142 amy-header-default  single-author elementor-default elementor-kit-5 elementor-page elementor-page-142">
     <div id="page" class="hfeed site">
@@ -511,163 +513,203 @@
 
 
 
-                                                                                <h3 class="col-12 text-center ">3. Choose chair and food </h3>
+                                                                                <h3 class="col-12 text-center ">3. Choose
+                                                                                    chair and food </h3>
                                                                                 <hr class="border">
-                                                                                <div class="row text-center " style="margin-top: 30px; ">
+                                                                                <div class="row text-center "
+                                                                                    style="margin-top: 30px; ">
                                                                                     <div class="col-md-3 col-sm-4">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 35px; color: #BABBC3"></i>
+                                                                                        <i class="fa-solid fa-couch"
+                                                                                            style="font-size: 35px; color: #BABBC3"></i>
                                                                                         <span>Ghế trống</span>
-                                                                                        
+
                                                                                     </div>
-                                                                                
+
                                                                                     <div class="col-md-3 col-sm-4">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 35px; color: #03599D"></i>
+                                                                                        <i class="fa-solid fa-couch"
+                                                                                            style="font-size: 35px; color: #03599D"></i>
                                                                                         <span>Ghế đang chọn</span>
-                                                                                    </div>                                                                              
+                                                                                    </div>
                                                                                     <div class="col-md-3 col-sm-4">
-                                                                                        <i class="fa-solid fa-couch" style="font-size: 35px; color: #FD2802"></i>
+                                                                                        <i class="fa-solid fa-couch"
+                                                                                            style="font-size: 35px; color: #FD2802"></i>
                                                                                         <span>Ghế đặt trước</span>
                                                                                     </div>
-                                                                                
+
                                                                                 </div>
-                                                                                
+
                                                                                 <div class="py-5">
                                                                                     <img src="images/ic-screen.png"
                                                                                         alt="">
                                                                                 </div>
                                                                                 <div class="row mt-4">
-                                                                                    {{-- @for ($i = 1; $i < 5; $i++)
-                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #707174"></i>
-                                                                                       
-                                                                                        <p class="">B2</p>
-                                                                                    </div>
-                                                                                    @endfor --}}
-                                                                                  
 
-                            @foreach ($seats as $item)
-                            <div class="col-md-1 col-sm-2 col-xs-3 text-center seat" id="seat" onclick="toggleSeat(this)">
-                                <svg xmlns="http://www.w3.org/2000/svg" onclick="" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M248 48V256h48V58.7c23.9 13.8 40 39.7 40 69.3V256h48V128C384 57.3 326.7 0 256 0H192C121.3 0 64 57.3 64 128V256h48V128c0-29.6 16.1-55.5 40-69.3V256h48V48h48zM48 288c-12.1 0-23.2 6.8-28.6 17.7l-16 32c-5 9.9-4.4 21.7 1.4 31.1S20.9 384 32 384l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32V384H352v96c0 17.7 14.3 32 32 32s32-14.3 32-32V384c11.1 0 21.4-5.7 27.2-15.2s6.4-21.2 1.4-31.1l-16-32C423.2 294.8 412.1 288 400 288H48z"/></svg>
-                
-                                    <p class="">{{$item->seat_number}}</p>
-                                    <p class="">{{$item->price}}</p>
-                                    {{-- <p class="">{{$item->id}}</p> --}}
-                                </div>
-                            @endforeach
+                                                                                    @foreach ($seats as $item)
+                                                                                        <div class="col-md-1 col-sm-2 col-xs-3 text-center seat"
+                                                                                            id="{{ $item->id }}"
+                                                                                            data-price="{{ $item->price }}"
+                                                                                            onclick="toggleSeat(this)">
+                                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                onclick=""
+                                                                                                height="1em"
+                                                                                                viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                                <path
+                                                                                                    d="M248 48V256h48V58.7c23.9 13.8 40 39.7 40 69.3V256h48V128C384 57.3 326.7 0 256 0H192C121.3 0 64 57.3 64 128V256h48V128c0-29.6 16.1-55.5 40-69.3V256h48V48h48zM48 288c-12.1 0-23.2 6.8-28.6 17.7l-16 32c-5 9.9-4.4 21.7 1.4 31.1S20.9 384 32 384l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32V384H352v96c0 17.7 14.3 32 32 32s32-14.3 32-32V384c11.1 0 21.4-5.7 27.2-15.2s6.4-21.2 1.4-31.1l-16-32C423.2 294.8 412.1 288 400 288H48z" />
+                                                                                            </svg>
+                                                                                            @if($item->isActive == 1)
+                                                                                            <p class="">
+                                                                                                {{ $item->seat_number }}</p>
+                                                                                                @else
+                                                                                                <button class="btn btn-danger" disabled>
+                                                                                                    {{ $item->seat_number }} (Đã đặt)
+                                                                                                </button>
+                                                                                            @endif
+                                                                                        </div>
+                                                                                    @endforeach
                                                                                 </div>
                                                                                 <script>
                                                                                     const maxSeats = 8; // Số lượng ghế tối đa được chọn
                                                                                     const selectedSeats = []; // Mảng lưu các ghế đã chọn
-                                                                                    const getSeats = [];
+
+                                                                                    let totalPrice = 0;
+                                                                                    let totalFoodPrice = 0; // Đặt biến totalFoodPrice ở mức toàn cục
+                                                                                    const selectedFoodNames = [];
+                                                                                    const foodQuantities = {};
+
                                                                                     function toggleSeat(seat) {
-                                                                                        const seatNumber = seat.textContent;
-                                                                                        const selectedSeatsSpan = document.getElementById("getSeats");
+                                                                                        const seatNumber = seat.textContent.trim(); // Lấy seat_number từ nội dung của phần tử
+                                                                                        const seatPrice = parseFloat(seat.getAttribute("data-price"));
+                                                                                        const seatId = seat.getAttribute("id");
+                                                                                        var selectedSeatsValueID = document.getElementById("selectedSeatsValueID");
                                                                                         if (selectedSeats.includes(seatNumber)) {
                                                                                             selectedSeats.splice(selectedSeats.indexOf(seatNumber), 1);
                                                                                             seat.classList.remove("selected");
-                                                                                        } else if (selectedSeats.length < maxSeats) { // Kiểm tra nếu số ghế đã chọn chưa đạt tối đa
+                                                                                        } else if (selectedSeats.length < maxSeats) {
                                                                                             selectedSeats.push(seatNumber);
                                                                                             seat.classList.add("selected");
                                                                                         } else {
-                                                                                            alert("Bạn chỉ được chọn tối đa 8 ghế."); // Hiển thị thông báo khi chọn quá 5 ghế
+                                                                                            alert("Bạn chỉ được chọn tối đa 8 ghế.");
                                                                                         }
-                                                                                        updateSelectedSeatsList();
-                                                                                    
 
+                                                                                        updateSelectedSeatsList();
+                                                                                        selectedSeatsValueInput(); // Cập nhật giá trị trường input
+                                                                                        updateTotalPrice(selectedSeats, seatPrice);
+                                                                                        selectedSeatsValueID.value = seatId
                                                                                     }
+
 
                                                                                     function updateSelectedSeatsList() {
                                                                                         const selectedSeatsSpan = document.getElementById("selected-seats");
-                                                                                        
                                                                                         selectedSeatsSpan.textContent = selectedSeats.join(', ');
-                                                                                        
+
                                                                                     }
-                                                                                    // function getSeat(id){
-                                                                                    //     idSeat = id
-                                                                                    //     var selectSeat = document.getElementById("getseats")
-                                                                                    //     selectSeat.value = idSeat
-                                                                                    //     console.log(selectSeat);
-                                                                                    // }
+
+                                                                                    function selectedSeatsValueInput() {
+                                                                                        var selectedSeatsValue = document.getElementById("selectedSeatsValue");
+                                                                                        selectedSeatsValue.value = selectedSeats.join(', ');
+                                                                                    }
+
+                                                                
+
+                                                                                    function updateTotalPrice(selectedSeats, seatPrice) {
+                                                                                        const totalPriceSpan = document.getElementById("total-price");
+                                                                                        const selectedPriceSeatsValue = document.getElementById("selectedPriceSeatsValue");
+                                                                                        const total = selectedSeats.reduce((acc, seatNumber) => {
+                                                                                            return acc + seatPrice;
+                                                                                        }, 0);
+                                                                                        totalPriceSpan.textContent = total;
+                                                                                        selectedPriceSeatsValue.value = total;
+                                                                                    }
+                                                                                    // food
+                                                                                    function calculateTotal() {
+                                                                                        const foodItems = @json($food);
+                                                                                        let total = 0;
+
+                                                                                        foodItems.forEach(item => {
+                                                                                            const quantity = parseInt(document.getElementById(`quantity_${item.id}`).value);
+                                                                                            total += quantity * item.price;
+                                                                                        });
+
+                                                                                        document.getElementById('totalPriceFood').textContent = total;
+                                                                                        document.getElementById('totalPriceFoodValue').value = total;
+                                                                                    }
                                                                                 </script>
 
+
                                                                             </div>
-                                                                            <div class="row text-center m-5 mt-5 p-4" style="margin-top: 30px; background-color: #F8F8F8">
+                                                                            <div class="row text-center m-5 mt-5 p-4"
+                                                                                style="margin-top: 30px; background-color: #F8F8F8">
                                                                                 <div class="col-md-3 col-sm-4">
-                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #707174"></i>
-                                                                                    <p class="fs-2 mt-3" style="color: gray ;" >Ghế Thường</p >
+                                                                                    <i class="fa-solid fa-couch"
+                                                                                        style="font-size: 35px; color: #707174"></i>
+                                                                                    <p class="fs-2 mt-3"
+                                                                                        style="color: gray ;">Ghế Thường
+                                                                                    </p>
                                                                                 </div>
-                                                                            
+
                                                                                 <div class="col-md-3 col-sm-4">
-                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #b1ca0f"></i>
-                                                                                    <p  class="fs-2 mt-3" style="color: gray ;">Ghế Vip</p >
+                                                                                    <i class="fa-solid fa-couch"
+                                                                                        style="font-size: 35px; color: #b1ca0f"></i>
+                                                                                    <p class="fs-2 mt-3"
+                                                                                        style="color: gray ;">Ghế Vip</p>
                                                                                 </div>
-                                                                        
-                                                                            
+
+
                                                                                 <div class="col-md-3 col-sm-4">
-                                                                                    <i class="fa-solid fa-couch" style="font-size: 35px; color: #ca0fa1"></i>
-                                                                                    <p class="fs-2 mt-3" style="color: gray ;" >Ghế Đôi</p >
+                                                                                    <i class="fa-solid fa-couch"
+                                                                                        style="font-size: 35px; color: #ca0fa1"></i>
+                                                                                    <p class="fs-2 mt-3"
+                                                                                        style="color: gray ;">Ghế Đôi</p>
                                                                                 </div>
-                                                                            
-                                                                                
+
+
                                                                             </div>
+                                                                            {{-- food --}}
                                                                             <div>
                                                                                 <hr class="border-3 border-black mt-5">
                                                                                 <h3>Đồ ăn</h3>
 
 
-                                                                                <div class="">
+                                                                                <div>
                                                                                     <!-- Đoạn mã HTML -->
-                                                                                @foreach ($food as $item)
-                                                                                    
-                                                                              
-                                                                                    <div
-                                                                                        class="card mb-3 col-md-5 m-5 product-card">
-                                                                                        <div class="row g-0">
-                                                                                            <div class="col-md-4">
-                                                                                                <img src="/images/sweet-combo-154545-150623-48.png"
-                                                                                                    class="img-fluid rounded-start"
-                                                                                                    alt="...">
-                                                                                            </div>
-                                                                                            <div class="col-md-8">
-                                                                                                <div class="card-body">
-                                                                                                    <h5
-                                                                                                        class="card-title product-title">
-                                                                                                        {{$item->name}}</h5>
-                                                                                                    {{-- <p
-                                                                                                        class="card-text product-description">
-                                                                                                        TIẾT KIỆM 46K!!!
-                                                                                                        Gồm: 1 Bắp (69oz) +
-                                                                                                        2 Nước có gaz (22oz)
-                                                                                                    </p> --}}
-                                                                                                    <p
-                                                                                                        class="card-text product-price">
-                                                                                                        <small
-                                                                                                            class="text-body-secondary">Giá:
-                                                                                                            {{$item->price}}đ</small>
-                                                                                                    </p>
-                                                                                                    <div class="input_number_product  col-md-8 d-flex mb-4"
-                                                                                                        style="height: 25px">
-                                                                                                        <button
-                                                                                                            class="btn_num num_1 button button_qty decrease-btn border-0"
-                                                                                                            type="button">-</button>
-                                                                                                        <input
-                                                                                                            style="height: 25px"
-                                                                                                            type="text"
-                                                                                                            name="quantity"
-                                                                                                            value="0"
-                                                                                                            id="selectedFood"
-                                                                                                            maxlength="3"
-                                                                                                            class="form-control prd_quantity product-quantity">
-                                                                                                        <button
-                                                                                                            class="btn_num num_2 button button_qty increase-btn border-0"
-                                                                                                            type="button">+</button>
+                                                                                    @foreach ($food as $item)
+                                                                                        <div
+                                                                                            class="card mb-3 col-md-5 m-5 product-card">
+                                                                                            <div class="row g-0">
+                                                                                                <div class="col-md-4">
+                                                                                                    <img src="/images/sweet-combo-154545-150623-48.png"
+                                                                                                        class="img-fluid rounded-start"
+                                                                                                        alt="...">
+                                                                                                </div>
+                                                                                                <div class="col-md-8">
+                                                                                                    <div class="card-body">
+                                                                                                        <h5
+                                                                                                            class="card-title product-title">
+                                                                                                            {{ $item->name }}
+                                                                                                        </h5>
+                                                                                                        <p
+                                                                                                            class="card-text product-price">
+                                                                                                            <small
+                                                                                                                class="text-body-secondary">Giá:
+                                                                                                                {{ $item->price }}đ</small>
+                                                                                                        </p>
+                                                                                                        <div class="input_number_product  col-md-8 d-flex mb-4"
+                                                                                                            style="height: 25px">
+                                                                                                            <input
+                                                                                                                type="number"
+                                                                                                                id="quantity_{{ $item->id }}"
+                                                                                                                name="quantity_{{ $item->id }}"
+                                                                                                                value="0"
+                                                                                                                min="0"
+                                                                                                                data-food-name="{{ $item->name }}"
+                                                                                                                onchange="calculateTotal()">
+                                                                                                        </div>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
-                                                                                    </div>
                                                                                     @endforeach
-                                                                                    @foreach ($combo as $item)
+                                                                                    {{-- @foreach ($combo as $item)
                                                                                         
                                                                                     <div
                                                                                     class="card mb-3 col-md-5 m-5 product-card">
@@ -714,178 +756,26 @@
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
-                                                                                    @endforeach
                                                                                 </div>
-                                                                                <input type="text" name="food" id="food123"> dd
+                                                                                @endforeach --}}
+
 
                                                                                     <!-- Đoạn mã JavaScript -->
-                                                        <script>
-                                                            const selectedCombo = document.getElementById("selectedCombo")   
-                                                            const food = document.getElementById("food123")   
-                                                            const updateCombo = document.getElementById("updateCombo")
-                                                            transferButton.addEventListener("click",function(){
-                                                                const combovalue = selectedCombo.value
-                                                                food.value = combovalue
-                                                            })
-                                                        </script>
-
-                                                                                    <!-- Đoạn mã HTML -->
-                                                                                    {{-- <div
-                                                                                        class="card mb-3 col-md-5 m-5 product-card">
-                                                                                        <div class="row g-0">
-                                                                                            <div class="col-md-4">
-                                                                                                <img src="/images/sweet-combo-154545-150623-48.png"
-                                                                                                    class="img-fluid rounded-start"
-                                                                                                    alt="...">
-                                                                                            </div>
-                                                                                            <div class="col-md-8">
-                                                                                                <div class="card-body">
-                                                                                                    <h5
-                                                                                                        class="card-title product-title">
-                                                                                                        Combo 1</h5>
-                                                                                                    <p
-                                                                                                        class="card-text product-description">
-                                                                                                        TIẾT KIỆM 46K!!!
-                                                                                                        Gồm: 1 Bắp (69oz) +
-                                                                                                        2 Nước có gaz (22oz)
-                                                                                                    </p>
-                                                                                                    <p
-                                                                                                        class="card-text product-price">
-                                                                                                        <small
-                                                                                                            class="text-body-secondary">Giá:
-                                                                                                            100.000.000.000
-                                                                                                            đ</small>
-                                                                                                    </p>
-                                                                                                    <div class="input_number_product  col-md-8 d-flex mb-4"
-                                                                                                        style="height: 25px">
-                                                                                                        <button
-                                                                                                            class="btn_num num_1 button button_qty decrease-btn border-0"
-                                                                                                            type="button">-</button>
-                                                                                                        <input
-                                                                                                            style="height: 25px"
-                                                                                                            type="text"
-                                                                                                            name="quantity"
-                                                                                                            value="1"
-                                                                                                            maxlength="3"
-                                                                                                            class="form-control prd_quantity product-quantity">
-                                                                                                        <button
-                                                                                                            class="btn_num num_2 button button_qty increase-btn border-0"
-                                                                                                            type="button">+</button>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <!-- Đoạn mã JavaScript -->
-                                                                                
+                                                                                    {{-- <script>
+                                                                                        const selectedCombo = document.getElementById("selectedCombo")
+                                                                                        const food = document.getElementById("food123")
+                                                                                        const updateCombo = document.getElementById("updateCombo")
+                                                                                        transferButton.addEventListener("click", function() {
+                                                                                            const combovalue = selectedCombo.value
+                                                                                            food.value = combovalue
+                                                                                        })
+                                                                                    </script> --}}
 
 
-                                                                                    <!-- Đoạn mã HTML -->
-                                                                                    <div
-                                                                                        class="card mb-3 col-md-5 m-5 product-card">
-                                                                                        <div class="row g-0">
-                                                                                            <div class="col-md-4">
-                                                                                                <img src="/images/sweet-combo-154545-150623-48.png"
-                                                                                                    class="img-fluid rounded-start"
-                                                                                                    alt="...">
-                                                                                            </div>
-                                                                                            <div class="col-md-8">
-                                                                                                <div class="card-body">
-                                                                                                    <h5
-                                                                                                        class="card-title product-title">
-                                                                                                        Combo 1</h5>
-                                                                                                    <p
-                                                                                                        class="card-text product-description">
-                                                                                                        TIẾT KIỆM 46K!!!
-                                                                                                        Gồm: 1 Bắp (69oz) +
-                                                                                                        2 Nước có gaz (22oz)
-                                                                                                    </p>
-                                                                                                    <p
-                                                                                                        class="card-text product-price">
-                                                                                                        <small
-                                                                                                            class="text-body-secondary">Giá:
-                                                                                                            100.000.000.000
-                                                                                                            đ</small>
-                                                                                                    </p>
-                                                                                                    <div class="input_number_product  col-md-8 d-flex mb-4"
-                                                                                                        style="height: 25px">
-                                                                                                        <button
-                                                                                                            class="btn_num num_1 button button_qty decrease-btn border-0"
-                                                                                                            type="button">-</button>
-                                                                                                        <input
-                                                                                                            style="height: 25px"
-                                                                                                            type="text"
-                                                                                                            name="quantity"
-                                                                                                            value="1"
-                                                                                                            maxlength="3"
-                                                                                                            class="form-control prd_quantity product-quantity">
-                                                                                                        <button
-                                                                                                            class="btn_num num_2 button button_qty increase-btn border-0"
-                                                                                                            type="button">+</button>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <!-- Đoạn mã JavaScript -->
-
-
-
-                                                                                    <!-- Đoạn mã HTML -->
-                                                                                    <div
-                                                                                        class="card mb-3 col-md-5 m-5 product-card">
-                                                                                        <div class="row g-0">
-                                                                                            <div class="col-md-4">
-                                                                                                <img src="/images/sweet-combo-154545-150623-48.png"
-                                                                                                    class="img-fluid rounded-start"
-                                                                                                    alt="...">
-                                                                                            </div>
-                                                                                            <div class="col-md-8">
-                                                                                                <div class="card-body">
-                                                                                                    <h5
-                                                                                                        class="card-title product-title">
-                                                                                                        Combo 1</h5>
-                                                                                                    <p
-                                                                                                        class="card-text product-description">
-                                                                                                        TIẾT KIỆM 46K!!!
-                                                                                                        Gồm: 1 Bắp (69oz) +
-                                                                                                        2 Nước có gaz (22oz)
-                                                                                                    </p>
-                                                                                                    <p
-                                                                                                        class="card-text product-price">
-                                                                                                        <small
-                                                                                                            class="text-body-secondary">Giá:
-                                                                                                            100.000.000.000
-                                                                                                            đ</small>
-                                                                                                    </p>
-                                                                                                    <div class="input_number_product  col-md-8 d-flex mb-4"
-                                                                                                        style="height: 25px">
-                                                                                                        <button
-                                                                                                            class="btn_num num_1 button button_qty decrease-btn border-0"
-                                                                                                            type="button">-</button>
-                                                                                                        <input
-                                                                                                            style="height: 25px"
-                                                                                                            type="text"
-                                                                                                            name="quantity"
-                                                                                                            value="1"
-                                                                                                            maxlength="3"
-                                                                                                            class="form-control prd_quantity product-quantity">
-                                                                                                        <button
-                                                                                                            class="btn_num num_2 button button_qty increase-btn border-0"
-                                                                                                            type="button">+</button>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div> --}}
-
-                                                                                    <!-- Đoạn mã JavaScript -->
-                                                                                   
 
                                                                                 </div>
                                                                             </div>
+                                                                            {{-- food --}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -947,16 +837,17 @@
                                                                                     </p>
                                                                                 </div>
                                                                                 <div
-                                                                                class=" d-flex align-items-center justify-content-between mb-5 px-4">
-                                                                                <div
-                                                                                    class="d-flex align-items-center gap-2">
-                                                                                    <i class="fa-solid fa-house-user"></i>
-                                                                                    <span>Phòng (Room)</span>
-                                                                                </div>
+                                                                                    class=" d-flex align-items-center justify-content-between mb-5 px-4">
+                                                                                    <div
+                                                                                        class="d-flex align-items-center gap-2">
+                                                                                        <i
+                                                                                            class="fa-solid fa-house-user"></i>
+                                                                                        <span>Phòng (Room)</span>
+                                                                                    </div>
 
-                                                                                <p class="m-0 p-0 fw-bold">2
-                                                                                </p>
-                                                                            </div>
+                                                                                    <p class="m-0 p-0 fw-bold">2
+                                                                                    </p>
+                                                                                </div>
                                                                                 <div
                                                                                     class=" d-flex align-items-center justify-content-between mb-5 px-4">
                                                                                     <div
@@ -966,7 +857,8 @@
                                                                                         <span>Ngày Chiếu (Day)</span>
                                                                                     </div>
 
-                                                                                    <p class="m-0 p-0 fw-bold">11/10/2003
+                                                                                    <p class="m-0 p-0 fw-bold">
+                                                                                        {{ $selectedDate }}
                                                                                     </p>
                                                                                 </div>
 
@@ -978,7 +870,8 @@
                                                                                         <span>Giờ Chiếu (Time)</span>
                                                                                     </div>
 
-                                                                                    <p class="m-0 p-0 fw-bold">20:00</p>
+                                                                                    <p class="m-0 p-0 fw-bold">
+                                                                                        {{ $selectedHour }}</p>
                                                                                 </div>
 
                                                                                 <div
@@ -992,7 +885,7 @@
 
                                                                                     <p class="w-50 m-0 p-0 fw-bold"
                                                                                         id="selected-seats"></p>
-                                                                                        {{-- <input type="text" id="getseats" name="getseats"> --}}
+                                                                                    {{-- <input type="text" id="getseats" name="getseats"> --}}
 
                                                                                 </div>
 
@@ -1006,10 +899,11 @@
 
                                                                                         <span
                                                                                             class="fs-2 fw-bold ">Ghế</span>
-                                                                                        <span>1X20.00đ</span>
+                                                                                        {{-- <span>1X20.00đ</span> --}}
                                                                                     </div>
 
-                                                                                    <p class="m-0 p-0 fs-2 fw-bold">50.00đ
+                                                                                    <p class="m-0 p-0 fs-2 fw-bold"
+                                                                                        id="total-price">
                                                                                     </p>
                                                                                 </div>
 
@@ -1021,10 +915,11 @@
 
                                                                                         <span class="fs-2 fw-bold ">Đồ
                                                                                             Ăn</span>
-                                                                                        <span>1X20.00đ</span>
+                                                                                        {{-- <span>1X20.00đ</span> --}}
                                                                                     </div>
 
-                                                                                    <p class="m-0 p-0 fs-2 fw-bold">50.00đ
+                                                                                    <p class="m-0 p-0 fs-2 fw-bold"
+                                                                                        id="totalPriceFood">
                                                                                     </p>
                                                                                 </div>
 
@@ -1044,13 +939,37 @@
 
 
                                                                                 <hr class="border-2 border-black py-4">
-                                                                                <div class="">
-                                                                                <a
-                                                                                    href="/choose_room"class="btn btn-primary btn-lg fs-4 px-4">Quay lại</a>
+                                                                                <div class="d-flex">
                                                                                     <a
-                                                                                    href="/pay"class=" mx-5 btn btn-primary btn-lg fs-4 px-4">Tiếp
-                                                                                    Theo</a>
-</div>
+                                                                                        href="/choose_room"class="btn btn-primary btn-lg fs-4 px-4">Quay
+                                                                                        lại</a>
+                                                                                    <form
+                                                                                        action="{{ route('pay', ['film_id' => $film->id]) }}"
+                                                                                        method="get">
+
+                                                                                        <button type="submit"
+                                                                                            class=" mx-5 btn btn-primary btn-lg fs-4 px-4">
+                                                                                            Tiếp Theo</button>
+
+                                                                                        <input type="hidden"
+                                                                                            name="selectedSeatsValue"
+                                                                                            id="selectedSeatsValue"
+                                                                                            value="">
+                                                                                        <input type="hidden"
+                                                                                            name="selectedPriceSeatsValue"
+                                                                                            id="selectedPriceSeatsValue"
+                                                                                            value="">
+                                                                                        <input type="hidden"
+                                                                                            name="totalPriceFoodValue"
+                                                                                            id="totalPriceFoodValue"
+                                                                                            value="">
+                                                                                        <input type="hidden"
+                                                                                            name="selectedSeatsValueID"
+                                                                                            id="selectedSeatsValueID"
+                                                                                            value="">
+
+                                                                                    </form>
+                                                                                </div>
 
                                                                             </div>
                                                                         </div>
@@ -1080,13 +999,13 @@
                 </div>
             </div>
 
-            <style>
+            {{-- <style>
                 /* .seat {
-            
-            background-color: #ccc;
-            
-        } */
-       
+                    
+                    background-color: #ccc;
+                    
+                } */
+
 
                 .seat.selected {
                     background-color: #03599D;
@@ -1153,7 +1072,8 @@
                     updateSelectedSeatsList();
                 }
                 var getSeat = "";
-                function getseats(){
+
+                function getseats() {
 
                 }
 
@@ -1202,41 +1122,34 @@
 
 
 
- <script>
-                        // Lấy tất cả các card sản phẩm
-                        const productCards = document.querySelectorAll('.product-card');
+            <script>
+                // Lấy tất cả các card sản phẩm
+                const productCards = document.querySelectorAll('.product-card');
 
-                        // Lặp qua từng card và gắn sự kiện cho từng cái riêng biệt
-                        productCards.forEach(card => {
-                            const decreaseBtn = card.querySelector('.decrease-btn');
-                            const increaseBtn = card.querySelector('.increase-btn');
-                            const quantityInput = card.querySelector('.product-quantity');
+                // Lặp qua từng card và gắn sự kiện cho từng cái riêng biệt
+                productCards.forEach(card => {
+                    const decreaseBtn = card.querySelector('.decrease-btn');
+                    const increaseBtn = card.querySelector('.increase-btn');
+                    const quantityInput = card.querySelector('.product-quantity');
 
-                            decreaseBtn.addEventListener('click', () => {
-                                changeQuantity(quantityInput, -1);
-                            });
+                    decreaseBtn.addEventListener('click', () => {
+                        changeQuantity(quantityInput, -1);
+                    });
 
-                            increaseBtn.addEventListener('click', () => {
-                                changeQuantity(quantityInput, 1);
-                            });
-                        });
+                    increaseBtn.addEventListener('click', () => {
+                        changeQuantity(quantityInput, 1);
+                    });
+                });
 
-                        function changeQuantity(input, change) {
-                            let currentValue = parseInt(input.value);
-                            if (!isNaN(currentValue)) {
-                                let newValue = currentValue + change;
-                                if (newValue < 1) {
-                                    newValue = 1;
-                                }
-                                input.value = newValue;
-                            }
+                function changeQuantity(input, change) {
+                    let currentValue = parseInt(input.value);
+                    if (!isNaN(currentValue)) {
+                        let newValue = currentValue + change;
+                        if (newValue < 1) {
+                            newValue = 1;
                         }
-                    </script>
-
-
-
-
-
-
-
+                        input.value = newValue;
+                    }
+                }
+            </script> --}}
         @endsection

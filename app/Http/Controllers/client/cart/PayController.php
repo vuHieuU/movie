@@ -2,18 +2,36 @@
 
 namespace App\Http\Controllers\client\cart;
 
-use App\Http\Controllers\Controller;
+use App\Models\film;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PayController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request, $id)
     {
         $title = "Pay";
-        return view('client.layout.cart.pay',compact("title"));
+        $film = film::findOrFail($id);
+        $selectedDate = session('selectedDate');
+        $selectedHour = session('selectedHour');
+        $selectedSeatsValue = $request->input("selectedSeatsValue");
+        session(['selectedSeatsValue' => $selectedSeatsValue]);
+        $selectedSeatsValueID = $request->input("selectedSeatsValueID");
+        session(['selectedSeatsValueID' => $selectedSeatsValueID]);
+        $selectedPriceSeatsValue = $request->input("selectedPriceSeatsValue");
+        $totalPriceFoodValue = $request->input("totalPriceFoodValue");
+        return view('client.layout.cart.pay',compact(
+            "title",
+            'film',
+            'selectedDate',
+            'selectedHour',
+            'selectedSeatsValue',
+            'selectedPriceSeatsValue',
+            'totalPriceFoodValue',
+        ));
     }
 
     /**

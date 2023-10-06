@@ -511,10 +511,14 @@
                                             <p class="fs-4"><strong class="fs-2 "> Rạp:</strong> Beta Thái Nguyên</p>
                                         </div>
                                         <div class="col-md-4">
-                                            <p class="fs-4"><strong class="fs-2 "> Phim:</strong> Quái Vật 2 đầu</p>
+                                            <p class="fs-4"><strong class="fs-2 "> Phim:</strong>{{ $film->name }}</p>
                                         </div>
                                         <div class="col-md-4">
-                                            <p class="fs-4"> Thời gian chiếu: 200 tiếng</p>
+                                            <p class="fs-4"><strong class="fs-2 "> Thời gian chiếu:</strong> {{ $film->duration }} Phút</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p class="fs-4"><strong class="fs-2 "> Ngày xem</strong> {{ $selectedDate }}</p>
+                                            <p class="fs-4"><strong class="fs-2 "> Giờ xem</strong> {{ $selectedHour }}</p>
                                         </div>
                                     </div>
                                     
@@ -525,25 +529,29 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">Tên Hàng</th>
-                                                    <th scope="col">Đơn Giá</th>
+                                                    {{-- <th scope="col">Đơn Giá</th> --}}
                                                     <th scope="col">Thành Tiền</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 
                                                 <tr>
-                                                    <td><span class="fs-3">Tên ghế:</span> <span class="mx-5">A1, A2 ,A1, A2 ,A1, A2 ,A1, A2</span></td>
-                                                    <td><strong >100 VNĐ</strong> x 2</td>
-                                                    <td class="fs-4">100.000.000 VNĐ</td>
+                                                    <td><span class="fs-3">Tên ghế:</span> <span class="mx-5">{{ $selectedSeatsValue }}</span></td>
+                                                    {{-- <td><strong >100 VNĐ</strong> x 2</td> --}}
+                                                    <td class="fs-4">{{ $selectedPriceSeatsValue }} VND</td>
                                                 </tr>
                                                 <tr>
                                                     <td><span class="fs-3">Đồ ăn:</span> <span class="mx-5">Combo1</span></td>
-                                                    <td><span ><strong>100 VNĐ</strong> x 2</span> / <span><strong>100 VNĐ</strong> x 2</span></td>
-                                                    <td class="fs-4">400.000.000 VNĐ</td>
+                                                    {{-- <td><span ><strong>100 VNĐ</strong> x 2</span> / <span><strong>100 VNĐ</strong> x 2</span></td> --}}
+                                                    <td class="fs-4">{{ $totalPriceFoodValue }} VNĐ</td>
                                                 </tr>
+                                                @php
+                                                    $total = 0;
+                                                     $total = $selectedPriceSeatsValue + $totalPriceFoodValue
+                                                @endphp
                                                 <tr>
-                                                    <td colspan="2" class="fs-3 fw-bold">Thành Tiền :</td>
-                                                    <td class="fs-2 fw-bold">100.000 VNĐ</td>
+                                                    <td colspan="1" class="fs-3 fw-bold">Thành Tiền :</td>
+                                                    <td class="fs-2 fw-bold">{{ $total }} VNĐ</td>
                                                 </tr>
                                                 
                                             </tbody>
@@ -563,6 +571,7 @@
                                                                     <input type="text" class="form-control" id="voucherCode" placeholder="Nhập mã voucher">
                                                                 </div>
                                                                 <button type="submit" class="btn btn-primary mt-5">Áp dụng</button>
+                                                               
                                                             </form>
                                                         </div>
                                                     </div>
@@ -648,8 +657,11 @@
                                         <a href="/chair-food"class="btn btn-primary btn-block px-5 py-2 fs-3"> Quay lại</a>
                                     </div>
                                     <div class="col-md-2">
-                                        {{-- <button type="button" class="btn btn-primary btn-block px-5 py-2 fs-3">Thanh toán</button> --}}
-                                        <a href="/payment_success"class="btn btn-primary btn-block px-5 py-2 fs-3"> Thanh toán</a>
+                                        <form method="POST" action="{{ route('payment_success', ['film_id' => $film->id]) }}">
+                                            @csrf
+                                            <button type="submit" class="btn btn-primary btn-block px-5 py-2 fs-3"> Thanh toán</button>
+                                            <input type="hidden" name="total" value="{{ $total }}">
+                                        </form>
                                     </div>
                                 </div>
                                 

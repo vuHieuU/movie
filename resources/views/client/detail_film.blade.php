@@ -708,9 +708,9 @@
                                                                                 class="btn btn-secondary amy-buy-ticket"
                                                                                 data-bs-dismiss="modal">Close</button>
                                                                             <button type="submit" class="amy-buy-ticket">Next</button>
-                                                                            <input type="text" id="selectedDate" name="selectedDate" value="">
-                                                                            <input type="text" id="selectedHour" name="selectedHour" value="">
-                                                                            <input type="text" id="selectedShowTimeId" name="selectedShowTimeId" value="">
+                                                                            <input type="hidden" id="selectedDate" name="selectedDate" value="">
+                                                                            <input type="hidden" id="selectedHour" name="selectedHour" value="">
+                                                                            <input type="hidden" id="selectedShowTimeId" name="selectedShowTimeId" value="">
                                                                         </div>
                                                                         
                                                                     </form>
