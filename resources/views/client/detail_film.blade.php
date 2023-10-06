@@ -471,9 +471,9 @@
                     <div class="modal-content">
                         <form action="{{ url('/add-rating') }}" method="post">
                             @csrf
-                            <input type="text" name="film_id" value="{{ $data->id }}" hidden>
+                            <input type="text" name="film_id" value="{{ $film->id }}" hidden>
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Đánh giá phim {{ $data->name }}</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Đánh giá phim {{ $film->name }}</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -663,8 +663,7 @@
                                                             <label>
                                                                 Ngày chiếu:
                                                             </label>
-                                                            <span>
-                                                                {{ $data->premiere_date }}</span>
+                                            
                                                         </li>
 
                                                         <li>
@@ -673,7 +672,7 @@
                                                             </label>
                                                             <span>
                                                                 {{ $film->country }}</span>
-                                                            <span>{{ $data->language }}</span>
+                                                          
                                                         </li>
 
                                                         <li>
@@ -853,103 +852,8 @@
                                                                         </div>
 
 
-                                                                        <div class="container ">
-                                                                            <h1
-                                                                                class="modal-title fs-3 py-3 text-muted fw-bold"id="exampleModalLabel">
-                                                                                2D Phụ Đề</h1>
-                                                                            <div class="row">
-
-                                                                                <p class="d-inline-flex gap-5 row">
-                                                                                <div class="col-md-2">
-
-                                                                                    <a class="btn btn-secondary option fs-5   "
-                                                                                        data-bs-toggle="collapse"
-                                                                                        href="" role=""
-                                                                                        aria-expanded="false"
-                                                                                        aria-controls="multiCollapseExample1">11:00</a>
-
-                                                                                    <br>
-                                                                                    <p class="fs-6 mt-2">123 ghế trống</p>
-                                                                                </div>
-
-
-                                                                                <div class="col-md-2">
-
-                                                                                    <a class="btn btn-secondary option fs-5   "
-                                                                                        data-bs-toggle="collapse"
-                                                                                        href="" role=""
-                                                                                        aria-expanded="false"
-                                                                                        aria-controls="multiCollapseExample1">11:00</a>
-
-                                                                                    <br>
-                                                                                    <p class="fs-6 mt-2">123 ghế trống</p>
-                                                                                </div>
-
-                                                                                <div class="col-md-2">
-
-                                                                                    <a class="btn btn-secondary option fs-5   "
-                                                                                        data-bs-toggle="collapse"
-                                                                                        href="" role=""
-                                                                                        aria-expanded="false"
-                                                                                        aria-controls="multiCollapseExample1">11:00</a>
-
-                                                                                    <br>
-                                                                                    <p class="fs-6 mt-2">123 ghế trống</p>
-                                                                                </div>
-
-                                                                                <div class="col-md-2">
-
-                                                                                    <a class="btn btn-secondary option fs-5   "
-                                                                                        data-bs-toggle="collapse"
-                                                                                        href="" role=""
-                                                                                        aria-expanded="false"
-                                                                                        aria-controls="multiCollapseExample1">11:00</a>
-
-                                                                                    <br>
-                                                                                    <p class="fs-6 mt-2">123 ghế trống</p>
-                                                                                </div>
-
-                                                                                <div class="col-md-2">
-
-                                                                                    <a class="btn btn-secondary option fs-5   "
-                                                                                        data-bs-toggle="collapse"
-                                                                                        href="" role=""
-                                                                                        aria-expanded="false"
-                                                                                        aria-controls="multiCollapseExample1">11:00</a>
-
-                                                                                    <br>
-                                                                                    <p class="fs-6 mt-2">123 ghế trống</p>
-                                                                                </div>
-
-                                                                                <div class="col-md-2">
-
-                                                                                    <a class="btn btn-secondary option fs-5   "
-                                                                                        data-bs-toggle="collapse"
-                                                                                        href="" role=""
-                                                                                        aria-expanded="false"
-                                                                                        aria-controls="multiCollapseExample1">11:00</a>
-
-                                                                                    <br>
-                                                                                    <p class="fs-6 mt-2">123 ghế trống</p>
-                                                                                </div>
-
-
-
-                                                                                </p>
-                                                                            </div>
-
-                                                                        </div>
-
-
-
                                                                     </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button"
-                                                                            class="btn btn-secondary amy-buy-ticket"
-                                                                            data-bs-dismiss="modal">Close</button>
-                                                                        <a href="/chair-food"
-                                                                            class="amy-buy-ticket">Next</a>
-                                                                    </div>
+                                                                 
                                                                     <form action="{{route('chair',['film_id'=>$film->id])}}" method="GET">
                                                                         <div class="modal-footer">
                                                                             <button type="button"
