@@ -19,13 +19,16 @@ class PayController extends Controller
         $film_name = $film->name;
         $duration = $film->duration;
         $selectedSeatsValue = $request->input('selectedSeatsValue');
-        $selectedSeatsValue = session('selectedSeatsValue');
         $selectedPriceSeatsValue = $request->input('selectedPriceSeatsValue');
         $totalPriceFoodValue = $request->input('totalPriceFoodValue');
         $selectedSeatsValueID = $request->input('selectedSeatsValueID');
+        
         $selectedDate = session('selectedDate');
         $selectedHour = session('selectedHour');
-        $selectedSeatsValueID = session('selectedSeatsValueID');
+        session(['selectedSeatsValue' => $selectedSeatsValue]);
+        session(['selectedPriceSeatsValue' => $selectedPriceSeatsValue]);
+        session(['totalPriceFoodValue' => $totalPriceFoodValue]);
+        session(['selectedSeatsValueID' => $selectedSeatsValueID]);
         return view('client.layout.cart.pay',compact('title','selectedPriceSeatsValue','totalPriceFoodValue','film_name','duration','selectedDate','selectedHour','film','selectedSeatsValue'));
     }
 

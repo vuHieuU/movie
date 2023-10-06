@@ -35,7 +35,7 @@ class Payment_successController extends Controller
     $ticket->selected_date = $selectedDate;
     $ticket->selected_hour = $selectedHour;
     $ticket->selected_room = 'Room1';
-    $ticket->selected_seats = 'A2';
+    $ticket->selected_seats = $selectedSeatsValue;
     $ticket->user_id = $user->id;
     $ticket->buyer_name = $user->name;
     $ticket->film_id = $film_id;
