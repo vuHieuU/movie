@@ -6,6 +6,8 @@ use App\Models\film;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Models\ticket;
+use App\Models\showtime_seat;
 class PayController extends Controller
 {
     /**
@@ -33,7 +35,6 @@ class PayController extends Controller
             'totalPriceFoodValue',
         ));
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -47,7 +48,7 @@ class PayController extends Controller
      */
     public function store(Request $request)
     {
-        //
+  
     }
 
     /**

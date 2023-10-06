@@ -25,7 +25,6 @@ Route::get('/dang-phat', [App\Http\Controllers\client\DangphatController::class,
 Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class, 'index']);
 Route::get('/film', [App\Http\Controllers\client\AllfilmController::class, 'index']);
 
-
 Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class, 'index']);
 Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index']);
 
@@ -166,10 +165,10 @@ Route::middleware(['auth'])->group(function () {
 
     });
 
-        // cart
-    Route::get('/chair-food/{film_id}', [App\Http\Controllers\client\cart\Chairs_FoodController::class, 'index'])->name('chair');
-    Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'index'])->name('pay');
-    Route::post('/payment_success/{film_id}', [App\Http\Controllers\client\cart\Payment_successController::class, 'index'])->name('payment_success');
-    Route::get('/payment_success/{film_id}', [App\Http\Controllers\client\cart\Payment_successController::class, 'show'])->name('payment_success');
-    Route::get('/choose-room', [App\Http\Controllers\client\cart\Choose_RoomController::class, 'index']);
+    // cart
+        Route::get('/chair-food/{film_id}', [App\Http\Controllers\client\cart\Chairs_FoodController::class, 'index'])->name('chair');
+        Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'index'])->name('pay');
+        Route::post('/payment_success/{film_id}', [App\Http\Controllers\client\cart\Payment_successController::class, 'index'])->name('payment_success');
+        Route::get('/payment_success/{film_id}', [App\Http\Controllers\client\cart\Payment_successController::class, 'show'])->name('payment_success');
+        Route::get('/choose-room', [App\Http\Controllers\client\cart\Choose_RoomController::class, 'index']);
 });
