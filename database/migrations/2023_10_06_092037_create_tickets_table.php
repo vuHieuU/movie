@@ -13,18 +13,17 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cinemas_id');
-            $table->unsignedBigInteger('film_id');
-            $table->unsignedBigInteger('user_id');
-            $table->date('date');
-            $table->unsignedBigInteger('food_id');
-            $table->double('total');
-            $table->string('status')->default(1);
+            $table->string('film_name'); // Tên bộ phim
+            $table->date('selected_date'); // Ngày được chọn
+            $table->time('selected_hour'); // Giờ được chọn
+            $table->string('selected_room'); // Phòng được chọn
+            $table->text('selected_seats'); // Ghế được chọn (dưới dạng chuỗi văn bản)
+            $table->unsignedBigInteger('user_id'); // ID của người dùng đặt vé
+            $table->string('buyer_name'); // Tên của người mua vé
+            $table->unsignedBigInteger('film_id'); // ID của bộ phim (liên kết ngoại)
             $table->timestamps();
-            $table->foreign('cinemas_id')->references('id')->on('cinemas');
             $table->foreign('film_id')->references('id')->on('films');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('food_id')->references('id')->on('food');
         });
     }
 
