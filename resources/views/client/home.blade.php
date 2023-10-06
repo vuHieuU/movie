@@ -227,7 +227,7 @@
                                                 <h2 class="title-heading"><span class="title">Now Playing</span>
                                                 </h2><span class="seperator seperator-right"></span>
                                             </header>
-<<<<<<< HEAD
+
                                         </div>
                                     </div>
                                 </div>

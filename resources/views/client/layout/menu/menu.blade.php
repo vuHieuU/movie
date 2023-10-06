@@ -126,7 +126,7 @@
                             </li>
                             <li id="menu-item-276"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-276">
-                                <a href="#">Movie</a>
+                                <a href="/film">Movie</a>
                                 <ul class="sub-menu">
                                     <li id="menu-item-143"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143">
@@ -140,15 +140,15 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li id="menu-item-277"
+                            {{-- <li id="menu-item-277"
                                 class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-277">
                                 <a href="/film">All Movie</a>
                                 
-                            </li>
+                            </li> --}}
                             <li id="menu-item-278"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
-                                <a href="#">Showtime</a>
-                                <ul class="sub-menu">
+                                <a href="/weeklyshowtime">Showtime</a>
+                                {{-- <ul class="sub-menu">
                                     <li id="menu-item-140"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
                                         <a
@@ -173,7 +173,7 @@
                                             href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/weekly-showtime-table/">Weekly
                                             Showtime Table</a>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </li>
                             <li id="menu-item-146"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">

@@ -688,6 +688,12 @@
                                                                                                             {{ $item->name }}
                                                                                                         </h5>
                                                                                                         <p
+                                                                                                    class="card-text product-description">
+                                                                                                    TIẾT KIỆM 46K!!!
+                                                                                                    Gồm: 1 Bắp (69oz) +
+                                                                                                    2 Nước có gaz (22oz)
+                                                                                                </p>
+                                                                                                        <p
                                                                                                             class="card-text product-price">
                                                                                                             <small
                                                                                                                 class="text-body-secondary">Giá:
@@ -932,7 +938,7 @@
                                                                                             Tiền =</span>
 
                                                                                     </div>
-
+                                                                                   
                                                                                     <p class="m-0 p-0 fs-2 fw-bold">50.00đ
                                                                                     </p>
                                                                                 </div>

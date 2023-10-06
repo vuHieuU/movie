@@ -753,7 +753,7 @@
                                                                             @foreach ($show_time as $item)
                                                                                 @if (!in_array($item->day, $uniqueDates))
                                                                                     <div
-                                                                                        class="col-md-4 fs-3 navbar-nav    w-50 date-button A">
+                                                                                        class="col-md-4 fs-3 navbar-nav  date-button A" style="width: 130px;">
                                                                                         <li style="background-color: #F8F8F8"
                                                                                             class=" px-3 py-2 text-white">
                                                                                             <a class="showtime-day"

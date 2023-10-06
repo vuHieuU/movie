@@ -537,7 +537,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label>Hình ảnh *</label>
+                                                    <label>Avatar *</label>
                                                     <input type="file" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
                                                         data-errors="Please Enter Name." name="logo" value="{{Auth::User()->logo}}">
                                                     <div class="help-block with-errors">
@@ -619,6 +619,7 @@
                                        <div class="mt-5">
                                           <button type="submit" class="btn btn-primary mr-2 fs-3 rounded-4">Cập Nhật</button>
                                         <button type="reset" class="btn btn-danger mr-2 fs-3 rounded-4">Reset</button>
+                                        <a href="/myaccount" class="btn btn-danger mr-2 fs-3 rounded-4">Back</a>
                                        </div>
                                         
                                       
@@ -631,6 +632,7 @@
                     </div>
                 
         </form>
+    </div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
