@@ -481,15 +481,17 @@
                             <div class="modal-body">
                                 <div class="rating">
                                     @if ($user_rating)
-                                        @for ($k = 1; $k <= $user_rating->star_rated; $k++)
-                                            <input type="radio" value="{{$k}}" name="film_rating checked" id="star{{$k}}">
-                                            <label for="star{{$k}}"></label>
+                                        @for ($l = 5; $l > $user_rating->star_rated; $l--)
+                                            <input type="radio" value="{{ $l }}" name="film_rating"
+                                                id="star{{ $l }}">
+                                            <label for="star{{ $l }}"></label>
                                         @endfor
 
-                                        {{-- @for ($l = $user_rating->star_rated + 1 ; $l <= 5; $l++)
-                                        <input type="radio" value="{{$l}}" name="film_rating" id="star{{$l}}">
-                                        <label for="star{{$l}}"></label>
-                                        @endfor --}}
+                                        @for ($k = $user_rating->star_rated; $k >= 1; $k--)
+                                            <input type="radio" value="{{ $k }}" name="film_rating"
+                                                id="star{{ $k }}">
+                                            <label for="star{{ $k }}"></label>
+                                        @endfor 
                                     @else
                                         <input type="radio" value="5" name="film_rating" id="star1">
                                         <label for="star1"></label>
@@ -510,9 +512,9 @@
 
                                 <style>
                                     /* .rating label{
-                                                                            margin: 0;
-                                                                            padding: 0;
-                                                                        } */
+                                                                                                                margin: 0;
+                                                                                                                padding: 0;
+                                                                                                            } */
 
                                     .rating {
                                         position: absolute;
