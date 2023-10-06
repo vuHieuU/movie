@@ -17,8 +17,12 @@ class RatingController extends Controller
 
         $existing_rating = Rating::where("user_id", Auth::id())->where("film_id", $film_id)->first();
 
+        if ($star_rated === null) {
+            $star_rated = $existing_rating->star_rated;
+        }   
 
         if ($existing_rating) {
+
 
             $existing_rating->star_rated = $star_rated;
 

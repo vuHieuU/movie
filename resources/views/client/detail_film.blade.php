@@ -489,9 +489,9 @@
 
                                         @for ($k = $user_rating->star_rated; $k >= 1; $k--)
                                             <input type="radio" value="{{ $k }}" name="film_rating"
-                                                id="star{{ $k }}">
-                                            <label for="star{{ $k }}"></label>
-                                        @endfor 
+                                                class="star-rated" id="star{{ $k }}">
+                                            <label for="star{{ $k }}" class="star-rated"></label>
+                                        @endfor
                                     @else
                                         <input type="radio" value="5" name="film_rating" id="star1">
                                         <label for="star1"></label>
@@ -511,17 +511,20 @@
                                 </div>
 
                                 <style>
-                                    /* .rating label{
-                                                                                                                margin: 0;
-                                                                                                                padding: 0;
-                                                                                                            } */
-
                                     .rating {
                                         position: absolute;
                                         /* top: 50%; */
                                         left: 50%;
                                         transform: translate(-50%, -50%) rotateY(180deg);
                                         display: flex;
+                                    }
+
+                                    .rating label.star-rated::before {
+                                        color: #FFD600;
+                                    }
+
+                                    .rating label.star-hovered::before {
+                                        color: #FFD600;
                                     }
 
                                     .rating input {
