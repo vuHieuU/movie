@@ -7,8 +7,6 @@ use App\Models\category;
 use App\Models\film;
 use App\Models\ShowTime;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
 class homeController extends Controller
 {
     /**
@@ -22,7 +20,10 @@ class homeController extends Controller
      
 
         $title = "home";
-        return view('client.home',compact("title","film_nowplaying","categories"));
+
+        $films = film::all();
+        return view('client.home',compact("title","film_nowplaying","categories","films"));
+
     }
 
     /**

@@ -7,12 +7,15 @@ use App\Models\film;
 use App\Models\ShowTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Rating;
+use Illuminate\Support\Facades\Auth;
 
 class Detail_filmController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
     public function index($id)
     {
         $show_time = DB::table('films')
@@ -28,10 +31,23 @@ class Detail_filmController extends Controller
     ->get();
 
         $film = film::findOrFail($id);
-        $title = "Detail";
-        return view('client.detail_film',compact('title',"film","show_time","categoryfilm_category"));
-    }
+        $ratings = Rating::where("film_id",$film->id);
+        $rating_sum = Rating::where("film_id",$film->id)->sum("star_rated");
+        $user_rating = Rating::where("film_id",$film->id)->where("user_id",Auth::id())->first();
 
+        if($ratings->count() > 0){
+            $rating_value = $rating_sum / $ratings->count();
+        }
+        else{
+            $rating_value = 0;
+        }
+        $title = "Detail";
+        return view('client.detail_film',compact(
+            'title',"film","show_time","categoryfilm_category",
+            "ratings","rating_value","user_rating"
+        ));
+
+    }
     /**
      * Show the form for creating a new resource.
      */

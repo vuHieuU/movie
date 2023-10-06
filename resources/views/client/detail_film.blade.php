@@ -452,6 +452,10 @@
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
     </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body
@@ -460,6 +464,119 @@
 
         @extends('client.layout.main.main')
         @section('contact')
+
+            <div class="modal fade" id="rateStar" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form action="{{ url('/add-rating') }}" method="post">
+                            @csrf
+                            <input type="text" name="film_id" value="{{ $data->id }}" hidden>
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Đánh giá phim {{ $data->name }}</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="rating">
+                                    @if ($user_rating)
+                                        @for ($l = 5; $l > $user_rating->star_rated; $l--)
+                                            <input type="radio" value="{{ $l }}" name="film_rating"
+                                                id="star{{ $l }}">
+                                            <label for="star{{ $l }}"></label>
+                                        @endfor
+
+                                        @for ($k = $user_rating->star_rated; $k >= 1; $k--)
+                                            <input type="radio" value="{{ $k }}" name="film_rating"
+                                                class="star-rated" id="star{{ $k }}">
+                                            <label for="star{{ $k }}" class="star-rated"></label>
+                                        @endfor
+                                    @else
+                                        <input type="radio" value="5" name="film_rating" id="star1">
+                                        <label for="star1"></label>
+
+                                        <input type="radio" value="4" name="film_rating" id="star2">
+                                        <label for="star2"></label>
+
+                                        <input type="radio" value="3" name="film_rating" id="star3">
+                                        <label for="star3"></label>
+
+                                        <input type="radio" value="2" name="film_rating" id="star4">
+                                        <label for="star4"></label>
+
+                                        <input type="radio" value="1" name="film_rating" id="star5">
+                                        <label for="star5"></label>
+                                    @endif
+                                </div>
+
+                                <style>
+                                    .rating {
+                                        position: absolute;
+                                        /* top: 50%; */
+                                        left: 50%;
+                                        transform: translate(-50%, -50%) rotateY(180deg);
+                                        display: flex;
+                                    }
+
+                                    .rating label.star-rated::before {
+                                        color: #FFD600;
+                                    }
+
+                                    .rating label.star-hovered::before {
+                                        color: #FFD600;
+                                    }
+
+                                    .rating input {
+                                        display: none;
+                                    }
+
+                                    .rating label {
+                                        display: block;
+                                        cursor: pointer;
+                                        width: 50px;
+                                        /* background: #ccc; */
+                                    }
+
+                                    .rating label::before {
+                                        content: '\f005';
+                                        font-family: 'FontAwesome';
+                                        position: relative;
+                                        display: block;
+                                        font-size: 50px;
+                                        color: #101010;
+                                    }
+
+                                    .rating label::after {
+                                        content: '\f005';
+                                        font-family: 'FontAwesome';
+                                        position: absolute;
+                                        display: block;
+                                        font-size: 50px;
+                                        color: #FFD600;
+                                        top: 0;
+                                        opacity: 0;
+                                        transition: 0.5s;
+                                        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+                                    }
+
+                                    .rating label:hover::after,
+                                    .rating label:hover~label::after,
+                                    .rating input:checked~label::after {
+                                        opacity: 1;
+                                    }
+                                </style>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                <button type="submit" class="btn btn-primary">Gửi</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
             <div id="main">
                 <div id="content" class="site-content">
 
@@ -477,6 +594,7 @@
                                         <article id="post-74"
                                             class="post-74 amy_movie type-amy_movie status-publish amy_genre-cartoon amy_genre-sci-fi amy_actor-alexander-cattly amy_actor-cartin-hollia amy_actor-humpray-richard amy_director-gally-peckin amy_director-mae-west">
                                             <div class="entry-top">
+
                                                 <div class="entry-poster mx-5"style="max-width: 250px;width: 100%;">
                                                     <img  class=""
                                                                  src="{{ asset('storage/images/'.$film->thumb) }}"
@@ -490,41 +608,45 @@
                                                         <a href="" rel="bookmark" class="u-url url"
                                                             itemprop="url">
                                                             {{ $film->name }}</a>
+
                                                     </h1>
 
                                                     <div class="entry-pg">
                                                         <span class="pg">G</span>
 
                                                         <span class="duration">
+
                                                             <i class="fa fa-clock-o"></i>
                                                             {{ $film->duration }} minutess
                                                         </span>
+
                                                     </div>
 
                                                     <ul class="info-list">
                                                         <li>
                                                             <label>
-                                                                Actor:
+                                                                Diễn viên:
                                                             </label>
                                                             <span>
                                                                 <a href="">{{ $film->actor }}</a>
 
                                                             </span>
+
                                                         </li>
 
                                                         <li>
                                                             <label>
-                                                                Director:
+                                                                Đạo diễn:
                                                             </label>
                                                             <span>
-
                                                                 <a href="">{{ $film->director }}</a>
                                                             </span>
+
                                                         </li>
 
                                                         <li>
                                                             <label>
-                                                                Genre:
+                                                                Thể loại phim:
                                                             </label>
                                                             <span>
 
@@ -533,25 +655,54 @@
                                                                 @endforeach
 
                                                         </li>
-
-
+                                                                Hoạt hình
+                                                            </span>
+                                                        </li>
 
                                                         <li>
                                                             <label>
-                                                                Language:
+                                                                Ngày chiếu:
+                                                            </label>
+                                                            <span>
+                                                                {{ $data->premiere_date }}</span>
+                                                        </li>
+
+                                                        <li>
+                                                            <label>
+                                                                Ngôn ngữ:
                                                             </label>
                                                             <span>
                                                                 {{ $film->country }}</span>
+                                                            <span>{{ $data->language }}</span>
                                                         </li>
 
                                                         <li>
-                                                            <label>
-                                                                IMDB Rating:
-                                                            </label>
-                                                            <span>
-                                                                8.2 </span>
-                                                        </li>
+                                                            @php
+                                                                $rateNum = number_format($rating_value);
+                                                            @endphp
+                                                            <div class="rating_result">
+                                                                @for ($i = 1; $i <= $rateNum; $i++)
+                                                                    <i class="fa fa-star checked"></i>
+                                                                @endfor
 
+                                                                @for ($j = $rateNum + 1; $j <= 5; $j++)
+                                                                    <i class="fa fa-star"></i>
+                                                                @endfor
+                                                            </div>
+                                                            <style>
+                                                                .checked {
+                                                                    color: #ffe900;
+                                                                }
+                                                            </style>
+                                                            <span style="margin-left: 2px;">
+
+                                                                @if ($ratings->count() > 0)
+                                                                    {{ $ratings->count() }} Người đánh giá
+                                                                @else
+                                                                    Không có đánh giá nào
+                                                                @endif
+                                                            </span>
+                                                        </li>
                                                     </ul>
 
                                                     {{-- BUy ticket --}}
@@ -701,6 +852,103 @@
 
                                                                         </div>
 
+
+                                                                        <div class="container ">
+                                                                            <h1
+                                                                                class="modal-title fs-3 py-3 text-muted fw-bold"id="exampleModalLabel">
+                                                                                2D Phụ Đề</h1>
+                                                                            <div class="row">
+
+                                                                                <p class="d-inline-flex gap-5 row">
+                                                                                <div class="col-md-2">
+
+                                                                                    <a class="btn btn-secondary option fs-5   "
+                                                                                        data-bs-toggle="collapse"
+                                                                                        href="" role=""
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="multiCollapseExample1">11:00</a>
+
+                                                                                    <br>
+                                                                                    <p class="fs-6 mt-2">123 ghế trống</p>
+                                                                                </div>
+
+
+                                                                                <div class="col-md-2">
+
+                                                                                    <a class="btn btn-secondary option fs-5   "
+                                                                                        data-bs-toggle="collapse"
+                                                                                        href="" role=""
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="multiCollapseExample1">11:00</a>
+
+                                                                                    <br>
+                                                                                    <p class="fs-6 mt-2">123 ghế trống</p>
+                                                                                </div>
+
+                                                                                <div class="col-md-2">
+
+                                                                                    <a class="btn btn-secondary option fs-5   "
+                                                                                        data-bs-toggle="collapse"
+                                                                                        href="" role=""
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="multiCollapseExample1">11:00</a>
+
+                                                                                    <br>
+                                                                                    <p class="fs-6 mt-2">123 ghế trống</p>
+                                                                                </div>
+
+                                                                                <div class="col-md-2">
+
+                                                                                    <a class="btn btn-secondary option fs-5   "
+                                                                                        data-bs-toggle="collapse"
+                                                                                        href="" role=""
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="multiCollapseExample1">11:00</a>
+
+                                                                                    <br>
+                                                                                    <p class="fs-6 mt-2">123 ghế trống</p>
+                                                                                </div>
+
+                                                                                <div class="col-md-2">
+
+                                                                                    <a class="btn btn-secondary option fs-5   "
+                                                                                        data-bs-toggle="collapse"
+                                                                                        href="" role=""
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="multiCollapseExample1">11:00</a>
+
+                                                                                    <br>
+                                                                                    <p class="fs-6 mt-2">123 ghế trống</p>
+                                                                                </div>
+
+                                                                                <div class="col-md-2">
+
+                                                                                    <a class="btn btn-secondary option fs-5   "
+                                                                                        data-bs-toggle="collapse"
+                                                                                        href="" role=""
+                                                                                        aria-expanded="false"
+                                                                                        aria-controls="multiCollapseExample1">11:00</a>
+
+                                                                                    <br>
+                                                                                    <p class="fs-6 mt-2">123 ghế trống</p>
+                                                                                </div>
+
+
+
+                                                                                </p>
+                                                                            </div>
+
+                                                                        </div>
+
+
+
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button"
+                                                                            class="btn btn-secondary amy-buy-ticket"
+                                                                            data-bs-dismiss="modal">Close</button>
+                                                                        <a href="/chair-food"
+                                                                            class="amy-buy-ticket">Next</a>
                                                                     </div>
                                                                     <form action="{{route('chair',['film_id'=>$film->id])}}" method="GET">
                                                                         <div class="modal-footer">
@@ -716,8 +964,13 @@
                                                                     </form>
                                                                 </div>
                                                             </div>
-
                                                         </div>
+
+                                                        <button type="button" class="btn btn-primary"
+                                                            data-bs-toggle="modal" data-bs-target="#rateStar">
+                                                            Đánh giá phim
+                                                        </button>
+
 
                                                         <div class="entry-share">
                                                             <label>Share:</label>
