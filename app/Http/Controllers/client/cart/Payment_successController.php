@@ -51,7 +51,7 @@ class Payment_successController extends Controller
                ->update(['isActive' => 2]);
 
 
-    return redirect('/'); 
+    return redirect()->route('payment_success',[$film->id]); 
 
     }
 
@@ -74,9 +74,10 @@ class Payment_successController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $film_id)
     {
-        //
+        $title = 'payment success';
+        return view('client.layout.cart.Payment_success',compact('title'));
     }
 
     /**
