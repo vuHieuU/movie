@@ -508,7 +508,7 @@
                                     <hr class="border-1 border-black pt-4">
                                     <div class="d-flex flex-wrap align-items-center gap-3">
                                         <div class="col-md-4">
-                                            <p class="fs-4"><strong class="fs-2 "> Rạp:</strong> Beta Thái Nguyên</p>
+                                            <p class="fs-4"><strong class="fs-2 "> Rạp:</strong>{{ $cinemaName }}</p>
                                         </div>
                                         <div class="col-md-4">
                                             <p class="fs-4"><strong class="fs-2 "> Phim:</strong>{{ $film->name }}</p>

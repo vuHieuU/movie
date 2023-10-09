@@ -183,9 +183,8 @@ Route::middleware(['auth'])->group(function () {
     });
 
     // cart
-        Route::get('/chair-food/{film_id}', [App\Http\Controllers\client\cart\Chairs_FoodController::class, 'index'])->name('chair');
-        Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'index'])->name('pay');
-        Route::post('/payment_success/{film_id}', [App\Http\Controllers\client\cart\Payment_successController::class, 'index'])->name('payment_success');
-        Route::get('/payment_success/{film_id}', [App\Http\Controllers\client\cart\Payment_successController::class, 'show'])->name('payment_success');
-        Route::get('/choose-room', [App\Http\Controllers\client\cart\Choose_RoomController::class, 'index']);
+        Route::get('/chair-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
+        Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'Pay'])->name('pay');
+        Route::post('/payment_success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
+        Route::get('/payment_success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('payment_success');
 });

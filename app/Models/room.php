@@ -13,4 +13,8 @@ class room extends Model
         'max',
         'cinema_id'
     ];
+    public function ShowTimes()
+    {
+        return $this->hasMany(ShowTime::class);
+    }
 }

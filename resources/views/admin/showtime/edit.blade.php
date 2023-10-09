@@ -58,6 +58,23 @@
                                   <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
+                                            <label for="value">Cinema *</label>
+                                            <select class="form-control" name="cinema_id">
+                                                @foreach ($cinema as $item)
+                                                     <option value="{{$item->id}}" {{$item->id==$showtime->cinema_id ? "selected":""}}>{{$item->name}}</option>
+                                                @endforeach
+                                               
+                                             
+                                            </select>
+                                            @if ($errors->has('status'))
+                                                <span class="text-danger">{{ $errors->first('status') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                  <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
                                             <label>day</label>
                                             <input type="date" class="form-control"
                                                 name="day" value="{{ $showtime->day }}">

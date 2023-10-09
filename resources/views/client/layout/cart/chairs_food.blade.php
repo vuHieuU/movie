@@ -839,7 +839,7 @@
                                                                                         <span>Rạp (Cinemas)</span>
                                                                                     </div>
 
-                                                                                    <p class="m-0 p-0 fw-bold">Rạp Hà Nội
+                                                                                    <p class="m-0 p-0 fw-bold">{{ $showTime->cinema->name }}
                                                                                     </p>
                                                                                 </div>
                                                                                 <div
@@ -851,7 +851,7 @@
                                                                                         <span>Phòng (Room)</span>
                                                                                     </div>
 
-                                                                                    <p class="m-0 p-0 fw-bold">2
+                                                                                    <p class="m-0 p-0 fw-bold">{{ $showTime->room->name }}
                                                                                     </p>
                                                                                 </div>
                                                                                 <div
@@ -973,6 +973,14 @@
                                                                                             name="selectedSeatsValueID"
                                                                                             id="selectedSeatsValueID"
                                                                                             value="">
+                                                                                        <input type="hidden"
+                                                                                            name="cinemaName"
+                                                                                            id="cinemaName"
+                                                                                            value="{{$showTime->cinema->name}}">
+                                                                                        <input type="hidden"
+                                                                                            name="cinemaRoom"
+                                                                                            id="cinemaRoom"
+                                                                                            value="{{$showTime->room->name}}">
 
                                                                                     </form>
                                                                                 </div>

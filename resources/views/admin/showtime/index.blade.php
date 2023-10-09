@@ -50,7 +50,7 @@
                                   </div>
                               </th>
                               <th>Film</th>
-                              <th>Room</th>
+                              <th>Rạp</th>
                               <th>Day</th>
                               <th>hour</th>
                             
@@ -69,7 +69,7 @@
                                   </div>
                               </td>
                               <td>{{ $item->film_id }}</td>
-                              <td>{{ $item->room_id }}</td>
+                              <td>{{ $item->cinema->name }}</td>
                               <td>{{ $item->day }}</td>
                               <td>{{ $item->hour }}</td>
                             
