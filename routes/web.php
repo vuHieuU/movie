@@ -17,8 +17,8 @@ use App\Http\Controllers\Controller;
 |
 */
 
-Route::get('/', [App\Http\Controllers\client\homeController::class, 'index']);
-Route::get('/{id}', [App\Http\Controllers\client\homeController::class, 'show'])->name('homeCinema');
+Route::get('/', [App\Http\Controllers\client\homeController::class, 'index'])->name('homeCinema');
+// Route::get('/{id}', [App\Http\Controllers\client\homeController::class, 'show'])->name('homeCinema');
 Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name('contact');
 Route::get('/detail_blog', [App\Http\Controllers\client\Detail_blogController::class, 'index']);
 Route::get('/weeklyshowtime', [App\Http\Controllers\client\WeeklyShowtimeController::class, 'index']);
