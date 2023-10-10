@@ -22,6 +22,9 @@ Route::get('/{id}', [App\Http\Controllers\client\homeController::class, 'show'])
 Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index']);
 Route::get('/detail_blog', [App\Http\Controllers\client\Detail_blogController::class, 'index']);
 Route::get('/weeklyshowtime', [App\Http\Controllers\client\WeeklyShowtimeController::class, 'index']);
+Route::get('/weeklyshowtime/{id}', [App\Http\Controllers\client\WeeklyShowtimeController::class, 'show'])->name("weeklyshowtime");
+
+
 
 Route::get('/detail_film/{id}', [App\Http\Controllers\client\Detail_filmController::class, 'index'])->name("filmDetail");
 

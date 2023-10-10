@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Models\film;
+use App\Models\ShowTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class WeeklyShowtimeController extends Controller
 {
@@ -12,8 +15,22 @@ class WeeklyShowtimeController extends Controller
      */
     public function index()
     {
+    $film = film::get();
+        
+        // $showtime = ShowTime::where("show_times.id",2)->get();
+        $showtime = ShowTime::get();
+        
         $title = "Weekly Showtime";
-        return view('client.weeklyshowtime',compact('title'));
+
+        $filmshowtime = DB::table('films')
+        ->join('show_times','films.id' ,'=',  'show_times.film_id')
+        ->select('show_times.*','films.*')
+        // ->where("show_times.id",4)
+        ->get();
+
+
+        
+        return view('client.weeklyshowtime',compact('title',"showtime","film","filmshowtime"));
     }
 
     /**
@@ -37,7 +54,18 @@ class WeeklyShowtimeController extends Controller
      */
     public function show(string $id)
     {
-        //
+            
+        $title = "Weekly Showtime";
+        $filmshowtime = DB::table('films')
+        ->join('show_times','films.id' ,'=',  'show_times.film_id')
+        ->select('show_times.*','films.*')
+        ->where("show_times.id",$id)
+        ->get();
+        $showtime = ShowTime::get();
+        // $showtime = ShowTime::where("show_times.id",$id)->get();
+
+        
+        return view('client.weeklyshowtime',compact("title","filmshowtime","showtime"));
     }
 
     /**
