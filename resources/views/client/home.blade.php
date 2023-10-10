@@ -239,83 +239,83 @@
 
 
 
-                                            <div class="row amy-ajax-content" >
-
-                                                @foreach ($film_nowplaying as $item)
-                                                    <div class="col-md-15 grid-item">
-                                                        <article class="entry-item" onclick="">
-                                                            <div class="entry-thumb">
-                                                                <img class=""
-                                                                    src="{{ asset('storage/images/' . $item->thumb) }}"
-                                                                    alt="Kubo and the Two Strings" />
-                                                                <div class="right-info">
+                                            <div class="row amy-ajax-content">
+                                                @php
+                                                    $displayedNames = [];
+                                                @endphp
+                                                @foreach ($film as $item)
+                                                    @if (!in_array($item->film->name, $displayedNames))
+                                                        @php
+                                                            $displayedNames[] = $item->film->name;
+                                                        @endphp
+                                                        <div class="col-md-15 grid-item">
+                                                            <article class="entry-item" onclick="">
+                                                                <div class="entry-thumb">
+                                                                    <img class=""
+                                                                        src="{{ asset('storage/images/' . $item->film->thumb) }}"
+                                                                        alt="Kubo and the Two Strings" />
+                                                                    <div class="right-info">
+                                                                        <span class="pg">
+                                                                            G </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="entry-content">
+                                                                    <h4 class="entry-title">
+                                                                        {{ $item->film->name }}</h4>
+                                                                    <div class="entry-date">
+                                                                        Release: {{ $item->film->premiere_date }}</div>
+                                                                    <div class="entry-button">
+                                                                        <a href="{{ $item->film->trailer }}">
+                                                                            <i aria-hidden="true" class="fa fa-play"></i>
+                                                                            Trailer </a>
+                                                                        <a href="detail_film/{{ $item->id }}">
+                                                                            <i aria-hidden="true"
+                                                                                class="fa fa-exclamation"></i>
+                                                                            Detail </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="pic-caption open-left">
+                                                                    <h4 class="entry-title">
+                                                                        <a href="detail_film/{{ $item->id }}">
+                                                                            {{ $item->film->name }}</a>
+                                                                    </h4>
                                                                     <span class="pg">
                                                                         G </span>
+                                                                    <div class="desc-mv">
+                                                                        <p>
+                                                                            <span>Release: </span>
+                                                                            {{ $item->film->premiere_date }}
+                                                                        </p>
+
+                                                                        <p>
+                                                                            <span>Duration: </span>
+                                                                            {{ $item->film->duration }} minutes
+                                                                        </p>
+
+                                                                        <p>
+                                                                            <span>Language: </span>
+                                                                            {{ $item->film->country }}
+                                                                        </p>
+                                                                    </div>
+
+
+                                                                    <div class="entry-button">
+                                                                        <a href="{{ $item->film->trailer }}"
+                                                                            class="fancybox.iframe amy-fancybox">
+                                                                            <i aria-hidden="true" class="fa fa-play"></i>
+                                                                            Trailer </a>
+                                                                        <a href="{{ route('filmDetail',[$item->id]) }}">
+                                                                            {{-- @php
+                                                                                dd($item->id)
+                                                                            @endphp --}}
+                                                                            <i aria-hidden="true"
+                                                                                class="fa fa-exclamation"></i>
+                                                                            Detail </a>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="entry-content">
-                                                                <h4 class="entry-title">
-                                                                    {{ $item->name }}</h4>
-                                                                <div class="entry-date">
-                                                                    Release: {{ $item->premiere_date }}</div>
-                                                                <div class="entry-button">
-                                                                    <a href="{{ $item->trailer }}">
-                                                                        <i aria-hidden="true" class="fa fa-play"></i>
-                                                                        Trailer </a>
-                                                                    <a href="detail_film/{{ $item->id }}">
-                                                                        <i aria-hidden="true"
-                                                                            class="fa fa-exclamation"></i>
-                                                                        Detail </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="pic-caption open-left">
-                                                                <h4 class="entry-title">
-                                                                    <a href="detail_film/{{ $item->id }}">
-                                                                        {{ $item->name }}</a>
-                                                                </h4>
-                                                                <span class="pg">
-                                                                    G </span>
-                                                                <div class="desc-mv">
-                                                                    <p>
-                                                                        <span>Release: </span>
-                                                                        {{ $item->premiere_date }}
-                                                                    </p>
-
-                                                                    {{-- <p>
-                                                                        <span>Genre: </span>
-                                                                      
-
-
-                                                                        @foreach ($categoryfilm_category as $category)
-                                                                            <a href="">{{ $category->name }} ,</a>
-                                                                        @endforeach
-                                                                    </p> --}}
-
-                                                                    <p>
-                                                                        <span>Duration: </span>
-                                                                        {{$item->duration }} minutes 
-                                                                    </p>
-
-                                                                    <p>
-                                                                        <span>Language: </span>
-                                                                        {{$item->country}}
-                                                                    </p>
-                                                                </div>
-
-
-                                                                <div class="entry-button">
-                                                                    <a href="{{ $item->trailer }}"
-                                                                        class="fancybox.iframe amy-fancybox">
-                                                                        <i aria-hidden="true" class="fa fa-play"></i>
-                                                                        Trailer </a>
-                                                                    <a href="detail_film/{{ $item->id }}">
-                                                                        <i aria-hidden="true"
-                                                                            class="fa fa-exclamation"></i>
-                                                                        Detail </a>
-                                                                </div>
-                                                            </div>
-                                                        </article>
-                                                    </div>
+                                                            </article>
+                                                        </div>
+                                                    @endif
                                                 @endforeach
 
 
@@ -1222,7 +1222,7 @@
                         </div>
                     </div>
                 </section>
-       
+
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-a9d0dcf elementor-section-full_width elementor-section-height-default elementor-section-height-default"
                     data-id="a9d0dcf" data-element_type="section">

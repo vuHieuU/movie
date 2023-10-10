@@ -73,12 +73,12 @@ class CinemasController extends Controller
         $name = $request->input("name");
         $description = $request->input("description");
         $address = $request->input("address");
-        $city_id = $request->input("city");
+        $city = $request->input("city");
         $data = [
             "name"=>$name,
             "description"=>$description,
             "address"=>$address,
-            "city_id"=>$city_id,
+            "city"=>$city,
         ];
         $cinemas->update($data);
         return redirect("/cinemas/index");
