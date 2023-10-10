@@ -16,6 +16,7 @@ class ticket extends Model
         'selected_seats',
         'user_id',
         'buyer_name',
+        'cinema',
         'film_id',
         'total',
     ];

@@ -11,19 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('typeseats', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->double('price'); 
-            $table->timestamps();
-            
+        Schema::table('show_times', function (Blueprint $table) {
+            $table->unsignedBigInteger('cinema_id')->after('room_id');
         });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('typeseats');
+        Schema::table('show_times', function (Blueprint $table) {
+            //
+        });
     }
 };
