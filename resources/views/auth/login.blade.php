@@ -512,7 +512,22 @@ rel="stylesheet" type="text/css" media="all" />
                                       <div class="row">
                                           <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
                                               <div class="d-group">
+                                                
                                                   <div class="left-col">
+                                                    <div class="block social-login--facebooks">
+                                                        <p class="a-center">
+                                                            <span>Hoặc đăng nhập bằng</span>
+                                                        </p>
+                                                        
+                                                        <a href="javascript:void(0)" class="social-login--facebook"
+                                                            onclick="loginFacebook()"><img width="129px" height="37px"
+                                                                alt="facebook-login-button"
+                                                                src="//bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"></a>
+                                                        <a href="javascript:void(0)" class="social-login--google"
+                                                            onclick="loginGoogle()"><img width="129px" height="37px"
+                                                                alt="google-login-button"
+                                                                src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"></a>
+                                                    </div>
                                                       <div class="group-login group-log">
                                                           <h1>
                                                               Đăng nhập tài khoản
@@ -547,20 +562,7 @@ rel="stylesheet" type="text/css" media="all" />
                                                               </fieldset>
                                                               <button class="btn-login" type="submit" value="Đăng nhập">Đăng nhập</button>
                                                           </form>
-                                                          <div class="block social-login--facebooks">
-                                                              <p class="a-center">
-                                                                  <span>Hoặc đăng nhập bằng</span>
-                                                              </p>
-                                                              
-                                                              <a href="javascript:void(0)" class="social-login--facebook"
-                                                                  onclick="loginFacebook()"><img width="129px" height="37px"
-                                                                      alt="facebook-login-button"
-                                                                      src="//bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"></a>
-                                                              <a href="javascript:void(0)" class="social-login--google"
-                                                                  onclick="loginGoogle()"><img width="129px" height="37px"
-                                                                      alt="google-login-button"
-                                                                      src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"></a>
-                                                          </div>
+                                                          
                                                           <p>
                                                               Bạn quên mật khẩu bấm <a href="#"
                                                                   onclick="showRecoverPasswordForm();return false;">@if (Route::has('password.request'))

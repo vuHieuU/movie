@@ -509,62 +509,7 @@
                                     @endif
                                 </div>
 
-                                <style>
-                                    .rating {
-                                        position: absolute;
-                                        /* top: 50%; */
-                                        left: 50%;
-                                        transform: translate(-50%, -50%) rotateY(180deg);
-                                        display: flex;
-                                    }
-
-                                    .rating label.star-rated::before {
-                                        color: #FFD600;
-                                    }
-
-                                    .rating label.star-hovered::before {
-                                        color: #FFD600;
-                                    }
-
-                                    .rating input {
-                                        display: none;
-                                    }
-
-                                    .rating label {
-                                        display: block;
-                                        cursor: pointer;
-                                        width: 50px;
-                                        /* background: #ccc; */
-                                    }
-
-                                    .rating label::before {
-                                        content: '\f005';
-                                        font-family: 'FontAwesome';
-                                        position: relative;
-                                        display: block;
-                                        font-size: 50px;
-                                        color: #101010;
-                                    }
-
-                                    .rating label::after {
-                                        content: '\f005';
-                                        font-family: 'FontAwesome';
-                                        position: absolute;
-                                        display: block;
-                                        font-size: 50px;
-                                        color: #FFD600;
-                                        top: 0;
-                                        opacity: 0;
-                                        transition: 0.5s;
-                                        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-                                    }
-
-                                    .rating label:hover::after,
-                                    .rating label:hover~label::after,
-                                    .rating input:checked~label::after {
-                                        opacity: 1;
-                                    }
-                                </style>
+                              
                             </div>
 
                             <div class="modal-footer">
@@ -646,25 +591,19 @@
 
                                                         <li>
                                                             <label>
-                                                                Thể loại phim:
+                                                                Thể loại :
                                                             </label>
                                                             <span>
 
                                                                 @foreach ($categoryfilm_category as $category)
                                                                     <a href="">{{ $category->name }}</a>,
                                                                 @endforeach
+</span>
+                                                        </li>
+                                                             
+                                                            
+                                                        </li>
 
-                                                        </li>
-                                                                Hoạt hình
-                                                            </span>
-                                                        </li>
-
-                                                        <li>
-                                                            <label>
-                                                                Ngày chiếu:
-                                                            </label>
-                                            
-                                                        </li>
 
                                                         <li>
                                                             <label>
