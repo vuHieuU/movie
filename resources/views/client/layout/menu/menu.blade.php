@@ -143,7 +143,7 @@
                             </li>
                             <li id="menu-item-146"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
-                                <a href="contact">Contact</a>
+                                <a href="{{ route('contact') }}">Contact</a>
                             </li>
 @if (Auth()->check())
 <li id="menu-item-278 "

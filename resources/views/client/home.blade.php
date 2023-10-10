@@ -305,9 +305,7 @@
                                                                             <i aria-hidden="true" class="fa fa-play"></i>
                                                                             Trailer </a>
                                                                         <a href="{{ route('filmDetail',[$item->id]) }}">
-                                                                            {{-- @php
-                                                                                dd($item->id)
-                                                                            @endphp --}}
+                                                           
                                                                             <i aria-hidden="true"
                                                                                 class="fa fa-exclamation"></i>
                                                                             Detail </a>
