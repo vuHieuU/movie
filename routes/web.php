@@ -183,6 +183,16 @@ Route::middleware(['auth'])->group(function () {
         Route::get('restore/{id}', [App\Http\Controllers\admin\commentController ::class, 'restore'])->name('comment.restore');
     });
 
+    // Danh sách Tin tức
+    Route::prefix('news')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\NewController::class, 'index'])->name('news.index');
+        Route::get('create', [App\Http\Controllers\admin\NewController::class, 'create'])->name('news.create');
+        Route::post('store', [App\Http\Controllers\admin\NewController::class, 'store'])->name('news.store');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\NewController::class, 'edit'])->name('news.edit');
+        Route::post('update/{id}', [App\Http\Controllers\admin\NewController::class, 'update'])->name('news.update');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\NewController::class, 'destroy'])->name('news.destroy');
+    });
+
     // cart
         Route::get('/chair-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
         Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'Pay'])->name('pay');
