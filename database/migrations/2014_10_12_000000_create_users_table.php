@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone')->nullable();
             $table->string('email')->unique();
-            $table->string('logo',255)->nullable();
+            $table->string('google_id')->nullable();
+            $table->string('tiktok_id')->nullable();
+            $table->string('logo', 255)->nullable();
             $table->string('address')->nullable();
             $table->string('gender')->default('male');
             $table->timestamp('email_verified_at')->nullable();

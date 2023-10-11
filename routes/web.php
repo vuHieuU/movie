@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\FacebookController;
+use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\cityController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -17,7 +19,7 @@ use App\Http\Controllers\Controller;
 |
 */
 
-Route::get('/', [App\Http\Controllers\client\homeController::class, 'index']);
+Route::get('/', [App\Http\Controllers\client\homeController::class, 'index'])->name('home');
 Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index']);
 Route::get('/detail_blog', [App\Http\Controllers\client\Detail_blogController::class, 'index']);
 Route::get('/detail_film', [App\Http\Controllers\client\Detail_filmController::class, 'index']);
@@ -29,12 +31,8 @@ Route::get('/pay', [App\Http\Controllers\client\cart\PayController::class, 'inde
 Route::get('/payment_success', [App\Http\Controllers\client\cart\Payment_successController::class, 'index']);
 Route::get('/choose-room', [App\Http\Controllers\client\cart\Choose_RoomController::class, 'index']);
 
-
-
-
-
-
-
+Route::get('auth/google', [GoogleController::class, "redirectToGoogle"])->name("loginGoogle");
+Route::get('auth/google/callback', [GoogleController::class, "handleGoogleCallback"]);
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Auth::routes();
@@ -166,10 +164,10 @@ Route::middleware(['auth'])->group(function () {
         Route::post('update/{id}', [App\Http\Controllers\admin\showtimeController::class, 'update'])->name('showtime.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\showtimeController::class, 'destroy'])->name('showtime.destroy');
     });
-      // comment
-    Route::prefix('comment')->group(function(){
+    // comment
+    Route::prefix('comment')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\commentController::class, 'index'])->name('comment.index');
-        Route::get('hidden/{id}', [App\Http\Controllers\admin\commentController ::class, 'hidden'])->name('comment.hidden');
-        Route::get('restore/{id}', [App\Http\Controllers\admin\commentController ::class, 'restore'])->name('comment.restore');
+        Route::get('hidden/{id}', [App\Http\Controllers\admin\commentController::class, 'hidden'])->name('comment.hidden');
+        Route::get('restore/{id}', [App\Http\Controllers\admin\commentController::class, 'restore'])->name('comment.restore');
     });
 });
