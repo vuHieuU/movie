@@ -33,13 +33,13 @@
                                  <li id="menu-item-347"
                                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347">
                                      <a
-                                         href="/sap-ra-mat">Coming
+                                         href="{{ route('sap-ra-mat') }}">Coming
                                          Soon</a>
                                  </li>
                                  <li id="menu-item-348"
                                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-348">
                                      <a
-                                         href="contact">Contact</a>
+                                         href="{{ route('contact') }}">Contact</a>
                                  </li>
                              </ul>
                          </div>

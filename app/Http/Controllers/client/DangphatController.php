@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Models\film;
 use Illuminate\Http\Request;
 
 class DangphatController extends Controller
@@ -12,8 +13,11 @@ class DangphatController extends Controller
      */
     public function index()
     {
+        $status = "đang chiếu";
+        $film_topmovie = film::orderByDesc("created_at")->limit(2)->get();
+        $film_nowplaying = film::where("status",$status)->get();
         $title = " now Playing";
-      return view("client.dangphat",compact('title'));
+      return view("client.dangphat",compact('title',"film_nowplaying","film_topmovie"));
     }
 
     /**

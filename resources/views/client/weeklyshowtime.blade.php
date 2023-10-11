@@ -99,7 +99,7 @@
                         <div class="amy-page-title amy-center">
                             <div class="amy-inner container">
                                 <h1 class="page-title">
-                                    Weekly Showtime Ajax </h1>
+                                    Weekly Showtime  </h1>
                             </div>
                         </div>
                         <span class="amy-section-overlay"></span>
@@ -127,21 +127,64 @@
                                                                     <div
                                                                         class="amy-movie-layout-list amy-movie-showtimews-daily-1 ">
                                                                         <div class="amy-showtimes-header">
-                                                                            <div class="amy-showtimes-header-inner">
 
-                                                                              
+
+
+                                                                            <ul class="list-group text-center" >
 
                                                                                     @foreach ($showtime as $item)
-                                                                                    <div class="d-flex">
-                                                                                        <a class="nav-link" href="{{ route('weeklyshowtime', [$item->id]) }}">
-                                                                                            <span>May {{ $item->day }}</span>
+                                                                                    <style>
+                                                                                        .nav-link {
+                                                                                            padding: 30px;
+                                                                                            line-height: 50px;
+                                                                                            font-size: 15px;
+                                                                                            color: #000; /* Màu chữ mặc định */
+                                                                                        }
+                                                                                    
+                                                                                        .nav-link.active,
+                                                                                        .nav-link:hover {
+                                                                                            color: #FE7900; /* Màu nền khi click hoặc di chuột qua */
+                                                                                             /* Màu chữ khi click hoặc di chuột qua */
+                                                                                        }
+                                                                                    </style>
+                                                                                    
+                                                                                        <a class="nav-link"
+                                                                                            href="{{ route('weeklyshowtime', [$item->id]) }}">
+                                                                                       
+                                                                                            <span class="" style="padding: 30px ; line-height: 50px;font-size: 15px; font-weight: 800"> May {{ $item->day }}</span>
                                                                                         </a>
-                                                                                    </div>
-                                                                                    
-                                                                                    
                                                                                     @endforeach
-                                                                              
-                                                                            </div>
+                                                                                    <script>
+                                                                                        // Lấy tất cả các liên kết có lớp "nav-link"
+                                                                                        var links = document.querySelectorAll('.nav-link');
+                                                                                    
+                                                                                        // Kiểm tra xem đã có trạng thái lưu trữ trong localStorage chưa
+                                                                                        var activeLinkIndex = localStorage.getItem('activeLinkIndex');
+                                                                                    
+                                                                                        // Nếu đã có trạng thái, thêm lớp "active" vào liên kết tương ứng
+                                                                                        if (activeLinkIndex !== null) {
+                                                                                            links[activeLinkIndex].classList.add('active');
+                                                                                        }
+                                                                                    
+                                                                                        // Lặp qua từng liên kết và thêm sự kiện click
+                                                                                        links.forEach(function(link, index) {
+                                                                                            link.addEventListener('click', function(event) {
+                                                                                                // Loại bỏ lớp "active" từ tất cả các liên kết
+                                                                                                links.forEach(function(l) {
+                                                                                                    l.classList.remove('active');
+                                                                                                });
+                                                                                    
+                                                                                                // Thêm lớp "active" cho liên kết được click
+                                                                                                // this.classList.add('active');
+                                                                                    
+                                                                                                // Lưu trạng thái vào localStorage
+                                                                                                localStorage.setItem('activeLinkIndex', index.toString());
+                                                                                            });
+                                                                                        });
+                                                                                    </script>
+                                                                                    
+                                                                               
+                                                                            </ul>
                                                                         </div>
 
                                                                         <div class="amy-movie-list">

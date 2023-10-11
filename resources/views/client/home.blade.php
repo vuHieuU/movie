@@ -447,40 +447,44 @@
                                             <div class="amy-slick "
                                                 data-slick='{"slidesToShow":5,"slidesToScroll":5,"autoplay":true,"autoplaySpeed":3000,"arrows":true,"infinite":true,"centerMode":true,"responsive": [{"breakpoint": 480,"settings": {"slidesToShow": 1,"slidesToScroll": 1}},{"breakpoint": 979,"settings": {"slidesToShow": 3,"slidesToScroll": 3}},{"breakpoint": 1199,"settings": {"slidesToShow": 5,"slidesToScroll": 5}},{"breakpoint": 1999,"settings": {"slidesToShow": 7,"slidesToScroll": 7}},{"breakpoint": 4999,"settings": {"slidesToShow": 20,"slidesToScroll": 20}}],"dots":true}'>
 
+
+                                                @foreach ($film_topmovie as $item)
+                                                    
+                                                
                                                 <div class="carousel-item">
                                                     <div class="carousel-thumb">
                                                         <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-sleeping-beauty-australia/">
+                                                            href="">
                                                             <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_5-360x618_c.jpg"
+                                                                src="{{asset("storage/images/".$item->thumb)}}"
                                                                 alt="The Sleeping Beauty &#8211; Australia" /> </a>
                                                     </div>
                                                     <div class="carousel-content">
                                                         <h2 class="carousel-title">
                                                             <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-sleeping-beauty-australia/">
-                                                                The Sleeping Beauty &#8211; Australia </a>
+                                                                href="">
+                                                                {{$item->name}} </a>
                                                         </h2>
                                                         <div class="carousel-release">
                                                             Release:
                                                             <span>
-                                                                Apr 06, 2022 </span>
+                                                                {{$item->premiere_date}} </span>
                                                         </div>
                                                         <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
+                                                            <a href="{{$item->trailer}}"
                                                                 class="fancybox.iframe amy-fancybox">
                                                                 <i aria-hidden="true" class="fa fa-play"></i>
                                                                 Trailer </a>
                                                             <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-sleeping-beauty-australia/">
+                                                                href="/detail_film/{{$item->id}}">
                                                                 <i aria-hidden="true" class="fa fa-exclamation"></i>
                                                                 Detail </a>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                @endforeach
 
-
-                                                <div class="carousel-item">
+                                                {{-- <div class="carousel-item">
                                                     <div class="carousel-thumb">
                                                         <a
                                                             href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">
@@ -678,103 +682,7 @@
                                                 </div>
 
 
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/death-wish/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_18-360x618_c.jpg"
-                                                                alt="Death Wish" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/death-wish/">
-                                                                Death Wish </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Apr 23, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/death-wish/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
-
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/bad-moms/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_4-360x618_c.jpg"
-                                                                alt="Bad Moms" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/bad-moms/">
-                                                                Bad Moms </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Jun 24, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/bad-moms/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/peter-rabbit/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_14-360x618_c.jpg"
-                                                                alt="Peter Rabbit" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/peter-rabbit/">
-                                                                Peter Rabbit </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Apr 07, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/peter-rabbit/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
 
                                                 <div class="carousel-item">
@@ -840,172 +748,10 @@
                                                                 Detail </a>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
 
 
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/supersonic/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_15-360x618_c.jpg"
-                                                                alt="Supersonic" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/supersonic/">
-                                                                Supersonic </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Apr 09, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/supersonic/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/swiss-army-man/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_10-360x618_c.jpg"
-                                                                alt="Swiss Army Man" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/swiss-army-man/">
-                                                                Swiss Army Man </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Apr 29, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/swiss-army-man/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/star-trek-beyond/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_12-360x618_c.jpg"
-                                                                alt="Star Trek Beyond" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/star-trek-beyond/">
-                                                                Star Trek Beyond </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Apr 23, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/star-trek-beyond/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/dont-breathe/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_6-360x618_c.jpg"
-                                                                alt="Don&#8217;t Breathe" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/dont-breathe/">
-                                                                Don&#8217;t Breathe </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Mar 16, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/dont-breathe/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/kubo-and-the-two-strings/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_20-360x618_c.jpg"
-                                                                alt="Kubo and the Two Strings" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/kubo-and-the-two-strings/">
-                                                                Kubo and the Two Strings </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Feb 15, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/kubo-and-the-two-strings/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            
 
                                             </div>
                                         </div>

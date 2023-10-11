@@ -3,7 +3,7 @@
         <div class="amy-inner">
             <div class="amy-left">
                 <div id="amy-site-logo " style="width: 70%;">
-                    <a href="/" >
+                    <a href="/">
                         <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_66.png"
                             alt="Elementor Single Cinema" />
                     </a>
@@ -71,18 +71,18 @@
 
                     </div>
                     <ul id="rap-list" class="rap-list">
-                        
-                            <li onclick="selectRap('Beta Home')"><a href="/"> Beta Home </a></li>
-                       
-                        
-                            <li onclick="selectRap('Beta Thanh Xuân')"><a href="/contact"> Beta Thanh Xuân </a></li>
-                       
-                        
-                            <li onclick="selectRap('Beta Mỹ Đình')"><a href="/detail_blog"> Beta Mỹ Đình </a></li>
-                       
-                       
-                            <li onclick="selectRap('Beta Đan Phượng')"> <a href="/detail_film"> Beta Đan Phượng </a></li>
-                       
+
+                        <li onclick="selectRap('Beta Home')"><a href="/"> Beta Home </a></li>
+
+
+                        <li onclick="selectRap('Beta Thanh Xuân')"><a href="/contact"> Beta Thanh Xuân </a></li>
+
+
+                        <li onclick="selectRap('Beta Mỹ Đình')"><a href="/detail_blog"> Beta Mỹ Đình </a></li>
+
+
+                        <li onclick="selectRap('Beta Đan Phượng')"> <a href="/detail_film"> Beta Đan Phượng </a></li>
+
                         <!-- Thêm các rạp khác vào đây -->
                     </ul>
                 </div>
@@ -130,12 +130,12 @@
                                 <ul class="sub-menu">
                                     <li id="menu-item-143"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143">
-                                        <a href="/dang-phat">Now
+                                        <a href="{{ route('dang-phat') }}">Now
                                             Playing</a>
                                     </li>
                                     <li id="menu-item-134"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134">
-                                        <a href="/sap-ra-mat">Coming
+                                        <a href="{{ route('sap-ra-mat') }}">Coming
                                             Soon</a>
                                     </li>
                                 </ul>
@@ -177,42 +177,42 @@
                             </li>
                             <li id="menu-item-146"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
-                                <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/top-rated/">Top
+                                <a href="">Top
                                     rated</a>
                             </li>
                             <li id="menu-item-146"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
-                                <a href="contact">Contact</a>
+                                <a href="{{ route('contact') }}">Contact</a>
                             </li>
-@if (Auth()->check())
-<li id="menu-item-278 "
-class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
-<a href="/myaccount"><i class="fa-solid fa-user"></i></a>
-<ul class="sub-menu">
-    <li id="menu-item-140"
-        class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-        <a href="/admin">Trang quản trị</a>
-    </li>
-    
-</ul>
-</li> 
-@else
- <li id="menu-item-278 "
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
-                                <a href="login"><i class="fa-solid fa-user"></i></a>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-140"
-                                        class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                        <a href="/login">Login</a>
-                                    </li>
-                                    <li id="menu-item-140"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                        <a href="/register">Register</a>
-                                    </li>
-                                </ul>
-                            </li>   
-@endif
-                            
+                            @if (Auth()->check())
+                                <li id="menu-item-278 "
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
+                                    <a href="myaccount"><i class="fa-solid fa-user"></i></a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-140"
+                                            class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+                                            <a href="/admin">Trang quản trị</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            @else
+                                <li id="menu-item-278 "
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
+                                    <a href="login"><i class="fa-solid fa-user"></i></a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-140"
+                                            class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+                                            <a href="/login">Login</a>
+                                        </li>
+                                        <li id="menu-item-140"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+                                            <a href="/register">Register</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @endif
+
                         </ul>
 
                     </div>

@@ -1,6 +1,6 @@
 <div class="iq-sidebar  sidebar-default ">
     <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-        <a href="../backend/index.html" class="header-logo">
+        <a href="/admin" class="header-logo">
             <img src="/template/assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo"><h5 class="logo-title light-logo ml-3">POSDash</h5>
         </a>
         <div class="iq-menu-bt-sidebar ml-0">
@@ -386,7 +386,7 @@
                         <li class="nav-item nav-icon dropdown caption-content">
                             <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton4"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="/template/assets/images/user/1.png" class="img-fluid rounded" alt="user">
+                                <img src="{{Auth::User()->thumb}}" class="img-fluid rounded" alt="user">
                             </a>
                             <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="card shadow-none m-0">
@@ -394,7 +394,7 @@
                                         <div class="media-body profile-detail text-center">
                                             <img src="/template/assets/images/page-img/profile-bg.jpg" alt="profile-bg"
                                                 class="rounded-top img-fluid mb-4">
-                                            <img src="/template/assets/images/user/1.png" alt="profile-img"
+                                            <img src="{{Auth::User()->thumb}}" alt="profile-img"
                                                 class="rounded profile-img img-fluid avatar-70">
                                         </div>
                                         <div class="p-3">

@@ -29,6 +29,14 @@ class PayController extends Controller
          session(['selectedShowTimeId' => $selectedShowTimeId]);
         
          $showTime = ShowTime::with('cinema','room')->findOrFail($selectedShowTimeId);
+
+        //  $seat = DB::table('seats')
+        //  ->join('tickets', 'seats.seat_number', '=', 'tickets.selected_seats')
+        // //  ->where('showtime_seats.showtime_id', $selectedShowTimeId)
+        //  ->select('seats.*','tickets.*')
+        //  ->get();
+
+
          $seats = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
@@ -41,6 +49,8 @@ class PayController extends Controller
          return view('client.layout.cart.chairs_food',compact(
              'title','seats','food','combo','selectedDate','selectedHour','film','showTime'
          ));
+
+         
      }
 
 
@@ -123,5 +133,5 @@ class PayController extends Controller
         $ticket = ticket::findOrFail($id);
         return view('client.layout.cart.Payment_success',compact('title','ticket'));
     }
-
+    
 }

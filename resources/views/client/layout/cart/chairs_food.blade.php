@@ -8,15 +8,16 @@
     <title>{{ $title }}</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    {{-- 
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Comments Feed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" />
-    <script type="text/javascript">
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" /> --}}
+    {{-- <script type="text/javascript">
         window._wpemojiSettings = {
             "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/",
             "ext": ".png",
@@ -90,8 +91,8 @@
     </style>
     <link rel='stylesheet' id='wp-block-library-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7'
-        type='text/css' media='all' />
-    <style id='global-styles-inline-css' type='text/css'>
+        type='text/css' media='all' /> --}}
+    {{-- <style id='global-styles-inline-css' type='text/css'>
         body {
             --wp--preset--color--black: #000000;
             --wp--preset--color--cyan-bluish-gray: #abb8c3;
@@ -338,8 +339,8 @@
         .has-x-large-font-size {
             font-size: var(--wp--preset--font-size--x-large) !important;
         }
-    </style>
-    <link rel='stylesheet' id='elementor-icons-css'
+    </style> --}}
+    {{-- <link rel='stylesheet' id='elementor-icons-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0'
         type='text/css' media='all' />
     <link rel='stylesheet' id='elementor-frontend-css'
@@ -350,14 +351,14 @@
         type='text/css' media='all' />
     <link rel='stylesheet' id='elementor-global-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/global.css?ver=1651538276'
-        type='text/css' media='all' />
+        type='text/css' media='all' /> --}}
     <link rel='stylesheet' id='elementor-post-142-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
         type='text/css' media='all' />
     <link rel='stylesheet' id='font-awesome-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0'
         type='text/css' media='all' />
-    <link rel='stylesheet' id='slick-style-css'
+    {{-- <link rel='stylesheet' id='slick-style-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick.css?ver=5.9.7'
         type='text/css' media='all' />
     <link rel='stylesheet' id='slick-theme-css'
@@ -382,8 +383,8 @@
         .amy-primary-navigation ul.nav-menu>li>a::after {
             top: 70%;
         }
-    </style>
-    <link rel='stylesheet' id='csf-google-web-fonts-css'
+    </style> --}}
+    {{-- <link rel='stylesheet' id='csf-google-web-fonts-css'
         href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css'
         media='all' />
     <link rel='stylesheet' id='google-fonts-1-css'
@@ -408,8 +409,8 @@
     <link rel="alternate" type="application/json+oembed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F" />
     <link rel="alternate" type="text/xml+oembed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" />
-    <style type="text/css">
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" /> --}}
+    {{-- <style type="text/css">
         body {
             font-family: "Roboto Condensed";
             color: #333;
@@ -465,7 +466,7 @@
         #amy-page-header {
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
-    </style>
+    </style> --}}
 </head>
 
 <body
@@ -519,20 +520,37 @@
                                                                                 <div class="row text-center "
                                                                                     style="margin-top: 30px; ">
                                                                                     <div class="col-md-3 col-sm-4">
-                                                                                        <i class="fa-solid fa-couch"
-                                                                                            style="font-size: 35px; color: #BABBC3"></i>
+
+                                                                                        <svg style="font-size: 35px; fill: #BABBC3"
+                                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                                            height="1em"
+                                                                                            viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                            <path
+                                                                                                d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+                                                                                        </svg>
                                                                                         <span>Ghế trống</span>
 
                                                                                     </div>
 
                                                                                     <div class="col-md-3 col-sm-4">
-                                                                                        <i class="fa-solid fa-couch"
-                                                                                            style="font-size: 35px; color: #03599D"></i>
+
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                            style="font-size: 35px; fill: #03599D"
+                                                                                            height="1em"
+                                                                                            viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                            <path
+                                                                                                d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+                                                                                        </svg>
                                                                                         <span>Ghế đang chọn</span>
                                                                                     </div>
                                                                                     <div class="col-md-3 col-sm-4">
-                                                                                        <i class="fa-solid fa-couch"
-                                                                                            style="font-size: 35px; color: #FD2802"></i>
+
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg"style="font-size: 35px; fill: #FD2802"
+                                                                                            height="1em"
+                                                                                            viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                            <path
+                                                                                                d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+                                                                                        </svg>
                                                                                         <span>Ghế đặt trước</span>
                                                                                     </div>
 
@@ -549,19 +567,27 @@
                                                                                             id="{{ $item->id }}"
                                                                                             data-price="{{ $item->price }}"
                                                                                             onclick="toggleSeat(this)">
+
                                                                                             <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                                onclick=""
+                                                                                                style="fill: #BABBC3;font-size: 20px;"
                                                                                                 height="1em"
-                                                                                                viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                                viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                                                                                 <path
-                                                                                                    d="M248 48V256h48V58.7c23.9 13.8 40 39.7 40 69.3V256h48V128C384 57.3 326.7 0 256 0H192C121.3 0 64 57.3 64 128V256h48V128c0-29.6 16.1-55.5 40-69.3V256h48V48h48zM48 288c-12.1 0-23.2 6.8-28.6 17.7l-16 32c-5 9.9-4.4 21.7 1.4 31.1S20.9 384 32 384l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32V384H352v96c0 17.7 14.3 32 32 32s32-14.3 32-32V384c11.1 0 21.4-5.7 27.2-15.2s6.4-21.2 1.4-31.1l-16-32C423.2 294.8 412.1 288 400 288H48z" />
+                                                                                                    d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+
                                                                                             </svg>
-                                                                                            @if($item->isActive == 1)
-                                                                                            <p class="">
-                                                                                                {{ $item->seat_number }}</p>
-                                                                                                @else
-                                                                                                <button class="btn btn-danger" disabled>
-                                                                                                    {{ $item->seat_number }} (Đã đặt)
+
+
+                                                                                            @if ($item->isActive == 1)
+                                                                                                <p class="">
+                                                                                                    {{ $item->seat_number }}
+                                                                                                </p>
+                                                                                            @else
+                                                                                                <button
+                                                                                                    class="btn btn-danger"
+                                                                                                    disabled>
+                                                                                                    {{ $item->seat_number }}
+                                                                                                    (Đã đặt)
                                                                                                 </button>
                                                                                             @endif
                                                                                         </div>
@@ -600,7 +626,7 @@
 
                                                                                     function updateSelectedSeatsList() {
                                                                                         const selectedSeatsSpan = document.getElementById("selected-seats");
-                                                                                        selectedSeatsSpan.textContent = selectedSeats.join(', ');
+                                                                                        selectedSeatsSpan.textContent = selectedSeats.join(',');
 
                                                                                     }
 
@@ -609,7 +635,7 @@
                                                                                         selectedSeatsValue.value = selectedSeats.join(', ');
                                                                                     }
 
-                                                                
+
 
                                                                                     function updateTotalPrice(selectedSeats, seatPrice) {
                                                                                         const totalPriceSpan = document.getElementById("total-price");
@@ -640,24 +666,39 @@
                                                                             <div class="row text-center m-5 mt-5 p-4"
                                                                                 style="margin-top: 30px; background-color: #F8F8F8">
                                                                                 <div class="col-md-3 col-sm-4">
-                                                                                    <i class="fa-solid fa-couch"
-                                                                                        style="font-size: 35px; color: #707174"></i>
+                                                                                    <svg style="font-size: 30px; fill: #BABBC3"
+                                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                                        height="1em"
+                                                                                        viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                        <path
+                                                                                            d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+                                                                                    </svg>
                                                                                     <p class="fs-2 mt-3"
                                                                                         style="color: gray ;">Ghế Thường
                                                                                     </p>
                                                                                 </div>
 
                                                                                 <div class="col-md-3 col-sm-4">
-                                                                                    <i class="fa-solid fa-couch"
-                                                                                        style="font-size: 35px; color: #b1ca0f"></i>
+                                                                                    <svg style="font-size: 30px; fill: #BABBC3"
+                                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                                        height="1em"
+                                                                                        viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                        <path
+                                                                                            d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+                                                                                    </svg>
                                                                                     <p class="fs-2 mt-3"
                                                                                         style="color: gray ;">Ghế Vip</p>
                                                                                 </div>
 
 
                                                                                 <div class="col-md-3 col-sm-4">
-                                                                                    <i class="fa-solid fa-couch"
-                                                                                        style="font-size: 35px; color: #ca0fa1"></i>
+                                                                                    <svg style="font-size: 30px; fill: #BABBC3"
+                                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                                        height="1em"
+                                                                                        viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                        <path
+                                                                                            d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+                                                                                    </svg>
                                                                                     <p class="fs-2 mt-3"
                                                                                         style="color: gray ;">Ghế Đôi</p>
                                                                                 </div>
@@ -677,7 +718,7 @@
                                                                                             class="card mb-3 col-md-5 m-5 product-card">
                                                                                             <div class="row g-0">
                                                                                                 <div class="col-md-4">
-                                                                                                    <img src="/images/sweet-combo-154545-150623-48.png"
+                                                                                                    <img src="images/sweet-combo-154545-150623-48.png"
                                                                                                         class="img-fluid rounded-start"
                                                                                                         alt="...">
                                                                                                 </div>
@@ -688,11 +729,14 @@
                                                                                                             {{ $item->name }}
                                                                                                         </h5>
                                                                                                         <p
-                                                                                                    class="card-text product-description">
-                                                                                                    TIẾT KIỆM 46K!!!
-                                                                                                    Gồm: 1 Bắp (69oz) +
-                                                                                                    2 Nước có gaz (22oz)
-                                                                                                </p>
+                                                                                                            class="card-text product-description">
+                                                                                                            TIẾT KIỆM 46K!!!
+                                                                                                            Gồm: 1 Bắp
+                                                                                                            (69oz)
+                                                                                                            +
+                                                                                                            2 Nước có gaz
+                                                                                                            (22oz)
+                                                                                                        </p>
                                                                                                         <p
                                                                                                             class="card-text product-price">
                                                                                                             <small
@@ -802,17 +846,23 @@
                                                                             <h4 class="amy-title amy-widget-title"></h4>
                                                                             <div class="entry-item">
                                                                                 <div class="entry-thumb"><img
-                                                                                        class=""
-                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_20-118x159_c.jpg"
+                                                                                        class="" style="width: 120px;"
+                                                                                        src="{{asset("storage/images/".$film->thumb)}}"
                                                                                         alt="Kubo and the Two Strings" />
                                                                                 </div>
                                                                                 <div class="entry-content">
                                                                                     <h2 class="entry-title"><a
-                                                                                            href="">Kubo
-                                                                                            and the Two Strings</a></h2>
-                                                                                    <div><span class="duration"><i
-                                                                                                class="fa fa-clock-o"></i>02
-                                                                                            hours 00 minutes</span></div>
+                                                                                            href=" {{ route('filmDetail',[$film->id]) }} ">{{ $film->name }}</a>
+                                                                                    </h2>
+                                                                                    <div><span class="duration"> <svg
+                                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                                height="1em"
+                                                                                                viewBox="0 0 512 512" style="fill: #ff6900"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                                <path
+                                                                                                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z" />
+                                                                                            </svg>
+                                                                                            {{ $film->duration }}
+                                                                                            minutes</span></div>
 
                                                                                 </div>
                                                                                 <div class="clearfix"></div>
@@ -821,7 +871,7 @@
                                                                                 class=" d-flex align-items-center justify-content-between mb-5 px-4">
                                                                                 <div
                                                                                     class="d-flex align-items-center gap-2">
-                                                                                    <i class="fa-solid fa-tag"></i>
+                                                                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg> --}}
                                                                                     <span>Thể Loại (Category)</span>
                                                                                 </div>
 
@@ -833,33 +883,31 @@
                                                                                     class=" d-flex align-items-center justify-content-between mb-5 px-4">
                                                                                     <div
                                                                                         class="d-flex align-items-center gap-2">
-                                                                                        <i
-                                                                                            class="fa-solid fa-building-columns">
-                                                                                        </i>
+                                                                                        {{-- <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M488 64h-8v20c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12V64H96v20c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12V64h-8C10.7 64 0 74.7 0 88v336c0 13.3 10.7 24 24 24h8v-20c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v20h320v-20c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v20h8c13.3 0 24-10.7 24-24V88c0-13.3-10.7-24-24-24zM96 372c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm272 208c0 6.6-5.4 12-12 12H156c-6.6 0-12-5.4-12-12v-96c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v96zm0-168c0 6.6-5.4 12-12 12H156c-6.6 0-12-5.4-12-12v-96c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v96zm112 152c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40z"/></svg> --}}
                                                                                         <span>Rạp (Cinemas)</span>
                                                                                     </div>
 
-                                                                                    <p class="m-0 p-0 fw-bold">{{ $showTime->cinema->name }}
+                                                                                    <p class="m-0 p-0 fw-bold">
+                                                                                        {{ $showTime->cinema->name }}
                                                                                     </p>
                                                                                 </div>
                                                                                 <div
                                                                                     class=" d-flex align-items-center justify-content-between mb-5 px-4">
                                                                                     <div
                                                                                         class="d-flex align-items-center gap-2">
-                                                                                        <i
-                                                                                            class="fa-solid fa-house-user"></i>
+                                                                                        {{-- <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M570.69,236.27,512,184.44V48a16,16,0,0,0-16-16H432a16,16,0,0,0-16,16V99.67L314.78,10.3C308.5,4.61,296.53,0,288,0s-20.46,4.61-26.74,10.3l-256,226A18.27,18.27,0,0,0,0,248.2a18.64,18.64,0,0,0,4.09,10.71L25.5,282.7a21.14,21.14,0,0,0,12,5.3,21.67,21.67,0,0,0,10.69-4.11l15.9-14V480a32,32,0,0,0,32,32H480a32,32,0,0,0,32-32V269.88l15.91,14A21.94,21.94,0,0,0,538.63,288a20.89,20.89,0,0,0,11.87-5.31l21.41-23.81A21.64,21.64,0,0,0,576,248.19,21,21,0,0,0,570.69,236.27ZM288,176a64,64,0,1,1-64,64A64,64,0,0,1,288,176ZM400,448H176a16,16,0,0,1-16-16,96,96,0,0,1,96-96h64a96,96,0,0,1,96,96A16,16,0,0,1,400,448Z"/></svg> --}}
                                                                                         <span>Phòng (Room)</span>
                                                                                     </div>
 
-                                                                                    <p class="m-0 p-0 fw-bold">{{ $showTime->room->name }}
+                                                                                    <p class="m-0 p-0 fw-bold">
+                                                                                        {{ $showTime->room->name }}
                                                                                     </p>
                                                                                 </div>
                                                                                 <div
                                                                                     class=" d-flex align-items-center justify-content-between mb-5 px-4">
                                                                                     <div
                                                                                         class="d-flex align-items-center gap-2">
-                                                                                        <i
-                                                                                            class="fa-regular fa-calendar-days"></i>
+                                                                                        {{-- <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm64-192c0-8.8 7.2-16 16-16h96c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16v-96zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"/></svg> --}}
                                                                                         <span>Ngày Chiếu (Day)</span>
                                                                                     </div>
 
@@ -872,7 +920,7 @@
                                                                                     class=" d-flex align-items-center justify-content-between mb-5 px-4">
                                                                                     <div
                                                                                         class="d-flex align-items-center gap-2">
-                                                                                        <i class="fa-regular fa-clock"></i>
+                                                                                        {{-- <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg> --}}
                                                                                         <span>Giờ Chiếu (Time)</span>
                                                                                     </div>
 
@@ -938,7 +986,7 @@
                                                                                             Tiền =</span>
 
                                                                                     </div>
-                                                                                   
+
                                                                                     <p class="m-0 p-0 fs-2 fw-bold">50.00đ
                                                                                     </p>
                                                                                 </div>
@@ -947,14 +995,14 @@
                                                                                 <hr class="border-2 border-black py-4">
                                                                                 <div class="d-flex">
                                                                                     <a
-                                                                                        href="/choose_room"class="btn btn-primary btn-lg fs-4 px-4">Quay
+                                                                                        href="{{ route('filmDetail',[$film->id]) }}" style="background-color: #FE7900;" class="btn text-white btn-lg fs-4 px-4">Quay
                                                                                         lại</a>
                                                                                     <form
                                                                                         action="{{ route('pay', ['film_id' => $film->id]) }}"
                                                                                         method="get">
 
-                                                                                        <button type="submit"
-                                                                                            class=" mx-5 btn btn-primary btn-lg fs-4 px-4">
+                                                                                        <button type="submit" style="background-color: #FE7900;"
+                                                                                            class=" mx-5 btn text-white btn-lg fs-4 px-4">
                                                                                             Tiếp Theo</button>
 
                                                                                         <input type="hidden"
@@ -976,11 +1024,11 @@
                                                                                         <input type="hidden"
                                                                                             name="cinemaName"
                                                                                             id="cinemaName"
-                                                                                            value="{{$showTime->cinema->name}}">
+                                                                                            value="{{ $showTime->cinema->name }}">
                                                                                         <input type="hidden"
                                                                                             name="cinemaRoom"
                                                                                             id="cinemaRoom"
-                                                                                            value="{{$showTime->room->name}}">
+                                                                                            value="{{ $showTime->room->name }}">
 
                                                                                     </form>
                                                                                 </div>

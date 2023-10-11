@@ -16,13 +16,15 @@ class homeController extends Controller
     {
         
         $film_nowplaying = film::orderByDesc("created_at")->limit(5)->get();
+        $film_topmovie = film::orderByDesc("created_at")->limit(15)->get();
+
        $categories =category::get();
      
 
         $title = "home";
 
         $films = film::all();
-        return view('client.home',compact("title","film_nowplaying","categories","films"));
+        return view('client.home',compact("title","film_nowplaying","categories","films","film_topmovie"));
 
     }
 

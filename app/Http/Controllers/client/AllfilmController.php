@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Models\category;
+use App\Models\film;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AllfilmController extends Controller
 {
@@ -12,8 +15,17 @@ class AllfilmController extends Controller
      */
     public function index()
     {
+    
+        $films = film::get();
+        $category = category::all();
+        $film = DB::table('categories')
+        ->join('film_categories', 'categories.id', '=', 'film_categories.dmid')
+        ->join('films', 'film_categories.film_id' ,'=','films.id')
+        // ->where('categories.id', 1)
+        ->select('categories.*','film_categories.*','films.*')
+        ->get();
         $title = "Now Playing";
-       return view("client.film",compact('title'));
+       return view("client.film",compact("category","film","films"));
     }
 
     /**
@@ -36,8 +48,16 @@ class AllfilmController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-    {
-        //
+    {  
+         $films = film::get();
+    $category = category::get();
+    $film = DB::table('categories')
+        ->join('film_categories', 'categories.id', '=', 'film_categories.dmid')
+        ->join('films', 'film_categories.film_id' ,'=','films.id')
+        ->where('categories.id', $id)
+        ->select('categories.*','film_categories.*','films.*')
+        ->get();
+    return view("client.film",compact("film","category","films"));
     }
 
     /**
