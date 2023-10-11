@@ -15,4 +15,8 @@ class cinema extends Model
         'address',
         'city',
     ];
+    public function ShowTimes()
+    {
+        return $this->hasMany(ShowTime::class);
+    }
 }

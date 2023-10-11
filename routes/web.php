@@ -19,20 +19,50 @@ use App\Http\Controllers\Controller;
 |
 */
 
+<<<<<<< HEAD
 Route::get('/', [App\Http\Controllers\client\homeController::class, 'index'])->name('home');
 Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index']);
-Route::get('/detail_blog', [App\Http\Controllers\client\Detail_blogController::class, 'index']);
-Route::get('/detail_film', [App\Http\Controllers\client\Detail_filmController::class, 'index']);
-Route::get('/dang-phat', [App\Http\Controllers\client\DangphatController::class, 'index']);
-Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class, 'index']);
-Route::get('/film', [App\Http\Controllers\client\AllfilmController::class, 'index']);
-Route::get('/chair-food', [App\Http\Controllers\client\cart\Chairs_FoodController::class, 'index']);
-Route::get('/pay', [App\Http\Controllers\client\cart\PayController::class, 'index']);
-Route::get('/payment_success', [App\Http\Controllers\client\cart\Payment_successController::class, 'index']);
-Route::get('/choose-room', [App\Http\Controllers\client\cart\Choose_RoomController::class, 'index']);
+=======
+Route::get('/', [App\Http\Controllers\client\homeController::class, 'index']);
 
+Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name("contact");
+
+Route::get('/home/{id}', [App\Http\Controllers\client\homeController::class, 'show'])->name('homeCinema');
+Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name('contact');
+
+>>>>>>> efc881d293efda8098dac4a8a01553a515b992b9
+Route::get('/detail_blog', [App\Http\Controllers\client\Detail_blogController::class, 'index']);
+Route::get('/weeklyshowtime', [App\Http\Controllers\client\WeeklyShowtimeController::class, 'index']);
+Route::get('/weeklyshowtime/{id}', [App\Http\Controllers\client\WeeklyShowtimeController::class, 'show'])->name("weeklyshowtime");
+
+
+
+Route::get('/detail_film/{id}', [App\Http\Controllers\client\DetailFilmController::class, 'index'])->name("filmDetail");
+
+Route::get('/dang-phat', [App\Http\Controllers\client\DangphatController::class, 'index'])->name("dang-phat");
+Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class, 'index'])->name("sap-ra-mat");
+Route::get('/film', [App\Http\Controllers\client\AllfilmController::class, 'index']);
+Route::get('/film/{id}', [App\Http\Controllers\client\AllfilmController::class, 'show'])->name("film");
+
+Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class, 'index'])->name("myaccount");
+Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index'])->name("editaccount");
+
+<<<<<<< HEAD
 Route::get('auth/google', [GoogleController::class, "redirectToGoogle"])->name("loginGoogle");
 Route::get('auth/google/callback', [GoogleController::class, "handleGoogleCallback"]);
+=======
+
+
+// Route::get('/detail_film/pay/{id}', [App\Http\Controllers\client\Detail_filmController::class, 'show']);
+
+// Route::get('/pay/{id}', [App\Http\Controllers\client\Detail_filmController::class, 'show']);/
+
+
+
+Route::post('add-rating', [App\Http\Controllers\client\RatingController::class, 'add'])->middleware(['auth']);
+
+
+>>>>>>> efc881d293efda8098dac4a8a01553a515b992b9
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Auth::routes();
@@ -170,4 +200,21 @@ Route::middleware(['auth'])->group(function () {
         Route::get('hidden/{id}', [App\Http\Controllers\admin\commentController::class, 'hidden'])->name('comment.hidden');
         Route::get('restore/{id}', [App\Http\Controllers\admin\commentController::class, 'restore'])->name('comment.restore');
     });
+
+    // cart
+        Route::get('/seat-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
+        Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'Pay'])->name('pay');
+        Route::post('/payment-success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
+        Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('success');
+
+        //vnpay
+        Route::post('/vnpay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);
+
+        //momo
+        Route::post('/momo_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'momo_payment']);
+
+                //onepay
+                Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
+
+
 });

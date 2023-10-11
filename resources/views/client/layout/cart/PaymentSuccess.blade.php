@@ -20,10 +20,14 @@
                         <h2>Thông Tin Phim</h2>
                     </div>
                     <div class="card-body">
-                        <p><strong>Tên Phim:</strong> Những Chú Vượn Tinh Nghịch</p>
-                        <p><strong>Thời gian:</strong> 11/2/2022</p>
-                        <p><strong>Giờ chiếu:</strong> 8:00 AM</p>
-                        <p><strong>Thể Loại:</strong> Hài hước</p>
+                        <p><strong>Tên Phim:</strong> {{ $film_name }}</p>
+                        <p><strong>Thời gian:</strong> {{ $selectedDate }}</p>
+                        <p><strong>Giờ chiếu:</strong> {{ $selectedHour }} </p>
+                        <p><strong>Thể Loại:</strong>
+                        @foreach ($categories as $item)
+                        {{ $item->name }},
+                        @endforeach
+                        </p>
                         <p><strong>Đồ Ăn:</strong> Popcorn</p>
                     </div>
                 </div>
@@ -36,9 +40,10 @@
                     </div>
                     <div class="card-body">
                         <p><strong>Mã đơn:</strong><img class="w-25" src="images/MoMo_logo-1.png" alt=""></p>
-                        <p><strong>Phòng:</strong> A1</p>
-                        <p><strong>Vị trí ghế:</strong> A1, A2, A3, A4, A5, A6, A7, A8</p>
-                        <p><strong>Tổng Vé:</strong> Nợ</p>
+                        <p><strong>Phòng:</strong> {{ $cinemaName }}</p>
+                        <p><strong>Phòng:</strong> {{ $cinemaRoom }}</p>
+                        <p><strong>Vị trí ghế:</strong> {{ $selectedSeatsValue }}</p>
+                        <p><strong>Tổng Vé:</strong> {{ number_format($total) }} VND</p>
                     </div>
                 </div>
             </div>

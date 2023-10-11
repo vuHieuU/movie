@@ -8,13 +8,13 @@
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <title>{{ $title }}</title>
     <meta name='robots' content='max-image-preview:large' />
-    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
-    <link rel='dns-prefetch' href='//s.w.org' />
+   <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+     {{-- <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Comments Feed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" />
-    <script type="text/javascript">
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" /> --}}
+    {{-- <script type="text/javascript">
         window._wpemojiSettings = {
             "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/",
             "ext": ".png",
@@ -71,8 +71,8 @@
                 })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n
                     .wpemoji)))
         }(window, document, window._wpemojiSettings);
-    </script>
-    <style type="text/css">
+    </script> --}}
+    {{-- <style type="text/css">
         img.wp-smiley,
         img.emoji {
             display: inline !important;
@@ -85,11 +85,11 @@
             background: none !important;
             padding: 0 !important;
         }
-    </style>
-    <link rel='stylesheet' id='wp-block-library-css'
+    </style> --}}
+    {{-- <link rel='stylesheet' id='wp-block-library-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7'
-        type='text/css' media='all' />
-    <style id='global-styles-inline-css' type='text/css'>
+        type='text/css' media='all' /> --}}
+    {{-- <style id='global-styles-inline-css' type='text/css'>
         body {
             --wp--preset--color--black: #000000;
             --wp--preset--color--cyan-bluish-gray: #abb8c3;
@@ -336,8 +336,8 @@
         .has-x-large-font-size {
             font-size: var(--wp--preset--font-size--x-large) !important;
         }
-    </style>
-    <link rel='stylesheet' id='elementor-icons-css'
+    </style> --}}
+    {{-- <link rel='stylesheet' id='elementor-icons-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0'
         type='text/css' media='all' />
     <link rel='stylesheet' id='elementor-frontend-css'
@@ -345,32 +345,32 @@
         type='text/css' media='all' />
     <link rel='stylesheet' id='elementor-post-5-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-5.css?ver=1651538276'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-global-css'
+        type='text/css' media='all' /> --}}
+    {{-- <link rel='stylesheet' id='elementor-global-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/global.css?ver=1651538276'
-        type='text/css' media='all' />
+        type='text/css' media='all' /> --}}
     <link rel='stylesheet' id='elementor-post-142-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
         type='text/css' media='all' />
-    <link rel='stylesheet' id='font-awesome-css'
+    {{-- <link rel='stylesheet' id='font-awesome-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='slick-style-css'
+        type='text/css' media='all' /> --}}
+    {{-- <link rel='stylesheet' id='slick-style-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick.css?ver=5.9.7'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='slick-theme-css'
+        type='text/css' media='all' /> --}}
+    {{-- <link rel='stylesheet' id='slick-theme-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick-theme.css?ver=5.9.7'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='fancybox-css'
+        type='text/css' media='all' /> --}}
+    {{-- <link rel='stylesheet' id='fancybox-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.fancybox.css?ver=3.5.7'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='tooltipster-css'
+        type='text/css' media='all' /> --}}
+    {{-- <link rel='stylesheet' id='tooltipster-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/tooltipster.bundle.css?ver=1.0.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='mCustomScrollbar-css'
+        type='text/css' media='all' /> --}}
+    {{-- <link rel='stylesheet' id='mCustomScrollbar-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.mCustomScrollbar.css?ver=1.0.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='plyr-css'
+        type='text/css' media='all' /> --}}
+    {{-- <link rel='stylesheet' id='plyr-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/plyr.css?ver=1.0.0'
         type='text/css' media='all' />
     <link rel='stylesheet' id='amy-movie-style-css'
@@ -406,8 +406,8 @@
     <link rel="alternate" type="application/json+oembed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F" />
     <link rel="alternate" type="text/xml+oembed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" />
-    <style type="text/css">
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" /> --}}
+    {{-- <style type="text/css">
         body {
             font-family: "Roboto Condensed";
             color: #333;
@@ -463,7 +463,7 @@
         #amy-page-header {
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
-    </style>
+    </style> --}}
 </head>
 
 <body
@@ -513,15 +513,19 @@
                                                                         <div class="amy-movie-list">
                                                                             <div class="amy-movie-items">
 
+
+                                                                                @foreach ($film_nowplaying as $item)
+                                                                                    
+                                                                               
                                                                                 <div class="amy-movie-item entry-item">
                                                                                     <div class="amy-movie-item-inner">
                                                                                         <div class="amy-movie-item-front">
                                                                                             <div
                                                                                                 class="amy-movie-item-poster">
                                                                                                 <a
-                                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/kubo-and-the-two-strings/">
+                                                                                                    href="detail_film/{{$item->id}}">
                                                                                                     <img class=""
-                                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_20-196x336_c.jpg"
+                                                                                                        src="{{asset("storage/images/".$item->thumb)}}"
                                                                                                         alt="Kubo and the Two Strings" />
                                                                                                 </a>
                                                                                                 <span
@@ -537,9 +541,7 @@
                                                                                                     <h3
                                                                                                         class="amy-movie-field-title">
                                                                                                         <a
-                                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/kubo-and-the-two-strings/">Kubo
-                                                                                                            and the Two
-                                                                                                            Strings</a></h3>
+                                                                                                            href="detail_film/{{$item->id}}">{{$item->name}}</a></h3>
 
                                                                                                     <div
                                                                                                         class="amy-movie-item-meta">
@@ -547,23 +549,13 @@
                                                                                                             class="amy-movie-field-mpaa">G</span>
                                                                                                         <span
                                                                                                             class="amy-movie-field-duration"><i
-                                                                                                                class="fa fa-clock-o"></i>02
-                                                                                                            hours 00
+                                                                                                                class="fa fa-clock-o"></i>{{$item->duration}}
                                                                                                             minutes</span>
                                                                                                     </div>
 
                                                                                                     <div
                                                                                                         class="amy-movie-field-desc">
-                                                                                                        <p>Sed ut
-                                                                                                            perspiciatis
-                                                                                                            unde omnis iste
-                                                                                                            natus error sit
-                                                                                                            voluptatem
-                                                                                                            accusantium
-                                                                                                            doloremque
-                                                                                                            laudantium,
-                                                                                                            totam rem
-                                                                                                            aperiam, ...</p>
+                                                                                                        <p>{{$item->description}}</p>
                                                                                                     </div>
                                                                                                     <div
                                                                                                         class="amy-movie-custom-field-group amy-movie-field-language">
@@ -571,7 +563,7 @@
                                                                                                             class="amy-movie-custom-field-label">Language:</label>
                                                                                                         <div
                                                                                                             class="amy-movie-custom-field-content">
-                                                                                                            English
+                                                                                                            {{$item->language}}
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div
@@ -581,37 +573,19 @@
                                                                                                             Date:</label>
                                                                                                         <div
                                                                                                             class="amy-movie-custom-field-content">
-                                                                                                            February 15,
-                                                                                                            2022
+                                                                                                            {{$item->premiere_date}}
                                                                                                         </div>
                                                                                                     </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_genre">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Genre:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a>
-                                                                                                        </div>
-                                                                                                    </div>
+                                                                                                    
                                                                                                     <div
                                                                                                         class="amy-movie-custom-field-group amy-movie-field-amy_actor">
                                                                                                         <label
                                                                                                             class="amy-movie-custom-field-label">Actor:</label>
                                                                                                         <div
                                                                                                             class="amy-movie-custom-field-content">
+                                                                                                           
                                                                                                             <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/alexander-cattly/">Alexander
-                                                                                                                Cattly</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/cartin-hollia/">Cartin
-                                                                                                                Hollia</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/greta-garbo/">Greta
-                                                                                                                Garbo</a>
+                                                                                                                href="">{{$item->actor}}</a>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div
@@ -620,24 +594,21 @@
                                                                                                             class="amy-movie-custom-field-label">Director:</label>
                                                                                                         <div
                                                                                                             class="amy-movie-custom-field-content">
+                                                                                                            
                                                                                                             <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/grace-belly/">Grace
-                                                                                                                Belly</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/mae-west/">Mae
-                                                                                                                West</a>
+                                                                                                                href="">{{$item->director}}</a>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
 
                                                                                                 <div
                                                                                                     class="amy-movie-item-button">
-                                                                                                    <a href="https://player.vimeo.com/video/51834631"
+                                                                                                    <a href="{{$item->trailer}}"
                                                                                                         class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
                                                                                                         <i
                                                                                                             class="fa fa-play"></i>Trailer</a>
                                                                                                     <a class="amy-btn-icon-text link-detail"
-                                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/kubo-and-the-two-strings/">
+                                                                                                        href="detail_film/{{$item->id}}">
                                                                                                         <i
                                                                                                             class="fa fa-info"></i>Detail</a>
                                                                                                     <span
@@ -712,1779 +683,10 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="amy-movie-item entry-item">
-                                                                                    <div class="amy-movie-item-inner">
-                                                                                        <div class="amy-movie-item-front">
-                                                                                            <div
-                                                                                                class="amy-movie-item-poster">
-                                                                                                <a
-                                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">
-                                                                                                    <img class=""
-                                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_19-196x336_c.jpg"
-                                                                                                        alt="The Hurricane Heist" />
-                                                                                                </a>
-                                                                                                <span
-                                                                                                    class="amy-movie-field-imdb">7.8</span>
-                                                                                            </div>
-                                                                                        </div>
+                                                                               
+                                                                                @endforeach
 
-                                                                                        <div class="amy-movie-item-back">
-                                                                                            <div
-                                                                                                class="amy-movie-item-back-inner">
-                                                                                                <div
-                                                                                                    class="amy-movie-item-content">
-                                                                                                    <h3
-                                                                                                        class="amy-movie-field-title">
-                                                                                                        <a
-                                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">The
-                                                                                                            Hurricane
-                                                                                                            Heist</a></h3>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-item-meta">
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-mpaa">G</span>
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-duration"><i
-                                                                                                                class="fa fa-clock-o"></i>01
-                                                                                                            hours 30
-                                                                                                            minutes</span>
-                                                                                                    </div>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-field-desc">
-                                                                                                        <p>Sed ut
-                                                                                                            perspiciatis
-                                                                                                            unde omnis iste
-                                                                                                            natus error sit
-                                                                                                            voluptatem
-                                                                                                            accusantium
-                                                                                                            doloremque
-                                                                                                            laudantium,
-                                                                                                            totam rem
-                                                                                                            aperiam, ...</p>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-language">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Language:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            English
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-release_date">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Release
-                                                                                                            Date:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            April 29, 2022
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_genre">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Genre:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/magic/">Magic</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_actor">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Actor:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/alexander-cattly/">Alexander
-                                                                                                                Cattly</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/greta-garbo/">Greta
-                                                                                                                Garbo</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/humpray-richard/">Humpray
-                                                                                                                Richard</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_director">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Director:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/gally-peckin/">Gally
-                                                                                                                Peckin</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/mae-west/">Mae
-                                                                                                                West</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                                <div
-                                                                                                    class="amy-movie-item-button">
-                                                                                                    <a href="https://player.vimeo.com/video/51834631"
-                                                                                                        class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
-                                                                                                        <i
-                                                                                                            class="fa fa-play"></i>Trailer</a>
-                                                                                                    <a class="amy-btn-icon-text link-detail"
-                                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">
-                                                                                                        <i
-                                                                                                            class="fa fa-info"></i>Detail</a>
-                                                                                                    <span
-                                                                                                        class="amy-btn-showtimes showtime-btn">
-                                                                                                        Showtime </span>
-
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <div class="entry-showtime as">
-                                                                                        <div
-                                                                                            class="showtime-item single-cinema">
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>March 1,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>06h30</li>
-                                                                                                    <li> 19h20</li>
-                                                                                                    <li> 13h30</li>
-                                                                                                    <li> 16h20</li>
-                                                                                                    <li> 20h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>March 17,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 17h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>April 14,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>08h20</li>
-                                                                                                    <li> 10h30</li>
-                                                                                                    <li> 17h40</li>
-                                                                                                    <li> 20h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="amy-movie-item entry-item">
-                                                                                    <div class="amy-movie-item-inner">
-                                                                                        <div class="amy-movie-item-front">
-                                                                                            <div
-                                                                                                class="amy-movie-item-poster">
-                                                                                                <a
-                                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">
-                                                                                                    <img class=""
-                                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_17-196x336_c.jpg"
-                                                                                                        alt="Jumanji: Welcome to the Jungle" />
-                                                                                                </a>
-                                                                                                <span
-                                                                                                    class="amy-movie-field-imdb">8.2</span>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                        <div class="amy-movie-item-back">
-                                                                                            <div
-                                                                                                class="amy-movie-item-back-inner">
-                                                                                                <div
-                                                                                                    class="amy-movie-item-content">
-                                                                                                    <h3
-                                                                                                        class="amy-movie-field-title">
-                                                                                                        <a
-                                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">Jumanji:
-                                                                                                            Welcome to the
-                                                                                                            Jungle</a></h3>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-item-meta">
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-mpaa">G</span>
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-duration"><i
-                                                                                                                class="fa fa-clock-o"></i>02
-                                                                                                            hours 30
-                                                                                                            minutes</span>
-                                                                                                    </div>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-field-desc">
-                                                                                                        <p>Sed ut
-                                                                                                            perspiciatis
-                                                                                                            unde omnis iste
-                                                                                                            natus error sit
-                                                                                                            voluptatem
-                                                                                                            accusantium
-                                                                                                            doloremque
-                                                                                                            laudantium,
-                                                                                                            totam rem
-                                                                                                            aperiam, ...</p>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-language">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Language:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            English
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-release_date">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Release
-                                                                                                            Date:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            February 16,
-                                                                                                            2022
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_genre">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Genre:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/sci-fi/">Sci-fi</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_actor">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Actor:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/alexander-cattly/">Alexander
-                                                                                                                Cattly</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/cartin-hollia/">Cartin
-                                                                                                                Hollia</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/humpray-richard/">Humpray
-                                                                                                                Richard</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_director">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Director:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/gally-peckin/">Gally
-                                                                                                                Peckin</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/mae-west/">Mae
-                                                                                                                West</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                                <div
-                                                                                                    class="amy-movie-item-button">
-                                                                                                    <a href="https://player.vimeo.com/video/51834631"
-                                                                                                        class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
-                                                                                                        <i
-                                                                                                            class="fa fa-play"></i>Trailer</a>
-                                                                                                    <a class="amy-btn-icon-text link-detail"
-                                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">
-                                                                                                        <i
-                                                                                                            class="fa fa-info"></i>Detail</a>
-                                                                                                    <span
-                                                                                                        class="amy-btn-showtimes showtime-btn">
-                                                                                                        Showtime </span>
-
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <div class="entry-showtime as">
-                                                                                        <div
-                                                                                            class="showtime-item single-cinema">
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>February 11,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>12h30</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 19h20</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>February 25,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 17h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>March 10,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 17h20</li>
-                                                                                                    <li> 21h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 13,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>07h20</li>
-                                                                                                    <li> 10h10. 15h30</li>
-                                                                                                    <li> 21h00. 23h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="amy-movie-item entry-item">
-                                                                                    <div class="amy-movie-item-inner">
-                                                                                        <div class="amy-movie-item-front">
-                                                                                            <div
-                                                                                                class="amy-movie-item-poster">
-                                                                                                <a
-                                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/death-wish/">
-                                                                                                    <img class=""
-                                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_18-196x336_c.jpg"
-                                                                                                        alt="Death Wish" />
-                                                                                                </a>
-                                                                                                <span
-                                                                                                    class="amy-movie-field-imdb">7.3</span>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                        <div class="amy-movie-item-back">
-                                                                                            <div
-                                                                                                class="amy-movie-item-back-inner">
-                                                                                                <div
-                                                                                                    class="amy-movie-item-content">
-                                                                                                    <h3
-                                                                                                        class="amy-movie-field-title">
-                                                                                                        <a
-                                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/death-wish/">Death
-                                                                                                            Wish</a></h3>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-item-meta">
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-mpaa">G</span>
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-duration"><i
-                                                                                                                class="fa fa-clock-o"></i>01
-                                                                                                            hours 00
-                                                                                                            minutes</span>
-                                                                                                    </div>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-field-desc">
-                                                                                                        <p>Sed ut
-                                                                                                            perspiciatis
-                                                                                                            unde omnis iste
-                                                                                                            natus error sit
-                                                                                                            voluptatem
-                                                                                                            accusantium
-                                                                                                            doloremque
-                                                                                                            laudantium,
-                                                                                                            totam rem
-                                                                                                            aperiam, ...</p>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-language">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Language:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            English
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-release_date">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Release
-                                                                                                            Date:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            April 23, 2022
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_genre">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Genre:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_actor">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Actor:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/cartin-hollia/">Cartin
-                                                                                                                Hollia</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/greta-garbo/">Greta
-                                                                                                                Garbo</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/martin-brando/">Martin
-                                                                                                                Brando</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_director">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Director:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/kingia-rogers/">Kingia
-                                                                                                                Rogers</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/mae-west/">Mae
-                                                                                                                West</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                                <div
-                                                                                                    class="amy-movie-item-button">
-                                                                                                    <a href="https://player.vimeo.com/video/51834631"
-                                                                                                        class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
-                                                                                                        <i
-                                                                                                            class="fa fa-play"></i>Trailer</a>
-                                                                                                    <a class="amy-btn-icon-text link-detail"
-                                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/death-wish/">
-                                                                                                        <i
-                                                                                                            class="fa fa-info"></i>Detail</a>
-                                                                                                    <span
-                                                                                                        class="amy-btn-showtimes showtime-btn">
-                                                                                                        Showtime </span>
-
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <div class="entry-showtime as">
-                                                                                        <div
-                                                                                            class="showtime-item single-cinema">
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>April 25,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>06h30</li>
-                                                                                                    <li> 19h20</li>
-                                                                                                    <li> 13h30</li>
-                                                                                                    <li> 16h20</li>
-                                                                                                    <li> 20h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>April 28,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 17h30</li>
-                                                                                                    <li> 21h20</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 4,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 17h20</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 12,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>07h20</li>
-                                                                                                    <li> 10h10. 15h30</li>
-                                                                                                    <li> 21h00. 23h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="amy-movie-item entry-item">
-                                                                                    <div class="amy-movie-item-inner">
-                                                                                        <div class="amy-movie-item-front">
-                                                                                            <div
-                                                                                                class="amy-movie-item-poster">
-                                                                                                <a
-                                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/supersonic/">
-                                                                                                    <img class=""
-                                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_15-196x336_c.jpg"
-                                                                                                        alt="Supersonic" />
-                                                                                                </a>
-                                                                                                <span
-                                                                                                    class="amy-movie-field-imdb">9.3</span>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                        <div class="amy-movie-item-back">
-                                                                                            <div
-                                                                                                class="amy-movie-item-back-inner">
-                                                                                                <div
-                                                                                                    class="amy-movie-item-content">
-                                                                                                    <h3
-                                                                                                        class="amy-movie-field-title">
-                                                                                                        <a
-                                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/supersonic/">Supersonic</a>
-                                                                                                    </h3>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-item-meta">
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-mpaa">G</span>
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-duration"><i
-                                                                                                                class="fa fa-clock-o"></i>02
-                                                                                                            hours 00
-                                                                                                            minutes</span>
-                                                                                                    </div>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-field-desc">
-                                                                                                        <p>Sed ut
-                                                                                                            perspiciatis
-                                                                                                            unde omnis iste
-                                                                                                            natus error sit
-                                                                                                            voluptatem
-                                                                                                            accusantium
-                                                                                                            doloremque
-                                                                                                            laudantium,
-                                                                                                            totam rem
-                                                                                                            aperiam, ...</p>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-language">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Language:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            English
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-release_date">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Release
-                                                                                                            Date:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            April 9, 2022
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_genre">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Genre:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/magic/">Magic</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_actor">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Actor:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/alexander-cattly/">Alexander
-                                                                                                                Cattly</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/cartin-hollia/">Cartin
-                                                                                                                Hollia</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/greta-garbo/">Greta
-                                                                                                                Garbo</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/humpray-richard/">Humpray
-                                                                                                                Richard</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_director">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Director:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/gally-peckin/">Gally
-                                                                                                                Peckin</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/kingia-rogers/">Kingia
-                                                                                                                Rogers</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                                <div
-                                                                                                    class="amy-movie-item-button">
-                                                                                                    <a href="https://player.vimeo.com/video/51834631"
-                                                                                                        class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
-                                                                                                        <i
-                                                                                                            class="fa fa-play"></i>Trailer</a>
-                                                                                                    <a class="amy-btn-icon-text link-detail"
-                                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/supersonic/">
-                                                                                                        <i
-                                                                                                            class="fa fa-info"></i>Detail</a>
-                                                                                                    <span
-                                                                                                        class="amy-btn-showtimes showtime-btn">
-                                                                                                        Showtime </span>
-
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <div class="entry-showtime as">
-                                                                                        <div
-                                                                                            class="showtime-item single-cinema">
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>April 12,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>12h30</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 19h20</li>
-                                                                                                    <li> 23h00</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>April 22,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 17h30</li>
-                                                                                                    <li> 20h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 4,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>08h20</li>
-                                                                                                    <li> 10h30</li>
-                                                                                                    <li> 17h40</li>
-                                                                                                    <li> 20h30</li>
-                                                                                                    <li> 22h00</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 13,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>07h20</li>
-                                                                                                    <li> 10h10. 15h30</li>
-                                                                                                    <li> 21h00. 23h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="amy-movie-item entry-item">
-                                                                                    <div class="amy-movie-item-inner">
-                                                                                        <div class="amy-movie-item-front">
-                                                                                            <div
-                                                                                                class="amy-movie-item-poster">
-                                                                                                <a
-                                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/peter-rabbit/">
-                                                                                                    <img class=""
-                                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_14-196x336_c.jpg"
-                                                                                                        alt="Peter Rabbit" />
-                                                                                                </a>
-                                                                                                <span
-                                                                                                    class="amy-movie-field-imdb">8.5</span>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                        <div class="amy-movie-item-back">
-                                                                                            <div
-                                                                                                class="amy-movie-item-back-inner">
-                                                                                                <div
-                                                                                                    class="amy-movie-item-content">
-                                                                                                    <h3
-                                                                                                        class="amy-movie-field-title">
-                                                                                                        <a
-                                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/peter-rabbit/">Peter
-                                                                                                            Rabbit</a></h3>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-item-meta">
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-mpaa">G</span>
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-duration"><i
-                                                                                                                class="fa fa-clock-o"></i>01
-                                                                                                            hours 00
-                                                                                                            minutes</span>
-                                                                                                    </div>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-field-desc">
-                                                                                                        <p>Sed ut
-                                                                                                            perspiciatis
-                                                                                                            unde omnis iste
-                                                                                                            natus error sit
-                                                                                                            voluptatem
-                                                                                                            accusantium
-                                                                                                            doloremque
-                                                                                                            laudantium,
-                                                                                                            totam rem
-                                                                                                            aperiam, ...</p>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-language">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Language:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            English
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-release_date">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Release
-                                                                                                            Date:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            April 7, 2022
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_genre">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Genre:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/drama/">Drama</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/sci-fi/">Sci-fi</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_actor">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Actor:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/cartin-hollia/">Cartin
-                                                                                                                Hollia</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/greta-garbo/">Greta
-                                                                                                                Garbo</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/martin-brando/">Martin
-                                                                                                                Brando</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_director">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Director:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/gally-peckin/">Gally
-                                                                                                                Peckin</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/mae-west/">Mae
-                                                                                                                West</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                                <div
-                                                                                                    class="amy-movie-item-button">
-                                                                                                    <a href="https://player.vimeo.com/video/51834631"
-                                                                                                        class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
-                                                                                                        <i
-                                                                                                            class="fa fa-play"></i>Trailer</a>
-                                                                                                    <a class="amy-btn-icon-text link-detail"
-                                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/peter-rabbit/">
-                                                                                                        <i
-                                                                                                            class="fa fa-info"></i>Detail</a>
-                                                                                                    <span
-                                                                                                        class="amy-btn-showtimes showtime-btn">
-                                                                                                        Showtime </span>
-
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <div class="entry-showtime as">
-                                                                                        <div
-                                                                                            class="showtime-item single-cinema">
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>April 14,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>12h30</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 19h20</li>
-                                                                                                    <li> 23h00</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>April 20,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 17h30</li>
-                                                                                                    <li> 21h20</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 4,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>08h20</li>
-                                                                                                    <li> 10h30</li>
-                                                                                                    <li> 17h40</li>
-                                                                                                    <li> 20h30</li>
-                                                                                                    <li> 22h00</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="amy-movie-item entry-item">
-                                                                                    <div class="amy-movie-item-inner">
-                                                                                        <div class="amy-movie-item-front">
-                                                                                            <div
-                                                                                                class="amy-movie-item-poster">
-                                                                                                <a
-                                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/game-night/">
-                                                                                                    <img class=""
-                                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_13-196x336_c.jpg"
-                                                                                                        alt="Game Night" />
-                                                                                                </a>
-                                                                                                <span
-                                                                                                    class="amy-movie-field-imdb">8.2</span>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                        <div class="amy-movie-item-back">
-                                                                                            <div
-                                                                                                class="amy-movie-item-back-inner">
-                                                                                                <div
-                                                                                                    class="amy-movie-item-content">
-                                                                                                    <h3
-                                                                                                        class="amy-movie-field-title">
-                                                                                                        <a
-                                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/game-night/">Game
-                                                                                                            Night</a></h3>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-item-meta">
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-mpaa">G</span>
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-duration"><i
-                                                                                                                class="fa fa-clock-o"></i>01
-                                                                                                            hours 30
-                                                                                                            minutes</span>
-                                                                                                    </div>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-field-desc">
-                                                                                                        <p>Sed ut
-                                                                                                            perspiciatis
-                                                                                                            unde omnis iste
-                                                                                                            natus error sit
-                                                                                                            voluptatem
-                                                                                                            accusantium
-                                                                                                            doloremque
-                                                                                                            laudantium,
-                                                                                                            totam rem
-                                                                                                            aperiam, ...</p>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-language">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Language:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            English
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-release_date">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Release
-                                                                                                            Date:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            March 17, 2022
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_genre">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Genre:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_actor">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Actor:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/alexander-cattly/">Alexander
-                                                                                                                Cattly</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/cartin-hollia/">Cartin
-                                                                                                                Hollia</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/greta-garbo/">Greta
-                                                                                                                Garbo</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_director">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Director:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/grace-belly/">Grace
-                                                                                                                Belly</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                                <div
-                                                                                                    class="amy-movie-item-button">
-                                                                                                    <a href="https://player.vimeo.com/video/51834631"
-                                                                                                        class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
-                                                                                                        <i
-                                                                                                            class="fa fa-play"></i>Trailer</a>
-                                                                                                    <a class="amy-btn-icon-text link-detail"
-                                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/game-night/">
-                                                                                                        <i
-                                                                                                            class="fa fa-info"></i>Detail</a>
-                                                                                                    <span
-                                                                                                        class="amy-btn-showtimes showtime-btn">
-                                                                                                        Showtime </span>
-
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <div class="entry-showtime as">
-                                                                                        <div
-                                                                                            class="showtime-item single-cinema">
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>March 18,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>12h30</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 19h20. 22h10</li>
-                                                                                                    <li> 23h50</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>March 22,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 17h30</li>
-                                                                                                    <li> 20h10</li>
-                                                                                                    <li> 22h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>April 14,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 17h20</li>
-                                                                                                    <li> 21h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 27,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>07h20</li>
-                                                                                                    <li> 10h10. 15h30</li>
-                                                                                                    <li> 21h00. 23h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="amy-movie-item entry-item">
-                                                                                    <div class="amy-movie-item-inner">
-                                                                                        <div class="amy-movie-item-front">
-                                                                                            <div
-                                                                                                class="amy-movie-item-poster">
-                                                                                                <a
-                                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/ice-age-collision-course/">
-                                                                                                    <img class=""
-                                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_11-196x336_c.jpg"
-                                                                                                        alt="Ice Age: Collision Course" />
-                                                                                                </a>
-                                                                                                <span
-                                                                                                    class="amy-movie-field-imdb">9.3</span>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                        <div class="amy-movie-item-back">
-                                                                                            <div
-                                                                                                class="amy-movie-item-back-inner">
-                                                                                                <div
-                                                                                                    class="amy-movie-item-content">
-                                                                                                    <h3
-                                                                                                        class="amy-movie-field-title">
-                                                                                                        <a
-                                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/ice-age-collision-course/">Ice
-                                                                                                            Age: Collision
-                                                                                                            Course</a></h3>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-item-meta">
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-mpaa">G</span>
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-duration"><i
-                                                                                                                class="fa fa-clock-o"></i>01
-                                                                                                            hours 30
-                                                                                                            minutes</span>
-                                                                                                    </div>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-field-desc">
-                                                                                                        <p>Sed ut
-                                                                                                            perspiciatis
-                                                                                                            unde omnis iste
-                                                                                                            natus error sit
-                                                                                                            voluptatem
-                                                                                                            accusantium
-                                                                                                            doloremque
-                                                                                                            laudantium,
-                                                                                                            totam rem
-                                                                                                            aperiam, ...</p>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-language">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Language:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            English
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-release_date">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Release
-                                                                                                            Date:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            April 30, 2022
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_genre">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Genre:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_actor">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Actor:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/cartin-hollia/">Cartin
-                                                                                                                Hollia</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/greta-garbo/">Greta
-                                                                                                                Garbo</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/humpray-richard/">Humpray
-                                                                                                                Richard</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/martin-brando/">Martin
-                                                                                                                Brando</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_director">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Director:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/grace-belly/">Grace
-                                                                                                                Belly</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/kingia-rogers/">Kingia
-                                                                                                                Rogers</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                                <div
-                                                                                                    class="amy-movie-item-button">
-                                                                                                    <a href="https://player.vimeo.com/video/51834631"
-                                                                                                        class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
-                                                                                                        <i
-                                                                                                            class="fa fa-play"></i>Trailer</a>
-                                                                                                    <a class="amy-btn-icon-text link-detail"
-                                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/ice-age-collision-course/">
-                                                                                                        <i
-                                                                                                            class="fa fa-info"></i>Detail</a>
-                                                                                                    <span
-                                                                                                        class="amy-btn-showtimes showtime-btn">
-                                                                                                        Showtime </span>
-
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <div class="entry-showtime as">
-                                                                                        <div
-                                                                                            class="showtime-item single-cinema">
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 4,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>06h30</li>
-                                                                                                    <li> 19h20</li>
-                                                                                                    <li> 13h30</li>
-                                                                                                    <li> 16h20</li>
-                                                                                                    <li> 20h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 20,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 17h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>June 9,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>08h20</li>
-                                                                                                    <li> 10h30</li>
-                                                                                                    <li> 17h40</li>
-                                                                                                    <li> 20h30</li>
-                                                                                                    <li> 22h00</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>June 24,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>07h20</li>
-                                                                                                    <li> 10h10. 15h30</li>
-                                                                                                    <li> 21h00</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="amy-movie-item entry-item">
-                                                                                    <div class="amy-movie-item-inner">
-                                                                                        <div class="amy-movie-item-front">
-                                                                                            <div
-                                                                                                class="amy-movie-item-poster">
-                                                                                                <a
-                                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/star-trek-beyond/">
-                                                                                                    <img class=""
-                                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_12-196x336_c.jpg"
-                                                                                                        alt="Star Trek Beyond" />
-                                                                                                </a>
-                                                                                                <span
-                                                                                                    class="amy-movie-field-imdb">8.2</span>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                        <div class="amy-movie-item-back">
-                                                                                            <div
-                                                                                                class="amy-movie-item-back-inner">
-                                                                                                <div
-                                                                                                    class="amy-movie-item-content">
-                                                                                                    <h3
-                                                                                                        class="amy-movie-field-title">
-                                                                                                        <a
-                                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/star-trek-beyond/">Star
-                                                                                                            Trek Beyond</a>
-                                                                                                    </h3>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-item-meta">
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-mpaa">G</span>
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-duration"><i
-                                                                                                                class="fa fa-clock-o"></i>02
-                                                                                                            hours 00
-                                                                                                            minutes</span>
-                                                                                                    </div>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-field-desc">
-                                                                                                        <p>Sed ut
-                                                                                                            perspiciatis
-                                                                                                            unde omnis iste
-                                                                                                            natus error sit
-                                                                                                            voluptatem
-                                                                                                            accusantium
-                                                                                                            doloremque
-                                                                                                            laudantium,
-                                                                                                            totam rem
-                                                                                                            aperiam, ...</p>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-language">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Language:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            English
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-release_date">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Release
-                                                                                                            Date:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            April 23, 2022
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_genre">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Genre:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/magic/">Magic</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_actor">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Actor:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/cartin-hollia/">Cartin
-                                                                                                                Hollia</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/greta-garbo/">Greta
-                                                                                                                Garbo</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/martin-brando/">Martin
-                                                                                                                Brando</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_director">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Director:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/grace-belly/">Grace
-                                                                                                                Belly</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/mae-west/">Mae
-                                                                                                                West</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                                <div
-                                                                                                    class="amy-movie-item-button">
-                                                                                                    <a href="https://player.vimeo.com/video/51834631"
-                                                                                                        class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
-                                                                                                        <i
-                                                                                                            class="fa fa-play"></i>Trailer</a>
-                                                                                                    <a class="amy-btn-icon-text link-detail"
-                                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/star-trek-beyond/">
-                                                                                                        <i
-                                                                                                            class="fa fa-info"></i>Detail</a>
-                                                                                                    <span
-                                                                                                        class="amy-btn-showtimes showtime-btn">
-                                                                                                        Showtime </span>
-
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <div class="entry-showtime as">
-                                                                                        <div
-                                                                                            class="showtime-item single-cinema">
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 4,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>06h30</li>
-                                                                                                    <li> 19h20</li>
-                                                                                                    <li> 13h30</li>
-                                                                                                    <li> 16h20</li>
-                                                                                                    <li> 20h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 13,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 17h30</li>
-                                                                                                    <li> 20h10</li>
-                                                                                                    <li> 22h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>June 15,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 17h20</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>June 24,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>07h20</li>
-                                                                                                    <li> 10h10. 15h30</li>
-                                                                                                    <li> 21h00. 23h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="amy-movie-item entry-item">
-                                                                                    <div class="amy-movie-item-inner">
-                                                                                        <div class="amy-movie-item-front">
-                                                                                            <div
-                                                                                                class="amy-movie-item-poster">
-                                                                                                <a
-                                                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/swiss-army-man/">
-                                                                                                    <img class=""
-                                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_10-196x336_c.jpg"
-                                                                                                        alt="Swiss Army Man" />
-                                                                                                </a>
-                                                                                                <span
-                                                                                                    class="amy-movie-field-imdb">8.5</span>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                        <div class="amy-movie-item-back">
-                                                                                            <div
-                                                                                                class="amy-movie-item-back-inner">
-                                                                                                <div
-                                                                                                    class="amy-movie-item-content">
-                                                                                                    <h3
-                                                                                                        class="amy-movie-field-title">
-                                                                                                        <a
-                                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/swiss-army-man/">Swiss
-                                                                                                            Army Man</a>
-                                                                                                    </h3>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-item-meta">
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-mpaa">G</span>
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-duration"><i
-                                                                                                                class="fa fa-clock-o"></i>01
-                                                                                                            hours 30
-                                                                                                            minutes</span>
-                                                                                                    </div>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-field-desc">
-                                                                                                        <p>Sed ut
-                                                                                                            perspiciatis
-                                                                                                            unde omnis iste
-                                                                                                            natus error sit
-                                                                                                            voluptatem
-                                                                                                            accusantium
-                                                                                                            doloremque
-                                                                                                            laudantium,
-                                                                                                            totam rem
-                                                                                                            aperiam, ...</p>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-language">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Language:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            English
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-release_date">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Release
-                                                                                                            Date:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            April 29, 2022
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_genre">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Genre:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/sci-fi/">Sci-fi</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_actor">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Actor:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/cartin-hollia/">Cartin
-                                                                                                                Hollia</a>,
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/actor/humpray-richard/">Humpray
-                                                                                                                Richard</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_director">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Director:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            <a
-                                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/director/kingia-rogers/">Kingia
-                                                                                                                Rogers</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                                <div
-                                                                                                    class="amy-movie-item-button">
-                                                                                                    <a href="https://player.vimeo.com/video/51834631"
-                                                                                                        class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
-                                                                                                        <i
-                                                                                                            class="fa fa-play"></i>Trailer</a>
-                                                                                                    <a class="amy-btn-icon-text link-detail"
-                                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/swiss-army-man/">
-                                                                                                        <i
-                                                                                                            class="fa fa-info"></i>Detail</a>
-                                                                                                    <span
-                                                                                                        class="amy-btn-showtimes showtime-btn">
-                                                                                                        Showtime </span>
-
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <div class="entry-showtime as">
-                                                                                        <div
-                                                                                            class="showtime-item single-cinema">
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 5,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>06h30</li>
-                                                                                                    <li> 19h20</li>
-                                                                                                    <li> 13h30</li>
-                                                                                                    <li> 16h20</li>
-                                                                                                    <li> 20h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 19,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>10h30</li>
-                                                                                                    <li> 15h20</li>
-                                                                                                    <li> 20h10</li>
-                                                                                                    <li> 23h50</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 28,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>08h20</li>
-                                                                                                    <li> 10h30</li>
-                                                                                                    <li> 17h40</li>
-                                                                                                    <li> 20h30</li>
-                                                                                                    <li> 22h00</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>July 14,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>07h20</li>
-                                                                                                    <li> 10h10. 15h30</li>
-                                                                                                    <li> 21h00. 23h30</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
+                                                                                
                                                                                 <div class="amy-pagination">
                                                                                     <div class="clear"></div>
                                                                                     <nav class="amy-pagination">
@@ -2529,47 +731,30 @@
                                                                             class="amy-widget amy-widget-list list-movie ">
                                                                             <h4 class="amy-title amy-widget-title">Top
                                                                                 Movie</h4>
+                                                                                @foreach ($film_topmovie as $item)
+                                                                                    
+                                                                               
                                                                             <div class="entry-item">
                                                                                 <div class="entry-thumb"><img
-                                                                                        class=""
-                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_20-118x159_c.jpg"
+                                                                                        class="" style="height: 150px;width: 110px"
+                                                                                        src="{{asset("storage/images/".$item->thumb)}}"
                                                                                         alt="Kubo and the Two Strings" />
                                                                                 </div>
                                                                                 <div class="entry-content">
                                                                                     <h2 class="entry-title"><a
-                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/kubo-and-the-two-strings/">Kubo
-                                                                                            and the Two Strings</a></h2>
+                                                                                            href="detail_film/{{$item->id}}">{{$item->name}}</a></h2>
                                                                                     <div><span class="duration"><i
-                                                                                                class="fa fa-clock-o"></i>02
-                                                                                            hours 00 minutes</span></div>
-                                                                                    <div class="genre"><span><a
-                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                                            <a
-                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a></span>
-                                                                                    </div>
+                                                                                                class="fa fa-clock-o"></i>{{$item->duration}} minutes</span></div>
+                                                                                               
                                                                                 </div>
+                                                                                {{-- <div class="">
+                                                                                    <span>
+                                                                                        <a href=""class="px-4">  {{ $item->description }}</a>
+                                                                                </span>
+                                                                        </div> --}}
                                                                                 <div class="clearfix"></div>
                                                                             </div>
-                                                                            <div class="entry-item">
-                                                                                <div class="entry-thumb"><img
-                                                                                        class=""
-                                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_19-118x159_c.jpg"
-                                                                                        alt="The Hurricane Heist" /></div>
-                                                                                <div class="entry-content">
-                                                                                    <h2 class="entry-title"><a
-                                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">The
-                                                                                            Hurricane Heist</a></h2>
-                                                                                    <div><span class="duration"><i
-                                                                                                class="fa fa-clock-o"></i>01
-                                                                                            hours 30 minutes</span></div>
-                                                                                    <div class="genre"><span><a
-                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a>,
-                                                                                            <a
-                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/magic/">Magic</a></span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="clearfix"></div>
-                                                                            </div>
+                                                                            @endforeach
                                                                       
                                                                             
                                                                         </div>

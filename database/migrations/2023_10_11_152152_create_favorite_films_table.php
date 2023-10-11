@@ -11,19 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('typeseats', function (Blueprint $table) {
+        Schema::create('favorite_films', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->double('price'); 
             $table->timestamps();
-            
         });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('typeseats');
+        Schema::dropIfExists('favorite_films');
     }
 };

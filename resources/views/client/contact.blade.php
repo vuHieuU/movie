@@ -10,7 +10,7 @@
 <title>{{ $title }}</title>
 <meta name='robots' content='noindex, nofollow' />
 <link rel='dns-prefetch' href='//demo.ovatheme.com' />
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+{{-- <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel="alternate" type="application/rss+xml"
     title="Aovis - Film &amp; Movie Booking WordPress Theme &raquo; Feed"
     href="https://demo.ovatheme.com/aovis/feed/" />
@@ -159,17 +159,17 @@
     type='text/css' media='all' />
 <link rel='stylesheet' id='wc-blocks-style-add-to-cart-form-css'
     href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/add-to-cart-form.css?ver=10.6.6'
-    type='text/css' media='all' />
-<link rel='stylesheet' id='wc-blocks-packages-style-css'
+    type='text/css' media='all' /> --}}
+{{-- <link rel='stylesheet' id='wc-blocks-packages-style-css'
     href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/packages-style.css?ver=10.6.6'
-    type='text/css' media='all' />
-<link rel='stylesheet' id='wc-blocks-style-all-products-css'
+    type='text/css' media='all' /> --}}
+{{-- <link rel='stylesheet' id='wc-blocks-style-all-products-css'
     href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/all-products.css?ver=10.6.6'
     type='text/css' media='all' />
 <link rel='stylesheet' id='wc-blocks-style-all-reviews-css'
     href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/all-reviews.css?ver=10.6.6'
-    type='text/css' media='all' />
-<link rel='stylesheet' id='wc-blocks-style-attribute-filter-css'
+    type='text/css' media='all' /> --}}
+{{-- <link rel='stylesheet' id='wc-blocks-style-attribute-filter-css'
     href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/attribute-filter.css?ver=10.6.6'
     type='text/css' media='all' />
 <link rel='stylesheet' id='wc-blocks-style-breadcrumbs-css'
@@ -183,8 +183,8 @@
     type='text/css' media='all' />
 <link rel='stylesheet' id='wc-blocks-style-featured-category-css'
     href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/featured-category.css?ver=10.6.6'
-    type='text/css' media='all' />
-<link rel='stylesheet' id='wc-blocks-style-featured-product-css'
+    type='text/css' media='all' /> --}}
+{{-- <link rel='stylesheet' id='wc-blocks-style-featured-product-css'
     href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/featured-product.css?ver=10.6.6'
     type='text/css' media='all' />
 <link rel='stylesheet' id='wc-blocks-style-mini-cart-css'
@@ -222,8 +222,8 @@
     type='text/css' media='all' />
 <link rel='stylesheet' id='wc-blocks-style-product-search-css'
     href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-search.css?ver=10.6.6'
-    type='text/css' media='all' />
-<link rel='stylesheet' id='wc-blocks-style-product-sku-css'
+    type='text/css' media='all' /> --}}
+{{-- <link rel='stylesheet' id='wc-blocks-style-product-sku-css'
     href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-sku.css?ver=10.6.6'
     type='text/css' media='all' />
 <link rel='stylesheet' id='wc-blocks-style-product-stock-indicator-css'
@@ -246,8 +246,8 @@
     type='text/css' media='all' />
 <link rel='stylesheet' id='wc-blocks-style-product-details-css'
     href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/product-details.css?ver=10.6.6'
-    type='text/css' media='all' />
-<link rel='stylesheet' id='wc-blocks-style-single-product-css'
+    type='text/css' media='all' /> --}}
+{{-- <link rel='stylesheet' id='wc-blocks-style-single-product-css'
     href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/single-product.css?ver=10.6.6'
     type='text/css' media='all' />
 <link rel='stylesheet' id='wc-blocks-style-stock-filter-css'
@@ -261,8 +261,8 @@
     type='text/css' media='all' />
 <link rel='stylesheet' id='wc-blocks-style-mini-cart-contents-css'
     href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/mini-cart-contents.css?ver=10.6.6'
-    type='text/css' media='all' />
-<style type="text/css">
+    type='text/css' media='all' /> --}}
+{{-- <style type="text/css">
     body {
         font-family: "Roboto Condensed";
         color: #333;
@@ -318,10 +318,10 @@
     #amy-page-header {
         background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
     }
-</style>
+</style> --}}
 </head>
 
-<style id='classic-theme-styles-inline-css' type='text/css'>
+{{-- <style id='classic-theme-styles-inline-css' type='text/css'>
 /*! This file is auto-generated */
 .wp-block-button__link {
     color: #fff;
@@ -704,7 +704,7 @@ body .is-layout-grid>* {
     font-size: 1.5em;
     line-height: 1.6;
 }
-</style>
+</style> --}}
 <link rel='stylesheet' id='contact-form-7-css'
 href='https://demo.ovatheme.com/aovis/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.8'
 type='text/css' media='all' />
@@ -714,7 +714,7 @@ type='text/css' media='all' />
 <link rel='stylesheet' id='event-frontend-css'
 href='https://demo.ovatheme.com/aovis/wp-content/plugins/ova-events/assets/css/frontend/event.css' type='text/css'
 media='all' />
-<style id='event-frontend-inline-css' type='text/css'>
+{{-- <style id='event-frontend-inline-css' type='text/css'>
 #sidebar-event .widget_feature_event .event-feature .item .date-event .date,
 .single_event .content-event .tab-Location ul.event_nav li.event_nav-item.active:after,
 .single_event .content-event .tab-Location ul.event_nav li.event_nav-item a:after,
@@ -819,8 +819,8 @@ media='all' />
 .ovaev-wrapper-search-ajax .ovaev-search-ajax-container .wrap_loader .loader circle {
     stroke: #d96c2c;
 }
-</style>
-<link rel='stylesheet' id='woocommerce-layout-css'
+</style> --}}
+{{-- <link rel='stylesheet' id='woocommerce-layout-css'
 href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=8.0.3'
 type='text/css' media='all' />
 <link rel='stylesheet' id='woocommerce-smallscreen-css'
@@ -828,15 +828,17 @@ href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/assets/css/
 type='text/css' media='only screen and (max-width: 768px)' />
 <link rel='stylesheet' id='woocommerce-general-css'
 href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=8.0.3'
-type='text/css' media='all' />
-<style id='woocommerce-inline-inline-css' type='text/css'>
+type='text/css' media='all' /> --}}
+
+{{-- <style id='woocommerce-inline-inline-css' type='text/css'>
 .woocommerce form .form-row .required {
     visibility: visible;
 }
-</style>
+</style> --}}
 <link rel='stylesheet' id='aovis-style-css'
 href='https://demo.ovatheme.com/aovis/wp-content/themes/aovis/style.css?ver=1.0.1' type='text/css'
 media='all' />
+
 <style id='aovis-style-inline-css' type='text/css'>
 :root {
     --primary: #d96c2c;
@@ -867,7 +869,7 @@ media='all' />
     }
 }
 </style>
-<link rel='stylesheet' id='child-style-css'
+{{-- <link rel='stylesheet' id='child-style-css'
 href='https://demo.ovatheme.com/aovis/wp-content/themes/aovis-child/style.css?ver=1.0.0' type='text/css'
 media='all' />
 <link rel='stylesheet' id='ova-google-fonts-css'
@@ -887,7 +889,7 @@ href='https://demo.ovatheme.com/aovis/wp-content/plugins/elementor/assets/lib/ei
 type='text/css' media='all' />
 <link rel='stylesheet' id='elementor-frontend-css'
 href='https://demo.ovatheme.com/aovis/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.15.3'
-type='text/css' media='all' />
+type='text/css' media='all' /> --}}
 <style id='elementor-frontend-inline-css' type='text/css'>
 .elementor-kit-6 {
     --e-global-color-primary: #6EC1E4;
@@ -1046,8 +1048,8 @@ h1.entry-title {
         width: 100%;
     }
 }
-</style>
-<link rel='stylesheet' id='swiper-css'
+</style> 
+{{-- <link rel='stylesheet' id='swiper-css'
 href='https://demo.ovatheme.com/aovis/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=8.4.5'
 type='text/css' media='all' />
 <link rel='stylesheet' id='font-awesome-5-all-css'
@@ -1087,8 +1089,8 @@ href="https://demo.ovatheme.com/aovis/wp-json/oembed/1.0/embed?url=https%3A%2F%2
         opacity: 1 !important;
     }
 </style>
-</noscript>
-<meta name="generator"
+</noscript> --}}
+{{-- <meta name="generator"
 content="Elementor 3.15.3; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading; settings: css_print_method-internal, google_font-enabled, font_display-swap">
 <link rel="icon" href="https://demo.ovatheme.com/aovis/wp-content/uploads/2023/02/cropped-favicon-32x32.png"
 sizes="32x32" />
@@ -1113,7 +1115,7 @@ type='text/css' media='all' />
 </style>
 
 <meta name="msapplication-TileImage"
-content="https://demo.ovatheme.com/aovis/wp-content/uploads/2023/02/cropped-favicon-270x270.png" />
+content="https://demo.ovatheme.com/aovis/wp-content/uploads/2023/02/cropped-favicon-270x270.png" /> --}}
 </head>
 
 <body
@@ -1123,7 +1125,7 @@ class="page-template page-template-elementor_header_footer page page-id-38 wp-em
 <div class="wrap-fullwidth">
     <div class="inside-content">
 
-        <style id="elementor-post-108">
+        {{-- <style id="elementor-post-108">
             .elementor-108 .elementor-element.elementor-element-ca3d059>.elementor-container>.elementor-column>.elementor-widget-wrap {
                 align-content: center;
                 align-items: center;
@@ -1365,7 +1367,7 @@ class="page-template page-template-elementor_header_footer page page-id-38 wp-em
                     width: 100%;
                 }
             }
-        </style>
+        </style> --}}
         <div data-elementor-type="wp-post" data-elementor-id="108" class="elementor elementor-108">
 
 

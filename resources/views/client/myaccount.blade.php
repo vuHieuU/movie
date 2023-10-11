@@ -495,7 +495,7 @@
                     </p>
                     <div class="row py-3 border-1 border-bottom align-items-center mx-5">
                         <div class="col-md-4">
-                            <p class="fs-4 text-gray">Ảnh cá nhân</p>
+                            <p class="fs-4 text-gray">Avatar</p>
                         </div>
                         <div class="col-md-4">
                             <div class="rounded-circle overflow-hidden" style="width: 150px; height: 150px;">
@@ -510,13 +510,13 @@
     
                     <div class="row py-3 mt-3 border-1 border-bottom align-items-center mx-5">
                         <div class="col-md-4">
-                            <p class="fs-4 text-gray">Tên</p>
+                            <p class="fs-4 text-gray">Tên người dùng</p>
                         </div>
                         <div class="col-md-4">
                             <p class="fs-3">{{Auth::User()->name}}</p>
                         </div>
                         <div class="col-md-4  text-center">
-                            <i class="fas fa-terminal mx-5"></i>
+                          
                         </div>
                     </div>
     
@@ -528,7 +528,7 @@
                             <p class="fs-3">{{Auth::User()->gender}}</p>
                         </div>
                         <div class="col-md-4 text-center">
-                            <i class="fas fa-terminal mx-5"></i>
+                          
                         </div>
                     </div>
                 </div>
@@ -548,7 +548,7 @@
                             <p class="fs-3">{{Auth::User()->email}}</</p>
                         </div>
                         <div class="col-md-4">
-                            <i class="fa-solid fa-terminal mx-5"></i>
+                         
                         </div>
                     </div>
         
@@ -560,18 +560,18 @@
                             <p class="fs-3">{{Auth::User()->phone}}</</p>
                         </div>
                         <div class="col-md-4">
-                            <i class="fa-solid fa-terminal mx-5"></i>
+                         
                         </div>
                     </div>
                     <div class="row mt-4 align-items-center mx-5">
                         <div class="col-md-4">
-                            <p class="fs-4 text-gray">Địa chỉ</p>
+                            <p class="fs-4 text-gray">Address</p>
                         </div>
                         <div class="col-md-4">
                             <p class="fs-3">{{Auth::User()->address}}</p>
                         </div>
                         <div class="col-md-4">
-                            <i class="fa-solid fa-terminal mx-5"></i>
+                         
                         </div>
                     </div>
                     

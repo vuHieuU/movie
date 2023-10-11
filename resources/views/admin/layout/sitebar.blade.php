@@ -1,6 +1,6 @@
 <div class="iq-sidebar  sidebar-default ">
     <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-        <a href="../backend/index.html" class="header-logo">
+        <a href="/admin" class="header-logo">
             <img src="/template/assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo"><h5 class="logo-title light-logo ml-3">POSDash</h5>
         </a>
         <div class="iq-menu-bt-sidebar ml-0">
@@ -18,28 +18,6 @@
                         <span class="ml-4">Dashboards</span>
                     </a>
                 </li>
-                {{-- Categories --}}
-                <li class=" ">
-                    <a href="#categories" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                        <i class="fa-solid fa-film"></i>
-                        <span class="ml-4">Categories</span>
-                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                        </svg>
-                    </a>
-                    <ul id="categories" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
-                            <a href="/categories/index">
-                                <i class="las la-minus"></i><span>List Cate</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="/categories/create">
-                                <i class="las la-minus"></i><span>Add Cate</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
                 {{-- film --}}
                 <li class=" ">
                     <a href="#film" class="collapsed" data-toggle="collapse" aria-expanded="false">
@@ -56,37 +34,22 @@
                             </a>
                         </li>
                         <li class="">
-                            <a href="{{route("films.create")}}">
-                                <i class="las la-minus"></i><span>Add film</span>
+                            <a href="/categories/index">
+                                <i class="las la-minus"></i><span>List Cate</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/coupon/index">
+                                <i class="las la-minus"></i><span>List Coupon</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/comment/index">
+                                <i class="las la-minus"></i><span>List Comment</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-            {{-- Role --}}
-          {{-- @can('show-role') --}}
-        <li class="">
-
-            <a href="#role" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                <i class="fa-brands fa-linux"></i>
-                <span class="ml-4">Roles</span>
-                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                </svg>
-            </a>
-            <ul id="role" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                <li class="">
-                    <a href="/role/index">
-                        <i class="las la-minus"></i><span>List role</span>
-                    </a>
-                </li>
-                <li class="">
-                    <a href="/role/create">
-                        <i class="las la-minus"></i><span>Add role</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-          {{-- @endcan --}}
             {{-- User --}}
           {{-- @can('show-user') --}}
           <li class=" ">
@@ -104,8 +67,8 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="/user/create">
-                        <i class="las la-minus"></i><span>Add user</span>
+                    <a href="/role/index">
+                        <i class="las la-minus"></i><span>List role</span>
                     </a>
                 </li>
             </ul>
@@ -129,28 +92,6 @@
                 <li class="">
                     <a href="/city/index">
                         <i class="las la-minus"></i><span>City</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-         {{-- Coupon --}}
-        <li class=" ">
-            <a href="#coupon" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                <i class="fa-solid fa-poo fa-flip"></i>
-                <span class="ml-4">Coupon</span>
-                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                </svg>
-            </a>
-            <ul id="coupon" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                <li class="">
-                    <a href="/coupon/index">
-                        <i class="las la-minus"></i><span>List Coupon</span>
-                    </a>
-                </li>
-                <li class="">
-                    <a href="/coupon/create">
-                        <i class="las la-minus"></i><span>Add Coupon</span>
                     </a>
                 </li>
             </ul>
@@ -179,56 +120,10 @@
             </ul>
         </li>
           {{-- @endcan --}}
-
-          {{-- seats --}}
-          <li class=" ">
-            <a href="#seat" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                <i class="fa-solid fa-wheelchair"></i>
-                <span class="ml-4">Seat</span>
-                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                </svg>
-            </a>
-            <ul id="seat" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                <li class="">
-                    <a href="/seats/index">
-                        <i class="las la-minus"></i><span>List Seat</span>
-                    </a>
-                </li>
-                <li class="">
-                    <a href="/seats/create">
-                        <i class="las la-minus"></i><span>Add Seat</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-          {{-- seats --}}
-            {{-- typeseats --}}
-            <li class=" ">
-                <a href="#typeseat" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                    <i class="fa-solid fa-poo fa-flip"></i>
-                    <span class="ml-4">TypeSeat</span>
-                    <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                    </svg>
-                </a>
-                <ul id="typeseat" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                    <li class="">
-                        <a href="/typeseats/index">
-                            <i class="las la-minus"></i><span>List Seat</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="/typeseats/create">
-                            <i class="las la-minus"></i><span>Add Seat</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
             {{-- showtime --}}
             <li class=" ">
                 <a href="#showtime" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                    <i class="fa-solid fa-poo fa-flip"></i>
+                    <i class="fa-solid fa-calendar"></i>
                     <span class="ml-4">showtime</span>
                     <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
@@ -241,53 +136,22 @@
                         </a>
                     </li>
                     <li class="">
-                        <a href="/showtime/create">
-                            <i class="las la-minus"></i><span>Add showtime</span>
+                        <a href="/typeseats/index">
+                            <i class="las la-minus"></i><span>List type Seat</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/seats/index">
+                            <i class="las la-minus"></i><span>List Seat</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/rooms/index">
+                            <i class="las la-minus"></i><span>List Room</span>
                         </a>
                     </li>
                 </ul>
             </li>
-              {{-- typeseats --}}
- {{-- Room --}}
- <li class=" ">
-    <a href="#room" class="collapsed" data-toggle="collapse" aria-expanded="false">
-        <i class="fa-solid fa-poo fa-flip"></i>
-        <span class="ml-4">Room</span>
-        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-        </svg>
-    </a>
-    <ul id="room" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-        <li class="">
-            <a href="/rooms/index">
-                <i class="las la-minus"></i><span>List Room</span>
-            </a>
-        </li>
-        <li class="">
-            <a href="/rooms/create">
-                <i class="las la-minus"></i><span>Add Room</span>
-            </a>
-        </li>
-    </ul>
-</li>
-  {{-- room --}}
-  {{-- Comment --}}
- <li class=" ">
-    <a href="#comment" class="collapsed" data-toggle="collapse" aria-expanded="false">
-    <i class="fa-solid fa-comments"></i>
-        <span class="ml-4">Comment</span>
-        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-        </svg>
-    </a>
-    <ul id="comment" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-        <li class="">
-            <a href="/comment/index">
-                <i class="las la-minus"></i><span>List Comment</span>
-            </a>
-        </li>
-    </ul>
-</li>
 {{-- @endcan --}}
             </ul>
         </nav>
@@ -522,7 +386,7 @@
                         <li class="nav-item nav-icon dropdown caption-content">
                             <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton4"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="/template/assets/images/user/1.png" class="img-fluid rounded" alt="user">
+                                <img src="{{Auth::User()->thumb}}" class="img-fluid rounded" alt="user">
                             </a>
                             <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="card shadow-none m-0">
@@ -530,7 +394,7 @@
                                         <div class="media-body profile-detail text-center">
                                             <img src="/template/assets/images/page-img/profile-bg.jpg" alt="profile-bg"
                                                 class="rounded-top img-fluid mb-4">
-                                            <img src="/template/assets/images/user/1.png" alt="profile-img"
+                                            <img src="{{Auth::User()->thumb}}" alt="profile-img"
                                                 class="rounded profile-img img-fluid avatar-70">
                                         </div>
                                         <div class="p-3">

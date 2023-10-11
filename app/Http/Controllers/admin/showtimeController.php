@@ -5,8 +5,9 @@ namespace App\Http\Controllers\admin;
 use App\Models\film;
 use App\Models\room;
 use App\Models\seats;
-use Illuminate\Http\Request;
+use App\Models\cinema;
 use App\Models\ShowTime;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class showtimeController extends Controller
@@ -16,7 +17,7 @@ class showtimeController extends Controller
      */
     public function index()
     {
-        $showtime = ShowTime::get();
+        $showtime = ShowTime::with('cinema')->get();
         return view('admin.showtime.index',compact('showtime'));
     }
 
@@ -28,7 +29,8 @@ class showtimeController extends Controller
         $film = film::get();
         $room = room::get();
         $seats = seats::get();
-        return view('admin.showtime.create',compact('film','room','seats'));
+        $cinemas = cinema::all();
+        return view('admin.showtime.create',compact('film','room','seats','cinemas'));
     }
 
     /**
@@ -39,6 +41,7 @@ class showtimeController extends Controller
         $data = [
             'film_id' => $request->film_id,
             'room_id' => $request->room_id,
+            'cinema_id' => $request->cinema_id,
             'hour' => $request->hour,
             'day' => $request->day,
             'content' => $request->content,
@@ -65,7 +68,8 @@ class showtimeController extends Controller
         $film = film::get();
         $room = room::get();
         $seats = seats::get();
-        return view('admin.showtime.edit',compact('showtime','film','room','seats'));
+        $cinema = cinema::get();
+        return view('admin.showtime.edit',compact('showtime','film','room','seats','cinema'));
     }
 
     /**
@@ -77,6 +81,7 @@ class showtimeController extends Controller
         $data = [
             'film_id' => $request->film_id,
             'room_id' => $request->room_id,
+            'cinema_id' => $request->cinema_id,
             'hour' => $request->hour,
             'day' => $request->day,
             'content' => $request->content,

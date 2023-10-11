@@ -3,29 +3,34 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
-use App\Models\category;
 use App\Models\film;
+use App\Models\ShowTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class AllfilmController extends Controller
+class WeeklyShowtimeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-    
-        $films = film::get();
-        $category = category::all();
-        $film = DB::table('categories')
-        ->join('film_categories', 'categories.id', '=', 'film_categories.dmid')
-        ->join('films', 'film_categories.film_id' ,'=','films.id')
-        // ->where('categories.id', 1)
-        ->select('categories.*','film_categories.*','films.*')
+    $film = film::get();
+        
+        // $showtime = ShowTime::where("show_times.id",2)->get();
+        $showtime = ShowTime::get();
+        
+        $title = "Weekly Showtime";
+
+        $filmshowtime = DB::table('films')
+        ->join('show_times','films.id' ,'=',  'show_times.film_id')
+        ->select('show_times.*','films.*')
+        // ->where("show_times.id",4)
         ->get();
-        $title = "Now Playing";
-       return view("client.film",compact("category","film","films"));
+
+
+        
+        return view('client.weeklyshowtime',compact('title',"showtime","film","filmshowtime"));
     }
 
     /**
@@ -48,16 +53,19 @@ class AllfilmController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-    {  
-         $films = film::get();
-    $category = category::get();
-    $film = DB::table('categories')
-        ->join('film_categories', 'categories.id', '=', 'film_categories.dmid')
-        ->join('films', 'film_categories.film_id' ,'=','films.id')
-        ->where('categories.id', $id)
-        ->select('categories.*','film_categories.*','films.*')
+    {
+            
+        $title = "Weekly Showtime";
+        $filmshowtime = DB::table('films')
+        ->join('show_times','films.id' ,'=',  'show_times.film_id')
+        ->select('show_times.*','films.*')
+        ->where("show_times.id",$id)
         ->get();
-    return view("client.film",compact("film","category","films"));
+        $showtime = ShowTime::get();
+        // $showtime = ShowTime::where("show_times.id",$id)->get();
+
+        
+        return view('client.weeklyshowtime',compact("title","filmshowtime","showtime"));
     }
 
     /**

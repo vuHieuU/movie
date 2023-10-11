@@ -35,11 +35,11 @@ class RoomController extends Controller
         $name = $request->input("name");
         $max = $request->input("max");
         $cinema_id = $request->input("cinema_id");
-$data = [
-    "name"=>$name,
-    "max"=>$max,
-    "cinema_id"=>$cinema_id,
-];
+            $data = [
+                "name"=>$name,
+                "max"=>$max,
+                "cinema_id"=>$cinema_id,
+            ];
 room::create($data);
 return redirect()->route('rooms.index')->with('success', 'Room created successfully');
     }

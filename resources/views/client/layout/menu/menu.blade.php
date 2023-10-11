@@ -3,7 +3,7 @@
         <div class="amy-inner">
             <div class="amy-left">
                 <div id="amy-site-logo " style="width: 70%;">
-                    <a href="/" >
+                    <a href="/">
                         <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_66.png"
                             alt="Elementor Single Cinema" />
                     </a>
@@ -25,7 +25,7 @@
                         padding: 10px 15px;
                         cursor: pointer;
                         border: 1px solid #ccc;
-                        border-radius: 5px;
+                        border-radius: 5px 5px 0 0;
                         user-select: none;
                     }
 
@@ -46,7 +46,6 @@
                         left: 0;
                         background-color: #fff;
                         border: 1px solid #ccc;
-                        border-top: none;
                         border-radius: 0 0 5px 5px;
                         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
                         max-height: 200px;
@@ -58,10 +57,12 @@
                         padding: 10px 15px;
                         cursor: pointer;
                         user-select: none;
+                        width: 159px;
+                        background-color: #f8f3f3;
                     }
 
                     .rap-list li:hover {
-                        background-color: #f0f0f0;
+                        background-color: #ffffff;
                     }
                 </style>
 
@@ -71,19 +72,11 @@
 
                     </div>
                     <ul id="rap-list" class="rap-list">
-                        
-                            <li onclick="selectRap('Beta Home')"><a href="/"> Beta Home </a></li>
+
+                        @foreach (\App\Models\cinema::get() as $cinema)
+                        <a href="{{ route('homeCinema',[$cinema->id]) }}"><li onclick="selectRap('{{ $cinema->name }}')"> {{ $cinema->name }} </li></a>
+                        @endforeach
                        
-                        
-                            <li onclick="selectRap('Beta Thanh Xuân')"><a href="/contact"> Beta Thanh Xuân </a></li>
-                       
-                        
-                            <li onclick="selectRap('Beta Mỹ Đình')"><a href="/detail_blog"> Beta Mỹ Đình </a></li>
-                       
-                       
-                            <li onclick="selectRap('Beta Đan Phượng')"> <a href="/detail_film"> Beta Đan Phượng </a></li>
-                       
-                        <!-- Thêm các rạp khác vào đây -->
                     </ul>
                 </div>
 
@@ -126,93 +119,62 @@
                             </li>
                             <li id="menu-item-276"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-276">
-                                <a href="#">Movie</a>
+                                <a href="/film">Movie</a>
                                 <ul class="sub-menu">
                                     <li id="menu-item-143"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143">
-                                        <a href="/dang-phat">Now
+                                        <a href="{{ route('dang-phat') }}">Now
                                             Playing</a>
                                     </li>
                                     <li id="menu-item-134"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134">
-                                        <a href="/sap-ra-mat">Coming
+                                        <a href="{{ route('sap-ra-mat') }}">Coming
                                             Soon</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li id="menu-item-277"
-                                class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-277">
-                                <a href="/film">All Movie</a>
-                                
-                            </li>
                             <li id="menu-item-278"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
-                                <a href="#">Showtime</a>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-140"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                        <a
-                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/daily-showtime-layout-list/">Daily
-                                            Showtime Layout List</a>
-                                    </li>
-                                    <li id="menu-item-137"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137">
-                                        <a
-                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/daily-showtime-ajax/">Daily
-                                            Showtime Ajax</a>
-                                    </li>
-                                    <li id="menu-item-149"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-149">
-                                        <a
-                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/weekly-showtime-ajax/">Weekly
-                                            Showtime Ajax</a>
-                                    </li>
-                                    <li id="menu-item-152"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152">
-                                        <a
-                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/weekly-showtime-table/">Weekly
-                                            Showtime Table</a>
-                                    </li>
-                                </ul>
+                                <a href="/weeklyshowtime">Showtime</a>
                             </li>
                             <li id="menu-item-146"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
-                                <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/top-rated/">Top
+                                <a href="">Top
                                     rated</a>
                             </li>
                             <li id="menu-item-146"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
-                                <a href="contact">Contact</a>
+                                <a href="{{ route('contact') }}">Contact</a>
                             </li>
-@if (Auth()->check())
-<li id="menu-item-278 "
-class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
-<a href="/myaccount"><i class="fa-solid fa-user"></i></a>
-<ul class="sub-menu">
-    <li id="menu-item-140"
-        class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-        <a href="/admin">Trang quản trị</a>
-    </li>
-    
-</ul>
-</li> 
-@else
- <li id="menu-item-278 "
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
-                                <a href="login"><i class="fa-solid fa-user"></i></a>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-140"
-                                        class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                        <a href="/login">Login</a>
-                                    </li>
-                                    <li id="menu-item-140"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                        <a href="/register">Register</a>
-                                    </li>
-                                </ul>
-                            </li>   
-@endif
-                            
+                            @if (Auth()->check())
+                                <li id="menu-item-278 "
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
+                                    <a href="myaccount"><i class="fa-solid fa-user"></i></a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-140"
+                                            class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+                                            <a href="/admin">Trang quản trị</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            @else
+                                <li id="menu-item-278 "
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
+                                    <a href="login"><i class="fa-solid fa-user"></i></a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-140"
+                                            class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+                                            <a href="/login">Login</a>
+                                        </li>
+                                        <li id="menu-item-140"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+                                            <a href="/register">Register</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @endif
+
                         </ul>
 
                     </div>
