@@ -72,19 +72,11 @@
 
                     </div>
                     <ul id="rap-list" class="rap-list">
-                        
-                            <li onclick="selectRap('Beta Home')"><a href="/"> Beta Home </a></li>
+
+                        @foreach (\App\Models\cinema::get() as $cinema)
+                        <a href="{{ route('homeCinema',[$cinema->id]) }}"><li onclick="selectRap('{{ $cinema->name }}')"> {{ $cinema->name }} </li></a>
+                        @endforeach
                        
-                        
-                            <li onclick="selectRap('Beta Thanh Xuân')"><a href="/contact"> Beta Thanh Xuân </a></li>
-                       
-                        
-                            <li onclick="selectRap('Beta Mỹ Đình')"><a href="/detail_blog"> Beta Mỹ Đình </a></li>
-                       
-                       
-                            <li onclick="selectRap('Beta Đan Phượng')"> <a href="/detail_film"> Beta Đan Phượng </a></li>
-                       
-                        <!-- Thêm các rạp khác vào đây -->
                     </ul>
                 </div>
 

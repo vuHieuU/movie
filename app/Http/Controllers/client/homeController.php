@@ -15,19 +15,12 @@ class homeController extends Controller
      */
     public function index()
     {
-
-        
+        $title = "home";
         $film_nowplaying = film::orderByDesc("created_at")->limit(5)->get();
         $film_topmovie = film::orderByDesc("created_at")->limit(15)->get();
-
-       $categories =category::get();
-     
-
-        $title = "home";
-$title = "home";
+        $categories =category::get();
         $film = ShowTime::limit(5)->get();
-        $films = film::all();
-        return view('client.home',compact("title","film_nowplaying","categories","films","film_topmovie"));
+        return view('client.home',compact("title","film_nowplaying","categories","film","film_topmovie"));
 
         
         // return view('client.home',compact("title","film"));
@@ -39,7 +32,9 @@ $title = "home";
         $categories =category::get();
         $cinema_id = Cinema::findOrFail($id);
         $film = ShowTime::where("cinema_id", $cinema_id->id)->with('film')->limit(5)->get();
-        return view('client.home',compact("title","film","categories"));
+        $film_nowplaying = film::orderByDesc("created_at")->limit(5)->get();
+        $film_topmovie = film::orderByDesc("created_at")->limit(15)->get();
+        return view('client.home',compact("title","film","categories",'film_nowplaying','film_topmovie'));
 
     }
 

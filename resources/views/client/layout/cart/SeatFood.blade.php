@@ -643,8 +643,9 @@
                                                                                         const total = selectedSeats.reduce((acc, seatNumber) => {
                                                                                             return acc + seatPrice;
                                                                                         }, 0);
-                                                                                        totalPriceSpan.textContent = total;
+                                                                                        totalPriceSpan.textContent = total.toLocaleString();
                                                                                         selectedPriceSeatsValue.value = total;
+                                                                                      
                                                                                     }
                                                                                     // food
                                                                                     function calculateTotal() {
@@ -656,9 +657,10 @@
                                                                                             total += quantity * item.price;
                                                                                         });
 
-                                                                                        document.getElementById('totalPriceFood').textContent = total;
+                                                                                        document.getElementById('totalPriceFood').textContent = total.toLocaleString();
                                                                                         document.getElementById('totalPriceFoodValue').value = total;
                                                                                     }
+
                                                                                 </script>
 
 
@@ -718,7 +720,7 @@
                                                                                             class="card mb-3 col-md-5 m-5 product-card">
                                                                                             <div class="row g-0">
                                                                                                 <div class="col-md-4">
-                                                                                                    <img src="images/sweet-combo-154545-150623-48.png"
+                                                                                                    <img src="{{ asset('storage/images/'.  $item->thumb ) }}"
                                                                                                         class="img-fluid rounded-start"
                                                                                                         alt="...">
                                                                                                 </div>
@@ -759,70 +761,7 @@
                                                                                             </div>
                                                                                         </div>
                                                                                     @endforeach
-                                                                                    {{-- @foreach ($combo as $item)
-                                                                                        
-                                                                                    <div
-                                                                                    class="card mb-3 col-md-5 m-5 product-card">
-                                                                                    <div class="row g-0">
-                                                                                        <div class="col-md-4">
-                                                                                            <img src="/images/sweet-combo-154545-150623-48.png"
-                                                                                                class="img-fluid rounded-start"
-                                                                                                alt="...">
-                                                                                        </div>
-                                                                                        <div class="col-md-8">
-                                                                                            <div class="card-body">
-                                                                                                <h5
-                                                                                                    class="card-title product-title">
-                                                                                                    {{$item->name}}</h5>
-                                                                                                <p
-                                                                                                    class="card-text product-description">
-                                                                                                    TIẾT KIỆM 46K!!!
-                                                                                                    Gồm: 1 Bắp (69oz) +
-                                                                                                    2 Nước có gaz (22oz)
-                                                                                                </p>
-                                                                                                <p
-                                                                                                    class="card-text product-price">
-                                                                                                    <small
-                                                                                                        class="text-body-secondary">Giá:
-                                                                                                        {{$item->price}}đ</small>
-                                                                                                </p>
-                                                                                                <div class="input_number_product  col-md-8 d-flex mb-4"
-                                                                                                    style="height: 25px">
-                                                                                                    <button
-                                                                                                        class="btn_num num_1 button button_qty decrease-btn border-0" id="updateCombo"
-                                                                                                        type="button">-</button>
-                                                                                                    <input
-                                                                                                        style="height: 25px"
-                                                                                                        type="text"
-                                                                                                        name="quantity"
-                                                                                                        value="0"
-                                                                                                        id="selectedCombo"
-                                                                                                        maxlength="3"
-                                                                                                        class="form-control prd_quantity product-quantity">
-                                                                                                    <button
-                                                                                                        class="btn_num num_2 button button_qty increase-btn border-0" id="updateCombo"
-                                                                                                        type="button">+</button>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                @endforeach --}}
-
-
-                                                                                    <!-- Đoạn mã JavaScript -->
-                                                                                    {{-- <script>
-                                                                                        const selectedCombo = document.getElementById("selectedCombo")
-                                                                                        const food = document.getElementById("food123")
-                                                                                        const updateCombo = document.getElementById("updateCombo")
-                                                                                        transferButton.addEventListener("click", function() {
-                                                                                            const combovalue = selectedCombo.value
-                                                                                            food.value = combovalue
-                                                                                        })
-                                                                                    </script> --}}
-
-
-
+    
                                                                                 </div>
                                                                             </div>
                                                                             {{-- food --}}
@@ -847,12 +786,12 @@
                                                                             <div class="entry-item">
                                                                                 <div class="entry-thumb"><img
                                                                                         class="" style="width: 120px;"
-                                                                                        src="{{asset("storage/images/".$film->thumb)}}"
+                                                                                        src="{{asset("storage/images/".$showTime->film->thumb)}}"
                                                                                         alt="Kubo and the Two Strings" />
                                                                                 </div>
                                                                                 <div class="entry-content">
                                                                                     <h2 class="entry-title"><a
-                                                                                            href=" {{ route('filmDetail',[$film->id]) }} ">{{ $film->name }}</a>
+                                                                                            href=" {{ route('filmDetail',[$showTime->id]) }} ">{{ $showTime->film->name }}</a>
                                                                                     </h2>
                                                                                     <div><span class="duration"> <svg
                                                                                                 xmlns="http://www.w3.org/2000/svg"
@@ -861,22 +800,13 @@
                                                                                                 <path
                                                                                                     d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z" />
                                                                                             </svg>
-                                                                                            {{ $film->duration }}
+                                                                                            {{ $showTime->film->duration }}
                                                                                             minutes</span></div>
 
                                                                                 </div>
                                                                                 <div class="clearfix"></div>
                                                                             </div>
-                                                                            <div
-                                                                                class=" d-flex align-items-center justify-content-between mb-5 px-4">
-                                                                                <div
-                                                                                    class="d-flex align-items-center gap-2">
-                                                                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg> --}}
-                                                                                    <span>Thể Loại (Category)</span>
-                                                                                </div>
-
-                                                                                <p class="m-0 p-0 fw-bold">Kinh dị</p>
-                                                                            </div>
+                                                                          
                                                                             <hr class="border-2 border-black py-4">
                                                                             <div class="">
                                                                                 <div

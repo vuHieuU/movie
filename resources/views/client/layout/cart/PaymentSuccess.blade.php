@@ -20,10 +20,14 @@
                         <h2>Thông Tin Phim</h2>
                     </div>
                     <div class="card-body">
-                        <p><strong>Tên Phim:</strong> {{ $ticket->film_name }}</p>
-                        <p><strong>Thời gian:</strong> {{ $ticket->selected_date }}</p>
-                        <p><strong>Giờ chiếu:</strong> {{ $ticket->selected_hour }} </p>
-                        <p><strong>Thể Loại:</strong> Hài hước</p>
+                        <p><strong>Tên Phim:</strong> {{ $film_name }}</p>
+                        <p><strong>Thời gian:</strong> {{ $selectedDate }}</p>
+                        <p><strong>Giờ chiếu:</strong> {{ $selectedHour }} </p>
+                        <p><strong>Thể Loại:</strong>
+                        @foreach ($categories as $item)
+                        {{ $item->name }},
+                        @endforeach
+                        </p>
                         <p><strong>Đồ Ăn:</strong> Popcorn</p>
                     </div>
                 </div>
@@ -36,9 +40,10 @@
                     </div>
                     <div class="card-body">
                         <p><strong>Mã đơn:</strong><img class="w-25" src="images/MoMo_logo-1.png" alt=""></p>
-                        <p><strong>Phòng:</strong> {{ $ticket->selected_room }}</p>
-                        <p><strong>Vị trí ghế:</strong> {{ $ticket->selected_seats }}</p>
-                        <p><strong>Tổng Vé:</strong> {{ $ticket->total }} VND</p>
+                        <p><strong>Phòng:</strong> {{ $cinemaName }}</p>
+                        <p><strong>Phòng:</strong> {{ $cinemaRoom }}</p>
+                        <p><strong>Vị trí ghế:</strong> {{ $selectedSeatsValue }}</p>
+                        <p><strong>Tổng Vé:</strong> {{ number_format($total) }} VND</p>
                     </div>
                 </div>
             </div>

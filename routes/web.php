@@ -190,12 +190,10 @@ Route::middleware(['auth'])->group(function () {
     });
 
     // cart
-        Route::get('/chair-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
+        Route::get('/seat-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
         Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'Pay'])->name('pay');
-        Route::post('/payment_success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
-
-        Route::get('/payment_success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('payment_success');
-
+        Route::post('/payment-success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
+        Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('success');
 
         //vnpay
         Route::post('/vnpay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);
@@ -206,6 +204,5 @@ Route::middleware(['auth'])->group(function () {
                 //onepay
                 Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
 
-        Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PaySuccessController::class, 'show'])->name('success');
 
 });

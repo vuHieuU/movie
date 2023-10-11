@@ -505,7 +505,7 @@
                                             <p class="fs-4"><strong class="fs-2 "> Rạp: </strong>{{ $cinemaName }}</p>
                                         </div>
                                         <div class="col-md-4">
-                                            <p class="fs-4"><strong class="fs-2 "> Phim: </strong>{{ $film->name }}
+                                            <p class="fs-4"><strong class="fs-2 "> Phim: </strong>{{ $ShowTime->film->name }}
                                             </p>
                                         </div>
                                         <div class="col-md-4">
@@ -517,7 +517,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <p class="fs-4"><strong class="fs-2 "> Thời gian chiếu: </strong>
-                                                {{ $film->duration }} Phút</p>
+                                                {{ $ShowTime->film->duration }} Phút</p>
 
                                         </div>
                                     </div>
@@ -705,14 +705,14 @@
 
                                 <div class="row text-center mt-5 gap-3">
                                     <div class="col-md-2">
-                                        {{-- <button type="button" class="btn btn-primary btn-block px-5 py-2 fs-3">Quay lại</button> --}}
-                                        <a href="{{ route('chair', ['film_id' => $film->id]) }}"
+                                    
+                                        <a href="{{ route('chair', [$ShowTime->id]) }}"
                                             style="background-color: #FE7900;"
                                             class="btn text-white btn-block px-5 py-2 fs-3"> Quay lại</a>
                                     </div>
                                     <div class="col-md-2">
                                         <form method="POST"
-                                            action="{{ route('payment_success', ['film_id' => $film->id]) }}">
+                                            action="{{ route('payment_success', ['film_id' => $ShowTime->id]) }}">
                                             @csrf
                                             <button type="submit" style="background-color: #FE7900;"
                                                 class="btn text-white btn-block px-5 py-2 fs-3"> Thanh

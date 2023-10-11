@@ -21,6 +21,7 @@ class PayController extends Controller
      public function seatFood(Request $request ,$id)
      {
          $film = ShowTime::findOrFail($id);
+         $categories = $film->film->categories;
          $selectedDate = $request->input("selectedDate");
          $selectedHour = $request->input("selectedHour");
          $selectedShowTimeId = $request->input("selectedShowTimeId");
@@ -46,8 +47,8 @@ class PayController extends Controller
          $food = food::get();
          $combo = combo::get();
          $title = "Chairs_Food";
-         return view('client.layout.cart.chairs_food',compact(
-             'title','seats','food','combo','selectedDate','selectedHour','film','showTime'
+         return view('client.layout.cart.SeatFood',compact(
+             'title','seats','food','combo','selectedDate','selectedHour','film','showTime','categories'
          ));
 
          
@@ -57,7 +58,7 @@ class PayController extends Controller
     public function Pay(Request $request, $id)
     {
         $title = "Pay";
-        $film = ShowTime::findOrFail($id);
+        $ShowTime = ShowTime::findOrFail($id);
         $selectedDate = session('selectedDate');
         $selectedHour = session('selectedHour');
         $selectedSeatsValue = $request->input("selectedSeatsValue");
@@ -72,7 +73,7 @@ class PayController extends Controller
         $totalPriceFoodValue = $request->input("totalPriceFoodValue");
         return view('client.layout.cart.pay',compact(
             "title",
-            'film',
+            'ShowTime',
             'selectedDate',
             'selectedHour',
             'selectedSeatsValue',
@@ -94,7 +95,8 @@ class PayController extends Controller
     $cinemaRoom = session('cinemaRoom');
     // dd($cinemaRoom);
     $total = $request->input('total');
-    
+    // dd($total);
+    session(['total' => $total]);
     // Lấy thông tin người đăng nhập
     $user = auth()->user();
 
@@ -123,15 +125,25 @@ class PayController extends Controller
                ->whereIn('seat_id',$selectSeatArray)
                ->update(['isActive' => 2]);
 
-    return redirect()->route('success',[$ShowTime->id]); 
+    return redirect()->route('success',['film_id' => $ShowTime->id]); 
 
     }
 
-    public function show(string $id)
+    public function show(Request $request,string $id)
     {
         $title = 'payment success';
-        $ticket = ticket::findOrFail($id);
-        return view('client.layout.cart.Payment_success',compact('title','ticket'));
+        $ShowTime = ShowTime::findOrFail($id);
+         $film_name = $ShowTime->film->name;
+         $selectedDate = session('selectedDate');
+         $selectedHour = session('selectedHour');
+         $cinemaRoom = session('cinemaRoom');
+         $selectedSeatsValue = session('selectedSeatsValue');
+         $cinemaName = session('cinemaName');
+         $total = session('total');
+         $categories = $ShowTime->film->categories;
+        //  $categories
+        //  dd($film_names);
+        return view('client.layout.cart.PaymentSuccess',compact('title','ShowTime','film_name','selectedDate','selectedHour','cinemaRoom','selectedSeatsValue','total','cinemaName','categories'));
     }
 
 }
