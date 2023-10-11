@@ -4,6 +4,7 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use App\Models\category;
+use App\Models\cinema;
 use App\Models\film;
 use App\Models\ShowTime;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ class homeController extends Controller
      */
     public function index()
     {
+
         
         $film_nowplaying = film::orderByDesc("created_at")->limit(5)->get();
         $film_topmovie = film::orderByDesc("created_at")->limit(15)->get();
@@ -22,57 +24,24 @@ class homeController extends Controller
      
 
         $title = "home";
-
+$title = "home";
+        $film = ShowTime::limit(5)->get();
         $films = film::all();
         return view('client.home',compact("title","film_nowplaying","categories","films","film_topmovie"));
 
+        
+        // return view('client.home',compact("title","film"));
+
+    }
+    public function show($id)
+    {
+        $title = "home";
+        $categories =category::get();
+        $cinema_id = Cinema::findOrFail($id);
+        $film = ShowTime::where("cinema_id", $cinema_id->id)->with('film')->limit(5)->get();
+        return view('client.home',compact("title","film","categories"));
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+  
 }

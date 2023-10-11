@@ -68,7 +68,7 @@
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
                               </td>
-                              <td>{{ $item->film_id }}</td>
+                              <td>{{ $item->film->name }}</td>
                               <td>{{ $item->cinema->name }}</td>
                               <td>{{ $item->day }}</td>
                               <td>{{ $item->hour }}</td>

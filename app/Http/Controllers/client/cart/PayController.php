@@ -20,7 +20,7 @@ class PayController extends Controller
 
      public function seatFood(Request $request ,$id)
      {
-         $film = film::findOrFail($id);
+         $film = ShowTime::findOrFail($id);
          $selectedDate = $request->input("selectedDate");
          $selectedHour = $request->input("selectedHour");
          $selectedShowTimeId = $request->input("selectedShowTimeId");
@@ -57,7 +57,7 @@ class PayController extends Controller
     public function Pay(Request $request, $id)
     {
         $title = "Pay";
-        $film = film::findOrFail($id);
+        $film = ShowTime::findOrFail($id);
         $selectedDate = session('selectedDate');
         $selectedHour = session('selectedHour');
         $selectedSeatsValue = $request->input("selectedSeatsValue");
@@ -99,11 +99,11 @@ class PayController extends Controller
     $user = auth()->user();
 
     // Lấy thông tin bộ phim từ biến $film
-    $film = Film::findOrFail($film_id);
+    $ShowTime = ShowTime::findOrFail($film_id);
 
     // Tạo bản ghi Ticket và lưu vào cơ sở dữ liệu
     $ticket = new Ticket();
-    $ticket->film_name = $film->name;
+    $ticket->film_name = $ShowTime->film->name;
     $ticket->selected_date = $selectedDate;
     $ticket->selected_hour = $selectedHour;
     $ticket->selected_room = $cinemaRoom;
@@ -111,7 +111,7 @@ class PayController extends Controller
     $ticket->selected_seats = $selectedSeatsValue;
     $ticket->user_id = $user->id;
     $ticket->buyer_name = $user->name;
-    $ticket->film_id = $film_id;
+    $ticket->film_id = $ShowTime->film->id;
     $ticket->total = $total;
 
     $ticket->save();
@@ -123,7 +123,7 @@ class PayController extends Controller
                ->whereIn('seat_id',$selectSeatArray)
                ->update(['isActive' => 2]);
 
-    return redirect()->route('payment_success',[$film->id]); 
+    return redirect()->route('success',[$ShowTime->id]); 
 
     }
 
@@ -133,5 +133,5 @@ class PayController extends Controller
         $ticket = ticket::findOrFail($id);
         return view('client.layout.cart.Payment_success',compact('title','ticket'));
     }
-    
+
 }
