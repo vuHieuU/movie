@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Rating;
 use Illuminate\Support\Facades\Auth;
 
-class Detail_filmController extends Controller
+class DetailFilmController extends Controller
 {
     /**
      * Display a listing of the resource.
