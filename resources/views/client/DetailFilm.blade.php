@@ -18,9 +18,9 @@
                     <div class="modal-content">
                         {{-- <form action="{{ url('/add-rating') }}" method="post">
                             @csrf
-                            <input type="text" name="film_id" value="{{ $film->id }}" hidden>
+                            <input type="text" name="film_id" value="{{ $film_show_time->film->id }}" hidden>
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Đánh giá phim {{ $film->name }}</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Đánh giá phim {{ $film_show_time->film->name }}</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
