@@ -187,5 +187,5 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/chair-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
         Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'Pay'])->name('pay');
         Route::post('/payment_success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
-        Route::get('/payment_success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('payment_success');
+        Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PaySuccessController::class, 'show'])->name('success');
 });
