@@ -200,7 +200,7 @@
                                                         </div>
                                                         <form action="/addFavoFilm" method="POST">
                                                             @csrf
-                                                            <input type="hidden" name="user_id" value="{{$user}}">
+                                                            {{-- <input type="hidden" name="user_id" value="{{$user}}"> --}}
                                                             <input type="hidden" name="film_id" value="{{$film_show_time->film->id}}">
                                                             <input type="Submit" value="Yêu thích">
                                                         </form>
