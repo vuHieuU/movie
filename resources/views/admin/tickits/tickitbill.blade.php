@@ -152,7 +152,7 @@
             </footer>
        
         <!-- Back to My Account Link -->
-        <p class="text-center d-print-none py-4"><a href="{{ route('tickit.index') }}">&laquo; Back to Tickit</a></p>
+        <p class="text-center d-print-none py-4"><a href="{{ route('ticket.index') }}">&laquo; Back to Tickit</a></p>
      </div>
  </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

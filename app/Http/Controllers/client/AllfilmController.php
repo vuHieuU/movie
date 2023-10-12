@@ -18,7 +18,7 @@ class AllfilmController extends Controller
     public function index()
     {
     
-        $films = film::get();
+        $films = ShowTime::get();
         $category = category::all();
         $film = DB::table('categories')
         ->join('film_categories', 'categories.id', '=', 'film_categories.dmid')
@@ -62,7 +62,7 @@ class AllfilmController extends Controller
         ->get();
 
 
-        $films = ShowTime::where("cinema_id", $cinema_id->id)->orderByDesc("created_at")->with('film')->limit(15)->get();
+        $films = ShowTime::where("cinema_id", $cinema_id->id)->orderByDesc("created_at")->with('film')->get();
     return view("client.film",compact("film","category","films"));
     }
 

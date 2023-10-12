@@ -62,8 +62,8 @@ class TickitController extends Controller
      */
     public function destroy(string $id)
     {
-      $tickit = ticket::find($id);
-      $tickit->delete();
-    return redirect()->route("tickit.index")->with('success', 'tickit delete successfully');
+      $ticket = ticket::find($id);
+      $ticket->delete();
+    return redirect()->route("ticket.index")->with('success', 'tickit delete successfully');
     }
 }

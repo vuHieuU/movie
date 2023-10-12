@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Models\cinema;
 use App\Models\film;
 use App\Models\ShowTime;
 use Illuminate\Http\Request;
@@ -54,7 +55,7 @@ class WeeklyShowtimeController extends Controller
      */
     public function show(string $id)
     {
-            
+        $cinema_id = cinema::findOrFail($id);
         $title = "Weekly Showtime";
         $filmshowtime = DB::table('films')
         ->join('show_times','films.id' ,'=',  'show_times.film_id')
