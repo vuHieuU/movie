@@ -10,6 +10,7 @@
         @include('client.layout.menu.menu')
 
         @yield('contact')
+        @yield('introduction')
 
         @include('client.layout.main.footer')
 </body>

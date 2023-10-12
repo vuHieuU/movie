@@ -146,6 +146,10 @@
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
                                 <a href="{{ route('contact') }}">Contact</a>
                             </li>
+                            <li id="menu-item-146"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
+                                <a href="{{ route('introduction') }}">Introduc</a>
+                            </li>
                             @if (Auth()->check())
                                 <li id="menu-item-278 "
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">

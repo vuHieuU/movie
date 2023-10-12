@@ -39,6 +39,7 @@ Route::get('/film/{id}', [App\Http\Controllers\client\AllfilmController::class, 
 
 Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class, 'index'])->name("myaccount");
 Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index'])->name("editaccount");
+Route::get('/introduction', [App\Http\Controllers\client\InTroDucTionController::class, 'index'])->name("introduction");
 
 
 
