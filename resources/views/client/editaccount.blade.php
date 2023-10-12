@@ -487,8 +487,7 @@
         @section('contact')
 
 
-        <form  method="POST" data-toggle="validator" action="{{route('profile')}}" enctype="multipart/form-data">
-            {{-- @method('POST') --}}
+        <form method="POST" data-toggle="validator" id="profile-form" action="{{ route('profile') }}" enctype="multipart/form-data">
             @csrf
           
                     <div class="container my-5 ">
@@ -505,12 +504,12 @@
                                                         data-errors="Please Enter Name." name="name" value="{{Auth::User()->name}}">
                                                     <div class="help-block with-errors">
                                                     @if ($errors->has('name'))
-                                                    <span class="text-danger">{{ $errors->first('name') }}</span></div>
-                                                @endif
+                                                    <span class="text-danger">{{ $errors->first('name') }}</span>
+                                                    @endif
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
-    
                                         <div class="row mt-4">
                                             <div class="col-md-12">
                                                 <div class="form-group">
@@ -616,11 +615,22 @@
                                                 </div>
                                             </div>
                                         </div>
+<<<<<<< HEAD
+                                        <div class="mt-5">
+                                            <button type="submit" class="btn btn-primary mr-2 fs-3 rounded-4">Cập Nhật</button>
+                                            <button type="reset" class="btn btn-danger mr-2 fs-3 rounded-4">Reset</button>
+                                            <a href="{{ url()->previous() }}" class="btn btn-secondary fs-3 rounded-4 float-right">
+                                                <span class="mr-1">&larr;</span> Back
+                                            </a>
+                                        </div>
+                                        
+=======
                                        <div class="mt-5">
                                           <button type="submit" class="btn btn-primary mr-2 fs-3 rounded-4">Cập Nhật</button>
                                         <button type="reset" class="btn btn-danger mr-2 fs-3 rounded-4">Reset</button>
                                         <a href="/myaccount" class="btn btn-danger mr-2 fs-3 rounded-4">Back</a>
                                        </div>
+>>>>>>> efc881d293efda8098dac4a8a01553a515b992b9
                                         
                                       
                                         {{-- <a href="/role/index"><button type="submit" class="btn btn-danger">Back</button></a> --}}
@@ -649,5 +659,4 @@
         });
     });
 </script>
-
         @endsection
