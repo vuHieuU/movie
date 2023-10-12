@@ -4,7 +4,9 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use App\Models\category;
+use App\Models\cinema;
 use App\Models\film;
+use App\Models\ShowTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -49,7 +51,8 @@ class AllfilmController extends Controller
      */
     public function show(string $id)
     {  
-         $films = film::get();
+        $cinema_id = cinema::findOrFail($id);
+        //  $films = film::get();
     $category = category::get();
     $film = DB::table('categories')
         ->join('film_categories', 'categories.id', '=', 'film_categories.dmid')
@@ -57,6 +60,9 @@ class AllfilmController extends Controller
         ->where('categories.id', $id)
         ->select('categories.*','film_categories.*','films.*')
         ->get();
+
+
+        $films = ShowTime::where("cinema_id", $cinema_id->id)->orderByDesc("created_at")->with('film')->limit(15)->get();
     return view("client.film",compact("film","category","films"));
     }
 

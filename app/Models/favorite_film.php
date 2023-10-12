@@ -5,7 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FavoriteFilm extends Model
+class favorite_film extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'film_id',
+    ];
 }

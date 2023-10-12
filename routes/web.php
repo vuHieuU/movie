@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\FacebookController;
+use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\cityController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -17,12 +19,15 @@ use App\Http\Controllers\Controller;
 |
 */
 
-Route::get('/', [App\Http\Controllers\client\homeController::class, 'index']);
+Route::get('/', [App\Http\Controllers\client\homeController::class, 'index'])->name('home');
+// Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index']);
+
+// Route::get('/', [App\Http\Controllers\client\homeController::class, 'index']);
 
 Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name("contact");
 
 Route::get('/home/{id}', [App\Http\Controllers\client\homeController::class, 'show'])->name('homeCinema');
-Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name('contact');
+// Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name('contact');
 
 Route::get('/detail_blog', [App\Http\Controllers\client\Detail_blogController::class, 'index']);
 Route::get('/weeklyshowtime', [App\Http\Controllers\client\WeeklyShowtimeController::class, 'index']);
@@ -41,6 +46,14 @@ Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class
 Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index'])->name("editaccount");
 Route::get('/introduction', [App\Http\Controllers\client\InTroDucTionController::class, 'index'])->name("introduction");
 
+
+//Favarite Film
+Route::post('/addFavoFilm', [App\Http\Controllers\client\FavoriteController::class, 'store']);
+Route::get('/deleteFavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'destroy']);
+Route::get('/listFavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'show']);
+
+Route::get('auth/google', [GoogleController::class, "redirectToGoogle"])->name("loginGoogle");
+Route::get('auth/google/callback', [GoogleController::class, "handleGoogleCallback"]);
 
 
 // Route::get('/detail_film/pay/{id}', [App\Http\Controllers\client\Detail_filmController::class, 'show']);
@@ -183,27 +196,42 @@ Route::middleware(['auth'])->group(function () {
         Route::post('update/{id}', [App\Http\Controllers\admin\showtimeController::class, 'update'])->name('showtime.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\showtimeController::class, 'destroy'])->name('showtime.destroy');
     });
-      // comment
-    Route::prefix('comment')->group(function(){
+    // comment
+    Route::prefix('comment')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\commentController::class, 'index'])->name('comment.index');
-        Route::get('hidden/{id}', [App\Http\Controllers\admin\commentController ::class, 'hidden'])->name('comment.hidden');
-        Route::get('restore/{id}', [App\Http\Controllers\admin\commentController ::class, 'restore'])->name('comment.restore');
+        Route::get('hidden/{id}', [App\Http\Controllers\admin\commentController::class, 'hidden'])->name('comment.hidden');
+        Route::get('restore/{id}', [App\Http\Controllers\admin\commentController::class, 'restore'])->name('comment.restore');
+    });
+    // tickit
+    Route::prefix('tickit')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\TickitController::class, 'index'])->name('tickit.index');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\TickitController::class, 'destroy'])->name('destroy.index');
+        Route::get('show/{id}', [App\Http\Controllers\admin\TickitController::class, 'show'])->name('show.index');
+    });
+
+    // Danh sách Tin tức
+    Route::prefix('news')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\NewController::class, 'index'])->name('news.index');
+        Route::get('create', [App\Http\Controllers\admin\NewController::class, 'create'])->name('news.create');
+        Route::post('store', [App\Http\Controllers\admin\NewController::class, 'store'])->name('news.store');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\NewController::class, 'edit'])->name('news.edit');
+        Route::post('update/{id}', [App\Http\Controllers\admin\NewController::class, 'update'])->name('news.update');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\NewController::class, 'destroy'])->name('news.destroy');
     });
 
     // cart
-        Route::get('/seat-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
-        Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'Pay'])->name('pay');
-        Route::post('/payment-success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
-        Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('success');
+    Route::get('/seat-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
+    Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'Pay'])->name('pay');
+    Route::post('/apply-coupon', [App\Http\Controllers\client\cart\CouponController::class, 'applyCoupon'])->name('applyCoupon');
+    Route::post('/payment-success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
+    Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('success');
 
-        //vnpay
-        Route::post('/vnpay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);
+    //vnpay
+    Route::post('/vnpay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);
 
-        //momo
-        Route::post('/momo_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'momo_payment']);
+    //momo
+    Route::post('/momo_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'momo_payment']);
 
-                //onepay
-                Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
-
-
+    //onepay
+    Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
 });

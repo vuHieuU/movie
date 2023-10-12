@@ -58,6 +58,7 @@ class PayController extends Controller
     public function Pay(Request $request, $id)
     {
         $title = "Pay";
+        $tickit = ticket::find($id);
         $ShowTime = ShowTime::findOrFail($id);
         $selectedDate = session('selectedDate');
         $selectedHour = session('selectedHour');
@@ -79,7 +80,8 @@ class PayController extends Controller
             'selectedSeatsValue',
             'selectedPriceSeatsValue',
             'totalPriceFoodValue',
-            'cinemaName'
+            'cinemaName',
+            "tickit"
         ));
     }
 
@@ -93,6 +95,7 @@ class PayController extends Controller
     $selectedSeatsValueID = session('selectedSeatsValueID');
     $cinemaName = session('cinemaName');
     $cinemaRoom = session('cinemaRoom');
+    $couponCode = session('coupon_code');
     // dd($cinemaRoom);
     $total = $request->input('total');
     // dd($total);
@@ -114,6 +117,7 @@ class PayController extends Controller
     $ticket->user_id = $user->id;
     $ticket->buyer_name = $user->name;
     $ticket->film_id = $ShowTime->film->id;
+    $ticket->coupon_code = $couponCode;
     $ticket->total = $total;
 
     $ticket->save();
@@ -124,6 +128,8 @@ class PayController extends Controller
     showtime_seat::where('showtime_id',$selectedShowTimeId)
                ->whereIn('seat_id',$selectSeatArray)
                ->update(['isActive' => 2]);
+               session()->forget('applied_coupon');
+
 
     return redirect()->route('success',['film_id' => $ShowTime->id]); 
 

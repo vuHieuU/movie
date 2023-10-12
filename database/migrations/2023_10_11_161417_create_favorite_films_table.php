@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('favorite_films', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('film_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('film_id')->references('id')->on('films');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

@@ -511,7 +511,7 @@
                                         <div class="col-md-4">
 
                                             <p class="fs-4"><strong class="fs-2 "> Ngày xem: </strong>
-                                                {{ $selectedDate }}</p>
+                                                {{Carbon\Carbon::parse( $selectedDate)->format("d/n/Y") }}</p>
                                             <p class="fs-4"><strong class="fs-2 "> Giờ xem: </strong> {{ $selectedHour }}
                                             </p>
                                         </div>
@@ -521,8 +521,20 @@
 
                                         </div>
                                     </div>
-
-
+                                    @php
+                                        $total = 0;
+                                        $total = $selectedPriceSeatsValue + $totalPriceFoodValue;
+                                        if (session()->has('applied_coupon')) {
+                                            $appliedCoupon = session('applied_coupon');
+                                            $discountAmount = $appliedCoupon->value;
+                                            $discountType = $appliedCoupon->type;
+                                            if ($discountType === 'amount') {
+                                                $total = $total - $discountAmount;
+                                            } elseif ($discountType === 'percent') {
+                                                $total = $total - ($total * $discountAmount / 100);
+                                            }
+                                        }
+                                    @endphp
 
                                     <div class="container ">
                                         <table class="table table-bordered">
@@ -540,53 +552,66 @@
                                                             class="mx-5">{{ $selectedSeatsValue }}</span></td>
                                                     {{-- <td><strong >100 VNĐ</strong> x 2</td> --}}
                                                     <td class="fs-4">
-                                                        {{ number_format($selectedPriceSeatsValue, 0, ',', ',') }} VND</td>
+                                                        {{ number_format($selectedPriceSeatsValue) }} VND</td>
                                                 </tr>
                                                 <tr>
                                                     <td><span class="fs-3">Đồ ăn:</span> <span
                                                             class="mx-5">Combo1</span></td>
                                                     {{-- <td><span ><strong>100 VNĐ</strong> x 2</span> / <span><strong>100 VNĐ</strong> x 2</span></td> --}}
                                                     <td class="fs-4">
-                                                        {{ number_format($totalPriceFoodValue, 0, ',', ',') }} VNĐ</td>
+                                                        {{ number_format($totalPriceFoodValue) }} VNĐ</td>
                                                 </tr>
-                                                @php
-                                                    $total = 0;
-                                                    $total = $selectedPriceSeatsValue + $totalPriceFoodValue;
-                                                @endphp
+                                              
                                                 <tr>
                                                     <td colspan="1" class="fs-3 fw-bold">Thành Tiền :</td>
-                                                    <td class="fs-2 fw-bold">{{ number_format($total, 0, ',', ',') }} VNĐ
+                                                    <td class="fs-2 fw-bold">
+                                                       {{ number_format($total) }} Vnđ
                                                     </td>
                                                 </tr>
 
                                             </tbody>
                                         </table>
                                         <div class="container mt-5">
-                                            <div class="row w-100">
-                                                <div class="col-md-11 mx-0 px-0 ">
+                                            <div class="row w-100 ">
+                                                <div class="col-md-6 mx-0 px-0 ">
                                                     <div class="card">
                                                         <div class="card-header">
                                                             <h5 class="card-title">Nhập mã voucher</h5>
                                                         </div>
                                                         <div class="card-body">
-                                                            <!-- Form nhập voucher -->
-                                                            <form>
+                                                            <form action="{{ route('applyCoupon') }}" method="POST">
+                                                                @csrf
                                                                 <div class="form-group">
-                                                                    <label for="voucherCode">Mã voucher:</label>
-                                                                    <input type="text" class="form-control"
-                                                                        id="voucherCode" placeholder="Nhập mã voucher">
+                                                                    <label for="coupon_code">Mã giảm giá:</label>
+                                                                    <input type="text" class="form-control" name="coupon_code" placeholder="Nhập mã giảm giá">
                                                                 </div>
-                                                                <button type="submit" style="background-color: #FE7900;"
-                                                                    class="btn text-white mt-5">Áp
-                                                                    dụng</button>
-
+                                                                <button type="submit" class="btn btn-primary">Áp dụng</button>
                                                             </form>
+
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        @if(session('success'))
+                                                    <div class="alert alert-success">
+                                                        {{ session('success') }}
+                                                          @if ($discountType === 'amount')
+                                                             Bạn được giảm {{ $discountAmount}} Vnđ
+                                                          @elseif ($discountType === 'percent')
+                                                          Bạn được giảm {{ $discountAmount}} %      
+                                                          @endif
+                                                       
+                                                    </div>
+                                                @endif
 
+                                                @if(session('error'))
+                                                    <div class="alert alert-danger">
+                                                        {{ session('error') }}
+                                                    </div>
+                                                @endif
+
+                                
                                     </div>
 
 

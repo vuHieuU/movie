@@ -842,7 +842,7 @@
                                                                                     </div>
 
                                                                                     <p class="m-0 p-0 fw-bold">
-                                                                                        {{ $selectedDate }}
+                                                                                        {{Carbon\Carbon::parse( $selectedDate)->format("d/m/Y") }}
                                                                                     </p>
                                                                                 </div>
 

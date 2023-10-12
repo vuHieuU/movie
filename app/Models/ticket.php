@@ -18,6 +18,11 @@ class ticket extends Model
         'buyer_name',
         'cinema',
         'film_id',
+        'coupon_code',
         'total',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

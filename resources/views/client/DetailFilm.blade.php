@@ -136,7 +136,7 @@
 
                                                         </li>
 
-                                                        <li>
+                                                        {{-- <li>
                                                             <label>
                                                                 Thể loại :
                                                             </label>
@@ -147,7 +147,7 @@
 
                                                     </span>
 
-                                                        </li>
+                                                        </li> --}}
                                                              
                                                             
                                                         </li>
@@ -198,7 +198,12 @@
                                                                 data-bs-target="#exampleModal" class="amy-buy-ticket">Buy
                                                                 Ticket</button>
                                                         </div>
-
+                                                        <form action="/addFavoFilm" method="POST">
+                                                            @csrf
+                                                            <input type="hidden" name="user_id" value="{{$user}}">
+                                                            <input type="hidden" name="film_id" value="{{$film_show_time->film->id}}">
+                                                            <input type="Submit" value="Yêu thích">
+                                                        </form>
                                                         <div class="modal fade   modal-lg " id="exampleModal"
                                                             tabindex="-1" aria-labelledby="exampleModalLabel"
                                                             aria-hidden="true">
@@ -244,7 +249,7 @@
                                                                                         <li style="background-color: #F8F8F8"
                                                                                             class=" px-3 py-2 text-white">
                                                                                             <a class="showtime-day"
-                                                                                                data-showtime-date="{{ $item->day }}">{{ $item->day }}</a>
+                                                                                                data-showtime-date="{{ $item->day }}">{{Carbon\Carbon::parse( $item->day)->format("d/m/Y") }}</a>
                                                                                         </li>
                                                                                     </div>
                                                                                 @endif
