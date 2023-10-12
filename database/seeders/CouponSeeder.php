@@ -20,7 +20,7 @@ class CouponSeeder extends Seeder
         for ($i = 0; $i < $numberOfRecords; $i++) {
             $name = $faker->unique()->regexify('[A-Za-z0-9]{7}'); 
             $expiryDate = $faker->dateTimeBetween('now', '+1 year'); 
-            $type = $faker->randomElement(['Discount by amount', 'Discount by %']);
+            $type = $faker->randomElement(['amount', 'percent']);
         
             if ($type === 'Discount by amount') {
                 $value = $faker->numberBetween(10000, 99999);

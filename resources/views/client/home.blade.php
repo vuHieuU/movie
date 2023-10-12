@@ -263,7 +263,7 @@
                                                                     <h4 class="entry-title">
                                                                         {{ $item->film->name }}</h4>
                                                                     <div class="entry-date">
-                                                                        Release: {{ $item->film->premiere_date }}</div>
+                                                                        Release: {{Carbon\Carbon::parse( $item->film->premiere_date) ->format("d/n/Y")}}</div>
                                                                     <div class="entry-button">
                                                                         <a href="{{ $item->film->trailer }}">
                                                                             <i aria-hidden="true" class="fa fa-play"></i>
@@ -284,7 +284,7 @@
                                                                     <div class="desc-mv">
                                                                         <p>
                                                                             <span>Release: </span>
-                                                                            {{ $item->film->premiere_date }}
+                                                                            {{ Carbon\Carbon::parse( $item->film->premiere_date) ->format("d/n/Y")}}
                                                                         </p>
 
                                                                         <p>
@@ -454,27 +454,27 @@
                                                         <a
                                                             href="">
                                                             <img class=""
-                                                                src="{{asset("storage/images/".$item->thumb)}}"
+                                                                src="{{asset("storage/images/".$item->film->thumb)}}"
                                                                 alt="The Sleeping Beauty &#8211; Australia" /> </a>
                                                     </div>
                                                     <div class="carousel-content">
                                                         <h2 class="carousel-title">
                                                             <a
                                                                 href="">
-                                                                {{$item->name}} </a>
+                                                                {{$item->film->name}} </a>
                                                         </h2>
                                                         <div class="carousel-release">
                                                             Release:
                                                             <span>
-                                                                {{$item->premiere_date}} </span>
+                                                                {{Carbon\Carbon::parse( $item->film->premiere_date) ->format("d/n/Y")}} </span>
                                                         </div>
                                                         <div class="carousel-button">
-                                                            <a href="{{$item->trailer}}"
+                                                            <a href="{{$item->film->trailer}}"
                                                                 class="fancybox.iframe amy-fancybox">
                                                                 <i aria-hidden="true" class="fa fa-play"></i>
                                                                 Trailer </a>
                                                             <a
-                                                                href="/detail_film/{{$item->id}}">
+                                                                href="/detail_film/{{$item->film->id}}">
                                                                 <i aria-hidden="true" class="fa fa-exclamation"></i>
                                                                 Detail </a>
                                                         </div>

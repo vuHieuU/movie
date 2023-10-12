@@ -36,18 +36,21 @@ class AuthController extends Controller
         $user->gender = $request->gender;
         $user->address = $request->address;
 
-        if ($request->file('logo') !== null) {
+        if ($request->hasFile('logo')) {
             $logo = $request->file('logo')->getClientOriginalName();
             $request->file('logo')->storeAs('public/images', $logo);
 
             $oldLogo = $user->logo;
 
-            Storage::delete('public/images/' . $oldLogo);
+            if ($oldLogo !== $logo) {
+                Storage::delete('public/images/' . $oldLogo);
+            }
 
             $user->fill([
                 'logo' => $logo,
             ])->save();
         }
+
         if ($request->has('change_password')) {
 
             // Kiểm tra mật khẩu hiện tại

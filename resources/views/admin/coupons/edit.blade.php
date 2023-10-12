@@ -29,11 +29,11 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="type">Type *</label>
-                                            <input type="text" class="form-control" placeholder="Type" name="type" value="{{ $coupon->type }}" required>
-                                            @if ($errors->has('type'))
-                                                <span class="text-danger">{{ $errors->first('type') }}</span>
-                                            @endif
+                                            <label>Type</label>
+                                            <select name="type" class="selectpicker form-control" data-style="py-0">
+                                                <option value="amount" {{ $coupon->type == 'amount' ? "selected" : "" }}>Vnđ</option>
+                                                <option value="percent" {{ $coupon->type == 'percent' ? "selected" : "" }}>%</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary mr-2" onclick="return confirm('Update? Are you sure :)?')">Update Coupon</button>
+                                <button type="submit" class="btn btn-primary mr-2">Update Coupon</button>
                                 <button type="reset" class="btn btn-danger mr-2">Reset</button>
                             </div>
                         </div>

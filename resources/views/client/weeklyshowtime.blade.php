@@ -151,7 +151,7 @@
                                                                                         <a class="nav-link"
                                                                                             href="{{ route('weeklyshowtime', [$item->id]) }}">
                                                                                        
-                                                                                            <span class="" style="padding: 30px ; line-height: 50px;font-size: 15px; font-weight: 800"> May {{ $item->day }}</span>
+                                                                                            <span class="" style="padding: 10px ; line-height: 50px;font-size: 15px; font-weight: 800"> May {{ $item->day }}</span>
                                                                                         </a>
                                                                                     @endforeach
                                                                                     <script>
