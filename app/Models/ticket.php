@@ -20,4 +20,8 @@ class ticket extends Model
         'film_id',
         'total',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

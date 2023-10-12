@@ -58,6 +58,7 @@ class PayController extends Controller
     public function Pay(Request $request, $id)
     {
         $title = "Pay";
+        $tickit = ticket::find($id);
         $ShowTime = ShowTime::findOrFail($id);
         $selectedDate = session('selectedDate');
         $selectedHour = session('selectedHour');
@@ -79,7 +80,8 @@ class PayController extends Controller
             'selectedSeatsValue',
             'selectedPriceSeatsValue',
             'totalPriceFoodValue',
-            'cinemaName'
+            'cinemaName',
+            "tickit"
         ));
     }
 

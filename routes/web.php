@@ -188,6 +188,14 @@ Route::middleware(['auth'])->group(function () {
         Route::get('hidden/{id}', [App\Http\Controllers\admin\commentController ::class, 'hidden'])->name('comment.hidden');
         Route::get('restore/{id}', [App\Http\Controllers\admin\commentController ::class, 'restore'])->name('comment.restore');
     });
+     // tickit
+    Route::prefix('tickit')->group(function(){
+        Route::get('index', [App\Http\Controllers\admin\TickitController::class, 'index'])->name('tickit.index');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\TickitController::class, 'destroy'])->name('destroy.index');
+        Route::get('show/{id}', [App\Http\Controllers\admin\TickitController::class, 'show'])->name('show.index');
+
+        
+    });
 
     // cart
         Route::get('/seat-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');

@@ -511,7 +511,7 @@
                                         <div class="col-md-4">
 
                                             <p class="fs-4"><strong class="fs-2 "> Ngày xem: </strong>
-                                                {{ $selectedDate }}</p>
+                                                {{Carbon\Carbon::parse( $selectedDate)->format("d/n/Y") }}</p>
                                             <p class="fs-4"><strong class="fs-2 "> Giờ xem: </strong> {{ $selectedHour }}
                                             </p>
                                         </div>
