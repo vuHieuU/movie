@@ -50,6 +50,7 @@ Route::get('/introduction', [App\Http\Controllers\client\InTroDucTionController:
 //Favarite Film
 Route::post('/addFavoFilm', [App\Http\Controllers\client\FavoriteController::class, 'store']);
 Route::get('/deleteFavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'destroy']);
+Route::get('/unLikeFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'unLike']);
 Route::get('/listFavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'show']);
 
 Route::get('auth/google', [GoogleController::class, "redirectToGoogle"])->name("loginGoogle");
