@@ -198,7 +198,12 @@
                                                                 data-bs-target="#exampleModal" class="amy-buy-ticket">Buy
                                                                 Ticket</button>
                                                         </div>
-
+                                                        <form action="/addFavoFilm" method="POST">
+                                                            @csrf
+                                                            <input type="hidden" name="user_id" value="{{$user}}">
+                                                            <input type="hidden" name="film_id" value="{{$film_show_time->film->id}}">
+                                                            <input type="Submit" value="Yêu thích">
+                                                        </form>
                                                         <div class="modal fade   modal-lg " id="exampleModal"
                                                             tabindex="-1" aria-labelledby="exampleModalLabel"
                                                             aria-hidden="true">

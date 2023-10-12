@@ -20,6 +20,7 @@ class DetailFilmController extends Controller
     public function index($id)
     {
         $film_show_time = ShowTime::findOrFail($id);
+        $user = Auth::user()->id;
         // $cinema_id = Cinema::findOrFail($id);
         // $film = Film::findOrFail($id);
         $ShowTime = ShowTime::where("cinema_id", $film_show_time->cinema->id)->where('film_id',$film_show_time->film->id)->get();
@@ -44,7 +45,7 @@ class DetailFilmController extends Controller
         $title = "Detail";
         return view('client.DetailFilm',compact(
             'title',"ShowTime","categoryfilm_category",
-            "ratings","rating_value","user_rating",'film_show_time'
+            "ratings","rating_value","user_rating",'film_show_time','user'
         ));
 
     }

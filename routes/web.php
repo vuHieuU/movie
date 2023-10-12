@@ -40,8 +40,10 @@ Route::get('/film/{id}', [App\Http\Controllers\client\AllfilmController::class, 
 Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class, 'index'])->name("myaccount");
 Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index'])->name("editaccount");
 
-
-
+//Favarite Film
+Route::post('/addFavoFilm', [App\Http\Controllers\client\FavoriteController::class, 'store']);
+Route::get('/deleteFavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'destroy']);
+Route::get('/listFavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'show']);
 // Route::get('/detail_film/pay/{id}', [App\Http\Controllers\client\Detail_filmController::class, 'show']);
 
 // Route::get('/pay/{id}', [App\Http\Controllers\client\Detail_filmController::class, 'show']);/
