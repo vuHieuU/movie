@@ -30,8 +30,10 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="type">Type *</label>
-                                            <input type="text" class="form-control" placeholder="Type"
-                                                name="type" required>
+                                            <select name="type" class="selectpicker form-control" data-style="py-0">
+                                                <option value="amount">Vnđ</option>
+                                                <option value="percent">%</option>
+                                            </select>
                                             @if ($errors->has('type'))
                                                 <span class="text-danger">{{ $errors->first('type') }}</span>
                                             @endif

@@ -574,7 +574,7 @@
                                                                 <div class="form-group">
                                                                     <label for="voucherCode">Mã voucher:</label>
                                                                     <input type="text" class="form-control"
-                                                                        id="voucherCode" placeholder="Nhập mã voucher">
+                                                                        placeholder="Nhập mã voucher">
                                                                 </div>
                                                                 <button type="submit" style="background-color: #FE7900;"
                                                                     class="btn text-white mt-5">Áp

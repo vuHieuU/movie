@@ -19,10 +19,9 @@ use App\Http\Controllers\Controller;
 |
 */
 
-<<<<<<< HEAD
 Route::get('/', [App\Http\Controllers\client\homeController::class, 'index'])->name('home');
 Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index']);
-=======
+
 Route::get('/', [App\Http\Controllers\client\homeController::class, 'index']);
 
 Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name("contact");
@@ -30,7 +29,6 @@ Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'i
 Route::get('/home/{id}', [App\Http\Controllers\client\homeController::class, 'show'])->name('homeCinema');
 Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name('contact');
 
->>>>>>> efc881d293efda8098dac4a8a01553a515b992b9
 Route::get('/detail_blog', [App\Http\Controllers\client\Detail_blogController::class, 'index']);
 Route::get('/weeklyshowtime', [App\Http\Controllers\client\WeeklyShowtimeController::class, 'index']);
 Route::get('/weeklyshowtime/{id}', [App\Http\Controllers\client\WeeklyShowtimeController::class, 'show'])->name("weeklyshowtime");
@@ -47,10 +45,8 @@ Route::get('/film/{id}', [App\Http\Controllers\client\AllfilmController::class, 
 Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class, 'index'])->name("myaccount");
 Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index'])->name("editaccount");
 
-<<<<<<< HEAD
 Route::get('auth/google', [GoogleController::class, "redirectToGoogle"])->name("loginGoogle");
 Route::get('auth/google/callback', [GoogleController::class, "handleGoogleCallback"]);
-=======
 
 
 // Route::get('/detail_film/pay/{id}', [App\Http\Controllers\client\Detail_filmController::class, 'show']);
@@ -62,7 +58,6 @@ Route::get('auth/google/callback', [GoogleController::class, "handleGoogleCallba
 Route::post('add-rating', [App\Http\Controllers\client\RatingController::class, 'add'])->middleware(['auth']);
 
 
->>>>>>> efc881d293efda8098dac4a8a01553a515b992b9
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Auth::routes();
