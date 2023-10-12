@@ -1,6 +1,6 @@
 <div class="iq-sidebar  sidebar-default ">
     <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-        <a href="/admin" class="header-logo">
+        <a href="../backend/index.html" class="header-logo">
             <img src="/template/assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo"><h5 class="logo-title light-logo ml-3">POSDash</h5>
         </a>
         <div class="iq-menu-bt-sidebar ml-0">
@@ -11,9 +11,15 @@
         <nav class="iq-sidebar-menu">
             <ul id="iq-sidebar-toggle" class="iq-menu">
                 <li class="active">
-                    <a href="/admin" class="svg-icon">                        
-                        <svg  class="svg-icon" id="p-dash1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    <a href="/admin" class="svg-icon">
+                        <svg class="svg-icon" id="p-dash1" width="20" height="20"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                            </path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
                         </svg>
                         <span class="ml-4">Dashboards</span>
                     </a>
@@ -23,13 +29,16 @@
                     <a href="#film" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fa-solid fa-film"></i>
                         <span class="ml-4">film</span>
-                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="10 15 15 20 20 15"></polyline>
+                            <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
                         </svg>
                     </a>
                     <ul id="film" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
-                            <a href="{{route("films.index")}}">
+                            <a href="{{ route('films.index') }}">
                                 <i class="las la-minus"></i><span>List film</span>
                             </a>
                         </li>
@@ -50,29 +59,32 @@
                         </li>
                     </ul>
                 </li>
-            {{-- User --}}
-          {{-- @can('show-user') --}}
-          <li class=" ">
-            <a href="#user" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                <i class="fa-solid fa-user"></i>
-                <span class="ml-4">User</span>
-                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                </svg>
-            </a>
-            <ul id="user" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                <li class="">
-                    <a href="/user/index">
-                        <i class="las la-minus"></i><span>List user</span>
+                {{-- User --}}
+                {{-- @can('show-user') --}}
+                <li class=" ">
+                    <a href="#user" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="ml-4">User</span>
+                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="10 15 15 20 20 15"></polyline>
+                            <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                        </svg>
                     </a>
+                    <ul id="user" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        <li class="">
+                            <a href="/user/index">
+                                <i class="las la-minus"></i><span>List user</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/role/index">
+                                <i class="las la-minus"></i><span>List role</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="">
-                    <a href="/role/index">
-                        <i class="las la-minus"></i><span>List role</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
 
         {{-- Cinemas --}}
         <li class="">
@@ -153,34 +165,13 @@
                 </ul>
             </li>
 {{-- @endcan --}}
-{{-- tickit --}}
-<li class="">
-    <a href="#tickit" class="collapse" data-toggle="collapse" aria-expanded="false">
-        <i class="fa-solid fa-ticket"></i>
-        <span class="ml-4">Tickits</span>
-        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-        </svg>
-    </a>
-    <ul id="tickit" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-        <li class="">
-            <a href="/tickit/index">
-                <i class="las la-minus"></i><span>Tickit</span>
-            </a>
-        </li>
-        {{-- <li class="">
-            <a href="/city/index">
-                <i class="las la-minus"></i><span>City</span>
-            </a>
-        </li> --}}
-    </ul>
-</li>
             </ul>
         </nav>
-        
+
         <div class="p-3"></div>
     </div>
-    </div>      <div class="iq-top-navbar">
+</div>
+<div class="iq-top-navbar">
     <div class="iq-navbar-custom">
         <nav class="navbar navbar-expand-lg navbar-light p-0">
             <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
@@ -235,12 +226,11 @@
                             </div>
                         </li>
                         <li>
-                            <a href="/" class="btn border add-btn shadow-none mx-2 d-none d-md-block"
-                                >Home</a>
+                            <a href="/" class="btn border add-btn shadow-none mx-2 d-none d-md-block">Home</a>
                         </li>
                         <li class="nav-item nav-icon search-content">
-                            <a href="#" class="search-toggle rounded" id="dropdownSearch" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="search-toggle rounded" id="dropdownSearch"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="ri-search-line"></i>
                             </a>
                             <div class="iq-search-bar iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownSearch">
@@ -256,9 +246,9 @@
                         <li class="nav-item nav-icon dropdown">
                             <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-mail">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
                                     <path
                                         d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
                                     </path>
@@ -322,8 +312,8 @@
                                                 </div>
                                             </a>
                                         </div>
-                                        <a class="right-ic btn btn-primary btn-block position-relative p-2" href="#"
-                                            role="button">
+                                        <a class="right-ic btn btn-primary btn-block position-relative p-2"
+                                            href="#" role="button">
                                             View All
                                         </a>
                                     </div>
@@ -333,9 +323,9 @@
                         <li class="nav-item nav-icon dropdown">
                             <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-bell">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
                                     <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                                     <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                                 </svg>
@@ -397,8 +387,8 @@
                                                 </div>
                                             </a>
                                         </div>
-                                        <a class="right-ic btn btn-primary btn-block position-relative p-2" href="#"
-                                            role="button">
+                                        <a class="right-ic btn btn-primary btn-block position-relative p-2"
+                                            href="#" role="button">
                                             View All
                                         </a>
                                     </div>
@@ -408,7 +398,7 @@
                         <li class="nav-item nav-icon dropdown caption-content">
                             <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton4"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="{{Auth::User()->thumb}}" class="img-fluid rounded" alt="user">
+                                <img src="/template/assets/images/user/1.png" class="img-fluid rounded" alt="user">
                             </a>
                             <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="card shadow-none m-0">
@@ -416,12 +406,12 @@
                                         <div class="media-body profile-detail text-center">
                                             <img src="/template/assets/images/page-img/profile-bg.jpg" alt="profile-bg"
                                                 class="rounded-top img-fluid mb-4">
-                                            <img src="{{Auth::User()->thumb}}" alt="profile-img"
+                                            <img src="/template/assets/images/user/1.png" alt="profile-img"
                                                 class="rounded profile-img img-fluid avatar-70">
                                         </div>
                                         <div class="p-3">
                                             <h5 class="mb-1">{{Auth::User()->name}}</h5>
-                                            <p class="mb-0">{{Auth::User()->email}}</p>
+                                            <p class="mb-0">Since 10 march, 2020</p>
                                             <div class="d-flex align-items-center justify-content-center mt-3">
                                                 <a href="../app/user-profile.html" class="btn border mr-2">Profile</a>
                                                 <a href="{{ route('logout') }}" class="btn border">Sign Out</a>
