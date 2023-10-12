@@ -115,7 +115,10 @@
                         <ul id="menu-mainnav" class="nav-menu">
                             <li id="menu-item-121"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-84 current_page_item menu-item-121">
-                                <a href="/" aria-current="page">Home</a>
+                                {{-- @foreach (\App\Models\cinema::get() as $cinema)
+                               
+                                @endforeach --}}
+                                <a href="{{ route('homeCinema',[$cinema->id]) }}" aria-current="page">Home</a>
                             </li>
                             <li id="menu-item-276"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-276">
@@ -149,7 +152,7 @@
                             @if (Auth()->check())
                                 <li id="menu-item-278 "
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
-                                    <a href="myaccount"><i class="fa-solid fa-user"></i></a>
+                                    <a href="myaccount"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg></a>
                                     <ul class="sub-menu">
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
@@ -161,7 +164,7 @@
                             @else
                                 <li id="menu-item-278 "
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
-                                    <a href="login"><i class="fa-solid fa-user"></i></a>
+                                    <a href="login"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg></a>
                                     <ul class="sub-menu">
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">

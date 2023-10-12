@@ -136,7 +136,7 @@
 
                                                         </li>
 
-                                                        <li>
+                                                        {{-- <li>
                                                             <label>
                                                                 Thể loại :
                                                             </label>
@@ -147,7 +147,7 @@
 
                                                     </span>
 
-                                                        </li>
+                                                        </li> --}}
                                                              
                                                             
                                                         </li>
@@ -244,7 +244,7 @@
                                                                                         <li style="background-color: #F8F8F8"
                                                                                             class=" px-3 py-2 text-white">
                                                                                             <a class="showtime-day"
-                                                                                                data-showtime-date="{{ $item->day }}">{{ $item->day }}</a>
+                                                                                                data-showtime-date="{{ $item->day }}">{{Carbon\Carbon::parse( $item->day)->format("d/m/Y") }}</a>
                                                                                         </li>
                                                                                     </div>
                                                                                 @endif

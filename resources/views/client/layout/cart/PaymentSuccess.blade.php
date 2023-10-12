@@ -21,11 +21,11 @@
                     </div>
                     <div class="card-body">
                         <p><strong>Tên Phim:</strong> {{ $film_name }}</p>
-                        <p><strong>Thời gian:</strong> {{ $selectedDate }}</p>
+                        <p><strong>Thời gian:</strong> {{Carbon\Carbon::parse($selectedDate)->format("d/n/Y") }}</p>
                         <p><strong>Giờ chiếu:</strong> {{ $selectedHour }} </p>
                         <p><strong>Thể Loại:</strong>
                         @foreach ($categories as $item)
-                        {{ $item->name }},
+                        {{ $item->name }}
                         @endforeach
                         </p>
                         <p><strong>Đồ Ăn:</strong> Popcorn</p>
@@ -39,7 +39,7 @@
                         <h2>Thông Tin Vé</h2>
                     </div>
                     <div class="card-body">
-                        <p><strong>Mã đơn:</strong><img class="w-25" src="images/MoMo_logo-1.png" alt=""></p>
+                        <p><strong>Mã đơn:</strong><img class="w-25" src="image/MoMo_logo-1.png" alt=""></p>
                         <p><strong>Phòng:</strong> {{ $cinemaName }}</p>
                         <p><strong>Phòng:</strong> {{ $cinemaRoom }}</p>
                         <p><strong>Vị trí ghế:</strong> {{ $selectedSeatsValue }}</p>

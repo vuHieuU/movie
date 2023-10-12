@@ -20,14 +20,14 @@ use App\Http\Controllers\Controller;
 */
 
 Route::get('/', [App\Http\Controllers\client\homeController::class, 'index'])->name('home');
-Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index']);
+// Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index']);
 
-Route::get('/', [App\Http\Controllers\client\homeController::class, 'index']);
+// Route::get('/', [App\Http\Controllers\client\homeController::class, 'index']);
 
 Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name("contact");
 
 Route::get('/home/{id}', [App\Http\Controllers\client\homeController::class, 'show'])->name('homeCinema');
-Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name('contact');
+// Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name('contact');
 
 Route::get('/detail_blog', [App\Http\Controllers\client\Detail_blogController::class, 'index']);
 Route::get('/weeklyshowtime', [App\Http\Controllers\client\WeeklyShowtimeController::class, 'index']);
@@ -195,30 +195,26 @@ Route::middleware(['auth'])->group(function () {
         Route::get('hidden/{id}', [App\Http\Controllers\admin\commentController::class, 'hidden'])->name('comment.hidden');
         Route::get('restore/{id}', [App\Http\Controllers\admin\commentController::class, 'restore'])->name('comment.restore');
     });
-     // tickit
-    Route::prefix('tickit')->group(function(){
+    // tickit
+    Route::prefix('tickit')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\TickitController::class, 'index'])->name('tickit.index');
         Route::get('delete/{id}', [App\Http\Controllers\admin\TickitController::class, 'destroy'])->name('destroy.index');
         Route::get('show/{id}', [App\Http\Controllers\admin\TickitController::class, 'show'])->name('show.index');
-
-        
     });
 
     // cart
-        Route::get('/seat-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
-        Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'Pay'])->name('pay');
-        Route::post('/apply-coupon', [App\Http\Controllers\client\cart\CouponController::class, 'applyCoupon'])->name('applyCoupon');
-        Route::post('/payment-success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
-        Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('success');
+    Route::get('/seat-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
+    Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'Pay'])->name('pay');
+    Route::post('/apply-coupon', [App\Http\Controllers\client\cart\CouponController::class, 'applyCoupon'])->name('applyCoupon');
+    Route::post('/payment-success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
+    Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('success');
 
-        //vnpay
-        Route::post('/vnpay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);
+    //vnpay
+    Route::post('/vnpay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);
 
-        //momo
-        Route::post('/momo_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'momo_payment']);
+    //momo
+    Route::post('/momo_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'momo_payment']);
 
-                //onepay
-                Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
-
-
+    //onepay
+    Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
 });

@@ -153,6 +153,28 @@
                 </ul>
             </li>
 {{-- @endcan --}}
+{{-- tickit --}}
+<li class="">
+    <a href="#tickit" class="collapse" data-toggle="collapse" aria-expanded="false">
+        <i class="fa-solid fa-ticket"></i>
+        <span class="ml-4">Tickits</span>
+        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+        </svg>
+    </a>
+    <ul id="tickit" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+        <li class="">
+            <a href="/tickit/index">
+                <i class="las la-minus"></i><span>Tickit</span>
+            </a>
+        </li>
+        {{-- <li class="">
+            <a href="/city/index">
+                <i class="las la-minus"></i><span>City</span>
+            </a>
+        </li> --}}
+    </ul>
+</li>
             </ul>
         </nav>
         
@@ -399,7 +421,7 @@
                                         </div>
                                         <div class="p-3">
                                             <h5 class="mb-1">{{Auth::User()->name}}</h5>
-                                            <p class="mb-0">Since 10 march, 2020</p>
+                                            <p class="mb-0">{{Auth::User()->email}}</p>
                                             <div class="d-flex align-items-center justify-content-center mt-3">
                                                 <a href="../app/user-profile.html" class="btn border mr-2">Profile</a>
                                                 <a href="{{ route('logout') }}" class="btn border">Sign Out</a>
