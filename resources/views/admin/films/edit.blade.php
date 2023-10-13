@@ -176,7 +176,10 @@
                                             <div class="form-group">
                                                 <div class="form-floating">
                                                     <label for="floatingTextarea">Mô tả phim</label>
-                                                    <input type="text" class="form-control" placeholder="Enter Name" data-errors="Please Enter Name." name="description" value="{{ $film->description }}">
+                                                    <textarea name="description" id="mySummernote" class="form-control" rows="5">{{ $film->description }}</textarea>
+                                                    @if ($errors->has('description'))
+                                                    <span class="text-danger">{{ $errors->first('description') }}</span>
+                                                @endif
                                                 </div>
                                             </div>
                                         </div>
