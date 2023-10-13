@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
     {
         //FAKE dữ liệu tại đây
         $this->call(CouponSeeder::class);
-        // \App\Models\User::factory(10)->create();
+        $this->call(citySeeder::class);
+        $this->call(RoomSeeder::class);
+        $this->call(CinemaSeeder::class);
+        $this->call(TypeSeeder::class);
+        $this->call(SeatSeeder::class);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
 
         $roles = [
             ['name'=>'Super-admin','display_name'=>'super admin','group'=>'admin','guard_name'=>'admin']

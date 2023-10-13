@@ -15,7 +15,7 @@ class TypeSeeder extends Seeder
     public function run(): void
     {
         DB::table("typeseats")->insert([
-            ["name"=>"Víp" , "price"=>"65.000"],
+            ["name"=>"VIP" , "price"=>"65.000"],
             ["name"=>"Thường" , "price"=>"40.000"],
 
                     ]);
