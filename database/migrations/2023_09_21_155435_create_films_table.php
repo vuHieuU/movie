@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('language');
             $table->date('premiere_date');
             $table->string('country');
-            $table->string('trailer');
+            $table->longText('trailer');
             $table->text('status');
             $table->timestamps();
         });

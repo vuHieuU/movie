@@ -17,10 +17,15 @@ class DatabaseSeeder extends Seeder
         //FAKE dữ liệu tại đây
         $this->call(CouponSeeder::class);
         $this->call(citySeeder::class);
-        $this->call(RoomSeeder::class);
         $this->call(CinemaSeeder::class);
+        $this->call(RoomSeeder::class);
         $this->call(TypeSeeder::class);
         $this->call(SeatSeeder::class);
+        $this->call(FilmSeeder::class);
+        $this->call(CategorySeeder::class);
+        $this->call(NewSeeder::class);
+        $this->call(ContactSeeder::class);
+
 
 
         $roles = [
