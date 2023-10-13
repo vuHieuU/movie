@@ -230,9 +230,8 @@
                                                                     <div class="modal-header ">
                                                                         <h1 class="modal-title  text-center modal-dialog"
                                                                             id="exampleModalLabel"
-                                                                            style="font-size: 35px ; font-weight: 500">Rạp
-                                                                            Hà
-                                                                            Nội</h1>
+                                                                            style="font-size: 35px ; font-weight: 500">
+                                                                            {{$film_show_time->cinema->name}}</h1>
 
                                                                     </div>
                                                                     <div class="modal-header ">

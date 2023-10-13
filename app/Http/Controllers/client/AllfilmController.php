@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\category;
 use App\Models\cinema;
 use App\Models\film;
+use App\Models\News;
 use App\Models\ShowTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +18,7 @@ class AllfilmController extends Controller
      */
     public function index()
     {
-    
+        $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
         $films = ShowTime::get();
         $category = category::all();
         $film = DB::table('categories')
@@ -27,7 +28,7 @@ class AllfilmController extends Controller
         ->select('categories.*','film_categories.*','films.*')
         ->get();
         $title = "Now Playing";
-       return view("client.film",compact("category","film","films"));
+       return view("client.film",compact("category","film","films","new_footer"));
     }
 
     /**

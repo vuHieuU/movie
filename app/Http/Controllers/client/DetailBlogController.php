@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Models\News;
 use Illuminate\Http\Request;
 
-class Detail_blogController extends Controller
+class DetailBlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class Detail_blogController extends Controller
     public function index()
     {
         $title = "Detail Blog";
-        return view('client.detail_blog',compact('title'));
+        $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
+        return view('client.DetailBlog',compact('title',"new_footer"));
     }
 
     /**
@@ -37,7 +39,9 @@ class Detail_blogController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $title = "Detail Blog";
+        $detailblog  =News::find($id);
+        return view('client.DetailBlog',compact('title',"detailblog"));
     }
 
     /**

@@ -11,6 +11,7 @@ use App\Models\ShowTime;
 use Illuminate\Http\Request;
 use App\Models\showtime_seat;
 use App\Http\Controllers\Controller;
+use App\Models\News;
 use Illuminate\Support\Facades\DB;
 class PayController extends Controller
 {
@@ -20,6 +21,7 @@ class PayController extends Controller
 
      public function seatFood(Request $request ,$id)
      {
+        $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
          $film = ShowTime::findOrFail($id);
          $categories = $film->film->categories;
          $selectedDate = $request->input("selectedDate");
@@ -48,7 +50,7 @@ class PayController extends Controller
          $combo = combo::get();
          $title = "Chairs_Food";
          return view('client.layout.cart.SeatFood',compact(
-             'title','seats','food','combo','selectedDate','selectedHour','film','showTime','categories'
+             'title','seats','food','combo','selectedDate','selectedHour','film','showTime','categories',"new_footer"
          ));
 
          
@@ -58,6 +60,7 @@ class PayController extends Controller
     public function Pay(Request $request, $id)
     {
         $title = "Pay";
+        $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
         $tickit = ticket::find($id);
         $ShowTime = ShowTime::findOrFail($id);
         $selectedDate = session('selectedDate');
@@ -81,12 +84,14 @@ class PayController extends Controller
             'selectedPriceSeatsValue',
             'totalPriceFoodValue',
             'cinemaName',
-            "tickit"
+            "tickit",
+            "new_footer"
         ));
     }
 
     public function PaymentSuccess(Request $request,$film_id)
     {
+        
                // Lấy thông tin đơn hàng từ request
     $selectedDate = session('selectedDate');
     $selectedHour = session('selectedHour');
@@ -137,6 +142,7 @@ class PayController extends Controller
 
     public function show(Request $request,string $id)
     {
+        $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
         $title = 'payment success';
         $ShowTime = ShowTime::findOrFail($id);
          $film_name = $ShowTime->film->name;
@@ -149,7 +155,7 @@ class PayController extends Controller
          $categories = $ShowTime->film->categories;
         //  $categories
         //  dd($film_names);
-        return view('client.layout.cart.PaymentSuccess',compact('title','ShowTime','film_name','selectedDate','selectedHour','cinemaRoom','selectedSeatsValue','total','cinemaName','categories'));
+        return view('client.layout.cart.PaymentSuccess',compact('title',"new_footer",'ShowTime','film_name','selectedDate','selectedHour','cinemaRoom','selectedSeatsValue','total','cinemaName','categories'));
     }
 
 }

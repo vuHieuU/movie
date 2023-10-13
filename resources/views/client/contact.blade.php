@@ -10,6 +10,7 @@
 <title>{{ $title }}</title>
 <meta name='robots' content='noindex, nofollow' />
 <link rel='dns-prefetch' href='//demo.ovatheme.com' />
+<link rel="stylesheet" href="/template/fontawesome-free-6.1.1-web/css/all.css">
 {{-- <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel="alternate" type="application/rss+xml"
     title="Aovis - Film &amp; Movie Booking WordPress Theme &raquo; Feed"

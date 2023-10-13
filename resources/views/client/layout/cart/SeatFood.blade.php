@@ -557,8 +557,8 @@
                                                                                 </div>
 
                                                                                 <div class="py-5">
-                                                                                    <img src="images/ic-screen.png"
-                                                                                        alt="">
+                                                                                  <img class="img-responsive" src="{{ asset('storage/images/ic-screen.png') }}">
+                                                                                       
                                                                                 </div>
                                                                                 <div class="row mt-4">
 

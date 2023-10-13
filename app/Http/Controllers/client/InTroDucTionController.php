@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class InTroDucTionController extends Controller
@@ -13,7 +14,8 @@ class InTroDucTionController extends Controller
     public function index()
     {
         $title = "Giới thiệu";
-        return view('client.introduction',compact('title'));
+        $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
+        return view('client.introduction',compact('title',"new_footer"));
     }
 
     /**

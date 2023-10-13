@@ -20,6 +20,7 @@ class DetailFilmController extends Controller
 
     public function index($id)
     {
+        $check = 1;
         $film_show_time = ShowTime::findOrFail($id);
         // $cinema_id = Cinema::findOrFail($id);
         // $film = Film::findOrFail($id);
@@ -35,9 +36,6 @@ class DetailFilmController extends Controller
             $exists = favorite_film::where('user_id', $user)->where('film_id',$id)->exists();
             if($exists){
                 $check = 0;
-            }
-            else{
-                $check="";
             }
         }
         else{
