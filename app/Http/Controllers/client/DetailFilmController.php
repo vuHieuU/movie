@@ -5,6 +5,7 @@ namespace App\Http\Controllers\client;
 use App\Http\Controllers\Controller;
 use App\Models\cinema;
 use App\Models\film;
+use App\Models\News;
 use App\Models\ShowTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,6 +20,7 @@ class DetailFilmController extends Controller
 
     public function index($id)
     {
+        $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
         $film_show_time = ShowTime::findOrFail($id);
         // $user = Auth::user()->id;
         // $cinema_id = Cinema::findOrFail($id);
@@ -45,7 +47,7 @@ class DetailFilmController extends Controller
         $title = "Detail";
         return view('client.DetailFilm',compact(
             'title',"ShowTime","categoryfilm_category",
-            "ratings","rating_value","user_rating",'film_show_time'
+            "ratings","rating_value","user_rating",'film_show_time',"new_footer"
         ));
 
     }

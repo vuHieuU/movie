@@ -29,7 +29,9 @@ Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'i
 Route::get('/home/{id}', [App\Http\Controllers\client\homeController::class, 'show'])->name('homeCinema');
 // Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name('contact');
 
-Route::get('/detail_blog', [App\Http\Controllers\client\Detail_blogController::class, 'index']);
+Route::get('/detailblog', [App\Http\Controllers\client\DetailBlogController::class, 'index'])->name("detailblog");
+Route::get('/detailblog/{id}', [App\Http\Controllers\client\DetailBlogController::class, 'show'])->name("detailblog");
+
 Route::get('/weeklyshowtime', [App\Http\Controllers\client\WeeklyShowtimeController::class, 'index']);
 Route::get('/weeklyshowtime/{id}', [App\Http\Controllers\client\WeeklyShowtimeController::class, 'show'])->name("weeklyshowtime");
 
