@@ -390,7 +390,7 @@
 
                                             <div class="entry-content e-content" itemprop="description articleBody">
                                                 <h3 class="info-name amy-title">Synopsis</h3>
-                                                <p>{{ $film_show_time->film->description }}</p>
+                                                <p>{!! $film_show_time->film->description !!}</p>
                                             </div>
 
                                             <div class="entry-media">
