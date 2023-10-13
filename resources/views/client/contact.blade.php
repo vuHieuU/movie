@@ -1436,6 +1436,9 @@ class="page-template page-template-elementor_header_footer page page-id-38 wp-em
 
                                             </div>
                                         </div>
+                                        <p style="color: green">
+                                            {{ session('success') }}
+                                        </p>
                                         <div class="elementor-element elementor-element-53cc65f elementor-widget elementor-widget-shortcode"
                                             data-id="53cc65f" data-element_type="widget"
                                             data-widget_type="shortcode.default">
@@ -1448,9 +1451,10 @@ class="page-template page-template-elementor_header_footer page page-id-38 wp-em
                                                             </p>
                                                             <ul></ul>
                                                         </div>
-                                                        <form action="/aovis/contact/#wpcf7-f5-p38-o1" method="post"
+                                                        <form action="{{route("contact.store")}}" method="post"
                                                             class="wpcf7-form init" aria-label="Contact form"
                                                             novalidate="novalidate" data-status="init">
+                                                            @csrf
                                                             <div style="display: none;">
                                                                 <input type="hidden" name="_wpcf7"
                                                                     value="5" />
@@ -1474,9 +1478,9 @@ class="page-template page-template-elementor_header_footer page page-id-38 wp-em
                                                                                     class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                                                                                     aria-required="true"
                                                                                     aria-invalid="false"
-                                                                                    placeholder="Your Name"
+                                                                                    placeholder="Họ và tên"
                                                                                     value="" type="text"
-                                                                                    name="your-name" /></span>
+                                                                                    name="fullName" /></span>
                                                                         </p>
                                                                     </div>
                                                                     <div class="email ova_wrap_input">
@@ -1486,9 +1490,9 @@ class="page-template page-template-elementor_header_footer page page-id-38 wp-em
                                                                                     class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
                                                                                     aria-required="true"
                                                                                     aria-invalid="false"
-                                                                                    placeholder="Email Adress"
+                                                                                    placeholder="Email"
                                                                                     value="" type="email"
-                                                                                    name="your-email" /></span>
+                                                                                    name="email" /></span>
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -1500,9 +1504,9 @@ class="page-template page-template-elementor_header_footer page page-id-38 wp-em
                                                                                     class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel"
                                                                                     aria-required="true"
                                                                                     aria-invalid="false"
-                                                                                    placeholder="Phone" value=""
+                                                                                    placeholder="Số điện thoại" value=""
                                                                                     type="tel"
-                                                                                    name="your-phone" /></span>
+                                                                                    name="phone" /></span>
                                                                         </p>
                                                                     </div>
                                                                     <div class="subject ova_wrap_input">
@@ -1512,9 +1516,9 @@ class="page-template page-template-elementor_header_footer page page-id-38 wp-em
                                                                                     class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                                                                                     aria-required="true"
                                                                                     aria-invalid="false"
-                                                                                    placeholder="Subject"
+                                                                                    placeholder="Tiêu đề"
                                                                                     value="" type="text"
-                                                                                    name="Subject" /></span>
+                                                                                    name="title" /></span>
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -1522,14 +1526,14 @@ class="page-template page-template-elementor_header_footer page page-id-38 wp-em
                                                                     <p><span class="wpcf7-form-control-wrap"
                                                                             data-name="your-message">
                                                                             <textarea cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required"
-                                                                                aria-required="true" aria-invalid="false" placeholder="Write a Comment" name="your-message"></textarea>
+                                                                                aria-required="true" aria-invalid="false" placeholder="Viết bình luận..." name="content"></textarea>
                                                                         </span>
                                                                     </p>
                                                                 </div>
                                                                 <div class="ova-submit">
                                                                     <p><input
                                                                             class="wpcf7-form-control wpcf7-submit has-spinner"
-                                                                            type="submit" value="Send a Message" />
+                                                                            type="submit" value="Gửi" />
                                                                     </p>
                                                                 </div>
                                                             </div>

@@ -60,24 +60,11 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="expiry_date">Thời gian đăng *</label>
-                                                <input type="date" class="form-control" placeholder="Expiry Date"
-                                                    name="news_date">
-                                                @if ($errors->has('news_date'))
-                                                    <span class="text-danger">{{ $errors->first('news_date') }}</span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <div class="form-floating">
                                                     <label for="floatingTextarea">Nội dung</label>
-                                                    <input type="text" class="form-control" placeholder="Nhập nội dung..." data-errors="Nhập nội dung..." name="content">
+                                                    <textarea name="content" id="mySummernote" class="form-control" rows="5"></textarea>
                                                     @if ($errors->has('content'))
                                                     <span class="text-danger">{{ $errors->first('content') }}</span>
                                                 @endif

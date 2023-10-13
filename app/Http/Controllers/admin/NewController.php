@@ -6,6 +6,7 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class NewController extends Controller
 {
@@ -33,6 +34,7 @@ class NewController extends Controller
     {
         $data = new News();
         $data->title = $request->input('title');
+        $data->slug = Str::slug($request->input('title'));
         $data->content = $request->input('content');;
         $data->status = $request->input('status');
 
@@ -40,10 +42,10 @@ class NewController extends Controller
         $request->file('thumbnail')->storeAs('public/images', $thumbnail);
 
         $data->thumbnail = $thumbnail;
-
-        $data->news_date = $request->input('news_date');
       
         $data->save();
+
+        // dd($data);
 
         return redirect()->route('news.index')->with('success', 'Thêm tin thành công');
     }
@@ -76,6 +78,7 @@ class NewController extends Controller
 
         $data->title = $request->input('title');
         $data->content = $request->input('content');;
+        $data->slug = Str::slug($request->input('title'));
         $data->status = $request->input('status');
         
         if ($request->file('thumbnail') !== null) {

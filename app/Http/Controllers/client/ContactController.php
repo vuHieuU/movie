@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use App\Models\News;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $title = "contact";
+        $title = "Contact";
         $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
         return view('client.contact',compact('title',"new_footer"));
     }
@@ -31,7 +32,16 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Contact();
+        $data->fullName = $request->input("fullName");
+        $data->email = $request->input("email");
+        $data->phone = $request->input("phone");
+        $data->title = $request->input("title");
+        $data->content = $request->input("content");
+
+        $data->save();
+
+        return redirect()->route('contact')->with('success', 'Thêm thành công');
     }
 
     /**

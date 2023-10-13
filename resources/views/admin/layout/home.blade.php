@@ -20,5 +20,18 @@
 
     
      @include('admin.layout.footer')
+
+
+     {{-- Js Summernote --}}
+     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+     <script>
+      $(document).ready(function() {
+          $("#mySummernote").summernote({
+            height: 250,
+          });
+          $('.dropdown-toggle').dropdown();
+      });
+      </script>
   </body>
 </html>

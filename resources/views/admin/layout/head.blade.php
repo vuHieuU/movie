@@ -7,5 +7,7 @@
 <link rel="stylesheet" href="/template/assets/css/backend.css?v=1.0.0">
 <link rel="stylesheet" href="/template/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 <link rel="stylesheet" href="/template/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
-<link rel="stylesheet" href="/template/assets/vendor/remixicon/fonts/remixicon.css">  
+<link rel="stylesheet" href="/template/assets/vendor/remixicon/fonts/remixicon.css">
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/bd9a701ba3.js" crossorigin="anonymous"></script>

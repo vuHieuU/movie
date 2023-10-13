@@ -25,6 +25,7 @@ Route::get('/', [App\Http\Controllers\client\homeController::class, 'index'])->n
 // Route::get('/', [App\Http\Controllers\client\homeController::class, 'index']);
 
 Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name("contact");
+Route::post('/contact', [App\Http\Controllers\client\ContactController::class, 'store'])->name("contact.store");
 
 Route::get('/home/{id}', [App\Http\Controllers\client\homeController::class, 'show'])->name('homeCinema');
 // Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index'])->name('contact');
