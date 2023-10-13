@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RoomSeeder::class);
         $this->call(TypeSeeder::class);
         $this->call(SeatSeeder::class);
+        $this->call(FoodSeeder::class);
         $this->call(FilmSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(NewSeeder::class);
