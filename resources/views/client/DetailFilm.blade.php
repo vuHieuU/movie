@@ -198,12 +198,20 @@
                                                                 data-bs-target="#exampleModal" class="amy-buy-ticket">Buy
                                                                 Ticket</button>
                                                         </div>
+                                                        @if($check==0)
+                                                        <form action="/unLikeFilm/{{$film_show_time->film->id}}" method="GET">
+                                                            @csrf
+                                                            <input type="Submit" value="Bỏ yêu thích">
+                                                        </form>
+                                                        @else
                                                         <form action="/addFavoFilm" method="POST">
                                                             @csrf
-                                                            {{-- <input type="hidden" name="user_id" value="{{$user}}"> --}}
+                                                            <input type="hidden" name="user_id" value="{{$user}}">
                                                             <input type="hidden" name="film_id" value="{{$film_show_time->film->id}}">
                                                             <input type="Submit" value="Yêu thích">
                                                         </form>
+                                                        @endif
+                                                        
                                                         <div class="modal fade   modal-lg " id="exampleModal"
                                                             tabindex="-1" aria-labelledby="exampleModalLabel"
                                                             aria-hidden="true">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\category;
 use App\Models\cinema;
 use App\Models\film;
+use App\Models\News;
 use App\Models\ShowTime;
 use Illuminate\Http\Request;
 class homeController extends Controller
@@ -15,13 +16,16 @@ class homeController extends Controller
      */
     public function index()
     {
+        $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
+        $new_latest  = News::inRandomOrder()->limit(1)->get();
+        $new_latest_new  = News::inRandomOrder()->limit(2)->get();
         $title = "home";
         $film_nowplaying = film::orderByDesc("created_at")->limit(5)->get();
         $film_topmovie = ShowTime::orderByDesc("created_at")->limit(15)->get();
         $categories =category::get();
         $film = ShowTime::limit(5)->get();
         
-        return view('client.home',compact("title","film_nowplaying","categories","film","film_topmovie"));
+        return view('client.home',compact("title","film_nowplaying","categories","film","film_topmovie","new_footer","new_latest","new_latest_new"));
 
         
         // return view('client.home',compact("title","film"));
@@ -30,13 +34,16 @@ class homeController extends Controller
     public function show($id)
     {
         $title = "home";
+        $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
+        $new_latest  = News::inRandomOrder()->limit(1)->get();
+        $new_latest_new  = News::inRandomOrder()->limit(2)->get();
         $categories =category::get();
         $cinema_id = Cinema::findOrFail($id);
         $film = ShowTime::where("cinema_id", $cinema_id->id)->with('film')->limit(5)->get();
         $film_nowplaying = film::orderByDesc("created_at")->limit(5)->get();
         // $film_topmovie = ShowTime::where("cinema_id", $cinema_id->id)->orderByDesc("created_at")->with('film')->limit(15)->get();
         $film_topmovie = ShowTime::where("cinema_id", $cinema_id->id)->with('film')->limit(15)->get();
-        return view('client.home',compact("title","film","categories",'film_nowplaying','film_topmovie'));
+        return view('client.home',compact("title","film","categories",'film_nowplaying','film_topmovie',"new_footer","new_latest","new_latest_new"));
 
     }
 

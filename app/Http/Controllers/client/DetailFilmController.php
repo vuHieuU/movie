@@ -4,8 +4,8 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use App\Models\cinema;
+use App\Models\favorite_film;
 use App\Models\film;
-use App\Models\News;
 use App\Models\ShowTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,9 +20,8 @@ class DetailFilmController extends Controller
 
     public function index($id)
     {
-        $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
+        $check = 1;
         $film_show_time = ShowTime::findOrFail($id);
-        // $user = Auth::user()->id;
         // $cinema_id = Cinema::findOrFail($id);
         // $film = Film::findOrFail($id);
         $ShowTime = ShowTime::where("cinema_id", $film_show_time->cinema->id)->where('film_id',$film_show_time->film->id)->get();
@@ -32,8 +31,16 @@ class DetailFilmController extends Controller
     ->select("categories.*", "film_categories.*")
     ->where("film_categories.film_id",$id)
     ->get();
-
-       
+        if (auth()->check()) {
+            $user = Auth::user()->id;  
+            $exists = favorite_film::where('user_id', $user)->where('film_id',$id)->exists();
+            if($exists){
+                $check = 0;
+            }
+        }
+        else{
+            $user = 0;
+        }
         $ratings = Rating::where("film_id",$film_show_time->film->id);
         $rating_sum = Rating::where("film_id",$film_show_time->film->id)->sum("star_rated");
         $user_rating = Rating::where("film_id",$film_show_time->film->id)->where("user_id",Auth::id())->first();
@@ -47,7 +54,7 @@ class DetailFilmController extends Controller
         $title = "Detail";
         return view('client.DetailFilm',compact(
             'title',"ShowTime","categoryfilm_category",
-            "ratings","rating_value","user_rating",'film_show_time',"new_footer"
+            "ratings","rating_value","user_rating",'film_show_time','user','check'
         ));
 
     }

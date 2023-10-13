@@ -62,6 +62,8 @@ class WeeklyShowtimeController extends Controller
         ->select('show_times.*','films.*')
         ->where("show_times.id",$id)
         ->get();
+        // $filmshowtime =  ShowTime::where("show_times.id", $id)->get();
+        // dd($filmshowtime);
         $showtime = ShowTime::get();
         // $showtime = ShowTime::where("show_times.id",$id)->get();
 

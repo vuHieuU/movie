@@ -11,7 +11,7 @@
     <div class="amy-page-title amy-center">
         <div class="amy-inner container">
             <h1 class="page-title">
-                Win a Wizarding World holiday with Fantastic            </h1>
+               {{$detailblog->title}}           </h1>
                     </div>
     </div>
 			<span class="amy-section-overlay"></span>
@@ -27,7 +27,7 @@
 <article id="post-55" class="post-55 post type-post status-publish format-standard has-post-thumbnail category-news">
 	<div class="entry-top ">
 		<div class="entry-thumb">
-			<img width="750" height="500" src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57-300x200.jpg 300w" sizes="(max-width: 750px) 100vw, 750px" />		</div>
+			<img width="750" height="500" src="{{ asset('/storage/images/' . $detailblog->thumbnail) }}" class="attachment-full size-full wp-post-image" alt=""  sizes="(max-width: 750px) 100vw, 750px" />		</div>
 	</div>
 	<div class="entry-bottom ">
 		<!-- Post Meta -->
@@ -41,7 +41,7 @@
 				0			</div>
 		</div>
 		<div class="entry-left">
-			<h1 class="entry-title p-name" itemprop="name headline"><a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/2022/04/28/win-a-wizarding-world-holiday-with-fantastic/" rel="bookmark" class="u-url url" itemprop="url">Win a Wizarding World holiday with Fantastic</a></h1>
+			<h1 class="entry-title p-name" itemprop="name headline"><a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/2022/04/28/win-a-wizarding-world-holiday-with-fantastic/" rel="bookmark" class="u-url url" itemprop="url">{{$detailblog->title}}   </a></h1>
 							<!-- Content -->
 				<div class="entry-content e-content" itemprop="description articleBody">
 					
@@ -53,15 +53,11 @@
 
 
 
-<p id="block-e77a294d-d103-4d17-9c56-05deca63c918">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+<p id="block-e77a294d-d103-4d17-9c56-05deca63c918">    {{$detailblog->content}}   </p>
 
 
 
-<p id="block-2eacc776-0646-41d1-ac75-71bfa57b3ad8">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-
-
-<p>&#8220;Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&#8221;, Ut enim ad minima veniam, quis nostrum exercitationem.</p>
 
 
 

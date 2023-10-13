@@ -118,7 +118,7 @@
                                 {{-- @foreach (\App\Models\cinema::get() as $cinema)
                                
                                 @endforeach --}}
-                                <a href="{{ route('homeCinema',[$cinema->id]) }}" aria-current="page">Home</a>
+                                <a href="/" aria-current="page">Home</a>
                             </li>
                             <li id="menu-item-276"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-276">

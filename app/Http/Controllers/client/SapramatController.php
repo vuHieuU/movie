@@ -4,6 +4,7 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use App\Models\film;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class SapramatController extends Controller
@@ -15,8 +16,9 @@ class SapramatController extends Controller
     {
         $title = "comming soon";
         $status = "sắp ra mắt";
+        $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
         $film_comming_soon = film::where("status",$status)->get();
-        return view("client.sapramat",compact('title',"film_comming_soon"));
+        return view("client.sapramat",compact('title',"film_comming_soon","new_footer"));
     }
 
     /**

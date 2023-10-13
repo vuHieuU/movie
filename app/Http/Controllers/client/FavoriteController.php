@@ -31,13 +31,21 @@ class FavoriteController extends Controller
      */
     public function store(Request $request)
     {
-        $data = [
-            "user_id"=>$request->user_id,
-            "film_id"=>$request->film_id,
+        $user = $request->input("user_id");
+        $film_id = $request->input("film_id");
+        if($user==0){
+            return redirect("/login");
+        }
+        else{    
+           $data = [
+            "user_id"=>$user,
+            "film_id"=>$film_id,
         ];
         $id = $request->input("film_id");
         favorite_film::create($data);
         return redirect("detail_film/{$id}");
+        }
+
     }
 
     /**
@@ -76,5 +84,12 @@ class FavoriteController extends Controller
         $idDelete = favorite_film::select('id')->where('film_id',$id)->first();
         $idDelete->delete($idDelete);
         return redirect("/listFavoFilm/$user");
+    }
+    public function unLike(string $id)
+    {
+        $user = Auth::user()->id;
+        $idDelete = favorite_film::select('id')->where('film_id',$id)->first();
+        $idDelete->delete($idDelete);
+        return redirect("/detail_film/$id");
     }
 }
