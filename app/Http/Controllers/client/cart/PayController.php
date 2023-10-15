@@ -91,7 +91,7 @@ class PayController extends Controller
 
     public function PaymentSuccess(Request $request,$film_id)
     {
-        
+        // dd($request->all());
                // Lấy thông tin đơn hàng từ request
     $selectedDate = session('selectedDate');
     $selectedHour = session('selectedHour');

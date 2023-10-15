@@ -14,7 +14,7 @@ class DangphatController extends Controller
      */
     public function index()
     {
-        $status = "đang chiếu";
+        $status = 1;
         $film_topmovie = film::orderByDesc("created_at")->limit(2)->get();
         $film_nowplaying = film::where("status",$status)->get();
         $new_footer  = News::orderByDesc("created_at")->limit(2)->get();

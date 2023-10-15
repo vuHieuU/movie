@@ -231,7 +231,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('success');
 
     //vnpay
-    Route::post('/vnpay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);
+    Route::post('/vnpay_payment/{film_id}', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);
 
     //momo
     Route::post('/momo_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'momo_payment']);
