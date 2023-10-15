@@ -108,37 +108,37 @@
                             
                         </div>
                         <div class="cs-invoice_right">
-                            <b class="cs-primary_color">Informational:</b>
+                            {{-- <b class="cs-primary_color">Informational:</b>
                             <p>
-                                {{-- <p class="fs-4"><strong class="fs-2 "> Ngày xem: </strong> --}}
+                                <p class="fs-4"><strong class="fs-2 "> Ngày xem: </strong> 
                                     {{ Carbon\Carbon::parse($selectedDate)->format('d/n/Y') }}
                                     <br>
-                                {{-- </p>
-                                <p class="fs-4"><strong class="fs-2 "> Giờ xem: </strong>  --}}
+                                </p>
+                                <p class="fs-4"><strong class="fs-2 "> Giờ xem: </strong>  
                                     {{ $selectedHour }}
-                                    <br>
-                                {{-- </p>
-                                <p class="fs-4"><strong class="fs-2 "> Thời gian chiếu: </strong> --}}
-                                    {{ $ShowTime->film->duration }} Phút
-                                {{-- </p> --}}
+                                    <br> 
+                                </p>
+                                <p class="fs-4"><strong class="fs-2 "> Thời gian chiếu: </strong> 
+                                    {{ $ShowTime->film->duration }} Phút 
+                                </p>
     
                                 </p>
-                            </p>
+                            </p> --}}
                         </div>
                     </div>
                     <div class="cs-border"></div>
                     <ul class="cs-grid_row cs-col_3 cs-mb0 cs-mt20">
                         <li>
-                            <p class="cs-mb20"><b class="cs-primary_color">County Of Supply:</b> <span
-                                    class="cs-primary_color">Canada</span></p>
+                            <p class="cs-mb20"><b class="cs-primary_color">Ngày xem:</b> <span
+                                    class="cs-primary_color">{{ Carbon\Carbon::parse($selectedDate)->format('d/n/Y') }}</span></p>
                         </li>
                         <li>
-                            <p class="cs-mb20"><b class="cs-primary_color">Place Of Supply:</b> <span
-                                    class="cs-primary_color">USA</span></p>
+                            <p class="cs-mb20"><b class="cs-primary_color">Giờ xem:</b> <span
+                                    class="cs-primary_color">{{ $selectedHour }}</span></p>
                         </li>
                         <li>
-                            <p class="cs-mb20"><b class="cs-primary_color">Due Date:</b> <span
-                                    class="cs-primary_color">13/9/2023</span></p>
+                            <p class="cs-mb20"><b class="cs-primary_color">Thời gian chiếu:</b> <span
+                                    class="cs-primary_color">{{ $ShowTime->film->duration }} Phút</span></p>
                         </li>
                     </ul>
                     <div class="cs-border cs-mb30"></div>
