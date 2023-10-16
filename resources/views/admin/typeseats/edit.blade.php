@@ -36,7 +36,7 @@
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between">
                                     <div class="header-title">
-                                        <h4 class="card-title">Add Roles</h4>
+                                        <h4 class="card-title">Update TypeSeats</h4>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -63,9 +63,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary mr-2">Update Cate</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Update TypeSeats</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
-                                    <a href="/role/index"><button type="submit" class="btn btn-danger">Back</button></a>
+                                    <a href="/typeseats/index"><button type="submit" class="btn btn-danger">Back</button></a>
                                 </div>
                             </div>
                         </div>

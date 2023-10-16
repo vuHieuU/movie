@@ -1,7 +1,7 @@
 @extends('admin.layout.home')
 @section('content')
-    <form action="{{ route('typeseats.store') }}" method="POST" data-toggle="validator">
-        @csrf
+  <form action="{{ route('typeseats.store') }}" method="POST" data-toggle="validator">
+                                    @csrf
         <div class="wrapper">
             <div class="modal fade" id="new-order" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -36,8 +36,9 @@
                                         <h4 class="card-title">Add TypeSeat</h4>
                                     </div>
                                 </div>
+                                
                                 <div class="card-body">
-
+                                   
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -63,7 +64,8 @@
                                     </div>
                                     <button type="submit" class="btn btn-primary mr-2">Add TypeSeat</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
-                                    {{-- <a href="/role/index"><button type="submit" class="btn btn-danger">Back</button></a> --}}
+                                    <button type="reset" class="btn btn-danger"><a class="text-white" href="/typeseats/index">Back</a></button>
+
                                 </div>
                             </div>
                         </div>

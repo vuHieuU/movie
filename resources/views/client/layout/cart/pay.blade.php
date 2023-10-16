@@ -10,7 +10,8 @@
     <!-- Site Title -->
     <title>General Purpose Invoice</title>
     <link rel="stylesheet" href="/template/assets/css/pay.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body style="font-family: roboto; border: 0">
@@ -105,7 +106,7 @@
                             <p class="fs-4"><strong class="fs-5 "> Rạp: </strong>{{ $cinemaName }}</p>
                             <p class="fs-4"><strong class="fs-5 "> Phim: </strong>{{ $ShowTime->film->name }}
                             </p>
-                            
+
                         </div>
                         <div class="cs-invoice_right">
                             {{-- <b class="cs-primary_color">Informational:</b>
@@ -130,7 +131,8 @@
                     <ul class="cs-grid_row cs-col_3 cs-mb0 cs-mt20">
                         <li>
                             <p class="cs-mb20"><b class="cs-primary_color">Ngày xem:</b> <span
-                                    class="cs-primary_color">{{ Carbon\Carbon::parse($selectedDate)->format('d/n/Y') }}</span></p>
+                                    class="cs-primary_color">{{ Carbon\Carbon::parse($selectedDate)->format('d/n/Y') }}</span>
+                            </p>
                         </li>
                         <li>
                             <p class="cs-mb20"><b class="cs-primary_color">Giờ xem:</b> <span
@@ -167,7 +169,8 @@
                                             <td>5 Hour</td>
                                             {{-- <td>$150.00</td> --}}
                                             {{-- <td>&nbsp;1</td> --}}
-                                            <td class="cs-text_right cs-primary_color">{{ number_format($totalPriceFoodValue) }} VNĐ</td>
+                                            <td class="cs-text_right cs-primary_color">
+                                                {{ number_format($totalPriceFoodValue) }} VNĐ</td>
                                         </tr>
                                         <tr class="cs-focus_bg">
                                             <td>02</td>
@@ -175,33 +178,35 @@
                                             <td>{{ $selectedSeatsValue }}</td>
                                             {{-- <td>$500.00</td> --}}
                                             {{-- <td>&nbsp;1</td> --}}
-                                            <td class="cs-text_right cs-primary_color">{{ number_format($selectedPriceSeatsValue) }} VND</td>
+                                            <td class="cs-text_right cs-primary_color">
+                                                {{ number_format($selectedPriceSeatsValue) }} VND</td>
                                         </tr>
                                         <tr>
                                             <td>03</td>
                                             <td>Coupon</td>
                                             <td></td>
-                                            @if(session('success'))
-                                                    <div class="alert alert-success">
-                                                        {{ session('success') }}
-                                                          @if ($discountType === 'amount')
-                                                            <td>Giảm: {{ $discountAmount}} Vnđ</td>
-                                                          @elseif ($discountType === 'percent')
-                                                           <td class="cs-text_right cs-primary_color">Giảm: {{ $discountAmount}} % </td>
-                                                          @endif
-                                                       
-                                                    </div>
-                                                @endif
+                                            @if (session('success'))
+                                                <div class="alert alert-success">
+                                                    {{ session('success') }}
+                                                    @if ($discountType === 'amount')
+                                                        <td>Giảm: {{ $discountAmount }} Vnđ</td>
+                                                    @elseif ($discountType === 'percent')
+                                                        <td class="cs-text_right cs-primary_color">Giảm:
+                                                            {{ $discountAmount }} % </td>
+                                                    @endif
 
-                                                @if(session('error'))
-                                                    <div class="alert alert-danger">
-                                                        {{ session('error') }}
-                                                    </div>
-                                                @endif
-                                           
+                                                </div>
+                                            @endif
+
+                                            @if (session('error'))
+                                                <div class="alert alert-danger">
+                                                    {{ session('error') }}
+                                                </div>
+                                            @endif
+
                                             {{-- <td>$100.00</td> --}}
                                             {{-- <td>&nbsp;1</td> --}}
-                                            
+
                                         </tr>
                                         {{-- <tr class="cs-focus_bg">
                                             <td>04</td>
@@ -212,94 +217,95 @@
                                             <td class="cs-text_right cs-primary_color">$300.00</td>
                                         </tr> --}}
                                     </tbody>
-                                    
+
                                 </table>
 
-                               
-                                <div class="cs-border cs-mb30"></div>
-                                        <div class="col-md-12 mx-0 px-0 " >
-                                            <div class="card">
-                                                
-                                                <div class="card-body">
-                                                    <form action="{{ route('applyCoupon') }}" method="POST">
-                                                        @csrf
-                                                        <div class="form-group">
-                                                            <strong for="coupon_code">Mã giảm giá:</strong>
-                                                            <input type="text" class="form-control " name="coupon_code" placeholder="Nhập mã giảm giá">
-                                                        </div>
-                                                        <button type="submit" class="btn btn-primary mt-3">Áp dụng</button>
-                                                    </form>
 
+                                <div class="cs-border cs-mb30"></div>
+                                <div class="col-md-12 mx-0 px-0 ">
+                                    <div class="card">
+
+                                        <div class="card-body">
+                                            <form action="{{ route('applyCoupon') }}" method="POST">
+                                                @csrf
+                                                <div class="form-group">
+                                                    <strong for="coupon_code">Mã giảm giá:</strong>
+                                                    <input type="text" class="form-control " name="coupon_code"
+                                                        placeholder="Nhập mã giảm giá">
                                                 </div>
-                                            </div>
+                                                <button type="submit" class="btn btn-primary mt-3">Áp dụng</button>
+                                            </form>
+
                                         </div>
-                                     
-                              
+                                    </div>
+                                </div>
+
+
 
 
                             </div>
                         </div>
                     </div>
 
-   <div class="cs-border cs-mb30 mt-5"></div>
+                    <div class="cs-border cs-mb30 mt-5"></div>
 
-   <h5 class="display-6 display-md-3 display-lg-2 fw-bold mb-5 mt-5">Phương thức thanh
-    toán :</h5>
-
-
-
-
-
-<form action="{{ url('/vnpay_payment',['film_id' => $ShowTime->id]) }}" method="post">
-
-    @csrf
-   
-    <div class="mb-5 " >
-        {{-- <img src="public/images/MoMo_logo-1.png" alt=""> --}}
-        <input type="hidden" name="total" value="{{ $total }}">
-        <button class="btn btn-outline-secondary  fs-3 px-5 py-2 w-25" name="redirect"
-            type="submit">Thanh toán bằng Vnpay </button>
-    </div>
-   
-</form>
-<style>/* Thay đổi màu nền khi hover */
-.custom-radio-label {
-    cursor: pointer;
-}
-
-.custom-radio-label.active {
-    background-color: #FE7900;
-    color: #fff;
-}
-
-
-    </style>
-<div class="mb-5">
-    <label for="payment_counter" class="btn btn-outline-secondary align-items-center fs-3 px-5 py-2 w-25 custom-radio-label">
-        Thanh toán tại quầy
-        <input type="radio" name="paymentMethod" id="payment_counter" class="d-none">
-    </label>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function() {
-    // Bắt sự kiện khi nút radio thay đổi
-    $('input[name="paymentMethod"]').change(function() {
-        if (this.checked) {
-            $('.custom-radio-label').removeClass('active');
-            $(this).closest('.custom-radio-label').addClass('active');
-        }
-    });
-});
-</script>
+                    <h5 class="display-6 display-md-3 display-lg-2 fw-bold mb-5 mt-5">Phương thức thanh
+                        toán :</h5>
 
 
 
 
 
+                    <form action="{{ url('/vnpay_payment', ['film_id' => $ShowTime->id]) }}" method="post">
 
-   <div class="cs-border cs-mb30 mt-5"></div>
+                        @csrf
+
+                        <div class="mb-5 ">
+                            {{-- <img src="public/images/MoMo_logo-1.png" alt=""> --}}
+                            <input type="hidden" name="total" value="{{ $total }}">
+                            <button class="btn btn-outline-secondary  fs-3 px-5 py-2 w-25" name="redirect"
+                                type="submit">Thanh toán bằng Vnpay </button>
+                        </div>
+
+                    </form>
+                    <style>
+                        /* Thay đổi màu nền khi hover */
+                        .custom-radio-label {
+                            cursor: pointer;
+                        }
+
+                        .custom-radio-label.active {
+                            background-color: #FE7900;
+                            color: #fff;
+                        }
+                    </style>
+                    <div class="mb-5">
+                        <label for="payment_counter"
+                            class="btn btn-outline-secondary align-items-center fs-3 px-5 py-2 w-25 custom-radio-label">
+                            Thanh toán tại quầy
+                            <input type="radio" name="paymentMethod" id="payment_counter" class="d-none">
+                        </label>
+                    </div>
+
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                            // Bắt sự kiện khi nút radio thay đổi
+                            $('input[name="paymentMethod"]').change(function() {
+                                if (this.checked) {
+                                    $('.custom-radio-label').removeClass('active');
+                                    $(this).closest('.custom-radio-label').addClass('active');
+                                }
+                            });
+                        });
+                    </script>
+
+
+
+
+
+
+                    <div class="cs-border cs-mb30 mt-5"></div>
 
 
                     <div class="cs-table cs-style2 cs-mt20">
@@ -307,11 +313,11 @@ $(document).ready(function() {
                             <table class="border-0">
                                 <tbody>
                                     <tr class="cs-table_baseline">
-                                       
+
                                         <td class="cs-width_3 cs-text_right">
                                             <p class="cs-mb5 cs-mb5 cs-f15 cs-primary_color cs-semi_bold">Sub Total:</p>
                                             <p class="cs-primary_color cs-bold cs-f16 cs-mb5 ">Discount:</p>
-                                            
+
                                             <p class="cs-border border-none"></p>
                                             <p class="cs-primary_color cs-bold cs-f16 cs-mb5 ">Total:</p>
                                         </td>
@@ -320,32 +326,37 @@ $(document).ready(function() {
                                                 {{ number_format($total) }} VND
                                             </p>
                                             <p>
-                                            @if(session('success'))
+                                                @if (session('success'))
                                                     <div class="">
-                                                      
-                                                          @if ($discountType === 'amount')
-                                                          <p class="cs-primary_color cs-bold cs-f16 cs-mb5 cs-text_right">Giảm: {{ $discountAmount}} Vnđ</p>
-                                                          @elseif ($discountType === 'percent')
-                                                          <p class="cs-primary_color cs-bold cs-f16 cs-mb5 cs-text_right">Giảm: {{ $discountAmount}} %</p>
-                                                          @endif
-                                                       
+
+                                                        @if ($discountType === 'amount')
+                                                            <p
+                                                                class="cs-primary_color cs-bold cs-f16 cs-mb5 cs-text_right">
+                                                                Giảm: {{ $discountAmount }} Vnđ</p>
+                                                        @elseif ($discountType === 'percent')
+                                                            <p
+                                                                class="cs-primary_color cs-bold cs-f16 cs-mb5 cs-text_right">
+                                                                Giảm: {{ $discountAmount }} %</p>
+                                                        @endif
+
                                                     </div>
                                                 @endif
 
-                                                @if(session('error'))
+                                                @if (session('error'))
                                                     <div class="alert alert-danger">
                                                         {{ session('error') }}
                                                     </div>
                                                 @endif
-                                           
+
                                             </p>
                                             <p class="cs-border"></p>
-                                           
-                                            <p class="cs-primary_color cs-bold cs-f16 cs-mb5 cs-text_right">{{ number_format($total) }} VND</p>
-                                           
+
+                                            <p class="cs-primary_color cs-bold cs-f16 cs-mb5 cs-text_right">
+                                                {{ number_format($total) }} VND</p>
+
                                             <div class="row text-center  gap-2" style="margin-top: 70px">
                                                 <div class="col-md-4">
-                                                
+
                                                     <a href="{{ route('chair', [$ShowTime->id]) }}"
                                                         style="background-color: #FE7900;"
                                                         class="btn text-white btn-block px-5 py-2 fs-3"> Quay lại</a>
@@ -357,23 +368,26 @@ $(document).ready(function() {
                                                         <button type="submit" style="background-color: #FE7900;"
                                                             class="btn text-white btn-block px-5 py-2 fs-3"> Thanh
                                                             toán</button>
-                                                        <input type="hidden" name="total" value="{{ $total }}">
+                                                        <input type="hidden" name="total"
+                                                            value="{{ $total }}">
                                                     </form>
                                                 </div>
                                             </div>
                                         </td>
-                                        
+
                                     </tr>
                                 </tbody>
                             </table>
-                            
+
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
-                
+
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
     @endsection

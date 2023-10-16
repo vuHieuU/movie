@@ -64,8 +64,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary mr-2">Add Categories</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Add Seat</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
+                                    <button type="reset" class="btn btn-danger mr-2 "><a href="/seats/index" class="text-white">Back</a></button>
                                     {{-- <a href="/role/index"><button type="submit" class="btn btn-danger">Back</button></a> --}}
                                 </div>
                             </div>
