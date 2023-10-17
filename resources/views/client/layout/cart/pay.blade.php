@@ -250,55 +250,26 @@
 
 
 
-<form action="{{ url('/vnpay_payment',['film_id' => $ShowTime->id]) }}" method="post">
+<form action="{{ url('/vnpay_payment/' . $ShowTime->id ) }}" method="post">
 
     @csrf
    
     <div class="mb-5 " >
-        {{-- <img src="public/images/MoMo_logo-1.png" alt=""> --}}
         <input type="hidden" name="total" value="{{ $total }}">
         <button class="btn btn-outline-secondary  fs-3 px-5 py-2 w-25" name="redirect"
             type="submit">Thanh toán bằng Vnpay </button>
     </div>
    
 </form>
-<style>/* Thay đổi màu nền khi hover */
-.custom-radio-label {
-    cursor: pointer;
-}
-
-.custom-radio-label.active {
-    background-color: #FE7900;
-    color: #fff;
-}
-
-
-    </style>
 <div class="mb-5">
-    <label for="payment_counter" class="btn btn-outline-secondary align-items-center fs-3 px-5 py-2 w-25 custom-radio-label">
-        Thanh toán tại quầy
-        <input type="radio" name="paymentMethod" id="payment_counter" class="d-none">
-    </label>
+    <form method="POST"
+    action="{{ route('payment_success', ['film_id' => $ShowTime->id]) }}">
+    @csrf
+    <input type="hidden" name="total" value="{{ $total }}">
+    <button class="btn btn-outline-secondary  fs-3 px-5 py-2 w-25" name="redirect"
+    type="submit">Thanh toán tại quầy    </button>
+</form>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function() {
-    // Bắt sự kiện khi nút radio thay đổi
-    $('input[name="paymentMethod"]').change(function() {
-        if (this.checked) {
-            $('.custom-radio-label').removeClass('active');
-            $(this).closest('.custom-radio-label').addClass('active');
-        }
-    });
-});
-</script>
-
-
-
-
-
-
    <div class="cs-border cs-mb30 mt-5"></div>
 
 
@@ -351,14 +322,9 @@ $(document).ready(function() {
                                                         class="btn text-white btn-block px-5 py-2 fs-3"> Quay lại</a>
                                                 </div>
                                                 <div class="col-md-5">
-                                                    <form method="POST"
-                                                        action="{{ route('payment_success', ['film_id' => $ShowTime->id]) }}">
-                                                        @csrf
                                                         <button type="submit" style="background-color: #FE7900;"
                                                             class="btn text-white btn-block px-5 py-2 fs-3"> Thanh
                                                             toán</button>
-                                                        <input type="hidden" name="total" value="{{ $total }}">
-                                                    </form>
                                                 </div>
                                             </div>
                                         </td>
@@ -377,3 +343,29 @@ $(document).ready(function() {
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     @endsection
+    <style>/* Thay đổi màu nền khi hover */
+        .custom-radio-label {
+            cursor: pointer;
+        }
+        
+        .custom-radio-label.active {
+            background-color: #FE7900;
+            color: #fff;
+        }
+        
+        
+            </style>
+
+            
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Bắt sự kiện khi nút radio thay đổi
+    $('input[name="paymentMethod"]').change(function() {
+        if (this.checked) {
+            $('.custom-radio-label').removeClass('active');
+            $(this).closest('.custom-radio-label').addClass('active');
+        }
+    });
+});
+</script>

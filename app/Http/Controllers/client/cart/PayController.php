@@ -142,6 +142,46 @@ class PayController extends Controller
 
     public function show(Request $request,string $id)
     {
+        if(isset($_GET['vnp_Amount'])){
+            $selectedDate = session('selectedDate');
+            $selectedHour = session('selectedHour');
+            $selectedShowTimeId = session('selectedShowTimeId');
+            $selectedSeatsValue = session('selectedSeatsValue');
+            $selectedSeatsValueID = session('selectedSeatsValueID');
+            $cinemaName = session('cinemaName');
+            $cinemaRoom = session('cinemaRoom');
+            $couponCode = session('coupon_code');
+            $total = $_GET['vnp_Amount'] / 100;
+            // dd($total);
+            $user = auth()->user();
+        
+            // Lấy thông tin bộ phim từ biến $film
+            $ShowTime = ShowTime::findOrFail($id);
+        
+            // Tạo bản ghi Ticket và lưu vào cơ sở dữ liệu
+            $ticket = new Ticket();
+            $ticket->film_name = $ShowTime->film->name;
+            $ticket->selected_date = $selectedDate;
+            $ticket->selected_hour = $selectedHour;
+            $ticket->selected_room = $cinemaRoom;
+            $ticket->cinema = $cinemaName;
+            $ticket->selected_seats = $selectedSeatsValue;
+            $ticket->user_id = $user->id;
+            $ticket->buyer_name = $user->name;
+            $ticket->film_id = $ShowTime->film->id;
+            $ticket->coupon_code = $couponCode;
+            $ticket->total = $total;
+        
+            $ticket->save();
+            // dd($ticket);
+        
+            $selectSeatArray = explode(',', $selectedSeatsValueID);
+        
+            showtime_seat::where('showtime_id',$selectedShowTimeId)
+                       ->whereIn('seat_id',$selectSeatArray)
+                       ->update(['isActive' => 2]);
+                       session()->forget('applied_coupon');
+        }
         $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
         $title = 'payment success';
         $ShowTime = ShowTime::findOrFail($id);
