@@ -32,10 +32,10 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Seats List</h4>
+                          <h4 class="mb-3">TypeSeats List</h4>
                           <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
                       </div>
-                      <a href="{{route("typeseats.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Cate</a>
+                      <a href="{{route("typeseats.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add TypeSeats</a>
                   </div>
               </div>
               <div class="col-lg-12">
