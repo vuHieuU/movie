@@ -93,6 +93,7 @@ class PayController extends Controller
     {
         // dd($request->all());
                // Lấy thông tin đơn hàng từ request
+               
     $selectedDate = session('selectedDate');
     $selectedHour = session('selectedHour');
     $selectedShowTimeId = session('selectedShowTimeId');

@@ -1,3 +1,4 @@
+<div id="div1">
 <header id="masthead" class="site-header header-default  light">
     <div class="container">
         <div class="amy-inner">
@@ -72,12 +73,34 @@
 
                     </div>
                     <ul id="rap-list" class="rap-list">
-
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                            $("a.li").click(function(event) {
+                                event.preventDefault(); // Ngăn chuyển trang khi nhấn vào liên kết.
+                                var cinemaId = $(this).data('cinema-id'); // Lấy id của rạp từ thuộc tính data
+                                $.ajax({
+                                    url: "/home/" + cinemaId,
+                                    success: function(result) {
+                                        $("#div1").html(result);
+                                    }
+                                });
+                            });
+                        });
+                    </script>
                         @foreach (\App\Models\cinema::get() as $cinema)
-                        <a href="{{ route('homeCinema',[$cinema->id]) }}"><li onclick="selectRap('{{ $cinema->name }}')"> {{ $cinema->name }} </li></a>
+                        {{-- <a href="{{ route('homeCinema',[$cinema->id]) }}">
+                            <li onclick="selectRap('{{ $cinema->name }}')"> {{ $cinema->name }} </li></a> --}}
+                           
+                                <a class="li" href="#" data-cinema-id="{{ $cinema->id }}">
+                                    <li onclick="selectRap('{{ $cinema->name }}')"> {{ $cinema->name }}</li>
+                                </a>
+                            
                         @endforeach
-                       
+                        
                     </ul>
+                    
+
                 </div>
 
                 <script>
@@ -119,10 +142,12 @@
                                
                                 @endforeach --}}
                                 <a href="/" aria-current="page">Home</a>
+                                {{-- <a href="{{ route('homeCinema',[$cinema->id]) }}" aria-current="page">Home</a> --}}
+
                             </li>
                             <li id="menu-item-276"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-276">
-                                <a href="/film">Movie</a>
+                                <a href="/movie">Movie</a>
                                 <ul class="sub-menu">
                                     <li id="menu-item-143"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143">
@@ -198,3 +223,4 @@
     </div>
     <div id="amy-site-header-shadow"></div>
 </header>
+</div>
