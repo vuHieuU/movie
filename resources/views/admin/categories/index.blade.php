@@ -32,10 +32,9 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Categories List</h4>
-                          <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
+                          <h4 class="mb-3">Danh sách danh mục</h4>
                       </div>
-                      <a href="{{route("categories.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Cate</a>
+                      <a href="{{route("categories.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm danh mục</a>
                   </div>
               </div>
               <div class="col-lg-12">
@@ -52,7 +51,7 @@
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
                               </th>
-                              <th>Name</th>
+                              <th>Tên danh mục</th>
                               <th>Action</th>
                           </tr>
                       </thead>

@@ -39,12 +39,12 @@
                     <ul id="film" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
                             <a href="{{ route('films.index') }}">
-                                <i class="las la-minus"></i><span>List film</span>
+                                <i class="las la-minus"></i><span>Danh sách phim</span>
                             </a>
                         </li>
                         <li class="">
                             <a href="/categories/index">
-                                <i class="las la-minus"></i><span>List Cate</span>
+                                <i class="las la-minus"></i><span>Danh sách danh mục</span>
                             </a>
                         </li>
                         <li class="">
