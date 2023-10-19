@@ -558,15 +558,12 @@
 
                                                                                         <span>Thời gian còn lại</span>
                                                                                         <br>
-                                                                                        <span class="fs-1; fw-bold" id="thoiGianDemNguoc" style="font-size: 25px">11</span>
+                                                                                        <span class="fs-1; fw-bold" id="thoiGianDemNguoc" style="font-size: 25px"></span>
 
-                                                                                        {{-- <div class="container">
-                                                                                            <h1>Trang chạy hết thời gian</h1>
-                                                                                            <p>Thời gian đếm ngược: <span >10</span> giây</p>
-                                                                                        </div> --}}
+                                                                                    {{-- //thời gian chạy --}}
                                                                                         
                                                                                         <script>
-                                                                                            var thoiGianDemNguoc = 0.1; // Số phút bạn muốn đếm ngược
+                                                                                            var thoiGianDemNguoc = 10; // Số phút bạn muốn đếm ngược
                                                                                             
                                                                                             function demNguocVaChuyenTrang() {
                                                                                                 if (thoiGianDemNguoc <= 0) {
@@ -586,6 +583,7 @@
                                                                                                 demNguocVaChuyenTrang();
                                                                                             }
                                                                                             </script>
+                                                                                              {{-- //thời gian chạy --}}
                                                                                     </div>
 
                                                                                 </div>
