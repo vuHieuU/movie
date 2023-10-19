@@ -92,7 +92,7 @@
                         {{-- <a href="{{ route('homeCinema',[$cinema->id]) }}">
                             <li onclick="selectRap('{{ $cinema->name }}')"> {{ $cinema->name }} </li></a> --}}
                            
-                                <a class="li" href="#" data-cinema-id="{{ $cinema->id }}">
+                                <a class="li" href="" data-cinema-id="{{ $cinema->id }}">
                                     <li onclick="selectRap('{{ $cinema->name }}')"> {{ $cinema->name }}</li>
                                 </a>
                             
@@ -145,6 +145,10 @@
                                 {{-- <a href="{{ route('homeCinema',[$cinema->id]) }}" aria-current="page">Home</a> --}}
 
                             </li>
+                            <li id="menu-item-146"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
+                                <a href="{{ route('introduction') }}">Introduc</a>
+                            </li>
                             <li id="menu-item-276"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-276">
                                 <a href="/movie">Movie</a>
@@ -165,19 +169,16 @@
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
                                 <a href="/weeklyshowtime">Showtime</a>
                             </li>
-                            <li id="menu-item-146"
+                            {{-- <li id="menu-item-146"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
                                 <a href="">Top
                                     rated</a>
-                            </li>
+                            </li> --}}
                             <li id="menu-item-146"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
                                 <a href="{{ route('contact') }}">Contact</a>
                             </li>
-                            <li id="menu-item-146"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
-                                <a href="{{ route('introduction') }}">Introduc</a>
-                            </li>
+                            
                             @if (Auth()->check())
                                 <li id="menu-item-278 "
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
@@ -189,7 +190,7 @@
                                         </li>
                                         <li id="menu-item-140"
                                         class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                        <a href="/listFavoFilm/{{Auth::user()->id}}">Trang Yêu thích</a>
+                                        <a href="/FavoFilm/{{Auth::user()->id}}">Trang Yêu thích</a>
                                     </li>
                                     
                                     </ul>

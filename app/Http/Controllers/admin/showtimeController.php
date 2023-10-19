@@ -67,7 +67,7 @@ class showtimeController extends Controller
         $showtime = ShowTime::FindOrFail($id);
         $film = film::get();
         $room = room::get();
-        $seats = seats::get();
+        $seats = seats::orderBy('id', 'desc')->get();
         $cinema = cinema::get();
         return view('admin.showtime.edit',compact('showtime','film','room','seats','cinema'));
     }

@@ -582,7 +582,7 @@
                                                         <a href="/movie">   <li onclick="selectCategory('Tất cả film')">Tất cả Film</li>
                                                       
                                                       @foreach ($category as $item)
-                                                      <a class="li" href="#" data-category-id="{{ $item->id }}"> <li onclick="selectCategory('{{$item->name}}')">{{$item->name}}</li></a>
+                                                      <a class="li" href="" data-category-id="{{ $item->id }}"> <li onclick="selectCategory('{{$item->name}}')">{{$item->name}}</li></a>
                                                       @endforeach
                                                     </ul>
                                                   </div>

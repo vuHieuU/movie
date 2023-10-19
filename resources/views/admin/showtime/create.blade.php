@@ -113,15 +113,14 @@
                                         <label>Seats</label>
                                         <input type="checkbox" class="checkbox mx-3" id="checkbox1" data-master-checkbox>
                                         <div class="row container m-auto">
-                    
                                             @foreach ($seats as $item)
-                                            <div class="form-check mx-3 d-flex align-items-center">
+                                            <div class="form-check col-md-1">
                                                 <input class="checkbox form-check-input" name="id_seat[]" type="checkbox" value="{{ $item->id }}">
                                                 <label class="form-check-label mx-1">
-                                                  {{ $item->seat_number }}
+                                                    {{ $item->seat_number }}
                                                 </label>
-                                              </div>
-                                          @endforeach
+                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
