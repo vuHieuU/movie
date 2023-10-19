@@ -91,7 +91,7 @@
                 <li class=" ">
                     <a href="#news" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fa-solid fa-newspaper"></i>
-                        <span class="ml-4">News</span>
+                        <span class="ml-4">Tin tức</span>
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -102,7 +102,7 @@
                     <ul id="news" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
                             <a href="{{ route('news.index') }}">
-                                <i class="las la-minus"></i><span>List News</span>
+                                <i class="las la-minus"></i><span>Danh sách tin tức</span>
                             </a>
                         </li>
                     </ul>

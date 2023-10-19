@@ -36,7 +36,7 @@
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between">
                                     <div class="header-title">
-                                        <h4 class="card-title">Edit News</h4>
+                                        <h4 class="card-title">Cập nhật tin tức</h4>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -92,9 +92,41 @@
                                         </div>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary mr-2">Update News</button>
+                                    <div class="mb-3">
+                                        <h3>Seo Tags</h3>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="formFile" class="form-label">Meta Title</label>
+                                                <input class="form-control" type="text" name="meta_title" value="{{ $new->meta_title }}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="formFile" class="form-label">Meta Keyword</label>
+                                                <input class="form-control" type="text" name="meta_keyword" value="{{ $new->meta_keyword }}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="formFile" class="form-label">Meta Description</label>
+                                                <textarea name="meta_description" id="" rows="4" class="form-control">{{ $new->meta_description }}"</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
-                                    <a href="/role/index"><button type="submit" class="btn btn-danger">Back</button></a>
+                                    <a href="{{route("news.index")}}"><button type="submit" class="btn btn-danger">Back</button></a>
                                 </div>
                             </div>
                         </div>

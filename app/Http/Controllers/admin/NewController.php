@@ -42,6 +42,10 @@ class NewController extends Controller
         $request->file('thumbnail')->storeAs('public/images', $thumbnail);
 
         $data->thumbnail = $thumbnail;
+
+        $data->meta_title = $request->input('meta_title');;
+        $data->meta_keyword = $request->input('meta_keyword');
+        $data->meta_description = $request->input('meta_description');
       
         $data->save();
 
@@ -93,6 +97,10 @@ class NewController extends Controller
                 'thumbnail' => $thumbnail,
             ])->save();
         }
+
+        $data->meta_title = $request->input('meta_title');;
+        $data->meta_keyword = $request->input('meta_keyword');
+        $data->meta_description = $request->input('meta_description');
         
         $data->save();
 
