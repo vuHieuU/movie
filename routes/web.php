@@ -135,7 +135,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('create', [App\Http\Controllers\admin\categoryController::class, 'create'])->name('categories.create');
         Route::post('store', [App\Http\Controllers\admin\categoryController::class, 'store'])->name('categories.store');
         Route::get('edit/{id}', [App\Http\Controllers\admin\categoryController::class, 'edit'])->name('categories.edit');
-        Route::post('update/{id}', [App\Http\Controllers\admin\categoryController::class, 'update'])->name('categories.update');
+        Route::put('update/{id}', [App\Http\Controllers\admin\categoryController::class, 'update'])->name('categories.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\categoryController::class, 'destroy'])->name('categories.destroy');
     });
     // Danh sách Phim

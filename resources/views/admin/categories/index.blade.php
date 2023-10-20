@@ -52,6 +52,7 @@
                                   </div>
                               </th>
                               <th>Tên danh mục</th>
+                              <th>Trạng thái</th>
                               <th>Action</th>
                           </tr>
                       </thead>
@@ -65,6 +66,7 @@
                                   </div>
                               </td>
                               <td>{{ $item->name }}</td>
+                              <td>{{ $item->status == "1" ? "Hiện" : "Ẩn" }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"

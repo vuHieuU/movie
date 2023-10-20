@@ -11,6 +11,7 @@ class category extends Model
 
     protected $fillable = [
         'name',
+        'status',
     ];
     public function films()
     {

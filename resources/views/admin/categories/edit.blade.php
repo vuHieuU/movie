@@ -2,6 +2,8 @@
 @section('content')
     <form action="{{ route('categories.update', $cate->id) }}" method="POST" data-toggle="validator">
         @csrf
+        @method("PUT")
+        
         <div class="wrapper">
             <div class="modal fade" id="new-order" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -40,7 +42,6 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -52,6 +53,22 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Trạng thái</label>
+                                                <div>
+                                                    <input type="checkbox" name="status" {{ $cate->status == "1" ? "checked" : ""}} style="width: 60px; height: 60px;">
+                                                </div>
+                                                <div class="help-block with-errors"></div>
+                                                @if ($errors->has('status'))
+                                                    <span class="text-danger">{{ $errors->first('status') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     <a href="{{route("categories.index")}}" class="btn btn-danger text-white">Back</a>
