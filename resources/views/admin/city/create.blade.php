@@ -45,7 +45,7 @@
                                                 name="name" value="{{ old('name') }}">
                                                 @error('name')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                         </div>
