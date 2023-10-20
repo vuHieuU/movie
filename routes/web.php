@@ -45,8 +45,8 @@ Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class
 Route::get('/movie', [App\Http\Controllers\client\AllfilmController::class, 'index'])->name("movie");
 Route::get('/movie/{id}', [App\Http\Controllers\client\AllfilmController::class, 'show'])->name("movie");
 
-Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class, 'index'])->name("myaccount");
-Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index'])->name("editaccount");
+// Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class, 'index'])->name("myaccount");
+// Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index'])->name("editaccount");
 Route::get('/introduction', [App\Http\Controllers\client\InTroDucTionController::class, 'index'])->name("introduction");
 
 

@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en-US">
 <!--[if IE]><![endif]-->
@@ -6,15 +10,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="profile" href="https://gmpg.org/xfn/11" />
-    {{-- <title>{{$taitel}}</title> --}}
+    <title>{{$taitel}}</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    {{-- ảnh url --}}
-    <link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
-    {{-- ảnh url --}}
-    <link rel='dns-prefetch' href='//s.w.org' />
+{{-- ảnh url --}}
+<link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
+{{-- ảnh url --}}
+    {{-- <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Comments Feed"
@@ -90,13 +94,12 @@
             background: none !important;
             padding: 0 !important;
         }
-    </style>
-    <link rel='stylesheet' id='wp-block-library-css'
+    </style> --}}
+    {{-- <link rel='stylesheet' id='wp-block-library-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7'
         type='text/css' media='all' />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        
     <style id='global-styles-inline-css' type='text/css'>
         body {
             --wp--preset--color--black: #000000;
@@ -356,8 +359,8 @@
         type='text/css' media='all' />
     <link rel='stylesheet' id='elementor-global-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/global.css?ver=1651538276'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-post-142-css'
+        type='text/css' media='all' /> --}}
+    {{-- <link rel='stylesheet' id='elementor-post-142-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
         type='text/css' media='all' />
     <link rel='stylesheet' id='font-awesome-css'
@@ -365,8 +368,8 @@
         type='text/css' media='all' />
     <link rel='stylesheet' id='slick-style-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick.css?ver=5.9.7'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='slick-theme-css'
+        type='text/css' media='all' /> --}}
+    {{-- <link rel='stylesheet' id='slick-theme-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick-theme.css?ver=5.9.7'
         type='text/css' media='all' />
     <link rel='stylesheet' id='fancybox-css'
@@ -377,8 +380,8 @@
         type='text/css' media='all' />
     <link rel='stylesheet' id='mCustomScrollbar-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.mCustomScrollbar.css?ver=1.0.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='plyr-css'
+        type='text/css' media='all' /> --}}
+    {{-- <link rel='stylesheet' id='plyr-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/plyr.css?ver=1.0.0'
         type='text/css' media='all' />
     <link rel='stylesheet' id='amy-movie-style-css'
@@ -388,8 +391,12 @@
         .amy-primary-navigation ul.nav-menu>li>a::after {
             top: 70%;
         }
-    </style>
-    <link rel='stylesheet' id='csf-google-web-fonts-css'
+    </style> --}}
+
+
+{{-- <link rel="stylesheet" href="/template/assets/css/backend.css?v=1.0.0"> --}}
+
+    {{-- <link rel='stylesheet' id='csf-google-web-fonts-css'
         href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css'
         media='all' />
     <link rel='stylesheet' id='google-fonts-1-css'
@@ -403,8 +410,8 @@
         id='jquery-migrate-js'></script>
     <link rel="https://api.w.org/" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/" />
     <link rel="alternate" type="application/json"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/wp/v2/pages/142" />
-    <link rel="EditURI" type="application/rsd+xml" title="RSD"
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/wp/v2/pages/142" /> --}}
+    {{-- <link rel="EditURI" type="application/rsd+xml" title="RSD"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/xmlrpc.php?rsd" />
     <link rel="wlwmanifest" type="application/wlwmanifest+xml"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/wlwmanifest.xml" />
@@ -471,23 +478,7 @@
         #amy-page-header {
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
-    </style>
-
-
-
-    {{-- csss login --}}
-
-    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/plugincss.css?1681350496696" rel="stylesheet"
-        type="text/css" media="all" />
-
-
-    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/main.scss.css?1681350496696" rel="stylesheet"
-        type="text/css" media="all" />
-
-    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/account_oder_style.scss.css?1681350496696"
-        rel="stylesheet" type="text/css" media="all" />
-    {{-- csss login --}}
-
+    </style> --}}
 </head>
 
 <body
@@ -496,156 +487,178 @@
 
         @extends('client.layout.main.main')
         @section('contact')
-            <div class="main-index mt-5">
 
-                <div class="page-content-account">
-                    <div class="container">
+
+        <form method="POST" data-toggle="validator" id="profile-form" action="{{ route('profile') }}" enctype="multipart/form-data">
+            @csrf
+          
+                    <div class="container my-5 ">
                         <div class="row">
-                            <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-                                <div class="d-group">
-                                    <div class="left-col">
-                                        <div class="group-login group-log">
-                                            <h1>
-                                                Đăng ký tài khoản
-                                            </h1>
-                                            <form method="post" action="{{ route('register') }}" id="customer_register"
-                                                accept-charset="UTF-8"><input name="FormType" type="hidden"
-                                                    value="customer_register" /><input name="utf8" type="hidden"
-                                                    value="true" /><input type="hidden"
-                                                    id="Token-44a10eed35c1439c8d3f51fdfbaf03e4" name="Token" />
-                                                <script src="https://www.google.com/recaptcha/api.js?render=6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK"></script>
-                                                <script>
-                                                    grecaptcha.ready(function() {
-                                                        grecaptcha.execute("6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK", {
-                                                            action: "customer_register"
-                                                        }).then(function(token) {
-                                                            document.getElementById("Token-44a10eed35c1439c8d3f51fdfbaf03e4").value = token
-                                                        });
-                                                    });
-                                                </script>
-                                                @csrf
-                                                <p class="error">
-
-                                                </p>
-                                                <fieldset class="form-group">
-                                                    <label>Name <span class="required">*</span></label>
-                                                    <input id="name" type="text"
-                                                        class="form-control @error('name') is-invalid @enderror"
-                                                        name="name" value="{{ old('name') }}" required
-                                                        autocomplete="name" autofocus>
-
-                                                    @error('name')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </fieldset>
-
-                                                <fieldset class="form-group">
-                                                    <label>Email <span class="required">*</span></label>
-                                                    <input id="email" type="email"
-                                                        class="form-control @error('email') is-invalid @enderror"
-                                                        name="email" value="{{ old('email') }}" required
-                                                        autocomplete="email">
-
-                                                    @error('email')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </fieldset>
-                                                <fieldset class="form-group">
-                                                    <label>Password <span class="required">*</span></label>
-                                                    <input id="password" type="password"
-                                                        class="form-control @error('password') is-invalid @enderror"
-                                                        name="password" required autocomplete="new-password">
-
-                                                    @error('password')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </fieldset>
-                                                <fieldset class="form-group">
-                                                    <label>Confirm Password <span class="required">*</span> </label>
-                                                    <input id="password-confirm" type="password" class="form-control"
-                                                        name="password_confirmation" required autocomplete="new-password">
-                                                </fieldset>
-                                                <button class="btn-login" type="submit" value="Đăng ký">Đăng ký</button>
-                                            </form>
-                                            <div class="block social-login--facebooks">
-                                                <p class="a-center">
-                                                    <span>Hoặc đăng nhập bằng</span>
-                                                </p>
-                                                <script>
-                                                    function loginFacebook() {
-                                                        var a = {
-                                                                client_id: "947410958642584",
-                                                                redirect_uri: "https://store.mysapo.net/account/facebook_account_callback",
-                                                                state: JSON.stringify({
-                                                                    redirect_url: window.location.href
-                                                                }),
-                                                                scope: "email",
-                                                                response_type: "code"
-                                                            },
-                                                            b = "https://www.facebook.com/v3.2/dialog/oauth" + encodeURIParams(a, !0);
-                                                        window.location.href = b
-                                                    }
-
-                                                    function loginGoogle() {
-                                                        var a = {
-                                                                client_id: "997675985899-pu3vhvc2rngfcuqgh5ddgt7mpibgrasr.apps.googleusercontent.com",
-                                                                redirect_uri: "https://store.mysapo.net/account/google_account_callback",
-                                                                scope: "email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile",
-                                                                access_type: "online",
-                                                                state: JSON.stringify({
-                                                                    redirect_url: window.location.href
-                                                                }),
-                                                                response_type: "code"
-                                                            },
-                                                            b = "https://accounts.google.com/o/oauth2/v2/auth" + encodeURIParams(a, !0);
-                                                        window.location.href = b
-                                                    }
-
-                                                    function encodeURIParams(a, b) {
-                                                        var c = [];
-                                                        for (var d in a)
-                                                            if (a.hasOwnProperty(d)) {
-                                                                var e = a[d];
-                                                                null != e && c.push(encodeURIComponent(d) + "=" + encodeURIComponent(e))
-                                                            } return 0 == c.length ? "" : (b ? "?" : "") + c.join("&")
-                                                    }
-                                                </script>
-                                                <a href="{{ url('auth/facebook') }}" class="social-login--facebook"
-                                                    onclick="loginFacebook()"><img width="129px" height="37px"
-                                                        alt="facebook-login-button"
-                                                        src="//bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"></a>
-                                                <a href="{{ route('loginGoogle') }}" class="social-login--google"
-                                                    onclick="loginGoogle()"><img width="129px" height="37px"
-                                                        alt="google-login-button"
-                                                        src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"></a>
+                            <div class="col-sm-12">
+                                <div class="card">
+                                   <h2 class="p-4">Cập nhật tài khoản cá nhân</h2>
+                                    <div class="card-body p-5">
+                                        <div class="row mt-4">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Tên người dùng *</label>
+                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
+                                                        data-errors="Please Enter Name." name="name" value="{{Auth::User()->name}}">
+                                                    <div class="help-block with-errors">
+                                                    @if ($errors->has('name'))
+                                                    <span class="text-danger">{{ $errors->first('name') }}</span>
+                                                    @endif
+                                                </div>
+                                                </div>
                                             </div>
-
+                                        </div>
+                                        <div class="row mt-4">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Số điện thoại *</label>
+                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Duration"
+                                                        data-errors="Please Enter Name." name="phone" value="{{Auth::User()->phone}}">
+                                                    <div class="help-block with-errors">
+                                                    @if ($errors->has('phone'))
+                                                    <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                                @endif
+                                            </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="row mt-4">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Email</label>
+                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
+                                                        data-errors="Please Enter Name." name="email" value="{{Auth::User()->email}}" disabled >
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Avatar *</label>
+                                                    <input type="file" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
+                                                        data-errors="Please Enter Name." name="logo" value="{{Auth::User()->logo}}">
+                                                    <div class="help-block with-errors">
+                                                    @if ($errors->has('logo'))
+                                                    <span class="text-danger">{{ $errors->first('logo') }}</span>
+                                                @endif
+                                            </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="row mt-4">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Address *</label>
+                                                    <input type="text" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
+                                                        data-errors="Please Enter Name." name="address" value="{{Auth::User()->address}}">
+                                                    <div class="help-block with-errors">
+                                                    @if ($errors->has('address'))
+                                                    <span class="text-danger">{{ $errors->first('address') }}</span>
+                                                @endif
+                                            </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="gender">Giới tính *</label>
+                                                    <select class="py-3 bg-blue rounded-4 border form-control-lg" id="gender" data-errors="Please Select Gender." name="gender">
+                                                        <option value="Nam" {{ Auth::User()->gender === 'male' ? 'selected' : '' }}>Nam</option>
+                                                        <option value="Nữ" {{ Auth::User()->gender === 'female' ? 'selected' : '' }}>Nữ</option>
+                                                        <option value="Khác" {{ Auth::User()->gender === 'other' ? 'selected' : '' }}>Khác</option>
+                                                    </select>
+                                                    <div class="help-block with-errors">
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                         </div>
+                                         <div class="row mt-4">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="change_password">
+                                                        <input type="checkbox" id="change_password" name="change_password">
+                                                        Thay đổi mật khẩu
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4" id="old_passwords" style="display: none;">
+                                            <div class="col-md-12">
+                                                <label for="old_password">Mật khẩu hiện tại *</label>
+                                                <input type="password" class="py-3 bg-blue rounded-4 border form-control" placeholder="Nhập mật khẩu hiện tại" name="old_password">
+                                                @if ($errors->has('old_password'))
+                                                    <span class="text-danger">{{ $errors->first('old_password') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4" id="new_passwords" style="display: none;">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="new_password">Mật khẩu mới *</label>
+                                                    <input type="password" class="py-3 bg-blue rounded-4 border form-control" placeholder="Nhập mật khẩu mới" name="new_password">
+                                                    @if ($errors->has('new_password'))
+                                                    <span class="text-danger">{{ $errors->first('new_password') }}</span>
+                                                @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4" id="confim_passwords" style="display: none;">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="confim_password">Xác nhận mật khẩu *</label>
+                                                    <input type="password" class="py-3 bg-blue rounded-4 border form-control" placeholder="Nhập lại mật khẩu mới" name="new_password_confirmation">
+                                                    @if ($errors->has('new_password_confirmation'))
+                                                    <span class="text-danger">{{ $errors->first('new_password_confirmation') }}</span>
+                                                    @endif
+                                                </div>
+                                            </div>
                                         </div>
 
-                                    </div>
-                                    <div class="right-col">
-                                        <h4>
-                                            Quyền lợi với thành viên
-                                        </h4>
-                                        <div>
-                                            <p>Nhiều thể loại phim</p>
-                                            <p>Film đa dạng </p>
-                                            <p>Đặt vé rễ dàng</p>
-                                            <p>Tích điểm đổi quà</p>
-                                            <p>Được giảm giá cho lần mua tiếp theo lên đến 10% </p>
+                                        {{-- <div class="mt-5">
+                                            <button type="submit" class="btn btn-primary mr-2 fs-3 rounded-4">Cập Nhật</button>
+                                            <button type="reset" class="btn btn-danger mr-2 fs-3 rounded-4">Reset</button>
+                                            <a href="{{ url()->previous() }}" class="btn btn-secondary fs-3 rounded-4 float-right">
+                                                <span class="mr-1">&larr;</span> Back
+                                            </a>
                                         </div>
-                                        <a href="/login" class="btn-register-default">Đăng nhập</a>
+                                         --}}
+
+                                       <div class="mt-5">
+                                          <button type="submit" class="btn btn-primary mr-2 fs-3 rounded-4">Cập Nhật</button>
+                                        <button type="reset" class="btn btn-danger mr-2 fs-3 rounded-4">Reset</button>
+                                        <a href="/myaccount" class="btn btn-danger mr-2 fs-3 rounded-4">Back</a>
+                                       </div>
+
+                                        
+                                      
+                                        {{-- <a href="/role/index"><button type="submit" class="btn btn-danger">Back</button></a> --}}
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Page end  -->
                     </div>
-                </div>
-            </div>
+                
+        </form>
+    </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#change_password').change(function() {
+            if ($(this).is(':checked')) {
+                $('#old_passwords').show();
+                $('#new_passwords').show();
+                $('#confim_passwords').show();
+            } else {
+                $('#old_passwords').hide();
+                $('#new_passwords').hide();
+                $('#confim_passwords').hide();
+            }
+        });
+    });
+</script>
         @endsection

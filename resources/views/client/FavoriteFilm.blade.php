@@ -1049,9 +1049,9 @@ h1.entry-title {
     }
 }
 </style> 
-<style>
-    
-</style>
+{{-- ảnh url --}}
+<link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
+{{-- ảnh url --}}
 {{-- <link rel='stylesheet' id='swiper-css'
 href='https://demo.ovatheme.com/aovis/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=8.4.5'
 type='text/css' media='all' />
