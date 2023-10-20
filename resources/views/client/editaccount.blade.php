@@ -538,10 +538,10 @@
                                                 <div class="form-group">
                                                     <label>Avatar *</label>
                                                     <input type="file" class="py-3 bg-blue rounded-4 border form-control" placeholder="Enter Name"
-                                                        data-errors="Please Enter Name." name="logo" value="{{Auth::User()->logo}}">
+                                                        data-errors="Please Enter Name." name="avatar" value="{{Auth::User()->avatar}}">
                                                     <div class="help-block with-errors">
-                                                    @if ($errors->has('logo'))
-                                                    <span class="text-danger">{{ $errors->first('logo') }}</span>
+                                                    @if ($errors->has('avatar'))
+                                                    <span class="text-danger">{{ $errors->first('avatar') }}</span>
                                                 @endif
                                             </div>
                                                 </div>
@@ -615,7 +615,6 @@
                                                 </div>
                                             </div>
                                         </div>
-<<<<<<< HEAD
                                         <div class="mt-5">
                                             <button type="submit" class="btn btn-primary mr-2 fs-3 rounded-4">Cập Nhật</button>
                                             <button type="reset" class="btn btn-danger mr-2 fs-3 rounded-4">Reset</button>
@@ -623,15 +622,7 @@
                                                 <span class="mr-1">&larr;</span> Back
                                             </a>
                                         </div>
-                                        
-=======
-                                       <div class="mt-5">
-                                          <button type="submit" class="btn btn-primary mr-2 fs-3 rounded-4">Cập Nhật</button>
-                                        <button type="reset" class="btn btn-danger mr-2 fs-3 rounded-4">Reset</button>
-                                        <a href="/myaccount" class="btn btn-danger mr-2 fs-3 rounded-4">Back</a>
-                                       </div>
->>>>>>> efc881d293efda8098dac4a8a01553a515b992b9
-                                        
+                                                                        
                                       
                                         {{-- <a href="/role/index"><button type="submit" class="btn btn-danger">Back</button></a> --}}
                                     </div>

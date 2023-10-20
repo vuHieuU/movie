@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\FacebookController;
+use App\Http\Controllers\Auth\GitHubController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\cityController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
+
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Controller;
 /*
@@ -59,6 +62,8 @@ Route::get('/FavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::cl
 Route::get('auth/google', [GoogleController::class, "redirectToGoogle"])->name("loginGoogle");
 Route::get('auth/google/callback', [GoogleController::class, "handleGoogleCallback"]);
 
+Route::get('/auth/redirect', [GitHubController::class, "redirectToGitHub"])->name('loginGithub');
+Route::get('/auth/callback', [GitHubController::class, "handleGitHubCallback"]);
 
 // Route::get('/detail_film/pay/{id}', [App\Http\Controllers\client\Detail_filmController::class, 'show']);
 

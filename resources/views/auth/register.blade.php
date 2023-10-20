@@ -531,12 +531,16 @@ rel="stylesheet" type="text/css" media="all" />
                                              <fieldset class="form-group">	
                                                   <label>Email <span class="required">*</span></label>
                                                   <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
                                                   @error('email')
                                                       <span class="invalid-feedback" role="alert">
                                                           <strong>{{ $message }}</strong>
                                                       </span>
                                                   @enderror
+                                                  @if (session('message'))
+<div class="alert alert-danger">
+    {{ session('message') }}
+</div>
+@endif
                                              </fieldset>
                                              <fieldset class="form-group">
                                                   <label>Password <span class="required">*</span></label>
@@ -559,7 +563,7 @@ rel="stylesheet" type="text/css" media="all" />
                                                        <span>Hoặc đăng nhập bằng</span>
                                                   </p>
                                                   <script>function loginFacebook(){var a={client_id:"947410958642584",redirect_uri:"https://store.mysapo.net/account/facebook_account_callback",state:JSON.stringify({redirect_url:window.location.href}),scope:"email",response_type:"code"},b="https://www.facebook.com/v3.2/dialog/oauth"+encodeURIParams(a,!0);window.location.href=b}function loginGoogle(){var a={client_id:"997675985899-pu3vhvc2rngfcuqgh5ddgt7mpibgrasr.apps.googleusercontent.com",redirect_uri:"https://store.mysapo.net/account/google_account_callback",scope:"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile",access_type:"online",state:JSON.stringify({redirect_url:window.location.href}),response_type:"code"},b="https://accounts.google.com/o/oauth2/v2/auth"+encodeURIParams(a,!0);window.location.href=b}function encodeURIParams(a,b){var c=[];for(var d in a)if(a.hasOwnProperty(d)){var e=a[d];null!=e&&c.push(encodeURIComponent(d)+"="+encodeURIComponent(e))}return 0==c.length?"":(b?"?":"")+c.join("&")}</script>
-                                                  <a href="{{url('auth/facebook')}}" class="social-login--facebook" onclick="loginFacebook()"><img width="129px" height="37px" alt="facebook-login-button" src="//bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"></a>
+                                                  <a href="{{route('loginGithub')}}" class="social-login--github" onclick="loginGithub()"><img width="129px" height="37px" alt="github-login-button" src="//bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"></a>
                                                   <a href="{{route('loginGoogle')}}" class="social-login--google" onclick="loginGoogle()"><img width="129px" height="37px" alt="google-login-button" src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"></a>
                                              </div>
           

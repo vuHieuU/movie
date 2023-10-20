@@ -32,22 +32,22 @@ class AuthController extends Controller
         $user = User::find(\auth()->id()); // ham tu lay ID roi
         $user->name = $request->name;
         $user->phone = $request->phone;
-        $user->logo = $request->logo;
+        $user->avatar = $request->avatar;
         $user->gender = $request->gender;
         $user->address = $request->address;
 
-        if ($request->hasFile('logo')) {
-            $logo = $request->file('logo')->getClientOriginalName();
-            $request->file('logo')->storeAs('public/images', $logo);
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar')->getClientOriginalName();
+            $request->file('avatar')->storeAs('public/images', $avatar);
 
-            $oldLogo = $user->logo;
+            $oldLogo = $user->avatar;
 
-            if ($oldLogo !== $logo) {
+            if ($oldLogo !== $avatar) {
                 Storage::delete('public/images/' . $oldLogo);
             }
 
             $user->fill([
-                'logo' => $logo,
+                'avatar' => $avatar,
             ])->save();
         }
 

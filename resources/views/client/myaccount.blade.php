@@ -499,7 +499,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="rounded-circle overflow-hidden" style="width: 150px; height: 150px;">
-                                <img src="{{ asset('/storage/images/' . Auth::user()->logo) }}" style="width: 100%; height: 100%;">
+                                <img src="{{ asset('/storage/images/' . Auth::user()->avatar) }}" style="width: 100%; height: 100%;">
                             </div>
                         </div>
                         
