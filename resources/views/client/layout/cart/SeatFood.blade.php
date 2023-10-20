@@ -541,6 +541,7 @@
                                                                                             <path
                                                                                                 d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
                                                                                         </svg>
+                                                                                        
                                                                                         <span>Ghế đang chọn</span>
                                                                                     </div>
                                                                                     <div class="col-md-3 col-sm-4">
@@ -553,6 +554,37 @@
                                                                                         </svg>
                                                                                         <span>Ghế đặt trước</span>
                                                                                     </div>
+                                                                                    <div class="col-md-3 col-sm-4">
+
+                                                                                        <span>Thời gian còn lại</span>
+                                                                                        <br>
+                                                                                        <span class="fs-1; fw-bold" id="thoiGianDemNguoc" style="font-size: 25px"></span>
+
+                                                                                    {{-- //thời gian chạy --}}
+                                                                                        
+                                                                                        <script>
+                                                                                            var thoiGianDemNguoc = 10; // Số phút bạn muốn đếm ngược
+                                                                                            
+                                                                                            function demNguocVaChuyenTrang() {
+                                                                                                if (thoiGianDemNguoc <= 0) {
+                                                                                                    // Hết thời gian, chuyển trang
+                                                                                                    window.location.href = "{{ route('filmDetail',[$showTime->id]) }} "; // Sử dụng named route của Laravel
+                                                                                                } else {
+                                                                                                    var minutes = Math.floor(thoiGianDemNguoc);
+                                                                                                    var seconds = (thoiGianDemNguoc - minutes) * 60;
+                                                                                                    document.getElementById('thoiGianDemNguoc').textContent = minutes + " : " + Math.floor(seconds) + " ";
+                                                                                                    thoiGianDemNguoc -= 1/60; // Trừ 1 phút (1/60) sau mỗi giây
+                                                                                                    setTimeout(demNguocVaChuyenTrang, 1000); // Đếm ngược mỗi giây
+                                                                                                }
+                                                                                            }
+                                                                                            
+                                                                                            // Bắt đầu đếm ngược khi trang đã tải hoàn tất
+                                                                                            window.onload = function() {
+                                                                                                demNguocVaChuyenTrang();
+                                                                                            }
+                                                                                            </script>
+                                                                                              {{-- //thời gian chạy --}}
+                                                                                    </div>
 
                                                                                 </div>
 
@@ -560,38 +592,76 @@
                                                                                   <img class="img-responsive" src="{{ asset('storage/images/ic-screen.png') }}">
                                                                                        
                                                                                 </div>
-                                                                                <div class="row mt-4">
+                                                                                <div class="row mt-4 " style="max-width: 700px;margin: auto">
+                                                                                    <style>
+                                                                                        .iconchuadat {
+                                                                                          color: #BABBC3; /* Default color */
+                                                                                          font-size: 25px; /* Default font size */
+                                                                                          transition: color 0.3s; /* Smooth transition on color change */
+                                                                                        }
+                                                                                      
+                                                                                        .iconchuadat:hover {
+                                                                                          color: #03599D; /* Change the color to red on hover */
+                                                                                        }
+                                                                                        .fa-couch-icon{
+                                                                                      
+                                                                                        }
+                                                                                      </style>
+                                                                                      @foreach ($seats as $item)
+                                                                                      <div class="col-md-1 col-sm-2 col-xs-3 text-center seat"
+                                                                                          id="{{ $item->id }}"
+                                                                                          data-price="{{ $item->price }}"
+                                                                                          onclick="toggleSeat(this)">
 
-                                                                                    @foreach ($seats as $item)
-                                                                                        <div class="col-md-1 col-sm-2 col-xs-3 text-center seat"
-                                                                                            id="{{ $item->id }}"
-                                                                                            data-price="{{ $item->price }}"
-                                                                                            onclick="toggleSeat(this)">
-
-                                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                                style="fill: #BABBC3;font-size: 20px;"
-                                                                                                height="1em"
-                                                                                                viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                                                                                <path
-                                                                                                    d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
-
-                                                                                            </svg>
 
 
-                                                                                            @if ($item->isActive == 1)
-                                                                                                <p class="">
-                                                                                                    {{ $item->seat_number }}
-                                                                                                </p>
-                                                                                            @else
-                                                                                                <button
-                                                                                                    class="btn btn-danger"
-                                                                                                    disabled>
-                                                                                                    {{ $item->seat_number }}
-                                                                                                    (Đã đặt)
-                                                                                                </button>
-                                                                                            @endif
-                                                                                        </div>
-                                                                                    @endforeach
+
+{{-- <i class="fa-solid fa-couch fa-couch-icon iconchuadat"></i> --}}
+
+
+                                                                                          @if ($item->isActive == 1)
+                                                                                          <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4">
+                                                                                              <span class="fs-6">  {{ $item->seat_number }}</span>
+                                                                                          </i>
+                                                                                                
+                                                                                            
+                                                                                          @else
+                                                                                          <i class="fa-solid fa-couch fa-couch-icon mb-4" style="font-size: 25px;color: #FD2802;" disabled>
+                                                                                              <span class="fs-6 ">  {{ $item->seat_number }}</span></i>
+                                                                                              {{-- <button
+                                                                                              
+                                                                                                  class="btn btn-danger"
+                                                                                                 disabled>
+                                                                                                  
+                                                                                                  
+                                                                                              </button> --}}
+                                                                                          @endif
+                                                                                      </div>
+                                                                                  @endforeach
+                                                                                  <script>
+                                                                                    $(document).ready(function() {
+                                                                                        var selectedSeats = [];
+                                                                                        var maxSeats = 8; // Số lượng ghế tối đa có thể chọn
+                                                                                
+                                                                                        $('.iconchuadat').click(function() {
+                                                                                            var seat = $(this);
+                                                                                            
+                                                                                            if (selectedSeats.length < maxSeats || seat.hasClass('selected')) {
+                                                                                                if (seat.hasClass('selected')) {
+                                                                                                    // Trả lại màu ban đầu và loại bỏ khỏi danh sách ghế đã chọn
+                                                                                                    seat.css('color', '#BABBC3');
+                                                                                                    seat.removeClass('selected');
+                                                                                                    selectedSeats.splice(selectedSeats.indexOf(seat), 1);
+                                                                                                } else {
+                                                                                                    // Thay đổi màu và thêm vào danh sách ghế đã chọn
+                                                                                                    seat.css('color', '#03599D');
+                                                                                                    seat.addClass('selected');
+                                                                                                    selectedSeats.push(seat);
+                                                                                                }
+                                                                                            }
+                                                                                        });
+                                                                                    });
+                                                                                </script>
                                                                                 </div>
                                                                                 <script>
                                                                                     const maxSeats = 8; // Số lượng ghế tối đa được chọn
@@ -681,7 +751,7 @@
                                                                                 </div>
 
                                                                                 <div class="col-md-3 col-sm-4">
-                                                                                    <svg style="font-size: 30px; fill: #BABBC3"
+                                                                                    <svg style="font-size: 30px; fill: rgba(0, 128, 0, 0.486)"
                                                                                         xmlns="http://www.w3.org/2000/svg"
                                                                                         height="1em"
                                                                                         viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -694,7 +764,7 @@
 
 
                                                                                 <div class="col-md-3 col-sm-4">
-                                                                                    <svg style="font-size: 30px; fill: #BABBC3"
+                                                                                    <svg style="font-size: 30px; fill: rgba(255, 166, 0, 0.492)"
                                                                                         xmlns="http://www.w3.org/2000/svg"
                                                                                         height="1em"
                                                                                         viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -705,7 +775,17 @@
                                                                                         style="color: gray ;">Ghế Đôi</p>
                                                                                 </div>
 
-
+                                                                                <div class="col-md-3 col-sm-4">
+                                                                                    <svg style="font-size: 30px; fill: rgba(128, 0, 128, 0.486)"
+                                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                                        height="1em"
+                                                                                        viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                        <path
+                                                                                            d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+                                                                                    </svg>
+                                                                                    <p class="fs-2 mt-3"
+                                                                                        style="color: gray ;">Ghế nằm</p>
+                                                                                </div>
                                                                             </div>
                                                                             {{-- food --}}
                                                                             <div>
@@ -862,8 +942,8 @@
                                                                                     class=" d-flex align-items-center justify-content-between mb-5 px-4">
                                                                                     <div
                                                                                         class="d-flex align-items-center gap-2">
-                                                                                        <i
-                                                                                            class="fa-regular fa-calendar-days"></i>
+                                                                                        {{-- <i
+                                                                                            class="fa-regular fa-calendar-days"></i> --}}
                                                                                         <span>Ghế (Chair)</span>
                                                                                     </div>
 

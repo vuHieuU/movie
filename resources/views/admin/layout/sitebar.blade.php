@@ -1,7 +1,7 @@
 <div class="iq-sidebar  sidebar-default ">
     <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
         <a href="../backend/index.html" class="header-logo">
-            <img src="/template/assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo"><h5 class="logo-title light-logo ml-3">POSDash</h5>
+            <img src="../storage/images/img_66.png" class="img-fluid rounded-normal light-logo w-100" alt="logo">
         </a>
         <div class="iq-menu-bt-sidebar ml-0">
             <i class="las la-bars wrapper-menu"></i>
@@ -39,12 +39,12 @@
                     <ul id="film" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
                             <a href="{{ route('films.index') }}">
-                                <i class="las la-minus"></i><span>List film</span>
+                                <i class="las la-minus"></i><span>Danh sách phim</span>
                             </a>
                         </li>
                         <li class="">
                             <a href="/categories/index">
-                                <i class="las la-minus"></i><span>List Cate</span>
+                                <i class="las la-minus"></i><span>Danh sách danh mục</span>
                             </a>
                         </li>
                         <li class="">
@@ -91,7 +91,7 @@
                 <li class=" ">
                     <a href="#news" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fa-solid fa-newspaper"></i>
-                        <span class="ml-4">News</span>
+                        <span class="ml-4">Tin tức</span>
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -102,7 +102,7 @@
                     <ul id="news" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
                             <a href="{{ route('news.index') }}">
-                                <i class="las la-minus"></i><span>List News</span>
+                                <i class="las la-minus"></i><span>Danh sách tin tức</span>
                             </a>
                         </li>
                     </ul>

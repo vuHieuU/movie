@@ -22,7 +22,7 @@ class CategoriesRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|unique:categories',
+            'name' => 'required|string',
         ];
     }
 
@@ -31,7 +31,7 @@ class CategoriesRequest extends FormRequest
         return [
             'name.required' => ':attribute không được để trống',
             'name.string' => ':attribute phải là ký tự chữ',
-            'name.unique' => 'Đã tồn tại cơ sở dữ liệu.',
+            // 'name.unique' => 'Đã tồn tại cơ sở dữ liệu.',
         ];
     }
 

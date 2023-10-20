@@ -93,6 +93,7 @@ class PayController extends Controller
     {
         // dd($request->all());
                // Lấy thông tin đơn hàng từ request
+               
     $selectedDate = session('selectedDate');
     $selectedHour = session('selectedHour');
     $selectedShowTimeId = session('selectedShowTimeId');
@@ -171,7 +172,7 @@ class PayController extends Controller
             $ticket->film_id = $ShowTime->film->id;
             $ticket->coupon_code = $couponCode;
             $ticket->total = $total;
-        
+            // dd($total);
             $ticket->save();
             // dd($ticket);
         
@@ -191,7 +192,7 @@ class PayController extends Controller
          $cinemaRoom = session('cinemaRoom');
          $selectedSeatsValue = session('selectedSeatsValue');
          $cinemaName = session('cinemaName');
-         $total = session('total');
+         $total = $_GET['vnp_Amount'] / 100;
          $categories = $ShowTime->film->categories;
         //  $categories
         //  dd($film_names);

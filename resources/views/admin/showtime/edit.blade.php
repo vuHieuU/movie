@@ -117,7 +117,7 @@
                                         <div class="row container m-auto">
                     
                                             @foreach ($seats as $item)
-                                            <div class="form-check mx-3 d-flex align-items-center">
+                                            <div class="form-check col-md-1">
                                                 <input class="checkbox form-check-input" name="id_seat[]" type="checkbox"
                                                 {{ $showtime->seats->contains('name',$item->name) ? 'checked':'' }} value="{{ $item->id }}">
                                                 <label class="form-check-label mx-1">

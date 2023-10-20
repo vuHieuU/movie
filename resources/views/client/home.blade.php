@@ -2,9 +2,10 @@
 @section('contact')
     {{-- menu --}}
     <div id="main">
-        <div id="content" class="site-content">
+        <div id="content" class="site-content ">
 
-            <div data-elementor-type="wp-page" data-elementor-id="84" class="elementor elementor-84">
+            <div data-elementor-type="wp-page" data-elementor-id="84" class="elementor elementor-84 ">
+               
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-08975e9 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
                     data-id="08975e9" data-element_type="section">

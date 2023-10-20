@@ -32,10 +32,9 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">New List</h4>
-                          <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
+                          <h4 class="mb-3">Danh sách tin tức</h4>
                       </div>
-                      <a href="{{route("news.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add New</a>
+                      <a href="{{route("news.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm mới tin</a>
                   </div>
               </div>
               <div class="col-lg-12">
@@ -54,7 +53,7 @@
                               </th>
                               <th>Tiêu đề</th>
                               <th>Thumbnail</th>
-                              <th>Nội dung chính</th>
+                              <th>Trạng thái</th>
                               <th>Action</th>
                           </tr>
                       </thead>
@@ -71,7 +70,7 @@
                               <td>
                                 <img src="{{asset('/storage/images/'.$item->thumbnail)}}" style="height: 200px;width:150px;">
                               </td>
-                              <td>{{ $item->content }}</td>
+                              <td>{{ $item->status == "1" ? "Hiện" : "Ẩn" }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"

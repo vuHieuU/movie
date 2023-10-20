@@ -1,18 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+<!--[if IE]><![endif]-->
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="profile" href="https://gmpg.org/xfn/11" />
-    {{-- <title>{{ $title }}</title> --}}
+    <title>{{$taitel}}</title>
     <meta name='robots' content='max-image-preview:large' />
-    {{-- <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+{{-- ảnh url --}}
+<link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
+{{-- ảnh url --}}
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Comments Feed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" />
     <script type="text/javascript">
-        window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "http:\/\/demo.amytheme.com\/movie\/demo\/elementor-single-cinema\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.7" } };
+        window._wpemojiSettings = {
+            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/",
+            "svgExt": ".svg",
+            "source": {
+                "concatemoji": "http:\/\/demo.amytheme.com\/movie\/demo\/elementor-single-cinema\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.7"
+            }
+        };
         /*! This file is auto-generated */
-        !function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { var a = String.fromCharCode; p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0); e = i.toDataURL(); return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (!p || !p.fillText) return !1; switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]); case "emoji": return !s([10084, 65039, 8205, 55357, 56613], [10084, 65039, 8203, 55357, 56613]) }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji))) }(window, document, window._wpemojiSettings);
+        ! function(e, a, t) {
+            var n, r, o, i = a.createElement("canvas"),
+                p = i.getContext && i.getContext("2d");
+
+            function s(e, t) {
+                var a = String.fromCharCode;
+                p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0);
+                e = i.toDataURL();
+                return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL()
+            }
+
+            function c(e) {
+                var t = a.createElement("script");
+                t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)
+            }
+            for (o = Array("flag", "emoji"), t.supports = {
+                    everything: !0,
+                    everythingExceptFlag: !0
+                }, r = 0; r < o.length; r++) t.supports[o[r]] = function(e) {
+                if (!p || !p.fillText) return !1;
+                switch (p.textBaseline = "top", p.font = "600 32px Arial", e) {
+                    case "flag":
+                        return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([
+                            55356, 56826, 55356, 56819
+                        ], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418,
+                            56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447
+                        ], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203,
+                            56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447
+                        ]);
+                    case "emoji":
+                        return !s([10084, 65039, 8205, 55357, 56613], [10084, 65039, 8203, 55357, 56613])
+                }
+                return !1
+            }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports
+                .everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);
+            t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t
+                .readyCallback = function() {
+                    t.DOMReady = !0
+                }, t.supports.everything || (n = function() {
+                    t.readyCallback()
+                }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !
+                    1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function() {
+                    "complete" === a.readyState && t.readyCallback()
+                })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n
+                    .wpemoji)))
+        }(window, document, window._wpemojiSettings);
     </script>
     <style type="text/css">
         img.wp-smiley,
@@ -31,6 +98,8 @@
     <link rel='stylesheet' id='wp-block-library-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7'
         type='text/css' media='all' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        
     <style id='global-styles-inline-css' type='text/css'>
         body {
             --wp--preset--color--black: #000000;
@@ -278,10 +347,7 @@
         .has-x-large-font-size {
             font-size: var(--wp--preset--font-size--x-large) !important;
         }
-    </style> --}}
-{{-- ảnh url --}}
-    <link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
-    {{-- ảnh url --}}
+    </style>
     <link rel='stylesheet' id='elementor-icons-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0'
         type='text/css' media='all' />
@@ -294,8 +360,8 @@
     <link rel='stylesheet' id='elementor-global-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/global.css?ver=1651538276'
         type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-post-84-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-84.css?ver=1651785613'
+    <link rel='stylesheet' id='elementor-post-142-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
         type='text/css' media='all' />
     <link rel='stylesheet' id='font-awesome-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0'
@@ -326,11 +392,11 @@
             top: 70%;
         }
     </style>
-    {{-- <link rel='stylesheet' id='csf-google-web-fonts-css'
+    <link rel='stylesheet' id='csf-google-web-fonts-css'
         href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css'
         media='all' />
     <link rel='stylesheet' id='google-fonts-1-css'
-        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Condensed%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.9.7'
+        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.9.7'
         type='text/css' media='all' />
     <script type='text/javascript'
         src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery.min.js?ver=3.6.0'
@@ -340,18 +406,18 @@
         id='jquery-migrate-js'></script>
     <link rel="https://api.w.org/" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/" />
     <link rel="alternate" type="application/json"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/wp/v2/pages/84" />
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/wp/v2/pages/142" />
     <link rel="EditURI" type="application/rsd+xml" title="RSD"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/xmlrpc.php?rsd" />
     <link rel="wlwmanifest" type="application/wlwmanifest+xml"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/wlwmanifest.xml" />
     <meta name="generator" content="WordPress 5.9.7" />
-    <link rel="canonical" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/" />
-    <link rel='shortlink' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/' />
+    <link rel="canonical" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/now-playing/" />
+    <link rel='shortlink' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/?p=142' />
     <link rel="alternate" type="application/json+oembed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2F" />
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F" />
     <link rel="alternate" type="text/xml+oembed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2F&#038;format=xml" />
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" />
     <style type="text/css">
         body {
             font-family: "Roboto Condensed";
@@ -402,11 +468,117 @@
         }
 
         .amy-site-footer {
-            background-color: #606060;
+            background-color: #BABBC3;
         }
 
         #amy-page-header {
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
-    </style> --}}
-<link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
+    </style>
+</head>
+
+<body
+    class="page-template-default page page-id-142 amy-header-default  single-author elementor-default elementor-kit-5 elementor-page elementor-page-142">
+    <div id="page" class="hfeed site">
+
+        @extends('client.layout.main.main')
+        @section('contact')
+        <div class="container my-5">
+            <div class=" text-center">
+                <span class="fs-1 fw-bold">Thông tin cá nhân</span>
+                <p>Quản lý thông tin, quyền riêng tư để hoạt động hiệu quả cho bạn. <a href="/editaccount" class="fs-4 text-danger text-decoration-underline">Cập nhật tài khoản</a></p>
+            </div>
+            <div class="container mt-5">
+                <div class="border border-1 border-gray p-3 rounded">
+                    <h2 class="fs-2">Thông tin cơ bản</h2>
+                    <p>Một số thông tin có thể hiển thị cho những người khác đang sử dụng dịch vụ của Website</p>
+                    <p style="color: green">
+                        {{ session('success') }}
+                    </p>
+                    <div class="row py-3 border-1 border-bottom align-items-center mx-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Avatar</p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="rounded-circle overflow-hidden" style="width: 150px; height: 150px;">
+                                <img src="{{ asset('/storage/images/' . Auth::user()->logo) }}" style="width: 100%; height: 100%;">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 text-center">
+                            <img class="w-25" src="images/MoMo_logo-1.png" alt="Avatar">
+                        </div>
+                    </div>
+    
+                    <div class="row py-3 mt-3 border-1 border-bottom align-items-center mx-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Tên người dùng</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-3">{{Auth::User()->name}}</p>
+                        </div>
+                        <div class="col-md-4  text-center">
+                          
+                        </div>
+                    </div>
+    
+                    <div class="row mt-3 py-3 align-items-center mx-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Giới tính</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-3">{{Auth::User()->gender}}</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container mt-5">
+                <div class="border  border-1 border-gray p-3 rounded">
+                    <h2 class="fs-2">Thông tin liên hệ</h2>
+                   
+        
+                    <div class="row py-2 border-1 border-bottom align-items-center  m-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Email</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-3">{{Auth::User()->email}}</</p>
+                        </div>
+                        <div class="col-md-4">
+                         
+                        </div>
+                    </div>
+        
+                    <div class="row  align-items-center border-1 border-bottom mx-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Số điện thoại</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-3">{{Auth::User()->phone}}</</p>
+                        </div>
+                        <div class="col-md-4">
+                         
+                        </div>
+                    </div>
+                    <div class="row mt-4 align-items-center mx-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Address</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-3">{{Auth::User()->address}}</p>
+                        </div>
+                        <div class="col-md-4">
+                         
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        @endsection

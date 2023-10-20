@@ -33,7 +33,7 @@
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between">
                                     <div class="header-title">
-                                        <h4 class="card-title">Add News</h4>
+                                        <h4 class="card-title">Thêm mới tin tức</h4>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -62,6 +62,21 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                <label>Trạng thái</label>
+                                                <div>
+                                                    <input type="checkbox" name="status" style="width: 60px; height: 60px;">
+                                                </div>
+                                                <div class="help-block with-errors"></div>
+                                                @if ($errors->has('title'))
+                                                    <span class="text-danger">{{ $errors->first('title') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
                                                 <div class="form-floating">
                                                     <label for="floatingTextarea">Nội dung</label>
                                                     <textarea name="content" id="mySummernote" class="form-control" rows="5"></textarea>
@@ -72,9 +87,41 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary mr-2">Add News</button>
+
+                                    <div class="mb-3">
+                                        <h3>Seo Tags</h3>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="formFile" class="form-label">Meta Title</label>
+                                                <input class="form-control" type="text" name="meta_title">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="formFile" class="form-label">Meta Keyword</label>
+                                                <input class="form-control" type="text" name="meta_keyword">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="formFile" class="form-label">Meta Description</label>
+                                                <textarea name="meta_description" id="" rows="4" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mr-2">Thêm</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
-                                    {{-- <a href="/role/index"><button type="submit" class="btn btn-danger">Back</button></a> --}}
+                                    <a href="{{route("news.index")}}" class="btn btn-danger text-white">Quay lại</a>
                                 </div>
                             </div>
                         </div>

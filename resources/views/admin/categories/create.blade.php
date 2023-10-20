@@ -33,7 +33,7 @@
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between">
                                     <div class="header-title">
-                                        <h4 class="card-title">Add Categories</h4>
+                                        <h4 class="card-title">Thêm danh mục</h4>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -41,8 +41,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Name *</label>
-                                                <input type="text" class="form-control" placeholder="Enter Name"
+                                                <label>Tên danh mục *</label>
+                                                <input type="text" class="form-control" placeholder="Tên danh mục..."
                                                     data-errors="Please Enter Name." name="name">
                                                 <div class="help-block with-errors"></div>
                                                 @if ($errors->has('name'))
@@ -51,9 +51,23 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary mr-2">Add Categories</button>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Trạng thái*</label>
+                                                <div>
+                                                    <input type="checkbox" name="status" style="width: 60px; height: 60px;">
+                                                </div>
+                                                <div class="help-block with-errors"></div>
+                                                @if ($errors->has('status'))
+                                                    <span class="text-danger">{{ $errors->first('status') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mr-2">Thêm mới</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
-                                    {{-- <a href="/role/index"><button type="submit" class="btn btn-danger">Back</button></a> --}}
+                                    <a href="{{route("categories.index")}}" class="btn btn-danger text-white">Back</a>
                                 </div>
                             </div>
                         </div>

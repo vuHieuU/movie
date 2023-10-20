@@ -42,11 +42,11 @@ Route::get('/detail_film/{id}', [App\Http\Controllers\client\DetailFilmControlle
 
 Route::get('/dang-phat', [App\Http\Controllers\client\DangphatController::class, 'index'])->name("dang-phat");
 Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class, 'index'])->name("sap-ra-mat");
-Route::get('/film', [App\Http\Controllers\client\AllfilmController::class, 'index']);
-Route::get('/film/{id}', [App\Http\Controllers\client\AllfilmController::class, 'show'])->name("film");
+Route::get('/movie', [App\Http\Controllers\client\AllfilmController::class, 'index'])->name("movie");
+Route::get('/movie/{id}', [App\Http\Controllers\client\AllfilmController::class, 'show'])->name("movie");
 
-Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class, 'index'])->name("myaccount");
-Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index'])->name("editaccount");
+// Route::get('/myaccount', [App\Http\Controllers\client\MyaccountController::class, 'index'])->name("myaccount");
+// Route::get('/editaccount', [App\Http\Controllers\client\EditaccountController::class, 'index'])->name("editaccount");
 Route::get('/introduction', [App\Http\Controllers\client\InTroDucTionController::class, 'index'])->name("introduction");
 
 
@@ -54,7 +54,7 @@ Route::get('/introduction', [App\Http\Controllers\client\InTroDucTionController:
 Route::post('/addFavoFilm', [App\Http\Controllers\client\FavoriteController::class, 'store']);
 Route::get('/deleteFavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'destroy']);
 Route::get('/unLikeFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'unLike']);
-Route::get('/listFavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'show']);
+Route::get('/FavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'show']);
 
 Route::get('auth/google', [GoogleController::class, "redirectToGoogle"])->name("loginGoogle");
 Route::get('auth/google/callback', [GoogleController::class, "handleGoogleCallback"]);
@@ -135,7 +135,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('create', [App\Http\Controllers\admin\categoryController::class, 'create'])->name('categories.create');
         Route::post('store', [App\Http\Controllers\admin\categoryController::class, 'store'])->name('categories.store');
         Route::get('edit/{id}', [App\Http\Controllers\admin\categoryController::class, 'edit'])->name('categories.edit');
-        Route::post('update/{id}', [App\Http\Controllers\admin\categoryController::class, 'update'])->name('categories.update');
+        Route::put('update/{id}', [App\Http\Controllers\admin\categoryController::class, 'update'])->name('categories.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\categoryController::class, 'destroy'])->name('categories.destroy');
     });
     // Danh sách Phim

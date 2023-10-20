@@ -468,6 +468,9 @@
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
     </style> --}}
+    {{-- ảnh url --}}
+    <link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
+    {{-- ảnh url --}}
 </head>
 
 <body
@@ -564,10 +567,25 @@
                                                       
                                                     </div>
                                                     <ul id="category-list" class="category-list">
-                                                        <a href="/film">   <li onclick="selectCategory('Tất cả film')">Tất cả Film</li>
+                                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                                                        <script>
+                                                            $(document).ready(function() {
+                                                                $("a.li").click(function(event) {
+                                                                    event.preventDefault(); // Ngăn chuyển trang khi nhấn vào liên kết.
+                                                                    var categoryId = $(this).data('category-id'); // Lấy id của rạp từ thuộc tính data
+                                                                    $.ajax({
+                                                                        url: "/movie/" + categoryId,
+                                                                        success: function(result) {
+                                                                            $("#div1").html(result);
+                                                                        }
+                                                                    });
+                                                                });
+                                                            });
+                                                        </script>
+                                                        <a href="/movie">   <li onclick="selectCategory('Tất cả film')">Tất cả Film</li>
                                                       
                                                       @foreach ($category as $item)
-                                                      <a href="{{ route('film',[$item->id]) }}"> <li onclick="selectCategory('{{$item->name}}')">{{$item->name}}</li></a>
+                                                      <a class="li" href="" data-category-id="{{ $item->id }}"> <li onclick="selectCategory('{{$item->name}}')">{{$item->name}}</li></a>
                                                       @endforeach
                                                     </ul>
                                                   </div>
