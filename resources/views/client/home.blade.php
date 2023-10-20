@@ -298,6 +298,7 @@
                                                                             <span>Language: </span>
                                                                             {{ $item->film->country }}
                                                                         </p>
+               
                                                                     </div>
 
 
