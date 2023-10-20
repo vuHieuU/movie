@@ -53,7 +53,7 @@
                               </th>
                               <th>Tiêu đề</th>
                               <th>Thumbnail</th>
-                              <th>Nội dung chính</th>
+                              <th>Trạng thái</th>
                               <th>Action</th>
                           </tr>
                       </thead>
@@ -70,7 +70,7 @@
                               <td>
                                 <img src="{{asset('/storage/images/'.$item->thumbnail)}}" style="height: 200px;width:150px;">
                               </td>
-                              <td>{{ $item->content }}</td>
+                              <td>{{ $item->status == "1" ? "Hiện" : "Ẩn" }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"

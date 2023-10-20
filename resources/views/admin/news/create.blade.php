@@ -62,6 +62,21 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                <label>Trạng thái</label>
+                                                <div>
+                                                    <input type="checkbox" name="status" style="width: 60px; height: 60px;">
+                                                </div>
+                                                <div class="help-block with-errors"></div>
+                                                @if ($errors->has('title'))
+                                                    <span class="text-danger">{{ $errors->first('title') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
                                                 <div class="form-floating">
                                                     <label for="floatingTextarea">Nội dung</label>
                                                     <textarea name="content" id="mySummernote" class="form-control" rows="5"></textarea>
