@@ -192,7 +192,11 @@ class PayController extends Controller
          $cinemaRoom = session('cinemaRoom');
          $selectedSeatsValue = session('selectedSeatsValue');
          $cinemaName = session('cinemaName');
-         $total = $_GET['vnp_Amount'] / 100;
+         if(isset($_GET['vnp_Amount'])){
+             $total = $_GET['vnp_Amount'] / 100;
+         }else{
+            $total = session('total');
+         }
          $categories = $ShowTime->film->categories;
         //  $categories
         //  dd($film_names);
