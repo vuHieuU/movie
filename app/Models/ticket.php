@@ -9,6 +9,7 @@ class ticket extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'showtime_id',
         'film_name',
         'selected_date',
         'selected_hour',
@@ -20,6 +21,7 @@ class ticket extends Model
         'film_id',
         'coupon_code',
         'total',
+        'code',
     ];
     public function user()
     {

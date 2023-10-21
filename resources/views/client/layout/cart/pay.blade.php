@@ -224,7 +224,7 @@
                                         <tr>
                                             <td>01</td>
                                             <td>Food</td>
-                                            <td>5 Hour</td>
+                                            <td>{{ $FoodValueName }}</td>
                                             {{-- <td>$150.00</td> --}}
                                             {{-- <td>&nbsp;1</td> --}}
                                             <td class="cs-text_right cs-primary_color">

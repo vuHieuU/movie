@@ -75,6 +75,8 @@ class PayController extends Controller
         session(['cinemaRoom' => $cinemaRoom]);
         $selectedPriceSeatsValue = $request->input("selectedPriceSeatsValue");
         $totalPriceFoodValue = $request->input("totalPriceFoodValue");
+        $FoodValueName = $request->input("FoodValueName");
+        session(['FoodValueName' => $FoodValueName]);
         return view('client.layout.cart.pay',compact(
             "title",
             'ShowTime',
@@ -83,6 +85,7 @@ class PayController extends Controller
             'selectedSeatsValue',
             'selectedPriceSeatsValue',
             'totalPriceFoodValue',
+            'FoodValueName',
             'cinemaName',
             "tickit",
             "new_footer"
@@ -102,18 +105,14 @@ class PayController extends Controller
     $cinemaName = session('cinemaName');
     $cinemaRoom = session('cinemaRoom');
     $couponCode = session('coupon_code');
-    // dd($cinemaRoom);
     $total = $request->input('total');
-    // dd($total);
     session(['total' => $total]);
-    // Lấy thông tin người đăng nhập
     $user = auth()->user();
 
-    // Lấy thông tin bộ phim từ biến $film
     $ShowTime = ShowTime::findOrFail($film_id);
 
-    // Tạo bản ghi Ticket và lưu vào cơ sở dữ liệu
     $ticket = new Ticket();
+    $ticket->showtime_id = $ShowTime->id;
     $ticket->film_name = $ShowTime->film->name;
     $ticket->selected_date = $selectedDate;
     $ticket->selected_hour = $selectedHour;
@@ -125,7 +124,7 @@ class PayController extends Controller
     $ticket->film_id = $ShowTime->film->id;
     $ticket->coupon_code = $couponCode;
     $ticket->total = $total;
-
+    $ticket->code = date('Ymd-His') . rand(10, 99);;
     $ticket->save();
     // dd($ticket);
 
@@ -153,14 +152,12 @@ class PayController extends Controller
             $cinemaRoom = session('cinemaRoom');
             $couponCode = session('coupon_code');
             $total = $_GET['vnp_Amount'] / 100;
-            // dd($total);
             $user = auth()->user();
-        
-            // Lấy thông tin bộ phim từ biến $film
+
             $ShowTime = ShowTime::findOrFail($id);
         
-            // Tạo bản ghi Ticket và lưu vào cơ sở dữ liệu
             $ticket = new Ticket();
+            $ticket->showtime_id = $ShowTime->id;
             $ticket->film_name = $ShowTime->film->name;
             $ticket->selected_date = $selectedDate;
             $ticket->selected_hour = $selectedHour;
@@ -172,9 +169,8 @@ class PayController extends Controller
             $ticket->film_id = $ShowTime->film->id;
             $ticket->coupon_code = $couponCode;
             $ticket->total = $total;
-            // dd($total);
+            $ticket->code = date('Ymd-His') . rand(10, 99);;
             $ticket->save();
-            // dd($ticket);
         
             $selectSeatArray = explode(',', $selectedSeatsValueID);
         
@@ -183,24 +179,15 @@ class PayController extends Controller
                        ->update(['isActive' => 2]);
                        session()->forget('applied_coupon');
         }
-        $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
         $title = 'payment success';
         $ShowTime = ShowTime::findOrFail($id);
-         $film_name = $ShowTime->film->name;
-         $selectedDate = session('selectedDate');
-         $selectedHour = session('selectedHour');
-         $cinemaRoom = session('cinemaRoom');
-         $selectedSeatsValue = session('selectedSeatsValue');
-         $cinemaName = session('cinemaName');
-         if(isset($_GET['vnp_Amount'])){
-             $total = $_GET['vnp_Amount'] / 100;
-         }else{
-            $total = session('total');
-         }
+        $ticket = ticket::where('showtime_id',$ShowTime->id)->first();
          $categories = $ShowTime->film->categories;
-        //  $categories
-        //  dd($film_names);
-        return view('client.layout.cart.PaymentSuccess',compact('title',"new_footer",'ShowTime','film_name','selectedDate','selectedHour','cinemaRoom','selectedSeatsValue','total','cinemaName','categories'));
+        return view('client.layout.cart.PaymentSuccess',compact(
+            'title',
+            'ticket',
+            'categories'
+        ));
     }
 
 }
