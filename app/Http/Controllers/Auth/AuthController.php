@@ -7,6 +7,7 @@ use App\Http\Requests\Client\ProfileRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpKernel\Profiler\Profile;
@@ -18,8 +19,16 @@ class AuthController extends Controller
      */
     public function index()
     {
+        $counttiket = DB::table("tickets")
+        ->select('user_id', DB::raw('COUNT(*) as counttiket'))
+        ->groupBy('user_id')
+        ->get();
+        $sumtotal = DB::table("tickets")
+        ->select('user_id', DB::raw('SUM(total) as sumtotal'))
+        ->groupBy('user_id')
+        ->get();
         $taitel = "myaccount";
-        return view('client.myaccount', compact("taitel"));
+        return view('client.myaccount', compact("taitel","counttiket","sumtotal"));
     }
     public function edit()
     {

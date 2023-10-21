@@ -135,13 +135,14 @@
                         <div class="card-body">
                             <ul class="d-flex nav nav-pills mb-3 text-center profile-tab" id="profile-pills-tab"
                                 role="tablist">
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link active show" data-toggle="pill" href="#profile1"
                                         role="tab" aria-selected="false">My Skills</a>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="pill" href="#profile2" role="tab"
-                                        aria-selected="false">Personal Information</a>
+                                    <a class="nav-link active show" data-toggle="pill" href="#profile1" role="tab"
+                                        aria-selected="false">Personal </a>
+                                        
                                 </li>
                                 
                                 <li class="nav-item">
@@ -150,7 +151,7 @@
                                 </li>
                             </ul>
                             <div class="profile-content tab-content">
-
+{{-- 
                                 <div id="profile1" class="tab-pane fade active show">
                                     <p style="color: #75759D">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis viverra viverra
                                         mollis sed vitae fames
@@ -271,8 +272,8 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
-                                <div id="profile2" class="tab-pane fade">
+                                </div> --}}
+                                <div id="profile1" class="tab-pane fade active show">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="card card-block card-stretch mb-0">
@@ -286,6 +287,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <span class="skill-number">1.</span>
                                                             <p class="mb-0">Creative spirit</p>
+                                                            {{-- <a class="skill-number" href="/logout"><span> Đăng xuất</span></a> --}}
                                                         </div>
                                                     </div>
                                                     <div class="p-2 bg-danger rounded w-100 mb-3">
@@ -329,8 +331,12 @@
                                                                         fill="#d63a00" />
                                                                 </svg>
                                                             </div>
-                                                            <h5 class="mb-2 mt-3 icon-text-warning">15+</h5>
-                                                            <p class="mb-0">Awards</p>
+                                                            @foreach ($counttiket as $item)
+                                                                
+                                                           
+                                                            <h5 class="mb-2 mt-3 icon-text-info">{{$item->counttiket}}</h5> 
+                                                            @endforeach
+                                                            <p class="mb-0">Ticket</p>
                                                         </div>
                                                         <div class="profile-info col-xl-3 col-lg-6">
                                                             <div class="profile-icon icon m-auto rounded bg-info">
@@ -342,8 +348,10 @@
                                                                         fill="#32BDEA" />
                                                                 </svg>
                                                             </div>
-                                                            <h5 class="mb-2 mt-3 icon-text-info">35+</h5>
-                                                            <p class="mb-0">Certificate</p>
+                                                            @foreach ($sumtotal as $item)
+                                                            <h5 class="mb-2 mt-3 icon-text-info">{{number_format($item->sumtotal) }}</h5>
+                                                            @endforeach
+                                                            <p class="mb-0">Total</p>
                                                         </div>
                                                         <div class="profile-info col-xl-3 col-lg-6">
                                                             <div class="profile-icon icon m-auto rounded bg-danger">
@@ -446,7 +454,14 @@
                                
                                 
                                 <div id="profile5" class="tab-pane fade">
-                                    <p style="color: #75759D">I'm Web Developer from California. I code and design websites worldwide. Mauris
+                                    <div class="p-2 bg-warning rounded w-100 mb-3">
+                                        <div class="d-flex align-items-center">
+                                            {{-- <span class="skill-number">1.</span>
+                                            <p class="mb-0">Creative spirit</p> --}}
+                                            <a class="skill-number" href="/logout"><span> Đăng xuất</span></a>
+                                        </div>
+                                    </div>
+                                    {{-- <p style="color: #75759D">I'm Web Developer from California. I code and design websites worldwide. Mauris
                                         variustellus vitae
                                         tristique sagittis. Sed aliquet, est nec auctor aliquet, orci ex vestibulum ex,
                                         non pharetra lacus
@@ -462,7 +477,7 @@
                                         mattis nam ipsum pharetra porttitor eu.
                                         Tristique feugiat mi feugiat integer consectetur sit enim penatibus. Quis
                                         sagittis proin fermentum tempus
-                                        uspendisse ultricies. Tellus sapien, convallis proin pretium.</p>
+                                        uspendisse ultricies. Tellus sapien, convallis proin pretium.</p> --}}
                                 </div>
                             </div>
                         </div>

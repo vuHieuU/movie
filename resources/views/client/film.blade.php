@@ -12,13 +12,29 @@
     {{-- <link rel="profile" href="https://gmpg.org/xfn/11" /> --}}
     <title>@yield('taitel')</title>
     <meta name='robots' content='max-image-preview:large' />
-    {{-- <link rel='dns-prefetch' href='//fonts.googleapis.com' /> --}}
-    {{-- <link rel='dns-prefetch' href='//s.w.org' />
+
+<link rel='stylesheet' id='elementor-post-142-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
+        type='text/css' media='all' />
+    {{-- ảnh url --}}
+    <link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
+    {{-- ảnh url --}}
+
+
+
+
+
+
+
+
+{{--     
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' /> 
+    <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Comments Feed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" /> --}}
-    {{-- <script type="text/javascript">
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" /> 
+    <script type="text/javascript">
         window._wpemojiSettings = {
             "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/",
             "ext": ".png",
@@ -75,8 +91,8 @@
                 })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n
                     .wpemoji)))
         }(window, document, window._wpemojiSettings);
-    </script> --}}
-    {{-- <style type="text/css">
+    </script> 
+    <style type="text/css">
         img.wp-smiley,
         img.emoji {
             display: inline !important;
@@ -89,11 +105,11 @@
             background: none !important;
             padding: 0 !important;
         }
-    </style> --}}
-    {{-- <link rel='stylesheet' id='wp-block-library-css'
+    </style> 
+    <link rel='stylesheet' id='wp-block-library-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7'
-        type='text/css' media='all' /> --}}
-    {{-- <style id='global-styles-inline-css' type='text/css'>
+        type='text/css' media='all' /> 
+    <style id='global-styles-inline-css' type='text/css'>
         body {
             --wp--preset--color--black: #000000;
             --wp--preset--color--cyan-bluish-gray: #abb8c3;
@@ -340,26 +356,24 @@
         .has-x-large-font-size {
             font-size: var(--wp--preset--font-size--x-large) !important;
         }
-    </style> --}}
-    {{-- <link rel='stylesheet' id='elementor-icons-css'
+    </style> 
+    <link rel='stylesheet' id='elementor-icons-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0'
-        type='text/css' media='all' /> --}}
-    {{-- <link rel='stylesheet' id='elementor-frontend-css'
+        type='text/css' media='all' /> 
+    <link rel='stylesheet' id='elementor-frontend-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.6.5'
-        type='text/css' media='all' /> --}}
-    {{-- <link rel='stylesheet' id='elementor-post-5-css'
+        type='text/css' media='all' /> 
+    <link rel='stylesheet' id='elementor-post-5-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-5.css?ver=1651538276'
-        type='text/css' media='all' /> --}}
-    {{-- <link rel='stylesheet' id='elementor-global-css'
+        type='text/css' media='all' /> 
+    <link rel='stylesheet' id='elementor-global-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/global.css?ver=1651538276'
-        type='text/css' media='all' /> --}}
-    <link rel='stylesheet' id='elementor-post-142-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
-        type='text/css' media='all' />
-    {{-- <link rel='stylesheet' id='font-awesome-css'
+        type='text/css' media='all' /> 
+    
+    <link rel='stylesheet' id='font-awesome-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0'
-        type='text/css' media='all' /> --}}
-    {{-- <link rel='stylesheet' id='slick-style-css'
+        type='text/css' media='all' /> 
+    <link rel='stylesheet' id='slick-style-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick.css?ver=5.9.7'
         type='text/css' media='all' />
     <link rel='stylesheet' id='slick-theme-css'
@@ -379,30 +393,30 @@
         type='text/css' media='all' />
     <link rel='stylesheet' id='amy-movie-style-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/style.css?ver=1.0.0'
-        type='text/css' media='all' /> --}}
-    {{-- <style id='amy-movie-style-inline-css' type='text/css'>
+        type='text/css' media='all' /> 
+    <style id='amy-movie-style-inline-css' type='text/css'>
         .amy-primary-navigation ul.nav-menu>li>a::after {
             top: 70%;
         }
-    </style> --}}
-    {{-- <link rel='stylesheet' id='csf-google-web-fonts-css'
+    </style> 
+    <link rel='stylesheet' id='csf-google-web-fonts-css'
         href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css'
         media='all' />
     <link rel='stylesheet' id='google-fonts-1-css'
         href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.9.7'
-        type='text/css' media='all' /> --}}
-    {{-- <script type='text/javascript'
+        type='text/css' media='all' /> 
+    <script type='text/javascript'
         src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery.min.js?ver=3.6.0'
         id='jquery-core-js'></script>
     <script type='text/javascript'
         src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2'
-        id='jquery-migrate-js'></script> --}}
-    {{-- <link rel="https://api.w.org/" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/" />
+        id='jquery-migrate-js'></script> 
+    <link rel="https://api.w.org/" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/" />
     <link rel="alternate" type="application/json"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/wp/v2/pages/142" />
     <link rel="EditURI" type="application/rsd+xml" title="RSD"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/xmlrpc.php?rsd" /> --}}
-    {{-- <link rel="wlwmanifest" type="application/wlwmanifest+xml"
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/xmlrpc.php?rsd" /> 
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/wlwmanifest.xml" />
     <meta name="generator" content="WordPress 5.9.7" />
     <link rel="canonical" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/now-playing/" />
@@ -410,8 +424,8 @@
     <link rel="alternate" type="application/json+oembed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F" />
     <link rel="alternate" type="text/xml+oembed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" /> --}}
-    {{-- <style type="text/css">
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" />  --}}
+    <style type="text/css">
         body {
             font-family: "Roboto Condensed";
             color: #333;
@@ -467,10 +481,8 @@
         #amy-page-header {
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
-    </style> --}}
-    {{-- ảnh url --}}
-    <link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
-    {{-- ảnh url --}}
+    </style> 
+
 </head>
 
 <body

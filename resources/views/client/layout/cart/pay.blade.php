@@ -12,6 +12,64 @@
     <link rel="stylesheet" href="/template/assets/css/pay.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style type="text/css">
+            body {
+                font-family: "Roboto Condensed";
+                color: #333;
+                font-weight: normal;
+                font-size: 14px;
+            }
+    
+            #amy-site-nav .sub-menu .menu-item a {
+                font-family: "Roboto Condensed";
+                font-weight: 700;
+                font-size: 15px;
+            }
+    
+            h1 {
+                font-family: "Roboto Condensed";
+                color: #333;
+                font-weight: 700;
+                font-size: 36px;
+            }
+    
+            h2 {
+                font-family: "Roboto Condensed";
+                color: #333;
+                font-weight: 700;
+                font-size: 30px;
+            }
+    
+            h3 {
+                font-family: "Roboto Condensed";
+                color: #333;
+                font-weight: 700;
+                font-size: 24px;
+            }
+    
+            h4 {
+                font-family: "Roboto Condensed";
+                color: #333;
+                font-weight: 700;
+                font-size: 18px;
+            }
+    
+            h5 {
+                font-family: "Roboto Condensed";
+                color: #333;
+                font-weight: 700;
+                font-size: 14px;
+            }
+    
+            .amy-site-footer {
+                background-color: #606060;
+            }
+    
+            #amy-page-header {
+                background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
+            }
+        </style> 
+    
 </head>
 
 <body style="font-family: roboto; border: 0">
@@ -233,7 +291,7 @@
                                                     <input type="text" class="form-control " name="coupon_code"
                                                         placeholder="Nhập mã giảm giá">
                                                 </div>
-                                                <button type="submit" class="btn btn-primary mt-3">Áp dụng</button>
+                                                <button type="submit" class="btn  mt-3" style="background-color: #FE7900;color: aliceblue">Áp dụng</button>
                                             </form>
 
                                         </div>
@@ -263,7 +321,7 @@
    
     <div class="mb-5 " >
         <input type="hidden" name="total" value="{{ $total }}">
-        <button class="btn btn-outline-secondary  fs-3 px-5 py-2 w-25" value="thanh toán vnpay" name="redirect"
+        <button  class="btn btn-outline-primary  fs-3 px-5 py-2 w-25" value="thanh toán vnpay" name="redirect"
             type="submit">Thanh toán bằng Vnpay </button>
     </div>
    
@@ -273,23 +331,29 @@
         
 
 <div class="mb-5">
-    <label class="btn btn-outline-secondary paymentMethod fs-3 px-5 py-2 w-25">
-        <input  type="radio" class="d-none" value="thanh toán tại quầy" name="paymentMethod"> Thanh toán tại quầy
-    </label>
+    <input type="checkbox" class="d-none" id="paymentCheckbox">
+    <label class="btn btn-outline-primary paymentMethod fs-3 px-5 py-2 w-25" for="paymentCheckbox">Thanh toán tại quầy</label>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function() {
-        // Bắt sự kiện khi nút radio thay đổi
-        $('input[name="paymentMethod"]').change(function() {
-            if (this.checked) {
-                $('.paymentMethod').removeClass('active');
-                $(this).closest('.paymentMethod').addClass('active');
+    $(document).ready(function () {
+        var paymentCheckbox = $('#paymentCheckbox');
+        var paymentLabel = $('label[for="paymentCheckbox"]');
+
+        paymentCheckbox.change(function () {
+            if (paymentCheckbox.is(':checked')) {
+                paymentLabel.addClass('active');
+            } else {
+                paymentLabel.removeClass('active');
             }
         });
     });
 </script>
+
+
+
+
 
    <div class="cs-border cs-mb30 mt-5"></div>
    

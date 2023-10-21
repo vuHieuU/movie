@@ -27,7 +27,7 @@
 <article id="post-55" class="post-55 post type-post status-publish format-standard has-post-thumbnail category-news">
 	<div class="entry-top ">
 		<div class="entry-thumb">
-			<img width="750" height="500" src="{{ asset('/storage/images/' . $detailblog->thumbnail) }}" class="attachment-full size-full wp-post-image" alt=""  sizes="(max-width: 750px) 100vw, 750px" />		</div>
+			<img style="width: 30%;" src="{{ asset('/storage/images/' . $detailblog->thumbnail) }}" class="attachment-full size-full wp-post-image" alt=""   />		</div>
 	</div>
 	<div class="entry-bottom ">
 		<!-- Post Meta -->

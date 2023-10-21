@@ -11,6 +11,64 @@
 <meta name='robots' content='noindex, nofollow' />
 <link rel='dns-prefetch' href='//demo.ovatheme.com' />
 <link rel="stylesheet" href="/template/fontawesome-free-6.1.1-web/css/all.css">
+ <style type="text/css">
+    body {
+        font-family: "Roboto Condensed";
+        color: #333;
+        font-weight: normal;
+        font-size: 14px;
+    }
+
+    #amy-site-nav .sub-menu .menu-item a {
+        font-family: "Roboto Condensed";
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    h1 {
+        font-family: "Roboto Condensed";
+        color: #333;
+        font-weight: 700;
+        font-size: 36px;
+    }
+
+    h2 {
+        font-family: "Roboto Condensed";
+        color: #333;
+        font-weight: 700;
+        font-size: 30px;
+    }
+
+    h3 {
+        font-family: "Roboto Condensed";
+        color: #333;
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    h4 {
+        font-family: "Roboto Condensed";
+        color: #333;
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    h5 {
+        font-family: "Roboto Condensed";
+        color: #333;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .amy-site-footer {
+        background-color: #606060;
+    }
+
+    #amy-page-header {
+        background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
+    }
+</style>  
+
 {{-- <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel="alternate" type="application/rss+xml"
     title="Aovis - Film &amp; Movie Booking WordPress Theme &raquo; Feed"
@@ -263,7 +321,7 @@
 <link rel='stylesheet' id='wc-blocks-style-mini-cart-contents-css'
     href='https://demo.ovatheme.com/aovis/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/mini-cart-contents.css?ver=10.6.6'
     type='text/css' media='all' /> --}}
-{{-- <style type="text/css">
+<style type="text/css">
     body {
         font-family: "Roboto Condensed";
         color: #333;
@@ -319,7 +377,7 @@
     #amy-page-header {
         background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
     }
-</style> --}}
+</style>
 </head>
 
 {{-- <style id='classic-theme-styles-inline-css' type='text/css'>
@@ -1118,7 +1176,7 @@ type='text/css' media='all' />
 <link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
 {{-- ảnh url --}}
 <meta name="msapplication-TileImage"
-content="https://demo.ovatheme.com/aovis/wp-content/uploads/2023/02/cropped-favicon-270x270.png" /> --}}
+content="https://demo.ovatheme.com/aovis/wp-content/uploads/2023/02/cropped-favicon-270x270.png" /> 
 </head>
 
 <body
