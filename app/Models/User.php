@@ -21,13 +21,14 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'google_id',
+        'github_id',
         'phone',
         'address',
         'email',
-        'logo',
+        'avatar',
         'gender',
         'password',
-        'facebook_id',
     ];
 
     /**
