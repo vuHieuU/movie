@@ -20,9 +20,9 @@
                         <h2>Thông Tin Phim</h2>
                     </div>
                     <div class="card-body">
-                        <p><strong>Tên Phim:</strong> {{ $film_name }}</p>
-                        <p><strong>Thời gian:</strong> {{Carbon\Carbon::parse($selectedDate)->format("d/n/Y") }}</p>
-                        <p><strong>Giờ chiếu:</strong> {{ $selectedHour }} </p>
+                        <p><strong>Tên Phim:</strong> {{ $ticket->film_name }}</p>
+                        <p><strong>Thời gian:</strong> {{Carbon\Carbon::parse($ticket->selected_date)->format("d/n/Y") }}</p>
+                        <p><strong>Giờ chiếu:</strong> {{ $ticket->selected_hour }} </p>
                         <p><strong>Thể Loại:</strong>
                         @foreach ($categories as $item)
                         {{ $item->name }}
@@ -39,11 +39,11 @@
                         <h2>Thông Tin Vé</h2>
                     </div>
                     <div class="card-body">
-                        <p><strong>Mã đơn:</strong><img class="w-25" src="image/MoMo_logo-1.png" alt=""></p>
-                        <p><strong>Phòng:</strong> {{ $cinemaName }}</p>
-                        <p><strong>Phòng:</strong> {{ $cinemaRoom }}</p>
-                        <p><strong>Vị trí ghế:</strong> {{ $selectedSeatsValue }}</p>
-                        <p><strong>Tổng Vé:</strong> {{ number_format($total) }} VND</p>
+                        <p><strong>Mã đơn: </strong>{{ $ticket->code }}</p>
+                        <p><strong>Rạp:</strong> {{ $ticket->cinema }}</p>
+                        <p><strong>Phòng:</strong> {{ $ticket->selected_room }}</p>
+                        <p><strong>Vị trí ghế:</strong> {{ $ticket->selected_seats }}</p>
+                        <p><strong>Tổng Vé:</strong> {{ number_format($ticket->total) }} VND</p>
                     </div>
                 </div>
             </div>
