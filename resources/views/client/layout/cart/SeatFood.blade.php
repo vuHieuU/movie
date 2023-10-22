@@ -724,7 +724,7 @@
                                                                                     function calculateTotal() {
                                                                                         const foodItems = @json($food);
                                                                                         let total = 0;
-                                                                                        let foodNames = [];
+                                                                                        let foodData = [];
 
                                                                                         foodItems.forEach(item => {
                                                                                             const quantityInput = document.getElementById(`quantity_${item.id}`);
@@ -732,15 +732,20 @@
                                                                                             const itemFoodName = quantityInput.getAttribute('data-food-name');
 
                                                                                             if (quantity > 0) {
-                                                                                                foodNames.push(itemFoodName);
+                                                                                                const foodInfo = {
+                                                                                                    name: itemFoodName,
+                                                                                                    quantity: quantity
+                                                                                                };
+                                                                                                foodData.push(foodInfo);
                                                                                             }
 
                                                                                             total += quantity * item.price;
                                                                                         });
 
+                                                                                        // Chuyển đối tượng foodData thành một chuỗi JSON và cập nhật giá trị của input "FoodValueName".
+                                                                                        document.getElementById('FoodValueName').value = JSON.stringify(foodData);
                                                                                         document.getElementById('totalPriceFood').textContent = total.toLocaleString();
                                                                                         document.getElementById('totalPriceFoodValue').value = total;
-                                                                                        document.getElementById('FoodValueName').value = foodNames;
                                                                                     }
                                                                                 </script>
 
@@ -1000,7 +1005,7 @@
                                                                                     </p>
                                                                                 </div>
 
-                                                                                <div
+                                                                                {{-- <div
                                                                                     class=" d-flex align-items-center justify-content-between mb-5 px-4">
                                                                                     <div
                                                                                         class="d-flex align-items-center gap-2">
@@ -1012,7 +1017,7 @@
 
                                                                                     <p class="m-0 p-0 fs-2 fw-bold">50.00đ
                                                                                     </p>
-                                                                                </div>
+                                                                                </div> --}}
 
 
                                                                                 <hr class="border-2 border-black py-4">
