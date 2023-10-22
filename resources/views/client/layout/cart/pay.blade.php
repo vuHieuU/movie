@@ -215,8 +215,6 @@
                                             <th class="cs-width_1 cs-semi_bold cs-primary_color">STT</th>
                                             <th class="cs-width_3 cs-semi_bold cs-primary_color">Service</th>
                                             <th class="cs-width_2 cs-semi_bold cs-primary_color">Hour</th>
-                                            {{-- <th class="cs-width_1 cs-semi_bold cs-primary_color">Rate</th> --}}
-                                            {{-- <th class="cs-width_1 cs-semi_bold cs-primary_color">Qty</th> --}}
                                             <th class="cs-width_2 cs-semi_bold cs-primary_color cs-text_right ">Amount</th>
                                         </tr>
                                     </thead>
@@ -224,9 +222,11 @@
                                         <tr>
                                             <td>01</td>
                                             <td>Food</td>
-                                            <td>{{ $FoodValueName }}</td>
-                                            {{-- <td>$150.00</td> --}}
-                                            {{-- <td>&nbsp;1</td> --}}
+                                            <td>
+                                            @foreach ($FoodValueName as $item) 
+                                                 {{ $item['name'] }} * {{ $item['quantity'] }}
+                                            @endforeach
+                                            </td>
                                             <td class="cs-text_right cs-primary_color">
                                                 {{ number_format($totalPriceFoodValue) }} VNĐ</td>
                                         </tr>
@@ -234,8 +234,6 @@
                                             <td>02</td>
                                             <td>Seat</td>
                                             <td>{{ $selectedSeatsValue }}</td>
-                                            {{-- <td>$500.00</td> --}}
-                                            {{-- <td>&nbsp;1</td> --}}
                                             <td class="cs-text_right cs-primary_color">
                                                 {{ number_format($selectedPriceSeatsValue) }} VND</td>
                                         </tr>

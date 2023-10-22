@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Models\showtime_seat;
 use App\Http\Controllers\Controller;
 use App\Models\News;
+use App\Models\ticketFood;
 use Illuminate\Support\Facades\DB;
 class PayController extends Controller
 {
@@ -32,13 +33,6 @@ class PayController extends Controller
          session(['selectedShowTimeId' => $selectedShowTimeId]);
         
          $showTime = ShowTime::with('cinema','room')->findOrFail($selectedShowTimeId);
-
-        //  $seat = DB::table('seats')
-        //  ->join('tickets', 'seats.seat_number', '=', 'tickets.selected_seats')
-        // //  ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-        //  ->select('seats.*','tickets.*')
-        //  ->get();
-
 
          $seats = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
@@ -75,7 +69,8 @@ class PayController extends Controller
         session(['cinemaRoom' => $cinemaRoom]);
         $selectedPriceSeatsValue = $request->input("selectedPriceSeatsValue");
         $totalPriceFoodValue = $request->input("totalPriceFoodValue");
-        $FoodValueName = $request->input("FoodValueName");
+        $foodData = $request->input("FoodValueName");
+        $FoodValueName = json_decode($foodData, true);
         session(['FoodValueName' => $FoodValueName]);
         return view('client.layout.cart.pay',compact(
             "title",
@@ -108,7 +103,7 @@ class PayController extends Controller
     $total = $request->input('total');
     session(['total' => $total]);
     $user = auth()->user();
-
+    $FoodValueName = session('FoodValueName');
     $ShowTime = ShowTime::findOrFail($film_id);
 
     $ticket = new Ticket();
@@ -124,9 +119,16 @@ class PayController extends Controller
     $ticket->film_id = $ShowTime->film->id;
     $ticket->coupon_code = $couponCode;
     $ticket->total = $total;
-    $ticket->code = date('Ymd-His') . rand(10, 99);;
+    $ticket->code = date('Ymd-His') . rand(10, 99);
+    
     $ticket->save();
-    // dd($ticket);
+    foreach ($FoodValueName as $foodItem) {
+        $ticketFood = new ticketFood();
+        $ticketFood->ticket_id = $ticket->id;
+        $ticketFood->name = $foodItem['name'];
+        $ticketFood->quantity = $foodItem['quantity'];
+        $ticketFood->save();
+    }
 
     $selectSeatArray = explode(',', $selectedSeatsValueID);
 
