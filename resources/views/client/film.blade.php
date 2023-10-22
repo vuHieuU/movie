@@ -13,7 +13,7 @@
     <title>@yield('taitel')</title>
     <meta name='robots' content='max-image-preview:large' />
 
-<link rel='stylesheet' id='elementor-post-142-css'
+    <link rel='stylesheet' id='elementor-post-142-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
         type='text/css' media='all' />
     {{-- ảnh url --}}
@@ -27,7 +27,7 @@
 
 
 
-{{--     
+    {{--     
     <link rel='dns-prefetch' href='//fonts.googleapis.com' /> 
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
@@ -481,7 +481,7 @@
         #amy-page-header {
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
-    </style> 
+    </style>
 
 </head>
 
@@ -502,81 +502,81 @@
                         <div class="amy-page-title amy-center">
                             <div class="amy-inner container">
                                 <h1 class="page-title">
-                                    Now Playing </h1>
+                                   Movie </h1>
                             </div>
                         </div>
                         <span class="amy-section-overlay"></span>
                     </section>
-                    
+
                     <section class="main-content page-layout-">
-                        
+
                         <div class="container">
                             <div class="row">
 
 
                                 <div class="col-md-12">
-                                    
+
                                     <div class="page-content">
-                                        
+
                                         <div data-elementor-type="wp-page" data-elementor-id="142"
                                             class="elementor elementor-142">
                                             <div class="filter-mv style1">
                                                 <style>
                                                     .category-selection {
-                                                      position: relative;
-                                                      display: inline-block;
-                                                      font-family: Arial, sans-serif;
+                                                        position: relative;
+                                                        display: inline-block;
+                                                        font-family: Arial, sans-serif;
                                                     }
-                                                  
+
                                                     .selected-category {
-                                                      background-color: #eee;
-                                                      padding: 10px 15px;
-                                                      cursor: pointer;
-                                                      border: 1px solid #ccc;
-                                                      border-radius: 5px;
-                                                      user-select: none;
+                                                        background-color: #eee;
+                                                        padding: 10px 15px;
+                                                        cursor: pointer;
+                                                        border: 1px solid #ccc;
+                                                        border-radius: 5px;
+                                                        user-select: none;
                                                     }
-                                                  
+
                                                     .caret {
-                                                      border-left: 5px solid transparent;
-                                                      border-right: 5px solid transparent;
-                                                      border-top: 5px solid #333;
-                                                      margin-left: 10px;
+                                                        border-left: 5px solid transparent;
+                                                        border-right: 5px solid transparent;
+                                                        border-top: 5px solid #333;
+                                                        margin-left: 10px;
                                                     }
-                                                  
+
                                                     .category-list {
-                                                      display: none;
-                                                      list-style-type: none;
-                                                      margin: 0;
-                                                      padding: 0;
-                                                      position: absolute;
-                                                      top: 100%;
-                                                      left: 0;
-                                                      background-color: #fff;
-                                                      border: 1px solid #ccc;
-                                                      border-top: none;
-                                                      border-radius: 0 0 5px 5px;
-                                                      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-                                                      max-height: 200px;
-                                                      overflow-y: auto;
-                                                      z-index: 1;
+                                                        display: none;
+                                                        list-style-type: none;
+                                                        margin: 0;
+                                                        padding: 0;
+                                                        position: absolute;
+                                                        top: 100%;
+                                                        left: 0;
+                                                        background-color: #fff;
+                                                        border: 1px solid #ccc;
+                                                        border-top: none;
+                                                        border-radius: 0 0 5px 5px;
+                                                        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                                                        max-height: 200px;
+                                                        overflow-y: auto;
+                                                        z-index: 1;
                                                     }
-                                                  
+
                                                     .category-list li {
-                                                      padding: 10px 15px;
-                                                      cursor: pointer;
-                                                      user-select: none;
+                                                        padding: 10px 15px;
+                                                        cursor: pointer;
+                                                        user-select: none;
                                                     }
-                                                  
+
                                                     .category-list li:hover {
-                                                      background-color: #f0f0f0;
+                                                        background-color: #f0f0f0;
                                                     }
-                                                  </style>
-                                                  
-                                                  <div class="category-selection" style="width: 150px">
+                                                </style>
+
+                                                <div class="category-selection" style="width: 150px">
                                                     <div class="selected-category" onclick="toggleCategoryList()">
-                                                      <span id="selected-category">Chọn category</span>
-                                                      
+                                                        <span id="selected-category">Chọn category</span>
+
                                                     </div>
                                                     <ul id="category-list" class="category-list">
                                                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -594,42 +594,49 @@
                                                                 });
                                                             });
                                                         </script>
-                                                        <a href="/movie">   <li onclick="selectCategory('Tất cả film')">Tất cả Film</li>
-                                                      
-                                                      @foreach ($category as $item)
-                                                      <a class="li" href="" data-category-id="{{ $item->id }}"> <li onclick="selectCategory('{{$item->name}}')">{{$item->name}}</li></a>
-                                                      @endforeach
+                                                        <a href="/movie">
+                                                            <li onclick="selectCategory('Tất cả film')">Tất cả Film</li>
+                                                        </a>
+                                                            @foreach ($category as $item)
+                                                                <a 
+                                                                class="li" 
+                                                                {{-- href="{{ route('movie', [$item->id]) }}" --}}
+                                                                    data-category-id="{{ $item->id }}">
+                                                                    <li onclick="selectCategory('{{ $item->name }}')">
+                                                                        {{ $item->name }}</li>
+                                                                </a>
+                                                            @endforeach
                                                     </ul>
-                                                  </div>
-                                                  
-                                                  <script>
+                                                </div>
+
+                                                <script>
                                                     // Lấy giá trị đã lưu từ localStorage và gán cho selectedCategorySpan
                                                     var selectedCategorySpan = document.getElementById("selected-category");
                                                     var selectedCategoryValue = localStorage.getItem("selectedCategory");
                                                     if (selectedCategoryValue) {
-                                                      selectedCategorySpan.textContent = selectedCategoryValue;
+                                                        selectedCategorySpan.textContent = selectedCategoryValue;
                                                     }
-                                                  
+
                                                     function toggleCategoryList() {
-                                                      var categoryList = document.getElementById("category-list");
-                                                      if (categoryList.style.display === "block") {
-                                                        categoryList.style.display = "none";
-                                                      } else {
-                                                        categoryList.style.display = "block";
-                                                      }
+                                                        var categoryList = document.getElementById("category-list");
+                                                        if (categoryList.style.display === "block") {
+                                                            categoryList.style.display = "none";
+                                                        } else {
+                                                            categoryList.style.display = "block";
+                                                        }
                                                     }
-                                                  
+
                                                     function selectCategory(selectedCategory) {
-                                                      // Lưu trạng thái đã chọn vào localStorage
-                                                      localStorage.setItem("selectedCategory", selectedCategory);
-                                                      
-                                                      var selectedCategorySpan = document.getElementById("selected-category");
-                                                      selectedCategorySpan.textContent = selectedCategory;
-                                                      toggleCategoryList();
+                                                        // Lưu trạng thái đã chọn vào localStorage
+                                                        localStorage.setItem("selectedCategory", selectedCategory);
+
+                                                        var selectedCategorySpan = document.getElementById("selected-category");
+                                                        selectedCategorySpan.textContent = selectedCategory;
+                                                        toggleCategoryList();
                                                     }
-                                                  </script>
-                                                  
-                                                  
+                                                </script>
+
+
                                             </div>
                                             <section
                                                 class="elementor-section elementor-top-section elementor-element elementor-element-19a978c elementor-section-boxed elementor-section-height-default elementor-section-height-default"
@@ -644,185 +651,10 @@
                                                                 <div class="elementor-widget-container">
 
                                                                     <div class="amy-movie-layout-list ">
-                                                                        <div class="amy-movie-list">
-                                                                            <div class="amy-movie-items">
+                                                                        
 
-                                                                                @foreach ($film as $item)
-                                                                                    
-                                                                            
-                                                                                <div class="amy-movie-item entry-item">
-                                                                                    <div class="amy-movie-item-inner">
-                                                                                        <div class="amy-movie-item-front">
-                                                                                            <div
-                                                                                                class="amy-movie-item-poster">
-                                                                                                <a
-                                                                                                    href="detail_film/{{$item->id}}">
-                                                                                                    <img class=""
-                                                                                                        src="{{asset("storage/images/".$item->thumb)}}"
-                                                                                                        alt="Kubo and the Two Strings" />
-                                                                                                </a>
-                                                                                                <span
-                                                                                                    class="amy-movie-field-imdb">8.5</span>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                        <div class="amy-movie-item-back">
-                                                                                            <div
-                                                                                                class="amy-movie-item-back-inner">
-                                                                                                <div
-                                                                                                    class="amy-movie-item-content">
-                                                                                                    <h3
-                                                                                                        class="amy-movie-field-title">
-                                                                                                        <a
-                                                                                                            href="detail_film/{{$item->id}}">{{$item->name}}</a></h3>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-item-meta">
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-mpaa">G</span>
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-duration"><i
-                                                                                                                class="fa fa-clock-o"></i>{{$item->duration}}
-                                                                                                            minutes</span>
-                                                                                                    </div>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-field-desc">
-                                                                                                        <p>{{$item->description}}</p>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-language">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Language:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            {{$item->language}}
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    
-                                                                                                  
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_actor">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Actor:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                           
-                                                                                                            <a
-                                                                                                                href="">
-                                                                                                                {{$item->actor}}</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_director">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Director:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                          
-                                                                                                            <a
-                                                                                                                href="">{{$item->director}}</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                                <div
-                                                                                                    class="amy-movie-item-button">
-                                                                                                    <a href=" {{$item->trailer}}"
-                                                                                                        class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
-                                                                                                        <i
-                                                                                                            class="fa fa-play"></i>Trailer</a>
-                                                                                                    <a class="amy-btn-icon-text link-detail"
-                                                                                                        href="detail_film/{{$item->id}}">
-                                                                                                        <i
-                                                                                                            class="fa fa-info"></i>Detail</a>
-                                                                                                    <span
-                                                                                                        class="amy-btn-showtimes showtime-btn">
-                                                                                                        Showtime </span>
-
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <div class="entry-showtime as">
-                                                                                        <div
-                                                                                            class="showtime-item single-cinema">
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>April 6,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>12h30</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 19h20</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>April 13,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>10h30</li>
-                                                                                                    <li> 15h20</li>
-                                                                                                    <li> 20h10</li>
-                                                                                                    <li> 23h50</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 4,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 17h20</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 6,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>07h20</li>
-                                                                                                    <li> 10h10. 15h30</li>
-                                                                                                    <li> 21h00</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                @endforeach
-                                                                                <div class="amy-pagination">
-                                                                                    <div class="clear"></div>
-                                                                                    <nav class="amy-pagination">
-                                                                                        <div class="amy-shadow"><span
-                                                                                                aria-current="page"
-                                                                                                class="page-numbers current">1</span><a
-                                                                                                class="page-numbers"
-                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/now-playing/page/2/">2</a><a
-                                                                                                class="next page-numbers"
-                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/now-playing/page/2/">Next</a>
-                                                                                        </div>
-                                                                                    </nav>
-                                                                                </div>
-                                                                            </div>
+                                                                        <div id="div1">
+                                                                            @include('client.layout.session.Movie')
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -834,7 +666,7 @@
                                                         <div class="elementor-widget-wrap elementor-element-populated">
 
 
-                                                            
+
                                                             <div class="elementor-element elementor-element-050b7f2 elementor-widget elementor-widget-sidebar"
                                                                 data-id="050b7f2" data-element_type="widget"
                                                                 data-widget_type="sidebar.default">
@@ -851,7 +683,7 @@
                                                                         </figure>
                                                                         <div class="clear"></div>
                                                                     </div>
-                                                                 
+
                                                                     <div
                                                                         class="amy-widget widget_block widget_media_image">
                                                                         <figure class="wp-block-image size-full"><img
@@ -886,4 +718,4 @@
                 </div>
             </div>
 
-            @endsection
+        @endsection
