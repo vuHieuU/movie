@@ -1116,6 +1116,9 @@ type='text/css' media='all' />
 
 <meta name="msapplication-TileImage"
 content="https://demo.ovatheme.com/aovis/wp-content/uploads/2023/02/cropped-favicon-270x270.png" /> --}}
+{{-- ảnh url --}}
+<link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
+{{-- ảnh url --}}
 </head>
 
 <body

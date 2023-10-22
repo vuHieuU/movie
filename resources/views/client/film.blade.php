@@ -468,6 +468,9 @@
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
     </style> --}}
+    {{-- ảnh url --}}
+    <link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
+    {{-- ảnh url --}}
 </head>
 
 <body

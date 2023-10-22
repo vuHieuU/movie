@@ -14,7 +14,9 @@
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Comments Feed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" /> --}}
-
+{{-- ảnh url --}}
+<link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
+{{-- ảnh url --}}
     {{--  
     <link rel='stylesheet' id='wp-block-library-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7'

@@ -9,6 +9,9 @@
 <title>@yield('taitel')</title>
 {{-- <meta name='robots' content='max-image-preview:large' /> --}}
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+{{-- ảnh url --}}
+<link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
+{{-- ảnh url --}}
 {{-- <link rel='dns-prefetch' href='//s.w.org' />
 <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />

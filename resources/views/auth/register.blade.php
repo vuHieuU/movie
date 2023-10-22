@@ -545,7 +545,7 @@ rel="stylesheet" type="text/css" media="all" />
                                              <fieldset class="form-group">
                                                   <label>Password <span class="required">*</span></label>
                                                   <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
+z
                                                   @error('password')
                                                       <span class="invalid-feedback" role="alert">
                                                           <strong>{{ $message }}</strong>

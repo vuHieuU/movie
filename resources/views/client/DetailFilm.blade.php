@@ -4,7 +4,9 @@
 <head>
      @include('client.layout.main.HeadDetailFilm')
 </head>
-
+{{-- ảnh url --}}
+<link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
+{{-- ảnh url --}}
 <body
     class="amy_movie-template-default single single-amy_movie postid-74 amy-header-default  single-author elementor-default elementor-kit-5">
     <div id="page" class="hfeed site">

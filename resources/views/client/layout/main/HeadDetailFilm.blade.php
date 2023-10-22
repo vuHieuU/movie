@@ -369,6 +369,9 @@
         top: 70%;
     }
 </style>
+{{-- ảnh url --}}
+<link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
+{{-- ảnh url --}}
 <link rel='stylesheet' id='csf-google-web-fonts-css'
     href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css'
     media='all' />
