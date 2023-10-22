@@ -25,7 +25,7 @@ class DetailFilmController extends Controller
         // $cinema_id = Cinema::findOrFail($id);
         // $film = Film::findOrFail($id);
         
-        $numberOfDays = 12; // Số ngày bạn muốn liệt kê
+        $numberOfDays = 7; // Số ngày bạn muốn liệt kê
         $dateList = array();
         $currentDate = strtotime(date('Y-m-d H:i:s')); // Lấy timestamp của ngày hiện tại
         

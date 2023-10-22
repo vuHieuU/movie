@@ -77,8 +77,8 @@ Route::get('/admin', [App\Http\Controllers\Auth\HomeController::class, 'index'])
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'index'])->name('index');
     //profile của user
-    Route::get('/myaccount', [AuthController::class, 'index']);
-    Route::get('/editaccount', [AuthController::class, 'edit']);
+    Route::get('/myaccount', [AuthController::class, 'index'])->name("myaccount");
+    Route::get('/editaccount', [AuthController::class, 'edit'])->name("editaccount");
     Route::post('/myaccount', [AuthController::class, 'profile'])->name('profile');
 
 
