@@ -18,54 +18,6 @@
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        {{-- <form action="{{ url('/add-rating') }}" method="post">
-                            @csrf
-                            <input type="text" name="film_id" value="{{ $film_show_time->film->id }}" hidden>
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Đánh giá phim {{ $film_show_time->film->name }}</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="rating">
-                                    @if ($user_rating)
-                                        @for ($l = 5; $l > $user_rating->star_rated; $l--)
-                                            <input type="radio" value="{{ $l }}" name="film_rating"
-                                                id="star{{ $l }}">
-                                            <label for="star{{ $l }}"></label>
-                                        @endfor
-
-                                        @for ($k = $user_rating->star_rated; $k >= 1; $k--)
-                                            <input type="radio" value="{{ $k }}" name="film_rating"
-                                                class="star-rated" id="star{{ $k }}">
-                                            <label for="star{{ $k }}" class="star-rated"></label>
-                                        @endfor
-                                    @else
-                                        <input type="radio" value="5" name="film_rating" id="star1">
-                                        <label for="star1"></label>
-
-                                        <input type="radio" value="4" name="film_rating" id="star2">
-                                        <label for="star2"></label>
-
-                                        <input type="radio" value="3" name="film_rating" id="star3">
-                                        <label for="star3"></label>
-
-                                        <input type="radio" value="2" name="film_rating" id="star4">
-                                        <label for="star4"></label>
-
-                                        <input type="radio" value="1" name="film_rating" id="star5">
-                                        <label for="star5"></label>
-                                    @endif
-                                </div>
-
-                              
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                                <button type="submit" class="btn btn-primary">Gửi</button>
-                            </div>
-                        </form> --}}
                     </div>
                 </div>
             </div>
@@ -163,34 +115,6 @@
                                                                 {{ $film_show_time->film->country }}</span>
                                                           
                                                         </li>
-
-                                                        {{-- <li>
-                                                            @php
-                                                                $rateNum = number_format($rating_value);
-                                                            @endphp
-                                                            <div class="rating_result">
-                                                                @for ($i = 1; $i <= $rateNum; $i++)
-                                                                    <i class="fa fa-star checked"></i>
-                                                                @endfor
-
-                                                                @for ($j = $rateNum + 1; $j <= 5; $j++)
-                                                                    <i class="fa fa-star"></i>
-                                                                @endfor
-                                                            </div>
-                                                            <style>
-                                                                .checked {
-                                                                    color: #ffe900;
-                                                                }
-                                                            </style>
-                                                            <span style="margin-left: 2px;">
-
-                                                                @if ($ratings->count() > 0)
-                                                                    {{ $ratings->count() }} Người đánh giá
-                                                                @else
-                                                                    Không có đánh giá nào
-                                                                @endif
-                                                            </span>
-                                                        </li> --}}
                                                     </ul>
 
                                                     {{-- BUy ticket --}}
