@@ -64,7 +64,7 @@ class AllfilmController extends Controller
 
 
         $films = ShowTime::where("cinema_id", $cinema_id->id)->orderByDesc("created_at")->with('film')->get();
-    return view("client.film",compact("film","category","films"));
+    return view("client.layout.session.Movie",compact("film","category","films"));
     }
 
     /**

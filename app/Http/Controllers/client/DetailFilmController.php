@@ -24,39 +24,63 @@ class DetailFilmController extends Controller
         $film_show_time = ShowTime::findOrFail($id);
         // $cinema_id = Cinema::findOrFail($id);
         // $film = Film::findOrFail($id);
-        $ShowTime = ShowTime::where("cinema_id", $film_show_time->cinema->id)->where('film_id',$film_show_time->film->id)->get();
+        
+        $numberOfDays = 12; // Số ngày bạn muốn liệt kê
+        $dateList = array();
+        $currentDate = strtotime(date('Y-m-d H:i:s')); // Lấy timestamp của ngày hiện tại
+        
+        // dd( $currentDate);
+        while (count($dateList) < $numberOfDays) {
+            $dateList[] = date('Y-m-d', $currentDate); // Thêm ngày hiện tại vào danh sách
+            $currentDate = strtotime('+1 day', $currentDate); // Tăng ngày lên 1
+        }
+        
+        $ShowTime = ShowTime::where("cinema_id", $film_show_time->cinema->id)
+            ->where('film_id', $film_show_time->film->id)
+            ->whereIn('day', $dateList) // Chọn các ngày trong danh sách ngày đã tạo
+            ->where('day', '>=', date('Y-m-d'))
+            ->orderBy('day')
+            ->orderBy('hour')
+            ->get();
+        
+    
+    // ->sortBy('time');
+
         // dd($ShowTime);
-    $categoryfilm_category = DB::table("categories")
-    ->join("film_categories", "categories.id", "=", "film_categories.dmid")
-    ->select("categories.*", "film_categories.*")
-    ->where("film_categories.film_id",$id)
-    ->get();
+        $categoryfilm_category = DB::table("categories")
+            ->join("film_categories", "categories.id", "=", "film_categories.dmid")
+            ->select("categories.*", "film_categories.*")
+            ->where("film_categories.film_id", $id)
+            ->get();
         if (auth()->check()) {
-            $user = Auth::user()->id;  
-            $exists = favorite_film::where('user_id', $user)->where('film_id',$id)->exists();
-            if($exists){
+            $user = Auth::user()->id;
+            $exists = favorite_film::where('user_id', $user)->where('film_id', $id)->exists();
+            if ($exists) {
                 $check = 0;
             }
-        }
-        else{
+        } else {
             $user = 0;
         }
-        $ratings = Rating::where("film_id",$film_show_time->film->id);
-        $rating_sum = Rating::where("film_id",$film_show_time->film->id)->sum("star_rated");
-        $user_rating = Rating::where("film_id",$film_show_time->film->id)->where("user_id",Auth::id())->first();
+        $ratings = Rating::where("film_id", $film_show_time->film->id);
+        $rating_sum = Rating::where("film_id", $film_show_time->film->id)->sum("star_rated");
+        $user_rating = Rating::where("film_id", $film_show_time->film->id)->where("user_id", Auth::id())->first();
 
-        if($ratings->count() > 0){
+        if ($ratings->count() > 0) {
             $rating_value = $rating_sum / $ratings->count();
-        }
-        else{
+        } else {
             $rating_value = 0;
         }
         $title = "Detail";
-        return view('client.DetailFilm',compact(
-            'title',"ShowTime","categoryfilm_category",
-            "ratings","rating_value","user_rating",'film_show_time','user','check'
+        return view('client.DetailFilm', compact(
+            'title',
+            "ShowTime",
+            "categoryfilm_category",
+            "ratings",
+            "rating_value",
+            "user_rating",
+            'film_show_time',
+            'user',
+            'check'
         ));
-
     }
-   
 }

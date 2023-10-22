@@ -13,69 +13,7 @@
 
 
             </div>
-            <div style="margin: 0 30px">
-                <style>
-                    .rap-selection {
-                        position: relative;
-                        display: inline-block;
-                        font-family: Arial, sans-serif;
-                    }
-
-                    .selected-rap {
-                        background-color: #eee;
-                        padding: 10px 15px;
-                        cursor: pointer;
-                        border: 1px solid #ccc;
-                        border-radius: 5px 5px 0 0;
-                        user-select: none;
-                    }
-
-                    .caret {
-                        border-left: 5px solid transparent;
-                        border-right: 5px solid transparent;
-                        border-top: 5px solid #333;
-                        margin-left: 10px;
-                    }
-
-                    .rap-list {
-                        display: none;
-                        list-style-type: none;
-                        margin: 0;
-                        padding: 0;
-                        position: absolute;
-                        top: 100%;
-                        left: 0;
-                        background-color: #fff;
-                        border: 1px solid #ccc;
-                        border-radius: 0 0 5px 5px;
-                        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-                        max-height: 200px;
-                        overflow-y: auto;
-                        z-index: 1;
-                    }
-
-                    .rap-list li {
-                        padding: 10px 15px;
-                        cursor: pointer;
-                        user-select: none;
-                        width: 159px;
-                        background-color: #f8f3f3;
-                    }
-
-                    .rap-list li:hover {
-                        background-color: #ffffff;
-                    }
-                </style>
-
-                <div class="rap-selection " style="width: 160px;">
-                    <div class="selected-rap" onclick="toggleRapList()">
-                        <span id="selected-rap">Chọn rạp</span>
-
-
-                    </div>
-    
-    
-                </div>
+       
                 <div style="margin: 0 30px">
                     <style>
                         .rap-selection {
