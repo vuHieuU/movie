@@ -410,7 +410,7 @@
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F" />
     <link rel="alternate" type="text/xml+oembed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" /> --}}
-    {{-- <style type="text/css">
+    <style type="text/css">
         body {
             font-family: "Roboto Condensed";
             color: #333;
@@ -466,7 +466,7 @@
         #amy-page-header {
             background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
         }
-    </style> --}}
+    </style>
 </head>
 
 <body
@@ -541,7 +541,7 @@
                                                                                             <path
                                                                                                 d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
                                                                                         </svg>
-                                                                                        
+
                                                                                         <span>Ghế đang chọn</span>
                                                                                     </div>
                                                                                     <div class="col-md-3 col-sm-4">
@@ -558,110 +558,113 @@
 
                                                                                         <span>Thời gian còn lại</span>
                                                                                         <br>
-                                                                                        <span class="fs-1; fw-bold" id="thoiGianDemNguoc" style="font-size: 25px"></span>
+                                                                                        <span class="fs-1; fw-bold"
+                                                                                            id="thoiGianDemNguoc"
+                                                                                            style="font-size: 25px"></span>
 
-                                                                                    {{-- //thời gian chạy --}}
-                                                                                        
+                                                                                        {{-- //thời gian chạy --}}
+
                                                                                         <script>
                                                                                             var thoiGianDemNguoc = 10; // Số phút bạn muốn đếm ngược
-                                                                                            
+
                                                                                             function demNguocVaChuyenTrang() {
                                                                                                 if (thoiGianDemNguoc <= 0) {
                                                                                                     // Hết thời gian, chuyển trang
-                                                                                                    window.location.href = "{{ route('filmDetail',[$showTime->id]) }} "; // Sử dụng named route của Laravel
+                                                                                                    window.location.href = "{{ route('filmDetail', [$showTime->id]) }} "; // Sử dụng named route của Laravel
                                                                                                 } else {
                                                                                                     var minutes = Math.floor(thoiGianDemNguoc);
                                                                                                     var seconds = (thoiGianDemNguoc - minutes) * 60;
                                                                                                     document.getElementById('thoiGianDemNguoc').textContent = minutes + " : " + Math.floor(seconds) + " ";
-                                                                                                    thoiGianDemNguoc -= 1/60; // Trừ 1 phút (1/60) sau mỗi giây
+                                                                                                    thoiGianDemNguoc -= 1 / 60; // Trừ 1 phút (1/60) sau mỗi giây
                                                                                                     setTimeout(demNguocVaChuyenTrang, 1000); // Đếm ngược mỗi giây
                                                                                                 }
                                                                                             }
-                                                                                            
+
                                                                                             // Bắt đầu đếm ngược khi trang đã tải hoàn tất
                                                                                             window.onload = function() {
                                                                                                 demNguocVaChuyenTrang();
                                                                                             }
-                                                                                            </script>
-                                                                                              {{-- //thời gian chạy --}}
+                                                                                        </script>
+                                                                                        {{-- //thời gian chạy --}}
                                                                                     </div>
 
                                                                                 </div>
 
                                                                                 <div class="py-5">
-                                                                                  <img class="img-responsive" src="{{ asset('storage/images/ic-screen.png') }}">
-                                                                                       
+                                                                                    <img class="img-responsive"
+                                                                                        src="{{ asset('storage/images/ic-screen.png') }}">
+
                                                                                 </div>
-                                                                                <div class="row mt-4 " style="max-width: 700px;margin: auto">
+                                                                                <div class="row mt-4 "
+                                                                                    style="max-width: 700px;margin: auto">
                                                                                     <style>
                                                                                         .iconchuadat {
-                                                                                          color: #BABBC3; /* Default color */
-                                                                                          font-size: 25px; /* Default font size */
-                                                                                          transition: color 0.3s; /* Smooth transition on color change */
+                                                                                            color: #BABBC3;
+                                                                                            /* Default color */
+                                                                                            font-size: 25px;
+                                                                                            /* Default font size */
+                                                                                            transition: color 0.3s;
+                                                                                            /* Smooth transition on color change */
                                                                                         }
-                                                                                      
+
                                                                                         .iconchuadat:hover {
-                                                                                          color: #03599D; /* Change the color to red on hover */
+                                                                                            color: #03599D;
+                                                                                            /* Change the color to red on hover */
                                                                                         }
-                                                                                        .fa-couch-icon{
-                                                                                      
-                                                                                        }
-                                                                                      </style>
-                                                                                      @foreach ($seats as $item)
-                                                                                      <div class="col-md-1 col-sm-2 col-xs-3 text-center seat"
-                                                                                          id="{{ $item->id }}"
-                                                                                          data-price="{{ $item->price }}"
-                                                                                          onclick="toggleSeat(this)">
 
-
-
-
-{{-- <i class="fa-solid fa-couch fa-couch-icon iconchuadat"></i> --}}
-
-
-                                                                                          @if ($item->isActive == 1)
-                                                                                          <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4">
-                                                                                              <span class="fs-6">  {{ $item->seat_number }}</span>
-                                                                                          </i>
-                                                                                                
-                                                                                            
-                                                                                          @else
-                                                                                          <i class="fa-solid fa-couch fa-couch-icon mb-4" style="font-size: 25px;color: #FD2802;" disabled>
-                                                                                              <span class="fs-6 ">  {{ $item->seat_number }}</span></i>
-                                                                                              {{-- <button
+                                                                                        .fa-couch-icon {}
+                                                                                    </style>
+                                                                                    @foreach ($seats as $item)
+                                                                                        <div class="col-md-1 col-sm-2 col-xs-3 text-center seat"
+                                                                                            id="{{ $item->id }}"
+                                                                                            data-price="{{ $item->price }}"
+                                                                                            onclick="toggleSeat(this)">
+                                                                                            @if ($item->isActive == 1)
+                                                                                                <i
+                                                                                                    class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4">
+                                                                                                    <span class="fs-6">
+                                                                                                        {{ $item->seat_number }}</span>
+                                                                                                </i>
+                                                                                            @else
+                                                                                                <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                    style="font-size: 25px;color: #FD2802;"
+                                                                                                    disabled>
+                                                                                                    <span class="fs-6 ">
+                                                                                                        {{ $item->seat_number }}</span></i>
+                                                                                                {{-- <button
                                                                                               
                                                                                                   class="btn btn-danger"
                                                                                                  disabled>
                                                                                                   
                                                                                                   
                                                                                               </button> --}}
-                                                                                          @endif
-                                                                                      </div>
-                                                                                  @endforeach
-                                                                                  <script>
-                                                                                    $(document).ready(function() {
-                                                                                        var selectedSeats = [];
-                                                                                        var maxSeats = 8; // Số lượng ghế tối đa có thể chọn
-                                                                                
-                                                                                        $('.iconchuadat').click(function() {
-                                                                                            var seat = $(this);
-                                                                                            
-                                                                                            if (selectedSeats.length < maxSeats || seat.hasClass('selected')) {
-                                                                                                if (seat.hasClass('selected')) {
-                                                                                                    // Trả lại màu ban đầu và loại bỏ khỏi danh sách ghế đã chọn
-                                                                                                    seat.css('color', '#BABBC3');
-                                                                                                    seat.removeClass('selected');
-                                                                                                    selectedSeats.splice(selectedSeats.indexOf(seat), 1);
-                                                                                                } else {
-                                                                                                    // Thay đổi màu và thêm vào danh sách ghế đã chọn
-                                                                                                    seat.css('color', '#03599D');
-                                                                                                    seat.addClass('selected');
-                                                                                                    selectedSeats.push(seat);
+                                                                                            @endif
+                                                                                        </div>
+                                                                                    @endforeach
+                                                                                    <script>
+                                                                                        $(document).ready(function() {
+                                                                                            var selectedSeats = [];
+                                                                                            var maxSeats = 8; // Số lượng ghế tối đa có thể chọn
+
+                                                                                            $('.iconchuadat').click(function() {
+                                                                                                var seat = $(this);
+
+                                                                                                if (selectedSeats.length < maxSeats || seat.hasClass('selected')) {
+                                                                                                    if (seat.hasClass('selected')) {
+                                                                                                        // Trả lại màu ban đầu và loại bỏ khỏi danh sách ghế đã chọn
+                                                                                                        seat.css('color', '#BABBC3');
+                                                                                                        seat.removeClass('selected');
+                                                                                                        selectedSeats.splice(selectedSeats.indexOf(seat), 1);
+                                                                                                    } else {
+                                                                                                        // Thay đổi màu và thêm vào danh sách ghế đã chọn
+                                                                                                        seat.css('color', '#03599D');
+                                                                                                        seat.addClass('selected');
+                                                                                                        selectedSeats.push(seat);
+                                                                                                    }
                                                                                                 }
-                                                                                            }
+                                                                                            });
                                                                                         });
-                                                                                    });
-                                                                                </script>
+                                                                                    </script>
                                                                                 </div>
                                                                                 <script>
                                                                                     const maxSeats = 8; // Số lượng ghế tối đa được chọn
@@ -715,22 +718,35 @@
                                                                                         }, 0);
                                                                                         totalPriceSpan.textContent = total.toLocaleString();
                                                                                         selectedPriceSeatsValue.value = total;
-                                                                                      
+
                                                                                     }
                                                                                     // food
                                                                                     function calculateTotal() {
                                                                                         const foodItems = @json($food);
                                                                                         let total = 0;
+                                                                                        let foodData = [];
 
                                                                                         foodItems.forEach(item => {
-                                                                                            const quantity = parseInt(document.getElementById(`quantity_${item.id}`).value);
+                                                                                            const quantityInput = document.getElementById(`quantity_${item.id}`);
+                                                                                            const quantity = parseInt(quantityInput.value);
+                                                                                            const itemFoodName = quantityInput.getAttribute('data-food-name');
+
+                                                                                            if (quantity > 0) {
+                                                                                                const foodInfo = {
+                                                                                                    name: itemFoodName,
+                                                                                                    quantity: quantity
+                                                                                                };
+                                                                                                foodData.push(foodInfo);
+                                                                                            }
+
                                                                                             total += quantity * item.price;
                                                                                         });
 
+                                                                                        // Chuyển đối tượng foodData thành một chuỗi JSON và cập nhật giá trị của input "FoodValueName".
+                                                                                        document.getElementById('FoodValueName').value = JSON.stringify(foodData);
                                                                                         document.getElementById('totalPriceFood').textContent = total.toLocaleString();
                                                                                         document.getElementById('totalPriceFoodValue').value = total;
                                                                                     }
-
                                                                                 </script>
 
 
@@ -800,7 +816,7 @@
                                                                                             class="card mb-3 col-md-5 m-5 product-card">
                                                                                             <div class="row g-0">
                                                                                                 <div class="col-md-4">
-                                                                                                    <img src="{{ asset('storage/images/'.  $item->thumb ) }}"
+                                                                                                    <img src="{{ asset('storage/images/' . $item->thumb) }}"
                                                                                                         class="img-fluid rounded-start"
                                                                                                         alt="...">
                                                                                                 </div>
@@ -841,7 +857,7 @@
                                                                                             </div>
                                                                                         </div>
                                                                                     @endforeach
-    
+
                                                                                 </div>
                                                                             </div>
                                                                             {{-- food --}}
@@ -865,18 +881,20 @@
                                                                             <h4 class="amy-title amy-widget-title"></h4>
                                                                             <div class="entry-item">
                                                                                 <div class="entry-thumb"><img
-                                                                                        class="" style="width: 120px;"
-                                                                                        src="{{asset("storage/images/".$showTime->film->thumb)}}"
+                                                                                        class=""
+                                                                                        style="width: 120px;"
+                                                                                        src="{{ asset('storage/images/' . $showTime->film->thumb) }}"
                                                                                         alt="Kubo and the Two Strings" />
                                                                                 </div>
                                                                                 <div class="entry-content">
                                                                                     <h2 class="entry-title"><a
-                                                                                            href=" {{ route('filmDetail',[$showTime->id]) }} ">{{ $showTime->film->name }}</a>
+                                                                                            href=" {{ route('filmDetail', [$showTime->id]) }} ">{{ $showTime->film->name }}</a>
                                                                                     </h2>
                                                                                     <div><span class="duration"> <svg
                                                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                                                 height="1em"
-                                                                                                viewBox="0 0 512 512" style="fill: #ff6900"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                                viewBox="0 0 512 512"
+                                                                                                style="fill: #ff6900"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                                                                                 <path
                                                                                                     d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z" />
                                                                                             </svg>
@@ -886,7 +904,7 @@
                                                                                 </div>
                                                                                 <div class="clearfix"></div>
                                                                             </div>
-                                                                          
+
                                                                             <hr class="border-2 border-black py-4">
                                                                             <div class="">
                                                                                 <div
@@ -922,7 +940,7 @@
                                                                                     </div>
 
                                                                                     <p class="m-0 p-0 fw-bold">
-                                                                                        {{Carbon\Carbon::parse( $selectedDate)->format("d/m/Y") }}
+                                                                                        {{ Carbon\Carbon::parse($selectedDate)->format('d/m/Y') }}
                                                                                     </p>
                                                                                 </div>
 
@@ -987,7 +1005,7 @@
                                                                                     </p>
                                                                                 </div>
 
-                                                                                <div
+                                                                                {{-- <div
                                                                                     class=" d-flex align-items-center justify-content-between mb-5 px-4">
                                                                                     <div
                                                                                         class="d-flex align-items-center gap-2">
@@ -999,19 +1017,21 @@
 
                                                                                     <p class="m-0 p-0 fs-2 fw-bold">50.00đ
                                                                                     </p>
-                                                                                </div>
+                                                                                </div> --}}
 
 
                                                                                 <hr class="border-2 border-black py-4">
                                                                                 <div class="d-flex">
-                                                                                    <a
-                                                                                        href="{{ route('filmDetail',[$film->id]) }}" style="background-color: #FE7900;" class="btn text-white btn-lg fs-4 px-4">Quay
+                                                                                    <a href="{{ route('filmDetail', [$film->id]) }}"
+                                                                                        style="background-color: #FE7900;"
+                                                                                        class="btn text-white btn-lg fs-4 px-4">Quay
                                                                                         lại</a>
                                                                                     <form
                                                                                         action="{{ route('pay', ['film_id' => $film->id]) }}"
                                                                                         method="get">
 
-                                                                                        <button type="submit" style="background-color: #FE7900;"
+                                                                                        <button type="submit"
+                                                                                            style="background-color: #FE7900;"
                                                                                             class=" mx-5 btn text-white btn-lg fs-4 px-4">
                                                                                             Tiếp Theo</button>
 
@@ -1026,6 +1046,10 @@
                                                                                         <input type="hidden"
                                                                                             name="totalPriceFoodValue"
                                                                                             id="totalPriceFoodValue"
+                                                                                            value="">
+                                                                                        <input type="hidden"
+                                                                                            name="FoodValueName"
+                                                                                            id="FoodValueName"
                                                                                             value="">
                                                                                         <input type="hidden"
                                                                                             name="selectedSeatsValueID"
@@ -1070,158 +1094,4 @@
 
                 </div>
             </div>
-
-            {{-- <style>
-                /* .seat {
-                    
-                    background-color: #ccc;
-                    
-                } */
-
-
-                .seat.selected {
-                    background-color: #03599D;
-                }
-
-                .quantity-container {
-                    display: flex;
-                    align-items: center;
-                }
-
-                .quantity-input {
-                    padding: 0;
-                    height: 0;
-                    width: 25px;
-                    text-align: center;
-                }
-
-                .quantity-button {
-                    background-color: #007bff29;
-                    color: #fff;
-                    border: none;
-                    cursor: pointer;
-                    padding: 3px 7px;
-                }
-
-                .quantity-btn {
-                    background-color: #b3d3f781;
-                    /* Màu nền của nút */
-                    color: #fff;
-                    /* Màu sắc chữ trên nút */
-                    border: none;
-                    border-radius: 5px;
-                    padding: 1px 15px;
-                    font-size: 18px;
-                    cursor: pointer;
-                    transition: background-color 0.2s;
-                }
-
-                .quantity-btn:hover {
-                    background-color: #c0c1c3;
-                    /* Màu nền khi hover */
-                }
-
-                .quantity-display {
-                    font-size: 20px;
-                    margin: 0 10px;
-                }
-            </style>
-            <script>
-                const selectedSeats = [];
-                let quantity = 0;
-
-                function toggleSeat(seat) {
-                    seat.classList.toggle("selected");
-
-                    const seatNumber = seat.textContent;
-
-                    if (selectedSeats.includes(seatNumber)) {
-                        selectedSeats.splice(selectedSeats.indexOf(seatNumber), 1);
-                    } else {
-                        selectedSeats.push(seatNumber);
-                    }
-
-                    updateSelectedSeatsList();
-                }
-                var getSeat = "";
-
-                function getseats() {
-
-                }
-
-
-                function decreaseQuantity() {
-                    if (quantity > 0) {
-                        quantity--;
-                        updateQuantityDisplay();
-                    }
-                }
-
-                function increaseQuantity() {
-                    quantity++;
-                    updateQuantityDisplay();
-                }
-
-                function updateQuantityDisplay() {
-                    const quantityDisplay = document.getElementById("quantity");
-                    quantityDisplay.textContent = quantity;
-                }
-            </script>
-
-
-            <script>
-                // JavaScript để thay đổi số lượng khi bấm nút
-                const quantityContainers = document.querySelectorAll('.quantity-container');
-
-                quantityContainers.forEach(container => {
-                    const decreaseButton = container.querySelector('.decrease');
-                    const increaseButton = container.querySelector('.increase');
-                    const quantityInput = container.querySelector('.quantity-input');
-
-                    decreaseButton.addEventListener('click', () => {
-                        let currentValue = parseInt(quantityInput.value);
-                        if (currentValue > 1) {
-                            quantityInput.value = currentValue - 1;
-                        }
-                    });
-
-                    increaseButton.addEventListener('click', () => {
-                        let currentValue = parseInt(quantityInput.value);
-                        quantityInput.value = currentValue + 1;
-                    });
-                });
-            </script>
-
-
-
-            <script>
-                // Lấy tất cả các card sản phẩm
-                const productCards = document.querySelectorAll('.product-card');
-
-                // Lặp qua từng card và gắn sự kiện cho từng cái riêng biệt
-                productCards.forEach(card => {
-                    const decreaseBtn = card.querySelector('.decrease-btn');
-                    const increaseBtn = card.querySelector('.increase-btn');
-                    const quantityInput = card.querySelector('.product-quantity');
-
-                    decreaseBtn.addEventListener('click', () => {
-                        changeQuantity(quantityInput, -1);
-                    });
-
-                    increaseBtn.addEventListener('click', () => {
-                        changeQuantity(quantityInput, 1);
-                    });
-                });
-
-                function changeQuantity(input, change) {
-                    let currentValue = parseInt(input.value);
-                    if (!isNaN(currentValue)) {
-                        let newValue = currentValue + change;
-                        if (newValue < 1) {
-                            newValue = 1;
-                        }
-                        input.value = newValue;
-                    }
-                }
-            </script> --}}
         @endsection

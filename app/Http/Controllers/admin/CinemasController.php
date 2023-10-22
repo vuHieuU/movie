@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\admin\CinemasRequest;
 use App\Models\cinema;
 use App\Models\city;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class CinemasController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CinemasRequest $request)
     {
         $name = $request->input("name");
         $description = $request->input("description");
@@ -67,7 +68,7 @@ class CinemasController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(CinemasRequest $request, string $id)
     {
         $cinemas= cinema::find($id);
         $name = $request->input("name");

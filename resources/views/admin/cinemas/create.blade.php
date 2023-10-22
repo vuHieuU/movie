@@ -33,19 +33,19 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
-                                    <h4 class="card-title">Add Roles</h4>
+                                    <h4 class="card-title">Thêm rạp mới</h4>
                                 </div>
                             </div>
                             <div class="card-body">
                                   <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Name *</label>
+                                            <label>Tên rạp *</label>
                                             <input type="text" class="form-control" placeholder="name"
                                                 name="name" value="{{ old('name') }}">
                                                 @error('name')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                         </div>
@@ -58,11 +58,11 @@
                                                 <label>Address</label>
                                                 <input type="text" class="form-control" placeholder="address"
                                                     name="address" value="{{ old('address') }}">
-                                                @error('address')
+                                                    @error('address')
                                                     
-                                                   <div class="help-block with-errors">{{ $message }}</div>
-
-                                                @enderror
+                                                    <div class="help-block with-errors text-danger">{{ $message }}</div>
+    
+                                                    @enderror
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -73,9 +73,9 @@
                                                         <option value="{{$item->id}}">{{$item->name}}</option>
                                                     @endforeach
                                                 </select>
-                                                @error('gender')
+                                                @error('city')
                                                     
-                                                   <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                             </div>
@@ -87,10 +87,10 @@
                                                 <label>Description</label>
                                                 <textarea type="text" class="form-control" placeholder="Description..."
                                                     name="description" value="{{ old('password') }}"></textarea>
-                                                    @error('gender')
+                                                    @error('description')
                                                     
-                                                      <div class="help-block with-errors">{{ $message }}</div>
- 
+                                                    <div class="help-block with-errors text-danger">{{ $message }}</div>
+    
                                                     @enderror
                                             </div>
                                         </div>
@@ -98,6 +98,7 @@
     
                                     <button type="submit" class="btn btn-primary mr-2">Add Cinemas</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
+                                    <a href="/index" class="btn btn-danger mr-2">Back</a>
                                     {{-- <a href="/user/index"><button type="submit" class="btn btn-danger">Back</button></a> --}}
                             </div>
                         </div>

@@ -5,16 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class category extends Model
+class ticketFood extends Model
 {
     use HasFactory;
-
     protected $fillable = [
+        'ticket_id',
         'name',
-        'status',
+        'quantity',
     ];
-    public function films()
-    {
-        return $this->belongsToMany(film::class,'film_categories', 'film_id', 'dmid');
-    }
 }

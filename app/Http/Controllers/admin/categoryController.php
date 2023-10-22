@@ -32,7 +32,8 @@ class categoryController extends Controller
     public function store(CategoriesRequest $request)
     {
         $data = new category(); 
-        $data->name = $request->input('name');    
+        $data->name = $request->input('name');
+        $data->status = $request->status == true ? "1" : "0";
         $data->save();
     
         return redirect()->route('categories.index')->with('success', 'Thêm thành công');
@@ -52,6 +53,7 @@ class categoryController extends Controller
     public function edit(string $id)
     {
         $cate = category::find($id);
+
         return view('admin.categories.edit', compact('cate'));
     }
 
@@ -62,11 +64,9 @@ class categoryController extends Controller
     {
         $data = category::find($id);
     
-        if (!$data) {
-            return redirect()->back()->with('error', 'Không có dữ liệu');
-        }
-    
         $data->name = $request->input('name');
+        $data->status = $request->status == true ? "1" : "0";
+
         $data->save();
         
         return redirect()->route('categories.index')->with('success', 'Cập nhật thành công');

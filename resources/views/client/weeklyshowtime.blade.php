@@ -84,6 +84,64 @@
     {{-- <link rel="alternate" type="text/xml+oembed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fweekly-showtime-ajax%2F&#038;format=xml" />
      --}}
+     <style type="text/css">
+        body {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        #amy-site-nav .sub-menu .menu-item a {
+            font-family: "Roboto Condensed";
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        h1 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 36px;
+        }
+
+        h2 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        h3 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        h4 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        h5 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .amy-site-footer {
+            background-color: #606060;
+        }
+
+        #amy-page-header {
+            background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
+        }
+    </style> 
+
 </head>
 
 <body

@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->tinyInteger('status')->default("1");
-            $table->timestamps();
+        Schema::table('tickets', function (Blueprint $table) {
+            $table->text('showtime_id')->after('id');
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::table('tickets', function (Blueprint $table) {
+            //
+        });
     }
 };

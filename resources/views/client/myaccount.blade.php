@@ -1,49 +1,485 @@
-<!doctype html>
-<html lang="en">
+
+
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+<!--[if IE]><![endif]-->
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>POS Dash | Responsive Bootstrap 4 Admin Dashboard Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
+    <title>{{$taitel}}</title>
+    <meta name='robots' content='max-image-preview:large' />
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+{{-- ảnh url --}}
+<link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
+{{-- ảnh url --}}
+    <link rel='dns-prefetch' href='//s.w.org' />
+    <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Comments Feed"
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" />
+    <script type="text/javascript">
+        window._wpemojiSettings = {
+            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/",
+            "svgExt": ".svg",
+            "source": {
+                "concatemoji": "http:\/\/demo.amytheme.com\/movie\/demo\/elementor-single-cinema\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.7"
+            }
+        };
+        /*! This file is auto-generated */
+        ! function(e, a, t) {
+            var n, r, o, i = a.createElement("canvas"),
+                p = i.getContext && i.getContext("2d");
 
-    <!-- Favicon -->
-    {{-- <link rel="shortcut icon" href="/template/assets/images/favicon.ico" />
-    <link rel="stylesheet" href="/template/assets/css/backend-plugin.min.css"> --}}
-    <link rel="stylesheet" href="/template/assets/css/backend.css">
-    {{-- <link rel="stylesheet" href="/template/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="/template/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css"> --}}
-    <style>
+            function s(e, t) {
+                var a = String.fromCharCode;
+                p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0);
+                e = i.toDataURL();
+                return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL()
+            }
 
+            function c(e) {
+                var t = a.createElement("script");
+                t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)
+            }
+            for (o = Array("flag", "emoji"), t.supports = {
+                    everything: !0,
+                    everythingExceptFlag: !0
+                }, r = 0; r < o.length; r++) t.supports[o[r]] = function(e) {
+                if (!p || !p.fillText) return !1;
+                switch (p.textBaseline = "top", p.font = "600 32px Arial", e) {
+                    case "flag":
+                        return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([
+                            55356, 56826, 55356, 56819
+                        ], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418,
+                            56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447
+                        ], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203,
+                            56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447
+                        ]);
+                    case "emoji":
+                        return !s([10084, 65039, 8205, 55357, 56613], [10084, 65039, 8203, 55357, 56613])
+                }
+                return !1
+            }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports
+                .everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);
+            t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t
+                .readyCallback = function() {
+                    t.DOMReady = !0
+                }, t.supports.everything || (n = function() {
+                    t.readyCallback()
+                }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !
+                    1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function() {
+                    "complete" === a.readyState && t.readyCallback()
+                })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n
+                    .wpemoji)))
+        }(window, document, window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 0.07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
     </style>
-    <!-- <link rel="stylesheet" href="/template/assets/vendor/remixicon/fonts/remixicon.css">   -->
+    <link rel='stylesheet' id='wp-block-library-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7'
+        type='text/css' media='all' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        
+    <style id='global-styles-inline-css' type='text/css'>
+        body {
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+            --wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+            --wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+            --wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+            --wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+            --wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+            --wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+            --wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+            --wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+    </style>
+    <link rel='stylesheet' id='elementor-icons-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-frontend-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.6.5'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-post-5-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-5.css?ver=1651538276'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-global-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/global.css?ver=1651538276'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-post-142-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='slick-style-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick.css?ver=5.9.7'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='slick-theme-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick-theme.css?ver=5.9.7'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='fancybox-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.fancybox.css?ver=3.5.7'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='tooltipster-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/tooltipster.bundle.css?ver=1.0.0'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='mCustomScrollbar-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.mCustomScrollbar.css?ver=1.0.0'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='plyr-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/plyr.css?ver=1.0.0'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='amy-movie-style-css'
+        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/style.css?ver=1.0.0'
+        type='text/css' media='all' />
+    <style id='amy-movie-style-inline-css' type='text/css'>
+        .amy-primary-navigation ul.nav-menu>li>a::after {
+            top: 70%;
+        }
+    </style>
+    <link rel='stylesheet' id='csf-google-web-fonts-css'
+        href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='google-fonts-1-css'
+        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.9.7'
+        type='text/css' media='all' />
+    <script type='text/javascript'
+        src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery.min.js?ver=3.6.0'
+        id='jquery-core-js'></script>
+    <script type='text/javascript'
+        src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2'
+        id='jquery-migrate-js'></script>
+    <link rel="https://api.w.org/" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/" />
+    <link rel="alternate" type="application/json"
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/wp/v2/pages/142" />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD"
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/xmlrpc.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/wlwmanifest.xml" />
+    <meta name="generator" content="WordPress 5.9.7" />
+    <link rel="canonical" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/now-playing/" />
+    <link rel='shortlink' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/?p=142' />
+    <link rel="alternate" type="application/json+oembed"
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F" />
+    <link rel="alternate" type="text/xml+oembed"
+        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" />
+    <style type="text/css">
+        body {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        #amy-site-nav .sub-menu .menu-item a {
+            font-family: "Roboto Condensed";
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        h1 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 36px;
+        }
+
+        h2 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        h3 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        h4 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        h5 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .amy-site-footer {
+            background-color: #BABBC3;
+        }
+
+        #amy-page-header {
+            background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
+        }
+    </style>
 </head>
 
 <body class="  ">
     <!-- loader Start -->
 
-<<<<<<< HEAD
-        @extends('client.layout.main.main')
-        @section('contact')
-        <div class="container my-5">
-            <div class=" text-center">
-                <span class="fs-1 fw-bold">Thông tin cá nhân</span>
-                <p>Quản lý thông tin, quyền riêng tư để hoạt động hiệu quả cho bạn. <a href="/editaccount" class="fs-4 text-danger text-decoration-underline">Cập nhật tài khoản</a></p>
-            </div>
-            <div class="container mt-5">
-                <div class="border border-1 border-gray p-3 rounded">
-                    <h2 class="fs-2">Thông tin cơ bản</h2>
-                    <p>Một số thông tin có thể hiển thị cho những người khác đang sử dụng dịch vụ của Website</p>
-                    <p style="color: green">
-                        {{ session('success') }}
-                    </p>
-                    <div class="row py-3 border-1 border-bottom align-items-center mx-5">
-                        <div class="col-md-4">
-                            <p class="fs-4 text-gray">Avatar</p>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="rounded-circle overflow-hidden" style="width: 150px; height: 150px;">
-                                <img src="{{ asset('/storage/images/' . Auth::user()->avatar) }}" style="width: 100%; height: 100%;">
-=======
     <!-- loader END -->
     <!-- Wrapper Start -->
 
@@ -62,8 +498,11 @@
                             <div class="profile-image position-relative">
                                 <img src="/template/assets/images/page-img/profile.png" class="img-fluid rounded w-100 "
                                     alt="profile-image">
->>>>>>> d8f9d13f203b7ed80558d8ee445551b7d5598b7a
                             </div>
+                        </div>
+                        
+                        <div class="col-md-4 text-center">
+                            <img class="w-25" src="images/MoMo_logo-1.png" alt="Avatar">
                         </div>
                     </div>
                 </div>
@@ -148,368 +587,57 @@
                                                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                         </svg>
                                         <p class="mb-0" style="color: #75759D" >{{Auth::User()->email}}</p>
-                                    </div>z
+                                    </div>
                                 </li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8 card-profile">
-                    <div class="card card-block card-stretch card-height">
-                        <div class="card-body">
-                            <ul class="d-flex nav nav-pills mb-3 text-center profile-tab" id="profile-pills-tab"
-                                role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active show" data-toggle="pill" href="#profile1"
-                                        role="tab" aria-selected="false">My Skills</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="pill" href="#profile2" role="tab"
-                                        aria-selected="false">Personal Information</a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                    <a id="view-btn" class="nav-link" data-toggle="pill" href="#profile5"
-                                        role="tab" aria-selected="true">About</a>
-                                </li>
-                            </ul>
-                            <div class="profile-content tab-content">
-
-                                <div id="profile1" class="tab-pane fade active show">
-                                    <p style="color: #75759D">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis viverra viverra
-                                        mollis sed vitae fames
-                                        nunc sollicitudin viverra. Curabitur massa, ultrices diam ipsum faucibus risus.
-                                        Hendrerit justo,
-                                        quis massa a elementum. At elementum.</p>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <ul class="list-inline p-0 m-0">
-                                                <li class="mb-4">
-                                                    <div class="d-flex align-items-center pt-2">
-                                                        <img src="/template/assets/images/profile/service/01.png"
-                                                            class="img-fluid" alt="image">
-                                                        <div class="ml-3 " style="width: 300px;">
-                                                            <div
-                                                                class="media align-items-center justify-content-between">
-                                                                <p class="mb-0">Adobe Photoshop</p>
-                                                                <h6>85%</h6>
-                                                            </div>
-                                                            <div class="iq-progress-bar mt-3">
-                                                                <span class="bg-primary iq-progress progress-1"
-                                                                    data-percent="85"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="mb-4">
-                                                    <div class="d-flex align-items-center pt-2">
-                                                        <img src="/template/assets/images/profile/service/02.png"
-                                                            class="img-fluid mr-3" alt="image">
-                                                        <div class="ml-3 " style="width: 300px;">
-                                                            <div
-                                                                class="media align-items-center justify-content-between">
-                                                                <p class="mb-0">Figma</p>
-                                                                <h6>85%</h6>
-                                                            </div>
-                                                            <div class="iq-progress-bar mt-3">
-                                                                <span class="iq-progress iq-progress-danger progress-1"
-                                                                    data-percent="85"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="d-flex align-items-center pt-2">
-                                                        <img src="/template/assets/images/profile/service/03.png"
-                                                            class="img-fluid" alt="image">
-                                                        <div class="ml-3 " style="width: 300px;">
-                                                            <div
-                                                                class="media align-items-center justify-content-between">
-                                                                <p class="mb-0">Adobe Photoshop</p>
-                                                                <h6>85%</h6>
-                                                            </div>
-                                                            <div class="iq-progress-bar mt-3">
-                                                                <span
-                                                                    class="iq-progress iq-progress-warning progress-1"
-                                                                    data-percent="85"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <ul class="list-inline p-0 m-0">
-                                                <li class="mb-4">
-                                                    <div class="d-flex align-items-center pt-2">
-                                                        <img src="/template/assets/images/profile/service/04.png"
-                                                            class="img-fluid" alt="image">
-                                                        <div class="ml-3 " style="width: 300px;">
-                                                            <div
-                                                                class="media align-items-center justify-content-between">
-                                                                <p class="mb-0">Adobe Photoshop</p>
-                                                                <h6>85%</h6>
-                                                            </div>
-                                                            <div class="iq-progress-bar mt-3">
-                                                                <span
-                                                                    class="iq-progress iq-progress-success progress-1"
-                                                                    data-percent="85"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="mb-4">
-                                                    <div class="d-flex align-items-center pt-2">
-                                                        <img src="/template/assets/images/profile/service/05.png"
-                                                            class="img-fluid" alt="image">
-                                                        <div class="ml-3 " style="width: 300px;">
-                                                            <div
-                                                                class="media align-items-center justify-content-between">
-                                                                <p class="mb-0">Figma</p>
-                                                                <h6>85%</h6>
-                                                            </div>
-                                                            <div class="iq-progress-bar mt-3">
-                                                                <span class="iq-progress iq-progress-info progress-1"
-                                                                    data-percent="85"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="d-flex align-items-center pt-2">
-                                                        <img src="/template/assets/images/profile/service/06.png"
-                                                            class="img-fluid" alt="image">
-                                                        <div class="ml-3 " style="width: 300px;">
-                                                            <div
-                                                                class="media align-items-center justify-content-between">
-                                                                <p class="mb-0">Adobe Photoshop</p>
-                                                                <h6>85%</h6>
-                                                            </div>
-                                                            <div class="iq-progress-bar mt-3">
-                                                                <span class="bg-secondary iq-progress progress-1"
-                                                                    data-percent="85"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="profile2" class="tab-pane fade">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="card card-block card-stretch mb-0">
-                                                <div class="card-header px-4">
-                                                    <div class="header-title">
-                                                        <h4 class="card-title">Personal Skills</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body p-4">
-                                                    <div class="p-2 bg-warning rounded w-100 mb-3">
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="skill-number">1.</span>
-                                                            <p class="mb-0">Creative spirit</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="p-2 bg-danger rounded w-100 mb-3">
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="skill-number">2.</span>
-                                                            <p class="mb-0">Management</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="p-2 bg-info rounded w-100 mb-3">
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="skill-number">3.</span>
-                                                            <p class="mb-0">Organized</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="p-2 bg-success rounded w-100 mb-3">
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="skill-number">4.</span>
-                                                            <p class="mb-0">Team Player</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="p-2 bg-danger rounded w-100">
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="skill-number">5.</span>
-                                                            <p class="mb-0">Professional</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="card card-block card-stretch">
-                                                <div class="card-body p-3">
-                                                    <div class="row align-items-center text-center py-2">
-                                                        <div class="profile-info col-xl-3 col-lg-6">
-                                                            <div class="profile-icon icon m-auto rounded bg-warning">
-                                                                <svg class="svg-icon" width="22" height="22"
-                                                                    viewBox="0 0 36 48" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <path
-                                                                        d="M9.10495 33.9964C8.29026 33.1817 8.71495 33.4114 6.74995 32.8855C5.85838 32.6464 5.07463 32.1871 4.36588 31.6367L0.112441 42.0655C-0.299122 43.0752 0.469629 44.1721 1.559 44.1308L6.4987 43.9424L9.8962 47.5311C10.6462 48.3224 11.9624 48.0758 12.374 47.0661L17.2537 35.1017C16.2375 35.668 15.1096 35.9999 13.9434 35.9999C12.1153 35.9999 10.3978 35.2883 9.10495 33.9964V33.9964ZM35.8875 42.0655L31.634 31.6367C30.9253 32.188 30.1415 32.6464 29.25 32.8855C27.2746 33.4142 27.7078 33.1836 26.895 33.9964C25.6021 35.2883 23.8837 35.9999 22.0556 35.9999C20.8893 35.9999 19.7615 35.6671 18.7453 35.1017L23.625 47.0661C24.0365 48.0758 25.3537 48.3224 26.1028 47.5311L29.5012 43.9424L34.4409 44.1308C35.5303 44.1721 36.299 43.0742 35.8875 42.0655V42.0655ZM24.6562 31.8749C26.0887 30.4171 26.2528 30.5427 28.2928 29.9867C29.595 29.6314 30.6131 28.5955 30.9618 27.2699C31.6631 24.6074 31.4812 24.9289 33.3946 22.9808C34.3481 22.0105 34.7203 20.5958 34.3715 19.2702C33.6712 16.6096 33.6703 16.9808 34.3715 14.3174C34.7203 12.9917 34.3481 11.5771 33.3946 10.6067C31.4812 8.65862 31.6631 8.97925 30.9618 6.31768C30.6131 4.99206 29.595 3.95612 28.2928 3.60081C25.679 2.88737 25.994 3.07393 24.0787 1.12487C23.1253 0.154558 21.735 -0.225129 20.4328 0.130183C17.82 0.842683 18.1846 0.843621 15.5671 0.130183C14.2649 -0.225129 12.8746 0.153621 11.9212 1.12487C10.0078 3.073 10.3228 2.88737 7.70807 3.60081C6.40588 3.95612 5.38776 4.99206 5.03901 6.31768C4.33869 8.97925 4.51963 8.65862 2.60619 10.6067C1.65275 11.5771 1.27963 12.9917 1.62932 14.3174C2.32963 16.9761 2.33057 16.6049 1.62932 19.2692C1.28057 20.5949 1.65275 22.0096 2.60619 22.9808C4.51963 24.9289 4.33776 24.6074 5.03901 27.2699C5.38776 28.5955 6.40588 29.6314 7.70807 29.9867C9.8062 30.5586 9.96276 30.4686 11.3437 31.8749C12.584 33.1377 14.5162 33.3636 16.0068 32.4205C16.6029 32.0421 17.2944 31.8411 18.0004 31.8411C18.7065 31.8411 19.3979 32.0421 19.994 32.4205C21.4837 33.3636 23.4159 33.1377 24.6562 31.8749ZM9.15557 16.4961C9.15557 11.5246 13.1156 7.49425 18 7.49425C22.8843 7.49425 26.8443 11.5246 26.8443 16.4961C26.8443 21.4677 22.8843 25.498 18 25.498C13.1156 25.498 9.15557 21.4677 9.15557 16.4961V16.4961Z"
-                                                                        fill="#d63a00" />
-                                                                </svg>
-                                                            </div>
-                                                            <h5 class="mb-2 mt-3 icon-text-warning">15+</h5>
-                                                            <p class="mb-0">Awards</p>
-                                                        </div>
-                                                        <div class="profile-info col-xl-3 col-lg-6">
-                                                            <div class="profile-icon icon m-auto rounded bg-info">
-                                                                <svg class="svg-icon" width="22" height="22"
-                                                                    viewBox="0 0 60 48" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <path
-                                                                        d="M23.9091 24.5297C24.495 25.1156 25.4447 25.1156 26.0306 24.5297L27.0909 23.4694C27.6769 22.8834 27.6769 21.9338 27.0909 21.3478L23.7422 18L27.09 14.6512C27.6759 14.0653 27.6759 13.1156 27.09 12.5297L26.0297 11.4694C25.4437 10.8834 24.4941 10.8834 23.9081 11.4694L18.4387 16.9387C17.8528 17.5247 17.8528 18.4744 18.4387 19.0603L23.9091 24.5297V24.5297ZM32.91 23.4703L33.9703 24.5306C34.5563 25.1166 35.5059 25.1166 36.0919 24.5306L41.5613 19.0613C42.1472 18.4753 42.1472 17.5256 41.5613 16.9397L36.0919 11.4703C35.5059 10.8844 34.5563 10.8844 33.9703 11.4703L32.91 12.5306C32.3241 13.1166 32.3241 14.0662 32.91 14.6522L36.2578 18L32.91 21.3488C32.3241 21.9347 32.3241 22.8844 32.91 23.4703V23.4703ZM58.5 39H35.7694C35.7 40.8572 34.3903 42 32.7 42H27C25.2478 42 23.9044 40.3622 23.9278 39H1.5C0.675 39 0 39.675 0 40.5V42C0 45.3 2.7 48 6 48H54C57.3 48 60 45.3 60 42V40.5C60 39.675 59.325 39 58.5 39ZM54 4.5C54 2.025 51.975 0 49.5 0H10.5C8.025 0 6 2.025 6 4.5V36H54V4.5ZM48 30H12V6H48V30Z"
-                                                                        fill="#32BDEA" />
-                                                                </svg>
-                                                            </div>
-                                                            <h5 class="mb-2 mt-3 icon-text-info">35+</h5>
-                                                            <p class="mb-0">Certificate</p>
-                                                        </div>
-                                                        <div class="profile-info col-xl-3 col-lg-6">
-                                                            <div class="profile-icon icon m-auto rounded bg-danger">
-                                                                <svg class="svg-icon" width="22" height="22"
-                                                                    viewBox="0 0 48 48" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <path
-                                                                        d="M35.3676 11.2517C34.8398 11.2372 34.3256 11.3198 33.8438 11.4898V7.03125C33.8438 4.70503 31.9512 2.8125 29.625 2.8125C29.0759 2.8125 28.5517 2.91909 28.0701 3.11072C27.5821 1.32047 25.9428 0 24 0C22.0572 0 20.4179 1.32047 19.9299 3.11072C19.4483 2.91909 18.9241 2.8125 18.375 2.8125C16.0488 2.8125 14.1562 4.70503 14.1562 7.03125V11.4895C13.6747 11.3198 13.1607 11.2372 12.6324 11.2517C10.3711 11.3136 8.53125 13.2316 8.53125 15.5272V48H36.6562V41.2395L38.5637 36.4704C39.1643 34.9689 39.4688 33.3877 39.4688 31.7705V15.5272C39.4688 13.2316 37.6289 11.3136 35.3676 11.2517V11.2517ZM11.3438 45.1875V42.375H33.8438V45.1875H11.3438ZM36.6562 31.7705C36.6562 33.0283 36.4194 34.2581 35.9523 35.4261L34.2979 39.5625H11.3438V15.5272C11.3438 14.7405 11.9564 14.0837 12.7095 14.0631C13.0926 14.0504 13.4561 14.1937 13.7305 14.4607C14.0051 14.7278 14.1563 15.0858 14.1563 15.4687V21.9843H16.9688V7.03125C16.9688 6.25584 17.5997 5.625 18.3751 5.625C19.1505 5.625 19.7813 6.25584 19.7813 7.03125V21.9844H22.5938V4.21875C22.5938 3.44334 23.2247 2.8125 24.0001 2.8125C24.7755 2.8125 25.4063 3.44334 25.4063 4.21875V21.9844H28.2188V7.03125C28.2188 6.25584 28.8497 5.625 29.6251 5.625C30.4005 5.625 31.0313 6.25584 31.0313 7.03125V24.1714C24.712 24.8732 19.7812 30.2467 19.7812 36.75H22.5938C22.5938 31.3222 27.0097 26.9062 32.4375 26.9062H33.8438V15.4688C33.8438 15.0859 33.995 14.7278 34.2696 14.4608C34.544 14.1938 34.9067 14.0508 35.2906 14.0632C36.0436 14.0838 36.6562 14.7406 36.6562 15.5273V31.7705Z"
-                                                                        fill="#e83e8c" />
-                                                                </svg>
-                                                            </div>
-                                                            <h5 class="mb-2 mt-3 icon-text-danger">04+</h5>
-                                                            <p class="mb-0">Experience</p>
-                                                        </div>
-                                                        <div class="profile-info col-xl-3 col-lg-6">
-                                                            <div class="profile-icon icon m-auto rounded bg-success">
-                                                                <svg class="svg-icon" width="22" height="22"
-                                                                    viewBox="0 0 36 48" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <path
-                                                                        d="M9.10495 33.9964C8.29026 33.1817 8.71495 33.4114 6.74995 32.8855C5.85838 32.6464 5.07463 32.1871 4.36588 31.6367L0.112441 42.0655C-0.299122 43.0752 0.469629 44.1721 1.559 44.1308L6.4987 43.9424L9.8962 47.5311C10.6462 48.3224 11.9624 48.0758 12.374 47.0661L17.2537 35.1017C16.2375 35.668 15.1096 35.9999 13.9434 35.9999C12.1153 35.9999 10.3978 35.2883 9.10495 33.9964V33.9964ZM35.8875 42.0655L31.634 31.6367C30.9253 32.188 30.1415 32.6464 29.25 32.8855C27.2746 33.4142 27.7078 33.1836 26.895 33.9964C25.6021 35.2883 23.8837 35.9999 22.0556 35.9999C20.8893 35.9999 19.7615 35.6671 18.7453 35.1017L23.625 47.0661C24.0365 48.0758 25.3537 48.3224 26.1028 47.5311L29.5012 43.9424L34.4409 44.1308C35.5303 44.1721 36.299 43.0742 35.8875 42.0655V42.0655ZM24.6562 31.8749C26.0887 30.4171 26.2528 30.5427 28.2928 29.9867C29.595 29.6314 30.6131 28.5955 30.9618 27.2699C31.6631 24.6074 31.4812 24.9289 33.3946 22.9808C34.3481 22.0105 34.7203 20.5958 34.3715 19.2702C33.6712 16.6096 33.6703 16.9808 34.3715 14.3174C34.7203 12.9917 34.3481 11.5771 33.3946 10.6067C31.4812 8.65862 31.6631 8.97925 30.9618 6.31768C30.6131 4.99206 29.595 3.95612 28.2928 3.60081C25.679 2.88737 25.994 3.07393 24.0787 1.12487C23.1253 0.154558 21.735 -0.225129 20.4328 0.130183C17.82 0.842683 18.1846 0.843621 15.5671 0.130183C14.2649 -0.225129 12.8746 0.153621 11.9212 1.12487C10.0078 3.073 10.3228 2.88737 7.70807 3.60081C6.40588 3.95612 5.38776 4.99206 5.03901 6.31768C4.33869 8.97925 4.51963 8.65862 2.60619 10.6067C1.65275 11.5771 1.27963 12.9917 1.62932 14.3174C2.32963 16.9761 2.33057 16.6049 1.62932 19.2692C1.28057 20.5949 1.65275 22.0096 2.60619 22.9808C4.51963 24.9289 4.33776 24.6074 5.03901 27.2699C5.38776 28.5955 6.40588 29.6314 7.70807 29.9867C9.8062 30.5586 9.96276 30.4686 11.3437 31.8749C12.584 33.1377 14.5162 33.3636 16.0068 32.4205C16.6029 32.0421 17.2944 31.8411 18.0004 31.8411C18.7065 31.8411 19.3979 32.0421 19.994 32.4205C21.4837 33.3636 23.4159 33.1377 24.6562 31.8749ZM9.15557 16.4961C9.15557 11.5246 13.1156 7.49425 18 7.49425C22.8843 7.49425 26.8443 11.5246 26.8443 16.4961C26.8443 21.4677 22.8843 25.498 18 25.498C13.1156 25.498 9.15557 21.4677 9.15557 16.4961V16.4961Z"
-                                                                        fill="#336c47" />
-                                                                </svg>
-                                                            </div>
-                                                            <h5 class="mb-2 mt-3 icon-text-success">90+</h5>
-                                                            <p class="mb-0">Participated</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xl-6 col-lg-12">
-                                                    <div class="card card-block card-stretch mb-0">
-                                                        <div class="card-header px-3">
-                                                            <div class="header-title">
-                                                                <h4 class="card-title">Languages</h4>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-body p-3">
-                                                            <ul class="list-inline p-0 mb-0">
-                                                                <li>
-                                                                    <div
-                                                                        class="d-flex align-items-center justify-content-between mb-2">
-                                                                        <p class="mb-0 font-size-16 mr-3">English</p>
-                                                                        <h6>78%</h6>
-                                                                    </div>
-                                                                </li>
-                                                                <br>
-                                                                <li>
-                                                                    <div
-                                                                        class="d-flex align-items-center justify-content-between mb-2">
-                                                                        <p class="mb-0">German</p>
-                                                                        <h6>55%</h6>
-                                                                    </div>
-                                                                </li>
-                                                                <br>
-                                                                <li>
-                                                                    <div
-                                                                        class="d-flex align-items-center justify-content-between">
-                                                                        <p class="mb-0">Spanish</p>
-                                                                        <h6>50%</h6>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-6 col-lg-12">
-                                                    <div class="card card-block card-stretch mb-0">
-                                                        <div class="card-header px-3">
-                                                            <div class="header-title">
-                                                                <h4 class="card-title">Social</h4>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-body p-3">
-                                                            <ul class="list-inline p-0 m-0">
-                                                                <li class="mb-2 d-flex">
-                                                                    <span><i
-                                                                            class="lab la-facebook-f icon-text-primary font-size-20 mr-3"></i></span>
-                                                                    <p class="mb-0 line-height">fb.me/nataliedawson</p>
-                                                                </li>
-                                                                <li class="mb-2 d-flex">
-                                                                    <span><i
-                                                                            class="lab la-twitter icon-text-info font-size-20 mr-3"></i></span>
-                                                                    <p class="mb-0 line-height">@nataliedawson</p>
-                                                                </li>
-                                                                <li class=" d-flex">
-                                                                    <span><i
-                                                                            class="lab la-instagram  icon-text-danger font-size-20 mr-3"></i></span>
-                                                                    <p class="mb-0 line-height">@natalietweets</p>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                               
-                                
-                                <div id="profile5" class="tab-pane fade">
-                                    <p style="color: #75759D">I'm Web Developer from California. I code and design websites worldwide. Mauris
-                                        variustellus vitae
-                                        tristique sagittis. Sed aliquet, est nec auctor aliquet, orci ex vestibulum ex,
-                                        non pharetra lacus
-                                        erat ac nulla.</p>
-                                    <p style="color: #75759D">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis mattis nam ipsum
-                                        pharetra porttitor eu
-                                        orci, nisi. Magnis elementum vitae eu, dui et. Tempus etiam feugiat sem augue
-                                        sed sed. Tristique
-                                        feugiat mi feugiat integer consectetur sit enim penatibus. Quis sagittis proin
-                                        fermentum tempus
-                                        uspendisse ultricies. Tellus sapien, convallis proin pretium.</p>
-                                    <p style="color: #75759D" class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis
-                                        mattis nam ipsum pharetra porttitor eu.
-                                        Tristique feugiat mi feugiat integer consectetur sit enim penatibus. Quis
-                                        sagittis proin fermentum tempus
-                                        uspendisse ultricies. Tellus sapien, convallis proin pretium.</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <div class="container mt-5">
+                <div class="border  border-1 border-gray p-3 rounded">
+                    <h2 class="fs-2">Thông tin liên hệ</h2>
+                   
+        
+                    <div class="row py-2 border-1 border-bottom align-items-center  m-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Email</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-3">{{Auth::User()->email}}</</p>
+                        </div>
+                        <div class="col-md-4">
+                         
+                        </div>
+                    </div>
+        
+                    <div class="row  align-items-center border-1 border-bottom mx-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Số điện thoại</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-3">{{Auth::User()->phone}}</</p>
+                        </div>
+                        <div class="col-md-4">
+                         
+                        </div>
+                    </div>
+                    <div class="row mt-4 align-items-center mx-5">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-gray">Address</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-3">{{Auth::User()->address}}</p>
+                        </div>
+                        <div class="col-md-4">
+                         
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- Wrapper End-->
-
-    <!-- Backend Bundle JavaScript -->
-    <script src="/template/assets/js/backend-bundle.min.js"></script>
-
-    <!-- Table Treeview JavaScript -->
-    <script src="/template/assets/js/table-treeview.js"></script>
-
-    <!-- Chart Custom JavaScript -->
-    <script src="/template/assets/js/customizer.js"></script>
-
-    <!-- Chart Custom JavaScript -->
-    <script async src="/template/assets/js/chart-custom.js"></script>
-
-    <!-- app JavaScript -->
-    <script src="/template/assets/js/app.js"></script>
-@endsection
+        @endsection

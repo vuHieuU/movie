@@ -51,6 +51,20 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Trạng thái*</label>
+                                                <div>
+                                                    <input type="checkbox" name="status" style="width: 60px; height: 60px;">
+                                                </div>
+                                                <div class="help-block with-errors"></div>
+                                                @if ($errors->has('status'))
+                                                    <span class="text-danger">{{ $errors->first('status') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button type="submit" class="btn btn-primary mr-2">Thêm mới</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     <a href="{{route("categories.index")}}" class="btn btn-danger text-white">Back</a>

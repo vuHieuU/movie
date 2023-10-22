@@ -43,9 +43,9 @@
                                             <label>Name *</label>
                                             <input type="text" class="form-control" placeholder="name"
                                                 name="name" value="{{ $city->name }}">
-                                             @error('name')
+                                                @error('name')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                         </div>

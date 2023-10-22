@@ -82,8 +82,8 @@ Route::get('/admin', [App\Http\Controllers\Auth\HomeController::class, 'index'])
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'index'])->name('index');
     //profile của user
-    Route::get('/myaccount', [AuthController::class, 'index']);
-    Route::get('/editaccount', [AuthController::class, 'edit']);
+    Route::get('/myaccount', [AuthController::class, 'index'])->name("myaccount");
+    Route::get('/editaccount', [AuthController::class, 'edit'])->name("editaccount");
     Route::post('/myaccount', [AuthController::class, 'profile'])->name('profile');
 
 
@@ -140,7 +140,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('create', [App\Http\Controllers\admin\categoryController::class, 'create'])->name('categories.create');
         Route::post('store', [App\Http\Controllers\admin\categoryController::class, 'store'])->name('categories.store');
         Route::get('edit/{id}', [App\Http\Controllers\admin\categoryController::class, 'edit'])->name('categories.edit');
-        Route::post('update/{id}', [App\Http\Controllers\admin\categoryController::class, 'update'])->name('categories.update');
+        Route::put('update/{id}', [App\Http\Controllers\admin\categoryController::class, 'update'])->name('categories.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\categoryController::class, 'destroy'])->name('categories.destroy');
     });
     // Danh sách Phim
@@ -226,6 +226,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('edit/{id}', [App\Http\Controllers\admin\NewController::class, 'edit'])->name('news.edit');
         Route::post('update/{id}', [App\Http\Controllers\admin\NewController::class, 'update'])->name('news.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\NewController::class, 'destroy'])->name('news.destroy');
+    });
+     // tổng quan
+     Route::prefix('overview')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\OverviewController::class, 'index'])->name('overview.index');
+       
     });
 
     // cart

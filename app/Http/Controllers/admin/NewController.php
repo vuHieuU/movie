@@ -43,6 +43,8 @@ class NewController extends Controller
 
         $data->thumbnail = $thumbnail;
 
+        $data->status = $request->status == true ? "1" : "0";
+
         $data->meta_title = $request->input('meta_title');;
         $data->meta_keyword = $request->input('meta_keyword');
         $data->meta_description = $request->input('meta_description');
@@ -83,7 +85,7 @@ class NewController extends Controller
         $data->title = $request->input('title');
         $data->content = $request->input('content');;
         $data->slug = Str::slug($request->input('title'));
-        $data->status = $request->input('status');
+        $data->status = $request->status == true ? "1" : "0";
         
         if ($request->file('thumbnail') !== null) {
             $thumbnail = $request->file('thumbnail')->getClientOriginalName();

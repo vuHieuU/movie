@@ -45,9 +45,9 @@
                                                 name="name" value="{{$cinemas->name}}">
                                                 @error('name')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
-
-                                                @enderror
+                                                    <div class="help-block with-errors text-danger">{{ $message }}</div>
+    
+                                                    @enderror
                                         </div>
                                     </div>
                                   </div>
@@ -58,11 +58,11 @@
                                                 <label>Address</label>
                                                 <input type="text" class="form-control" placeholder="address"
                                                     name="address" value="{{$cinemas->address}}">
-                                                @error('address')
+                                                    @error('address')
                                                     
-                                                   <div class="help-block with-errors">{{ $message }}</div>
-
-                                                @enderror
+                                                    <div class="help-block with-errors text-danger">{{ $message }}</div>
+    
+                                                    @enderror
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -73,9 +73,9 @@
                                                         <option value="{{$item->id}}">{{$item->name}}</option>
                                                     @endforeach
                                                 </select>
-                                                @error('gender')
+                                                @error('city')
                                                     
-                                                   <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                             </div>
@@ -87,10 +87,10 @@
                                                 <label>Description</label>
                                                 <textarea type="text" class="form-control" value="" placeholder="Description..."
                                                     name="description" value="{{ old('password') }}">{{$cinemas->description}}</textarea>
-                                                    @error('gender')
+                                                    @error('description')
                                                     
-                                                      <div class="help-block with-errors">{{ $message }}</div>
- 
+                                                    <div class="help-block with-errors text-danger">{{ $message }}</div>
+    
                                                     @enderror
                                             </div>
                                         </div>
