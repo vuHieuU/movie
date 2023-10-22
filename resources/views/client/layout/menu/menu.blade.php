@@ -1,4 +1,3 @@
-<div id="div1">
 <header id="masthead" class="site-header header-default  light">
     <div class="container">
         <div class="amy-inner">
@@ -224,4 +223,3 @@
     </div>
     <div id="amy-site-header-shadow"></div>
 </header>
-</div>
