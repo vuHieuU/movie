@@ -826,17 +826,8 @@
                                                                                                             class="card-title product-title">
                                                                                                             {{ $item->name }}
                                                                                                         </h5>
-                                                                                                        <p
-                                                                                                            class="card-text product-description">
-                                                                                                            TIẾT KIỆM 46K!!!
-                                                                                                            Gồm: 1 Bắp
-                                                                                                            (69oz)
-                                                                                                            +
-                                                                                                            2 Nước có gaz
-                                                                                                            (22oz)
-                                                                                                        </p>
-                                                                                                        <p
-                                                                                                            class="card-text product-price">
+                                                                                                        <p class="card-text product-description">{{ $item->content }}</p>
+                                                                                                        <p class="card-text product-price">
                                                                                                             <small
                                                                                                                 class="text-body-secondary">Giá:
                                                                                                                 {{ $item->price }}đ</small>

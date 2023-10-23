@@ -55,22 +55,38 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                     <div class="form-group">
                                             <label for="formFileSm" class="form-label">Thumb *</label>
-                                            <input class="form-control" id="formFileSm" name="thumb" type="file" accept="image/*">
+                                            <input class="form-control" id="formFileSm" name="thumb" value="{{ $food->thumb }}" type="file" accept="image/*">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="expiry_date">Quantity *</label>
+                                            <input type="text" class="form-control" placeholder="Số lượng"
+                                                name="qty" value="{{ $food->qty }}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                <div class="col-md-12">
+                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Thumb *</label>
-                                            <img src="{{ asset('storage/images/'.$item->thumb)}}" style="width: 50px" />
-                                            <input type="text" class="form-control" value="{{ $food->thumb }}" disabled>
+                                            <label for="name">content </label>
+                                              <textarea class="form-control" name="content" cols="10" rows="5">{{ $food->content }}</textarea>
                                         </div>
                                     </div>
                                 </div>
+
+                                {{-- <div class="row">
+                                <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Thumb *</label>
+                                            <img src="{{ asset('storage/images/'.$food->thumb)}}" style="width: 50px" />
+                                            <input type="text" class="form-control" value="{{ $food->thumb }}" disabled>
+                                        </div>
+                                    </div>
+                                </div> --}}
                                 
                                 <button type="submit" class="btn btn-primary mr-2">Update Food</button>
                                 <button type="reset" class="btn btn-danger mr-2">Reset</button>

@@ -54,7 +54,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="value">Status *</label>
                                                 <select class="form-control" name="status">
@@ -64,6 +64,25 @@
                                                 @if ($errors->has('status'))
                                                     <span class="text-danger">{{ $errors->first('status') }}</span>
                                                 @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="expiry_date">Quantity *</label>
+                                                <input type="text" class="form-control" placeholder="Số lượng"
+                                                    name="qty">
+                                                @if ($errors->has('qty'))
+                                                    <span class="text-danger">{{ $errors->first('qty') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="name">content </label>
+                                                  <textarea class="form-control" name="content" cols="10" rows="5"></textarea>
+
                                             </div>
                                         </div>
                                     </div>
