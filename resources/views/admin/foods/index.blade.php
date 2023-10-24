@@ -56,6 +56,7 @@
                               <th>Thumb</th>
                               <th>Name</th>
                               <th>Price</th>
+                              <th>Quantity</th>
                               <th>Status</th>
                               <th>Action</th>
                           </tr>
@@ -74,6 +75,7 @@
                               <td><img src="{{asset('storage/images/'.$item->thumb)}}" style="width: 50px" /></td>
                               <td>{{ $item->name }}</td>
                               <td>{{ $item->price }}</td>
+                              <td>{{ $item->qty }}</td>
                               <td>{{ $item->status }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">

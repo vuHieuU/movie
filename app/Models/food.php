@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class food extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'thumb', 'price', 'status'];
+    protected $fillable = ['name', 'thumb','qty', 'price', 'status','content'];
     public function combos()
     {
         return $this->belongsToMany(combo::class,'combo_foods','combo_id','food_id');

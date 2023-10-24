@@ -42,8 +42,10 @@ class foodController extends Controller
          $data = [
             'name' => $request->name,
             'thumb' => $thumb,
+            'qty' => $request->qty,
             'price' => $request->price,
             'status' => $request->status,
+            'content' => $request->content,
          ];
          food::create($data);
 
@@ -77,8 +79,10 @@ class foodController extends Controller
         $food = Food::findOrFail($id);
          $dataupdate = [
             'name' => $request->name,
+            'qty' => $request->qty,
             'price' => $request->price,
             'status' => $request->status,
+            'content' => $request->content,
          ];
          if($request->file('thumb') !== null){
             $thumb = $request->file('thumb')->getClientOriginalName();
