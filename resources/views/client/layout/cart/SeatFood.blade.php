@@ -595,7 +595,7 @@
                                                                                         src="{{ asset('storage/images/ic-screen.png') }}">
 
                                                                                 </div>
-                                                                                <div class="row mt-4 "
+                                                                                {{-- <div class="row mt-4 "
                                                                                     style="max-width: 700px;margin: auto">
                                                                                     <style>
                                                                                         .iconchuadat {
@@ -631,13 +631,7 @@
                                                                                                     disabled>
                                                                                                     <span class="fs-6 ">
                                                                                                         {{ $item->seat_number }}</span></i>
-                                                                                                {{-- <button
-                                                                                              
-                                                                                                  class="btn btn-danger"
-                                                                                                 disabled>
-                                                                                                  
-                                                                                                  
-                                                                                              </button> --}}
+                                                                                                
                                                                                             @endif
                                                                                         </div>
                                                                                     @endforeach
@@ -665,7 +659,172 @@
                                                                                             });
                                                                                         });
                                                                                     </script>
+                                                                                </div> --}}
+                                                                                <div class="row mt-4 "
+                                                                                    style="max-width: 800px;margin: auto">
+
+                                                                                    {{-- <div class="container mt-4"> --}}
+                                                                                    <style>
+                                                                                        .iconchuadat {
+                                                                                            color: #BABBC3;
+                                                                                            /* Màu mặc định */
+                                                                                            font-size: 25px;
+                                                                                            /* Kích thước mặc định */
+                                                                                            transition: color 0.3s;
+                                                                                            /* Hiệu ứng màu mượt mà khi thay đổi */
+                                                                                        }
+
+                                                                                        .iconchuadat:hover {
+                                                                                            color: #03599D;
+                                                                                            /* Thay đổi màu khi di chuột qua */
+                                                                                        }
+                                                                                    </style>
+                                                                                    <div style="max-width: 800px;margin: auto"
+                                                                                        class="">
+
+
+                                                                                        @foreach ($seats as $item)
+                                                                                            @if ($item->typeSeat_id == 1)
+                                                                                                <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat align-item-center "
+                                                                                                    id="{{ $item->id }}"
+                                                                                                    data-price="{{ $item->price }}"
+                                                                                                    onclick="toggleSeat(this)">
+
+                                                                                                    @if ($item->isActive == 1)
+                                                                                                        <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4 "
+                                                                                                            style="">
+                                                                                                            <span
+                                                                                                                class="fs-6">
+                                                                                                                {{ $item->seat_number }}
+                                                                                                            </span>
+                                                                                                        </i>
+                                                                                                    @else
+                                                                                                        {{-- @if ($item->id == 1) --}}
+                                                                                                        <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                            style="font-size: 25px; color: #FD2802;"
+                                                                                                            disabled>
+                                                                                                            <span
+                                                                                                                class="fs-6">
+                                                                                                                {{ $item->seat_number }}
+                                                                                                            </span>
+                                                                                                        </i>
+                                                                                                        {{-- @endif --}}
+                                                                                                    @endif
+
+                                                                                                </div>
+                                                                                            @endif
+                                                                                        @endforeach
+                                                                                    </div>
+                                                                                    <div style="max-width: 750px;">
+                                                                                        <div style="max-width: 750px;">
+                                                                                            @foreach ($seats as $item)
+                                                                                                @if ($item->typeSeat_id == 2)
+                                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
+                                                                                                        id="{{ $item->id }}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endif
+                                                                                            @endforeach
+                                                                                        </div>
+
+
+
+                                                                                        <div style="max-width: 680px;">
+                                                                                            @foreach ($seats as $item)
+                                                                                                @if ($item->typeSeat_id == 3)
+                                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
+                                                                                                        id="{{ $item->id }}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endif
+                                                                                            @endforeach
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        style="max-width: 750px;margin: auto;">
+                                                                                        @foreach ($seats as $item)
+                                                                                            @if ($item->typeSeat_id == 4)
+                                                                                                <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
+                                                                                                    id="{{ $item->id }}"
+                                                                                                    data-price="{{ $item->price }}"
+                                                                                                    onclick="toggleSeat(this)">
+
+                                                                                                    @if ($item->isActive == 1)
+                                                                                                        <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            style="">
+                                                                                                            <span
+                                                                                                                class="fs-6">
+                                                                                                                {{ $item->seat_number }}
+                                                                                                            </span>
+                                                                                                        </i>
+                                                                                                        {{-- @endif --}}
+                                                                                                    @else
+                                                                                                        {{-- @if ($item->id == 2) --}}
+                                                                                                        <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                            style="font-size: 25px; color: #FD2802;"
+                                                                                                            disabled>
+                                                                                                            <span
+                                                                                                                class="fs-6">
+                                                                                                                {{ $item->seat_number }}
+                                                                                                            </span>
+                                                                                                        </i>
+                                                                                                    @endif
+
+                                                                                                </div>
+                                                                                            @endif
+                                                                                        @endforeach
+
+                                                                                    </div>
+                              
                                                                                 </div>
+
+
                                                                                 <script>
                                                                                     const maxSeats = 8; // Số lượng ghế tối đa được chọn
                                                                                     const selectedSeats = []; // Mảng lưu các ghế đã chọn
@@ -747,6 +906,29 @@
                                                                                         document.getElementById('totalPriceFood').textContent = total.toLocaleString();
                                                                                         document.getElementById('totalPriceFoodValue').value = total;
                                                                                     }
+
+                                                                                    $(document).ready(function() {
+                                                                                        var selectedSeats = [];
+                                                                                        var maxSeats = 8; // Số lượng ghế tối đa có thể chọn
+
+                                                                                        $('.iconchuadat').click(function() {
+                                                                                            var seat = $(this);
+
+                                                                                            if (selectedSeats.length < maxSeats || seat.hasClass('selected')) {
+                                                                                                if (seat.hasClass('selected')) {
+                                                                                                    // Trả lại màu ban đầu và loại bỏ khỏi danh sách ghế đã chọn
+                                                                                                    seat.css('color', '#BABBC3');
+                                                                                                    seat.removeClass('selected');
+                                                                                                    selectedSeats.splice(selectedSeats.indexOf(seat), 1);
+                                                                                                } else {
+                                                                                                    // Thay đổi màu và thêm vào danh sách ghế đã chọn
+                                                                                                    seat.css('color', '#03599D');
+                                                                                                    seat.addClass('selected');
+                                                                                                    selectedSeats.push(seat);
+                                                                                                }
+                                                                                            }
+                                                                                        });
+                                                                                    });
                                                                                 </script>
 
 
@@ -957,7 +1139,7 @@
                                                                                 </div>
 
                                                                                 <div
-                                                                                    class=" d-flex align-items-center justify-content-between mb-5 px-4">
+                                                                                    class=" d-flex align-items-center justify-content-between mb-5 px-4 w-75">
                                                                                     <div
                                                                                         class="d-flex align-items-center gap-2">
                                                                                         {{-- <i
