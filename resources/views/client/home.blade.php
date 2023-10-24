@@ -5,7 +5,6 @@
         <div id="content" class="site-content ">
 
             <div data-elementor-type="wp-page" data-elementor-id="84" class="elementor elementor-84 ">
-               
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-08975e9 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
                     data-id="08975e9" data-element_type="section">
@@ -216,7 +215,6 @@
                 <div id="div1">
                     @include('client.layout.session.FilmHome')
                 </div>
-              
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-a9d0dcf elementor-section-full_width elementor-section-height-default elementor-section-height-default"
                     data-id="a9d0dcf" data-element_type="section">
@@ -343,14 +341,14 @@
                                                         @endphp
                                                         <div class="carousel-item">
                                                             <div class="carousel-thumb">
-                                                                <a href="">
+                                                                <a href="{{ $item->trailer }}">
                                                                     <img class=""
                                                                         src="{{ asset('storage/images/' . $item->film->thumb) }}"
                                                                         alt="The Sleeping Beauty &#8211; Australia" /> </a>
                                                             </div>
                                                             <div class="carousel-content">
                                                                 <h2 class="carousel-title">
-                                                                    <a href="">
+                                                                    <a href="{{ route('filmDetail',[$item->film->id]) }}">
                                                                         {{ $item->film->name }} </a>
                                                                 </h2>
                                                                 <div class="carousel-release">
@@ -364,7 +362,7 @@
                                                                         class="fancybox.iframe amy-fancybox">
                                                                         <i aria-hidden="true" class="fa fa-play"></i>
                                                                         Trailer </a>
-                                                                    <a href="/detail_film/{{ $item->film->id }}">
+                                                                    <a href="{{ route('filmDetail',[$item->id]) }}">
                                                                         <i aria-hidden="true"
                                                                             class="fa fa-exclamation"></i>
                                                                         Detail </a>
@@ -968,13 +966,11 @@
                                                                     sizes="(max-width: 750px) 100vw, 750px" /></div>
                                                             <div class="entry-content">
                                                                 <h2 class="entry-title"><a
-                                                                        href="{{ route('detailblog', [$item->id]) }}
-">{{ $item->title }}</a>
+                                                                        href="{{ route('detailblog', [$item->id]) }}">{{ $item->title }}</a>
                                                                 </h2>
                                                                 <div class="entry-summary">{{ $item->content }}
                                                                 </div><a class="entry-btn"
-                                                                    href="{{ route('detailblog', [$item->id]) }}
-">Read
+                                                                    href="{{ route('detailblog', [$item->id]) }}">Read
                                                                     more</a>
                                                             </div>
                                                             <div class="clearfix"></div>

@@ -110,21 +110,82 @@
                                         </div>
                                     </div>
                                   </div> 
-                                  <div class="col-md-12">
+                     
+
+
+                                <div class="mt-5"style="max-width: 1100px;margin: auto">
+                                    <img class="img-responsive w-100" src="{{ asset('storage/images/ic-screen.png') }}">
                                     <div class="form-group">
                                         <label>Seats</label>
-                                        <input type="checkbox" class="checkbox mx-3" id="checkbox1" data-master-checkbox>
-                                        <div class="row container m-auto">
-                    
+                                        <input type="checkbox" class="checkbox mx-3" id="checkbox1"
+                                            data-master-checkbox>
+                                        <div class="row container  "style="max-width: 1100px;">
                                             @foreach ($seats as $item)
-                                            <div class="form-check col-md-1">
-                                                <input class="checkbox form-check-input" name="id_seat[]" type="checkbox"
-                                                {{ $showtime->seats->contains('name',$item->name) ? 'checked':'' }} value="{{ $item->id }}">
-                                                <label class="form-check-label mx-1">
-                                                  {{ $item->seat_number }}
-                                                </label>
-                                              </div>
-                                          @endforeach
+                                                @if ($item->typeSeat_id == 1)
+                                                    <div class="form-check col-md-1">
+                                                        <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="id_seat[]" 
+                                                           {{ $showtime->seats->contains('seat_number', $item->seat_number) ? 'checked' : '' }} 
+                                                           value="{{ $item->id }}" id="seat_{{ $item->id }}">
+                                                    <label class="form-check-label" for="seat_{{ $item->id }}">
+                                                        {{ $item->seat_number }}
+                                                    </label>
+                                                </div>
+
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                        <div class="row container " style="max-width: 1050px;">
+                                            @foreach ($seats as $item)
+                                                @if ($item->typeSeat_id == 2)
+                                                    <div class="form-check col-md-1">
+                                                        <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="id_seat[]" 
+                                                           {{ $showtime->seats->contains('seat_number', $item->seat_number) ? 'checked' : '' }} 
+                                                           value="{{ $item->id }}" id="seat_{{ $item->id }}">
+                                                    <label class="form-check-label" for="seat_{{ $item->id }}">
+                                                        {{ $item->seat_number }}
+                                                    </label>
+                                                </div>
+
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                        <div class="row container " style="max-width: 1000px;">
+                                            @foreach ($seats as $item)
+                                                @if ($item->typeSeat_id == 3)
+                                                    <div class="form-check col-md-1">
+                                                        <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="id_seat[]" 
+                                                           {{ $showtime->seats->contains('seat_number', $item->seat_number) ? 'checked' : '' }} 
+                                                           value="{{ $item->id }}" id="seat_{{ $item->id }}">
+                                                    <label class="form-check-label" for="seat_{{ $item->id }}">
+                                                        {{ $item->seat_number }}
+                                                    </label>
+                                                </div>
+
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                        <div class="row container " style="max-width: 1000px;">
+                                            @foreach ($seats as $item)
+                                                @if ($item->typeSeat_id == 4)
+                                                    <div class="form-check col-md-1">
+                                                        <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="id_seat[]" 
+                                                           {{ $showtime->seats->contains('seat_number', $item->seat_number) ? 'checked' : '' }} 
+                                                           value="{{ $item->id }}" id="seat_{{ $item->id }}">
+                                                    <label class="form-check-label" for="seat_{{ $item->id }}">
+                                                        {{ $item->seat_number }}
+                                                    </label>
+                                                </div>
+
+                                                    </div>
+                                                @endif
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>

@@ -522,10 +522,10 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
                                                                     
                                                                     <article class="entry-item clearfix">
                                                                         <div class="entry-thumb">
-                                                                            <a
-                                                                                href="detail_film/{{$item->id}}">
+                                                                            <a  class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox"
+                                                                                href="{{$item->film->trailer}}">
                                                                                 <img class="" style="width: 200px;height: 300px;"
-                                                                                    src="{{asset("storage/images/".$item->thumb)}}"
+                                                                                    src="{{asset("storage/images/".$item->film->thumb)}}"
                                                                                     alt="Kubo and the Two Strings" />
                                                                             </a>
                                                                         </div>
@@ -533,7 +533,7 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
                                                                             <h2 class="entry-title">
                                                                                 <a
                                                                                     href="detail_film/{{$item->id}}">
-                                                                                    {{$item->name}}</a>
+                                                                                    {{$item->film->name}}</a>
                                                                             </h2>
                                                                             <div class="info-top">
                                                                                 <span class="pg">
@@ -541,7 +541,7 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
 
                                                                                 <span class="duration">
                                                                                     <i class="fa fa-clock-o"></i>
-                                                                                    {{$item->duration}} minutes </span>
+                                                                                    {{$item->film->duration}} minutes </span>
                                                                             </div>
 
                                                                             <ul class="info-list">
@@ -553,7 +553,7 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
                                                                                     </label>
                                                                                     <span>
                                                                                       <a
-                                                                                            href=""> {{$item->director}}</a> </span>
+                                                                                            href=""> {{$item->film->director}}</a> </span>
                                                                                 </li>
 
                                                                               
@@ -564,7 +564,7 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
                                                                                         Release:
                                                                                     </label>
                                                                                     <span>
-                                                                                        {{$item->premiere_date}} </span>
+                                                                                        {{$item->film->premiere_date}} </span>
                                                                                 </li>
 
                                                                                 <li>
@@ -572,7 +572,7 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
                                                                                         Language:
                                                                                     </label>
                                                                                     <span>
-                                                                                        {{$item->director}}language </span>
+                                                                                        {{$item->film->director}}language </span>
                                                                                 </li>
 
                                                                                 <li>

@@ -526,10 +526,10 @@
                                                                                         <div class="amy-movie-item-front">
                                                                                             <div
                                                                                                 class="amy-movie-item-poster">
-                                                                                                <a
-                                                                                                    href="detail_film/{{$item->id}}">
+                                                                                                <a  class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox"
+                                                                                                    href="{{ $item->film->trailer }} ">
                                                                                                     <img class=""
-                                                                                                        src="{{asset("storage/images/".$item->thumb)}}"
+                                                                                                        src="{{asset("storage/images/".$item->film->thumb)}}"
                                                                                                         alt="Kubo and the Two Strings" />
                                                                                                 </a>
                                                                                                 <span
@@ -545,7 +545,7 @@
                                                                                                     <h3
                                                                                                         class="amy-movie-field-title">
                                                                                                         <a
-                                                                                                            href="detail_film/{{$item->id}}">{{$item->name}}</a></h3>
+                                                                                                            href="detail_film/{{$item->id}}">{{$item->film->name}}</a></h3>
 
                                                                                                     <div
                                                                                                         class="amy-movie-item-meta">
@@ -553,13 +553,13 @@
                                                                                                             class="amy-movie-field-mpaa">G</span>
                                                                                                         <span
                                                                                                             class="amy-movie-field-duration"><i
-                                                                                                                class="fa fa-clock-o"></i>{{$item->duration}}
+                                                                                                                class="fa fa-clock-o"></i>{{$item->film->duration}}
                                                                                                             minutes</span>
                                                                                                     </div>
 
                                                                                                     <div
                                                                                                         class="amy-movie-field-desc">
-                                                                                                        <p>{{$item->description}}</p>
+                                                                                                        <p>{{$item->film->description}}</p>
                                                                                                     </div>
                                                                                                     <div
                                                                                                         class="amy-movie-custom-field-group amy-movie-field-language">
@@ -567,7 +567,7 @@
                                                                                                             class="amy-movie-custom-field-label">Language:</label>
                                                                                                         <div
                                                                                                             class="amy-movie-custom-field-content">
-                                                                                                            {{$item->language}}
+                                                                                                            {{$item->film->language}}
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div
@@ -577,7 +577,7 @@
                                                                                                             Date:</label>
                                                                                                         <div
                                                                                                             class="amy-movie-custom-field-content">
-                                                                                                            {{$item->premiere_date}}
+                                                                                                            {{$item->film->premiere_date}}
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     
@@ -589,7 +589,7 @@
                                                                                                             class="amy-movie-custom-field-content">
                                                                                                            
                                                                                                             <a
-                                                                                                                href="">{{$item->actor}}</a>
+                                                                                                                href="">{{$item->film->actor}}</a>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div
@@ -600,14 +600,14 @@
                                                                                                             class="amy-movie-custom-field-content">
                                                                                                             
                                                                                                             <a
-                                                                                                                href="">{{$item->director}}</a>
+                                                                                                                href="">{{$item->film->director}}</a>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
 
                                                                                                 <div
                                                                                                     class="amy-movie-item-button">
-                                                                                                    <a href="{{$item->trailer}}"
+                                                                                                    <a href="{{$item->film->trailer}}"
                                                                                                         class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
                                                                                                         <i
                                                                                                             class="fa fa-play"></i>Trailer</a>

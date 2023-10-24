@@ -21,14 +21,9 @@ class AllfilmController extends Controller
         $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
         $films = ShowTime::get();
         $category = category::all();
-        $film = DB::table('categories')
-        ->join('film_categories', 'categories.id', '=', 'film_categories.dmid')
-        ->join('films', 'film_categories.film_id' ,'=','films.id')
-        // ->where('categories.id', 1)
-        ->select('categories.*','film_categories.*','films.*')
-        ->get();
+       
         $title = "Now Playing";
-       return view("client.film",compact("category","film","films","new_footer"));
+       return view("client.film",compact("category","films","new_footer"));
     }
 
     /**
@@ -55,16 +50,16 @@ class AllfilmController extends Controller
         $cinema_id = cinema::findOrFail($id);
         //  $films = film::get();
     $category = category::get();
-    $film = DB::table('categories')
-        ->join('film_categories', 'categories.id', '=', 'film_categories.dmid')
-        ->join('films', 'film_categories.film_id' ,'=','films.id')
-        ->where('categories.id', $id)
-        ->select('categories.*','film_categories.*','films.*')
-        ->get();
+    // $film = DB::table('categories')
+    //     ->join('film_categories', 'categories.id', '=', 'film_categories.dmid')
+    //     ->join('films', 'film_categories.film_id' ,'=','films.id')
+    //     ->where('categories.id', $id)
+    //     ->select('categories.*','film_categories.*','films.*')
+    //     ->get();
 
 
         $films = ShowTime::where("cinema_id", $cinema_id->id)->orderByDesc("created_at")->with('film')->get();
-    return view("client.layout.session.Movie",compact("film","category","films"));
+    return view("client.layout.session.Movie",compact("category","films"));
     }
 
     /**

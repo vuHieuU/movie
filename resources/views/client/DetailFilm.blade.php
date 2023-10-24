@@ -119,11 +119,16 @@
 
                                                     {{-- BUy ticket --}}
                                                     <div class="entry-action">
-                                                        <div class="mrate  no-rate">
+                                                        @if ($film_show_time->film->status == "đang chiếu")
+                                                             <div class="mrate  no-rate">
                                                             <button type="button" data-bs-toggle="modal"
                                                                 data-bs-target="#exampleModal" class="amy-buy-ticket">Buy
                                                                 Ticket</button>
                                                         </div>
+                                                        @else
+                                                            
+                                                        @endif
+                                                       
                                                         @if($check==0)
                                                         <form action="/unLikeFilm/{{$film_show_time->film->id}}" method="GET">
                                                             @csrf
