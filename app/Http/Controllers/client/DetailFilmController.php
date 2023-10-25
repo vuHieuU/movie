@@ -26,24 +26,27 @@ class DetailFilmController extends Controller
         // $cinema_id = Cinema::findOrFail($id);
         $filmtopmovie = Film::orderByDesc("created_at")->limit(4)->get();
         
-        $numberOfDays = 7; // Số ngày bạn muốn liệt kê
-        $dateList = array();
-        $currentDate = strtotime(date('Y-m-d H:i:s')); // Lấy timestamp của ngày hiện tại
+    
         
-        // dd( $currentDate);
-        while (count($dateList) < $numberOfDays) {
-            $dateList[] = date('Y-m-d', $currentDate); // Thêm ngày hiện tại vào danh sách
-            $currentDate = strtotime('+1 day', $currentDate); // Tăng ngày lên 1
-        }
-        
-        $ShowTime = ShowTime::where('film_id', $film->id)
+            $numberOfDays = 7; // Số ngày bạn muốn liệt kê
+            $dateList = array();
+            $currentDate = strtotime(date('Y-m-d H:i:s')); // Lấy timestamp của ngày hiện tại
+            
+            // Bỏ qua ngày hiện tại
+            $currentDate = strtotime('+1 day', $currentDate);
+            
+            while (count($dateList) < $numberOfDays) {
+                $dateList[] = date('Y-m-d', $currentDate); // Thêm ngày hiện tại vào danh sách
+                $currentDate = strtotime('+1 day', $currentDate); // Tăng ngày lên 1
+            }
+            
+            $ShowTime = ShowTime::where('film_id', $film->id)
             ->whereIn('day', $dateList)
             ->where('day', '>=', date('Y-m-d'))
             ->orderBy('day')
             ->orderBy('hour')
             ->get();
-        
-    
+            
     // ->sortBy('time');
 
         // dd($ShowTime);
