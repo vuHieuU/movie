@@ -39,7 +39,7 @@ data-id="e615b68" data-element_type="section">
                                         <article class="entry-item" onclick="">
                                             <div class="entry-thumb">
                                                 <img class=""
-                                                    src="{{ asset('storage/images/' . $item->film->thumb) }}"
+                                                    src="{{ asset('storage/images/' . $item->film->thumb) }}" 
                                                     alt="Kubo and the Two Strings" />
                                                 <div class="right-info">
                                                     <span class="pg">

@@ -1,3 +1,14 @@
+<style>
+    .amy-movie-item-poster {
+    text-align: center; /* Căn giữa ảnh và chữ */
+}
+
+.amy-movie-image {
+    max-width: 200px; /* Kích thước tối đa cho chiều rộng */
+    max-height: 314px; /* Kích thước tối đa cho chiều cao */
+    width: auto; /* Giữ nguyên tỷ lệ khung hình */
+}
+</style>
 <div class="amy-movie-list">
     <div class="amy-movie-items">
         @php
@@ -17,7 +28,7 @@
                             <a
                                 href="detail_film/{{ $item->id }}">
                                 <img class=""
-                                    src="{{ asset('storage/images/' . $item->thumb) }}"
+                                    src="{{ asset('storage/images/' . $item->thumb) }}" style="height:314px; width:200px;" 
                                     alt="Kubo and the Two Strings" />
                             </a>
                             <span
