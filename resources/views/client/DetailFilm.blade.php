@@ -152,7 +152,7 @@
                                                                        <h1 class="modal-title fs-2 text-muted fw-bold"
                                                                            id="exampleModalLabel">Lịch Chiếu - <span
                                                                                class="fs-4">Phim
-                                                                               {{ $film_show_time->film->name }}</span>
+                                                                               {{ $film->name }}</span>
                                                                        </h1>
                                                                    </div>
 
