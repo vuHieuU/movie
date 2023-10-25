@@ -20,17 +20,29 @@ class AuthController extends Controller
      */
     public function index()
     {
-       
-        $counttiket = DB::table("tickets")
-        ->select('user_id', DB::raw('COUNT(*) as counttiket'))
-        ->groupBy('user_id')
+        $loggedInUser = Auth::user();
+
+    $counttiket = DB::table("users")
+        ->join("tickets", "users.id", "=", "tickets.user_id")
+        ->where('users.id', $loggedInUser->id)
+        ->select("users.id", DB::raw('COUNT(*) as counttiket'))
+        ->groupBy('users.id')
         ->get();
-        $sumtotal = DB::table("tickets")
-        ->select('user_id', DB::raw('SUM(total) as sumtotal'))
-        ->groupBy('user_id')
+
+        $sumtotal = DB::table("users")
+        ->join("tickets", "users.id", "=", "tickets.user_id")
+        ->where('users.id', $loggedInUser->id)
+        ->select("users.id", DB::raw('SUM(total) as sumtotal'))
+        ->groupBy('users.id')
         ->get();
         
-        $tickit = ticket::get();
+        
+        $tickit = DB::table("users")
+        ->join("tickets", "users.id", "=", "tickets.user_id")
+        ->where('users.id', $loggedInUser->id)
+        ->select("users.*" ,"tickets.*")
+        ->get();
+        
         $user = User::get();
 
         $taitel = "myaccount";
