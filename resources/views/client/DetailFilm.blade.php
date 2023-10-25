@@ -192,7 +192,7 @@
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h1 class="modal-title fs-2 text-muted fw-bold"
+                                                                        <h1 class="modal-title fs-2 text-muted fw-bold ps-5 "
                                                                             id="exampleModalLabel">Lịch Chiếu - <span
                                                                                 class="fs-4">Phim
                                                                                 {{ $film->name }}</span>
@@ -200,6 +200,10 @@
                                                                     </div>
 
                                                                     <div class="modal-header  px-5">
+                                                                        <div class="container">
+                                                                        <h1 class="modal-title fs-2 py-3 text-muted fw-bold"
+                                                                        id="exampleModalLabel">Chọn rạp</h1>
+                                                                        <div class="d-flex justify-content-around">
                                                                         @foreach (\App\Models\cinema::get() as $cinema)
                                                                             <a class="li" href="#"
                                                                                 data-cinema-id="{{ $cinema->id }}">
@@ -207,8 +211,10 @@
                                                                             </a>
                                                                         @endforeach
                                                                     </div>
+                                                                    </div>
+                                                                    </div>
 
-                                                                    <div class="modal-header">
+                                                                    <div class="modal-header px-5">
                                                                         <style>
                                                                             .A {
                                                                                 text-decoration: none;
@@ -218,6 +224,9 @@
                                                                                 text-decoration: underline;
                                                                             }
                                                                         </style>
+                                                                          <div class="container">
+                                                                         <h1 class="modal-title fs-2 py-3 text-muted fw-bold"
+                                                                         id="exampleModalLabel">Chọn ngày</h1>
                                                                         <div class="d-flex py-4">
                                                                             @php
                                                                                 $uniqueDates = [];
@@ -231,8 +240,8 @@
                                                                                         @php
                                                                                             $cinemaDates[] = $item->day;
                                                                                         @endphp
-                                                                                        <a class="showtime-day"
-                                                                                            style="display: none;font-weight: 700; margin-left:20px"
+                                                                                        <a class="showtime-day fs-3"
+                                                                                            style="display: none;font-weight: 700; margin-left:40px"
                                                                                             data-showtime-date="{{ $item->day }}"
                                                                                             data-showtime-cinema-id="{{ $item->cinema_id }}">
                                                                                             {{ Carbon\Carbon::parse($item->day)->format('d/m/Y') }}</a>
@@ -241,12 +250,13 @@
                                                                             @endforeach
                                                                         </div>
                                                                     </div>
+                                                                    </div>
 
 
-                                                                    <div class="modal-header">
+                                                                    <div class="modal-header px-5">
                                                                         <div class="container">
-                                                                            <h1 class="modal-title fs-3 py-3 text-muted fw-bold"
-                                                                                id="exampleModalLabel">2D Phụ Đề</h1>
+                                                                            <h1 class="modal-title fs-2 py-3 text-muted fw-bold"
+                                                                                id="exampleModalLabel">Chọn giờ</h1>
                                                                             <div class="">
                                                                                 <style>
                                                                                     .option {
@@ -256,7 +266,7 @@
                                                                                 </style>
                                                                                 @foreach ($ShowTime as $item)
                                                                                     <a style="display: none"
-                                                                                        class="btn option hour-button"
+                                                                                        class="btn option hour-button px-4 py-2 fs-5"
                                                                                         data-bs-toggle="collapse" href role
                                                                                         aria-expanded="false"
                                                                                         onclick="selectHour('{{ $item->hour }}')"
