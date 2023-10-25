@@ -246,13 +246,13 @@
                                                     <tr class="ligth ligth-data">
                                                         
                                                         <th style="">Mã Hóa Đơn</th>
-                                                        <th style="">User</th>
-                                                        <th style="">Cinema</th>
-                                                        <th style="">Name</th>
-                                                        <th style="">Date</th>
-                                                        <th>Time</th>
-                                                        <th style="">Seat</th>
-                                                        <th>Tatal</th>
+                                                        <th style="">Tên người dùng</th>
+                                                        <th style="">Rạp chiếu</th>
+                                                        <th style="">Tên phim</th>
+                                                        <th style="">Ngày đặt</th>
+                                                        <th>Thời gian chiếu</th>
+                                                        <th style="">Vị trí ghế</th>
+                                                        <th>Tổng tiền</th>
                                                         
                                                       
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -482,7 +482,7 @@
                         <div class="amy-page-title amy-center">
                             <div class="amy-inner container">
                                 <h1 class="page-title">
-                                    Chairs & Food </h1>
+                                    Đặt vé </h1>
                             </div>
                         </div>
                         <span class="amy-section-overlay"></span>
@@ -514,8 +514,7 @@
 
 
 
-                                                                                <h3 class="col-12 text-center ">3. Choose
-                                                                                    chair and food </h3>
+                                                                                <h3 class="col-12 text-center ">Chọn ghế và đồ ăn </h3>
                                                                                 <hr class="border">
                                                                                 <div class="row text-center "
                                                                                     style="margin-top: 30px; ">
