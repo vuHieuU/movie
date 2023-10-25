@@ -130,7 +130,7 @@
                                                         {{-- @endif --}}
                                                        
                                                         @if($check==0)
-                                                        <form action="/unLikeFilm/{{$film_show_time->film->id}}" method="GET">
+                                                        <form action="/unLikeFilm/{{$film->id}}" method="GET">
                                                             @csrf
                                                             <input type="Submit" value="Bỏ yêu thích">
                                                         </form>
@@ -138,7 +138,7 @@
                                                         <form action="/addFavoFilm" method="POST">
                                                             @csrf
                                                             <input type="hidden" name="user_id" value="{{$user}}">
-                                                            <input type="hidden" name="film_id" value="{{$film_show_time->film->id}}">
+                                                            <input type="hidden" name="film_id" value="{{$film->id}}">
                                                             <input type="Submit" value="Yêu thích">
                                                         </form>
                                                         @endif
@@ -228,7 +228,7 @@
                                                                    </div>
 
                                                                    <form
-                                                                       action="{{ route('chair', ['film_id' => $film_show_time->id]) }}"
+                                                                       action="{{ route('chair', ['film_id' => $film->id]) }}"
                                                                        method="GET">
                                                                        <div class="modal-footer">
                                                                            <button type="button"
@@ -336,7 +336,7 @@
 
                                             <div class="entry-content e-content" itemprop="description articleBody">
                                                 <h3 class="info-name amy-title">Synopsis</h3>
-                                                <p>{!! $film_show_time->film->description !!}</p>
+                                                <p>{!! $film->description !!}</p>
                                             </div>
 
                                             <div class="entry-media">

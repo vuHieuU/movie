@@ -21,7 +21,7 @@ class DetailFilmController extends Controller
     public function index($id)
     {
         $check = 1;
-        $film_show_time = ShowTime::findOrFail($id);
+        // $film_show_time = ShowTime::findOrFail($id);
         $film = film::findOrFail($id);
         // $cinema_id = Cinema::findOrFail($id);
         // $film = Film::findOrFail($id);
@@ -61,24 +61,24 @@ class DetailFilmController extends Controller
         } else {
             $user = 0;
         }
-        $ratings = Rating::where("film_id", $film_show_time->film->id);
-        $rating_sum = Rating::where("film_id", $film_show_time->film->id)->sum("star_rated");
-        $user_rating = Rating::where("film_id", $film_show_time->film->id)->where("user_id", Auth::id())->first();
+        // $ratings = Rating::where("film_id", $film_show_time->film->id);
+        // $rating_sum = Rating::where("film_id", $film_show_time->film->id)->sum("star_rated");
+        // $user_rating = Rating::where("film_id", $film_show_time->film->id)->where("user_id", Auth::id())->first();
 
-        if ($ratings->count() > 0) {
-            $rating_value = $rating_sum / $ratings->count();
-        } else {
-            $rating_value = 0;
-        }
+        // if ($ratings->count() > 0) {
+        //     $rating_value = $rating_sum / $ratings->count();
+        // } else {
+        //     $rating_value = 0;
+        // }
         $title = "Detail";
         return view('client.DetailFilm', compact(
             'title',
             "ShowTime",
             "categoryfilm_category",
-            "ratings",
-            "rating_value",
-            "user_rating",
-            'film_show_time',
+            // "ratings",
+            // "rating_value",
+            // "user_rating",
+            // 'film_show_time',
             'user',
             'check',
             'film',

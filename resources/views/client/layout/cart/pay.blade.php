@@ -162,7 +162,7 @@
                             <b class="cs-primary_color">Informational film: </b>
                             <p>
                             <p class="fs-4"><strong class="fs-5 "> Rạp: </strong>{{ $cinemaName }}</p>
-                            <p class="fs-4"><strong class="fs-5 "> Phim: </strong>{{ $ShowTime->film->name }}
+                            <p class="fs-4"><strong class="fs-5 "> Phim: </strong>{{ $ShowTime->name }}
                             </p>
 
                         </div>
@@ -198,7 +198,7 @@
                         </li>
                         <li>
                             <p class="cs-mb20"><b class="cs-primary_color">Thời gian chiếu:</b> <span
-                                    class="cs-primary_color">{{ $ShowTime->film->duration }} Phút</span></p>
+                                    class="cs-primary_color">{{ $ShowTime->duration }} Phút</span></p>
                         </li>
                     </ul>
                     <div class="cs-border cs-mb30"></div>
