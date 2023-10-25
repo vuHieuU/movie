@@ -89,10 +89,7 @@ class PayController extends Controller
     }
 
     public function PaymentSuccess(Request $request,$film_id)
-    {
-        // dd($request->all());
-               // Lấy thông tin đơn hàng từ request
-               
+    {               
     $selectedDate = session('selectedDate');
     $selectedHour = session('selectedHour');
     $selectedShowTimeId = session('selectedShowTimeId');
@@ -155,6 +152,7 @@ class PayController extends Controller
             $cinemaRoom = session('cinemaRoom');
             $couponCode = session('coupon_code');
             $total = $_GET['vnp_Amount'] / 100;
+            $FoodValueName = session('FoodValueName');
             $user = auth()->user();
 
             $ShowTime = ShowTime::findOrFail($id);
@@ -174,6 +172,13 @@ class PayController extends Controller
             $ticket->total = $total;
             $ticket->code = date('Ymd-His') . rand(10, 99);;
             $ticket->save();
+            foreach ($FoodValueName as $foodItem) {
+                $ticketFood = new ticketFood();
+                $ticketFood->ticket_id = $ticket->id;
+                $ticketFood->name = $foodItem['name'];
+                $ticketFood->quantity = $foodItem['quantity'];
+                $ticketFood->save();
+            }
         
             $selectSeatArray = explode(',', $selectedSeatsValueID);
         
@@ -183,12 +188,12 @@ class PayController extends Controller
                        session()->forget('applied_coupon');
         }
         $title = 'payment success';
-        // $selectedShowTimeId = session('selectedShowTimeId');
         $ticket = ticket::latest()->first();
-        //  $categories = $ShowTime->film->categories;
+        $FoodValueName = session('FoodValueName');
         return view('client.layout.cart.PaymentSuccess',compact(
             'title',
             'ticket',
+            'FoodValueName'
         ));
     }
 
