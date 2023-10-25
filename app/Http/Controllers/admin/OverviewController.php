@@ -21,18 +21,16 @@ class OverviewController extends Controller
         //     ->groupBy("dmid")
         //     ->get();
         $countfilm = DB::table("films")->count();
+        $countuser = DB::table("users")->count();
         $sumtotal = DB::table("tickets")->sum("total");
         $categoriesWithCount = DB::table("categories")
             ->select("categories.id", "categories.name", DB::raw("COUNT(film_categories.dmid) as countcategory"))
             ->Join('film_categories', 'categories.id', '=', 'film_categories.dmid')
             ->groupBy("categories.id", "categories.name")
             ->get();
-        // $categories = DB::table("film_categories")
-        //     ->join('categories', 'film_categories.dmid', '=', 'categories.id')
-        //     ->select("categories.id", "categories.name")
-        //     ->get();
+      
         $title = "Overview";
-        return view('admin/overview', compact('title', "countfilm", "sumtotal",  "category", "categoriesWithCount"));
+        return view('admin/overview', compact('title',"countuser", "countfilm", "sumtotal",  "category", "categoriesWithCount"));
     }
 
     /**

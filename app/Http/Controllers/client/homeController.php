@@ -23,7 +23,7 @@ class homeController extends Controller
         $film_nowplaying = film::orderByDesc("created_at")->limit(5)->get();
         $film_topmovie = film::orderByDesc("created_at")->limit(15)->get();
         $categories =category::get();
-        $film = film::limit(5)->get();
+        $film = film::orderByDesc("created_at")->limit(5)->get();
         
         return view('client.home',compact("title","film_nowplaying","categories","film","film_topmovie","new_footer","new_latest","new_latest_new"));
 

@@ -24,7 +24,7 @@ class DetailFilmController extends Controller
         // $film_show_time = ShowTime::findOrFail($id);
         $film = film::findOrFail($id);
         // $cinema_id = Cinema::findOrFail($id);
-        // $film = Film::findOrFail($id);
+        $filmtopmovie = Film::orderByDesc("created_at")->limit(4)->get();
         
         $numberOfDays = 7; // Số ngày bạn muốn liệt kê
         $dateList = array();
@@ -82,6 +82,7 @@ class DetailFilmController extends Controller
             'user',
             'check',
             'film',
+            "filmtopmovie"
         ));
     }
 }

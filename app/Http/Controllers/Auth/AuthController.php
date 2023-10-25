@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Client\ProfileRequest;
+use App\Models\ticket;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,9 +20,21 @@ class AuthController extends Controller
      */
     public function index()
     {
-   
+       
+        $counttiket = DB::table("tickets")
+        ->select('user_id', DB::raw('COUNT(*) as counttiket'))
+        ->groupBy('user_id')
+        ->get();
+        $sumtotal = DB::table("tickets")
+        ->select('user_id', DB::raw('SUM(total) as sumtotal'))
+        ->groupBy('user_id')
+        ->get();
+        
+        $tickit = ticket::get();
+        $user = User::get();
+
         $taitel = "myaccount";
-        return view('client.myaccount', compact("taitel"));
+        return view('client.myaccount', compact("taitel","tickit","counttiket","sumtotal","user"));
     }
     public function edit()
     {

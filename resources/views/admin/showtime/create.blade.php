@@ -106,31 +106,33 @@
                                         <img class="img-responsive w-100" src="{{ asset('storage/images/ic-screen.png') }}">
                                         <div class="form-group">
                                             <label>Seats</label>
-                                            <input type="checkbox" class="checkbox mx-3" id="checkbox1"
+                                            <input type="checkbox" class="checkbox  mx-3" id="selectAll"
                                                 data-master-checkbox>
-                                            <div class="row container  "style="max-width: 1100px;">
-                                                @foreach ($seats as $item)
-                                                    @if ($item->typeSeat_id == 1)
-                                                        <div class="form-check col-md-1">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    name="id_seat[]" value="{{ $item->id }}"
-                                                                    id="seat_{{ $item->id }}">
-                                                                <label class="form-check-label"
-                                                                    for="seat_{{ $item->id }}">{{ $item->seat_number }}</label>
+                                                <div class="row container " style="max-width: 1050px;">
+                                                    @foreach ($seats as $item)
+                                                        @if ($item->typeSeat_id == 1)
+                                                            <div class="form-check col-md-1">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input item" 
+                                                                        type="checkbox" name="id_seat[]"
+                                                                        value="{{ $item->id }}"
+                                                                        id="seat_{{ $item->id }}">
+                                                                    <label class="form-check-label"
+                                                                        for="seat_{{ $item->id }}">{{ $item->seat_number }}</label>
+                                                                </div>
+    
                                                             </div>
-
-                                                        </div>
-                                                    @endif
-                                                @endforeach
-                                            </div>
+                                                        @endif
+                                                    @endforeach
+                                                </div>
                                             <div class="row container " style="max-width: 1050px;">
                                                 @foreach ($seats as $item)
                                                     @if ($item->typeSeat_id == 2)
                                                         <div class="form-check col-md-1">
                                                             <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    name="id_seat[]" value="{{ $item->id }}"
+                                                                <input class="form-check-input item" 
+                                                                    type="checkbox" name="id_seat[]"
+                                                                    value="{{ $item->id }}"
                                                                     id="seat_{{ $item->id }}">
                                                                 <label class="form-check-label"
                                                                     for="seat_{{ $item->id }}">{{ $item->seat_number }}</label>
@@ -145,8 +147,9 @@
                                                     @if ($item->typeSeat_id == 3)
                                                         <div class="form-check col-md-1">
                                                             <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    name="id_seat[]" value="{{ $item->id }}"
+                                                                <input class="form-check-input item" 
+                                                                    type="checkbox" name="id_seat[]"
+                                                                    value="{{ $item->id }}"
                                                                     id="seat_{{ $item->id }}">
                                                                 <label class="form-check-label"
                                                                     for="seat_{{ $item->id }}">{{ $item->seat_number }}</label>
@@ -161,8 +164,9 @@
                                                     @if ($item->typeSeat_id == 4)
                                                         <div class="form-check col-md-1">
                                                             <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    name="id_seat[]" value="{{ $item->id }}"
+                                                                <input class="form-check-input item" 
+                                                                    type="checkbox" name="id_seat[]"
+                                                                    value="{{ $item->id }}"
                                                                     id="seat_{{ $item->id }}">
                                                                 <label class="form-check-label"
                                                                     for="seat_{{ $item->id }}">{{ $item->seat_number }}</label>
@@ -172,7 +176,31 @@
                                                     @endif
                                                 @endforeach
                                             </div>
+                                            
+
+                                            <script>
+                                                document.getElementById("selectAll").addEventListener("click", function() {
+                                                    // Lấy tất cả các phần tử có class "item"
+                                                    var checkboxes = document.querySelectorAll(".item");
+
+                                                    // Xác định trạng thái mới để chọn hoặc bỏ chọn
+                                                    var newState = true;
+                                                    for (var i = 0; i < checkboxes.length; i++) {
+                                                        if (!checkboxes[i].checked) {
+                                                            newState = true; // Nếu có ít nhất một checkbox chưa được chọn, chọn tất cả
+                                                            break;
+                                                        }
+                                                        newState = false; // Nếu tất cả các checkbox đã được chọn, bỏ chọn tất cả
+                                                    }
+
+                                                    // Thiết lập trạng thái của tất cả các checkbox
+                                                    for (var i = 0; i < checkboxes.length; i++) {
+                                                        checkboxes[i].checked = newState;
+                                                    }
+                                                });
+                                            </script>
                                         </div>
+
                                     </div>
 
 

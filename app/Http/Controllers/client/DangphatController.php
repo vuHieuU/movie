@@ -18,9 +18,10 @@ class DangphatController extends Controller
     {
         $status = "đang chiếu";
         $film_topmovie = film::orderByDesc("created_at")->limit(2)->get();
-        $film_nowplaying = Showtime::whereHas('film', function ($query) use ($status) {
-        $query->where('status', $status);
-        })->get();
+        $film_nowplaying =film::where("status", $status)->get();
+        // $film_nowplaying = Showtime::whereHas('film', function ($query) use ($status) {
+        // $query->where('status', $status);
+        // })->get();
         $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
         $title = " now Playing";
       return view("client.dangphat",compact('title',"film_nowplaying","film_topmovie","new_footer"));

@@ -681,8 +681,6 @@
                                                                                     </style>
                                                                                     <div style="max-width: 800px;margin: auto"
                                                                                         class="">
-
-
                                                                                         @foreach ($seats as $item)
                                                                                             @if ($item->typeSeat_id == 1)
                                                                                                 <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat align-item-center "
@@ -928,6 +926,7 @@
                                                                                             }
                                                                                         });
                                                                                     });
+
 
 
                                                                                     function kiemTraChonGhe() {

@@ -2,20 +2,19 @@
 <html lang="en-US">
 
 <head>
-     @include('client.layout.main.HeadDetailFilm')
+    @include('client.layout.main.HeadDetailFilm')
 </head>
 {{-- ảnh url --}}
 <link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
 {{-- ảnh url --}}
+
 <body
     class="amy_movie-template-default single single-amy_movie postid-74 amy-header-default  single-author elementor-default elementor-kit-5">
     <div id="page" class="hfeed site">
 
         @extends('client.layout.main.main')
         @section('contact')
-
-            <div class="modal fade" id="rateStar" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
+            <div class="modal fade" id="rateStar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                     </div>
@@ -42,17 +41,15 @@
                                             <div class="entry-top">
 
                                                 <div class="entry-poster mx-5"style="max-width: 250px;width: 100%;">
-                                                    <img  class=""
-                                                                 src="{{ asset('storage/images/'.$film->thumb) }}"
-                                                                 alt="The Hurricane Heist" />
+                                                    <img class="" src="{{ asset('storage/images/' . $film->thumb) }}"
+                                                        alt="The Hurricane Heist" />
                                                     {{-- <img class="" 
                                                         src="{{ asset('storage/images/'.$film->thumb) }}"
                                                         alt="Jumanji: Welcome to the Jungle" /> --}}
                                                 </div>
                                                 <div class="entry-info">
                                                     <h1 class="entry-title p-name" itemprop="name headline">
-                                                        <a href="" rel="bookmark" class="u-url url"
-                                                            itemprop="url">
+                                                        <a href="" rel="bookmark" class="u-url url" itemprop="url">
                                                             {{ $film->name }}</a>
 
                                                     </h1>
@@ -102,8 +99,8 @@
                                                     </span>
 
                                                         </li> --}}
-                                                             
-                                                            
+
+
                                                         </li>
 
 
@@ -113,207 +110,253 @@
                                                             </label>
                                                             <span>
                                                                 {{ $film->country }}</span>
-                                                          
+
                                                         </li>
                                                     </ul>
 
                                                     {{-- BUy ticket --}}
                                                     <div class="entry-action">
-                                                        {{-- @if ($film_show_time->film->status == "đang chiếu") --}}
-                                                             <div class="mrate  no-rate">
+                                                        {{-- @if ($film_show_time->film->status == 'đang chiếu') --}}
+                                                        <div class="mrate  no-rate">
                                                             <button type="button" data-bs-toggle="modal"
                                                                 data-bs-target="#exampleModal" class="amy-buy-ticket">Buy
                                                                 Ticket</button>
                                                         </div>
                                                         {{-- @else --}}
-                                                            
+
                                                         {{-- @endif --}}
-                                                       
-                                                        @if($check==0)
-                                                        <form action="/unLikeFilm/{{$film->id}}" method="GET">
-                                                            @csrf
-                                                            <input type="Submit" value="Bỏ yêu thích">
-                                                        </form>
+
+                                                        @if ($check == 0)
+                                                            <form action="/unLikeFilm/{{ $film->id }}" method="GET">
+                                                                @csrf
+                                                                <input type="Submit" value="Bỏ yêu thích">
+                                                            </form>
                                                         @else
-                                                        <form action="/addFavoFilm" method="POST">
-                                                            @csrf
-                                                            <input type="hidden" name="user_id" value="{{$user}}">
-                                                            <input type="hidden" name="film_id" value="{{$film->id}}">
-                                                            <input type="Submit" value="Yêu thích">
-                                                        </form>
+                                                            <form action="/addFavoFilm" method="POST">
+                                                                @csrf
+                                                                <input type="hidden" name="user_id"
+                                                                    value="{{ $user }}">
+                                                                <input type="hidden" name="film_id"
+                                                                    value="{{ $film->id }}">
+                                                                <input type="Submit" value="Yêu thích">
+                                                            </form>
                                                         @endif
+                                                        <style>
+                                                            /* Đặt màu nền cho modal */
+                                                            .modal-content {
+                                                                background-color: #fff; /* Màu nền bạn muốn */
+                                                            }
                                                         
-                                                           {{-- model --}}
-                                                           <div class="modal fade modal-xl" id="exampleModal" tabindex="-1"
-                                                           aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                           <div class="modal-dialog">
-                                                               <div class="modal-content">
-                                                                   <div class="modal-header">
-                                                                       <h1 class="modal-title fs-2 text-muted fw-bold"
-                                                                           id="exampleModalLabel">Lịch Chiếu - <span
-                                                                               class="fs-4">Phim
-                                                                               {{ $film->name }}</span>
-                                                                       </h1>
-                                                                   </div>
+                                                            /* Đặt màu cho tiêu đề modal */
+                                                            .modal-title {
+                                                                color: #333; /* Màu chữ bạn muốn */
+                                                            }
+                                                        
+                                                            /* Đặt màu và kiểu chữ cho cinema links */
+                                                            .li {
+                                                                text-decoration: none;
+                                                                color: #606060; /* Màu chữ bạn muốn */
+                                                                list-style: none;
+                                                                font-size: 20px;
+                                                               
+                                                            }
+                                                        
+                                                           
+                                                        
+                                                            /* Đặt kiểu chữ cho ngày */
+                                                            .showtime-day {
+                                                                font-weight: 700;
+                                                                margin-left: 20px;
+                                                            }
+                                                        
+                                                            /* Đặt màu nền cho các nút option */
+                                                            .option {
+                                                                background-color: #fe7b00b3; /* Màu nền bạn muốn */
+                                                                font-weight: 700;
+                                                            }
+                                                        
+                                                            /* Đặt màu và kiểu chữ cho các nút option */
+                                                            .hour-button {
+                                                                background-color: #fe7b00b3; /* Màu nền bạn muốn */
+                                                                color: #fff; /* Màu chữ bạn muốn */
+                                                            }
+                                                        
+                                                            .hour-button:hover {
+                                                                background-color: #ff9900; /* Màu nền khi hover */
+                                                            }
+                                                        </style>
+                                                        
+                                                        {{-- model --}}
+                                                        <div class="modal fade modal-xl" id="exampleModal" tabindex="-1"
+                                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h1 class="modal-title fs-2 text-muted fw-bold"
+                                                                            id="exampleModalLabel">Lịch Chiếu - <span
+                                                                                class="fs-4">Phim
+                                                                                {{ $film->name }}</span>
+                                                                        </h1>
+                                                                    </div>
 
-                                                                   <div class="modal-header">
-                                                                       @foreach (\App\Models\cinema::get() as $cinema)
-                                                                           <a class="li" href="#"
-                                                                               data-cinema-id="{{ $cinema->id }}">
-                                                                               <li> {{ $cinema->name }}</li>
-                                                                           </a>
-                                                                       @endforeach
-                                                                   </div>
+                                                                    <div class="modal-header  px-5">
+                                                                        @foreach (\App\Models\cinema::get() as $cinema)
+                                                                            <a class="li" href="#"
+                                                                                data-cinema-id="{{ $cinema->id }}">
+                                                                                <li> {{ $cinema->name }}</li>
+                                                                            </a>
+                                                                        @endforeach
+                                                                    </div>
 
-                                                                   <div class="modal-header">
-                                                                       <style>
-                                                                           .A {
-                                                                               text-decoration: none;
-                                                                           }
+                                                                    <div class="modal-header">
+                                                                        <style>
+                                                                            .A {
+                                                                                text-decoration: none;
+                                                                            }
 
-                                                                           .A.active {
-                                                                               text-decoration: underline;
-                                                                           }
-                                                                       </style>
-                                                                       <div class="d-flex">
-                                                                           @php
-                                                                               $uniqueDates = [];
-                                                                           @endphp
-                                                                           @foreach (\App\Models\Cinema::get() as $cinema)
-                                                                               @php
-                                                                                   $cinemaDates = [];
-                                                                               @endphp
-                                                                               @foreach ($ShowTime as $item)
-                                                                                   @if ($item->cinema_id == $cinema->id && !in_array($item->day, $cinemaDates))
-                                                                                       @php
-                                                                                           $cinemaDates[] = $item->day;
-                                                                                       @endphp
-                                                                                               <a class="showtime-day"
-                                                                                                   style="display: none;font-weight: 700; margin-left:20px"
-                                                                                                   data-showtime-date="{{ $item->day }}"
-                                                                                                   data-showtime-cinema-id="{{ $item->cinema_id }}">
-                                                                                                   {{ Carbon\Carbon::parse($item->day)->format('d/m/Y') }}</a>
-                                                                                   @endif
-                                                                               @endforeach
-                                                                           @endforeach
-                                                                       </div>
-                                                                   </div>
-
-
-                                                                   <div class="modal-header">
-                                                                       <div class="container">
-                                                                           <h1 class="modal-title fs-3 py-3 text-muted fw-bold"
-                                                                               id="exampleModalLabel">2D Phụ Đề</h1>
-                                                                           <div class="">
-                                                                               <style>
-                                                                                   .option {
-                                                                                       background-color: #fe7b00b3;
-                                                                                       font-weight: 700;
-                                                                                   }
-                                                                               </style>
-                                                                               @foreach ($ShowTime as $item)
-                                                                                   <a style="display: none"
-                                                                                       class="btn option hour-button"
-                                                                                       data-bs-toggle="collapse" href role
-                                                                                       aria-expanded="false"
-                                                                                       onclick="selectHour('{{ $item->hour }}')"
-                                                                                       aria-controls="multiCollapseExample1"
-                                                                                       data-showtime-date="{{ $item->day }}"
-                                                                                       data-showtime-cinema-id="{{ $item->cinema_id }}"
-                                                                                       data-showtime-hour="{{ $item->hour }}"
-                                                                                       data-showtime-id="{{ $item->id }}">{{ $item->hour }}</a>
-                                                                               @endforeach
-                                                                           </div>
-                                                                       </div>
-                                                                   </div>
-
-                                                                   <form
-                                                                       action="{{ route('chair', ['film_id' => $film->id]) }}"
-                                                                       method="GET">
-                                                                       <div class="modal-footer">
-                                                                           <button type="button"
-                                                                               class="btn btn-secondary amy-buy-ticket"
-                                                                               data-bs-dismiss="modal">Close</button>
-                                                                           <button type="submit"
-                                                                               class="amy-buy-ticket">Next</button>
-                                                                           <input type="hidden" id="selectedCinemaId"
-                                                                               name="selectedCinemaId" value="">
-                                                                           <input type="hidden" id="selectedDate"
-                                                                               name="selectedDate" value="">
-                                                                           <input type="hidden" id="selectedHour"
-                                                                               name="selectedHour" value="">
-                                                                           <input type="hidden" id="selectedShowTimeId"
-                                                                               name="selectedShowTimeId" value="">
-                                                                       </div>
-                                                                   </form>
-                                                               </div>
-                                                           </div>
-                                                       </div>
+                                                                            .A.active {
+                                                                                text-decoration: underline;
+                                                                            }
+                                                                        </style>
+                                                                        <div class="d-flex py-4">
+                                                                            @php
+                                                                                $uniqueDates = [];
+                                                                            @endphp
+                                                                            @foreach (\App\Models\Cinema::get() as $cinema)
+                                                                                @php
+                                                                                    $cinemaDates = [];
+                                                                                @endphp
+                                                                                @foreach ($ShowTime as $item)
+                                                                                    @if ($item->cinema_id == $cinema->id && !in_array($item->day, $cinemaDates))
+                                                                                        @php
+                                                                                            $cinemaDates[] = $item->day;
+                                                                                        @endphp
+                                                                                        <a class="showtime-day"
+                                                                                            style="display: none;font-weight: 700; margin-left:20px"
+                                                                                            data-showtime-date="{{ $item->day }}"
+                                                                                            data-showtime-cinema-id="{{ $item->cinema_id }}">
+                                                                                            {{ Carbon\Carbon::parse($item->day)->format('d/m/Y') }}</a>
+                                                                                    @endif
+                                                                                @endforeach
+                                                                            @endforeach
+                                                                        </div>
+                                                                    </div>
 
 
-                                                       <script>
-                                                           var selectedCinemaId = "";
+                                                                    <div class="modal-header">
+                                                                        <div class="container">
+                                                                            <h1 class="modal-title fs-3 py-3 text-muted fw-bold"
+                                                                                id="exampleModalLabel">2D Phụ Đề</h1>
+                                                                            <div class="">
+                                                                                <style>
+                                                                                    .option {
+                                                                                        background-color: #fe7b00b3;
+                                                                                        font-weight: 700;
+                                                                                    }
+                                                                                </style>
+                                                                                @foreach ($ShowTime as $item)
+                                                                                    <a style="display: none"
+                                                                                        class="btn option hour-button"
+                                                                                        data-bs-toggle="collapse" href role
+                                                                                        aria-expanded="false"
+                                                                                        onclick="selectHour('{{ $item->hour }}')"
+                                                                                        aria-controls="multiCollapseExample1"
+                                                                                        data-showtime-date="{{ $item->day }}"
+                                                                                        data-showtime-cinema-id="{{ $item->cinema_id }}"
+                                                                                        data-showtime-hour="{{ $item->hour }}"
+                                                                                        data-showtime-id="{{ $item->id }}">{{ $item->hour }}</a>
+                                                                                @endforeach
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
 
-                                                           // Lắng nghe sự kiện khi một rạp được chọn
-                                                           var cinemaLinks = document.querySelectorAll(".li");
-                                                           cinemaLinks.forEach(function(cinemaLink) {
-                                                               cinemaLink.addEventListener("click", function(event) {
-                                                                   event.preventDefault();
-                                                                   selectedCinemaId = cinemaLink.getAttribute("data-cinema-id");
+                                                                    <form
+                                                                        action="{{ route('chair', ['film_id' => $film->id]) }}"
+                                                                        method="GET">
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn btn-secondary amy-buy-ticket"
+                                                                                data-bs-dismiss="modal">Close</button>
+                                                                            <button type="submit"
+                                                                                class="amy-buy-ticket">Next</button>
+                                                                            <input type="hidden" id="selectedCinemaId"
+                                                                                name="selectedCinemaId" value="">
+                                                                            <input type="hidden" id="selectedDate"
+                                                                                name="selectedDate" value="">
+                                                                            <input type="hidden" id="selectedHour"
+                                                                                name="selectedHour" value="">
+                                                                            <input type="hidden" id="selectedShowTimeId"
+                                                                                name="selectedShowTimeId" value="">
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                                                                   // Ẩn tất cả các ngày chiếu
-                                                                   var showtimeDays = document.querySelectorAll(".showtime-day");
-                                                                   showtimeDays.forEach(function(day) {
-                                                                       day.style.display = "none";
-                                                                   });
 
-                                                                   // Hiển thị ngày chiếu cho rạp đã chọn
-                                                                   var selectedShowtimeDays = document.querySelectorAll(
-                                                                       ".showtime-day[data-showtime-cinema-id='" + selectedCinemaId + "']");
-                                                                   selectedShowtimeDays.forEach(function(day) {
-                                                                       day.style.display = "block";
-                                                                   });
-                                                               });
-                                                           });
+                                                        <script>
+                                                            var selectedCinemaId = "";
+
+                                                            // Lắng nghe sự kiện khi một rạp được chọn
+                                                            var cinemaLinks = document.querySelectorAll(".li");
+                                                            cinemaLinks.forEach(function(cinemaLink) {
+                                                                cinemaLink.addEventListener("click", function(event) {
+                                                                    event.preventDefault();
+                                                                    selectedCinemaId = cinemaLink.getAttribute("data-cinema-id");
+
+                                                                    // Ẩn tất cả các ngày chiếu
+                                                                    var showtimeDays = document.querySelectorAll(".showtime-day");
+                                                                    showtimeDays.forEach(function(day) {
+                                                                        day.style.display = "none";
+                                                                    });
+
+                                                                    // Hiển thị ngày chiếu cho rạp đã chọn
+                                                                    var selectedShowtimeDays = document.querySelectorAll(
+                                                                        ".showtime-day[data-showtime-cinema-id='" + selectedCinemaId + "']");
+                                                                    selectedShowtimeDays.forEach(function(day) {
+                                                                        day.style.display = "block";
+                                                                    });
+                                                                });
+                                                            });
 
 
-                                                           var showtimeDayElements = document.querySelectorAll(".showtime-day");
-                                                           showtimeDayElements.forEach(function(element) {
-                                                               element.addEventListener("click", function() {
-                                                                   var selectedDay = element.getAttribute("data-showtime-date");
-                                                                   selectDate(selectedDay);
+                                                            var showtimeDayElements = document.querySelectorAll(".showtime-day");
+                                                            showtimeDayElements.forEach(function(element) {
+                                                                element.addEventListener("click", function() {
+                                                                    var selectedDay = element.getAttribute("data-showtime-date");
+                                                                    selectDate(selectedDay);
 
-                                                                   var hourButtons = document.querySelectorAll(".hour-button");
-                                                                   hourButtons.forEach(function(button) {
-                                                                       var showtimeDate = button.getAttribute("data-showtime-date");
-                                                                       var showtimeCinemaId = button.getAttribute("data-showtime-cinema-id");
-                                                                       if (showtimeDate === selectedDay && showtimeCinemaId === selectedCinemaId) {
-                                                                           button.style.display = "inline-block";
-                                                                       } else {
-                                                                           button.style.display = "none";
-                                                                       }
-                                                                   });
-                                                               });
-                                                           });
+                                                                    var hourButtons = document.querySelectorAll(".hour-button");
+                                                                    hourButtons.forEach(function(button) {
+                                                                        var showtimeDate = button.getAttribute("data-showtime-date");
+                                                                        var showtimeCinemaId = button.getAttribute("data-showtime-cinema-id");
+                                                                        if (showtimeDate === selectedDay && showtimeCinemaId === selectedCinemaId) {
+                                                                            button.style.display = "inline-block";
+                                                                        } else {
+                                                                            button.style.display = "none";
+                                                                        }
+                                                                    });
+                                                                });
+                                                            });
 
-                                                           function selectDate(date) {
-                                                               selectedDate = date;
-                                                               var selectDateElement = document.getElementById("selectedDate");
-                                                               selectDateElement.value = selectedDate;
-                                                           }
+                                                            function selectDate(date) {
+                                                                selectedDate = date;
+                                                                var selectDateElement = document.getElementById("selectedDate");
+                                                                selectDateElement.value = selectedDate;
+                                                            }
 
-                                                           function selectHour(hour) {
-                                                               selectedHour = hour;
+                                                            function selectHour(hour) {
+                                                                selectedHour = hour;
 
-                                                               var selectHourElement = document.getElementById("selectedHour");
-                                                               selectHourElement.value = selectedHour
-                                                               var selectShowTimeId = event.currentTarget.getAttribute("data-showtime-id");
+                                                                var selectHourElement = document.getElementById("selectedHour");
+                                                                selectHourElement.value = selectedHour
+                                                                var selectShowTimeId = event.currentTarget.getAttribute("data-showtime-id");
 
-                                                               var selectShowTimeIdElement = document.getElementById("selectedShowTimeId")
-                                                               selectShowTimeIdElement.value = selectShowTimeId
-                                                           }
-                                                       </script>
-                                                       {{-- model --}}
+                                                                var selectShowTimeIdElement = document.getElementById("selectedShowTimeId")
+                                                                selectShowTimeIdElement.value = selectShowTimeId
+                                                            }
+                                                        </script>
+                                                        {{-- model --}}
 
 
                                                         <div class="entry-share">
@@ -394,7 +437,7 @@
                                                 </div>
                                             </div>
 
-                                        
+
 
                                             <div class="entry-comment">
 
@@ -501,87 +544,25 @@
                                                 <div class="amy-widget amy-widget-list list-movie ">
                                                     <h4 class="amy-title amy-widget-title">Top
                                                         Movie</h4>
+                                  
+
+                                                    @foreach ($filmtopmovie as $item)                                                                                                       
                                                     <div class="entry-item">
-                                                        <div class="entry-thumb"><img class
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_20-118x159_c.jpg"
+                                                        <div class="entry-thumb"><img style="width: 120px" class
+                                                                src="{{ asset('storage/images/' . $item->thumb) }}"
                                                                 alt="Kubo and the Two Strings" /></div>
                                                         <div class="entry-content">
                                                             <h2 class="entry-title"><a
-                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/kubo-and-the-two-strings/">Kubo
-                                                                    and the
-                                                                    Two
-                                                                    Strings</a></h2>
-                                                            <div><span class="duration"><i class="fa fa-clock-o"></i>02
-                                                                    hours 00
+                                                                    href="{{ route('filmDetail',[$item->id]) }}">{{$item->name}}</a></h2>
+                                                            <div><span class="duration"><i class="fa fa-clock-o"></i>
+                                                                {{$item->duration}}
                                                                     minutes</span></div>
-                                                            <div class="genre"><span><a
-                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                    <a
-                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a></span>
-                                                            </div>
+                                                            
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     </div>
-                                                    <div class="entry-item">
-                                                        <div class="entry-thumb"><img class
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_19-118x159_c.jpg"
-                                                                alt="The Hurricane Heist" /></div>
-                                                        <div class="entry-content">
-                                                            <h2 class="entry-title"><a
-                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">The
-                                                                    Hurricane
-                                                                    Heist</a></h2>
-                                                            <div><span class="duration"><i class="fa fa-clock-o"></i>01
-                                                                    hours 30
-                                                                    minutes</span></div>
-                                                            <div class="genre"><span><a
-                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a>,
-                                                                    <a
-                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/magic/">Magic</a></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                    <div class="entry-item">
-                                                        <div class="entry-thumb"><img class
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_17-118x159_c.jpg"
-                                                                alt="Jumanji: Welcome to the Jungle" /></div>
-                                                        <div class="entry-content">
-                                                            <h2 class="entry-title"><a
-                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">Jumanji:
-                                                                    Welcome
-                                                                    to the
-                                                                    Jungle</a></h2>
-                                                            <div><span class="duration"><i class="fa fa-clock-o"></i>02
-                                                                    hours 30
-                                                                    minutes</span></div>
-                                                            <div class="genre"><span><a
-                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                    <a
-                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/sci-fi/">Sci-fi</a></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                    <div class="entry-item">
-                                                        <div class="entry-thumb"><img class
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_18-118x159_c.jpg"
-                                                                alt="Death Wish" /></div>
-                                                        <div class="entry-content">
-                                                            <h2 class="entry-title"><a
-                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/death-wish/">Death
-                                                                    Wish</a></h2>
-                                                            <div><span class="duration"><i class="fa fa-clock-o"></i>01
-                                                                    hours 00
-                                                                    minutes</span></div>
-                                                            <div class="genre"><span><a
-                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/cartoon/">Cartoon</a>,
-                                                                    <a
-                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/genre/comic/">Comic</a></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
+                                                     @endforeach
+                                                   
                                                 </div>
                                                 <div class="clear"></div>
                                             </div>

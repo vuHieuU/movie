@@ -19,7 +19,7 @@ class AllfilmController extends Controller
     public function index()
     {
         $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
-        $films = ShowTime::get();
+        $films = film::get();
         $category = category::all();
        
         $title = "Now Playing";
@@ -48,7 +48,7 @@ class AllfilmController extends Controller
     public function show(string $id)
     {  
         $cinema_id = cinema::findOrFail($id);
-        //  $films = film::get();
+         $films = film::get();
     $category = category::get();
     // $film = DB::table('categories')
     //     ->join('film_categories', 'categories.id', '=', 'film_categories.dmid')
@@ -58,7 +58,7 @@ class AllfilmController extends Controller
     //     ->get();
 
 
-        $films = ShowTime::where("cinema_id", $cinema_id->id)->orderByDesc("created_at")->with('film')->get();
+        // $films = ShowTime::where("cinema_id", $cinema_id->id)->orderByDesc("created_at")->with('film')->get();
     return view("client.layout.session.Movie",compact("category","films"));
     }
 
