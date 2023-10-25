@@ -265,7 +265,7 @@
                                                     <tr>
                                                         
                                                         <td>{{ $item->code }}</td>
-                                                        <td>{{ $item->user->name }}</td>
+                                                        <td>{{ $item->name }}</td>
                                                         <td>
                                                           {{ $item->cinema }}
                                                         </td>
