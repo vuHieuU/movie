@@ -31,10 +31,9 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Coupon List</h4>
-                          <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
+                          <h4 class="mb-3">Danh sách mã giảm giá</h4>
                       </div>
-                      <a href="/coupon/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Coupon</a>
+                      <a href="/coupon/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm mã giảm giá</a>
                   </div>
               </div>
             
@@ -53,10 +52,10 @@
                                   </div>
                               </th>
                               <th>ID</th>
-                              <th>Name</th>
-                              <th>Type</th>
-                              <th>Value</th>
-                              <th>expiry_date</th>
+                              <th>Mã</th>
+                              <th>Kiểu</th>
+                              <th>Giá trị</th>
+                              <th>Ngày hết hạn</th>
                               <th>Action</th>
                           </tr>
                       </thead>

@@ -35,8 +35,7 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Comment List</h4>
-                          <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
+                          <h4 class="mb-3">Danh sách bình luận</h4>
                       </div>
                       <!-- <a href="/comment/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Comment</a> -->
                   </div>
@@ -57,11 +56,11 @@
                                   </div>
                               </th>
                               <th>ID</th>
-                              <th>Name</th>
+                              <th>Tên người dùng</th>
                               <th>Email</th>
-                              <th>Comment</th>
-                              <th>DateTime</th>
-                              <th>Status</th>
+                              <th>Bình luận</th>
+                              <th>Ngày bình luận</th>
+                              <th>Trạng thái</th>
                               <th>Action</th>
                           </tr>
                       </thead>

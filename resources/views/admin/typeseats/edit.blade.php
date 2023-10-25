@@ -36,7 +36,7 @@
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between">
                                     <div class="header-title">
-                                        <h4 class="card-title">Update TypeSeats</h4>
+                                        <h4 class="card-title">Cập nhật loại ghế</h4>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -44,7 +44,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Name *</label>
+                                                <label>Tên loại ghế *</label>
                                                 <input type="text" class="form-control" placeholder="Enter Name"
                                                     data-errors="Please Enter Name." name="name" value="{{$typeseat->name}}">
                                                 <div class="help-block with-errors"></div>
@@ -53,7 +53,7 @@
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label>Price *</label>
+                                                <label>Giá *</label>
                                                 <input type="text" class="form-control" placeholder="Enter Price"
                                                     data-errors="Please Enter Name." name="price" value="{{$typeseat->price}}">
                                                 <div class="help-block with-errors"></div>
@@ -63,7 +63,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary mr-2">Update TypeSeats</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     <a href="/typeseats/index"><button type="submit" class="btn btn-danger">Back</button></a>
                                 </div>

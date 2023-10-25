@@ -33,14 +33,14 @@
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between">
                                     <div class="header-title">
-                                        <h4 class="card-title">Add Showtime</h4>
+                                        <h4 class="card-title">Thêm lịch chiếu</h4>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Film</label>
+                                                <label>Phim</label>
                                                 <select name="film_id" class="form-control">
                                                     @if (!empty($film))
                                                         @foreach ($film as $item)
@@ -55,7 +55,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="value">Cinema *</label>
+                                                <label for="value">Rạp phim *</label>
                                                 <select class="form-control" name="cinema_id">
                                                     @foreach ($cinemas as $item)
                                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -72,7 +72,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>day</label>
+                                                <label>Ngày</label>
                                                 <input type="date" class="form-control" name="day">
                                                 <div class="help-block with-errors"></div>
                                             </div>
@@ -81,7 +81,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>day</label>
+                                                <label>Giờ</label>
                                                 <input type="time" class="form-control" name="hour">
                                                 <div class="help-block with-errors"></div>
                                             </div>
@@ -90,7 +90,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Room</label>
+                                                <label>Phòng chiếu</label>
                                                 <select name="room_id" class="form-control">
                                                     @if (!empty($room))
                                                         @foreach ($room as $item)
@@ -105,7 +105,7 @@
                                     <div class="mt-5"style="max-width: 1100px;margin: auto">
                                         <img class="img-responsive w-100" src="{{ asset('storage/images/ic-screen.png') }}">
                                         <div class="form-group">
-                                            <label>Seats</label>
+                                            <label>Ghế ngồi</label>
                                             <input type="checkbox" class="checkbox  mx-3" id="selectAll"
                                                 data-master-checkbox>
                                                 <div class="row container " style="max-width: 1050px;">
@@ -206,7 +206,7 @@
 
 
 
-                                    <button type="submit" class="btn btn-primary mr-2">Save</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Thêm mới</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     {{-- <a href="/user/index"><button type="submit" class="btn btn-danger">Back</button></a> --}}
                                 </div>

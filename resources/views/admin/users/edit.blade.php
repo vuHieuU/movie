@@ -33,14 +33,14 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
-                                    <h4 class="card-title">Add Roles</h4>
+                                    <h4 class="card-title">Cập nhật người dùng</h4>
                                 </div>
                             </div>
                             <div class="card-body">
                                   <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Name *</label>
+                                            <label>Tên người dùng *</label>
                                             <input type="text" class="form-control" placeholder="name"
                                                 name="name" value="{{ $user->name }}">
                                              @error('name')
@@ -67,7 +67,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>phone</label>
+                                                <label>Số điện thoại</label>
                                                 <input type="text" class="form-control" placeholder="phone"
                                                     name="phone" value="{{ $user->phone }}">
                                                  @error('phone')
@@ -81,7 +81,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>address</label>
+                                                <label>Địa chỉ</label>
                                                 <input type="text" class="form-control" placeholder="address"
                                                     name="address" value="{{ $user->address }}">
                                                  @error('address')
@@ -93,7 +93,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>gender</label>
+                                                <label>Giới tính</label>
                                                 <input type="text" class="form-control" placeholder="gender"
                                                     name="gender" value="{{ $user->gender }}">
                                                  @error('gender')
@@ -107,7 +107,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>password</label>
+                                                <label>Mật khẩu</label>
                                                 <input type="password" class="form-control" placeholder="password"
                                                     name="password">
                                                  @error('password')
@@ -119,7 +119,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Role</label>
+                                        <label>Phân quyền</label>
                                          <div class="row container m-auto">
                                                 @foreach ($role as $groupName => $role)
                                                 <div class="col-4 pb-3">
@@ -137,7 +137,7 @@
                                                 @endforeach
                                           </div>
                                       </div>
-                                    <button type="submit" class="btn btn-primary mr-2">Update User</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     <a href="/user/index"><button type="submit" class="btn btn-danger">Back</button></a>
                              

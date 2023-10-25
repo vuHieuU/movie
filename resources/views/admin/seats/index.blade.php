@@ -32,10 +32,9 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Seats List</h4>
-                          <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
+                          <h4 class="mb-3">Danh sách ghế</h4>
                       </div>
-                      <a href="{{route("seats.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Seat</a>
+                      <a href="{{route("seats.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm ghế</a>
                   </div>
               </div>
               <div class="col-lg-12">
@@ -54,8 +53,8 @@
                                   </div>
                               </th>
                               <th>ID</th>
-                              <th>Seat</th>
-                              <th>TypeSeat</th>
+                              <th>Vị trí</th>
+                              <th>Kiểu ghế</th>
                               <th>Action</th>
                           </tr>
                       </thead>

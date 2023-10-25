@@ -33,8 +33,8 @@
                             src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_66.png"
                             alt="Elementor Single Cinema" /> </div>
                     <div class="col-sm-5 text-center text-sm-end">
-                        <h4 class="mb-0">Invoice</h4>
-                        <p class="mb-0">Invoice Number - {{ $tickit->id }}</p>
+                        <h4 class="mb-0">Hóa đơn</h4>
+                        <p class="mb-0">Mã hóa đơn - {{ $tickit->id }}</p>
                     </div>
                 </div>
                 <hr>
@@ -43,14 +43,14 @@
             <!-- Main Content -->
             <main>
                 <div class="row">
-                    <div class="col-sm-6 mb-3"> <strong>Guest Name:</strong> <span>{{ $tickit->user->name }}</span>
+                    <div class="col-sm-6 mb-3"> <strong>Người đặt:</strong> <span>{{ $tickit->user->name }}</span>
                     </div>
-                    <div class="col-sm-6 mb-3 text-sm-end"> <strong>Booking Date:</strong>
+                    <div class="col-sm-6 mb-3 text-sm-end"> <strong>Thời gian đặt:</strong>
                         <span>{{Carbon\Carbon::parse( $tickit->created_at)->format('d/m/Y') }}</span> </div>
                 </div>
                 <hr class="mt-0">
                 <div class="row">
-                    <div class="col-sm-5"> <strong>Cinema ticket details:</strong>
+                    <div class="col-sm-5"> <strong>Chi tiết vé phim:</strong>
                         <address>
 
                             {{ $tickit->cinema }}<br />
@@ -59,21 +59,21 @@
                     </div>
                     <div class="col-sm-7">
                         <div class="row">
-                            <div class="col-sm-4"> <strong>Date:</strong>
+                            <div class="col-sm-4"> <strong>Ngày:</strong>
                               <p>{{ Carbon\Carbon::parse($tickit->selected_date)->format('d/m/Y') }}</p>
 
                             </div>
-                            <div class="col-sm-4"> <strong>Time:</strong>
+                            <div class="col-sm-4"> <strong>Thời gian:</strong>
                                 <p>{{ $tickit->selected_hour }}</p>
                             </div>
-                            <div class="col-sm-4"> <strong>Rooms:</strong>
+                            <div class="col-sm-4"> <strong>Phòng:</strong>
                                 <p>{{ $tickit->selected_room }}</p>
                             </div>
-                            <div class="col-sm-4"> <strong>Booking ID:</strong>
+                            <div class="col-sm-4"> <strong>Mã hóa đơn:</strong>
                                 <p>{{ $tickit->id }}</p>
                             </div>
-                            <div class="col-sm-4"> <strong>Payment Mode:</strong>
-                                <p>{{ $tickit->selected_date }}</p>
+                            <div class="col-sm-4"> <strong>Thanh toán:</strong>
+                                <p>VnPay</p>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                             <table class="table mb-0">
                                 <thead class="card-header">
                                     <tr>
-                                        <td class="col-6"><strong>Description</strong></td>
+                                        <td class="col-6"><strong>Mô tả</strong></td>
                                         <td class="col-4 text-end"><strong>Rate</strong></td>
                                         <td class="col-2 text-end"><strong>Amount</strong></td>
                                     </tr>
