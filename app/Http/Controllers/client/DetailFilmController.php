@@ -22,6 +22,7 @@ class DetailFilmController extends Controller
     {
         $check = 1;
         $film_show_time = ShowTime::findOrFail($id);
+        $film = film::findOrFail($id);
         // $cinema_id = Cinema::findOrFail($id);
         // $film = Film::findOrFail($id);
         
@@ -35,9 +36,8 @@ class DetailFilmController extends Controller
             $currentDate = strtotime('+1 day', $currentDate); // Tăng ngày lên 1
         }
         
-        $ShowTime = ShowTime::where("cinema_id", $film_show_time->cinema->id)
-            ->where('film_id', $film_show_time->film->id)
-            ->whereIn('day', $dateList) // Chọn các ngày trong danh sách ngày đã tạo
+        $ShowTime = ShowTime::where('film_id', $film->id)
+            ->whereIn('day', $dateList)
             ->where('day', '>=', date('Y-m-d'))
             ->orderBy('day')
             ->orderBy('hour')
@@ -80,7 +80,8 @@ class DetailFilmController extends Controller
             "user_rating",
             'film_show_time',
             'user',
-            'check'
+            'check',
+            'film',
         ));
     }
 }

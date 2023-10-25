@@ -330,35 +330,27 @@
 
                                             <div class="amy-slick "
                                                 data-slick='{"slidesToShow":5,"slidesToScroll":5,"autoplay":true,"autoplaySpeed":3000,"arrows":true,"infinite":true,"centerMode":true,"responsive": [{"breakpoint": 480,"settings": {"slidesToShow": 1,"slidesToScroll": 1}},{"breakpoint": 979,"settings": {"slidesToShow": 3,"slidesToScroll": 3}},{"breakpoint": 1199,"settings": {"slidesToShow": 5,"slidesToScroll": 5}},{"breakpoint": 1999,"settings": {"slidesToShow": 7,"slidesToScroll": 7}},{"breakpoint": 4999,"settings": {"slidesToShow": 20,"slidesToScroll": 20}}],"dots":true}'>
-
-                                                @php
-                                                    $displayedNames = [];
-                                                @endphp
                                                 @foreach ($film_topmovie as $item)
-                                                    @if (!in_array($item->film->name, $displayedNames))
-                                                        @php
-                                                            $displayedNames[] = $item->film->name;
-                                                        @endphp
                                                         <div class="carousel-item">
                                                             <div class="carousel-thumb">
                                                                 <a href="{{ $item->trailer }}">
                                                                     <img class=""
-                                                                        src="{{ asset('storage/images/' . $item->film->thumb) }}"
+                                                                        src="{{ asset('storage/images/' . $item->thumb) }}"
                                                                         alt="The Sleeping Beauty &#8211; Australia" /> </a>
                                                             </div>
                                                             <div class="carousel-content">
                                                                 <h2 class="carousel-title">
-                                                                    <a href="{{ route('filmDetail',[$item->film->id]) }}">
-                                                                        {{ $item->film->name }} </a>
+                                                                    <a href="{{ route('filmDetail',[$item->id]) }}">
+                                                                        {{ $item->name }} </a>
                                                                 </h2>
                                                                 <div class="carousel-release">
                                                                     Release:
                                                                     <span>
-                                                                        {{ Carbon\Carbon::parse($item->film->premiere_date)->format('d/n/Y') }}
+                                                                        {{ Carbon\Carbon::parse($item->premiere_date)->format('d/n/Y') }}
                                                                     </span>
                                                                 </div>
                                                                 <div class="carousel-button">
-                                                                    <a href="{{ $item->film->trailer }}"
+                                                                    <a href="{{ $item->trailer }}"
                                                                         class="fancybox.iframe amy-fancybox">
                                                                         <i aria-hidden="true" class="fa fa-play"></i>
                                                                         Trailer </a>
@@ -369,7 +361,6 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    @endif
                                                 @endforeach
 
                                                 {{-- <div class="carousel-item">

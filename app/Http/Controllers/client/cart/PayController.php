@@ -108,7 +108,7 @@ class PayController extends Controller
     $ShowTime = ShowTime::findOrFail($film_id);
 
     $ticket = new Ticket();
-    $ticket->showtime_id = $ShowTime->id;
+    $ticket->showtime_id = $selectedShowTimeId;
     $ticket->film_name = $ShowTime->film->name;
     $ticket->selected_date = $selectedDate;
     $ticket->selected_hour = $selectedHour;
@@ -160,7 +160,7 @@ class PayController extends Controller
             $ShowTime = ShowTime::findOrFail($id);
         
             $ticket = new Ticket();
-            $ticket->showtime_id = $ShowTime->id;
+            $ticket->showtime_id = $selectedShowTimeId;
             $ticket->film_name = $ShowTime->film->name;
             $ticket->selected_date = $selectedDate;
             $ticket->selected_hour = $selectedHour;
@@ -183,13 +183,12 @@ class PayController extends Controller
                        session()->forget('applied_coupon');
         }
         $title = 'payment success';
-        $ShowTime = ShowTime::findOrFail($id);
-        $ticket = ticket::where('showtime_id',$ShowTime->id)->first();
-         $categories = $ShowTime->film->categories;
+        // $selectedShowTimeId = session('selectedShowTimeId');
+        $ticket = ticket::latest()->first();
+        //  $categories = $ShowTime->film->categories;
         return view('client.layout.cart.PaymentSuccess',compact(
             'title',
             'ticket',
-            'categories'
         ));
     }
 

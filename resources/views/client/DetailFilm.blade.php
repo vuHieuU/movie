@@ -43,7 +43,7 @@
 
                                                 <div class="entry-poster mx-5"style="max-width: 250px;width: 100%;">
                                                     <img  class=""
-                                                                 src="{{ asset('storage/images/'.$film_show_time->film->thumb) }}"
+                                                                 src="{{ asset('storage/images/'.$film->thumb) }}"
                                                                  alt="The Hurricane Heist" />
                                                     {{-- <img class="" 
                                                         src="{{ asset('storage/images/'.$film->thumb) }}"
@@ -53,7 +53,7 @@
                                                     <h1 class="entry-title p-name" itemprop="name headline">
                                                         <a href="" rel="bookmark" class="u-url url"
                                                             itemprop="url">
-                                                            {{ $film_show_time->film->name }}</a>
+                                                            {{ $film->name }}</a>
 
                                                     </h1>
 
@@ -63,7 +63,7 @@
                                                         <span class="duration">
 
                                                             <i class="fa fa-clock-o"></i>
-                                                            {{ $film_show_time->film->duration }} minutess
+                                                            {{ $film->duration }} minutess
                                                         </span>
 
                                                     </div>
@@ -74,7 +74,7 @@
                                                                 Diễn viên:
                                                             </label>
                                                             <span>
-                                                                <a href="">{{ $film_show_time->film->actor }}</a>
+                                                                <a href="">{{ $film->actor }}</a>
 
                                                             </span>
 
@@ -85,7 +85,7 @@
                                                                 Đạo diễn:
                                                             </label>
                                                             <span>
-                                                                <a href="">{{ $film_show_time->film->director }}</a>
+                                                                <a href="">{{ $film->director }}</a>
                                                             </span>
 
                                                         </li>
@@ -112,7 +112,7 @@
                                                                 Ngôn ngữ:
                                                             </label>
                                                             <span>
-                                                                {{ $film_show_time->film->country }}</span>
+                                                                {{ $film->country }}</span>
                                                           
                                                         </li>
                                                     </ul>
@@ -143,162 +143,177 @@
                                                         </form>
                                                         @endif
                                                         
-                                                        <div class="modal fade   modal-lg " id="exampleModal"
-                                                            tabindex="-1" aria-labelledby="exampleModalLabel"
-                                                            aria-hidden="true">
-                                                            <div class="modal-dialog">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h1 class="modal-title fs-2  text-muted fw-bold"
-                                                                            id="exampleModalLabel">Lịch
-                                                                            Chiếu
-                                                                            -
-                                                                            <span class="fs-4">Phim
-                                                                                {{ $film_show_time->film->name }}</span>
-                                                                        </h1>
+                                                           {{-- model --}}
+                                                           <div class="modal fade modal-xl" id="exampleModal" tabindex="-1"
+                                                           aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                           <div class="modal-dialog">
+                                                               <div class="modal-content">
+                                                                   <div class="modal-header">
+                                                                       <h1 class="modal-title fs-2 text-muted fw-bold"
+                                                                           id="exampleModalLabel">Lịch Chiếu - <span
+                                                                               class="fs-4">Phim
+                                                                               {{ $film_show_time->film->name }}</span>
+                                                                       </h1>
+                                                                   </div>
 
-                                                                    </div>
-                                                                    <div class="modal-header ">
-                                                                        <h1 class="modal-title  text-center modal-dialog"
-                                                                            id="exampleModalLabel"
-                                                                            style="font-size: 35px ; font-weight: 500">
-                                                                            {{$film_show_time->cinema->name}}</h1>
+                                                                   <div class="modal-header">
+                                                                       @foreach (\App\Models\cinema::get() as $cinema)
+                                                                           <a class="li" href="#"
+                                                                               data-cinema-id="{{ $cinema->id }}">
+                                                                               <li> {{ $cinema->name }}</li>
+                                                                           </a>
+                                                                       @endforeach
+                                                                   </div>
 
-                                                                    </div>
-                                                                    <div class="modal-header ">
+                                                                   <div class="modal-header">
+                                                                       <style>
+                                                                           .A {
+                                                                               text-decoration: none;
+                                                                           }
 
-                                                                        <style>
-                                                                            .A {
-                                                                                text-decoration: none;
-                                                                            }
-
-                                                                            /* Định nghĩa kiểu cho liên kết khi nó được click (có gạch chân) */
-                                                                            .A.active {
-                                                                                text-decoration: underline;
-                                                                            }
-                                                                        </style>
-                                                                        <div class="row">
-
-                                                                            @php $uniqueDates = []; @endphp
-                                                                            @foreach ($ShowTime as $item)
-                                                                                @if (!in_array($item->day, $uniqueDates))
-                                                                                    <div
-                                                                                        class="col-md-4 fs-3 mb-4 navbar-nav  date-button A" style="width: 130px;">
-                                                                                        <li style="background-color: #F8F8F8"
-                                                                                            class=" px-3 py-2 text-white">
-                                                                                            <a class="showtime-day"
-                                                                                                data-showtime-date="{{ $item->day }}">{{Carbon\Carbon::parse( $item->day)->format("d/m/Y") }}</a>
-                                                                                        </li>
-                                                                                    </div>
-                                                                                @endif
-                                                                                @php $uniqueDates[] = $item->day; @endphp
-                                                                            @endforeach
-
-                                                                        </div>
-                                                                        {{-- //chọn giờ theo ngày --}}
-                                                                        <script>
-                                                                            var selectedDate = "";
-                                                                            var selectedHour = "";
-                                                                            function selectDate(date) {
-                                                                                selectedDate = date;
-                                            
-                                                                                var selectDateElement = document.getElementById("selectedDate");
-                                                                                selectDateElement.value=selectedDate
-                                                                                console.log(selectDate)
-
-                                                                            }
-                                                                            function selectHour(hour) {
-                                                                                selectedHour = hour;
-                                            
-                                                                                var selectHourElement = document.getElementById("selectedHour");
-                                                                                selectHourElement.value=selectedHour
-                                                                                var selectShowTimeId = event.currentTarget.getAttribute("data-showtime-id");
-                                                                                
-                                                                                var selectShowTimeIdElement = document.getElementById("selectedShowTimeId")
-                                                                                selectShowTimeIdElement.value = selectShowTimeId
-                                                                                
+                                                                           .A.active {
+                                                                               text-decoration: underline;
+                                                                           }
+                                                                       </style>
+                                                                       <div class="d-flex">
+                                                                           @php
+                                                                               $uniqueDates = [];
+                                                                           @endphp
+                                                                           @foreach (\App\Models\Cinema::get() as $cinema)
+                                                                               @php
+                                                                                   $cinemaDates = [];
+                                                                               @endphp
+                                                                               @foreach ($ShowTime as $item)
+                                                                                   @if ($item->cinema_id == $cinema->id && !in_array($item->day, $cinemaDates))
+                                                                                       @php
+                                                                                           $cinemaDates[] = $item->day;
+                                                                                       @endphp
+                                                                                               <a class="showtime-day"
+                                                                                                   style="display: none;font-weight: 700; margin-left:20px"
+                                                                                                   data-showtime-date="{{ $item->day }}"
+                                                                                                   data-showtime-cinema-id="{{ $item->cinema_id }}">
+                                                                                                   {{ Carbon\Carbon::parse($item->day)->format('d/m/Y') }}</a>
+                                                                                   @endif
+                                                                               @endforeach
+                                                                           @endforeach
+                                                                       </div>
+                                                                   </div>
 
 
-                                                                            }
-                                                                            var showtimeDayElements = document.querySelectorAll(".showtime-day");
-                                                                            showtimeDayElements.forEach(function(element) {
-                                                                                element.addEventListener("click", function() {
+                                                                   <div class="modal-header">
+                                                                       <div class="container">
+                                                                           <h1 class="modal-title fs-3 py-3 text-muted fw-bold"
+                                                                               id="exampleModalLabel">2D Phụ Đề</h1>
+                                                                           <div class="">
+                                                                               <style>
+                                                                                   .option {
+                                                                                       background-color: #fe7b00b3;
+                                                                                       font-weight: 700;
+                                                                                   }
+                                                                               </style>
+                                                                               @foreach ($ShowTime as $item)
+                                                                                   <a style="display: none"
+                                                                                       class="btn option hour-button"
+                                                                                       data-bs-toggle="collapse" href role
+                                                                                       aria-expanded="false"
+                                                                                       onclick="selectHour('{{ $item->hour }}')"
+                                                                                       aria-controls="multiCollapseExample1"
+                                                                                       data-showtime-date="{{ $item->day }}"
+                                                                                       data-showtime-cinema-id="{{ $item->cinema_id }}"
+                                                                                       data-showtime-hour="{{ $item->hour }}"
+                                                                                       data-showtime-id="{{ $item->id }}">{{ $item->hour }}</a>
+                                                                               @endforeach
+                                                                           </div>
+                                                                       </div>
+                                                                   </div>
 
-                                                                                    var selectedDay = element.getAttribute("data-showtime-date");
-                                                                                    selectDate(selectedDay);
-                                                                                    console.log(selectedDay);
-                                                                                    // Hiển thị giờ xem tương ứng với ngày được chọn và ẩn giờ xem của các ngày khác
-                                                                                    var hourButtons = document.querySelectorAll(".hour-button");
-                                                                                    hourButtons.forEach(function(button) {
-                                                                                        var showtimeDate = button.getAttribute("data-showtime-date");
-                                                                                        if (showtimeDate === selectedDay) {
-                                                                                            button.style.display = "inline-block";
-                                                                                        } else {
-                                                                                            button.style.display = "none";
-                                                                                        }
-                                                                                    });
-                                                                                });
-                                                                            });
-                                                                        </script>
-                                                                        {{-- //chọn giờ theo ngày --}}
-
-                                                                    </div>
-                                                                    <div class="modal-header">
-
-                                                                        <div class="container ">
-                                                                            <h1 class="modal-title fs-3 py-3 text-muted fw-bold"
-                                                                                id="exampleModalLabel">2D
-                                                                                Phụ
-                                                                                Đề</h1>
-                                                                            <div class="">
-                                                                                <style>
-                                                                                    .option {
-                                                                                        background-color: #fe7b00b3;
-
-                                                                                        font-weight: 700
-                                                                                    }
-                                                                                </style>
-                                                                                @foreach ($ShowTime as $item)
-                                                                                    <a style="display: none"
-                                                                                        class="btn  option    hour-button"
-                                                                                        data-bs-toggle="collapse" href role
-                                                                                        aria-expanded="false" onclick="selectHour('{{$item->hour }}')"
-                                                                                        aria-controls="multiCollapseExample1"
-                                                                                        data-showtime-date="{{ $item->day }}" 
-                                                                                        data-showtime-id="{{$item->id}}"
-                                                                                        >{{ $item->hour }}
-                                                                                    </a>
-                                                                                @endforeach
-
+                                                                   <form
+                                                                       action="{{ route('chair', ['film_id' => $film_show_time->id]) }}"
+                                                                       method="GET">
+                                                                       <div class="modal-footer">
+                                                                           <button type="button"
+                                                                               class="btn btn-secondary amy-buy-ticket"
+                                                                               data-bs-dismiss="modal">Close</button>
+                                                                           <button type="submit"
+                                                                               class="amy-buy-ticket">Next</button>
+                                                                           <input type="hidden" id="selectedCinemaId"
+                                                                               name="selectedCinemaId" value="">
+                                                                           <input type="hidden" id="selectedDate"
+                                                                               name="selectedDate" value="">
+                                                                           <input type="hidden" id="selectedHour"
+                                                                               name="selectedHour" value="">
+                                                                           <input type="hidden" id="selectedShowTimeId"
+                                                                               name="selectedShowTimeId" value="">
+                                                                       </div>
+                                                                   </form>
+                                                               </div>
+                                                           </div>
+                                                       </div>
 
 
-                                                                            </div>
+                                                       <script>
+                                                           var selectedCinemaId = "";
 
-                                                                        </div>
+                                                           // Lắng nghe sự kiện khi một rạp được chọn
+                                                           var cinemaLinks = document.querySelectorAll(".li");
+                                                           cinemaLinks.forEach(function(cinemaLink) {
+                                                               cinemaLink.addEventListener("click", function(event) {
+                                                                   event.preventDefault();
+                                                                   selectedCinemaId = cinemaLink.getAttribute("data-cinema-id");
+
+                                                                   // Ẩn tất cả các ngày chiếu
+                                                                   var showtimeDays = document.querySelectorAll(".showtime-day");
+                                                                   showtimeDays.forEach(function(day) {
+                                                                       day.style.display = "none";
+                                                                   });
+
+                                                                   // Hiển thị ngày chiếu cho rạp đã chọn
+                                                                   var selectedShowtimeDays = document.querySelectorAll(
+                                                                       ".showtime-day[data-showtime-cinema-id='" + selectedCinemaId + "']");
+                                                                   selectedShowtimeDays.forEach(function(day) {
+                                                                       day.style.display = "block";
+                                                                   });
+                                                               });
+                                                           });
 
 
-                                                                    </div>
-                                                                 
-                                                                    <form action="{{route('chair',['film_id'=>$film_show_time->id])}}" method="GET">
-                                                                        <div class="modal-footer">
-                                                                            <button type="button"
-                                                                                class="btn btn-secondary amy-buy-ticket"
-                                                                                data-bs-dismiss="modal">Close</button>
-                                                                            <button type="submit" class="amy-buy-ticket">Next</button>
-                                                                            <input type="hidden" id="selectedDate" name="selectedDate" value="">
-                                                                            <input type="hidden" id="selectedHour" name="selectedHour" value="">
-                                                                            <input type="hidden" id="selectedShowTimeId" name="selectedShowTimeId" value="">
-                                                                        </div>
-                                                                        
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                           var showtimeDayElements = document.querySelectorAll(".showtime-day");
+                                                           showtimeDayElements.forEach(function(element) {
+                                                               element.addEventListener("click", function() {
+                                                                   var selectedDay = element.getAttribute("data-showtime-date");
+                                                                   selectDate(selectedDay);
 
-                                                        {{-- <button type="button" class="btn btn-primary"
-                                                            data-bs-toggle="modal" data-bs-target="#rateStar">
-                                                            Đánh giá phim
-                                                        </button> --}}
+                                                                   var hourButtons = document.querySelectorAll(".hour-button");
+                                                                   hourButtons.forEach(function(button) {
+                                                                       var showtimeDate = button.getAttribute("data-showtime-date");
+                                                                       var showtimeCinemaId = button.getAttribute("data-showtime-cinema-id");
+                                                                       if (showtimeDate === selectedDay && showtimeCinemaId === selectedCinemaId) {
+                                                                           button.style.display = "inline-block";
+                                                                       } else {
+                                                                           button.style.display = "none";
+                                                                       }
+                                                                   });
+                                                               });
+                                                           });
+
+                                                           function selectDate(date) {
+                                                               selectedDate = date;
+                                                               var selectDateElement = document.getElementById("selectedDate");
+                                                               selectDateElement.value = selectedDate;
+                                                           }
+
+                                                           function selectHour(hour) {
+                                                               selectedHour = hour;
+
+                                                               var selectHourElement = document.getElementById("selectedHour");
+                                                               selectHourElement.value = selectedHour
+                                                               var selectShowTimeId = event.currentTarget.getAttribute("data-showtime-id");
+
+                                                               var selectShowTimeIdElement = document.getElementById("selectedShowTimeId")
+                                                               selectShowTimeIdElement.value = selectShowTimeId
+                                                           }
+                                                       </script>
+                                                       {{-- model --}}
 
 
                                                         <div class="entry-share">

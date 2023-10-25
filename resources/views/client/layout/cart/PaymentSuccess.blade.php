@@ -24,9 +24,9 @@
                         <p><strong>Thời gian:</strong> {{Carbon\Carbon::parse($ticket->selected_date)->format("d/n/Y") }}</p>
                         <p><strong>Giờ chiếu:</strong> {{ $ticket->selected_hour }} </p>
                         <p><strong>Thể Loại:</strong>
-                        @foreach ($categories as $item)
+                        {{-- @foreach ($categories as $item)
                         {{ $item->name }}
-                        @endforeach
+                        @endforeach --}}
                         </p>
                         <p><strong>Đồ Ăn:</strong> Popcorn</p>
                     </div>

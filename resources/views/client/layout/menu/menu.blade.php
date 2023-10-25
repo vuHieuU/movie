@@ -13,7 +13,7 @@
 
             </div>
 
-            <div style="margin: 0 30px">
+            {{-- <div style="margin: 0 30px">
                 <style>
                     .rap-selection {
                         position: relative;
@@ -89,8 +89,7 @@
                             });
                         </script>
                         @foreach (\App\Models\cinema::get() as $cinema)
-                            {{-- <a href="{{ route('homeCinema',[$cinema->id]) }}">
-                                <li onclick="selectRap('{{ $cinema->name }}')"> {{ $cinema->name }} </li></a> --}}
+
 
                             <a class="li" href="" data-cinema-id="{{ $cinema->id }}">
                                 <li onclick="selectRap('{{ $cinema->name }}')"> {{ $cinema->name }}</li>
@@ -129,7 +128,7 @@
                         localStorage.setItem("selectedRap", selectedRap);
                     }
                 </script>
-            </div>
+            </div> --}}
             <div class="amy-right">
 
                 <nav id="amy-site-nav" class="amy-site-navigation amy-primary-navigation ">
