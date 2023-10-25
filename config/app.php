@@ -170,6 +170,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -185,6 +186,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'Socialite' => Laravel\Socialite\Fancades\Socialite::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+
     ])->toArray(),
 
 ];

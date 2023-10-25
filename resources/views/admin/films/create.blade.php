@@ -155,6 +155,9 @@
                                             <div class="form-group">
                                                 <label for="formFile" class="form-label">Ảnh Thumbnail</label>
                                                 <input class="form-control" type="file" id="formFile" name="thumb">
+                                                @if ($errors->has('thumb'))
+                                                <span class="text-danger">{{ $errors->first('thumb') }}</span>
+                                            @endif
                                             </div>
                                         </div>
                                     </div>

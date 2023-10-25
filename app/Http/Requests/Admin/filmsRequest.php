@@ -8,16 +8,18 @@ class filmsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     *
+     * @return bool
      */
-    // public function authorize(): bool
-    // {
-    //     return false;
-    // }
+    public function authorize()
+    {
+        return true; // Cho phép tất cả người dùng truy cập
+    }
 
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array
      */
     public function rules()
     {
@@ -25,7 +27,7 @@ class filmsRequest extends FormRequest
             'name' => 'required|string',
             'duration' => 'required|numeric',
             'description' => 'required|string',
-            'thumb' => 'required',
+            'thumb' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048|dimensions:width=200,height=314',
             'director' => 'required|string',
             'actor' => 'required|string',
             'language' => 'required|string',
@@ -41,10 +43,13 @@ class filmsRequest extends FormRequest
         return [
             'name.required' => ':attribute không được để trống',
             'name.string' => ':attribute phải là ký tự chữ',
-            'name.unique' => 'Đã tồn tại cơ sở dữ liệu.',
             'duration.required' => ':attribute không được để trống',
-            'duration.number' => ':attribute phải là ký tự số',
+            'duration.numeric' => ':attribute phải là ký tự số',
             'thumb.required' => ':attribute không được để trống',
+            'thumb.image' => ':attribute phải là tệp hình ảnh',
+            'thumb.mimes' => ':attribute phải có định dạng hợp lệ (JPEG, PNG, JPG, GIF)',
+            'thumb.max' => ':attribute không được vượt quá 2MB',
+            'thumb.dimensions' => ':attribute phải có kích thước không vượt quá 200x314 pixel',
             'director.required' => ':attribute không được để trống',
             'director.string' => ':attribute phải là ký tự chữ',
             'actor.required' => ':attribute không được để trống',

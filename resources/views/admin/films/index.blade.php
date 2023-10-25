@@ -69,7 +69,7 @@
                               </td>
                               <td>{{ $item->name }}</td>
                               <td>
-                                <img src="{{asset('/storage/images/'.$item->thumb)}}" style="height: 200px;width:150px;">
+                                <img src="{{asset('/storage/images/'.$item->thumb)}}" alt="Hình ảnh" style="height: 200px;width:150px;">
                               </td>
                               <td>{{ $item->director }}</td>
                               <td>{{ $item->language }}</td>
