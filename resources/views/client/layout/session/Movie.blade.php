@@ -14,7 +14,7 @@
         @php
         $displayedNames = [];
     @endphp
-        @foreach ($film as $item)
+        @foreach ($films as $item)
         @if (!in_array($item->name, $displayedNames))
         @php
             $displayedNames[] = $item->name;
@@ -25,8 +25,8 @@
                         class="amy-movie-item-front">
                         <div
                             class="amy-movie-item-poster">
-                            <a
-                                href="detail_film/{{ $item->id }}">
+                            <a  class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox"
+                                href="{{ $item->trailer }}">
                                 <img class=""
                                     src="{{ asset('storage/images/' . $item->thumb) }}" style="height:314px; width:200px;" 
                                     alt="Kubo and the Two Strings" />
@@ -45,7 +45,7 @@
                                 <h3
                                     class="amy-movie-field-title">
                                     <a
-                                        href="detail_film/{{ $item->id }}">{{ $item->name }}</a>
+                                        href="{{ route('filmDetail', [$item->id]) }}">{{ $item->name }}</a>
                                 </h3>
 
                                 <div

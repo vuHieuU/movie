@@ -526,8 +526,8 @@
                                                                                         <div class="amy-movie-item-front">
                                                                                             <div
                                                                                                 class="amy-movie-item-poster">
-                                                                                                <a
-                                                                                                    href="detail_film/{{$item->id}}">
+                                                                                                <a  class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox"
+                                                                                                    href="{{ $item->trailer }} ">
                                                                                                     <img class=""
                                                                                                         src="{{asset("storage/images/".$item->thumb)}}"
                                                                                                         alt="Kubo and the Two Strings" />

@@ -23,8 +23,8 @@ class PayController extends Controller
      public function seatFood(Request $request ,$id)
      {
         $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
-         $film = ShowTime::findOrFail($id);
-         $categories = $film->film->categories;
+         $film = film::findOrFail($id);
+         $categories = $film->categories;
          $selectedDate = $request->input("selectedDate");
          $selectedHour = $request->input("selectedHour");
          $selectedShowTimeId = $request->input("selectedShowTimeId");
@@ -38,8 +38,9 @@ class PayController extends Controller
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*','typeseats.price','showtime_seats.isActive')
-         ->get();
+         ->select('seats.*','typeseats.*','showtime_seats.isActive')
+         ->orderBy("showtime_seats.seat_id","asc")
+         ->get();     
          $food = food::get();
          $combo = combo::get();
          $title = "Chairs_Food";
@@ -56,7 +57,7 @@ class PayController extends Controller
         $title = "Pay";
         $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
         $tickit = ticket::find($id);
-        $ShowTime = ShowTime::findOrFail($id);
+        $ShowTime = film::findOrFail($id);
         $selectedDate = session('selectedDate');
         $selectedHour = session('selectedHour');
         $selectedSeatsValue = $request->input("selectedSeatsValue");
@@ -88,10 +89,7 @@ class PayController extends Controller
     }
 
     public function PaymentSuccess(Request $request,$film_id)
-    {
-        // dd($request->all());
-               // Lấy thông tin đơn hàng từ request
-               
+    {               
     $selectedDate = session('selectedDate');
     $selectedHour = session('selectedHour');
     $selectedShowTimeId = session('selectedShowTimeId');
@@ -104,11 +102,11 @@ class PayController extends Controller
     session(['total' => $total]);
     $user = auth()->user();
     $FoodValueName = session('FoodValueName');
-    $ShowTime = ShowTime::findOrFail($film_id);
+    $ShowTime = film::findOrFail($film_id);
 
     $ticket = new Ticket();
-    $ticket->showtime_id = $ShowTime->id;
-    $ticket->film_name = $ShowTime->film->name;
+    $ticket->showtime_id = $selectedShowTimeId;
+    $ticket->film_name = $ShowTime->name;
     $ticket->selected_date = $selectedDate;
     $ticket->selected_hour = $selectedHour;
     $ticket->selected_room = $cinemaRoom;
@@ -116,7 +114,7 @@ class PayController extends Controller
     $ticket->selected_seats = $selectedSeatsValue;
     $ticket->user_id = $user->id;
     $ticket->buyer_name = $user->name;
-    $ticket->film_id = $ShowTime->film->id;
+    $ticket->film_id = $ShowTime->id;
     $ticket->coupon_code = $couponCode;
     $ticket->total = $total;
     $ticket->code = date('Ymd-His') . rand(10, 99);
@@ -154,13 +152,14 @@ class PayController extends Controller
             $cinemaRoom = session('cinemaRoom');
             $couponCode = session('coupon_code');
             $total = $_GET['vnp_Amount'] / 100;
+            $FoodValueName = session('FoodValueName');
             $user = auth()->user();
 
-            $ShowTime = ShowTime::findOrFail($id);
+            $ShowTime = film::findOrFail($id);
         
             $ticket = new Ticket();
-            $ticket->showtime_id = $ShowTime->id;
-            $ticket->film_name = $ShowTime->film->name;
+            $ticket->showtime_id = $selectedShowTimeId;
+            $ticket->film_name = $ShowTime->name;
             $ticket->selected_date = $selectedDate;
             $ticket->selected_hour = $selectedHour;
             $ticket->selected_room = $cinemaRoom;
@@ -168,11 +167,18 @@ class PayController extends Controller
             $ticket->selected_seats = $selectedSeatsValue;
             $ticket->user_id = $user->id;
             $ticket->buyer_name = $user->name;
-            $ticket->film_id = $ShowTime->film->id;
+            $ticket->film_id = $ShowTime->id;
             $ticket->coupon_code = $couponCode;
             $ticket->total = $total;
             $ticket->code = date('Ymd-His') . rand(10, 99);;
             $ticket->save();
+            foreach ($FoodValueName as $foodItem) {
+                $ticketFood = new ticketFood();
+                $ticketFood->ticket_id = $ticket->id;
+                $ticketFood->name = $foodItem['name'];
+                $ticketFood->quantity = $foodItem['quantity'];
+                $ticketFood->save();
+            }
         
             $selectSeatArray = explode(',', $selectedSeatsValueID);
         
@@ -182,13 +188,12 @@ class PayController extends Controller
                        session()->forget('applied_coupon');
         }
         $title = 'payment success';
-        $ShowTime = ShowTime::findOrFail($id);
-        $ticket = ticket::where('showtime_id',$ShowTime->id)->first();
-         $categories = $ShowTime->film->categories;
+        $ticket = ticket::latest()->first();
+        $FoodValueName = session('FoodValueName');
         return view('client.layout.cart.PaymentSuccess',compact(
             'title',
             'ticket',
-            'categories'
+            'FoodValueName'
         ));
     }
 

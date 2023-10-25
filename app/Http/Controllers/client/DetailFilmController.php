@@ -21,9 +21,10 @@ class DetailFilmController extends Controller
     public function index($id)
     {
         $check = 1;
-        $film_show_time = ShowTime::findOrFail($id);
+        // $film_show_time = ShowTime::findOrFail($id);
+        $film = film::findOrFail($id);
         // $cinema_id = Cinema::findOrFail($id);
-        // $film = Film::findOrFail($id);
+        $filmtopmovie = Film::orderByDesc("created_at")->limit(4)->get();
         
         $numberOfDays = 7; // Số ngày bạn muốn liệt kê
         $dateList = array();
@@ -35,9 +36,8 @@ class DetailFilmController extends Controller
             $currentDate = strtotime('+1 day', $currentDate); // Tăng ngày lên 1
         }
         
-        $ShowTime = ShowTime::where("cinema_id", $film_show_time->cinema->id)
-            ->where('film_id', $film_show_time->film->id)
-            ->whereIn('day', $dateList) // Chọn các ngày trong danh sách ngày đã tạo
+        $ShowTime = ShowTime::where('film_id', $film->id)
+            ->whereIn('day', $dateList)
             ->where('day', '>=', date('Y-m-d'))
             ->orderBy('day')
             ->orderBy('hour')
@@ -61,26 +61,28 @@ class DetailFilmController extends Controller
         } else {
             $user = 0;
         }
-        $ratings = Rating::where("film_id", $film_show_time->film->id);
-        $rating_sum = Rating::where("film_id", $film_show_time->film->id)->sum("star_rated");
-        $user_rating = Rating::where("film_id", $film_show_time->film->id)->where("user_id", Auth::id())->first();
+        // $ratings = Rating::where("film_id", $film_show_time->film->id);
+        // $rating_sum = Rating::where("film_id", $film_show_time->film->id)->sum("star_rated");
+        // $user_rating = Rating::where("film_id", $film_show_time->film->id)->where("user_id", Auth::id())->first();
 
-        if ($ratings->count() > 0) {
-            $rating_value = $rating_sum / $ratings->count();
-        } else {
-            $rating_value = 0;
-        }
+        // if ($ratings->count() > 0) {
+        //     $rating_value = $rating_sum / $ratings->count();
+        // } else {
+        //     $rating_value = 0;
+        // }
         $title = "Detail";
         return view('client.DetailFilm', compact(
             'title',
             "ShowTime",
             "categoryfilm_category",
-            "ratings",
-            "rating_value",
-            "user_rating",
-            'film_show_time',
+            // "ratings",
+            // "rating_value",
+            // "user_rating",
+            // 'film_show_time',
             'user',
-            'check'
+            'check',
+            'film',
+            "filmtopmovie"
         ));
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Client\ProfileRequest;
+use App\Models\ticket;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,16 +20,33 @@ class AuthController extends Controller
      */
     public function index()
     {
-        $counttiket = DB::table("tickets")
-        ->select('user_id', DB::raw('COUNT(*) as counttiket'))
-        ->groupBy('user_id')
+        $loggedInUser = Auth::user();
+
+    $counttiket = DB::table("users")
+        ->join("tickets", "users.id", "=", "tickets.user_id")
+        ->where('users.id', $loggedInUser->id)
+        ->select("users.id", DB::raw('COUNT(*) as counttiket'))
+        ->groupBy('users.id')
         ->get();
-        $sumtotal = DB::table("tickets")
-        ->select('user_id', DB::raw('SUM(total) as sumtotal'))
-        ->groupBy('user_id')
+
+        $sumtotal = DB::table("users")
+        ->join("tickets", "users.id", "=", "tickets.user_id")
+        ->where('users.id', $loggedInUser->id)
+        ->select("users.id", DB::raw('SUM(total) as sumtotal'))
+        ->groupBy('users.id')
         ->get();
+        
+        
+        $tickit = DB::table("users")
+        ->join("tickets", "users.id", "=", "tickets.user_id")
+        ->where('users.id', $loggedInUser->id)
+        ->select("users.*" ,"tickets.*")
+        ->get();
+        
+        $user = User::get();
+
         $taitel = "myaccount";
-        return view('client.myaccount', compact("taitel","counttiket","sumtotal"));
+        return view('client.myaccount', compact("taitel","tickit","counttiket","sumtotal","user"));
     }
     public function edit()
     {

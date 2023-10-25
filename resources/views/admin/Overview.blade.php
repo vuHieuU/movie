@@ -49,8 +49,8 @@
                                                     alt="image">
                                             </div>
                                             <div>
-                                                <p class="mb-2">Total Sales</p>
-                                                <h4>31.50</h4>
+                                                <p class="mb-2">User</p>
+                                                <h4>{{$countuser}}</h4>
                                             </div>
                                         </div>
                                         <div class="iq-progress-bar mt-2">

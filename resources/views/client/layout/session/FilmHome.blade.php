@@ -27,19 +27,12 @@ data-id="e615b68" data-element_type="section">
 
 
                         <div class="row amy-ajax-content">
-                            @php
-                                $displayedNames = [];
-                            @endphp
                             @foreach ($film as $item)
-                                @if (!in_array($item->film->name, $displayedNames))
-                                    @php
-                                        $displayedNames[] = $item->film->name;
-                                    @endphp
                                     <div class="col-md-15 grid-item">
                                         <article class="entry-item" onclick="">
                                             <div class="entry-thumb">
                                                 <img class=""
-                                                    src="{{ asset('storage/images/' . $item->film->thumb) }}" 
+                                                    src="{{ asset('storage/images/' . $item->film->thumb) }}"
                                                     alt="Kubo and the Two Strings" />
                                                 <div class="right-info">
                                                     <span class="pg">
@@ -48,13 +41,13 @@ data-id="e615b68" data-element_type="section">
                                             </div>
                                             <div class="entry-content">
                                                 <h4 class="entry-title">
-                                                    {{ $item->film->name }}</h4>
+                                                    {{ $item->name }}</h4>
                                                 <div class="entry-date">
                                                     Release:
-                                                    {{ Carbon\Carbon::parse($item->film->premiere_date)->format('d/n/Y') }}
+                                                    {{ Carbon\Carbon::parse($item->premiere_date)->format('d/n/Y') }}
                                                 </div>
                                                 <div class="entry-button">
-                                                    <a href="{{ $item->film->trailer }}">
+                                                    <a href="{{ $item->trailer }}">
                                                         <i aria-hidden="true" class="fa fa-play"></i>
                                                         Trailer </a>
                                                     <a href="detail_film/{{ $item->id }}">
@@ -66,31 +59,31 @@ data-id="e615b68" data-element_type="section">
                                             <div class="pic-caption open-left">
                                                 <h4 class="entry-title">
                                                     <a href="detail_film/{{ $item->id }}">
-                                                        {{ $item->film->name }}</a>
+                                                        {{ $item->name }}</a>
                                                 </h4>
                                                 <span class="pg">
                                                     G </span>
                                                 <div class="desc-mv">
                                                     <p>
                                                         <span>Release: </span>
-                                                        {{ Carbon\Carbon::parse($item->film->premiere_date)->format('d/n/Y') }}
+                                                        {{ Carbon\Carbon::parse($item->premiere_date)->format('d/n/Y') }}
                                                     </p>
 
                                                     <p>
                                                         <span>Duration: </span>
-                                                        {{ $item->film->duration }} minutes
+                                                        {{ $item->duration }} minutes
                                                     </p>
 
                                                     <p>
                                                         <span>Language: </span>
-                                                        {{ $item->film->country }}
+                                                        {{ $item->country }}
                                                     </p>
 
                                                 </div>
 
 
                                                 <div class="entry-button">
-                                                    <a href="{{ $item->film->trailer }}"
+                                                    <a href="{{ $item->trailer }}"
                                                         class="fancybox.iframe amy-fancybox">
                                                         <i aria-hidden="true" class="fa fa-play"></i>
                                                         Trailer </a>
@@ -103,7 +96,6 @@ data-id="e615b68" data-element_type="section">
                                             </div>
                                         </article>
                                     </div>
-                                @endif
                             @endforeach
 
 

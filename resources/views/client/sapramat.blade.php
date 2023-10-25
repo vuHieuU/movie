@@ -522,8 +522,8 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
                                                                     
                                                                     <article class="entry-item clearfix">
                                                                         <div class="entry-thumb">
-                                                                            <a
-                                                                                href="detail_film/{{$item->id}}">
+                                                                            <a  class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox"
+                                                                                href="{{$item->trailer}}">
                                                                                 <img class="" style="width: 200px;height: 300px;"
                                                                                     src="{{asset("storage/images/".$item->thumb)}}"
                                                                                     alt="Kubo and the Two Strings" />
