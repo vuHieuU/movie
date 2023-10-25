@@ -821,7 +821,6 @@
                                                                                         @endforeach
 
                                                                                     </div>
-                              
                                                                                 </div>
 
 
@@ -929,8 +928,17 @@
                                                                                             }
                                                                                         });
                                                                                     });
-                                                                                </script>
 
+
+                                                                                    function kiemTraChonGhe() {
+                                                                                        if (selectedSeats.length === 0) {
+                                                                                            alert("Vui lòng chọn ít nhất một ghế trước khi tiếp tục.");
+                                                                                            return false;
+                                                                                        } else {
+                                                                                            return true;
+                                                                                        }
+                                                                                    }
+                                                                                </script>
 
                                                                             </div>
                                                                             <div class="row text-center m-5 mt-5 p-4"
@@ -1008,8 +1016,12 @@
                                                                                                             class="card-title product-title">
                                                                                                             {{ $item->name }}
                                                                                                         </h5>
-                                                                                                        <p class="card-text product-description">{{ $item->content }}</p>
-                                                                                                        <p class="card-text product-price">
+                                                                                                        <p
+                                                                                                            class="card-text product-description">
+                                                                                                            {{ $item->content }}
+                                                                                                        </p>
+                                                                                                        <p
+                                                                                                            class="card-text product-price">
                                                                                                             <small
                                                                                                                 class="text-body-secondary">Giá:
                                                                                                                 {{ $item->price }}đ</small>
@@ -1204,8 +1216,9 @@
                                                                                         method="get">
 
                                                                                         <button type="submit"
+                                                                                            onclick="return kiemTraChonGhe();"
                                                                                             style="background-color: #FE7900;"
-                                                                                            class=" mx-5 btn text-white btn-lg fs-4 px-4">
+                                                                                            class=" mx-5 btn text-white btn-lg fs-4 px-4 ">
                                                                                             Tiếp Theo</button>
 
                                                                                         <input type="hidden"
