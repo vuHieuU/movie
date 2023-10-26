@@ -51,6 +51,7 @@
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
                               </th>
+                              <th style="width: 10%">Mã hóa đơn</th>
                               <th style="width: 10%">Người dùng</th>
                               <th style="width: 10%">Rạp</th>
                               <th style="width: 13%">Tên phim</th>
@@ -72,6 +73,7 @@
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
                               </td>
+                              <td>{{ $item->code}}</td>
                               <td>{{ $item->user->name }}</td>
                               <td>
                                 {{ $item->cinema }}
