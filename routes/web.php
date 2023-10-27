@@ -101,18 +101,26 @@ Route::middleware(['auth'])->group(function () {
     // Users
     Route::prefix('user')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\userController::class, 'index']);
-        Route::get('create', [App\Http\Controllers\admin\userController::class, 'create']);
-        Route::post('store', [App\Http\Controllers\admin\userController::class, 'store']);
+        // Route::get('create', [App\Http\Controllers\admin\userController::class, 'create']);
+        // Route::post('store', [App\Http\Controllers\admin\userController::class, 'store']);
         Route::get('edit/{id}', [App\Http\Controllers\admin\userController::class, 'edit']);
         Route::post('update/{id}', [App\Http\Controllers\admin\userController::class, 'update']);
         Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy']);
+    });
+    Route::prefix('admin')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\userController::class, 'admin_index']);
+        Route::get('create', [App\Http\Controllers\admin\userController::class, 'create']);
+        Route::post('store', [App\Http\Controllers\admin\userController::class, 'store']);
+        Route::get('edit/{id}', [App\Http\Controllers\admin\userController::class, 'edit_admin'])->name('edit_admin');
+        Route::post('update/{id}', [App\Http\Controllers\admin\userController::class, 'update_admin'])->name('update_admin');
+        // Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy']);
     });
     //Coupon (ma giam gia)
     Route::prefix('coupon')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\couponController::class, 'index'])->name('coupon.index');
         Route::get('create', [App\Http\Controllers\admin\couponController::class, 'create'])->name('coupon.create');
         Route::post('store', [App\Http\Controllers\admin\couponController::class, 'store'])->name('coupon.store');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\couponController::class, 'edit'])->name('coupon.edit');
+        Route::get('edits/{id}', [App\Http\Controllers\admin\couponController::class, 'edit'])->name('coupon.edit');
         Route::put('update/{id}', [App\Http\Controllers\admin\couponController::class, 'update'])->name('coupon.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\couponController::class, 'destroy'])->name('coupon.delete');
     });

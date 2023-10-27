@@ -32,9 +32,9 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Danh sách người dùng</h4>
+                          <h4 class="mb-3">Danh sách người cầm quyền tối cao</h4>
                       </div>
-                      {{-- <a href="/user/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm người dùng</a> --}}
+                      <a href="/admin/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm Admin</a>
                   </div>
               </div>
               <div class="col-lg-12">
@@ -51,14 +51,13 @@
                               <th>Tên người dùng</th>
                               <th>Số điện thoại</th>
                               <th>Email</th>
-                              <th>Địa chỉ</th>
-                              <th>Giới tính</th>
+                              <th>Quyền</th>
                               <th>Action</th>
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
 
-                        @foreach ($user as $item)
+                        @foreach ($admins as $item)
                             
                     
               
@@ -72,14 +71,19 @@
                               <td>{{ $item->name }}</td>
                               <td>{{ $item->phone }}</td>
                               <td>{{ $item->email }}</td>
-                              <td>{{ $item->address }}</td>
-                              <td>{{ $item->gender  }}</td>
+                              <td>
+                                @php
+                                        foreach ($item->roles as $role) {
+                                            echo "$role->name";
+                                        }
+                                @endphp
+                              </td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
                                           href="#"><i class="ri-eye-line mr-0"></i></a>
                                       <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                          href="/user/edit/{{ $item->id }}"><i class="ri-pencil-line mr-0"></i></a>
+                                          href="{{ route('edit_admin',[$item->id])}}"><i class="ri-pencil-line mr-0"></i></a>
                                       <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
                                           href="/user/delete/{{ $item->id }}"><i class="ri-delete-bin-line mr-0"></i></a>
                                   </div>
