@@ -27,4 +27,10 @@ class ticket extends Model
     {
         return $this->belongsTo(User::class);
     }
+    // Trong model Ticket
+public function ticketFoods()
+{
+    return $this->hasMany(ticketFood::class, 'ticket_id', 'id');
+}
+
 }

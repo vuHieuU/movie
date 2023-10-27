@@ -46,26 +46,27 @@
                       <thead class="bg-white text-uppercase">
                           <tr class="ligth ligth-data">
                               <th>
-                                  <div class="checkbox d-inline-block">
+                                  <div class="checkbox d-inline-block" >
                                       <input type="checkbox" class="checkbox-input" id="checkbox1">
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
                               </th>
-                              <th style="width: 10%">Mã hóa đơn</th>
-                              <th style="width: 10%">Người dùng</th>
+                              <th style="width: 8%">Mã đơn</th>
+                              <th style="width: 13%">Người dùng</th>
                               <th style="width: 10%">Rạp</th>
                               <th style="width: 13%">Tên phim</th>
                               <th style="width: 11%">Ngày đặt</th>
-                              <th>Thời gian</th>
-                              <th style="width: 12%">Ghế</th>
-                              <th>Tổng tiền</th>
+                              <th style="width: 11%">Thời gian</th>
+                              <th style="width: 10%">Ghế</th>
+                              <th style="width: 10%">Đồ ăn</th>
+                              <th style="width: 11%">Tổng tiền</th>
                               {{-- <th>Status</th> --}}
                               <th>Action</th>
 
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
-                             @foreach ($tickit as $item)
+                             @foreach ($ticket as $item)
                           <tr>
                               <td>
                                   <div class="checkbox d-inline-block">
@@ -74,7 +75,7 @@
                                   </div>
                               </td>
                               <td>{{ $item->code}}</td>
-                              <td>{{ $item->user->name }}</td>
+                              <td>{{ $item->buyer_name }}</td>
                               <td>
                                 {{ $item->cinema }}
                               </td>
@@ -84,7 +85,11 @@
                               <td>{{ $item->selected_date }}</td>
                               <td>{{ $item->selected_hour }}</td>
                               <td>{{ $item->selected_seats }}</td>
-                          
+                              {{-- @foreach ($ticket as $itemm) --}}
+                                  
+                             
+                              <td>{{ $item->name }}*{{ $item->quantity }}</td>
+                           {{-- @endforeach --}}
                               <td>{{number_format( $item->total) }} VND</td>
     {{-- <td>{{($item->active==1) ?"Thành công" :"Đang xử lý"}}</td> --}}
                               <td>

@@ -41,11 +41,11 @@
                             role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active show" data-toggle="pill" href="#profile1" role="tab"
-                                    aria-selected="false">Thông tin cá nhân</a>
+                                    aria-selected="false">Cá nhân</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="pill" href="#profile2" role="tab"
-                                    aria-selected="false">Tài khoản</a>
+                                    aria-selected="false">Lịch sử</a>
                             </li>
                             {{-- <li class="nav-item">
                                 <a class="nav-link" data-toggle="pill" href="#profile3" role="tab"

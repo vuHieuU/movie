@@ -213,9 +213,9 @@ Route::middleware(['auth'])->group(function () {
     });
     // tickit
     Route::prefix('ticket')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\TickitController::class, 'index'])->name('ticket.index');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\TickitController::class, 'destroy'])->name('destroy.index');
-        Route::get('show/{id}', [App\Http\Controllers\admin\TickitController::class, 'show'])->name('show.index');
+        Route::get('index', [App\Http\Controllers\admin\TicketController::class, 'index'])->name('ticket.index');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\TicketController::class, 'destroy'])->name('destroy.index');
+        Route::get('show/{id}', [App\Http\Controllers\admin\TicketController::class, 'show'])->name('show.index');
     });
 
     // Danh sách Tin tức
