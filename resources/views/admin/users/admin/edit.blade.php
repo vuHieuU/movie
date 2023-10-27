@@ -1,6 +1,6 @@
 @extends('admin.layout.home')
 @section('content')
-<form action="/user/update/{{ $user->id }}" method="POST" data-toggle="validator">
+<form action="{{ route('update_admin',[$user->id])}}" method="POST" data-toggle="validator">
     @csrf
     <div class="wrapper">
         <div class="modal fade" id="new-order" tabindex="-1" role="dialog" aria-hidden="true">
@@ -33,7 +33,7 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
-                                    <h4 class="card-title">Cập nhật người dùng</h4>
+                                    <h4 class="card-title">Cập nhật admin</h4>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -104,21 +104,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{-- <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Mật khẩu</label>
-                                                <input type="password" class="form-control" placeholder="password"
-                                                    name="password">
-                                                 @error('password')
-                                                    
-                                                <div class="help-block with-errors">{{ $message }}</div>
-
-                                                @enderror
-                                            </div>
-                                        </div>
-                                    </div> --}}
-                                    {{-- <div class="form-group">
+                                  
+                                    <div class="form-group">
                                         <label>Phân quyền</label>
                                          <div class="row container m-auto">
                                                 @foreach ($role as $groupName => $role)
@@ -136,7 +123,7 @@
                                                       </div>
                                                 @endforeach
                                           </div>
-                                      </div> --}}
+                                      </div>
                                     <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     <a href="/user/index"><button type="submit" class="btn btn-danger">Back</button></a>
