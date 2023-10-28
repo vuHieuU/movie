@@ -11,14 +11,14 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
-                                    <h4 class="card-title">Add Coupon</h4>
+                                    <h4 class="card-title">Cập nhật mã giảm giá</h4>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="name">Name *</label>
+                                            <label for="name">Mã *</label>
                                             <input type="text" class="form-control" placeholder="Name" name="name" value="{{ $coupon->name }}" required>
                                             @if ($errors->has('name'))
                                                 <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -29,7 +29,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Type</label>
+                                            <label>Kiểu</label>
                                             <select name="type" class="selectpicker form-control" data-style="py-0">
                                                 <option value="amount" {{ $coupon->type == 'amount' ? "selected" : "" }}>Vnđ</option>
                                                 <option value="percent" {{ $coupon->type == 'percent' ? "selected" : "" }}>%</option>
@@ -38,7 +38,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="expiry_date">Expiry Date *</label>
+                                            <label for="expiry_date">Ngày hết hạn *</label>
                                             <input type="date" class="form-control" placeholder="Expiry Date" name="expiry_date" value="{{ $coupon->expiry_date }}" required>
                                             @if ($errors->has('expiry_date'))
                                                 <span class="text-danger">{{ $errors->first('expiry_date') }}</span>
@@ -49,7 +49,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="value">Value *</label>
+                                            <label for="value">Giá trị *</label>
                                             <input type="text" class="form-control" placeholder="Value" name="value" value="{{ $coupon->value}}" required
                                                 name="value" required>
                                             @if ($errors->has('value'))
@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary mr-2">Update Coupon</button>
+                                <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
                                 <button type="reset" class="btn btn-danger mr-2">Reset</button>
                             </div>
                         </div>

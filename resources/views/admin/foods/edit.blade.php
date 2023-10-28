@@ -16,14 +16,14 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
-                                    <h4 class="card-title">Update Food</h4>
+                                    <h4 class="card-title">Cập nhật đồ ăn</h4>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="name">Name *</label>
+                                            <label for="name">Tên đồ ăn *</label>
                                             <input type="text" class="form-control" placeholder="Name" name="name" value="{{ $food->name }}">
                                             @if ($errors->has('name'))
                                                 <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -34,7 +34,7 @@
                                 <div class="row">
                                 <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="price">Price *</label>
+                                            <label for="price">Giá *</label>
                                             <input type="text" class="form-control" placeholder="Price" name="price" value="{{ $food->price }}">
                                             @if ($errors->has('price'))
                                                 <span class="text-danger">{{ $errors->first('price') }}</span>
@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="status">Status *</label>
+                                            <label for="status">Trạng thái *</label>
                                             <select class="form-control" name="status">
                                                 <option value="0">ON</option>
                                                 <option value="1" selected>OF</option>
@@ -57,13 +57,13 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                     <div class="form-group">
-                                            <label for="formFileSm" class="form-label">Thumb *</label>
+                                            <label for="formFileSm" class="form-label">Hình ảnh *</label>
                                             <input class="form-control" id="formFileSm" name="thumb" value="{{ $food->thumb }}" type="file" accept="image/*">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="expiry_date">Quantity *</label>
+                                            <label for="expiry_date">Số lượng *</label>
                                             <input type="text" class="form-control" placeholder="Số lượng"
                                                 name="qty" value="{{ $food->qty }}">
                                         </div>
@@ -72,7 +72,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="name">content </label>
+                                            <label for="name">Nội dung </label>
                                               <textarea class="form-control" name="content" cols="10" rows="5">{{ $food->content }}</textarea>
                                         </div>
                                     </div>
@@ -88,7 +88,7 @@
                                     </div>
                                 </div> --}}
                                 
-                                <button type="submit" class="btn btn-primary mr-2">Update Food</button>
+                                <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
                                 <button type="reset" class="btn btn-danger mr-2">Reset</button>
                             </div>
                         </div>

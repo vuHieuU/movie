@@ -36,7 +36,7 @@
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between">
                                     <div class="header-title">
-                                        <h4 class="card-title">Update seat</h4>
+                                        <h4 class="card-title">Cập nhật ghế</h4>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -44,7 +44,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Name *</label>
+                                                <label>Vị trí *</label>
                                                 <input type="text" class="form-control" placeholder="Enter Name"
                                                     data-errors="Please Enter Name." name="seat_number"
                                                     value="{{ $seat_number->seat_number }}">
@@ -53,7 +53,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Typeseat</label>
+                                                <label>Kiểu ghế</label>
                                                 <select name="typeSeat_id" class="selectpicker form-control" data-style="py-0">
                                                     @foreach ($typeseat as $item)
                                                         <option value="{{$item->id}}" {{($item->id==$seat_number->typeSeat_id)?"selected":""}}>{{$item->name}}</option>
@@ -64,7 +64,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary mr-2">Update seat</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     <a href="seats/index"><button type="submit" class="btn btn-danger">Back</button></a>
                                 </div>

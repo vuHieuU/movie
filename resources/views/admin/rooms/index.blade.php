@@ -31,10 +31,9 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">combo List</h4>
-                          <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
+                          <h4 class="mb-3">Danh sách phòng</h4>
                       </div>
-                      <a href="/rooms/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add combo</a>
+                      <a href="/rooms/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm phòng</a>
                   </div>
               </div>
             
@@ -53,9 +52,9 @@
                                   </div>
                               </th>
                               <th>ID</th>
-                              <th>Name</th>
-                              <th>Max</th>
-                              <th>Cinema</th>
+                              <th>Tên</th>
+                              <th>Tối đa</th>
+                              <th>Rạp chiếu</th>
                               <th>Action</th>
                           </tr>
                       </thead>

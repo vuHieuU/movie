@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Laralink">
     <!-- Site Title -->
-    <title>General Purpose Invoice</title>
+    <title>Hóa đơn</title>
     <link rel="stylesheet" href="/template/assets/css/pay.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -83,7 +83,7 @@
                 <div class="amy-page-title amy-center">
                     <div class="amy-inner container">
                         <h1 class="page-title">
-                            Total invoice </h1>
+                            Tổng hóa đơn </h1>
                     </div>
                 </div>
                 <span class="amy-section-overlay"></span>
@@ -154,12 +154,12 @@
 
                     <div class="cs-invoice_head cs-mb10 ">
                         <div class="cs-invoice_left cs-mr97">
-                            <b class="cs-primary_color">Customer Name:</b>
+                            <b class="cs-primary_color">Tên người dùng:</b>
                             <p class="cs-mb8">{{ Auth::user()->name }}</p>
                             <p><b class="cs-primary_color cs-semi_bold">Email:</b> <br>{{ Auth::user()->name }}</p>
                         </div>
                         <div class="cs-invoice_right">
-                            <b class="cs-primary_color">Informational film: </b>
+                            <b class="cs-primary_color">Thông tin phim: </b>
                             <p>
                             <p class="fs-4"><strong class="fs-5 "> Rạp: </strong>{{ $cinemaName }}</p>
                             <p class="fs-4"><strong class="fs-5 "> Phim: </strong>{{ $ShowTime->name }}
@@ -213,9 +213,9 @@
                                     <thead>
                                         <tr class="cs-focus_bg">
                                             <th class="cs-width_1 cs-semi_bold cs-primary_color">STT</th>
-                                            <th class="cs-width_3 cs-semi_bold cs-primary_color">Service</th>
-                                            <th class="cs-width_2 cs-semi_bold cs-primary_color">Hour</th>
-                                            <th class="cs-width_2 cs-semi_bold cs-primary_color cs-text_right ">Amount</th>
+                                            <th class="cs-width_3 cs-semi_bold cs-primary_color">Dịch vụ</th>
+                                            <th class="cs-width_2 cs-semi_bold cs-primary_color">Giờ</th>
+                                            <th class="cs-width_2 cs-semi_bold cs-primary_color cs-text_right ">Thành tiền</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -366,11 +366,11 @@
                                     <tr class="cs-table_baseline">
 
                                         <td class="cs-width_3 cs-text_right">
-                                            <p class="cs-mb5 cs-mb5 cs-f15 cs-primary_color cs-semi_bold">Sub Total:</p>
-                                            <p class="cs-primary_color cs-bold cs-f16 cs-mb5 ">Discount:</p>
+                                            <p class="cs-mb5 cs-mb5 cs-f15 cs-primary_color cs-semi_bold">Tiền:</p>
+                                            <p class="cs-primary_color cs-bold cs-f16 cs-mb5 ">Giảm giá:</p>
 
                                             <p class="cs-border border-none"></p>
-                                            <p class="cs-primary_color cs-bold cs-f16 cs-mb5 ">Total:</p>
+                                            <p class="cs-primary_color cs-bold cs-f16 cs-mb5 ">Tổng tiền:</p>
                                         </td>
                                         <td class="cs-width_3 cs-text_rightcs-f16">
                                             <p class="cs-mb5 cs-mb5 cs-text_right cs-f15 cs-primary_color cs-semi_bold">

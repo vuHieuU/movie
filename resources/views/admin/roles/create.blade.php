@@ -33,7 +33,7 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
-                                    <h4 class="card-title">Add Roles</h4>
+                                    <h4 class="card-title">Thêm quyền</h4>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -41,7 +41,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Name *</label>
+                                                <label>Tên quyền *</label>
                                                 <input type="text" class="form-control" placeholder="Enter Name"
                                                     data-errors="Please Enter Name." name="name">
                                                 <div class="help-block with-errors"></div>
@@ -57,7 +57,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Group</label>
+                                                <label>Bên</label>
                                                 <select name="group" class="selectpicker form-control" data-style="py-0">
                                                     <option value="Admin">Admin</option>
                                                     <option value="User">User</option>
@@ -66,7 +66,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Permission</label>
+                                                <label>Phân quyền</label>
                                                 <div class="row container m-auto">
                                                   @foreach ($permissions as $groupName=>$permission)
                                                   <div class="col-4 pb-3">
@@ -87,7 +87,7 @@
                                         </div>
                                     
                                     </div>
-                                    <button type="submit" class="btn btn-primary mr-2">Add Role</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Thêm mới</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     {{-- <a href="/role/index"><button type="submit" class="btn btn-danger">Back</button></a> --}}
                             </div>

@@ -53,8 +53,11 @@ class filmController extends Controller
 
         $data->premiere_date = $request->input('premiere_date');
 
+        dd($data);
+
         $data->save();
         $data->categories()->attach($request->id_cate);
+
         return redirect()->route('films.index')->with('success', 'Thêm phim thành công');
     }
 

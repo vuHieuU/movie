@@ -32,8 +32,7 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Tickit List</h4>
-                          <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
+                          <h4 class="mb-3">Danh sách vé</h4>
                       </div>
                       {{-- <a href="{{route("films.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Film</a> --}}
                   </div>
@@ -52,13 +51,13 @@
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
                               </th>
-                              <th style="width: 10%">User</th>
-                              <th style="width: 10%">Cinema</th>
-                              <th style="width: 13%">Name</th>
-                              <th style="width: 11%">Date</th>
-                              <th>Time</th>
-                              <th style="width: 12%">Seat</th>
-                              <th>Tatal</th>
+                              <th style="width: 10%">Người dùng</th>
+                              <th style="width: 10%">Rạp</th>
+                              <th style="width: 13%">Tên phim</th>
+                              <th style="width: 11%">Ngày đặt</th>
+                              <th>Thời gian</th>
+                              <th style="width: 12%">Ghế</th>
+                              <th>Tổng tiền</th>
                               {{-- <th>Status</th> --}}
                               <th>Action</th>
 

@@ -33,14 +33,14 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
-                                    <h4 class="card-title">Add Roles</h4>
+                                    <h4 class="card-title">Cập nhật rạp phim</h4>
                                 </div>
                             </div>
                             <div class="card-body">
                                   <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Name *</label>
+                                            <label>Tên rạp *</label>
                                             <input type="text" class="form-control" placeholder=""
                                                 name="name" value="{{$cinemas->name}}">
                                                 @error('name')
@@ -55,7 +55,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Address</label>
+                                                <label>Địa chỉ</label>
                                                 <input type="text" class="form-control" placeholder="address"
                                                     name="address" value="{{$cinemas->address}}">
                                                     @error('address')
@@ -67,7 +67,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>City</label>
+                                                <label>Thành phố</label>
                                                 <select name="city" class="form-control" id="">
                                                     @foreach ($city as $item)
                                                         <option value="{{$item->id}}">{{$item->name}}</option>
@@ -84,7 +84,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Description</label>
+                                                <label>Mô tả</label>
                                                 <textarea type="text" class="form-control" value="" placeholder="Description..."
                                                     name="description" value="{{ old('password') }}">{{$cinemas->description}}</textarea>
                                                     @error('description')
@@ -96,7 +96,7 @@
                                         </div>
                                     </div>
     
-                                    <button type="submit" class="btn btn-primary mr-2">Update Cinemas</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     {{-- <a href="/user/index"><button type="submit" class="btn btn-danger">Back</button></a> --}}
                             </div>

@@ -11,9 +11,8 @@
                     <div class="col-lg-4">
                         <div class="card card-transparent card-block card-stretch card-height border-none">
                             <div class="card-body p-0 mt-lg-2 mt-0">
-                                <h3 class="mb-3">Hi , everybody</h3>
-                                <p class="mb-0 mr-4">Your dashboard gives you views of key performance or business
-                                    process.</p>
+                                <h3 class="mb-3">Xin chào, {{ Auth::user()->name }}</h3>
+                                <p class="mb-0 mr-4">Trang tổng quan cung cấp cho bạn chế độ xem về doanh thu.</p>
                             </div>
                         </div>
                     </div>
@@ -28,8 +27,8 @@
                                                     alt="image">
                                             </div>
                                             <div>
-                                                <p class="mb-2">Total cinema</p>
-                                                <h4>{{ number_format($sumtotal) }} </h4>
+                                                <p class="mb-2">Doanh thu</p>
+                                                <h4>{{ number_format($sumtotal)}} </h4>
 
                                             </div>
                                         </div>
@@ -49,7 +48,7 @@
                                                     alt="image">
                                             </div>
                                             <div>
-                                                <p class="mb-2">User</p>
+                                                <p class="mb-2">Người dùng</p>
                                                 <h4>{{$countuser}}</h4>
                                             </div>
                                         </div>
@@ -69,7 +68,7 @@
                                                     alt="image">
                                             </div>
                                             <div>
-                                                <p class="mb-2">Film cinema</p>
+                                                <p class="mb-2">Phim</p>
                                                 {{-- @foreach ($countfilm as $item) --}}
 
 

@@ -518,7 +518,7 @@ rel="stylesheet" type="text/css" media="all" />
                                                   
                                              </p>
                                              <fieldset class="form-group">
-                                                  <label>Name <span class="required">*</span></label>
+                                                  <label>Tên người dùng <span class="required">*</span></label>
                                                   <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
@@ -543,9 +543,8 @@ rel="stylesheet" type="text/css" media="all" />
 @endif
                                              </fieldset>
                                              <fieldset class="form-group">
-                                                  <label>Password <span class="required">*</span></label>
+                                                  <label>Mật khẩu <span class="required">*</span></label>
                                                   <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-z
                                                   @error('password')
                                                       <span class="invalid-feedback" role="alert">
                                                           <strong>{{ $message }}</strong>
@@ -553,7 +552,7 @@ z
                                                   @enderror
                                              </fieldset>
                                              <fieldset class="form-group">
-                                                  <label>Confirm Password <span class="required">*</span> </label>
+                                                  <label>Xác nhận mật khẩu <span class="required">*</span> </label>
                                                   <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                              </fieldset>
                                              <button class="btn-login"  type="submit" value="Đăng ký">Đăng ký</button>

@@ -15,14 +15,14 @@
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between">
                                     <div class="header-title">
-                                        <h4 class="card-title">Add Food</h4>
+                                        <h4 class="card-title">Thêm đồ ăn</h4>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="name">Name *</label>
+                                                <label for="name">Tên đồ ăn *</label>
                                                 <input type="text" class="form-control" placeholder="Name"
                                                     name="name">
                                                 @if ($errors->has('name'))
@@ -34,7 +34,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="formFileSm" class="form-label">Thumb *</label>
+                                                <label for="formFileSm" class="form-label">Hình ảnh *</label>
                                                 <input class="form-control" id="formFileSm" name="thumb" type="file"
                                                     accept="image/*" required>
                                                 @if ($errors->has('thumb'))
@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="expiry_date">Price *</label>
+                                                <label for="expiry_date">Giá *</label>
                                                 <input type="price" class="form-control" placeholder="Price"
                                                     name="price">
                                                 @if ($errors->has('price'))
@@ -56,7 +56,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="value">Status *</label>
+                                                <label for="value">Trạng thái *</label>
                                                 <select class="form-control" name="status">
                                                     <option value="1">ON</option>
                                                     <option value="0">OF</option>
@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="expiry_date">Quantity *</label>
+                                                <label for="expiry_date">Số lượng *</label>
                                                 <input type="text" class="form-control" placeholder="Số lượng"
                                                     name="qty">
                                                 @if ($errors->has('qty'))
@@ -80,7 +80,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="name">content </label>
+                                                <label for="name">Nội dung </label>
                                                   <textarea class="form-control" name="content" cols="10" rows="5"></textarea>
 
                                             </div>
@@ -90,7 +90,7 @@
                                     
 
 
-                                    <button type="submit" class="btn btn-primary mr-2">Add Food</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Thêm mới</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                 </div>
                             </div>

@@ -55,7 +55,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Address</label>
+                                                <label>Địa chỉ</label>
                                                 <input type="text" class="form-control" placeholder="address"
                                                     name="address" value="{{ old('address') }}">
                                                     @error('address')
@@ -67,7 +67,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>City</label>
+                                                <label>Thành phố</label>
                                                 <select name="city" class="form-control" id="">
                                                     @foreach ($city as $item)
                                                         <option value="{{$item->id}}">{{$item->name}}</option>
@@ -84,7 +84,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Description</label>
+                                                <label>Mô tả</label>
                                                 <textarea type="text" class="form-control" placeholder="Description..."
                                                     name="description" value="{{ old('password') }}"></textarea>
                                                     @error('description')
@@ -96,7 +96,7 @@
                                         </div>
                                     </div>
     
-                                    <button type="submit" class="btn btn-primary mr-2">Add Cinemas</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Thêm mới</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     <a href="/index" class="btn btn-danger mr-2">Back</a>
                                     {{-- <a href="/user/index"><button type="submit" class="btn btn-danger">Back</button></a> --}}
