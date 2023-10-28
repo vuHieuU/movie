@@ -1,6 +1,6 @@
 @extends('admin.layout.home')
 @section('content')
-<form action="/user/store" method="POST" data-toggle="validator">
+<form action="/admin/store" method="POST" data-toggle="validator">
     @csrf
     <div class="wrapper">
         <div class="modal fade" id="new-order" tabindex="-1" role="dialog" aria-hidden="true">
@@ -33,7 +33,7 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
-                                    <h4 class="card-title">Thêm người dùng</h4>
+                                    <h4 class="card-title">Thêm admin</h4>
                                 </div>
                             </div>
                             <div class="card-body">

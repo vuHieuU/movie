@@ -79,6 +79,11 @@
                             </a>
                         </li>
                         <li class="">
+                            <a href="/admin/index">
+                                <i class="las la-minus"></i><span>Danh sách Admin</span>
+                            </a>
+                        </li>
+                        <li class="">
                             <a href="/role/index">
                                 <i class="las la-minus"></i><span>Danh sách phân quyền</span>
                             </a>

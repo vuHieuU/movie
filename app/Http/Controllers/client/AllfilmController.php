@@ -22,7 +22,7 @@ class AllfilmController extends Controller
         $films = film::get();
         $category = category::all();
        
-        $title = "Now Playing";
+        $title = "Film";
        return view("client.film",compact("category","films","new_footer"));
     }
 
@@ -48,14 +48,14 @@ class AllfilmController extends Controller
     public function show(string $id)
     {  
         $cinema_id = cinema::findOrFail($id);
-         $films = film::get();
+        //  $films = film::get();
     $category = category::get();
-    // $film = DB::table('categories')
-    //     ->join('film_categories', 'categories.id', '=', 'film_categories.dmid')
-    //     ->join('films', 'film_categories.film_id' ,'=','films.id')
-    //     ->where('categories.id', $id)
-    //     ->select('categories.*','film_categories.*','films.*')
-    //     ->get();
+    $films = DB::table('categories')
+        ->join('film_categories', 'categories.id', '=', 'film_categories.dmid')
+        ->join('films', 'film_categories.film_id' ,'=','films.id')
+        ->where('categories.id', $id)
+        ->select('categories.*','film_categories.*','films.*')
+        ->get();
 
 
         // $films = ShowTime::where("cinema_id", $cinema_id->id)->orderByDesc("created_at")->with('film')->get();

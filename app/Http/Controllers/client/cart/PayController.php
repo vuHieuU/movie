@@ -38,9 +38,10 @@ class PayController extends Controller
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*','typeseats.*','showtime_seats.isActive')
-         ->orderBy("showtime_seats.seat_id","asc")
-         ->get();     
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->orderBy("showtime_seats.seat_id", "asc")
+         ->get();
+         
          $food = food::get();
          $combo = combo::get();
          $title = "Chairs_Food";
