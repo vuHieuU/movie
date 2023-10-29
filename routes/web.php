@@ -130,6 +130,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('index', [App\Http\Controllers\admin\foodController::class, 'index'])->name('food.index');
         Route::get('create', [App\Http\Controllers\admin\foodController::class, 'create'])->name('food.create');
         Route::post('store', [App\Http\Controllers\admin\foodController::class, 'store'])->name('food.store');
+        Route::get('show/{id}', [App\Http\Controllers\admin\foodController::class, 'show'])->name('food.show');
         Route::get('edit/{id}', [App\Http\Controllers\admin\foodController::class, 'edit'])->name('food.edit');
         Route::put('update/{id}', [App\Http\Controllers\admin\foodController::class, 'update'])->name('food.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\foodController::class, 'destroy'])->name('food.delete');
