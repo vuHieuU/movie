@@ -198,6 +198,23 @@
                    
                 </ul>
             </li>
+            <li class=" ">
+                <a href="#Natification" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <span class="ml-4">Thông báo</span>
+                    <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                    </svg>
+                </a>
+                <ul id="Natification" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                    <li class="">
+                        <a href="/NotificationList">
+                            <i class="las la-minus"></i><span>Danh sách thông báo</span>
+                        </a>
+                    </li>
+                   
+                </ul>
+            </li>
 {{-- @endcan --}}
             </ul>
         </nav>
@@ -375,37 +392,23 @@
                                             </div>
                                         </div>
                                         <div class="px-3 pt-0 pb-0 sub-card">
-                                            <a href="#" class="iq-sub-card">
-                                                <div class="media align-items-center cust-card py-3 border-bottom">
-                                                    <div class="">
-                                                        <img class="avatar-50 rounded-small"
-                                                            src="/template/assets/images/user/01.jpg" alt="01">
-                                                    </div>
-                                                    <div class="media-body ml-3">
-                                                        <div class="d-flex align-items-center justify-content-between">
-                                                            <h6 class="mb-0">Emma Watson</h6>
-                                                            <small class="text-dark"><b>12 : 47 pm</b></small>
+                                            @foreach (\App\Models\Notification::orderBy('created_at', 'desc')->take(3)->get() as $item)
+                                        
+                                            <div class="px-3 pt-0 pb-0 sub-card">
+                                                <a href="#" class="iq-sub-card">
+                                                    <div class="media align-items-center cust-card py-3 border-bottom">
+                                                        <div class="media-body ml-3">
+                                                            <div class="d-flex align-items-center justify-content-between">
+                                                                <p class="mb-0">{{$item->film_name}} đã đặt vé xem phim vào lúc</p>
+                                                                
+                                                            </div>
+                                                            <small class="mb-0">{{$item->created_at}}</small>
                                                         </div>
-                                                        <small class="mb-0">Lorem ipsum dolor sit amet</small>
                                                     </div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="iq-sub-card">
-                                                <div class="media align-items-center cust-card py-3 border-bottom">
-                                                    <div class="">
-                                                        <img class="avatar-50 rounded-small"
-                                                            src="/template/assets/images/user/02.jpg" alt="02">
-                                                    </div>
-                                                    <div class="media-body ml-3">
-                                                        <div class="d-flex align-items-center justify-content-between">
-                                                            <h6 class="mb-0">Ashlynn Franci</h6>
-                                                            <small class="text-dark"><b>11 : 30 pm</b></small>
-                                                        </div>
-                                                        <small class="mb-0">Lorem ipsum dolor sit amet</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="iq-sub-card">
+                                                </a>
+                                            </div>
+                                            @endforeach
+                                            {{-- <a href="#" class="iq-sub-card">
                                                 <div class="media align-items-center cust-card py-3">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
@@ -419,10 +422,10 @@
                                                         <small class="mb-0">Lorem ipsum dolor sit amet</small>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </a> --}}
                                         </div>
                                         <a class="right-ic btn btn-primary btn-block position-relative p-2"
-                                            href="#" role="button">
+                                            href="/NotificationList" role="button">
                                             View All
                                         </a>
                                     </div>

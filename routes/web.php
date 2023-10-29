@@ -257,3 +257,4 @@ Route::middleware(['auth'])->group(function () {
     //onepay
     Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
 });
+Route::get('/NotificationList', [App\Http\Controllers\admin\NotificationController::class, 'index']);

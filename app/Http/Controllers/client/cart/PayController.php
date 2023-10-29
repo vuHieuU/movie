@@ -6,6 +6,7 @@ use App\Models\film;
 use App\Models\food;
 use App\Models\combo;
 
+use App\Models\Notification;
 use App\Models\ticket;
 use App\Models\ShowTime;
 use Illuminate\Http\Request;
@@ -128,6 +129,19 @@ class PayController extends Controller
         $ticketFood->quantity = $foodItem['quantity'];
         $ticketFood->save();
     }
+    $notification = new Notification();
+    $notification->date = $selectedDate;
+    $notification->hour = $selectedHour;
+    $notification->seats = $selectedSeatsValue;
+    $notification->film_name = $ShowTime->name;
+    $notification->user_email =  $user->email;
+    $notification->cinema = $cinemaName;
+    $notification->food = $foodItem['name'];
+    $notification->coupon_code = $couponCode;
+    $notification->total = $total;
+    $notification->code = date('Ymd-His') . rand(10, 0);
+    // dd($notification);
+    $notification->save();
 
     $selectSeatArray = explode(',', $selectedSeatsValueID);
 
@@ -181,6 +195,7 @@ class PayController extends Controller
                 $ticketFood->save();
             }
         
+
             $selectSeatArray = explode(',', $selectedSeatsValueID);
         
             showtime_seat::where('showtime_id',$selectedShowTimeId)
