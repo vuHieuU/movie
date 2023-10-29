@@ -233,6 +233,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('index', [App\Http\Controllers\admin\NewController::class, 'index'])->name('news.index');
         Route::get('create', [App\Http\Controllers\admin\NewController::class, 'create'])->name('news.create');
         Route::post('store', [App\Http\Controllers\admin\NewController::class, 'store'])->name('news.store');
+        Route::get('show/{id}', [App\Http\Controllers\admin\NewController::class, 'show'])->name('news.show');
         Route::get('edit/{id}', [App\Http\Controllers\admin\NewController::class, 'edit'])->name('news.edit');
         Route::post('update/{id}', [App\Http\Controllers\admin\NewController::class, 'update'])->name('news.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\NewController::class, 'destroy'])->name('news.destroy');
