@@ -156,6 +156,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('index', [App\Http\Controllers\admin\filmController::class, 'index'])->name('films.index');
         Route::get('create', [App\Http\Controllers\admin\filmController::class, 'create'])->name('films.create');
         Route::post('store', [App\Http\Controllers\admin\filmController::class, 'store'])->name('films.store');
+        Route::get('show/{id}', [App\Http\Controllers\admin\filmController::class, 'show'])->name('films.show');
         Route::get('edit/{id}', [App\Http\Controllers\admin\filmController::class, 'edit'])->name('films.edit');
         Route::post('update/{id}', [App\Http\Controllers\admin\filmController::class, 'update'])->name('films.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\filmController::class, 'destroy'])->name('films.destroy');
