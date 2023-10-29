@@ -81,7 +81,7 @@
                                       <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
                                           href="/user/edit/{{ $item->id }}"><i class="ri-pencil-line mr-0"></i></a>
                                       <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                          href="/user/delete/{{ $item->id }}"><i class="ri-delete-bin-line mr-0"></i></a>
+                                          href="{{ route('remove_user',[$item->id]) }}"><i class="ri-delete-bin-line mr-0"></i></a>
                                   </div>
                               </td>
                           </tr>

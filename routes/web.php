@@ -100,20 +100,20 @@ Route::middleware(['auth'])->group(function () {
     });
     // Users
     Route::prefix('user')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\userController::class, 'index']);
+        Route::get('index', [App\Http\Controllers\admin\userController::class, 'index'])->name('index_user');
         // Route::get('create', [App\Http\Controllers\admin\userController::class, 'create']);
         // Route::post('store', [App\Http\Controllers\admin\userController::class, 'store']);
         Route::get('edit/{id}', [App\Http\Controllers\admin\userController::class, 'edit']);
         Route::post('update/{id}', [App\Http\Controllers\admin\userController::class, 'update']);
-        Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy']);
+        Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy'])->name('remove_user');
     });
     Route::prefix('admin')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\userController::class, 'admin_index']);
+        Route::get('index', [App\Http\Controllers\admin\userController::class, 'admin_index'])->name('index_admin');
         Route::get('create', [App\Http\Controllers\admin\userController::class, 'create']);
         Route::post('store', [App\Http\Controllers\admin\userController::class, 'store']);
         Route::get('edit/{id}', [App\Http\Controllers\admin\userController::class, 'edit_admin'])->name('edit_admin');
         Route::post('update/{id}', [App\Http\Controllers\admin\userController::class, 'update_admin'])->name('update_admin');
-        // Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy']);
+        Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy_admin'])->name('remove_admin');
     });
     //Coupon (ma giam gia)
     Route::prefix('coupon')->group(function () {

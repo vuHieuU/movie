@@ -74,12 +74,12 @@
                     </a>
                     <ul id="user" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
-                            <a href="/user/index">
+                            <a href="{{ route('index_user') }}">
                                 <i class="las la-minus"></i><span>Danh sách người dùng</span>
                             </a>
                         </li>
                         <li class="">
-                            <a href="/admin/index">
+                            <a href="{{ route('index_admin') }}">
                                 <i class="las la-minus"></i><span>Danh sách Admin</span>
                             </a>
                         </li>
