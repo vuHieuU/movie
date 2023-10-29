@@ -15,6 +15,8 @@ use App\Http\Controllers\Controller;
 use App\Models\News;
 use App\Models\ticketFood;
 use Illuminate\Support\Facades\DB;
+
+use App\Jobs\SenMail;
 class PayController extends Controller
 {
     /**
@@ -129,6 +131,7 @@ class PayController extends Controller
         $ticketFood->quantity = $foodItem['quantity'];
         $ticketFood->save();
     }
+
     $notification = new Notification();
     $notification->date = $selectedDate;
     $notification->hour = $selectedHour;
@@ -142,6 +145,8 @@ class PayController extends Controller
     $notification->code = date('Ymd-His') . rand(10, 0);
     // dd($notification);
     $notification->save();
+
+    SenMail::dispatch($user->email)->delay(now()->addSeconds(10));
 
     $selectSeatArray = explode(',', $selectedSeatsValueID);
 
