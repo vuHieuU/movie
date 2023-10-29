@@ -53,7 +53,9 @@ class userController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::FindOrFail($id);
+        $role = Role::all()->groupBy('group');
+        return view('admin.users.show',compact('user','role'));
     }
 
     /**
