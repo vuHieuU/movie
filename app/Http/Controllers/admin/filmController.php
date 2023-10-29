@@ -66,7 +66,9 @@ class filmController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $film = film::find($id);
+        $cate = category::get();
+        return view('admin.films.show', compact('film', 'cate'));
     }
 
     /**

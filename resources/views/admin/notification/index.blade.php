@@ -32,9 +32,9 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Danh sách phim</h4>
+                          <h4 class="mb-3">Danh sách thông báo</h4>
                       </div>
-                      <a href="{{route("films.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm phim mới</a>
+                      <a href="{{route("news.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm mới tin</a>
                   </div>
               </div>
               <div class="col-lg-12">
@@ -51,15 +51,21 @@
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
                               </th>
+                              <th>Mã đơn</th>
+                              <th>Email</th>
                               <th>Tên phim</th>
-                              <th>Thumbnail</th>
-                              <th>Đạo diễn</th>
-                              <th>Ngôn ngữ chính</th>
+                              <th>Tên rạp</th>
+                              <th>Ngày chiếu</th>
+                              <th>Giờ chiếu</th>
+                              <th>Ghế ngồi</th>
+                              <th>Đơn giá</th>
+                              <th>Thời gian đặt</th>
+                              <th>Trạng thái</th>
                               <th>Action</th>
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
-                             @foreach ($film as $item)
+                             @foreach ($Notification as $item)
                           <tr>
                               <td>
                                   <div class="checkbox d-inline-block">
@@ -67,20 +73,29 @@
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
                               </td>
-                              <td>{{ $item->name }}</td>
+                              <td>{{ $item->code }}</td>
+                              <td>{{ $item->user_email }}</td>
+                              <td>{{ $item->film_name }}</td>
+                              <td>{{ $item->cinema }}</td>
+                              <td>{{ $item->date }}</td>
+                              <td>{{ $item->hour }}</td>
+                              <td>{{ $item->seats }}</td>
+                              <td>{{ $item->total }}</td>
+                              <td>{{ $item->updated_at }}</td>
                               <td>
-                                <img src="{{asset('/storage/images/'.$item->thumb)}}" alt="Hình ảnh" style="height: 200px;width:150px;">
-                              </td>
-                              <td>{{ $item->director }}</td>
-                              <td>{{ $item->language }}</td>
+                                  @if ($item->status==1)
+                                      Chưa xem
+                                  @else
+                                      Đã xem
+                              @endif</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                          href="{{route("films.show",$item->id)}}"><i class="ri-eye-line mr-0"></i></a>
+                                          href="#"><i class="ri-eye-line mr-0"></i></a>
                                       <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                          href="{{route("films.edit",$item->id)}}"><i class="ri-pencil-line mr-0"></i></a>
+                                          href="{{route("news.edit",$item->id)}}"><i class="ri-pencil-line mr-0"></i></a>
                                       <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                          href="{{route("films.destroy",$item->id)}}" onclick="return confirm('Xóa là không Ctrl lại cuộc đời ?')"><i class="ri-delete-bin-line mr-0"></i></a>
+                                          href="{{route("news.destroy",$item->id)}}" onclick="return confirm('Xóa là không Ctrl lại cuộc đời ?')"><i class="ri-delete-bin-line mr-0"></i></a>
                                   </div>
                               </td>
                           </tr>

@@ -6,6 +6,7 @@ use App\Models\film;
 use App\Models\food;
 use App\Models\combo;
 
+use App\Models\Notification;
 use App\Models\ticket;
 use App\Models\ShowTime;
 use Illuminate\Http\Request;
@@ -14,6 +15,8 @@ use App\Http\Controllers\Controller;
 use App\Models\News;
 use App\Models\ticketFood;
 use Illuminate\Support\Facades\DB;
+
+use App\Jobs\SenMail;
 class PayController extends Controller
 {
     /**
@@ -129,6 +132,22 @@ class PayController extends Controller
         $ticketFood->save();
     }
 
+    $notification = new Notification();
+    $notification->date = $selectedDate;
+    $notification->hour = $selectedHour;
+    $notification->seats = $selectedSeatsValue;
+    $notification->film_name = $ShowTime->name;
+    $notification->user_email =  $user->email;
+    $notification->cinema = $cinemaName;
+    $notification->food = $foodItem['name'];
+    $notification->coupon_code = $couponCode;
+    $notification->total = $total;
+    $notification->code = date('Ymd-His') . rand(10, 0);
+    // dd($notification);
+    $notification->save();
+
+    SenMail::dispatch($user->email)->delay(now()->addSeconds(10));
+
     $selectSeatArray = explode(',', $selectedSeatsValueID);
 
     showtime_seat::where('showtime_id',$selectedShowTimeId)
@@ -181,6 +200,7 @@ class PayController extends Controller
                 $ticketFood->save();
             }
         
+
             $selectSeatArray = explode(',', $selectedSeatsValueID);
         
             showtime_seat::where('showtime_id',$selectedShowTimeId)
