@@ -14,7 +14,7 @@ class TickitController extends Controller
     public function index()
     {
         $tickit = ticket::all();
-        return view("admin.tickits.index",compact("tickit"));
+        return view("admin.tickits.index", compact("tickit"));
     }
 
     /**
@@ -39,7 +39,7 @@ class TickitController extends Controller
     public function show(string $id)
     {
         $tickit = ticket::find($id);
-        return view("admin.tickits.tickitbill",compact("tickit"));
+        return view("admin.tickits.tickitbill", compact("tickit"));
     }
     /**
      * Show the form for editing the specified resource.
@@ -62,8 +62,8 @@ class TickitController extends Controller
      */
     public function destroy(string $id)
     {
-      $ticket = ticket::find($id);
-      $ticket->delete();
-    return redirect()->route("ticket.index")->with('success', 'tickit delete successfully');
+        $ticket = ticket::find($id);
+        $ticket->delete();
+        return redirect()->route("ticket.index")->with('success', 'tickit delete successfully');
     }
 }
