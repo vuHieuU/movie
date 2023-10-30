@@ -15,9 +15,7 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        $Notification = Notification::get();
-        // $user_id = $Notification->user_id;
-        // $email = DB::table("users")->where("id", $user_id)->value("email");
+        $Notification = Notification::orderBy('created_at', 'desc')->get();
         return view("admin.Notification.index", compact('Notification'));
     }
 
