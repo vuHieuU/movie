@@ -62,7 +62,8 @@ class NewController extends Controller
 
     public function show(string $id)
     {
-        //
+        $new = News::find($id);
+        return view('admin.news.show', compact('new'));
     }
 
     /**

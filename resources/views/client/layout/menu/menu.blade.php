@@ -195,6 +195,10 @@
                                         </li>
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+                                            <a href="{{ route('history') }}">Lịch sử đặt vé</a>
+                                        </li>
+                                        <li id="menu-item-140"
+                                            class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
                                             <a class href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
