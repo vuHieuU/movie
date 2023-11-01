@@ -41,7 +41,7 @@ Route::get('/weeklyshowtime/{id}', [App\Http\Controllers\client\WeeklyShowtimeCo
 
 
 
-Route::get('/detail_film/{id}', [App\Http\Controllers\client\DetailFilmController::class, 'index'])->name("filmDetail");
+Route::get('/chi-tiet-phim/{id}', [App\Http\Controllers\client\DetailFilmController::class, 'index'])->name("filmDetail");
 
 Route::get('/dang-phat', [App\Http\Controllers\client\DangphatController::class, 'index'])->name("dang-phat");
 Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class, 'index'])->name("sap-ra-mat");
