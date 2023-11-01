@@ -178,7 +178,7 @@
                             @if (Auth()->check())
                                 <li id="menu-item-278"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
-                                    <a href="{{ route('myaccount') }}"><svg xmlns="http://www.w3.org/2000/svg"
+                                    <a href=""><svg xmlns="http://www.w3.org/2000/svg"
                                             height="1em"
                                             viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                             <path
@@ -188,6 +188,10 @@
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
                                             <a href="/admin">Trang quản trị</a>
+                                        </li>
+                                        <li id="menu-item-140"
+                                            class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+                                            <a href="{{ route('myaccount') }}">Trang Cá Nhân</a>
                                         </li>
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
