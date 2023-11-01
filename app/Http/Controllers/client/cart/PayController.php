@@ -124,6 +124,7 @@ class PayController extends Controller
     $ticket->code = date('Ymd-His') . rand(10, 99);
     
     $ticket->save();
+    if($FoodValueName){
     foreach ($FoodValueName as $foodItem) {
         $ticketFood = new ticketFood();
         $ticketFood->ticket_id = $ticket->id;
@@ -131,7 +132,7 @@ class PayController extends Controller
         $ticketFood->quantity = $foodItem['quantity'];
         $ticketFood->save();
     }
-
+    }
     $notification = new Notification();
     $notification->date = $selectedDate;
     $notification->hour = $selectedHour;
@@ -192,6 +193,7 @@ class PayController extends Controller
             $ticket->total = $total;
             $ticket->code = date('Ymd-His') . rand(10, 99);;
             $ticket->save();
+            if($FoodValueName){
             foreach ($FoodValueName as $foodItem) {
                 $ticketFood = new ticketFood();
                 $ticketFood->ticket_id = $ticket->id;
@@ -199,7 +201,7 @@ class PayController extends Controller
                 $ticketFood->quantity = $foodItem['quantity'];
                 $ticketFood->save();
             }
-        
+            }
 
             $selectSeatArray = explode(',', $selectedSeatsValueID);
         
