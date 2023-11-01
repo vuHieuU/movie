@@ -236,10 +236,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('delete/{id}', [App\Http\Controllers\admin\NewController::class, 'destroy'])->name('news.destroy');
     });
      // tổng quan
-     Route::prefix('overview')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\OverviewController::class, 'index'])->name('overview.index');
-       
-    });
+    //  Route::prefix('overview')->group(function () {
+        Route::get('overview', [App\Http\Controllers\admin\OverviewController::class, 'index'])->name('overview');
+        Route::get('overview/{name}', [App\Http\Controllers\admin\OverviewController::class, 'show'])->name('overview.cinema');
+    // });
 
     // cart
     Route::get('/seat-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
