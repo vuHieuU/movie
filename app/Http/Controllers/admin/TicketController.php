@@ -55,12 +55,10 @@ class TicketController extends Controller
         //     ->get();
         $status = Notification::where("tickets_id", $id)->value('status');
         $Notification = Notification::where('tickets_id', $id)->first();
-        if($status){
             if($status==1) {
                 $Notification->status = 2 ;
                 $Notification->save();
                 }
-        }
         $ticket = ticket::with('ticketFoods')->find($id);
 
     //   dd($ticket);

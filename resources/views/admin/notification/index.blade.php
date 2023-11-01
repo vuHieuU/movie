@@ -108,12 +108,12 @@
                           <td>{{ $item->film_name }}</td>
                           <td>{{ $item->updated_at }}</td>
                           <td>
-                              <div class="d-flex align-items-center list-action">
-                                  <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                      href="#"><i class="ri-eye-line mr-0"></i></a>
-                                  <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                      href="{{route("news.destroy",$item->tickets_id)}}" onclick="return confirm('Xóa là không Ctrl lại cuộc đời ?')"><i class="ri-delete-bin-line mr-0"></i></a>
-                              </div>
+                            <div class="d-flex align-items-center list-action">
+                                <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                      href="{{route("show.index",$item->tickets_id)}}"><i class="ri-eye-line mr-0"></i></a>
+                                <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
+                                    href="{{route("news.destroy",$item->id)}}" onclick="return confirm('Xóa là không Ctrl lại cuộc đời ?')"><i class="ri-delete-bin-line mr-0"></i></a>
+                            </div>
                           </td>
                       </tr>
                         @endif
