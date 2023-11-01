@@ -48,6 +48,38 @@ class AuthController extends Controller
         $taitel = "myaccount";
         return view('client.myaccount', compact("taitel","tickit","counttiket","sumtotal","user"));
     }
+
+    public function historyTicket()
+    {
+        $loggedInUser = Auth::user();
+
+        $counttiket = DB::table("users")
+        ->join("tickets", "users.id", "=", "tickets.user_id")
+        ->where('users.id', $loggedInUser->id)
+        ->select("users.id", DB::raw('COUNT(*) as counttiket'))
+        ->groupBy('users.id')
+        ->get();
+
+        $sumtotal = DB::table("users")
+        ->join("tickets", "users.id", "=", "tickets.user_id")
+        ->where('users.id', $loggedInUser->id)
+        ->select("users.id", DB::raw('SUM(total) as sumtotal'))
+        ->groupBy('users.id')
+        ->get();
+        
+        
+        $tickit = DB::table("users")
+        ->join("tickets", "users.id", "=", "tickets.user_id")
+        ->where('users.id', $loggedInUser->id)
+        ->select("users.*" ,"tickets.*")
+        ->get();
+        
+        $user = User::get();
+
+        $taitel = "history";
+        return view('client.HistoryTicket', compact("taitel","tickit","counttiket","sumtotal","user"));
+    }
+
     public function edit()
     {
         $taitel = "Editaccount";

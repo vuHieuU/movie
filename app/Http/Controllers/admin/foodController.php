@@ -58,7 +58,8 @@ class foodController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $food = Food::findOrFail($id);
+        return view('admin.foods.show', compact('food'));
     }
 
     /**

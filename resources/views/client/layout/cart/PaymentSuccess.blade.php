@@ -24,9 +24,12 @@
                         <p><strong>Thời gian:</strong> {{Carbon\Carbon::parse($ticket->selected_date)->format("d/n/Y") }}</p>
                         <p><strong>Giờ chiếu:</strong> {{ $ticket->selected_hour }} </p>
                         <p><strong>Đồ Ăn:</strong> 
-                            @foreach ($FoodValueName as $item) 
+                            @if ($FoodValueName)
+                                
+                                   @foreach ($FoodValueName as $item) 
                                             {{ $item['name'] }} * {{ $item['quantity'] }}
                                     @endforeach
+                            @endif
                         </p>
                     </div>
                 </div>
@@ -37,12 +40,22 @@
                     <div class="card-header bg-success text-white">
                         <h2>Thông Tin Vé</h2>
                     </div>
-                    <div class="card-body">
-                        <p><strong>Mã đơn: </strong>{{ $ticket->code }}</p>
-                        <p><strong>Rạp:</strong> {{ $ticket->cinema }}</p>
-                        <p><strong>Phòng:</strong> {{ $ticket->selected_room }}</p>
-                        <p><strong>Vị trí ghế:</strong> {{ $ticket->selected_seats }}</p>
-                        <p><strong>Tổng Vé:</strong> {{ number_format($ticket->total) }} VND</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                        <div class="card-body">
+                            <p><strong>Mã đơn: </strong>{{ $ticket->code }}</p>
+                            <p><strong>Rạp:</strong> {{ $ticket->cinema }}</p>
+                            <p><strong>Phòng:</strong> {{ $ticket->selected_room }}</p>
+                            <p><strong>Vị trí ghế:</strong> {{ $ticket->selected_seats }}</p>
+                            <p><strong>Tổng Vé:</strong> {{ number_format($ticket->total) }} VND</p>
+                        </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <div style="margin-top: 40px;">
+                            <p>{!! DNS2D::getBarcodeHTML("$ticket->code",'QRCODE',7,7)!!}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

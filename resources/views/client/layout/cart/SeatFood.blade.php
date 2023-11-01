@@ -1250,7 +1250,7 @@
                                                                                                 name="FoodValueName"
                                                                                                 id="FoodValueName"
                                                                                                 value="">
-                                                                                            <input type="text"
+                                                                                            <input type="hidden"
                                                                                                 name="selectedSeatsValueID"
                                                                                                 id="selectedSeatsValueID"
                                                                                                 value="">

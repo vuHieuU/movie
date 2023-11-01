@@ -2,18 +2,24 @@
 
 namespace App\Http\Controllers\client\cart;
 
+use App\Mail\BookTicket;
 use App\Models\film;
 use App\Models\food;
-use App\Models\combo;
+use App\Models\News;
 
+use App\Jobs\SenMail;
+use App\Models\combo;
 use App\Models\ticket;
 use App\Models\ShowTime;
+use App\Models\ticketFood;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Models\showtime_seat;
-use App\Http\Controllers\Controller;
-use App\Models\News;
-use App\Models\ticketFood;
 use Illuminate\Support\Facades\DB;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+
 class PayController extends Controller
 {
     /**
@@ -121,12 +127,24 @@ class PayController extends Controller
     $ticket->code = date('Ymd-His') . rand(10, 99);
     
     $ticket->save();
+    if($FoodValueName){
     foreach ($FoodValueName as $foodItem) {
         $ticketFood = new ticketFood();
         $ticketFood->ticket_id = $ticket->id;
         $ticketFood->name = $foodItem['name'];
         $ticketFood->quantity = $foodItem['quantity'];
         $ticketFood->save();
+    }
+    }
+    $notification = new Notification();
+    $notification->users_id = $user->id;
+    $notification->tickets_id = $ticket->id;
+    $notification->save();
+
+    // SenMail::dispatch($user->email)->delay(now()->addSeconds(10));
+    try {
+        Mail::to($user->email)->send(new BookTicket($ticket));
+    } catch (\Throwable $th) {
     }
 
     $selectSeatArray = explode(',', $selectedSeatsValueID);
@@ -137,7 +155,7 @@ class PayController extends Controller
                session()->forget('applied_coupon');
 
 
-    return redirect()->route('success',['film_id' => $ShowTime->id]); 
+    return redirect()->route('success',['film_id' => $ShowTime->id]);
 
     }
 
@@ -173,6 +191,7 @@ class PayController extends Controller
             $ticket->total = $total;
             $ticket->code = date('Ymd-His') . rand(10, 99);;
             $ticket->save();
+            if($FoodValueName){
             foreach ($FoodValueName as $foodItem) {
                 $ticketFood = new ticketFood();
                 $ticketFood->ticket_id = $ticket->id;
@@ -180,7 +199,8 @@ class PayController extends Controller
                 $ticketFood->quantity = $foodItem['quantity'];
                 $ticketFood->save();
             }
-        
+            }
+
             $selectSeatArray = explode(',', $selectedSeatsValueID);
         
             showtime_seat::where('showtime_id',$selectedShowTimeId)

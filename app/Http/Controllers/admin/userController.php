@@ -45,7 +45,7 @@ class userController extends Controller
         $user = User::create($usersCreate);
         $modelType = $user->getMorphClass();
         $user->roles()->attach($usersCreate['role_ids'] ?? [],['model_type' => $modelType]);
-        return redirect('admin/index');
+        return redirect()->route('index_admin');
     }
 
     /**
@@ -53,7 +53,9 @@ class userController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::FindOrFail($id);
+        $role = Role::all()->groupBy('group');
+        return view('admin.users.show',compact('user','role'));
     }
 
     /**
@@ -78,7 +80,7 @@ class userController extends Controller
         }
         $user->update($userUpdate);
         $user->roles()->sync($userUpdate['role_ids'] ?? []);
-        return redirect('user/index');
+        return redirect()->route('index_user');
     }
 
     public function edit_admin(string $id)
@@ -100,7 +102,7 @@ class userController extends Controller
         }
         $modelType = $user->getMorphClass();
         $user->roles()->sync($userUpdate['role_ids'] ?? [], ['model_type' => $modelType]);        
-        return redirect('admin/index');
+        return redirect()->route('index_admin');
     }
 
     /**
@@ -110,7 +112,13 @@ class userController extends Controller
     {
         $user = User::FindOrFail($id);
         $user->delete($id);
-        return redirect('user/index');
+        return redirect()->route('index_user');
+    }
+    public function destroy_admin(string $id)
+    {
+        $user = User::FindOrFail($id);
+        $user->delete($id);
+        return redirect()->route('index_admin');
     }
 
 }

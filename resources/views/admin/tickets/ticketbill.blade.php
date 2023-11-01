@@ -51,33 +51,37 @@
                     </div>
                     <hr class="mt-0">
                     <div class="row">
-                        <div class="col-sm-5"> <strong>Chi tiết vé phim:</strong>
+                        <div class="col-sm-4"> <strong>Chi tiết vé phim:</strong>
                             <address>
 
                                 {{ $ticket->cinema }}<br />
                                 {{ $ticket->film_name }}<br />
+                                {{ $ticket->selected_room }}
                             </address>
                         </div>
-                        <div class="col-sm-7">
+                        <div class="col-sm-6">
                             <div class="row">
-                                <div class="col-sm-4"> <strong>Ngày:</strong>
+                                <div class="col-sm-5"> <strong>Ngày:</strong>
                                     <p>{{ Carbon\Carbon::parse($ticket->selected_date)->format('d/m/Y') }}</p>
 
                                 </div>
-                                <div class="col-sm-4"> <strong>Thời gian:</strong>
+                                <div class="col-sm-5"> <strong>Thời gian:</strong>
                                     <p>{{ $ticket->selected_hour }}</p>
                                 </div>
-                                <div class="col-sm-4"> <strong>Phòng:</strong>
+                                <!-- <div class="col-sm-4"> <strong>Phòng:</strong>
                                     <p>{{ $ticket->selected_room }}</p>
-                                </div>
-                                <div class="col-sm-4"> <strong>Mã hóa đơn:</strong>
+                                </div> -->
+                                <div class="col-sm-5"> <strong>Mã hóa đơn:</strong>
                                     <p>{{ $ticket->code }}</p>
                                 </div>
-                                <div class="col-sm-4"> <strong>Thanh toán:</strong>
+                                <div class="col-sm-5"> <strong>Thanh toán:</strong>
                                     <p>VnPay</p>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
+                        <div class="col-sm-2" style="margin-top: -15px;">
+                                <p>{!! DNS2D::getBarcodeHTML("$ticket->code",'QRCODE',5,5)!!}</p>
+                            </div>
                     </div>
                     <div class="card">
 
