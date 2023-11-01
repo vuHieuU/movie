@@ -830,6 +830,7 @@
                                                                                         let totalFoodPrice = 0; // Đặt biến totalFoodPrice ở mức toàn cục
                                                                                         const selectedFoodNames = [];
                                                                                         const foodQuantities = {};
+                                                                                        const selectedSeatPrices = [];
 
                                                                                         function toggleSeat(seat) {
                                                                                             const seatNumber = seat.textContent.trim(); // Lấy seat_number từ nội dung của phần tử
@@ -839,16 +840,21 @@
                                                                                             if (selectedSeats.includes(seatNumber)) {
                                                                                                 selectedSeats.splice(selectedSeats.indexOf(seatNumber), 1);
                                                                                                 seat.classList.remove("selected");
+                                                                                                const priceIndex = selectedSeatPrices.indexOf(seatPrice);
+                                                                                                if (priceIndex !== -1) {
+                                                                                                    selectedSeatPrices.splice(priceIndex, 1);
+                                                                                                }
                                                                                             } else if (selectedSeats.length < maxSeats) {
                                                                                                 selectedSeats.push(seatNumber);
                                                                                                 seat.classList.add("selected");
+                                                                                                selectedSeatPrices.push(seatPrice);
                                                                                             } else {
                                                                                                 alert("Bạn chỉ được chọn tối đa 8 ghế.");
                                                                                             }
 
                                                                                             updateSelectedSeatsList();
                                                                                             selectedSeatsValueInput(); // Cập nhật giá trị trường input
-                                                                                            updateTotalPrice(selectedSeats, seatPrice);
+                                                                                            updateTotalPrice(selectedSeatPrices);
                                                                                             // Thay đổi mã để lưu ID của ghế đã chọn
                                                                                             if (selectedSeatIds.includes(seatId)) {
                                                                                                 selectedSeatIds.splice(selectedSeatIds.indexOf(seatId), 1);
@@ -874,12 +880,15 @@
 
 
 
-                                                                                        function updateTotalPrice(selectedSeats, seatPrice) {
+                                                                                        function updateTotalPrice(selectedSeatPrices) {
                                                                                             const totalPriceSpan = document.getElementById("total-price");
                                                                                             const selectedPriceSeatsValue = document.getElementById("selectedPriceSeatsValue");
-                                                                                            const total = selectedSeats.reduce((acc, seatNumber) => {
-                                                                                                return acc + seatPrice;
-                                                                                            }, 0);
+
+                                                                                            function sumArrayElements(arr) {
+                                                                                                const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+                                                                                                return sum;
+                                                                                            }
+                                                                                            const total = sumArrayElements(selectedSeatPrices);
                                                                                             totalPriceSpan.textContent = total.toLocaleString();
                                                                                             selectedPriceSeatsValue.value = total;
 
