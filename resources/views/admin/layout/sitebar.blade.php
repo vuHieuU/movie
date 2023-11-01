@@ -405,11 +405,11 @@
                                         <div class="cust-title p-3">
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <h5 class="mb-0">Notifications</h5>
-                                                <a class="badge badge-primary badge-card" href="#">3</a>
+                                                <a class="badge badge-primary badge-card" href="#">{{\App\Models\Notification::where('status',1)->count()}}</a>
                                             </div>
                                         </div>
                                         <div class="px-3 pt-0 pb-0 sub-card">
-                                            @foreach (\App\Models\Notification::orderBy('created_at', 'desc')->take(3)->get() as $item)
+                                            @foreach (\App\Models\Notification::where('status',1)->orderBy('created_at', 'desc')->take(3)->get() as $item)
                                         
                                             <div class="px-3 pt-0 pb-0 sub-card">
                                                 <a href="{{route("show.index",$item->tickets_id)}}" class="iq-sub-card">
