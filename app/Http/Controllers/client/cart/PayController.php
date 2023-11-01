@@ -137,17 +137,8 @@ class PayController extends Controller
     }
     }
     $notification = new Notification();
-    $notification->date = $selectedDate;
-    $notification->hour = $selectedHour;
-    $notification->seats = $selectedSeatsValue;
-    $notification->film_name = $ShowTime->name;
-    $notification->user_email =  $user->email;
-    $notification->cinema = $cinemaName;
-    $notification->food = $foodItem['name'];
-    $notification->coupon_code = $couponCode;
-    $notification->total = $total;
-    $notification->code = date('Ymd-His') . rand(10, 0);
-    // dd($notification);
+    $notification->users_id = $user->id;
+    $notification->tickets_id = $ticket->id;
     $notification->save();
 
     // SenMail::dispatch($user->email)->delay(now()->addSeconds(10));

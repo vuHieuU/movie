@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Notification;
 use App\Models\ticket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -52,6 +53,14 @@ class TicketController extends Controller
         //     ->select('tickets.*', 'ticket_food.*')
         //     ->where('tickets.id', $id)
         //     ->get();
+        $status = Notification::where("tickets_id", $id)->value('status');
+        $Notification = Notification::where('tickets_id', $id)->first();
+        if($status){
+            if($status==1) {
+                $Notification->status = 2 ;
+                $Notification->save();
+                }
+        }
         $ticket = ticket::with('ticketFoods')->find($id);
 
     //   dd($ticket);

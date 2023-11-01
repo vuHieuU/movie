@@ -416,10 +416,9 @@
                                                     <div class="media align-items-center cust-card py-3 border-bottom">
                                                         <div class="media-body ml-3">
                                                             <div class="d-flex align-items-center justify-content-between">
-                                                                <p class="mb-0">{{$item->film_name}} đã đặt vé xem phim vào lúc</p>
-                                                                
+                                                                <a href="{{route("show.index",$item->tickets_id)}}">Đã có phim được đặt vé vào lúc {{$item->created_at}}</a>
                                                             </div>
-                                                            <small class="mb-0">{{$item->created_at}}</small>
+                                                         
                                                         </div>
                                                     </div>
                                                 </a>
