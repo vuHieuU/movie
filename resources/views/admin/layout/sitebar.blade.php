@@ -412,13 +412,14 @@
                                             @foreach (\App\Models\Notification::orderBy('created_at', 'desc')->take(3)->get() as $item)
                                         
                                             <div class="px-3 pt-0 pb-0 sub-card">
-                                                <a href="#" class="iq-sub-card">
+                                                <a href="{{route("show.index",$item->tickets_id)}}" class="iq-sub-card">
                                                     <div class="media align-items-center cust-card py-3 border-bottom">
                                                         <div class="media-body ml-3">
                                                             <div class="d-flex align-items-center justify-content-between">
-                                                                <a href="{{route("show.index",$item->tickets_id)}}">Đã có phim được đặt vé vào lúc {{$item->created_at}}</a>
+                                                                <p class="mb-0">Đã có phim được đặt vé vào lúc</p>
+                                                                
                                                             </div>
-                                                         
+                                                            <small class="mb-0">{{$item->created_at}}</small>
                                                         </div>
                                                     </div>
                                                 </a>
