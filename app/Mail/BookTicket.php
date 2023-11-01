@@ -16,9 +16,10 @@ class BookTicket extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public $ticket;
+    public function __construct($ticket)
     {
-        //
+        $this->ticket = $ticket;
     }
 
     /**

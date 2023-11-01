@@ -2,21 +2,24 @@
 
 namespace App\Http\Controllers\client\cart;
 
+use App\Mail\BookTicket;
 use App\Models\film;
 use App\Models\food;
-use App\Models\combo;
-
-use App\Models\Notification;
-use App\Models\ticket;
-use App\Models\ShowTime;
-use Illuminate\Http\Request;
-use App\Models\showtime_seat;
-use App\Http\Controllers\Controller;
 use App\Models\News;
-use App\Models\ticketFood;
-use Illuminate\Support\Facades\DB;
 
 use App\Jobs\SenMail;
+use App\Models\combo;
+use App\Models\ticket;
+use App\Models\ShowTime;
+use App\Models\ticketFood;
+use App\Models\Notification;
+use Illuminate\Http\Request;
+use App\Models\showtime_seat;
+use Illuminate\Support\Facades\DB;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+
 class PayController extends Controller
 {
     /**
@@ -147,7 +150,11 @@ class PayController extends Controller
     // dd($notification);
     $notification->save();
 
-    SenMail::dispatch($user->email)->delay(now()->addSeconds(10));
+    // SenMail::dispatch($user->email)->delay(now()->addSeconds(10));
+    try {
+        Mail::to($user->email)->send(new BookTicket($ticket));
+    } catch (\Throwable $th) {
+    }
 
     $selectSeatArray = explode(',', $selectedSeatsValueID);
 
