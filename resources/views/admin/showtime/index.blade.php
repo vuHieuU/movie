@@ -69,7 +69,7 @@
                               </td>
                               <td>{{ $item->film->name }}</td>
                               <td>{{ $item->cinema->name }}</td>
-                              <td>{{ $item->created_at->format("d-m-Y") }}</td>
+                              <td>{{ $item->day }}</td>
                               <td>{{ $item->hour }}</td>
                             
                               <td>
