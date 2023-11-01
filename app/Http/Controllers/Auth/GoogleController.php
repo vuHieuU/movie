@@ -21,20 +21,22 @@ class GoogleController extends Controller
         $existingUser = User::where('email', $user->email)->first();
 
         if ($existingUser) {
-            // Địa chỉ email đã tồn tại
-            return redirect()->route('register')->with('message', 'Địa chỉ email từ Google đã được sử dụng. Vui lòng sử dụng tài khoản đã đăng ký.');
+            // Đăng nhập người dùng hiện có
+            auth()->login($existingUser, true);
+            return redirect()->route('home');
         } else {
+            // Tạo một tài khoản mới nếu email chưa tồn tại
             $newUser = new User([
                 'name' => $user->name,
                 'email' => $user->email,
                 'password' => bcrypt('randompassword'), // Hoặc có thể tạo mật khẩu ngẫu nhiên
             ]);
             $newUser->save();
+
+            // Đăng nhập người dùng mới
+            auth()->login($newUser, true);
+
+            return redirect()->route('home');
         }
-
-        // Đăng nhập người dùng (bất kể người dùng là tài khoản hiện có hoặc mới)
-        auth()->login($newUser, true);
-
-        return redirect()->route('home');
     }
 }

@@ -27,7 +27,7 @@ class filmsRequest extends FormRequest
             'name' => 'required|string',
             'duration' => 'required|numeric',
             'description' => 'required|string',
-            'thumb' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048|dimensions:width=200,height=314',
+            'thumb' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048|dimensions:max-width=200,max-height=314',
             'director' => 'required|string',
             'actor' => 'required|string',
             'language' => 'required|string',

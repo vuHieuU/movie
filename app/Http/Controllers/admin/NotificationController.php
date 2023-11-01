@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Notification;
+use App\Models\ticket;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,12 +16,10 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        $Notification = Notification::join('users','Notifications.users_id','=','users.id')
-        ->join('tickets','Notifications.tickets_id','=','tickets.id')
-        ->select('users.*','tickets.*','Notifications.*')
-        ->orderBy('Notifications.updated_at','desc')
-        ->get();
-return view("admin.Notification.index", compact('Notification'));
+        $Notification = Notification::get();
+        // $user_id = $Notification->user_id;
+        // $email = DB::table("users")->where("id", $user_id)->value("email");
+        return view("admin.Notification.index", compact('Notification'));
     }
 
     /**
@@ -44,6 +43,8 @@ return view("admin.Notification.index", compact('Notification'));
      */
     public function show(string $id)
     {
+        $tickit = ticket::find($id);
+        return view("admin.tickits.tickitbill", compact("tickit"));
         //
     }
 
@@ -68,6 +69,9 @@ return view("admin.Notification.index", compact('Notification'));
      */
     public function destroy(string $id)
     {
-        //
+        $ticket = ticket::find($id);
+        $ticket->delete();
+        return redirect()->route("ticket.index")->with('success', 'tickit delete successfully');
+        //    }
     }
 }
