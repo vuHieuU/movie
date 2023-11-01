@@ -215,6 +215,23 @@
                    
                 </ul>
             </li>
+            <li class=" ">
+                <a href="#setting" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="ml-4">Cài đặt</span>
+                    <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                    </svg>
+                </a>
+                <ul id="setting" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                    <li class="">
+                        <a href="{{ route('smtp_settings.index') }}">
+                            <i class="las la-minus"></i><span>Cài đặt SMTP</span>
+                        </a>
+                    </li>
+                   
+                </ul>
+            </li>
 {{-- @endcan --}}
             </ul>
         </nav>
