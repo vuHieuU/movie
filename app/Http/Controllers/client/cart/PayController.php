@@ -157,7 +157,7 @@ class PayController extends Controller
                session()->forget('applied_coupon');
 
 
-    return redirect()->route('success',['film_id' => $showTime->id]);
+    return redirect()->route('success',['film_id' => $ShowTime->id]);
 
     }
 
