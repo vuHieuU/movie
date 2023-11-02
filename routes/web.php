@@ -255,11 +255,11 @@ Route::middleware(['auth'])->group(function () {    //profile của user
         Route::post('update/{id}', [App\Http\Controllers\admin\NewController::class, 'update'])->name('news.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\NewController::class, 'destroy'])->name('news.destroy');
     });
+    
      // tổng quan
-     Route::prefix('overview')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\OverviewController::class, 'index'])->name('overview.index');
-       
-    });
+        Route::get('overview', [App\Http\Controllers\admin\OverviewController::class, 'index'])->name('overview');
+        Route::get('overview/{name}', [App\Http\Controllers\admin\OverviewController::class, 'show'])->name('overview.cinema');
+
 
     //setting
     Route::get('/smtp-settings',[App\Http\Controllers\admin\SettingController::class,'smtp_settings'])->name('smtp_settings.index');
