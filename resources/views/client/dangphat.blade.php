@@ -649,29 +649,45 @@
 
                                                                                             @endphp
                                                                                             <div
-                                                                                                class="showtime-item single-cinema">
+                                                                                                class="showtime-item single-cinema" style="padding: 20px">
+                                                                                                @php
+                                                                                                    $uniqueDates = [];
+                                                                                                @endphp
                                                                                                 @forelse ($Showtime as $item)
+                                                                                                @if (!in_array($item->day, $uniqueDates))                                                                                           
                                                                                                     @php
+                                                                                                         $uniqueDates[] = $item->day;
                                                                                                         $ngayTuDatabase = $item->day;
                                                                                                         $carbonDate = Carbon\Carbon::parse($ngayTuDatabase);
-                                                                                                        $formattedDate = $carbonDate->format('\N\g\à\y d \T\h\á\n\g m \N\ă\m Y');
+                                                                                                        $formattedDate = $carbonDate->format('d/m/Y');
                                                                                                     @endphp
-
+                                                                                                    
                                                                                                     <div class="st-item">
                                                                                                         <div
                                                                                                             class="st-title">
                                                                                                             <label>{{ $formattedDate }}</label>
                                                                                                         </div>
                                                                                                         <ul>
-                                                                                                            <li>{{$item->hour}}</li>
+                                                                                                            @foreach ($Showtime as $item)
+                                                                                                                    
+        
+                                                                                                                <li>{{ $item->hour }}</li> 
+                                                                                                                @endforeach
+                                                                                                            </li>
                                                                                                         </ul>
                                                                                                     </div>
+                                                                                                    @endif
                                                                                                 @empty
                                                                                                     <div class="st-item">
-                                                                                                        <span class="text-center text-bold">Không có lịch chiếu phim</span>
+                                                                                                        <span
+                                                                                                            class="text-center text-bold">Không
+                                                                                                            có lịch chiếu
+                                                                                                            phim</span>
                                                                                                     </div>
                                                                                                 @endforelse
                                                                                             </div>
+
+
                                                                                         </div>
                                                                                     </div>
                                                                                 @endforeach

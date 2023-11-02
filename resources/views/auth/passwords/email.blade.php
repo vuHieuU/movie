@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en-US">
 <!--[if IE]><![endif]-->
@@ -15,7 +11,7 @@
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
@@ -96,8 +92,9 @@
     <link rel='stylesheet' id='wp-block-library-css'
         href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7'
         type='text/css' media='all' />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <style id='global-styles-inline-css' type='text/css'>
         body {
             --wp--preset--color--black: #000000;
@@ -476,18 +473,18 @@
 
 
 
-{{-- csss login --}}
+    {{-- csss login --}}
 
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/plugincss.css?1681350496696" rel="stylesheet"
-type="text/css" media="all" />
+    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/plugincss.css?1681350496696" rel="stylesheet"
+        type="text/css" media="all" />
 
 
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/main.scss.css?1681350496696" rel="stylesheet"
-type="text/css" media="all" />
+    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/main.scss.css?1681350496696" rel="stylesheet"
+        type="text/css" media="all" />
 
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/account_oder_style.scss.css?1681350496696"
-rel="stylesheet" type="text/css" media="all" />
-{{-- csss login --}}
+    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/account_oder_style.scss.css?1681350496696"
+        rel="stylesheet" type="text/css" media="all" />
+    {{-- csss login --}}
 
 </head>
 
@@ -497,89 +494,83 @@ rel="stylesheet" type="text/css" media="all" />
 
         @extends('client.layout.main.main')
         @section('contact')
+            <div class="main-index">
 
 
- <div class="main-index">
+                <div class="page-content-account mt-5">
+                    <div class="container">
+                        <div class="row">
 
 
-        <div class="page-content-account mt-5">
-            <div class="container">
-                <div class="row">
-                    
+                            <div class="page-content-account">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+                                            <div class="d-group">
+                                                <div class="left-col">
+                                                    <div class="group-login group-log">
 
-                              <div class="page-content-account">
-                                  <div class="container">
-                                      <div class="row">
-                                          <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-                                              <div class="d-group">
-                                                  <div class="left-col">
-                                                      <div class="group-login group-log">
-                                                        
-                                                            <h2 class="mb-5">
-                                                                Quên mật khẩu
-                                                            </h2>
-                                                            <p class="description">
-                                                                Chúng tôi sẽ gửi cho bạn một email để kích hoạt việc đặt lại mật khẩu.
-                                                            </p>
-                                                            <form method="post" action="{{ route('password.email') }}" id="recover_customer_password"
-                                                                accept-charset="UTF-8"><input name="FormType" type="hidden"
-                                                                    value="recover_customer_password" /><input name="utf8" type="hidden"
-                                                                    value="true" />
-                                                               
-                        @csrf
-                                                                <fieldset class="form-group ">
-                                                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                                        <h2 class="mb-5">
+                                                            Quên mật khẩu
+                                                        </h2>
+                                                        <p class="description">
+                                                            Chúng tôi sẽ gửi cho bạn một email để kích hoạt việc đặt lại mật
+                                                            khẩu.
+                                                        </p>
+                                                        <form method="post" action="{{ route('password.email') }}"
+                                                            id="recover_customer_password" accept-charset="UTF-8"><input
+                                                                name="FormType" type="hidden"
+                                                                value="recover_customer_password" /><input name="utf8"
+                                                                type="hidden" value="true" />
 
-                                                                    @error('email')
-                                                                        <span class="invalid-feedback" role="alert">
-                                                                            <strong>{{ $message }}</strong>
-                                                                        </span>
-                                                                  
+                                                            @csrf
+                                                            <fieldset class="form-group ">
+                                                                <input id="email" type="email"
+                                                                    class="form-control @error('email') is-invalid @enderror"
+                                                                    name="email" value="{{ old('email') }}" required
+                                                                    autocomplete="email" autofocus>
+
+                                                                @error('email')
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                        <strong>{{ $message }}</strong>
+                                                                    </span>
                                                                 @enderror
-                                                                </fieldset>
-                                                                <button class="btn-login" type="submit" value="Gửi Yêu Cầu">Gửi Yêu Cầu</button>
-                                                                <a href="/login" class="btn-ref mt-5"
-                                                                  >Hủy</a>
-                                                            </form>
-                                                        </div>
-                                                   
-                                                 
-                                                  </div>
-                                                  <div class="right-col">
-                                                      <h4>
-                                                          Quyền lợi với thành viên
-                                                      </h4>
-                                                      <div>
-                                                          <p>Vận chuyển siêu tốc</p>
-                                                          <p>Sản phẩm đa dạng </p>
-                                                          <p>Đổi trả dễ dàng</p>
+                                                            </fieldset>
+                                                            <button class="btn-login mb-3" type="submit"
+                                                                value="Gửi Yêu Cầu">Gửi Yêu Cầu</button>
+                                                            <a href="/login" class="btn-ref mt-5 " >Hủy</a>
+                                                        </form>
+                                                    </div>
 
-                                                          <p>Được giảm giá cho lần đặt vé tiếp theo lên đến 10% </p>
-                      
-                                                      </div>
-                                                      <a href="/register" class="btn-register-default">Đăng ký</a>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                      
-                      
+
+                                                </div>
+                                                <div class="right-col">
+                                                    <h4>
+                                                        Quyền lợi với thành viên
+                                                    </h4>
+                                                    <div>
+                                                        <p>Vận chuyển siêu tốc</p>
+                                                        <p>Sản phẩm đa dạng </p>
+                                                        <p>Đổi trả dễ dàng</p>
+
+                                                        <p>Được giảm giá cho lần đặt vé tiếp theo lên đến 10% </p>
+
+                                                    </div>
+                                                    <a href="/register" class="btn-register-default">Đăng ký</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
             </div>
-        </div>
-
-
-       
-    </div>
-
-    </div>
-           
-          
-
-
-
-
-
-
         @endsection
