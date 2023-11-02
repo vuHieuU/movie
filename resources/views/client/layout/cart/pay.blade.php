@@ -12,64 +12,64 @@
     <link rel="stylesheet" href="/template/assets/css/pay.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <style type="text/css">
-            body {
-                font-family: "Roboto Condensed";
-                color: #333;
-                font-weight: normal;
-                font-size: 14px;
-            }
-    
-            #amy-site-nav .sub-menu .menu-item a {
-                font-family: "Roboto Condensed";
-                font-weight: 700;
-                font-size: 15px;
-            }
-    
-            h1 {
-                font-family: "Roboto Condensed";
-                color: #333;
-                font-weight: 700;
-                font-size: 36px;
-            }
-    
-            h2 {
-                font-family: "Roboto Condensed";
-                color: #333;
-                font-weight: 700;
-                font-size: 30px;
-            }
-    
-            h3 {
-                font-family: "Roboto Condensed";
-                color: #333;
-                font-weight: 700;
-                font-size: 24px;
-            }
-    
-            h4 {
-                font-family: "Roboto Condensed";
-                color: #333;
-                font-weight: 700;
-                font-size: 18px;
-            }
-    
-            h5 {
-                font-family: "Roboto Condensed";
-                color: #333;
-                font-weight: 700;
-                font-size: 14px;
-            }
-    
-            .amy-site-footer {
-                background-color: #606060;
-            }
-    
-            #amy-page-header {
-                background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
-            }
-        </style> 
-    
+    <style type="text/css">
+        body {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        #amy-site-nav .sub-menu .menu-item a {
+            font-family: "Roboto Condensed";
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        h1 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 36px;
+        }
+
+        h2 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        h3 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        h4 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        h5 {
+            font-family: "Roboto Condensed";
+            color: #333;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .amy-site-footer {
+            background-color: #606060;
+        }
+
+        #amy-page-header {
+            background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
+        }
+    </style>
+
 </head>
 
 <body style="font-family: roboto; border: 0">
@@ -215,7 +215,8 @@
                                             <th class="cs-width_1 cs-semi_bold cs-primary_color">STT</th>
                                             <th class="cs-width_3 cs-semi_bold cs-primary_color">Dịch vụ</th>
                                             <th class="cs-width_2 cs-semi_bold cs-primary_color">Giờ</th>
-                                            <th class="cs-width_2 cs-semi_bold cs-primary_color cs-text_right ">Thành tiền</th>
+                                            <th class="cs-width_2 cs-semi_bold cs-primary_color cs-text_right ">Thành tiền
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -223,11 +224,11 @@
                                             <td>01</td>
                                             <td>Food</td>
                                             <td>
-                                                 @if ($FoodValueName)
-                                                 @foreach ($FoodValueName as $item) 
-                                                 {{ $item['name'] }} * {{ $item['quantity'] }}
-                                            @endforeach
-                                                 @endif
+                                                @if ($FoodValueName)
+                                                    @foreach ($FoodValueName as $item)
+                                                        {{ $item['name'] }} * {{ $item['quantity'] }}
+                                                    @endforeach
+                                                @endif
                                             </td>
                                             <td class="cs-text_right cs-primary_color">
                                                 {{ number_format($totalPriceFoodValue) }} VNĐ</td>
@@ -291,7 +292,8 @@
                                                     <input type="text" class="form-control " name="coupon_code"
                                                         placeholder="Nhập mã giảm giá">
                                                 </div>
-                                                <button type="submit" class="btn  mt-3" style="background-color: #FE7900;color: aliceblue">Áp dụng</button>
+                                                <button type="submit" class="btn  mt-3"
+                                                    style="background-color: #FE7900;color: aliceblue">Áp dụng</button>
                                             </form>
 
                                         </div>
@@ -315,48 +317,49 @@
 
 
 
-<form action="{{ url('/vnpay_payment/' . $ShowTime->id ) }}" method="post">
+                    <form action="{{ url('/vnpay_payment/' . $ShowTime->id) }}" method="post">
 
-    @csrf
-   
-    <div class="mb-5 " >
-        <input type="hidden" name="total" value="{{ $total }}">
-        <button  class="btn btn-outline-primary  fs-3 px-5 py-2 w-25" value="thanh toán vnpay" name="redirect"
-            type="submit">Thanh toán bằng Vnpay </button>
-    </div>
-   
-</form>
+                        @csrf
 
+                        <div class="mb-5 ">
+                            <input type="hidden" name="total" value="{{ $total }}">
+                            <button class="btn btn-outline-primary  fs-3 px-5 py-2 w-25" value="vnpay"
+                                name="redirect" type="submit">Thanh toán bằng Vnpay </button>
+                        </div>
 
-        
-
-<div class="mb-5">
-    <input type="checkbox" class="d-none" id="paymentCheckbox">
-    <label class="btn btn-outline-primary paymentMethod fs-3 px-5 py-2 w-25" for="paymentCheckbox">Thanh toán tại quầy</label>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        var paymentCheckbox = $('#paymentCheckbox');
-        var paymentLabel = $('label[for="paymentCheckbox"]');
-
-        paymentCheckbox.change(function () {
-            if (paymentCheckbox.is(':checked')) {
-                paymentLabel.addClass('active');
-            } else {
-                paymentLabel.removeClass('active');
-            }
-        });
-    });
-</script>
+                    </form>
 
 
 
 
+                    <div class="mb-5">
+                        <input type="checkbox" class="d-none" id="paymentCheckbox" value="the_counter">
+                        <label class="btn btn-outline-primary paymentMethod fs-3 px-5 py-2 w-25" for="paymentCheckbox">Thanh
+                            toán tại quầy</label>
+                    </div>
 
-   <div class="cs-border cs-mb30 mt-5"></div>
-   
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                            var paymentCheckbox = $('#paymentCheckbox');
+                            var paymentLabel = $('label[for="paymentCheckbox"]');
+
+                            paymentCheckbox.change(function() {
+                                if (paymentCheckbox.is(':checked')) {
+                                    paymentLabel.addClass('active');
+                                } else {
+                                    paymentLabel.removeClass('active');
+                                }
+                            });
+                        });
+                    </script>
+
+
+
+
+
+                    <div class="cs-border cs-mb30 mt-5"></div>
+
 
 
 
@@ -415,7 +418,9 @@
                                                         class="btn text-white btn-block px-5 py-2 fs-3"> Quay lại</a>
                                                 </div>
                                                 <div class="col-md-5">
-                                                    <form action="{{ route('payment_success', ['film_id' => $ShowTime->id]) }}" method="post">
+                                                    <form
+                                                        action="{{ route('payment_success', ['film_id' => $ShowTime->id]) }}"
+                                                        method="post">
                                                         @csrf
                                                         <button type="submit" style="background-color: #FE7900;"
                                                             class="btn text-white btn-block px-5 py-2 fs-3"> Thanh
@@ -443,4 +448,3 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
         </script>
     @endsection
-    

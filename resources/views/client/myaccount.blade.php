@@ -94,7 +94,7 @@
                                                     <p class="fs-4 text-gray">Tên người dùng</p>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p class="fs-3">{{Auth::User()->name}}</p>
+                                                    <p class="fs-3">{{ Auth::User()->name }}</p>
                                                 </div>
                                                 <div class="col-md-4  text-center">
                                                   
@@ -106,7 +106,7 @@
                                                     <p class="fs-4 text-gray">Giới tính</p>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p class="fs-3">{{Auth::User()->gender}}</p>
+                                                    <p class="fs-3">{{ Auth::User()->gender }}</p>
                                                 </div>
                                                 <div class="col-md-4 text-center">
                                                   
@@ -126,7 +126,7 @@
                                                     <p class="fs-4 text-gray">Email</p>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p class="fs-3">{{Auth::User()->email}}</</p>
+                                                    <p class="fs-3">{{ Auth::User()->email }}</</p>
                                                 </div>
                                                 <div class="col-md-4">
                                                  
@@ -138,7 +138,7 @@
                                                     <p class="fs-4 text-gray">Số điện thoại</p>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p class="fs-3">{{Auth::User()->phone}}</</p>
+                                                    <p class="fs-3">{{ Auth::User()->phone }}</</p>
                                                 </div>
                                                 <div class="col-md-4">
                                                  
@@ -149,7 +149,7 @@
                                                     <p class="fs-4 text-gray">Address</p>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p class="fs-3">{{Auth::User()->address}}</p>
+                                                    <p class="fs-3">{{ Auth::User()->address }}</p>
                                                 </div>
                                                 <div class="col-md-4">
                                                  
@@ -180,8 +180,7 @@
                                                         @foreach ($sumtotal as $item)
                                                             
                                                        
-                                                        <h5 class="mb-2 mt-3 icon-text-warning">{{ number_format($item->sumtotal)}}</h5> 
-                                                        @endforeach
+                                                        <h5 class="mb-2 mt-3 icon-text-warning">{{ number_format($item->sumtotal) }}</h5> @endforeach
                                                         <p class="mb-0">Tổng chi tiêu</p>
                                                     </div>
                                                     <div class="profile-info col-xl-3 col-lg-6">
@@ -195,8 +194,8 @@
                                                             </svg>
                                                         </div>
                                                         @foreach ($counttiket as $item)
-                                                        <h5 class="mb-2 mt-3 icon-text-info">{{$item->counttiket}}</h5>
-                                                        @endforeach
+<h5 class="mb-2 mt-3 icon-text-info">{{ $item->counttiket }}</h5>
+@endforeach
                                                         <p class="mb-0">Vé đã đặt</p>
                                                     </div>
                                                     <div class="profile-info col-xl-3 col-lg-6">
@@ -209,11 +208,20 @@
                                                                     fill="#e83e8c" />
                                                             </svg>
                                                         </div>
-                                                       
-                                                       
-                                                        <h5 class="mb-2 mt-3 icon-text-danger">35+</h5> 
-                                                       
-                                                        <p class="mb-0">Experience</p>
+                                                        @foreach ($sumtotal as $item)
+@if ($item->sumtotal >= "0" && $item->sumtotal <= "500000")
+<h5 class="mb-2 mt-3 icon-text-warning">Thành viên</h5>
+@elseif ($item->sumtotal > "500000" && $item->sumtotal <= "1000000")
+<h5 class="mb-2 mt-3 icon-text-warning">Thành viên Bạc</h5>
+@elseif ($item->sumtotal > "1000000" && $item->sumtotal <= "3000000")
+<h5 class="mb-2 mt-3 icon-text-warning">Thành viên Vàng</h5>
+@elseif ($item->sumtotal > "3000000" && $item->sumtotal <= "5000000")
+<h5 class="mb-2 mt-3 icon-text-warning">Thành viên Vip</h5>
+@else
+<h5 class="mb-2 mt-3 icon-text-warning">Thành viên Siêu vip</h5>
+@endif
+@endforeach
+                                                        <p class="mb-0">Hạng thẻ</p>
                                                     </div>
                                                     <div class="profile-info col-xl-3 col-lg-6">
                                                         <div class="profile-icon icon m-auto rounded bg-success">
@@ -260,9 +268,7 @@
                                                 </thead>
                                                 <tbody class="ligth-body">
                                                     @foreach ($tickit as $item)
-                                                        
-                                                   
-                                                    <tr>
+<tr>
                                                         
                                                         <td>{{ $item->code }}</td>
                                                         <td>{{ $item->name }}</td>
@@ -276,63 +282,57 @@
                                                         <td>{{ $item->selected_hour }}</td>
                                                         <td>{{ $item->selected_seats }}</td>
                                                     
-                                                        <td>{{number_format( $item->total) }} VND</td>
+                                                        <td>{{ number_format($item->total) }} VND</td>
                                                         
                                                     </tr>
-                                                    @endforeach
+@endforeach
                                                 </tbody>
                                             </table>
                                         </div>
 
                                         <!-- Page end  -->
-                                    </div>
-                                    <!-- Modal Edit -->
-                                    <div class="modal fade" id="edit-note" tabindex="-1" role="dialog"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                    <div class="popup text-left">
-                                                        <div class="media align-items-top justify-content-between">
-                                                            <h3 class="mb-3">Product</h3>
-                                                            <div class="btn-cancel p-0" data-dismiss="modal"><i
-                                                                    class="las la-times"></i></div>
-                                                        </div>
-                                                        <div class="content edit-notes">
-                                                            <div
-                                                                class="card card-transparent card-block card-stretch event-note mb-0">
-                                                                <div class="card-body px-0 bukmark">
-                                                                    <div
-                                                                        class="d-flex align-items-center justify-content-between pb-2 mb-3 border-bottom">
-                                                                        <div class="quill-tool">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div id="quill-toolbar1">
-                                                                        <p>Virtual Digital Marketing Course every week
-                                                                            on Monday, Wednesday and Saturday.Virtual
-                                                                            Digital Marketing Course every week on
-                                                                            Monday</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card-footer border-0">
-                                                                    <div
-                                                                        class="d-flex flex-wrap align-items-ceter justify-content-end">
-                                                                        <div class="btn btn-primary mr-3"
-                                                                            data-dismiss="modal">Cancel</div>
-                                                                        <div class="btn btn-outline-primary"
-                                                                            data-dismiss="modal">Save</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+    </div>
+    <!-- Modal Edit -->
+    <div class="modal fade" id="edit-note" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="popup text-left">
+                        <div class="media align-items-top justify-content-between">
+                            <h3 class="mb-3">Product</h3>
+                            <div class="btn-cancel p-0" data-dismiss="modal"><i class="las la-times"></i></div>
+                        </div>
+                        <div class="content edit-notes">
+                            <div class="card card-transparent card-block card-stretch event-note mb-0">
+                                <div class="card-body px-0 bukmark">
+                                    <div
+                                        class="d-flex align-items-center justify-content-between pb-2 mb-3 border-bottom">
+                                        <div class="quill-tool">
                                         </div>
+                                    </div>
+                                    <div id="quill-toolbar1">
+                                        <p>Virtual Digital Marketing Course every week
+                                            on Monday, Wednesday and Saturday.Virtual
+                                            Digital Marketing Course every week on
+                                            Monday</p>
+                                    </div>
+                                </div>
+                                <div class="card-footer border-0">
+                                    <div class="d-flex flex-wrap align-items-ceter justify-content-end">
+                                        <div class="btn btn-primary mr-3" data-dismiss="modal">Cancel</div>
+                                        <div class="btn btn-outline-primary" data-dismiss="modal">Save</div>
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div id="profile3" class="tab-pane fade">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    {{-- <div id="profile3" class="tab-pane fade">
                                 
                                        <div class="row">
                                            <div class="col-lg-12">
@@ -531,11 +531,11 @@
                                     proin fermentum tempus
                                     uspendisse ultricies. Tellus sapien, convallis proin pretium.</p>
                             </div> --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
 
 

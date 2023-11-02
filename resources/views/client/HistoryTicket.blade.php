@@ -88,9 +88,21 @@
                                                         </div>
                                                        
                                                        
-                                                        <h5 class="mb-2 mt-3 icon-text-danger">35+</h5> 
+                                                        @foreach ($sumtotal as $item)
+                                                        @if ($item->sumtotal >= "0" && $item->sumtotal <= "500000")
+                                                        <h5 class="mb-2 mt-3 icon-text-warning">Thành viên</h5>
+                                                        @elseif ($item->sumtotal > "500000" && $item->sumtotal <= "1000000")
+                                                        <h5 class="mb-2 mt-3 icon-text-warning">Thành viên Bạc</h5>
+                                                        @elseif ($item->sumtotal > "1000000" && $item->sumtotal <= "3000000")
+                                                        <h5 class="mb-2 mt-3 icon-text-warning">Thành viên Vàng</h5>
+                                                        @elseif ($item->sumtotal > "3000000" && $item->sumtotal <= "5000000")
+                                                        <h5 class="mb-2 mt-3 icon-text-warning">Thành viên Vip</h5>
+                                                        @else
+                                                        <h5 class="mb-2 mt-3 icon-text-warning">Thành viên Siêu vip</h5>
+                                                        @endif
+                                                        @endforeach
                                                        
-                                                        <p class="mb-0">Experience</p>
+                                                        <p class="mb-0">Hạng thẻ</p>
                                                     </div>
                                                     <div class="profile-info col-xl-3 col-lg-6">
                                                         <div class="profile-icon icon m-auto rounded bg-success">
