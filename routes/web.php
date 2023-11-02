@@ -256,28 +256,13 @@ Route::middleware(['auth'])->group(function () {    //profile của user
         Route::get('delete/{id}', [App\Http\Controllers\admin\NewController::class, 'destroy'])->name('news.destroy');
     });
      // tổng quan
-    //  Route::prefix('overview')->group(function () {
-        Route::get('overview', [App\Http\Controllers\admin\OverviewController::class, 'index'])->name('overview');
-        Route::get('overview/{name}', [App\Http\Controllers\admin\OverviewController::class, 'show'])->name('overview.cinema');
-    // });
+     Route::prefix('overview')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\OverviewController::class, 'index'])->name('overview.index');
+       
+    });
 
     //setting
     Route::get('/smtp-settings',[App\Http\Controllers\admin\SettingController::class,'smtp_settings'])->name('smtp_settings.index');
     Route::post('/env_key_update',[App\Http\Controllers\admin\SettingController::class,'env_key_update'])->name('smtp_settings.update');
-    // cart
-    Route::get('/seat-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
-    Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'Pay'])->name('pay');
-    Route::post('/apply-coupon', [App\Http\Controllers\client\cart\CouponController::class, 'applyCoupon'])->name('applyCoupon');
-    Route::post('/payment-success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
-    Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('success');
-
-    //vnpay
-    Route::post('/vnpay_payment/{film_id}', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);
-
-    //momo
-    Route::post('/momo_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'momo_payment']);
-
-    //onepay
-    Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
-});
-Route::get('/NotificationList', [App\Http\Controllers\admin\NotificationController::class, 'index']);
+    Route::get('/NotificationList', [App\Http\Controllers\admin\NotificationController::class, 'index']);
+// });
