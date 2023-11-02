@@ -43,7 +43,7 @@ class FavoriteController extends Controller
         ];
         $id = $request->input("film_id");
         favorite_film::create($data);
-        return redirect("detail_film/{$id}");
+        return redirect("chi-tiet-phim/{$id}");
         }
 
     }
@@ -90,6 +90,6 @@ class FavoriteController extends Controller
         $user = Auth::user()->id;
         $idDelete = favorite_film::select('id')->where('film_id',$id)->first();
         $idDelete->delete($idDelete);
-        return redirect("/detail_film/$id");
+        return redirect("/chi-tiet-phim/$id");
     }
 }

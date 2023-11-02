@@ -134,6 +134,14 @@ class PayController extends Controller
         $ticketFood->name = $foodItem['name'];
         $ticketFood->quantity = $foodItem['quantity'];
         $ticketFood->save();
+        $food = food::where('id', $foodItem['id'])->first();
+
+        if ($food) {
+            $newQty = $food->qty - $foodItem['quantity'];
+            $food->qty = $newQty;
+            $food->save();
+        }
+
     }
     }
     $notification = new Notification();
@@ -198,8 +206,27 @@ class PayController extends Controller
                 $ticketFood->name = $foodItem['name'];
                 $ticketFood->quantity = $foodItem['quantity'];
                 $ticketFood->save();
+                $food = food::where('id', $foodItem['id'])->first();
+
+                if ($food) {
+                    $newQty = $food->qty - $foodItem['quantity'];
+                    $food->qty = $newQty;
+                    $food->save();
+                }
             }
             }
+
+            $notification = new Notification();
+            $notification->users_id = $user->id;
+            $notification->tickets_id = $ticket->id;
+            $notification->save();
+        
+            // SenMail::dispatch($user->email)->delay(now()->addSeconds(10));
+            try {
+                Mail::to($user->email)->send(new BookTicket($ticket));
+            } catch (\Throwable $th) {
+            }
+        
 
             $selectSeatArray = explode(',', $selectedSeatsValueID);
         

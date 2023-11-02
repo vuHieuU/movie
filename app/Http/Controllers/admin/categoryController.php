@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\category;
 use App\Http\Requests\Admin\CategoriesRequest;
+use App\Models\film_category;
 
 class categoryController extends Controller
 {
@@ -75,14 +76,13 @@ class categoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        $data = category::find($id);
-    
-        if (!$data) {
-            return redirect()->back()->with('error', 'Không tìm thấy');
-        }
-            $data->delete();
-        return redirect()->route('categories.index')->with('success', 'Xóa thành công');
-    }
+   public function destroy(string $id)
+{
+    $category = Category::find($id);
+
+    film_category::where('dmid',$category->id)->delete();
+    $category->delete();
+
+    return redirect()->route('categories.index')->with('success', 'Xóa thành công cùng với các liên kết.');
+}
 }

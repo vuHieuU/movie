@@ -667,16 +667,17 @@
                                                                                         <style>
                                                                                             .iconchuadat {
                                                                                                 color: #BABBC3;
-                                                                                                /* Màu mặc định */
                                                                                                 font-size: 25px;
-                                                                                                /* Kích thước mặc định */
                                                                                                 transition: color 0.3s;
-                                                                                                /* Hiệu ứng màu mượt mà khi thay đổi */
                                                                                             }
 
                                                                                             .iconchuadat:hover {
                                                                                                 color: #03599D;
                                                                                                 /* Thay đổi màu khi di chuột qua */
+                                                                                            }
+
+                                                                                            .selected .iconchuadat {
+                                                                                                color: #03599D;
                                                                                             }
                                                                                         </style>
                                                                                         <div style="max-width: 800px;margin: auto"
@@ -686,6 +687,7 @@
                                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat align-item-center "
                                                                                                         id="{{ $item->showtime_seat_id }}"
                                                                                                         data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1)
@@ -720,6 +722,7 @@
                                                                                                         <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
                                                                                                             id="{{ $item->showtime_seat_id }}"
                                                                                                             data-price="{{ $item->price }}"
+                                                                                                            data-is-active="{{ $item->isActive }}"
                                                                                                             onclick="toggleSeat(this)">
 
                                                                                                             @if ($item->isActive == 1)
@@ -756,6 +759,7 @@
                                                                                                         <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
                                                                                                             id="{{ $item->showtime_seat_id }}"
                                                                                                             data-price="{{ $item->price }}"
+                                                                                                            data-is-active="{{ $item->isActive }}"
                                                                                                             onclick="toggleSeat(this)">
 
                                                                                                             @if ($item->isActive == 1)
@@ -791,6 +795,7 @@
                                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
                                                                                                         id="{{ $item->showtime_seat_id }}"
                                                                                                         data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1)
@@ -830,34 +835,45 @@
                                                                                         let totalFoodPrice = 0; // Đặt biến totalFoodPrice ở mức toàn cục
                                                                                         const selectedFoodNames = [];
                                                                                         const foodQuantities = {};
+                                                                                        const selectedSeatPrices = [];
 
                                                                                         function toggleSeat(seat) {
                                                                                             const seatNumber = seat.textContent.trim(); // Lấy seat_number từ nội dung của phần tử
                                                                                             const seatPrice = parseFloat(seat.getAttribute("data-price"));
                                                                                             const seatId = seat.getAttribute("id");
+                                                                                            const isActive = seat.getAttribute("data-is-active");
                                                                                             var selectedSeatsValueID = document.getElementById("selectedSeatsValueID");
-                                                                                            if (selectedSeats.includes(seatNumber)) {
-                                                                                                selectedSeats.splice(selectedSeats.indexOf(seatNumber), 1);
-                                                                                                seat.classList.remove("selected");
-                                                                                            } else if (selectedSeats.length < maxSeats) {
-                                                                                                selectedSeats.push(seatNumber);
-                                                                                                seat.classList.add("selected");
-                                                                                            } else {
-                                                                                                alert("Bạn chỉ được chọn tối đa 8 ghế.");
-                                                                                            }
+                                                                                            if (isActive === "1") {
+                                                                                                if (selectedSeats.includes(seatNumber)) {
+                                                                                                    selectedSeats.splice(selectedSeats.indexOf(seatNumber), 1);
+                                                                                                    seat.classList.remove("selected");
+                                                                                                    const priceIndex = selectedSeatPrices.indexOf(seatPrice);
+                                                                                                    if (priceIndex !== -1) {
+                                                                                                        selectedSeatPrices.splice(priceIndex, 1);
+                                                                                                    }
+                                                                                                } else if (selectedSeats.length < maxSeats) {
+                                                                                                    selectedSeats.push(seatNumber);
+                                                                                                    seat.classList.add("selected");
+                                                                                                    selectedSeatPrices.push(seatPrice);
+                                                                                                } else {
+                                                                                                    alert("Bạn chỉ được chọn tối đa 8 ghế.");
+                                                                                                }
 
-                                                                                            updateSelectedSeatsList();
-                                                                                            selectedSeatsValueInput(); // Cập nhật giá trị trường input
-                                                                                            updateTotalPrice(selectedSeats, seatPrice);
-                                                                                            // Thay đổi mã để lưu ID của ghế đã chọn
-                                                                                            if (selectedSeatIds.includes(seatId)) {
-                                                                                                selectedSeatIds.splice(selectedSeatIds.indexOf(seatId), 1);
-                                                                                            } else {
-                                                                                                selectedSeatIds.push(seatId);
-                                                                                            }
+                                                                                                updateSelectedSeatsList();
+                                                                                                selectedSeatsValueInput(); // Cập nhật giá trị trường input
+                                                                                                updateTotalPrice(selectedSeatPrices);
+                                                                                                // Thay đổi mã để lưu ID của ghế đã chọn
+                                                                                                if (selectedSeatIds.includes(seatId)) {
+                                                                                                    selectedSeatIds.splice(selectedSeatIds.indexOf(seatId), 1);
+                                                                                                } else {
+                                                                                                    selectedSeatIds.push(seatId);
+                                                                                                }
 
-                                                                                            // Lưu danh sách ID vào input
-                                                                                            document.getElementById("selectedSeatsValueID").value = selectedSeatIds.join(', ');
+                                                                                                // Lưu danh sách ID vào input
+                                                                                                document.getElementById("selectedSeatsValueID").value = selectedSeatIds.join(', ');
+                                                                                            } else {
+                                                                                                alert("Ngu à ghế bị chọn rồi.");
+                                                                                            }
                                                                                         }
 
 
@@ -874,12 +890,15 @@
 
 
 
-                                                                                        function updateTotalPrice(selectedSeats, seatPrice) {
+                                                                                        function updateTotalPrice(selectedSeatPrices) {
                                                                                             const totalPriceSpan = document.getElementById("total-price");
                                                                                             const selectedPriceSeatsValue = document.getElementById("selectedPriceSeatsValue");
-                                                                                            const total = selectedSeats.reduce((acc, seatNumber) => {
-                                                                                                return acc + seatPrice;
-                                                                                            }, 0);
+
+                                                                                            function sumArrayElements(arr) {
+                                                                                                const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+                                                                                                return sum;
+                                                                                            }
+                                                                                            const total = sumArrayElements(selectedSeatPrices);
                                                                                             totalPriceSpan.textContent = total.toLocaleString();
                                                                                             selectedPriceSeatsValue.value = total;
 
@@ -894,11 +913,13 @@
                                                                                                 const quantityInput = document.getElementById(`quantity_${item.id}`);
                                                                                                 const quantity = parseInt(quantityInput.value);
                                                                                                 const itemFoodName = quantityInput.getAttribute('data-food-name');
+                                                                                                const foodID = quantityInput.getAttribute('data-food-id');
 
                                                                                                 if (quantity > 0) {
                                                                                                     const foodInfo = {
                                                                                                         name: itemFoodName,
-                                                                                                        quantity: quantity
+                                                                                                        quantity: quantity,
+                                                                                                        id: foodID
                                                                                                     };
                                                                                                     foodData.push(foodInfo);
                                                                                                 }
@@ -1047,6 +1068,7 @@
                                                                                                                     value="0"
                                                                                                                     min="0"
                                                                                                                     data-food-name="{{ $item->name }}"
+                                                                                                                    data-food-id="{{ $item->id }}"
                                                                                                                     onchange="calculateTotal()">
                                                                                                             </div>
                                                                                                         </div>

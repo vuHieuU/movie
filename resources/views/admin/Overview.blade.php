@@ -27,8 +27,8 @@
                                                     alt="image">
                                             </div>
                                             <div>
-                                                <p class="mb-2">Doanh thu</p>
-                                                <h4>{{ number_format($sumtotal)}} </h4>
+                                                <p class="mb-2">Tổng doanh thu</p>
+                                                <h4>{{ number_format($sumtotal) }} </h4>
 
                                             </div>
                                         </div>
@@ -49,7 +49,7 @@
                                             </div>
                                             <div>
                                                 <p class="mb-2">Người dùng</p>
-                                                <h4>{{$countuser}}</h4>
+                                                <h4>{{ $countuser }}</h4>
                                             </div>
                                         </div>
                                         <div class="iq-progress-bar mt-2">
@@ -85,7 +85,594 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+
+                    <div class="col-lg-4">
+                        <div class="card card-block card-stretch card-height-helf">
+                            <div class="card-body">
+                                <div class="d-flex align-items-top justify-content-between">
+                                    <div class="">
+                                        <p class="mb-0">Vé đã đặt</p>
+                                        <h5 id="ticketListcount">{{ $tickettong }}</h5>
+                                    </div>
+                                    <div class="card-header-toolbar d-flex align-items-center">
+                                        <div class="dropdown">
+                                            <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton0007"
+                                                data-toggle="dropdown">
+                                                This Month<i class="ri-arrow-down-s-line ml-1"></i>
+                                            </span>
+                                            <div class="dropdown-menu dropdown-menu-right shadow-none"
+                                                aria-labelledby="dropdownMenuButton0007">
+                                                <a class="dropdown-item" value="" href="#"
+                                                    id="filterLinkCurrentYear00"
+                                                    onclick="changeDropdownText0007('Năm')">Năm</a>
+                                                <a class="dropdown-item" value="" href="#"
+                                                    id="filterLinkCurrentMonth00"
+                                                    onclick="changeDropdownText0007('Tháng')">Tháng</a>
+                                                <a class="dropdown-item" value="" href="#"
+                                                    id="filterLinkSevenDaysAgo00"
+                                                    onclick="changeDropdownText0007('Tuần')">Tuần</a>
+                                            </div>
+                                        </div>
+
+                                        <script>
+                                            // Tạo một mảng để lưu trữ tất cả các vé
+                                            var ticketsSevenDaysAgo0 = <?php echo json_encode($ticketsSevenDaysAgo); ?>;
+                                            var ticketsCurrentMonth0 = <?php echo json_encode($ticketsCurrentMonth); ?>;
+                                            var ticketsCurrentYear0 = <?php echo json_encode($ticketsCurrentYear); ?>;
+
+                                            // Hàm hiển thị danh sách vé và số lượng vé đã lọc
+                                            function displayFilteredTickets0(tickets) {
+                                                // Lấy thẻ div để hiển thị danh sách vé và số lượng vé
+                                                var ticketListDiv = document.getElementById("ticketListcount");
+
+                                                // Xóa nội dung hiện tại của thẻ div
+                                                ticketListDiv.innerHTML = "";
+
+                                                // Duyệt qua danh sách vé và hiển thị thông tin của từng vé
+                                                tickets.forEach(function(ticket) {
+                                                    var ticketInfo = document.createElement("div");
+
+
+                                                    // Thêm thông tin vé vào thẻ div
+                                                    ticketListDiv.appendChild(ticketInfo);
+                                                });
+
+                                                // Đếm số lượng vé
+                                                var ticketCount = tickets.length;
+
+                                                // Hiển thị số lượng vé đã lọc
+                                                var ticketCountDiv = document.createElement("div");
+                                                ticketCountDiv.textContent = ticketCount;
+
+                                                // Thêm số lượng vé vào thẻ div
+                                                ticketListDiv.appendChild(ticketCountDiv);
+                                            }
+
+                                            // Bắt sự kiện click trên thẻ <a> và gọi hàm hiển thị danh sách vé đã lọc
+                                            document.getElementById("filterLinkSevenDaysAgo00").addEventListener("click", function(event) {
+                                                event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+                                                displayFilteredTickets0(ticketsSevenDaysAgo0);
+                                            });
+
+                                            document.getElementById("filterLinkCurrentMonth00").addEventListener("click", function(event) {
+                                                event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+                                                displayFilteredTickets0(ticketsCurrentMonth0);
+                                            });
+
+                                            document.getElementById("filterLinkCurrentYear00").addEventListener("click", function(event) {
+                                                event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+                                                displayFilteredTickets0(ticketsCurrentYear0);
+                                            });
+
+
+                                            function changeDropdownText0007(selectedOption) {
+                                                var dropdownButton = document.getElementById("dropdownMenuButton0007");
+                                                dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card card-block card-stretch card-height-helf">
+                            <div class="card-body">
+                                <div class="d-flex align-items-top justify-content-between">
+                                    <div class="">
+                                        <p class="mb-0">Phim được đặt nhiều nhất:</p>
+                                        @if ($mostBookedfilm)
+                                            <h5 id="ticketListfilmname">{{ $mostBookedfilm->film_name }}</h5>
+                                        @else
+                                            <p>Không có dữ liệu để hiển thị.</p>
+                                        @endif
+
+                                    </div>
+                                    <div class="card-header-toolbar d-flex align-items-center">
+                                        <div class="dropdown">
+                                            <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton009"
+                                                data-toggle="dropdown">
+                                                This Month<i class="ri-arrow-down-s-line ml-1"></i>
+                                            </span>
+                                            <div class="dropdown-menu dropdown-menu-right shadow-none"
+                                                aria-labelledby="dropdownMenuButton009">
+                                                <a class="dropdown-item" value="" href="#"
+                                                    id="filterLinkCurrentYear1"
+                                                    onclick="changeDropdownText009('Năm')">Năm</a>
+                                                <a class="dropdown-item" value="" href="#"
+                                                    id="filterLinkCurrentMonth1"
+                                                    onclick="changeDropdownText009('Tháng')">Tháng</a>
+                                                <a class="dropdown-item" value="" href="#"
+                                                    id="filterLinkSevenDaysAgo1"
+                                                    onclick="changeDropdownText009('Tuần')">Tuần</a>
+                                            </div>
+                                        </div>
+
+                                        <script>
+                                            // Tạo một mảng để lưu trữ tất cả các vé
+                                            var ticketsSevenDaysAgo1 = <?php echo json_encode($ticketsSevenDaysAgo); ?>;
+                                            var ticketsCurrentMonth1 = <?php echo json_encode($ticketsCurrentMonth); ?>;
+                                            var ticketsCurrentYear1 = <?php echo json_encode($ticketsCurrentYear); ?>;
+
+                                            // Hàm hiển thị danh sách vé và số lượng vé đã lọc
+                                            // Hàm hiển thị danh sách vé và tên phim
+                                            function displayFilteredTickets1(tickets) {
+                                                // Lấy thẻ div để hiển thị danh sách vé và tên phim
+                                                var ticketListDiv = document.getElementById("ticketListfilmname");
+
+                                                // Xóa nội dung hiện tại của thẻ div
+                                                ticketListDiv.innerHTML = "";
+
+                                                // Tạo một đối tượng để theo dõi số lần xuất hiện của từng tên phim
+                                                var filmNameCounts = {};
+
+                                                // Duyệt qua danh sách vé và đếm số lần xuất hiện của mỗi tên phim
+                                                tickets.forEach(function(ticket) {
+                                                    var filmName = ticket.film_name;
+
+                                                    // Kiểm tra xem tên phim đã tồn tại trong filmNameCounts chưa, nếu chưa thì khởi tạo bằng 0
+                                                    if (!filmNameCounts[filmName]) {
+                                                        filmNameCounts[filmName] = 0;
+                                                    }
+
+                                                    // Tăng số lần xuất hiện của tên phim lên 1
+                                                    filmNameCounts[filmName]++;
+                                                });
+
+                                                // Tìm tên phim có số lần xuất hiện nhiều nhất
+                                                var mostBookedFilm = "";
+                                                var maxCount = 0;
+
+                                                for (var filmName in filmNameCounts) {
+                                                    if (filmNameCounts[filmName] > maxCount) {
+                                                        maxCount = filmNameCounts[filmName];
+                                                        mostBookedFilm = filmName;
+                                                    }
+                                                }
+
+                                                // Hiển thị tên phim có lượt đặt nhiều nhất
+                                                var mostBookedFilmDiv = document.createElement("h5");
+                                                mostBookedFilmDiv.textContent = mostBookedFilm;
+                                                ticketListDiv.appendChild(mostBookedFilmDiv);
+
+
+                                            }
+
+
+
+                                            // Bắt sự kiện click trên thẻ <a> và gọi hàm hiển thị danh sách vé đã lọc
+                                            document.getElementById("filterLinkSevenDaysAgo1").addEventListener("click", function(event) {
+                                                event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+                                                displayFilteredTickets1(ticketsSevenDaysAgo1);
+                                            });
+
+                                            document.getElementById("filterLinkCurrentMonth1").addEventListener("click", function(event) {
+                                                event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+                                                displayFilteredTickets1(ticketsCurrentMonth1);
+                                            });
+
+                                            document.getElementById("filterLinkCurrentYear1").addEventListener("click", function(event) {
+                                                event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+                                                displayFilteredTickets1(ticketsCurrentYear1);
+                                            });
+
+
+                                            function changeDropdownText009(selectedOption) {
+                                                var dropdownButton = document.getElementById("dropdownMenuButton009");
+                                                dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card card-block card-stretch card-height-helf">
+                            <div class="card-body">
+                                <div class="d-flex align-items-top justify-content-between">
+                                    <div class="">
+                                        <p class="mb-0">Khung giờ xem được đặt nhiều nhất:</p>
+
+                                        @if ($formattedTime)
+                                            <h5 id="ticketListfilhour"> {{ $formattedTime }} </h5>
+                                        @else
+                                            <p>Không có dữ liệu để hiển thị.</p>
+                                        @endif
+                                    </div>
+                                    <div class="card-header-toolbar d-flex align-items-center">
+                                        <div class="dropdown">
+                                            <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton0001"
+                                                data-toggle="dropdown">
+                                                This Month<i class="ri-arrow-down-s-line ml-1"></i>
+                                            </span>
+                                            <div class="dropdown-menu dropdown-menu-right shadow-none"
+                                                aria-labelledby="dropdownMenuButton0001">
+                                                <a class="dropdown-item" href="#" id="filterLinkCurrentYear2"
+                                                    onclick="changeDropdownText0001('Năm')">Năm</a>
+                                                <a class="dropdown-item" href="#" id="filterLinkCurrentMonth2"
+                                                    onclick="changeDropdownText0001('Tháng')">Tháng</a>
+                                                <a class="dropdown-item" href="#" id="filterLinkSevenDaysAgo2"
+                                                    onclick="changeDropdownText0001('Tuần')">Tuần</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <script>
+                                        // Tạo một mảng để lưu trữ tất cả các vé
+                                        var ticketsSevenDaysAgo1 = <?php echo json_encode($ticketsSevenDaysAgo); ?>;
+                                        var ticketsCurrentMonth1 = <?php echo json_encode($ticketsCurrentMonth); ?>;
+                                        var ticketsCurrentYear1 = <?php echo json_encode($ticketsCurrentYear); ?>;
+
+                                        // Hàm hiển thị danh sách vé và số lượng vé đã lọc
+                                        // Hàm hiển thị danh sách vé và tên phim
+                                        function displayFilteredTickets2(tickets) {
+                                            // Lấy thẻ div để hiển thị danh sách vé và giờ chiếu có số lần đặt nhiều nhất
+                                            var ticketListDiv = document.getElementById("ticketListfilhour");
+
+                                            // Xóa nội dung hiện tại của thẻ div
+                                            ticketListDiv.innerHTML = "";
+
+                                            // Tạo một đối tượng để theo dõi số lần xuất hiện của từng giờ chiếu
+                                            var hourCounts = {};
+
+                                            // Duyệt qua danh sách vé và đếm số lần xuất hiện của mỗi giờ chiếu
+                                            tickets.forEach(function(ticket) {
+                                                var selectedHour = ticket.selected_hour;
+
+                                                // Kiểm tra xem giờ chiếu đã tồn tại trong hourCounts chưa, nếu chưa thì khởi tạo bằng 0
+                                                if (!hourCounts[selectedHour]) {
+                                                    hourCounts[selectedHour] = 0;
+                                                }
+
+                                                // Tăng số lần xuất hiện của giờ chiếu lên 1
+                                                hourCounts[selectedHour]++;
+                                            });
+
+                                            // Tìm giờ chiếu có số lần đặt nhiều nhất
+                                            var mostBookedHour = "";
+                                            var maxCount = 0;
+
+                                            for (var selectedHour in hourCounts) {
+                                                if (hourCounts[selectedHour] > maxCount) {
+                                                    maxCount = hourCounts[selectedHour];
+                                                    mostBookedHour = selectedHour;
+                                                }
+                                            }
+
+                                            // Hiển thị giờ chiếu có lượt đặt nhiều nhất
+                                            var mostBookedHourDiv = document.createElement("h5");
+                                            mostBookedHourDiv.textContent = mostBookedHour;
+                                            ticketListDiv.appendChild(mostBookedHourDiv);
+                                        }
+
+
+
+
+
+
+                                        // Bắt sự kiện click trên thẻ <a> và gọi hàm hiển thị danh sách vé đã lọc
+                                        document.getElementById("filterLinkSevenDaysAgo2").addEventListener("click", function(event) {
+                                            event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+                                            displayFilteredTickets2(ticketsSevenDaysAgo1);
+                                        });
+
+                                        document.getElementById("filterLinkCurrentMonth2").addEventListener("click", function(event) {
+                                            event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+                                            displayFilteredTickets2(ticketsCurrentMonth1);
+                                        });
+
+                                        document.getElementById("filterLinkCurrentYear2").addEventListener("click", function(event) {
+                                            event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+                                            displayFilteredTickets2(ticketsCurrentYear1);
+                                        });
+
+
+
+                                        function changeDropdownText0001(selectedOption) {
+                                            var dropdownButton = document.getElementById("dropdownMenuButton0001");
+                                            dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
+                                        }
+                                    </script>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card card-block card-stretch card-height-helf">
+                            <div class="card-body">
+                                <div class="d-flex align-items-top justify-content-between">
+                                    <div class="">
+                                        <p class="mb-0">Combo đồ ăn được đặt nhiều nhất:</p>
+
+                                        @if ($mostBookedfood)
+                                            <h5 id="ticketListfood"> {{ $mostBookedfood->name }} </h5>
+                                        @else
+                                            <p>Không có dữ liệu để hiển thị.</p>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card card-block card-stretch card-height">
+                            <div class="card-header d-flex justify-content-between">
+                                <div class="header-title">
+                                    <h4 class="card-title">Doanh thu </h4>
+                                </div>
+                                <div class="card-header-toolbar d-flex align-items-center">
+                                    <div class="dropdown">
+                                        <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton006"
+                                            data-toggle="dropdown">
+                                            Chọn Rạp<i class="ri-arrow-down-s-line ml-1"></i>
+                                        </span>
+                                        <div class="dropdown-menu dropdown-menu-right shadow-none"
+                                            aria-labelledby="dropdownMenuButton006">
+                                            @foreach ($cinemalist as $item)
+                                                <a class="li dropdown-item " {{-- href="{{ route('overview.cinema', [$item->name]) }}" --}}
+                                                    data-cinema-id="{{ $item->name }}">
+                                                    <li onclick="changeDropdownText('{{ $item->name }}')">
+                                                        {{ $item->name }}</li>
+                                                </a>
+                                            @endforeach
+                                        </div>
+
+                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                                        <script>
+                                            $(document).ready(function() {
+                                                $("a.li").click(function(event) {
+                                                    event.preventDefault(); // Ngăn chuyển trang khi nhấn vào liên kết.
+                                                    var cinemaId = $(this).data('cinema-id'); // Lấy id của rạp từ thuộc tính data
+                                                    $.ajax({
+                                                        url: "/overview/" + cinemaId,
+                                                        success: function(result) {
+                                                            $("#div1").html(result);
+                                                        }
+                                                    });
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+
+                                <script>
+                                    function changeDropdownText(selectedOption) {
+                                        var dropdownButton = document.getElementById("dropdownMenuButton006");
+                                        dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
+                                    }
+                                </script>
+
+                                {{--
+                                <div class="card-header-toolbar d-flex align-items-center">
+                                    <div class="dropdown">
+                                        <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton008"
+                                            data-toggle="dropdown">
+                                            This Month<i class="ri-arrow-down-s-line ml-1"></i>
+                                        </span>
+                                        <div class="dropdown-menu dropdown-menu-right shadow-none"
+                                            aria-labelledby="dropdownMenuButton008">
+                                            <a class="dropdown-item" href="#" id="filterLinkCurrentYear3"
+                                                onclick="changeDropdownText008('Year')">Year</a>
+                                            <a class="dropdown-item" href="#" id="filterLinkCurrentMonth3"
+                                                onclick="changeDropdownText008('Month')">Month</a>
+                                            <a class="dropdown-item" href="#" id="filterLinkSevenDaysAgo3"
+                                                onclick="changeDropdownText008('Week')">Week</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    // Tạo một mảng để lưu trữ tất cả các vé
+                                    var ticketsSevenDaysAgo1 = <?php echo json_encode($ticketsSevenDaysAgo); ?>;
+                                    var ticketsCurrentMonth1 = <?php echo json_encode($ticketsCurrentMonth); ?>;
+                                    var ticketsCurrentYear1 = <?php echo json_encode($ticketsCurrentYear); ?>;
+
+                                    function displayFilteredTickets3(tickets) {
+                                        // Lấy thẻ div để hiển thị tổng tiền của rạp
+                                        var ticketListDiv = document.getElementById("ticketListtoltal");
+
+                                        // Xóa nội dung hiện tại của thẻ div
+                                        ticketListDiv.innerHTML = "";
+
+                                        // Tạo biến để tính tổng tiền của tất cả các vé
+                                        var totalRevenue = 0;
+
+                                        // Duyệt qua danh sách vé và tính tổng tiền
+                                        tickets.forEach(function(ticket) {
+                                            totalRevenue += ticket.total;
+                                        });
+
+                                        // Hiển thị tổng tiền của tất cả các vé
+                                        var totalRevenueDiv = document.createElement("h5");
+                                        totalRevenueDiv.textContent = totalRevenue.toLocaleString('en-US');
+                                        ticketListDiv.appendChild(totalRevenueDiv);
+                                    }
+
+
+
+
+
+
+
+
+                                    // Bắt sự kiện click trên thẻ <a> và gọi hàm hiển thị danh sách vé đã lọc
+                                    document.getElementById("filterLinkSevenDaysAgo3").addEventListener("click", function(event) {
+                                        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+                                        displayFilteredTickets3(ticketsSevenDaysAgo1);
+                                    });
+
+                                    document.getElementById("filterLinkCurrentMonth3").addEventListener("click", function(event) {
+                                        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+                                        displayFilteredTickets3(ticketsCurrentMonth1);
+                                    });
+
+                                    document.getElementById("filterLinkCurrentYear3").addEventListener("click", function(event) {
+                                        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+                                        displayFilteredTickets3(ticketsCurrentYear1);
+                                    });
+
+
+                                    function changeDropdownText008(selectedOption) {
+                                        var dropdownButton = document.getElementById("dropdownMenuButton008");
+                                        dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
+                                    }
+                                </script>
+--}}
+
+                            </div>
+                            {{-- <div id="div1">
+                                @include('client.layout.session.OverviewCinema')
+                            </div> --}}
+                            <div class="card-body">
+                                <div class="d-flex flex-wrap align-items-center mt-2">
+                                    <div class="d-flex align-items-center progress-order-left">
+                                        <div class="progress progress-round m-0 orange conversation-bar"
+                                            data-percent="46">
+                                            <span class="progress-left">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <span class="progress-right">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <div class="progress-value text-secondary">46%</div>
+                                        </div>
+                                        <div class="progress-value ml-3 pr-5 border-right">
+
+                                            <div id="div1">
+
+                                                <h5 id="ticketListtoltal">{{ number_format($tickets) }}</h5>
+                                                <p class="mb-0">Tổng doanh thu </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    {{--   <div class="d-flex align-items-center ml-5 progress-order-right">
+                                        <div class="progress progress-round m-0 primary conversation-bar"
+                                            data-percent="46">
+                                            <span class="progress-left">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <span class="progress-right">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <div class="progress-value text-primary">46%</div>
+                                        </div>
+                                        <div class="progress-value ml-3">
+                                            <h5>$59,8478</h5>
+                                            <p class="mb-0">Top Orders</p>
+                                        </div>
+                                    </div> --}}
+                                </div>
+                            </div>
+
+
+                            <div class="card-body pt-0">
+                                <div id="layout1-chart-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card card-block card-stretch card-height">
+                            <div class="card-header d-flex align-items-center justify-content-between">
+                                <div class="header-title">
+                                    <h4 class="card-title">Danh mục hàng đầu</h4>
+                                </div>
+
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled row top-product mb-0">
+
+                                    @foreach ($categoriesWithCount as $item)
+                                        <li class="col-lg-3">
+                                            <div class="card card-block card-stretch card-height mb-0">
+                                                <div class="card-body">
+                                                    <div class="bg-warning-light rounded">
+                                                        <img src="/template/assets/images/product/01.png"
+                                                            class="style-img img-fluid m-auto p-3" alt="image">
+                                                    </div>
+
+                                                    <div class="style-text text-left mt-3">
+
+                                                        <h5 class="mb-1">{{ $item->name }}</h5>
+                                                        <p class="mb-0">{{ $item->countcategory }} Item</p>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                    @endforeach
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-transparent card-block card-stretch mb-4">
+                            <div class="card-header d-flex align-items-center justify-content-between p-0">
+                                <div class="header-title">
+                                    <h4 class="card-title mb-0">Best Item All Time</h4>
+                                </div>
+                                <div class="card-header-toolbar d-flex align-items-center">
+                                    <div><a href="#" class="btn btn-primary view-btn font-size-14">View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-block card-stretch card-height-helf">
+                            <div class="card-body card-item-right">
+                                <div class="d-flex align-items-top">
+                                    <div class="bg-warning-light rounded">
+                                        <img src="/template/assets/images/product/04.png"
+                                            class="style-img img-fluid m-auto" alt="image">
+                                    </div>
+                                    <div class="style-text text-left">
+                                        <h5 class="mb-2">Coffee Beans Packet</h5>
+                                        <p class="mb-2">Total Sell : 45897</p>
+                                        <p class="mb-0">Total Earned : $45,89 M</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-block card-stretch card-height-helf">
+                            <div class="card-body card-item-right">
+                                <div class="d-flex align-items-top">
+                                    <div class="bg-danger-light rounded">
+                                        <img src="/template/assets/images/product/05.png"
+                                            class="style-img img-fluid m-auto" alt="image">
+                                    </div>
+                                    <div class="style-text text-left">
+                                        <h5 class="mb-2">Bottle Cup Set</h5>
+                                        <p class="mb-2">Total Sell : 44359</p>
+                                        <p class="mb-0">Total Earned : $45,50 M</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- 
+                       <div class="col-lg-6">
                         <div class="card card-block card-stretch card-height">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
@@ -137,251 +724,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8">
-                        <div class="card card-block card-stretch card-height">
-                            <div class="card-header d-flex align-items-center justify-content-between">
-                                <div class="header-title">
-                                    <h4 class="card-title">Top Movies</h4>
-                                </div>
-                                <div class="card-header-toolbar d-flex align-items-center">
-                                    <div class="dropdown">
-                                        <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton006"
-                                            data-toggle="dropdown">
-                                            This Month<i class="ri-arrow-down-s-line ml-1"></i>
-                                        </span>
-                                        <div class="dropdown-menu dropdown-menu-right shadow-none"
-                                            aria-labelledby="dropdownMenuButton006">
-                                            <a class="dropdown-item" href="#">Year</a>
-                                            <a class="dropdown-item" href="#">Month</a>
-                                            <a class="dropdown-item" href="#">Week</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-unstyled row top-product mb-0">
+                    --}}
 
- @foreach ($categoriesWithCount as $item)
-                                    <li class="col-lg-3">
-                                        <div class="card card-block card-stretch card-height mb-0">
-                                            <div class="card-body">
-                                                <div class="bg-warning-light rounded">
-                                                    <img src="/template/assets/images/product/01.png"
-                                                        class="style-img img-fluid m-auto p-3" alt="image">
-                                                </div>
-                                                
-                                                <div class="style-text text-left mt-3">
-                                                   
-                                                        <h5 class="mb-1">{{ $item->name }}</h5>
-                                                        <p class="mb-0">{{ $item->countcategory }} Item</p>
-                                                   
-                                                </div> 
-                                              
-                                            </div>
-                                        </div>
-                                    </li>
-  @endforeach
-
-                                    {{-- <li class="col-lg-3">
-                                <div class="card card-block card-stretch card-height mb-0">
-                                    <div class="card-body">
-                                        <div class="bg-danger-light rounded">
-                                            <img src="/template/assets/images/product/02.png" class="style-img img-fluid m-auto p-3" alt="image">
-                                        </div>
-                                        <div class="style-text text-left mt-3">
-                                            <h5 class="mb-1">Rain Umbrella</h5>
-                                            <p class="mb-0">657 Item</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-lg-3">
-                                <div class="card card-block card-stretch card-height mb-0">
-                                    <div class="card-body">
-                                        <div class="bg-info-light rounded">
-                                            <img src="/template/assets/images/product/03.png" class="style-img img-fluid m-auto p-3" alt="image">
-                                        </div>
-                                        <div class="style-text text-left mt-3">
-                                            <h5 class="mb-1">Serum Bottle</h5>
-                                            <p class="mb-0">489 Item</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-lg-3">
-                                <div class="card card-block card-stretch card-height mb-0">
-                                    <div class="card-body">
-                                        <div class="bg-success-light rounded">
-                                            <img src="/template/assets/images/product/02.png" class="style-img img-fluid m-auto p-3" alt="image">
-                                        </div>
-                                        <div class="style-text text-left mt-3">
-                                            <h5 class="mb-1">Organic Cream</h5>
-                                            <p class="mb-0">468 Item</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li> --}}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card card-transparent card-block card-stretch mb-4">
-                            <div class="card-header d-flex align-items-center justify-content-between p-0">
-                                <div class="header-title">
-                                    <h4 class="card-title mb-0">Best Item All Time</h4>
-                                </div>
-                                <div class="card-header-toolbar d-flex align-items-center">
-                                    <div><a href="#" class="btn btn-primary view-btn font-size-14">View All</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card card-block card-stretch card-height-helf">
-                            <div class="card-body card-item-right">
-                                <div class="d-flex align-items-top">
-                                    <div class="bg-warning-light rounded">
-                                        <img src="/template/assets/images/product/04.png"
-                                            class="style-img img-fluid m-auto" alt="image">
-                                    </div>
-                                    <div class="style-text text-left">
-                                        <h5 class="mb-2">Coffee Beans Packet</h5>
-                                        <p class="mb-2">Total Sell : 45897</p>
-                                        <p class="mb-0">Total Earned : $45,89 M</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card card-block card-stretch card-height-helf">
-                            <div class="card-body card-item-right">
-                                <div class="d-flex align-items-top">
-                                    <div class="bg-danger-light rounded">
-                                        <img src="/template/assets/images/product/05.png"
-                                            class="style-img img-fluid m-auto" alt="image">
-                                    </div>
-                                    <div class="style-text text-left">
-                                        <h5 class="mb-2">Bottle Cup Set</h5>
-                                        <p class="mb-2">Total Sell : 44359</p>
-                                        <p class="mb-0">Total Earned : $45,50 M</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card card-block card-stretch card-height-helf">
-                            <div class="card-body">
-                                <div class="d-flex align-items-top justify-content-between">
-                                    <div class="">
-                                        <p class="mb-0">Income</p>
-                                        <h5>$ 98,7800 K</h5>
-                                    </div>
-                                    <div class="card-header-toolbar d-flex align-items-center">
-                                        <div class="dropdown">
-                                            <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton003"
-                                                data-toggle="dropdown">
-                                                This Month<i class="ri-arrow-down-s-line ml-1"></i>
-                                            </span>
-                                            <div class="dropdown-menu dropdown-menu-right shadow-none"
-                                                aria-labelledby="dropdownMenuButton003">
-                                                <a class="dropdown-item" href="#">Year</a>
-                                                <a class="dropdown-item" href="#">Month</a>
-                                                <a class="dropdown-item" href="#">Week</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="layout1-chart-3" class="layout-chart-1"></div>
-                            </div>
-                        </div>
-                        <div class="card card-block card-stretch card-height-helf">
-                            <div class="card-body">
-                                <div class="d-flex align-items-top justify-content-between">
-                                    <div class="">
-                                        <p class="mb-0">Expenses</p>
-                                        <h5>$ 45,8956 K</h5>
-                                    </div>
-                                    <div class="card-header-toolbar d-flex align-items-center">
-                                        <div class="dropdown">
-                                            <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton004"
-                                                data-toggle="dropdown">
-                                                This Month<i class="ri-arrow-down-s-line ml-1"></i>
-                                            </span>
-                                            <div class="dropdown-menu dropdown-menu-right shadow-none"
-                                                aria-labelledby="dropdownMenuButton004">
-                                                <a class="dropdown-item" href="#">Year</a>
-                                                <a class="dropdown-item" href="#">Month</a>
-                                                <a class="dropdown-item" href="#">Week</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="layout1-chart-4" class="layout-chart-2"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="card card-block card-stretch card-height">
-                            <div class="card-header d-flex justify-content-between">
-                                <div class="header-title">
-                                    <h4 class="card-title">Order Summary</h4>
-                                </div>
-                                <div class="card-header-toolbar d-flex align-items-center">
-                                    <div class="dropdown">
-                                        <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton005"
-                                            data-toggle="dropdown">
-                                            This Month<i class="ri-arrow-down-s-line ml-1"></i>
-                                        </span>
-                                        <div class="dropdown-menu dropdown-menu-right shadow-none"
-                                            aria-labelledby="dropdownMenuButton005">
-                                            <a class="dropdown-item" href="#">Year</a>
-                                            <a class="dropdown-item" href="#">Month</a>
-                                            <a class="dropdown-item" href="#">Week</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap align-items-center mt-2">
-                                    <div class="d-flex align-items-center progress-order-left">
-                                        <div class="progress progress-round m-0 orange conversation-bar"
-                                            data-percent="46">
-                                            <span class="progress-left">
-                                                <span class="progress-bar"></span>
-                                            </span>
-                                            <span class="progress-right">
-                                                <span class="progress-bar"></span>
-                                            </span>
-                                            <div class="progress-value text-secondary">46%</div>
-                                        </div>
-                                        <div class="progress-value ml-3 pr-5 border-right">
-                                            <h5>$12,6598</h5>
-                                            <p class="mb-0">Average Orders</p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center ml-5 progress-order-right">
-                                        <div class="progress progress-round m-0 primary conversation-bar"
-                                            data-percent="46">
-                                            <span class="progress-left">
-                                                <span class="progress-bar"></span>
-                                            </span>
-                                            <span class="progress-right">
-                                                <span class="progress-bar"></span>
-                                            </span>
-                                            <div class="progress-value text-primary">46%</div>
-                                        </div>
-                                        <div class="progress-value ml-3">
-                                            <h5>$59,8478</h5>
-                                            <p class="mb-0">Top Orders</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div id="layout1-chart-5"></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <!-- Page end  -->
             </div>
