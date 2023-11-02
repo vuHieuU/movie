@@ -31,10 +31,9 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Food List</h4>
-                          <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
+                          <h4 class="mb-3">Danh sách đồ ăn</h4>
                       </div>
-                      <a href="/food/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Food</a>
+                      <a href="/food/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm đồ ăn</a>
                   </div>
               </div>
             
@@ -53,11 +52,11 @@
                                   </div>
                               </th>
                               <th>ID</th>
-                              <th>Thumb</th>
-                              <th>Name</th>
-                              <th>Price</th>
-                              <th>Quantity</th>
-                              <th>Status</th>
+                              <th>Hình ảnh</th>
+                              <th>Tên đồ ăn</th>
+                              <th>Giá</th>
+                              <th>Số lượng</th>
+                              <th>Trạng thái</th>
                               <th>Action</th>
                           </tr>
                       </thead>
@@ -76,11 +75,11 @@
                               <td>{{ $item->name }}</td>
                               <td>{{ $item->price }}</td>
                               <td>{{ $item->qty }}</td>
-                              <td>{{ $item->status }}</td>
+                              <td>{{ $item->status == 0 ? "On" : "Off" }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                          href="#"><i class="ri-eye-line mr-0"></i></a>
+                                          href="{{route('food.show',$item->id)}}"><i class="ri-eye-line mr-0"></i></a>
                                       <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
                                           href="{{route('food.edit',$item->id)}}"><i class="ri-pencil-line mr-0"></i></a>
                                       <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"

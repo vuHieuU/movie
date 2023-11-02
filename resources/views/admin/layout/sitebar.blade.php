@@ -21,14 +21,14 @@
                             <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                             <line x1="12" y1="22.08" x2="12" y2="12"></line>
                         </svg>
-                        <span class="ml-4">Dashboards</span>
+                        <span class="ml-4">Trang quản trị</span>
                     </a>
                 </li>
                 {{-- film --}}
                 <li class=" ">
                     <a href="#film" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fa-solid fa-film"></i>
-                        <span class="ml-4">film</span>
+                        <span class="ml-4">Phim</span>
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -49,12 +49,12 @@
                         </li>
                         <li class="">
                             <a href="/coupon/index">
-                                <i class="las la-minus"></i><span>List Coupon</span>
+                                <i class="las la-minus"></i><span>Danh sách mã giảm giá</span>
                             </a>
                         </li>
                         <li class="">
                             <a href="/comment/index">
-                                <i class="las la-minus"></i><span>List Comment</span>
+                                <i class="las la-minus"></i><span>Danh sách bình luận</span>
                             </a>
                         </li>
                     </ul>
@@ -64,7 +64,7 @@
                 <li class=" ">
                     <a href="#user" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fa-solid fa-user"></i>
-                        <span class="ml-4">User</span>
+                        <span class="ml-4">Người dùng</span>
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -74,13 +74,18 @@
                     </a>
                     <ul id="user" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
-                            <a href="/user/index">
-                                <i class="las la-minus"></i><span>List user</span>
+                            <a href="{{ route('index_user') }}">
+                                <i class="las la-minus"></i><span>Danh sách người dùng</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{{ route('index_admin') }}">
+                                <i class="las la-minus"></i><span>Danh sách Admin</span>
                             </a>
                         </li>
                         <li class="">
                             <a href="/role/index">
-                                <i class="las la-minus"></i><span>List role</span>
+                                <i class="las la-minus"></i><span>Danh sách phân quyền</span>
                             </a>
                         </li>
                     </ul>
@@ -113,7 +118,7 @@
         <li class="">
             <a href="#cinemas" class="collapse" data-toggle="collapse" aria-expanded="false">
                 <i class="fa-solid fa-city"></i>
-                <span class="ml-4">Cinemas</span>
+                <span class="ml-4">Rạp phim</span>
                 <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
                 </svg>
@@ -121,17 +126,17 @@
             <ul id="cinemas" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                 <li class="">
                     <a href="/cinemas/index">
-                        <i class="las la-minus"></i><span>Cinemas</span>
+                        <i class="las la-minus"></i><span>Danh sách rạp phim</span>
                     </a>
                 </li>
                 <li class="">
                     <a href="/city/index">
-                        <i class="las la-minus"></i><span>City</span>
+                        <i class="las la-minus"></i><span>Thành phố</span>
                     </a>
                 </li>
                 <li class="">
                     <a href="/food/index">
-                        <i class="las la-minus"></i><span>List Food</span>
+                        <i class="las la-minus"></i><span>Danh sách đồ ăn</span>
                     </a>
                 </li>
             </ul>
@@ -141,7 +146,7 @@
             <li class=" ">
                 <a href="#showtime" class="collapsed" data-toggle="collapse" aria-expanded="false">
                     <i class="fa-solid fa-calendar"></i>
-                    <span class="ml-4">showtime</span>
+                    <span class="ml-4">Lịch chiếu</span>
                     <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
                     </svg>
@@ -149,22 +154,22 @@
                 <ul id="showtime" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                     <li class="">
                         <a href="/showtime/index">
-                            <i class="las la-minus"></i><span>List showtime</span>
+                            <i class="las la-minus"></i><span>Danh sách chiếu phim</span>
                         </a>
                     </li>
                     <li class="">
                         <a href="/typeseats/index">
-                            <i class="las la-minus"></i><span>List type Seat</span>
+                            <i class="las la-minus"></i><span>Danh sách loại ghế</span>
                         </a>
                     </li>
                     <li class="">
                         <a href="/seats/index">
-                            <i class="las la-minus"></i><span>List Seat</span>
+                            <i class="las la-minus"></i><span>Danh sách ghế</span>
                         </a>
                     </li>
                     <li class="">
                         <a href="/rooms/index">
-                            <i class="las la-minus"></i><span>List Room</span>
+                            <i class="las la-minus"></i><span>Danh sách phòng</span>
                         </a>
                     </li>
                 </ul>
@@ -179,7 +184,7 @@
             <li class=" ">
                 <a href="#Ticket" class="collapsed" data-toggle="collapse" aria-expanded="false">
                     <i class="fa-solid fa-ticket"></i>
-                    <span class="ml-4">Ticket</span>
+                    <span class="ml-4">Đặt vé</span>
                     <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
                     </svg>
@@ -187,7 +192,24 @@
                 <ul id="Ticket" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                     <li class="">
                         <a href="{{ route('ticket.index') }}">
-                            <i class="las la-minus"></i><span>List Ticket</span>
+                            <i class="las la-minus"></i><span>Danh sách đặt vé</span>
+                        </a>
+                    </li>
+                   
+                </ul>
+            </li>
+            <li class=" ">
+                <a href="#Natification" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <span class="ml-4">Thông báo</span>
+                    <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                    </svg>
+                </a>
+                <ul id="Natification" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                    <li class="">
+                        <a href="/NotificationList">
+                            <i class="las la-minus"></i><span>Danh sách thông báo</span>
                         </a>
                     </li>
                    
@@ -225,7 +247,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-list align-items-center">
-                        <li class="nav-item nav-icon dropdown">
+                        {{-- <li class="nav-item nav-icon dropdown">
                             <a href="#" class="search-toggle dropdown-toggle btn border add-btn"
                                 id="dropdownMenuButton02" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
@@ -253,9 +275,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
                         <li>
-                            <a href="/" class="btn border add-btn shadow-none mx-2 d-none d-md-block">Home</a>
+                            <a href="/" class="btn border add-btn shadow-none mx-2 d-none d-md-block">Trang chủ</a>
                         </li>
                         <li class="nav-item nav-icon search-content">
                             <a href="#" class="search-toggle rounded" id="dropdownSearch"
@@ -370,37 +392,23 @@
                                             </div>
                                         </div>
                                         <div class="px-3 pt-0 pb-0 sub-card">
-                                            <a href="#" class="iq-sub-card">
-                                                <div class="media align-items-center cust-card py-3 border-bottom">
-                                                    <div class="">
-                                                        <img class="avatar-50 rounded-small"
-                                                            src="/template/assets/images/user/01.jpg" alt="01">
-                                                    </div>
-                                                    <div class="media-body ml-3">
-                                                        <div class="d-flex align-items-center justify-content-between">
-                                                            <h6 class="mb-0">Emma Watson</h6>
-                                                            <small class="text-dark"><b>12 : 47 pm</b></small>
+                                            @foreach (\App\Models\Notification::orderBy('created_at', 'desc')->take(3)->get() as $item)
+                                        
+                                            <div class="px-3 pt-0 pb-0 sub-card">
+                                                <a href="#" class="iq-sub-card">
+                                                    <div class="media align-items-center cust-card py-3 border-bottom">
+                                                        <div class="media-body ml-3">
+                                                            <div class="d-flex align-items-center justify-content-between">
+                                                                <p class="mb-0">{{$item->film_name}} đã đặt vé xem phim vào lúc</p>
+                                                                
+                                                            </div>
+                                                            <small class="mb-0">{{$item->created_at}}</small>
                                                         </div>
-                                                        <small class="mb-0">Lorem ipsum dolor sit amet</small>
                                                     </div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="iq-sub-card">
-                                                <div class="media align-items-center cust-card py-3 border-bottom">
-                                                    <div class="">
-                                                        <img class="avatar-50 rounded-small"
-                                                            src="/template/assets/images/user/02.jpg" alt="02">
-                                                    </div>
-                                                    <div class="media-body ml-3">
-                                                        <div class="d-flex align-items-center justify-content-between">
-                                                            <h6 class="mb-0">Ashlynn Franci</h6>
-                                                            <small class="text-dark"><b>11 : 30 pm</b></small>
-                                                        </div>
-                                                        <small class="mb-0">Lorem ipsum dolor sit amet</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="iq-sub-card">
+                                                </a>
+                                            </div>
+                                            @endforeach
+                                            {{-- <a href="#" class="iq-sub-card">
                                                 <div class="media align-items-center cust-card py-3">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
@@ -414,10 +422,10 @@
                                                         <small class="mb-0">Lorem ipsum dolor sit amet</small>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </a> --}}
                                         </div>
                                         <a class="right-ic btn btn-primary btn-block position-relative p-2"
-                                            href="#" role="button">
+                                            href="/NotificationList" role="button">
                                             View All
                                         </a>
                                     </div>

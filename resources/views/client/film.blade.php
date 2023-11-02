@@ -594,8 +594,10 @@
                                                                 });
                                                             });
                                                         </script>
+
+                                                        
                                                         <a href="/movie">
-                                                            <li onclick="selectCategory('Tất cả film')">Tất cả Film</li>
+                                                            <li onclick="selectCategory('Tất cả ')">Tất cả </li>
                                                         </a>
                                                             @foreach ($category as $item)
                                                                 <a 

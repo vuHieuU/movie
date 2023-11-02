@@ -152,8 +152,10 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Trạng thái *</label>
-                                                <input type="text" class="form-control" placeholder="Enter Name"
-                                                    data-errors="Please Enter Name." name="status" value="{{ $film->status }}">
+                                                <select name="status" id="" class="form-control">
+                                                    <option value="1">Sắp chiếu</option>
+                                                    <option value="2">Đang chiếu</option>
+                                                </select>
                                                 <div class="help-block with-errors"></div>
                                                 @if ($errors->has('status'))
                                                     <span class="text-danger">{{ $errors->first('status') }}</span>

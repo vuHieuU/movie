@@ -33,14 +33,14 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
-                                    <h4 class="card-title">Add Roles</h4>
+                                    <h4 class="card-title">Cập nhật thành phố</h4>
                                 </div>
                             </div>
                             <div class="card-body">
                                   <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Name *</label>
+                                            <label>Tên thành phố *</label>
                                             <input type="text" class="form-control" placeholder="name"
                                                 name="name" value="{{ $city->name }}">
                                                 @error('name')
@@ -53,7 +53,7 @@
                                 </div>
                              
                                       </div>
-                                      <button type="submit" class="btn btn-primary mr-2">Update City</button>
+                                      <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
                                       <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     <a href="/user/index"><button type="submit" class="btn btn-danger">Back</button></a>
                              

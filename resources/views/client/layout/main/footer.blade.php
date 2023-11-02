@@ -12,10 +12,7 @@
                                     href="/"><img
                                         src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_65.png" /></a>
                             </div>
-                            <div class="summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat</div>
+                            <div class="summary">Chào mừng bạn đã đến với webiste đặt vé Tomorrow and Future. Chúc bạn sẽ có những trải nghiệm tốt nhất ở đây.</div>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -23,25 +20,24 @@
                 <div class="col-md-3 col-xs-12">
                     <div class="amy-widget widget_nav_menu">
                         <div class="amy-widget-title">
-                            <h4>Customer Services</h4>
+                            <h4>Dịch vụ người dùng</h4>
                         </div>
                         <div class="amy-widget-content">
                             <ul id="menu-customer-services" class="menu">
                                 <li id="menu-item-346"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-84 current_page_item menu-item-346">
                                     <a href="/"
-                                        aria-current="page">Home</a>
+                                        aria-current="page">Trang chủ</a>
                                 </li>
                                 <li id="menu-item-347"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347">
                                     <a
-                                        href="{{ route('sap-ra-mat') }}">Coming
-                                        Soon</a>
+                                        href="{{ route('sap-ra-mat') }}">Sắp chiếu</a>
                                 </li>
                                 <li id="menu-item-348"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-348">
                                     <a
-                                        href="{{ route('contact') }}">Contact</a>
+                                        href="{{ route('contact') }}">Liên hệ</a>
                                 </li>
                             </ul>
                         </div>
@@ -51,7 +47,7 @@
                 <div class="col-md-3 col-xs-12">
                     <div class="amy-widget amy-widget-list">
                         <div class="amy-widget amy-widget-list list-post ">
-                            <h4 class="amy-title amy-widget-title">Recent Posts</h4>
+                            <h4 class="amy-title amy-widget-title">Bài viết mới nhất</h4>
                             <div class="entry-item">
                                 <div class="entry-thumb"><img
                                         src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59-115x85_c.jpg" />
@@ -85,12 +81,11 @@
                 <div class="col-md-3 col-xs-12">
                     <div class="amy-widget amy-widget-module">
                         <div class="amy-widget amy-widget-module contact ">
-                            <h4 class="amy-title amy-widget-title">Contact Us</h4>
-                            <div class="address"><i class="fa fa-location-arrow" aria-hidden="true"></i>9067
-                                Zurich, Switzerland 87</div>
+                            <h4 class="amy-title amy-widget-title">Liên hệ với chúng tôi</h4>
+                            <div class="address"><i class="fa fa-location-arrow" aria-hidden="true"></i> Trịnh văn bô, Việt nam.</div>
                             <div class="email"><i class="fa fa-envelope-o" aria-hidden="true"></i>abc@gmail.com
                             </div>
-                            <div class="phone"><i class="fa fa-phone" aria-hidden="true"></i>01-234-5678</div>
+                            <div class="phone"><i class="fa fa-phone" aria-hidden="true"></i>1234567890</div>
                         </div>
                         <div class="clear"></div>
                     </div>

@@ -487,7 +487,7 @@
                         <div class="amy-page-title amy-center">
                             <div class="amy-inner container">
                                 <h1 class="page-title">
-                                    Now Playing </h1>
+                                    Phim đang chiếu </h1>
                             </div>
                         </div>
                         <span class="amy-section-overlay"></span>
@@ -554,17 +554,17 @@
                                                                                                         <span
                                                                                                             class="amy-movie-field-duration"><i
                                                                                                                 class="fa fa-clock-o"></i>{{$item->duration}}
-                                                                                                            minutes</span>
+                                                                                                            phút</span>
                                                                                                     </div>
 
                                                                                                     <div
                                                                                                         class="amy-movie-field-desc">
-                                                                                                        <p>{{$item->description}}</p>
+                                                                                                        <p>{!! $item->description !!}</p>
                                                                                                     </div>
                                                                                                     <div
                                                                                                         class="amy-movie-custom-field-group amy-movie-field-language">
                                                                                                         <label
-                                                                                                            class="amy-movie-custom-field-label">Language:</label>
+                                                                                                            class="amy-movie-custom-field-label">Ngôn ngữ:</label>
                                                                                                         <div
                                                                                                             class="amy-movie-custom-field-content">
                                                                                                             {{$item->language}}
@@ -573,8 +573,7 @@
                                                                                                     <div
                                                                                                         class="amy-movie-custom-field-group amy-movie-field-release_date">
                                                                                                         <label
-                                                                                                            class="amy-movie-custom-field-label">Release
-                                                                                                            Date:</label>
+                                                                                                            class="amy-movie-custom-field-label">Thời gian chiếu:</label>
                                                                                                         <div
                                                                                                             class="amy-movie-custom-field-content">
                                                                                                             {{$item->premiere_date}}
@@ -584,7 +583,7 @@
                                                                                                     <div
                                                                                                         class="amy-movie-custom-field-group amy-movie-field-amy_actor">
                                                                                                         <label
-                                                                                                            class="amy-movie-custom-field-label">Actor:</label>
+                                                                                                            class="amy-movie-custom-field-label">Diễn viên:</label>
                                                                                                         <div
                                                                                                             class="amy-movie-custom-field-content">
                                                                                                            
@@ -595,7 +594,7 @@
                                                                                                     <div
                                                                                                         class="amy-movie-custom-field-group amy-movie-field-amy_director">
                                                                                                         <label
-                                                                                                            class="amy-movie-custom-field-label">Director:</label>
+                                                                                                            class="amy-movie-custom-field-label">Đạo diễn:</label>
                                                                                                         <div
                                                                                                             class="amy-movie-custom-field-content">
                                                                                                             
@@ -614,7 +613,7 @@
                                                                                                     <a class="amy-btn-icon-text link-detail"
                                                                                                         href="detail_film/{{$item->id}}">
                                                                                                         <i
-                                                                                                            class="fa fa-info"></i>Detail</a>
+                                                                                                            class="fa fa-info"></i>Chi tiết</a>
                                                                                                     <span
                                                                                                         class="amy-btn-showtimes showtime-btn">
                                                                                                         Showtime </span>

@@ -139,27 +139,25 @@
                                 {{-- @foreach (\App\Models\cinema::get() as $cinema)
                                    
                                     @endforeach --}}
-                                <a href="/" aria-current="page">Home</a>
+                                <a href="/" aria-current="page">Trang chủ</a>
                                 {{-- <a href="{{ route('homeCinema',[$cinema->id]) }}" aria-current="page">Home</a> --}}
 
                             </li>
                             <li id="menu-item-146"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
-                                <a href="{{ route('introduction') }}">Introduc</a>
+                                <a href="{{ route('introduction') }}">Giới thiệu</a>
                             </li>
                             <li id="menu-item-276"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-276">
-                                <a href="/movie">Movie</a>
+                                <a href="/movie">Phim</a>
                                 <ul class="sub-menu">
                                     <li id="menu-item-143"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143">
-                                        <a href="{{ route('dang-phat') }}">Now
-                                            Playing</a>
+                                        <a href="{{ route('dang-phat') }}">Đang chiếu</a>
                                     </li>
                                     <li id="menu-item-134"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134">
-                                        <a href="{{ route('sap-ra-mat') }}">Coming
-                                            Soon</a>
+                                        <a href="{{ route('sap-ra-mat') }}">Sắp chiếu</a>
                                     </li>
                                 </ul>
                             </li>
@@ -174,7 +172,7 @@
                                 </li> --}}
                             <li id="menu-item-146"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
-                                <a href="{{ route('contact') }}">Contact</a>
+                                <a href="{{ route('contact') }}">Liên hệ</a>
                             </li>
 
                             @if (Auth()->check())
@@ -194,6 +192,10 @@
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
                                             <a href="/FavoFilm/{{ Auth::user()->id }}">Trang Yêu thích</a>
+                                        </li>
+                                        <li id="menu-item-140"
+                                            class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+                                            <a href="{{ route('history') }}">Lịch sử đặt vé</a>
                                         </li>
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
@@ -221,11 +223,11 @@
                                     <ul class="sub-menu">
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                            <a href="/login">Login</a>
+                                            <a href="/login">Đăng nhập</a>
                                         </li>
                                         <li id="menu-item-140"
                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                            <a href="/register">Register</a>
+                                            <a href="/register">Đăng ký</a>
                                         </li>
                                     </ul>
                                 </li>

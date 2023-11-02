@@ -85,6 +85,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/myaccount', [AuthController::class, 'index'])->name("myaccount");
     Route::get('/editaccount', [AuthController::class, 'edit'])->name("editaccount");
     Route::post('/myaccount', [AuthController::class, 'profile'])->name('profile');
+    Route::get('/history', [AuthController::class, 'historyTicket'])->name('history');
 
 
     // roles
@@ -100,19 +101,28 @@ Route::middleware(['auth'])->group(function () {
     });
     // Users
     Route::prefix('user')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\userController::class, 'index']);
-        Route::get('create', [App\Http\Controllers\admin\userController::class, 'create']);
-        Route::post('store', [App\Http\Controllers\admin\userController::class, 'store']);
+        Route::get('index', [App\Http\Controllers\admin\userController::class, 'index'])->name('index_user');
+        // Route::get('create', [App\Http\Controllers\admin\userController::class, 'create']);
+        // Route::post('store', [App\Http\Controllers\admin\userController::class, 'store']);
+        Route::get('show/{id}', [App\Http\Controllers\admin\userController::class, 'show'])->name('show.user');
         Route::get('edit/{id}', [App\Http\Controllers\admin\userController::class, 'edit']);
         Route::post('update/{id}', [App\Http\Controllers\admin\userController::class, 'update']);
-        Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy']);
+        Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy'])->name('remove_user');
+    });
+    Route::prefix('admin')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\userController::class, 'admin_index'])->name('index_admin');
+        Route::get('create', [App\Http\Controllers\admin\userController::class, 'create']);
+        Route::post('store', [App\Http\Controllers\admin\userController::class, 'store']);
+        Route::get('edit/{id}', [App\Http\Controllers\admin\userController::class, 'edit_admin'])->name('edit_admin');
+        Route::post('update/{id}', [App\Http\Controllers\admin\userController::class, 'update_admin'])->name('update_admin');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy_admin'])->name('remove_admin');
     });
     //Coupon (ma giam gia)
     Route::prefix('coupon')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\couponController::class, 'index'])->name('coupon.index');
         Route::get('create', [App\Http\Controllers\admin\couponController::class, 'create'])->name('coupon.create');
         Route::post('store', [App\Http\Controllers\admin\couponController::class, 'store'])->name('coupon.store');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\couponController::class, 'edit'])->name('coupon.edit');
+        Route::get('edits/{id}', [App\Http\Controllers\admin\couponController::class, 'edit'])->name('coupon.edit');
         Route::put('update/{id}', [App\Http\Controllers\admin\couponController::class, 'update'])->name('coupon.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\couponController::class, 'destroy'])->name('coupon.delete');
     });
@@ -121,6 +131,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('index', [App\Http\Controllers\admin\foodController::class, 'index'])->name('food.index');
         Route::get('create', [App\Http\Controllers\admin\foodController::class, 'create'])->name('food.create');
         Route::post('store', [App\Http\Controllers\admin\foodController::class, 'store'])->name('food.store');
+        Route::get('show/{id}', [App\Http\Controllers\admin\foodController::class, 'show'])->name('food.show');
         Route::get('edit/{id}', [App\Http\Controllers\admin\foodController::class, 'edit'])->name('food.edit');
         Route::put('update/{id}', [App\Http\Controllers\admin\foodController::class, 'update'])->name('food.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\foodController::class, 'destroy'])->name('food.delete');
@@ -148,6 +159,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('index', [App\Http\Controllers\admin\filmController::class, 'index'])->name('films.index');
         Route::get('create', [App\Http\Controllers\admin\filmController::class, 'create'])->name('films.create');
         Route::post('store', [App\Http\Controllers\admin\filmController::class, 'store'])->name('films.store');
+        Route::get('show/{id}', [App\Http\Controllers\admin\filmController::class, 'show'])->name('films.show');
         Route::get('edit/{id}', [App\Http\Controllers\admin\filmController::class, 'edit'])->name('films.edit');
         Route::post('update/{id}', [App\Http\Controllers\admin\filmController::class, 'update'])->name('films.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\filmController::class, 'destroy'])->name('films.destroy');
@@ -213,9 +225,9 @@ Route::middleware(['auth'])->group(function () {
     });
     // tickit
     Route::prefix('ticket')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\TickitController::class, 'index'])->name('ticket.index');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\TickitController::class, 'destroy'])->name('destroy.index');
-        Route::get('show/{id}', [App\Http\Controllers\admin\TickitController::class, 'show'])->name('show.index');
+        Route::get('index', [App\Http\Controllers\admin\TicketController::class, 'index'])->name('ticket.index');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\TicketController::class, 'destroy'])->name('destroy.index');
+        Route::get('show/{id}', [App\Http\Controllers\admin\TicketController::class, 'show'])->name('show.index');
     });
 
     // Danh sách Tin tức
@@ -223,6 +235,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('index', [App\Http\Controllers\admin\NewController::class, 'index'])->name('news.index');
         Route::get('create', [App\Http\Controllers\admin\NewController::class, 'create'])->name('news.create');
         Route::post('store', [App\Http\Controllers\admin\NewController::class, 'store'])->name('news.store');
+        Route::get('show/{id}', [App\Http\Controllers\admin\NewController::class, 'show'])->name('news.show');
         Route::get('edit/{id}', [App\Http\Controllers\admin\NewController::class, 'edit'])->name('news.edit');
         Route::post('update/{id}', [App\Http\Controllers\admin\NewController::class, 'update'])->name('news.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\NewController::class, 'destroy'])->name('news.destroy');
@@ -249,3 +262,4 @@ Route::middleware(['auth'])->group(function () {
     //onepay
     Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
 });
+Route::get('/NotificationList', [App\Http\Controllers\admin\NotificationController::class, 'index']);

@@ -41,11 +41,11 @@
                             role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active show" data-toggle="pill" href="#profile1" role="tab"
-                                    aria-selected="false">Thông tin cá nhân</a>
+                                    aria-selected="false">Cá nhân</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="pill" href="#profile2" role="tab"
-                                    aria-selected="false">Tài khoản</a>
+                                    aria-selected="false">Lịch sử</a>
                             </li>
                             {{-- <li class="nav-item">
                                 <a class="nav-link" data-toggle="pill" href="#profile3" role="tab"
@@ -246,13 +246,13 @@
                                                     <tr class="ligth ligth-data">
                                                         
                                                         <th style="">Mã Hóa Đơn</th>
-                                                        <th style="">User</th>
-                                                        <th style="">Cinema</th>
-                                                        <th style="">Name</th>
-                                                        <th style="">Date</th>
-                                                        <th>Time</th>
-                                                        <th style="">Seat</th>
-                                                        <th>Tatal</th>
+                                                        <th style="">Tên người dùng</th>
+                                                        <th style="">Rạp chiếu</th>
+                                                        <th style="">Tên phim</th>
+                                                        <th style="">Ngày đặt</th>
+                                                        <th>Thời gian chiếu</th>
+                                                        <th style="">Vị trí ghế</th>
+                                                        <th>Tổng tiền</th>
                                                         
                                                       
 

@@ -32,10 +32,9 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Showtime List</h4>
-                          <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
+                          <h4 class="mb-3">Danh sách chiếu phim</h4>
                       </div>
-                      <a href="/showtime/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Showtime</a>
+                      <a href="/showtime/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm lịch chiếu</a>
                   </div>
               </div>
               <div class="col-lg-12">
@@ -70,13 +69,13 @@
                               </td>
                               <td>{{ $item->film->name }}</td>
                               <td>{{ $item->cinema->name }}</td>
-                              <td>{{ $item->day }}</td>
+                              <td>{{ $item->created_at->format("d-m-Y") }}</td>
                               <td>{{ $item->hour }}</td>
                             
                               <td>
                                   <div class="d-flex align-items-center list-action">
-                                      <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                          href="#"><i class="ri-eye-line mr-0"></i></a>
+                                      {{-- <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                          href="#"><i class="ri-eye-line mr-0"></i></a> --}}
                                       <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
                                           href="/showtime/edit/{{ $item->id }}"><i class="ri-pencil-line mr-0"></i></a>
                                       <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"

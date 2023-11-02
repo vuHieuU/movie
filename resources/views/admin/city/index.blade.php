@@ -32,10 +32,9 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">City List</h4>
-                          <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
+                          <h4 class="mb-3">Danh sách thành phố</h4>
                       </div>
-                      <a href="/city/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add City</a>
+                      <a href="/city/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm thành phố</a>
                   </div>
               </div>
               <div class="col-lg-12">
@@ -49,7 +48,7 @@
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
                               </th>
-                              <th>Name</th>
+                              <th>Tên thành phố</th>
                               <th>Action</th>
                           </tr>
                       </thead>
@@ -69,8 +68,8 @@
                               <td>{{ $item->name }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
-                                      <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                          href="#"><i class="ri-eye-line mr-0"></i></a>
+                                      {{-- <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                          href="#"><i class="ri-eye-line mr-0"></i></a> --}}
                                       <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
                                           href="/city/edit/{{ $item->id }}"><i class="ri-pencil-line mr-0"></i></a>
                                       <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"

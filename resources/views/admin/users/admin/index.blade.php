@@ -32,18 +32,14 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Tickit List</h4>
-                          <p class="mb-0">The product list effectively dictates product presentation and provides space<br> to list your products and offering in the most appealing way.</p>
+                          <h4 class="mb-3">Danh sách người cầm quyền tối cao</h4>
                       </div>
-                      {{-- <a href="{{route("films.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Film</a> --}}
+                      <a href="/admin/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm Admin</a>
                   </div>
               </div>
               <div class="col-lg-12">
                   <div class="table-responsive rounded mb-3">
                   <table class="data-tables table mb-0 tbl-server-info">
-                    <p style="color: green">
-                        {{ session('success') }}
-                    </p>
                       <thead class="bg-white text-uppercase">
                           <tr class="ligth ligth-data">
                               <th>
@@ -52,20 +48,19 @@
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
                               </th>
-                              <th style="width: 10%">User</th>
-                              <th style="width: 10%">Cinema</th>
-                              <th style="width: 13%">Name</th>
-                              <th style="width: 11%">Date</th>
-                              <th>Time</th>
-                              <th style="width: 12%">Seat</th>
-                              <th>Tatal</th>
-                              {{-- <th>Status</th> --}}
+                              <th>Tên người dùng</th>
+                              <th>Số điện thoại</th>
+                              <th>Email</th>
+                              <th>Quyền</th>
                               <th>Action</th>
-
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
-                             @foreach ($tickit as $item)
+
+                        @foreach ($admins as $item)
+                            
+                    
+              
                           <tr>
                               <td>
                                   <div class="checkbox d-inline-block">
@@ -73,29 +68,28 @@
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
                               </td>
-                              <td>{{ $item->user->name }}</td>
+                              <td>{{ $item->name }}</td>
+                              <td>{{ $item->phone }}</td>
+                              <td>{{ $item->email }}</td>
                               <td>
-                                {{ $item->cinema }}
+                                @php
+                                        foreach ($item->roles as $role) {
+                                            echo "$role->name";
+                                        }
+                                @endphp
                               </td>
-                              <td>
-                                {{ $item->film_name }}
-                              </td>
-                              <td>{{ $item->selected_date }}</td>
-                              <td>{{ $item->selected_hour }}</td>
-                              <td>{{ $item->selected_seats }}</td>
-                          
-                              <td>{{number_format( $item->total) }} VND</td>
-    {{-- <td>{{($item->active==1) ?"Thành công" :"Đang xử lý"}}</td> --}}
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                          href="{{route("show.index",$item->id)}}"><i class="ri-eye-line mr-0"></i></a>
-                                     
+                                          href="#"><i class="ri-eye-line mr-0"></i></a>
+                                      <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
+                                          href="{{ route('edit_admin',[$item->id])}}"><i class="ri-pencil-line mr-0"></i></a>
                                       <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                          href="{{route("destroy.index",$item->id)}}" onclick="return confirm('Xóa là không Ctrl lại cuộc đời ?')"><i class="ri-delete-bin-line mr-0"></i></a>
+                                          href="{{ route('remove_admin',[$item->id]) }}"><i class="ri-delete-bin-line mr-0"></i></a>
                                   </div>
                               </td>
                           </tr>
+
                           @endforeach
                       </tbody>
                   </table>
@@ -141,9 +135,5 @@
         </div>
       </div>
       <!-- Wrapper End-->
-      <script>
-        $('.data-tables').DataTable({
-            
-        });
-    </script> 
+    
 @endsection

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Notification;
 use App\Models\ticket;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class TickitController extends Controller
+class NotificationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +18,10 @@ class TickitController extends Controller
     {
         $tickit = ticket::all();
         return view("admin.tickits.index", compact("tickit"));
+        $Notification = Notification::get();
+        // $user_id = $Notification->user_id;
+        // $email = DB::table("users")->where("id", $user_id)->value("email");
+        return view("admin.Notification.index", compact('Notification'));
     }
 
     /**
@@ -40,7 +47,9 @@ class TickitController extends Controller
     {
         $tickit = ticket::find($id);
         return view("admin.tickits.tickitbill", compact("tickit"));
+        //
     }
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -65,5 +74,6 @@ class TickitController extends Controller
         $ticket = ticket::find($id);
         $ticket->delete();
         return redirect()->route("ticket.index")->with('success', 'tickit delete successfully');
+        //    }
     }
 }

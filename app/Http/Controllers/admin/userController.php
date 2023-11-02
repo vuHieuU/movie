@@ -17,8 +17,13 @@ class userController extends Controller
      */
     public function index()
     {
-        $user = User::get();
+        $user = User::whereDoesntHave('roles')->get();
         return view('admin.users.index',compact('user'));
+    }
+
+    public function admin_index(){
+        $admins = User::whereHas('roles')->get();
+        return view('admin.users.admin.index',compact('admins'));
     }
 
     /**
@@ -27,19 +32,20 @@ class userController extends Controller
     public function create()
     {
         $role = Role::all()->groupBy('group');
-        return view('admin.users.create',compact('role'));
+        return view('admin.users.admin.create',compact('role'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(userRequest $request)
+    public function store(Request $request)
     {
         $usersCreate = $request->all();
         $usersCreate['password'] = Hash::make($request->password);
         $user = User::create($usersCreate);
-        $user->roles()->attach($usersCreate['role_ids'] ?? []);
-        return redirect('user/index');
+        $modelType = $user->getMorphClass();
+        $user->roles()->attach($usersCreate['role_ids'] ?? [],['model_type' => $modelType]);
+        return redirect()->route('index_admin');
     }
 
     /**
@@ -47,7 +53,9 @@ class userController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::FindOrFail($id);
+        $role = Role::all()->groupBy('group');
+        return view('admin.users.show',compact('user','role'));
     }
 
     /**
@@ -63,7 +71,7 @@ class userController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(userUpdateRequest $request, string $id)
+    public function update(Request $request, string $id)
     {
         $userUpdate = $request->except('password');
         $user = User::FindOrFail($id);
@@ -72,7 +80,29 @@ class userController extends Controller
         }
         $user->update($userUpdate);
         $user->roles()->sync($userUpdate['role_ids'] ?? []);
-        return redirect('user/index');
+        return redirect()->route('index_user');
+    }
+
+    public function edit_admin(string $id)
+    {
+        $user = User::FindOrFail($id);
+        $role = Role::all()->groupBy('group');
+        return view('admin.users.admin.edit',compact('user','role'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update_admin(Request $request, string $id)
+    {
+        $userUpdate = $request->except('password');
+        $user = User::FindOrFail($id);
+        if($request->password){
+             $userUpdate['password'] = Hash::make($request->password);
+        }
+        $modelType = $user->getMorphClass();
+        $user->roles()->sync($userUpdate['role_ids'] ?? [], ['model_type' => $modelType]);        
+        return redirect()->route('index_admin');
     }
 
     /**
@@ -82,6 +112,13 @@ class userController extends Controller
     {
         $user = User::FindOrFail($id);
         $user->delete($id);
-        return redirect('user/index');
+        return redirect()->route('index_user');
     }
+    public function destroy_admin(string $id)
+    {
+        $user = User::FindOrFail($id);
+        $user->delete($id);
+        return redirect()->route('index_admin');
+    }
+
 }

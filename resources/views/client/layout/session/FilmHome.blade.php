@@ -11,7 +11,7 @@ data-id="e615b68" data-element_type="section">
                 <div class="elementor-widget-container">
                     <div class="amy-heading text-center has-seperator    seperator-1 ">
                         <header class="entry-header"><span class="seperator seperator-left"></span>
-                            <h2 class="title-heading"><span class="title">Now Playing</span>
+                            <h2 class="title-heading"><span class="title">Đang chiếu</span>
                             </h2><span class="seperator seperator-right"></span>
                         </header>
 
@@ -43,7 +43,7 @@ data-id="e615b68" data-element_type="section">
                                                 <h4 class="entry-title">
                                                     {{ $item->name }}</h4>
                                                 <div class="entry-date">
-                                                    Release:
+                                                    Thời gian chiếu:
                                                     {{ Carbon\Carbon::parse($item->premiere_date)->format('d/n/Y') }}
                                                 </div>
                                                 <div class="entry-button">
@@ -53,7 +53,7 @@ data-id="e615b68" data-element_type="section">
                                                     <a href="detail_film/{{ $item->id }}">
                                                         <i aria-hidden="true"
                                                             class="fa fa-exclamation"></i>
-                                                        Detail </a>
+                                                        Chi tiết </a>
                                                 </div>
                                             </div>
                                             <div class="pic-caption open-left">
@@ -65,17 +65,17 @@ data-id="e615b68" data-element_type="section">
                                                     G </span>
                                                 <div class="desc-mv">
                                                     <p>
-                                                        <span>Release: </span>
+                                                        <span>Lịch chiếu: </span>
                                                         {{ Carbon\Carbon::parse($item->premiere_date)->format('d/n/Y') }}
                                                     </p>
 
                                                     <p>
-                                                        <span>Duration: </span>
-                                                        {{ $item->duration }} minutes
+                                                        <span>Thời lượng: </span>
+                                                        {{ $item->duration }} phút
                                                     </p>
 
                                                     <p>
-                                                        <span>Language: </span>
+                                                        <span>Ngôn ngữ: </span>
                                                         {{ $item->country }}
                                                     </p>
 
@@ -91,7 +91,7 @@ data-id="e615b68" data-element_type="section">
 
                                                         <i aria-hidden="true"
                                                             class="fa fa-exclamation"></i>
-                                                        Detail </a>
+                                                        Chi tiết </a>
                                                 </div>
                                             </div>
                                         </article>

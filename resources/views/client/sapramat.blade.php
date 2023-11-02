@@ -486,7 +486,7 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
                 <div class="amy-page-title amy-center">
                     <div class="amy-inner container">
                         <h1 class="page-title">
-                            Coming Soon </h1>
+                            Sắp ra mắt </h1>
                     </div>
                 </div>
                 <span class="amy-section-overlay"></span>
@@ -541,7 +541,7 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
 
                                                                                 <span class="duration">
                                                                                     <i class="fa fa-clock-o"></i>
-                                                                                    {{$item->duration}} minutes </span>
+                                                                                    {{$item->duration}} phút </span>
                                                                             </div>
 
                                                                             <ul class="info-list">
@@ -549,7 +549,7 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
 
                                                                                 <li>
                                                                                     <label>
-                                                                                        Director:
+                                                                                        Đạo diễn:
                                                                                     </label>
                                                                                     <span>
                                                                                       <a
@@ -561,7 +561,7 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
 
                                                                                 <li>
                                                                                     <label>
-                                                                                        Release:
+                                                                                        Time chiếu:
                                                                                     </label>
                                                                                     <span>
                                                                                         {{$item->premiere_date}} </span>
@@ -569,10 +569,10 @@ class="page-template-default page page-id-133 amy-header-default  single-author 
 
                                                                                 <li>
                                                                                     <label>
-                                                                                        Language:
+                                                                                        Ngôn ngữ:
                                                                                     </label>
                                                                                     <span>
-                                                                                        {{$item->director}}language </span>
+                                                                                        {{$item->language}} </span>
                                                                                 </li>
 
                                                                                 <li>

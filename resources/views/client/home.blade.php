@@ -260,10 +260,9 @@
                                         </style>
                                         <div class="amy-widget-content">
                                             <ul>
-                                                <li><a href="#">Cinemas</a></li>
-                                                <li><a href="#">Promations</a></li>
-                                                <li><a href="#">Vouchers &amp; Cards</a></li>
-                                                <li><a href="#">Buy Tickets</a></li>
+                                                <li><a href="#">Rạp phim</a></li>
+                                                <li><a href="#">Vouchers</a></li>
+                                                <li><a href="#">Đặt vé</a></li>
                                                 <li>popcorn</li>
                                             </ul>
                                         </div>
@@ -318,8 +317,7 @@
                                                 font-size: 59px
                                             }
                                         </style>
-                                        <h2 class="elementor-heading-title elementor-size-default">Top movies in
-                                            theatres</h2>
+                                        <h2 class="elementor-heading-title elementor-size-default">Phim thịnh hành ở rạp</h2>
                                     </div>
                                 </div>
                                 <div class="elementor-element elementor-element-b83f4fa elementor-widget elementor-widget-Amy_Movie_Carousel"
@@ -344,7 +342,7 @@
                                                                         {{ $item->name }} </a>
                                                                 </h2>
                                                                 <div class="carousel-release">
-                                                                    Release:
+                                                                    Thời gian chiếu:
                                                                     <span>
                                                                         {{ Carbon\Carbon::parse($item->premiere_date)->format('d/n/Y') }}
                                                                     </span>
@@ -357,7 +355,7 @@
                                                                     <a href="{{ route('filmDetail',[$item->id]) }}">
                                                                         <i aria-hidden="true"
                                                                             class="fa fa-exclamation"></i>
-                                                                        Detail </a>
+                                                                        Chi tiết </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -650,7 +648,7 @@
                                 <div class="elementor-element elementor-element-4a8597b elementor-widget elementor-widget-heading"
                                     data-id="4a8597b" data-element_type="widget" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
-                                        <h2 class="elementor-heading-title elementor-size-default">Videos and photos
+                                        <h2 class="elementor-heading-title elementor-size-default">Video và ảnh
                                         </h2>
                                     </div>
                                 </div>
@@ -893,10 +891,9 @@
                                         </style>
                                         <div class="amy-widget-content">
                                             <ul>
-                                                <li><a href="#">Cinemas</a></li>
-                                                <li><a href="#">Promations</a></li>
-                                                <li><a href="#">Vouchers &amp; Cards</a></li>
-                                                <li><a href="#">Buy Tickets</a></li>
+                                                <li><a href="#">Rạp Phim</a></li>
+                                                <li><a href="#">Vouchers</a></li>
+                                                <li><a href="#">Đặt vé</a></li>
                                                 <li>popcorn</li>
                                             </ul>
                                         </div>
@@ -917,7 +914,7 @@
                                 <div class="elementor-element elementor-element-5717a5b elementor-widget elementor-widget-heading"
                                     data-id="5717a5b" data-element_type="widget" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
-                                        <h2 class="elementor-heading-title elementor-size-default">Latest News</h2>
+                                        <h2 class="elementor-heading-title elementor-size-default">Tin tức mới nhất</h2>
                                     </div>
                                 </div>
                                 <div class="elementor-element elementor-element-5131c14 elementor-widget elementor-widget-Amy_Movie_Blog"
@@ -940,8 +937,7 @@
                                                                 <h2 class="entry-title"><a
                                                                         href="{{ route('detailblog', [$item->id]) }}">{{ $item->title }}</a>
                                                                 </h2><a class="entry-btn"
-                                                                    href="{{ route('detailblog', [$item->id]) }}">Read
-                                                                    more</a>
+                                                                    href="{{ route('detailblog', [$item->id]) }}">Xem thêm</a>
                                                             </div>
                                                             <div class="clearfix"></div>
                                                         </div>
@@ -961,8 +957,7 @@
                                                                 </h2>
                                                                 <div class="entry-summary">{{ $item->content }}
                                                                 </div><a class="entry-btn"
-                                                                    href="{{ route('detailblog', [$item->id]) }}">Read
-                                                                    more</a>
+                                                                    href="{{ route('detailblog', [$item->id]) }}">Xem thêm</a>
                                                             </div>
                                                             <div class="clearfix"></div>
                                                         </div>

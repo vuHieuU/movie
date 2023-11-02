@@ -119,8 +119,7 @@
                                                         {{-- @if ($film_show_time->film->status == 'đang chiếu') --}}
                                                         <div class="mrate  no-rate">
                                                             <button type="button" data-bs-toggle="modal"
-                                                                data-bs-target="#exampleModal" class="amy-buy-ticket">Buy
-                                                                Ticket</button>
+                                                                data-bs-target="#exampleModal" class="amy-buy-ticket">Đặt vé</button>
                                                         </div>
                                                         {{-- @else --}}
 
@@ -388,13 +387,13 @@
                                             <div class="clearfix"></div>
 
                                             <div class="entry-content e-content" itemprop="description articleBody">
-                                                <h3 class="info-name amy-title">Synopsis</h3>
+                                                <h3 class="info-name amy-title">Mô tả phim</h3>
                                                 <p>{!! $film->description !!}</p>
                                             </div>
 
                                             <div class="entry-media">
                                                 <h3 class="info-name amy-title">Video
-                                                    &amp; Photo</h3>
+                                                    &amp; Ảnh</h3>
                                                 <div class="number-media">
                                                     <span class="gallery"><i></i>5
                                                         photos</span>
@@ -453,9 +452,9 @@
 
                                                 <div class="amy-comment-form">
                                                     <div id="respond" class="comment-respond">
-                                                        <h3 id="reply-title" class="comment-reply-title amy-title">Write
-                                                            a
-                                                            comment <small><a rel="nofollow"
+                                                        <h3 id="reply-title" class="comment-reply-title amy-title">Viết
+                                                            bình
+                                                            luận <small><a rel="nofollow"
                                                                     id="cancel-comment-reply-link"
                                                                     href="/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/#respond"
                                                                     style="display:none;">Cancel
@@ -463,18 +462,12 @@
                                                         <form
                                                             action="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-comments-post.php"
                                                             method="post" id="commentform" class="comment-form">
-                                                            <p class="comment-notes"><span id="email-notes">Your
-                                                                    email
-                                                                    address will
-                                                                    not be
-                                                                    published.</span>
+                                                            <p class="comment-notes"><span id="email-notes">Địa chỉ email của bạn sẽ không được công bố. Các trường bắt buộc được đánh dấu</span>
                                                                 <span class="required-field-message"
-                                                                    aria-hidden="true">Required
-                                                                    fields are
-                                                                    marked <span class="required"
+                                                                    aria-hidden="true">Các trường bắt buộc được đánh dấu<span class="required"
                                                                         aria-hidden="true">*</span></span>
                                                             </p>
-                                                            <p class="comment-form-comment"><label for="comment">Comment
+                                                            <p class="comment-form-comment"><label for="comment">Bình luận
                                                                     <span class="required">*</span></label>
                                                                 <textarea name="comment" id="comment" cols="45" rows="8" max-length="65525" aria-required="true"
                                                                     required="required"></textarea>
@@ -506,7 +499,7 @@
                                                                             maxlength="200" /></p>
                                                                 </div>
                                                             </div>
-                                                            <p class="comment-form-cookies-consent"><input
+                                                            {{-- <p class="comment-form-cookies-consent"><input
                                                                     id="wp-comment-cookies-consent"
                                                                     name="wp-comment-cookies-consent" type="checkbox"
                                                                     value="yes" />
@@ -521,9 +514,9 @@
                                                                     next
                                                                     time I
                                                                     comment.</label>
-                                                            </p>
+                                                            </p> --}}
                                                             <p class="form-submit"><input name="submit" type="submit"
-                                                                    id="submit" class="submit" value="Post Comment" />
+                                                                    id="submit" class="submit" value="Gửi" />
                                                                 <input type='hidden' name='comment_post_ID'
                                                                     value='74' id='comment_post_ID' />
                                                                 <input type='hidden' name='comment_parent'
@@ -552,8 +545,7 @@
                                             </div>
                                             <div class="amy-widget amy-widget-list">
                                                 <div class="amy-widget amy-widget-list list-movie ">
-                                                    <h4 class="amy-title amy-widget-title">Top
-                                                        Movie</h4>
+                                                    <h4 class="amy-title amy-widget-title">Top phim</h4>
                                   
 
                                                     @foreach ($filmtopmovie as $item)                                                                                                       
@@ -578,8 +570,7 @@
                                             </div>
                                             <div class="amy-widget amy-widget-list">
                                                 <div class="amy-widget amy-widget-list list-post ">
-                                                    <h4 class="amy-title amy-widget-title">Recent
-                                                        Posts</h4>
+                                                    <h4 class="amy-title amy-widget-title">Tin tức gần nhất</h4>
                                                     <div class="entry-item">
                                                         <div class="entry-thumb"><img
                                                                 src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59-115x85_c.jpg" />
