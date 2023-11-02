@@ -41,7 +41,7 @@ Route::get('/weeklyshowtime/{id}', [App\Http\Controllers\client\WeeklyShowtimeCo
 
 
 
-Route::get('/detail_film/{id}', [App\Http\Controllers\client\DetailFilmController::class, 'index'])->name("filmDetail");
+Route::get('/chi-tiet-phim/{id}', [App\Http\Controllers\client\DetailFilmController::class, 'index'])->name("filmDetail");
 
 Route::get('/dang-phat', [App\Http\Controllers\client\DangphatController::class, 'index'])->name("dang-phat");
 Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class, 'index'])->name("sap-ra-mat");
@@ -246,6 +246,9 @@ Route::middleware(['auth'])->group(function () {
        
     });
 
+    //setting
+    Route::get('/smtp-settings',[App\Http\Controllers\admin\SettingController::class,'smtp_settings'])->name('smtp_settings.index');
+    Route::post('/env_key_update',[App\Http\Controllers\admin\SettingController::class,'env_key_update'])->name('smtp_settings.update');
     // cart
     Route::get('/seat-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
     Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'Pay'])->name('pay');

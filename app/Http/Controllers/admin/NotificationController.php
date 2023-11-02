@@ -16,8 +16,6 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        $tickit = ticket::all();
-        return view("admin.tickits.index", compact("tickit"));
         $Notification = Notification::get();
         // $user_id = $Notification->user_id;
         // $email = DB::table("users")->where("id", $user_id)->value("email");

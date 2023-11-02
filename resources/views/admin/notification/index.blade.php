@@ -51,55 +51,73 @@
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
                               </th>
+                              <th>Trạng thái</th>
                               <th>Mã đơn</th>
+                              <th>Người mua</th>
                               <th>Email</th>
                               <th>Tên phim</th>
-                              <th>Tên rạp</th>
-                              <th>Ngày chiếu</th>
-                              <th>Giờ chiếu</th>
-                              <th>Ghế ngồi</th>
-                              <th>Đơn giá</th>
                               <th>Thời gian đặt</th>
-                              <th>Trạng thái</th>
                               <th>Action</th>
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
-                             @foreach ($Notification as $item)
-                          <tr>
-                              <td>
-                                  <div class="checkbox d-inline-block">
-                                      <input type="checkbox" class="checkbox-input" id="checkbox10">
-                                      <label for="checkbox10" class="mb-0"></label>
-                                  </div>
-                              </td>
-                              <td>{{ $item->code }}</td>
-                              <td>{{ $item->user_email }}</td>
-                              <td>{{ $item->film_name }}</td>
-                              <td>{{ $item->cinema }}</td>
-                              <td>{{ $item->date }}</td>
-                              <td>{{ $item->hour }}</td>
-                              <td>{{ $item->seats }}</td>
-                              <td>{{ $item->total }}</td>
-                              <td>{{ $item->updated_at }}</td>
-                              <td>
-                                  @if ($item->status==1)
-                                      Chưa xem
-                                  @else
-                                      Đã xem
-                              @endif</td>
-                              <td>
-                                  <div class="d-flex align-items-center list-action">
-                                      <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                          href="#"><i class="ri-eye-line mr-0"></i></a>
-                                      <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                          href="{{route("news.edit",$item->id)}}"><i class="ri-pencil-line mr-0"></i></a>
-                                      <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                          href="{{route("news.destroy",$item->id)}}" onclick="return confirm('Xóa là không Ctrl lại cuộc đời ?')"><i class="ri-delete-bin-line mr-0"></i></a>
-                                  </div>
-                              </td>
-                          </tr>
-                          @endforeach
+                        @foreach ($Notification as $item)
+                        @if ($item->status == 1)
+                        <tr class="bg-light bg-gradient">
+                          <td>
+                              <div class="checkbox d-inline-block">
+                                  <input type="checkbox" class="checkbox-input" id="checkbox10">
+                                  <label for="checkbox10" class="mb-0"></label>
+                              </div>
+                          </td>
+                          <td>@if ($item->status == 1)
+                              Chưa xem
+                          @else
+                              Đã xem
+                          @endif</td>
+                          <td>{{ $item->code }}</td>
+                          <td>{{ $item->buyer_name }}</td>
+                          <td>{{ $item->email }}</td>
+                          <td>{{ $item->film_name }}</td>
+                          <td>{{ $item->updated_at }}</td>
+                          <td>
+                              <div class="d-flex align-items-center list-action">
+                                  <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                        href="{{route("show.index",$item->tickets_id)}}"><i class="ri-eye-line mr-0"></i></a>
+                                  <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
+                                      href="{{route("news.destroy",$item->id)}}" onclick="return confirm('Xóa là không Ctrl lại cuộc đời ?')"><i class="ri-delete-bin-line mr-0"></i></a>
+                              </div>
+                          </td>
+                      </tr>
+                        @else
+                        <tr class="">
+                          <td>
+                              <div class="checkbox d-inline-block">
+                                  <input type="checkbox" class="checkbox-input" id="checkbox10">
+                                  <label for="checkbox10" class="mb-0"></label>
+                              </div>
+                          </td>
+                          <td>@if ($item->status == 1)
+                              Chưa xem
+                          @else
+                              Đã xem
+                          @endif</td>
+                          <td>{{ $item->code }}</td>
+                          <td>{{ $item->buyer_name }}</td>
+                          <td>{{ $item->email }}</td>
+                          <td>{{ $item->film_name }}</td>
+                          <td>{{ $item->updated_at }}</td>
+                          <td>
+                              <div class="d-flex align-items-center list-action">
+                                  <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                      href="#"><i class="ri-eye-line mr-0"></i></a>
+                                  <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
+                                      href="{{route("news.destroy",$item->tickets_id)}}" onclick="return confirm('Xóa là không Ctrl lại cuộc đời ?')"><i class="ri-delete-bin-line mr-0"></i></a>
+                              </div>
+                          </td>
+                      </tr>
+                        @endif
+                        @endforeach
                       </tbody>
                   </table>
                   </div>

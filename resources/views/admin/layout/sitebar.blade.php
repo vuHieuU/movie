@@ -215,6 +215,23 @@
                    
                 </ul>
             </li>
+            <li class=" ">
+                <a href="#setting" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="ml-4">Cài đặt</span>
+                    <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                    </svg>
+                </a>
+                <ul id="setting" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                    <li class="">
+                        <a href="{{ route('smtp_settings.index') }}">
+                            <i class="las la-minus"></i><span>Cài đặt SMTP</span>
+                        </a>
+                    </li>
+                   
+                </ul>
+            </li>
 {{-- @endcan --}}
             </ul>
         </nav>
@@ -388,18 +405,18 @@
                                         <div class="cust-title p-3">
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <h5 class="mb-0">Notifications</h5>
-                                                <a class="badge badge-primary badge-card" href="#">3</a>
+                                                <a class="badge badge-primary badge-card" href="#">{{\App\Models\Notification::where('status',1)->count()}}</a>
                                             </div>
                                         </div>
                                         <div class="px-3 pt-0 pb-0 sub-card">
-                                            @foreach (\App\Models\Notification::orderBy('created_at', 'desc')->take(3)->get() as $item)
+                                            @foreach (\App\Models\Notification::where('status',1)->orderBy('created_at', 'desc')->take(3)->get() as $item)
                                         
                                             <div class="px-3 pt-0 pb-0 sub-card">
-                                                <a href="#" class="iq-sub-card">
+                                                <a href="{{route("show.index",$item->tickets_id)}}" class="iq-sub-card">
                                                     <div class="media align-items-center cust-card py-3 border-bottom">
                                                         <div class="media-body ml-3">
                                                             <div class="d-flex align-items-center justify-content-between">
-                                                                <p class="mb-0">{{$item->film_name}} đã đặt vé xem phim vào lúc</p>
+                                                                <p class="mb-0">Đã có phim được đặt vé vào lúc</p>
                                                                 
                                                             </div>
                                                             <small class="mb-0">{{$item->created_at}}</small>

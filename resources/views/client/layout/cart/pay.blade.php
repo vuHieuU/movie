@@ -223,9 +223,11 @@
                                             <td>01</td>
                                             <td>Food</td>
                                             <td>
-                                            @foreach ($FoodValueName as $item) 
+                                                 @if ($FoodValueName)
+                                                 @foreach ($FoodValueName as $item) 
                                                  {{ $item['name'] }} * {{ $item['quantity'] }}
                                             @endforeach
+                                                 @endif
                                             </td>
                                             <td class="cs-text_right cs-primary_color">
                                                 {{ number_format($totalPriceFoodValue) }} VNĐ</td>

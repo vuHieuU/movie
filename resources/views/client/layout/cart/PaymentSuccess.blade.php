@@ -24,9 +24,12 @@
                         <p><strong>Thời gian:</strong> {{Carbon\Carbon::parse($ticket->selected_date)->format("d/n/Y") }}</p>
                         <p><strong>Giờ chiếu:</strong> {{ $ticket->selected_hour }} </p>
                         <p><strong>Đồ Ăn:</strong> 
-                            @foreach ($FoodValueName as $item) 
+                            @if ($FoodValueName)
+                                
+                                   @foreach ($FoodValueName as $item) 
                                             {{ $item['name'] }} * {{ $item['quantity'] }}
                                     @endforeach
+                            @endif
                         </p>
                     </div>
                 </div>

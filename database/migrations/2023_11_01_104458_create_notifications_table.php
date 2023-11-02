@@ -13,17 +13,11 @@ return new class extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
-            $table->text('user_email');
-            $table->text('film_name');
-            $table->text('date');
-            $table->text('hour');
-            $table->text('seats');
-            $table->text('cinema');
-            $table->text('food')->nullable();
-            $table->text('coupon_code')->nullable();
-            $table->text('total');
-            $table->text('code');
+            $table->unsignedBigInteger('users_id');
+            $table->unsignedBigInteger('tickets_id');
             $table->integer('status')->default(1);
+            $table->foreign('users_id')->references('id')->on('users');
+            $table->foreign('tickets_id')->references('id')->on('tickets');
             $table->timestamps();
         });
     }
