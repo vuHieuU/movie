@@ -78,19 +78,34 @@ Route::post('add-rating', [App\Http\Controllers\client\RatingController::class, 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Auth::routes();
 
-Route::get('/admin', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('admin');
-Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'index'])->name('index');
-    //profile của user
+Route::middleware(['auth'])->group(function () {    //profile của user
     Route::get('/myaccount', [AuthController::class, 'index'])->name("myaccount");
     Route::get('/editaccount', [AuthController::class, 'edit'])->name("editaccount");
     Route::post('/myaccount', [AuthController::class, 'profile'])->name('profile');
     Route::get('/history', [AuthController::class, 'historyTicket'])->name('history');
-
-
     // roles
+    // cart
+    Route::get('/seat-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
+    Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'Pay'])->name('pay');
+    Route::post('/apply-coupon', [App\Http\Controllers\client\cart\CouponController::class, 'applyCoupon'])->name('applyCoupon');
+    Route::post('/payment-success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
+    Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('success');
 
+    //vnpay
+    Route::post('/vnpay_payment/{film_id}', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);
 
+    //momo
+    Route::post('/momo_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'momo_payment']);
+
+    //onepay
+    Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
+});
+
+Route::middleware('admin')->group(function () {
+    // Các route được bảo vệ bởi middleware 'admin' nên được định nghĩa ở đây
+    // ...
+    Route::get('/admin', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('admin');
+    Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'index'])->name('index');
     Route::prefix('role')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\roleController::class, 'index']);
         Route::get('create', [App\Http\Controllers\admin\roleController::class, 'create']);
@@ -249,20 +264,5 @@ Route::middleware(['auth'])->group(function () {
     //setting
     Route::get('/smtp-settings',[App\Http\Controllers\admin\SettingController::class,'smtp_settings'])->name('smtp_settings.index');
     Route::post('/env_key_update',[App\Http\Controllers\admin\SettingController::class,'env_key_update'])->name('smtp_settings.update');
-    // cart
-    Route::get('/seat-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
-    Route::get('/pay/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'Pay'])->name('pay');
-    Route::post('/apply-coupon', [App\Http\Controllers\client\cart\CouponController::class, 'applyCoupon'])->name('applyCoupon');
-    Route::post('/payment-success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
-    Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('success');
-
-    //vnpay
-    Route::post('/vnpay_payment/{film_id}', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);
-
-    //momo
-    Route::post('/momo_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'momo_payment']);
-
-    //onepay
-    Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
+    Route::get('/NotificationList', [App\Http\Controllers\admin\NotificationController::class, 'index']);
 });
-Route::get('/NotificationList', [App\Http\Controllers\admin\NotificationController::class, 'index']);
