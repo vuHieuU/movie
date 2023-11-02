@@ -267,25 +267,27 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody class="ligth-body">
-                                                    @foreach ($tickit as $item)
-<tr>
-                                                        
-                                                        <td>{{ $item->code }}</td>
-                                                        <td>{{ $item->name }}</td>
-                                                        <td>
-                                                          {{ $item->cinema }}
-                                                        </td>
-                                                        <td>
-                                                          {{ $item->film_name }}
-                                                        </td>
-                                                        <td>{{ $item->selected_date }}</td>
-                                                        <td>{{ $item->selected_hour }}</td>
-                                                        <td>{{ $item->selected_seats }}</td>
+                                                    @forelse ($tickit as $item)
+                                                        <tr>    
+                                                            <td>{{ $item->code }}</td>
+                                                            <td>{{ $item->name }}</td>
+                                                            <td>
+                                                            {{ $item->cinema }}
+                                                            </td>
+                                                            <td>
+                                                            {{ $item->film_name }}
+                                                            </td>
+                                                            <td>{{ $item->selected_date }}</td>
+                                                            <td>{{ $item->selected_hour }}</td>
+                                                            <td>{{ $item->selected_seats }}</td>
                                                     
-                                                        <td>{{ number_format($item->total) }} VND</td>
-                                                        
-                                                    </tr>
-@endforeach
+                                                            <td>{{ number_format($item->total) }} VND</td>  
+                                                        </tr>
+                                                    @empty
+                                                        <tr>
+                                                            <td colspan="8">Chưa có hóa đơn</td>
+                                                        </tr>
+                                                    @endforelse
                                                 </tbody>
                                             </table>
                                         </div>
