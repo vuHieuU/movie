@@ -8,8 +8,8 @@
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <title>{{ $title }}</title>
     <meta name='robots' content='max-image-preview:large' />
-   <link rel='dns-prefetch' href='//fonts.googleapis.com' />
-     {{-- <link rel='dns-prefetch' href='//s.w.org' />
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    {{-- <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
         href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Comments Feed"
@@ -476,9 +476,6 @@
 
         @extends('client.layout.main.main')
         @section('contact')
-
-
-
             <div id="main">
                 <div id="content" class="site-content">
 
@@ -519,177 +516,167 @@
 
 
                                                                                 @foreach ($film_nowplaying as $item)
-                                                                                    
-                                                                               
-                                                                                <div class="amy-movie-item entry-item">
-                                                                                    <div class="amy-movie-item-inner">
-                                                                                        <div class="amy-movie-item-front">
+                                                                                    <div class="amy-movie-item entry-item">
+                                                                                        <div class="amy-movie-item-inner">
                                                                                             <div
-                                                                                                class="amy-movie-item-poster">
-                                                                                                <a  class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox"
-                                                                                                    href="{{ $item->trailer }} ">
-                                                                                                    <img class=""
-                                                                                                        src="{{asset("storage/images/".$item->thumb)}}"
-                                                                                                        alt="Kubo and the Two Strings" />
-                                                                                                </a>
-                                                                                                <span
-                                                                                                    class="amy-movie-field-imdb">8.5</span>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                        <div class="amy-movie-item-back">
-                                                                                            <div
-                                                                                                class="amy-movie-item-back-inner">
+                                                                                                class="amy-movie-item-front">
                                                                                                 <div
-                                                                                                    class="amy-movie-item-content">
-                                                                                                    <h3
-                                                                                                        class="amy-movie-field-title">
-                                                                                                        <a
-                                                                                                            href="detail_film/{{$item->id}}">{{$item->name}}</a></h3>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-item-meta">
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-mpaa">G</span>
-                                                                                                        <span
-                                                                                                            class="amy-movie-field-duration"><i
-                                                                                                                class="fa fa-clock-o"></i>{{$item->duration}}
-                                                                                                            phút</span>
-                                                                                                    </div>
-
-                                                                                                    <div
-                                                                                                        class="amy-movie-field-desc">
-                                                                                                        <p>{!! $item->description !!}</p>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-language">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Ngôn ngữ:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            {{$item->language}}
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-release_date">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Thời gian chiếu:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            {{$item->premiere_date}}
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_actor">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Diễn viên:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                           
-                                                                                                            <a
-                                                                                                                href="">{{$item->actor}}</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="amy-movie-custom-field-group amy-movie-field-amy_director">
-                                                                                                        <label
-                                                                                                            class="amy-movie-custom-field-label">Đạo diễn:</label>
-                                                                                                        <div
-                                                                                                            class="amy-movie-custom-field-content">
-                                                                                                            
-                                                                                                            <a
-                                                                                                                href="">{{$item->director}}</a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                                <div
-                                                                                                    class="amy-movie-item-button">
-                                                                                                    <a href="{{$item->trailer}}"
-                                                                                                        class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
-                                                                                                        <i
-                                                                                                            class="fa fa-play"></i>Trailer</a>
-                                                                                                    <a class="amy-btn-icon-text link-detail"
-                                                                                                        href="detail_film/{{$item->id}}">
-                                                                                                        <i
-                                                                                                            class="fa fa-info"></i>Chi tiết</a>
+                                                                                                    class="amy-movie-item-poster">
+                                                                                                    <a class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox"
+                                                                                                        href="{{ $item->trailer }} ">
+                                                                                                        <img class=""
+                                                                                                            src="{{ asset('storage/images/' . $item->thumb) }}"
+                                                                                                            alt="Kubo and the Two Strings" />
+                                                                                                    </a>
                                                                                                     <span
-                                                                                                        class="amy-btn-showtimes showtime-btn">
-                                                                                                        Showtime </span>
+                                                                                                        class="amy-movie-field-imdb">8.5</span>
+                                                                                                </div>
+                                                                                            </div>
 
+                                                                                            <div
+                                                                                                class="amy-movie-item-back">
+                                                                                                <div
+                                                                                                    class="amy-movie-item-back-inner">
+                                                                                                    <div
+                                                                                                        class="amy-movie-item-content">
+                                                                                                        <h3
+                                                                                                            class="amy-movie-field-title">
+                                                                                                            <a
+                                                                                                                href="chi-tiet-phim/{{ $item->id }}">{{ $item->name }}</a>
+                                                                                                        </h3>
+
+                                                                                                        <div
+                                                                                                            class="amy-movie-item-meta">
+                                                                                                            <span
+                                                                                                                class="amy-movie-field-mpaa">G</span>
+                                                                                                            <span
+                                                                                                                class="amy-movie-field-duration"><i
+                                                                                                                    class="fa fa-clock-o"></i>{{ $item->duration }}
+                                                                                                                phút</span>
+                                                                                                        </div>
+
+                                                                                                        <div
+                                                                                                            class="amy-movie-field-desc">
+                                                                                                            <p>{!! $item->description !!}
+                                                                                                            </p>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                            class="amy-movie-custom-field-group amy-movie-field-language">
+                                                                                                            <label
+                                                                                                                class="amy-movie-custom-field-label">Ngôn
+                                                                                                                ngữ:</label>
+                                                                                                            <div
+                                                                                                                class="amy-movie-custom-field-content">
+                                                                                                                {{ $item->language }}
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                            class="amy-movie-custom-field-group amy-movie-field-release_date">
+                                                                                                            <label
+                                                                                                                class="amy-movie-custom-field-label">Thời
+                                                                                                                gian
+                                                                                                                chiếu:</label>
+                                                                                                            <div
+                                                                                                                class="amy-movie-custom-field-content">
+                                                                                                                {{ $item->premiere_date }}
+                                                                                                            </div>
+                                                                                                        </div>
+
+                                                                                                        <div
+                                                                                                            class="amy-movie-custom-field-group amy-movie-field-amy_actor">
+                                                                                                            <label
+                                                                                                                class="amy-movie-custom-field-label">Diễn
+                                                                                                                viên:</label>
+                                                                                                            <div
+                                                                                                                class="amy-movie-custom-field-content">
+
+                                                                                                                <a
+                                                                                                                    href="">{{ $item->actor }}</a>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                            class="amy-movie-custom-field-group amy-movie-field-amy_director">
+                                                                                                            <label
+                                                                                                                class="amy-movie-custom-field-label">Đạo
+                                                                                                                diễn:</label>
+                                                                                                            <div
+                                                                                                                class="amy-movie-custom-field-content">
+
+                                                                                                                <a
+                                                                                                                    href="">{{ $item->director }}</a>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                    <div
+                                                                                                        class="amy-movie-item-button">
+                                                                                                        <a href="{{ $item->trailer }}"
+                                                                                                            class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox">
+                                                                                                            <i
+                                                                                                                class="fa fa-play"></i>Trailer</a>
+                                                                                                        <a class="amy-btn-icon-text link-detail"
+                                                                                                            href="chi-tiet-phim/{{ $item->id }}">
+                                                                                                            <i
+                                                                                                                class="fa fa-info"></i>Chi
+                                                                                                            tiết</a>
+                                                                                                        <span
+                                                                                                            class="amy-btn-showtimes showtime-btn">Thời
+                                                                                                            gian
+                                                                                                            chiếu</span>
+
+                                                                                                    </div>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
-                                                                                    </div>
 
-                                                                                    <div class="entry-showtime as">
-                                                                                        <div
-                                                                                            class="showtime-item single-cinema">
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>April 6,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>12h30</li>
-                                                                                                    <li> 15h40</li>
-                                                                                                    <li> 19h20</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>April 13,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>10h30</li>
-                                                                                                    <li> 15h20</li>
-                                                                                                    <li> 20h10</li>
-                                                                                                    <li> 23h50</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 4,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>09h20</li>
-                                                                                                    <li> 13h10</li>
-                                                                                                    <li> 17h20</li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            <div class="st-item">
-                                                                                                <div class="st-title">
-                                                                                                    <label>May 6,
-                                                                                                        2022</label><a
-                                                                                                        href="#"
-                                                                                                        class="amy-buy-ticket"
-                                                                                                        target="_blank">Buy
-                                                                                                        Ticket</a></div>
-                                                                                                <ul>
-                                                                                                    <li>07h20</li>
-                                                                                                    <li> 10h10. 15h30</li>
-                                                                                                    <li> 21h00</li>
-                                                                                                </ul>
+                                                                                        <div class="entry-showtime as">
+                                                                                            @php
+                                                                                                $Showtime = \App\Models\Showtime::where('film_id', $item->id)
+                                                                                                    ->where('day', '>=', date('Y-m-d'))
+                                                                                                    ->orderBy('day')
+                                                                                                    ->orderBy('hour')
+                                                                                                    ->where('isActive', 1)
+                                                                                                    ->get();
+
+                                                                                                // $ShowTime = ShowTime::where('film_id', $film->id)
+                                                                                                //     ->whereIn('day', $dateList)
+                                                                                                //     ->where('day', '>=', date('Y-m-d'))
+                                                                                                //     ->orderBy('day')
+                                                                                                //     ->orderBy('hour')
+                                                                                                //     ->get();
+
+                                                                                                // dd($Showtime);
+
+                                                                                            @endphp
+                                                                                            <div
+                                                                                                class="showtime-item single-cinema">
+                                                                                                @forelse ($Showtime as $item)
+                                                                                                    @php
+                                                                                                        $ngayTuDatabase = $item->day;
+                                                                                                        $carbonDate = Carbon\Carbon::parse($ngayTuDatabase);
+                                                                                                        $formattedDate = $carbonDate->format('\N\g\à\y d \T\h\á\n\g m \N\ă\m Y');
+                                                                                                    @endphp
+
+                                                                                                    <div class="st-item">
+                                                                                                        <div
+                                                                                                            class="st-title">
+                                                                                                            <label>{{ $formattedDate }}</label>
+                                                                                                        </div>
+                                                                                                        <ul>
+                                                                                                            <li>{{$item->hour}}</li>
+                                                                                                        </ul>
+                                                                                                    </div>
+                                                                                                @empty
+                                                                                                    <div class="st-item">
+                                                                                                        <span class="text-center text-bold">Không có lịch chiếu phim</span>
+                                                                                                    </div>
+                                                                                                @endforelse
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
-                                                                                </div>
-                                                                               
                                                                                 @endforeach
 
-                                                                                
+
                                                                                 <div class="amy-pagination">
                                                                                     <div class="clear"></div>
                                                                                     <nav class="amy-pagination">
@@ -734,37 +721,38 @@
                                                                             class="amy-widget amy-widget-list list-movie ">
                                                                             <h4 class="amy-title amy-widget-title">Top
                                                                                 Movie</h4>
-                                                                                @foreach ($film_topmovie as $item)
-                                                                                    
-                                                                               
-                                                                            <div class="entry-item">
-                                                                                <div class="entry-thumb"><img
-                                                                                        class="" style="height: 150px;width: 110px"
-                                                                                        src="{{asset("storage/images/".$item->thumb)}}"
-                                                                                        alt="Kubo and the Two Strings" />
-                                                                                </div>
-                                                                                <div class="entry-content">
-                                                                                    <h2 class="entry-title"><a
-                                                                                            href="detail_film/{{$item->id}}">{{$item->name}}</a></h2>
-                                                                                    <div><span class="duration"><i
-                                                                                                class="fa fa-clock-o"></i>{{$item->duration}} minutes</span></div>
-                                                                                               
-                                                                                </div>
-                                                                                {{-- <div class="">
+                                                                            @foreach ($film_topmovie as $item)
+                                                                                <div class="entry-item">
+                                                                                    <div class="entry-thumb"><img
+                                                                                            class=""
+                                                                                            style="height: 150px;width: 110px"
+                                                                                            src="{{ asset('storage/images/' . $item->thumb) }}"
+                                                                                            alt="Kubo and the Two Strings" />
+                                                                                    </div>
+                                                                                    <div class="entry-content">
+                                                                                        <h2 class="entry-title"><a
+                                                                                                href="detail_film/{{ $item->id }}">{{ $item->name }}</a>
+                                                                                        </h2>
+                                                                                        <div><span class="duration"><i
+                                                                                                    class="fa fa-clock-o"></i>{{ $item->duration }}
+                                                                                                minutes</span></div>
+
+                                                                                    </div>
+                                                                                    {{-- <div class="">
                                                                                     <span>
                                                                                         <a href=""class="px-4">  {{ $item->description }}</a>
                                                                                 </span>
                                                                         </div> --}}
-                                                                                <div class="clearfix"></div>
-                                                                            </div>
+                                                                                    <div class="clearfix"></div>
+                                                                                </div>
                                                                             @endforeach
-                                                                      
-                                                                            
+
+
                                                                         </div>
                                                                         <div class="clear"></div>
                                                                     </div>
-                                                                    
-                                                                    
+
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -786,5 +774,4 @@
 
                 </div>
             </div>
-
-            @endsection
+        @endsection
