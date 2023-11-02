@@ -101,7 +101,7 @@ Route::middleware(['auth'])->group(function () {    //profile của user
     Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
 });
 
-Route::middleware('admin')->group(function () {
+// Route::middleware('admin')->group(function () {
     // Các route được bảo vệ bởi middleware 'admin' nên được định nghĩa ở đây
     // ...
     Route::get('/admin', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('admin');
@@ -265,4 +265,4 @@ Route::middleware('admin')->group(function () {
     Route::get('/smtp-settings',[App\Http\Controllers\admin\SettingController::class,'smtp_settings'])->name('smtp_settings.index');
     Route::post('/env_key_update',[App\Http\Controllers\admin\SettingController::class,'env_key_update'])->name('smtp_settings.update');
     Route::get('/NotificationList', [App\Http\Controllers\admin\NotificationController::class, 'index']);
-});
+// });
