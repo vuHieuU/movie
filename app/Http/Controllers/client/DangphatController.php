@@ -18,7 +18,7 @@ class DangphatController extends Controller
     {
         // $status = "đang chiếu";
         $film_topmovie = film::orderByDesc("created_at")->limit(2)->get();
-        $film_nowplaying =film::where("status",2)->get();
+        $film_nowplaying =film::where("status", 1)->get();
         // $film_nowplaying = Showtime::whereHas('film', function ($query) use ($status) {
         // $query->where('status', $status);
         // })->get();
