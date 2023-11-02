@@ -913,11 +913,13 @@
                                                                                                 const quantityInput = document.getElementById(`quantity_${item.id}`);
                                                                                                 const quantity = parseInt(quantityInput.value);
                                                                                                 const itemFoodName = quantityInput.getAttribute('data-food-name');
+                                                                                                const foodID = quantityInput.getAttribute('data-food-id');
 
                                                                                                 if (quantity > 0) {
                                                                                                     const foodInfo = {
                                                                                                         name: itemFoodName,
-                                                                                                        quantity: quantity
+                                                                                                        quantity: quantity,
+                                                                                                        id: foodID
                                                                                                     };
                                                                                                     foodData.push(foodInfo);
                                                                                                 }
@@ -1066,6 +1068,7 @@
                                                                                                                     value="0"
                                                                                                                     min="0"
                                                                                                                     data-food-name="{{ $item->name }}"
+                                                                                                                    data-food-id="{{ $item->id }}"
                                                                                                                     onchange="calculateTotal()">
                                                                                                             </div>
                                                                                                         </div>
@@ -1269,7 +1272,7 @@
                                                                                                 name="FoodValueName"
                                                                                                 id="FoodValueName"
                                                                                                 value="">
-                                                                                            <input type="text"
+                                                                                            <input type="hidden"
                                                                                                 name="selectedSeatsValueID"
                                                                                                 id="selectedSeatsValueID"
                                                                                                 value="">
