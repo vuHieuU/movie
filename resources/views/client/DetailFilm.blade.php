@@ -119,7 +119,8 @@
                                                         {{-- @if ($film_show_time->film->status == 'đang chiếu') --}}
                                                         <div class="mrate  no-rate">
                                                             <button type="button" data-bs-toggle="modal"
-                                                                data-bs-target="#exampleModal" class="amy-buy-ticket">Đặt vé</button>
+                                                                data-bs-target="#exampleModal" class="amy-buy-ticket">Đặt
+                                                                vé</button>
                                                         </div>
                                                         {{-- @else --}}
 
@@ -143,48 +144,55 @@
                                                         <style>
                                                             /* Đặt màu nền cho modal */
                                                             .modal-content {
-                                                                background-color: #fff; /* Màu nền bạn muốn */
+                                                                background-color: #fff;
+                                                                /* Màu nền bạn muốn */
                                                             }
-                                                        
+
                                                             /* Đặt màu cho tiêu đề modal */
                                                             .modal-title {
-                                                                color: #333; /* Màu chữ bạn muốn */
+                                                                color: #333;
+                                                                /* Màu chữ bạn muốn */
                                                             }
-                                                        
+
                                                             /* Đặt màu và kiểu chữ cho cinema links */
                                                             .li {
                                                                 text-decoration: none;
-                                                                color: #606060; /* Màu chữ bạn muốn */
+                                                                color: #606060;
+                                                                /* Màu chữ bạn muốn */
                                                                 list-style: none;
                                                                 font-size: 20px;
-                                                               
+
                                                             }
-                                                        
-                                                           
-                                                        
+
+
+
                                                             /* Đặt kiểu chữ cho ngày */
                                                             .showtime-day {
                                                                 font-weight: 700;
                                                                 margin-left: 20px;
                                                             }
-                                                        
+
                                                             /* Đặt màu nền cho các nút option */
                                                             .option {
-                                                                background-color: #fe7b00b3; /* Màu nền bạn muốn */
+                                                                background-color: #fe7b00b3;
+                                                                /* Màu nền bạn muốn */
                                                                 font-weight: 700;
                                                             }
-                                                        
+
                                                             /* Đặt màu và kiểu chữ cho các nút option */
                                                             .hour-button {
-                                                                background-color: #fe7b00b3; /* Màu nền bạn muốn */
-                                                                color: #fff; /* Màu chữ bạn muốn */
+                                                                background-color: #fe7b00b3;
+                                                                /* Màu nền bạn muốn */
+                                                                color: #fff;
+                                                                /* Màu chữ bạn muốn */
                                                             }
-                                                        
+
                                                             .hour-button:hover {
-                                                                background-color: #ff9900; /* Màu nền khi hover */
+                                                                background-color: #ff9900;
+                                                                /* Màu nền khi hover */
                                                             }
                                                         </style>
-                                                        
+
                                                         {{-- model --}}
                                                         <div class="modal fade modal-xl" id="exampleModal" tabindex="-1"
                                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -200,17 +208,17 @@
 
                                                                     <div class="modal-header  px-5">
                                                                         <div class="container">
-                                                                        <h1 class="modal-title fs-2 py-3 text-muted fw-bold"
-                                                                        id="exampleModalLabel">Chọn rạp</h1>
-                                                                        <div class="d-flex justify-content-around">
-                                                                        @foreach (\App\Models\cinema::get() as $cinema)
-                                                                            <a class="li" href="#"
-                                                                                data-cinema-id="{{ $cinema->id }}">
-                                                                                <li> {{ $cinema->name }}</li>
-                                                                            </a>
-                                                                        @endforeach
-                                                                    </div>
-                                                                    </div>
+                                                                            <h1 class="modal-title fs-2 py-3 text-muted fw-bold"
+                                                                                id="exampleModalLabel">Chọn rạp</h1>
+                                                                            <div class="d-flex justify-content-around">
+                                                                                @foreach (\App\Models\cinema::get() as $cinema)
+                                                                                    <a class="li" href="#"
+                                                                                        data-cinema-id="{{ $cinema->id }}">
+                                                                                        <li> {{ $cinema->name }}</li>
+                                                                                    </a>
+                                                                                @endforeach
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
 
                                                                     <div class="modal-header px-5">
@@ -223,32 +231,32 @@
                                                                                 text-decoration: underline;
                                                                             }
                                                                         </style>
-                                                                          <div class="container">
-                                                                         <h1 class="modal-title fs-2 py-3 text-muted fw-bold"
-                                                                         id="exampleModalLabel">Chọn ngày</h1>
-                                                                        <div class="d-flex py-4">
-                                                                            @php
-                                                                                $uniqueDates = [];
-                                                                            @endphp
-                                                                            @foreach (\App\Models\Cinema::get() as $cinema)
+                                                                        <div class="container">
+                                                                            <h1 class="modal-title fs-2 py-3 text-muted fw-bold"
+                                                                                id="exampleModalLabel">Chọn ngày</h1>
+                                                                            <div class="d-flex py-4">
                                                                                 @php
-                                                                                    $cinemaDates = [];
+                                                                                    $uniqueDates = [];
                                                                                 @endphp
-                                                                                @foreach ($ShowTime as $item)
-                                                                                    @if ($item->cinema_id == $cinema->id && !in_array($item->day, $cinemaDates))
-                                                                                        @php
-                                                                                            $cinemaDates[] = $item->day;
-                                                                                        @endphp
-                                                                                        <a class="showtime-day fs-3"
-                                                                                            style="display: none;font-weight: 700; margin-left:40px"
-                                                                                            data-showtime-date="{{ $item->day }}"
-                                                                                            data-showtime-cinema-id="{{ $item->cinema_id }}">
-                                                                                            {{ Carbon\Carbon::parse($item->day)->format('d/m/Y') }}</a>
-                                                                                    @endif
+                                                                                @foreach (\App\Models\Cinema::get() as $cinema)
+                                                                                    @php
+                                                                                        $cinemaDates = [];
+                                                                                    @endphp
+                                                                                    @foreach ($ShowTime as $item)
+                                                                                        @if ($item->cinema_id == $cinema->id && !in_array($item->day, $cinemaDates))
+                                                                                            @php
+                                                                                                $cinemaDates[] = $item->day;
+                                                                                            @endphp
+                                                                                            <a class="showtime-day fs-3"
+                                                                                                style="display: none;font-weight: 700; margin-left:40px"
+                                                                                                data-showtime-date="{{ $item->day }}"
+                                                                                                data-showtime-cinema-id="{{ $item->cinema_id }}">
+                                                                                                {{ Carbon\Carbon::parse($item->day)->format('d/m/Y') }}</a>
+                                                                                        @endif
+                                                                                    @endforeach
                                                                                 @endforeach
-                                                                            @endforeach
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
                                                                     </div>
 
 
@@ -454,20 +462,23 @@
                                                     <div id="respond" class="comment-respond">
                                                         <h3 id="reply-title" class="comment-reply-title amy-title">Viết
                                                             bình
-                                                            luận <small><a rel="nofollow"
-                                                                    id="cancel-comment-reply-link"
+                                                            luận <small><a rel="nofollow" id="cancel-comment-reply-link"
                                                                     href="/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/#respond"
                                                                     style="display:none;">Cancel
                                                                     reply</a></small></h3>
                                                         <form
                                                             action="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-comments-post.php"
                                                             method="post" id="commentform" class="comment-form">
-                                                            <p class="comment-notes"><span id="email-notes">Địa chỉ email của bạn sẽ không được công bố. Các trường bắt buộc được đánh dấu</span>
+                                                            <p class="comment-notes"><span id="email-notes">Địa chỉ email
+                                                                    của bạn sẽ không được công bố. Các trường bắt buộc được
+                                                                    đánh dấu</span>
                                                                 <span class="required-field-message"
-                                                                    aria-hidden="true">Các trường bắt buộc được đánh dấu<span class="required"
+                                                                    aria-hidden="true">Các trường bắt buộc được đánh
+                                                                    dấu<span class="required"
                                                                         aria-hidden="true">*</span></span>
                                                             </p>
-                                                            <p class="comment-form-comment"><label for="comment">Bình luận
+                                                            <p class="comment-form-comment"><label for="comment">Bình
+                                                                    luận
                                                                     <span class="required">*</span></label>
                                                                 <textarea name="comment" id="comment" cols="45" rows="8" max-length="65525" aria-required="true"
                                                                     required="required"></textarea>
@@ -546,25 +557,26 @@
                                             <div class="amy-widget amy-widget-list">
                                                 <div class="amy-widget amy-widget-list list-movie ">
                                                     <h4 class="amy-title amy-widget-title">Top phim</h4>
-                                  
 
-                                                    @foreach ($filmtopmovie as $item)                                                                                                       
-                                                    <div class="entry-item">
-                                                        <div class="entry-thumb"><img style="width: 120px" class
-                                                                src="{{ asset('storage/images/' . $item->thumb) }}"
-                                                                alt="Kubo and the Two Strings" /></div>
-                                                        <div class="entry-content">
-                                                            <h2 class="entry-title"><a
-                                                                    href="{{ route('filmDetail',[$item->id]) }}">{{$item->name}}</a></h2>
-                                                            <div><span class="duration"><i class="fa fa-clock-o"></i>
-                                                                {{$item->duration}}
-                                                                    minutes</span></div>
-                                                            
+
+                                                    @foreach ($filmtopmovie as $item)
+                                                        <div class="entry-item">
+                                                            <div class="entry-thumb"><img style="width: 120px" class
+                                                                    src="{{ asset('storage/images/' . $item->thumb) }}"
+                                                                    alt="Kubo and the Two Strings" /></div>
+                                                            <div class="entry-content">
+                                                                <h2 class="entry-title"><a
+                                                                        href="{{ route('filmDetail', [$item->id]) }}">{{ $item->name }}</a>
+                                                                </h2>
+                                                                <div><span class="duration"><i class="fa fa-clock-o"></i>
+                                                                        {{ $item->duration }}
+                                                                        minutes</span></div>
+
+                                                            </div>
+                                                            <div class="clearfix"></div>
                                                         </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                     @endforeach
-                                                   
+                                                    @endforeach
+
                                                 </div>
                                                 <div class="clear"></div>
                                             </div>
@@ -637,4 +649,20 @@
 
                 </div>
             </div>
+
+            <script>
+                @if (Session::has('error'))
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi!',
+                        text: '{{ Session::get('error') }}',
+                    });
+                @elseif (Session::has('success'))
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thành công!',
+                        text: '{{ Session::get('success') }}',
+                    });
+                @endif
+            </script>
         @endsection

@@ -410,3 +410,6 @@
     }
 </style> 
 <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
+<!-- Trong tệp layout hoặc tệp view của bạn -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>

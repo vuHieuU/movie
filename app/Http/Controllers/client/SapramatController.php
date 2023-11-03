@@ -16,8 +16,8 @@ class SapramatController extends Controller
      */
     public function index()
     {
-        $title = "comming soon";
-        $status = "sắp ra mắt";
+        $title = "Comming soon";
+        $status = "2";
         $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
         // $film_comming_soon = film::where("status",$status)->get();
         // $film_comming_soon = ShowTime::whereHas("film",function($query) use ($status){

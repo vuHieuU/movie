@@ -7,6 +7,7 @@ use App\Models\room;
 use App\Models\seats;
 use App\Models\cinema;
 use App\Models\ShowTime;
+use App\Models\showtime_seat;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -97,6 +98,7 @@ class showtimeController extends Controller
     public function destroy(string $id)
     {
         $showtime = ShowTime::FindOrFail($id);
+        showtime_seat::where('showtime_id',$showtime->id)->delete();
         $showtime->delete($id);
         return redirect('/showtime/index');
     }

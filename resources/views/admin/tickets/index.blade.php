@@ -45,12 +45,12 @@
                     </p>
                       <thead class="bg-white text-uppercase">
                           <tr class="ligth ligth-data">
-                              <th>
+                              {{-- <th>
                                   <div class="checkbox d-inline-block" >
                                       <input type="checkbox" class="checkbox-input" id="checkbox1">
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
-                              </th>
+                              </th> --}}
                               <th style="width: 8%">Mã đơn</th>
                               <th style="width: 13%">Người dùng</th>
                               <th style="width: 10%">Rạp</th>
@@ -59,6 +59,7 @@
                               <th style="width: 11%">Thời gian</th>
                               <th style="width: 10%">Ghế</th>
                               <th style="width: 10%">Đồ ăn</th>
+                              <th style="width: 10%">Thanh toán</th>
                               <th style="width: 11%">Tổng tiền</th>
                               {{-- <th>Status</th> --}}
                               <th>Action</th>
@@ -68,12 +69,12 @@
                       <tbody class="ligth-body">
                              @foreach ($ticket as $item)
                           <tr>
-                              <td>
+                              {{-- <td>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox10">
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
-                              </td>
+                              </td> --}}
                               <td>{{ $item->code}}</td>
                               <td>{{ $item->buyer_name }}</td>
                               <td>
@@ -89,6 +90,7 @@
                                   
                              
                               <td>{{ $item->name }}*{{ $item->quantity }}</td>
+                              <td style="font-size: 15px;color: darkgreen; font-weight: 600">Thanh toán tại quầy</td>
                            {{-- @endforeach --}}
                               <td>{{number_format( $item->total) }} VND</td>
     {{-- <td>{{($item->active==1) ?"Thành công" :"Đang xử lý"}}</td> --}}

@@ -34,7 +34,8 @@ class FavoriteController extends Controller
         $user = $request->input("user_id");
         $film_id = $request->input("film_id");
         if($user==0){
-            return redirect("/login");
+            // return redirect("/login");
+            return redirect()->back()->with(['error' => 'Vui lòng đăng nhập để thực hiện được chức năng']);
         }
         else{    
            $data = [
@@ -43,7 +44,7 @@ class FavoriteController extends Controller
         ];
         $id = $request->input("film_id");
         favorite_film::create($data);
-        return redirect("chi-tiet-phim/{$id}");
+        return redirect("chi-tiet-phim/{$id}")->with(['success' => 'Yêu thích thành công']);
         }
 
     }
@@ -83,13 +84,13 @@ class FavoriteController extends Controller
         $user = Auth::user()->id;
         $idDelete = favorite_film::select('id')->where('film_id',$id)->first();
         $idDelete->delete($idDelete);
-        return redirect("/listFavoFilm/$user");
+        return redirect("/listFavoFilm/$user")->with(['success' => 'Xóa yêu thích thành công']);
     }
     public function unLike(string $id)
     {
         $user = Auth::user()->id;
         $idDelete = favorite_film::select('id')->where('film_id',$id)->first();
         $idDelete->delete($idDelete);
-        return redirect("/chi-tiet-phim/$id");
+        return redirect("/chi-tiet-phim/$id")->with(['success' => 'Bỏ yêu thích thành công']);
     }
 }
