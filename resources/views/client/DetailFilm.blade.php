@@ -650,7 +650,7 @@
                 </div>
             </div>
 
-            <script>
+            {{-- <script>
                 @if (Session::has('error'))
                     Swal.fire({
                         icon: 'error',
@@ -664,5 +664,5 @@
                         text: '{{ Session::get('success') }}',
                     });
                 @endif
-            </script>
+            </script> --}}
         @endsection
