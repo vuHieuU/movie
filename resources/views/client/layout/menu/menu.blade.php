@@ -176,22 +176,6 @@
                             </li>
 
                             @if (Auth()->check())
-                            @if (Auth::user()->roles->isNotEmpty() && Auth::user()->hasRole('admin'))
-        <li id="menu-item-278"
-            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
-            <a href="">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
-                    <!-- Các thuộc tính SVG của bạn -->
-                </svg>
-            </a>
-            <ul class="sub-menu">
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                    <a href="/admin">Trang quản trị</a>
-                </li>
-                <!-- Các mục menu khác cho admin -->
-            </ul>
-        </li>
-    @endif
                                 <li id="menu-item-278"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
                                     <a href=""><svg xmlns="http://www.w3.org/2000/svg"
@@ -206,6 +190,16 @@
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
                                             <a href="{{ route('myaccount') }}">Trang Cá Nhân</a>
                                         </li>
+                                 
+                                
+                                    @if (Auth::user()->roles->isNotEmpty() && Auth::user()->hasRole('admin'))
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+                                            <a href="/admin">Trang quản trị</a>
+                                        </li>
+                                    @endif
+                                          
+                                            <!-- Các mục menu khác cho admin -->
+                                     
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
                                             <a href="/FavoFilm/{{ Auth::user()->id }}">Trang Yêu thích</a>
