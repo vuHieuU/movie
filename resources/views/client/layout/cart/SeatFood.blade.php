@@ -872,7 +872,7 @@
                                                                                                 // Lưu danh sách ID vào input
                                                                                                 document.getElementById("selectedSeatsValueID").value = selectedSeatIds.join(', ');
                                                                                             } else {
-                                                                                                alert("Ngu à ghế bị chọn rồi.");
+                                                                                                alert("Ghế đã được đặt,không thể chọn lại.");
                                                                                             }
                                                                                         }
 

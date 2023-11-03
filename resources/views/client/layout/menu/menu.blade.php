@@ -188,13 +188,13 @@
 
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                            <a href="{{ route('myaccount') }}">Trang Cá Nhân</a>
+                                            <a href="{{ route('myaccount') }}">Cá Nhân</a>
                                         </li>
                                  
                                 
                                     @if (Auth::user()->roles->isNotEmpty() && Auth::user()->hasRole('admin'))
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                            <a href="/admin">Trang quản trị</a>
+                                            <a href="/admin">Quản trị</a>
                                         </li>
                                     @endif
                                           
@@ -202,7 +202,7 @@
                                      
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                            <a href="/FavoFilm/{{ Auth::user()->id }}">Trang Yêu thích</a>
+                                            <a href="/FavoFilm/{{ Auth::user()->id }}"> Yêu thích</a>
                                         </li>
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
