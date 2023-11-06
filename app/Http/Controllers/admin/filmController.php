@@ -53,7 +53,7 @@ class filmController extends Controller
 
         $data->premiere_date = $request->input('premiere_date');
 
-        dd($data);
+        // dd($data);
 
         $data->save();
         $data->categories()->attach($request->id_cate);

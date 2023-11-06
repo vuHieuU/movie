@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\category;
+use Carbon\Carbon;
+use App\Models\film;
 use App\Models\cinema;
 use App\Models\ticket;
+use App\Models\category;
 use App\Models\ticketFood;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class OverviewController extends Controller
 {
@@ -78,6 +79,15 @@ class OverviewController extends Controller
             ->get();
 
         $title = "Overview";
+        $films = Film::get();
+        $revenues = [];
+
+        foreach ($films as $film) {
+            $filmName = $film->name;
+            $totalRevenue = Ticket::where('film_id', $film->id)->sum('total');
+            $revenues[$filmName] = $totalRevenue;
+            // $revenuesData = json_encode($revenues);
+        }
         return view(
             'admin/overview',
             compact(
@@ -101,30 +111,13 @@ class OverviewController extends Controller
                 "categoriesWithCount",
                 "mostBookedfilm",
                 'mostBookedfood',
-                'ticketFood'
+                'ticketFood',
+                'films',
+                'revenues',
+                // 'revenuesData'
             )
         );
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show($cinemaName)
     {
 
@@ -221,27 +214,4 @@ class OverviewController extends Controller
         );
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }
