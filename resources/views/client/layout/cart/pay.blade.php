@@ -425,6 +425,8 @@
                                                         <button type="submit" style="background-color: #FE7900;"
                                                             class="btn text-white btn-block px-5 py-2 fs-3"> Thanh
                                                             toán</button>
+                                                        <input type="hidden" name="payment"
+                                                            value="Thanh toán tại quầy">
                                                         <input type="hidden" name="total"
                                                             value="{{ $total }}">
                                                     </form>

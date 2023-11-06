@@ -75,7 +75,7 @@
                                     <p>{{ $ticket->code }}</p>
                                 </div>
                                 <div class="col-sm-5"> <strong>Thanh toán:</strong>
-                                    <p>VnPay</p>
+                                    <p>{{ $ticket->payment }}</p>
                                 </div>
                             </div> 
                         </div>

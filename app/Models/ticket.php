@@ -21,6 +21,7 @@ class ticket extends Model
         'film_id',
         'coupon_code',
         'total',
+        'payment',
         'code',
     ];
     public function user()

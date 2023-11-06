@@ -90,7 +90,7 @@
                                   
                              
                               <td>{{ $item->name }}*{{ $item->quantity }}</td>
-                              <td style="font-size: 15px;color: darkgreen; font-weight: 600">Thanh toán tại quầy</td>
+                              <td style="font-size: 15px;color: darkgreen; font-weight: 600">{{ $item->payment }}</td>
                            {{-- @endforeach --}}
                               <td>{{number_format( $item->total) }} VND</td>
     {{-- <td>{{($item->active==1) ?"Thành công" :"Đang xử lý"}}</td> --}}
