@@ -72,6 +72,7 @@ class AuthController extends Controller
         ->join("tickets", "users.id", "=", "tickets.user_id")
         ->where('users.id', $loggedInUser->id)
         ->select("users.*" ,"tickets.*")
+        ->orderByDesc('tickets.created_at')
         ->get();
         
         $user = User::get();
