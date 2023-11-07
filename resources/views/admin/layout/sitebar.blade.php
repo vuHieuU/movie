@@ -397,14 +397,14 @@
                                     <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                                     <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                                 </svg>
-                                <span class="bg-primary "></span>
+                                <span style="font-size: 12px; color:red;">{{\App\Models\Notification::where('status',1)->count()}}</span>
                             </a>
                             <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="card shadow-none m-0">
                                     <div class="card-body p-0 ">
                                         <div class="cust-title p-3">
                                             <div class="d-flex align-items-center justify-content-between">
-                                                <h5 class="mb-0">Notifications</h5>
+                                                <h5 class="mb-0">Thông báo</h5>
                                                 <a class="badge badge-primary badge-card" href="#">{{\App\Models\Notification::where('status',1)->count()}}</a>
                                             </div>
                                         </div>
@@ -425,21 +425,6 @@
                                                 </a>
                                             </div>
                                             @endforeach
-                                            {{-- <a href="#" class="iq-sub-card">
-                                                <div class="media align-items-center cust-card py-3">
-                                                    <div class="">
-                                                        <img class="avatar-50 rounded-small"
-                                                            src="/template/assets/images/user/03.jpg" alt="03">
-                                                    </div>
-                                                    <div class="media-body ml-3">
-                                                        <div class="d-flex align-items-center justify-content-between">
-                                                            <h6 class="mb-0">Kianna Carder</h6>
-                                                            <small class="text-dark"><b>11 : 21 pm</b></small>
-                                                        </div>
-                                                        <small class="mb-0">Lorem ipsum dolor sit amet</small>
-                                                    </div>
-                                                </div>
-                                            </a> --}}
                                         </div>
                                         <a class="right-ic btn btn-primary btn-block position-relative p-2"
                                             href="/NotificationList" role="button">

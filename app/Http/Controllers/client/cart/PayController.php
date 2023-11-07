@@ -239,6 +239,9 @@ class PayController extends Controller
                        ->whereIn('seat_id',$selectSeatArray)
                        ->update(['isActive' => 2]);
                        session()->forget('applied_coupon');
+                $queryParams = $request->except('vnp_Amount');
+                $newUrl = route('success', ['film_id' => $ShowTime->id], $queryParams);
+                return redirect($newUrl);
         }
         $title = 'payment success';
         $ticket = ticket::latest()->first();
