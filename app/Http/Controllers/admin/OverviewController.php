@@ -181,7 +181,15 @@ class OverviewController extends Controller
             ->get();
 
         $title = "Overview";
+        $films = Film::get();
+        $revenues = [];
 
+        foreach ($films as $film) {
+            $filmName = $film->name;
+            $totalRevenue = Ticket::where('cinema', $cinemaName)->where('film_id', $film->id)->sum('total');
+            $revenues[$filmName] = $totalRevenue;
+            // $revenuesData = json_encode($revenues);
+        }
 
         return view(
             'client.layout.session.OverviewCinema',
@@ -209,7 +217,9 @@ class OverviewController extends Controller
                 "categoriesWithCount",
                 "mostBookedfilm",
                 'mostBookedfood',
-                'ticketFood'
+                'ticketFood',
+                'films',
+                'revenues',
             )
         );
     }
