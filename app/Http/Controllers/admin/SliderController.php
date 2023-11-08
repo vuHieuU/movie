@@ -11,7 +11,7 @@ use App\Http\Requests\Admin\SliderFormRequest;
 class SliderController extends Controller
 {
     public function index(){
-        $sliders = Slider::all();
+        $sliders = Slider::orderByDESC("created_at")->get();
         return view("admin.sliders.index",compact("sliders"));
     }
 

@@ -22,41 +22,25 @@
                                         <div class="amy-shortcode amy-mv-slide">
                                             <div class="amy-slick "
                                                 data-slick='{"slidesToShow":1,"slidesToScroll":1,"autoplay":true,"autoplaySpeed":3000,"prevArrow": "<a class=\"amy-arrow fa amy-pre fa-chevron-right\"></a>","nextArrow": "<a class=\"amy-arrow fa amy-next fa-chevron-left\"></a>","arrows":true,"infinite":true,"fade":true,"useCSS":true,"useTransform":true,"dots":true}'>
-                                                <div class="slide-item">
-                                                    <div class="slide-thumb">
-                                                        <a href="detail_film">
-                                                            <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_26.jpg"
-                                                                alt="Kubo and the Two Strings" /> </a>
-                                                    </div>
-                                                    <div class="slide-content">
-                                                        <h2 class="slide-title">
-                                                            <a href="detail_film">
-                                                                Kubo and the Two <span class="last_word">Strings</span> </a>
-                                                        </h2>
-
-                                                        <div class="slide-release">
-                                                            From <span>
-                                                                Feb 15 </span>
+                                                @foreach ($sliders as $key => $sliderItem )
+                                                    <div class="slide-item">
+                                                        <div class="slide-thumb">
+                                                            <img src="{{asset($sliderItem->image) }}" alt="">
                                                         </div>
+                                                        <div class="slide-content">
+                                                            <h2 class="slide-title">
+                                                                <a>
+                                                                    {{ $sliderItem->title}}
+                                                                </a>
+                                                            </h2>
 
-                                                        <div class="slide-desc">
-                                                            <p>Sed ut perspiciatis unde omnis iste natus error sit
-                                                                voluptatem accusantium doloremque laudantium, totam
-                                                                rem aperiam, eaque ipsa quae ab ...</p>
-                                                        </div>
-
-                                                        <div class="slide-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a href="detail_film">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
+                                                            <div class="slide-desc">
+                                                                <p>{{ $sliderItem->description}}</p>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="slide-item">
+                                                @endforeach
+                                                {{-- <div class="slide-item">
                                                     <div class="slide-thumb">
                                                         <a
                                                             href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">
@@ -205,7 +189,7 @@
                                                                 Detail </a>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
