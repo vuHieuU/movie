@@ -156,7 +156,7 @@
                         <div class="cs-invoice_left cs-mr97">
                             <b class="cs-primary_color">Tên người dùng:</b>
                             <p class="cs-mb8">{{ Auth::user()->name }}</p>
-                            <p><b class="cs-primary_color cs-semi_bold">Email:</b> <br>{{ Auth::user()->name }}</p>
+                            <p><b class="cs-primary_color cs-semi_bold">Email:</b> <br>{{ Auth::user()->email }}</p>
                         </div>
                         <div class="cs-invoice_right">
                             <b class="cs-primary_color">Thông tin phim: </b>
@@ -240,41 +240,6 @@
                                             <td class="cs-text_right cs-primary_color">
                                                 {{ number_format($selectedPriceSeatsValue) }} VND</td>
                                         </tr>
-                                        <tr>
-                                            <td>03</td>
-                                            <td>Coupon</td>
-                                            <td></td>
-                                            @if (session('success'))
-                                                <div class="alert alert-success">
-                                                    {{ session('success') }}
-                                                    @if ($discountType === 'amount')
-                                                        <td>Giảm: {{ $discountAmount }} Vnđ</td>
-                                                    @elseif ($discountType === 'percent')
-                                                        <td class="cs-text_right cs-primary_color">Giảm:
-                                                            {{ $discountAmount }} % </td>
-                                                    @endif
-
-                                                </div>
-                                            @endif
-
-                                            @if (session('error'))
-                                                <div class="alert alert-danger">
-                                                    {{ session('error') }}
-                                                </div>
-                                            @endif
-
-                                            {{-- <td>$100.00</td> --}}
-                                            {{-- <td>&nbsp;1</td> --}}
-
-                                        </tr>
-                                        {{-- <tr class="cs-focus_bg">
-                                            <td>04</td>
-                                            <td>Servicing</td>
-                                            <td>2 Hour</td>
-                                            <td>$300.00</td>
-                                            <td>&nbsp;1</td>
-                                            <td class="cs-text_right cs-primary_color">$300.00</td>
-                                        </tr> --}}
                                     </tbody>
 
                                 </table>
@@ -410,7 +375,7 @@
                                         </td>
                                         <td class="cs-width_3 cs-text_rightcs-f16">
                                             <p class="cs-mb5 cs-mb5 cs-text_right cs-f15 cs-primary_color cs-semi_bold">
-                                                {{ number_format($total) }} VND
+                                                {{ number_format($totalPriceFoodValue + $selectedPriceSeatsValue) }} VND
                                             </p>
                                             <p>
                                                 @if (session('success'))
