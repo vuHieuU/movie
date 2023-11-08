@@ -1,4 +1,7 @@
 @extends('client.layout.main.main')
+
+@section('title', 'Trang chủ')
+
 @section('contact')
     {{-- menu --}}
     <div id="main">

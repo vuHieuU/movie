@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en-US">
 <!--[if IE]><![endif]-->
@@ -489,6 +485,7 @@ type="text/css" media="all" />
 rel="stylesheet" type="text/css" media="all" />
 {{-- csss login --}}
 
+@section('title', 'Đăng kí')
 </head>
 
 <body
