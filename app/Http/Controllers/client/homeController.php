@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\client;
 
-use App\Http\Controllers\Controller;
-use App\Models\category;
-use App\Models\cinema;
 use App\Models\film;
 use App\Models\News;
+use App\Models\cinema;
+use App\Models\Slider;
+use App\Models\category;
 use App\Models\ShowTime;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 class homeController extends Controller
 {
     /**
@@ -16,7 +18,7 @@ class homeController extends Controller
      */
     public function index()
     {
-        $title = "home";
+        $sliders = Slider::where("status", "1")->get();
         $new_footer  = News::inRandomOrder()->limit(2)->get();
         $new_latest  = News::orderByDesc("created_at")->limit(1)->get();
         $new_latest_new  = News::inRandomOrder()->limit(2)->get();
@@ -25,7 +27,7 @@ class homeController extends Controller
         $categories =category::get();
         $film = film::orderByDesc("created_at")->limit(5)->get();
         
-        return view('client.home',compact("title","film_nowplaying","categories","film","film_topmovie","new_footer","new_latest","new_latest_new"));
+        return view('client.home',compact("sliders","film_nowplaying","categories","film","film_topmovie","new_footer","new_latest","new_latest_new"));
 
     }
     // public function show($id)

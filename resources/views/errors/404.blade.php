@@ -38,6 +38,7 @@
 <body>
     <h1>404 PAGE NOT FOUND</h1>
     <p>Xin lỗi, trang bạn đang tìm kiếm không tồn tại.</p>
+    <a href="{{ route("home") }}">Quay lại trang chủ</a>
     
 </body>
 </html>

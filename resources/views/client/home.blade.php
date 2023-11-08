@@ -1,4 +1,7 @@
 @extends('client.layout.main.main')
+
+@section('title', 'Trang chủ')
+
 @section('contact')
     {{-- menu --}}
     <div id="main">
@@ -19,41 +22,25 @@
                                         <div class="amy-shortcode amy-mv-slide">
                                             <div class="amy-slick "
                                                 data-slick='{"slidesToShow":1,"slidesToScroll":1,"autoplay":true,"autoplaySpeed":3000,"prevArrow": "<a class=\"amy-arrow fa amy-pre fa-chevron-right\"></a>","nextArrow": "<a class=\"amy-arrow fa amy-next fa-chevron-left\"></a>","arrows":true,"infinite":true,"fade":true,"useCSS":true,"useTransform":true,"dots":true}'>
-                                                <div class="slide-item">
-                                                    <div class="slide-thumb">
-                                                        <a href="detail_film">
-                                                            <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_26.jpg"
-                                                                alt="Kubo and the Two Strings" /> </a>
-                                                    </div>
-                                                    <div class="slide-content">
-                                                        <h2 class="slide-title">
-                                                            <a href="detail_film">
-                                                                Kubo and the Two <span class="last_word">Strings</span> </a>
-                                                        </h2>
-
-                                                        <div class="slide-release">
-                                                            From <span>
-                                                                Feb 15 </span>
+                                                @foreach ($sliders as $key => $sliderItem )
+                                                    <div class="slide-item">
+                                                        <div class="slide-thumb">
+                                                            <img src="{{asset($sliderItem->image) }}" alt="">
                                                         </div>
+                                                        <div class="slide-content">
+                                                            <h2 class="slide-title">
+                                                                <a>
+                                                                    {{ $sliderItem->title}}
+                                                                </a>
+                                                            </h2>
 
-                                                        <div class="slide-desc">
-                                                            <p>Sed ut perspiciatis unde omnis iste natus error sit
-                                                                voluptatem accusantium doloremque laudantium, totam
-                                                                rem aperiam, eaque ipsa quae ab ...</p>
-                                                        </div>
-
-                                                        <div class="slide-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a href="detail_film">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
+                                                            <div class="slide-desc">
+                                                                <p>{{ $sliderItem->description}}</p>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="slide-item">
+                                                @endforeach
+                                                {{-- <div class="slide-item">
                                                     <div class="slide-thumb">
                                                         <a
                                                             href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">
@@ -202,7 +189,7 @@
                                                                 Detail </a>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -258,14 +245,14 @@
                                                 display: inline-block
                                             }
                                         </style>
-                                        <div class="amy-widget-content">
+                                        {{-- <div class="amy-widget-content">
                                             <ul>
                                                 <li><a href="#">Rạp phim</a></li>
                                                 <li><a href="#">Vouchers</a></li>
                                                 <li><a href="#">Đặt vé</a></li>
                                                 <li>popcorn</li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -330,15 +317,16 @@
                                                 data-slick='{"slidesToShow":5,"slidesToScroll":5,"autoplay":true,"autoplaySpeed":3000,"arrows":true,"infinite":true,"centerMode":true,"responsive": [{"breakpoint": 480,"settings": {"slidesToShow": 1,"slidesToScroll": 1}},{"breakpoint": 979,"settings": {"slidesToShow": 3,"slidesToScroll": 3}},{"breakpoint": 1199,"settings": {"slidesToShow": 5,"slidesToScroll": 5}},{"breakpoint": 1999,"settings": {"slidesToShow": 7,"slidesToScroll": 7}},{"breakpoint": 4999,"settings": {"slidesToShow": 20,"slidesToScroll": 20}}],"dots":true}'>
                                                 @foreach ($film_topmovie as $item)
                                                         <div class="carousel-item">
+                                                            <a href="chi-tiet-phim/{{ $item->id }}">
                                                             <div class="carousel-thumb">
-                                                                <a href="{{ $item->trailer }}">
+                                                                <a href="chi-tiet-phim/{{ $item->id }}">
                                                                     <img class=""
                                                                         src="{{ asset('storage/images/' . $item->thumb) }}"
                                                                         alt="The Sleeping Beauty &#8211; Australia" /> </a>
                                                             </div>
                                                             <div class="carousel-content">
                                                                 <h2 class="carousel-title">
-                                                                    <a href="{{ route('filmDetail',[$item->id]) }}">
+                                                                    <a href="chi-tiet-phim/{{ $item->id }}">
                                                                         {{ $item->name }} </a>
                                                                 </h2>
                                                                 <div class="carousel-release">
@@ -348,16 +336,17 @@
                                                                     </span>
                                                                 </div>
                                                                 <div class="carousel-button">
-                                                                    <a href="{{ $item->trailer }}"
+                                                                    <a href="chi-tiet-phim/{{ $item->id }}"
                                                                         class="fancybox.iframe amy-fancybox">
                                                                         <i aria-hidden="true" class="fa fa-play"></i>
                                                                         Trailer </a>
-                                                                    <a href="{{ route('filmDetail',[$item->id]) }}">
+                                                                    {{-- <a href="{{ route('filmDetail',[$item->id]) }}">
                                                                         <i aria-hidden="true"
                                                                             class="fa fa-exclamation"></i>
-                                                                        Chi tiết </a>
+                                                                        Chi tiết </a> --}}
                                                                 </div>
                                                             </div>
+                                                        </a>
                                                         </div>
                                                 @endforeach
 
@@ -889,14 +878,14 @@
                                                 display: inline-block
                                             }
                                         </style>
-                                        <div class="amy-widget-content">
+                                        {{-- <div class="amy-widget-content">
                                             <ul>
                                                 <li><a href="#">Rạp Phim</a></li>
                                                 <li><a href="#">Vouchers</a></li>
                                                 <li><a href="#">Đặt vé</a></li>
                                                 <li>popcorn</li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>

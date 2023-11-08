@@ -8,11 +8,11 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="template/assets/images/favicon.ico" />
-    <!-- <link rel="stylesheet" href="template/assets/css/backend-plugin.min.css"> -->
+    <link rel="stylesheet" href="template/assets/css/backend-plugin.min.css"> 
     <link rel="stylesheet" href="template/assets/css/backend.css?v=1.0.0">
-    <!-- <link rel="stylesheet" href="template/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"> -->
-    <!-- <link rel="stylesheet" href="template/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css"> -->
-    <!-- <link rel="stylesheet" href="template/assets/vendor/remixicon/fonts/remixicon.css">   -->
+     <link rel="stylesheet" href="template/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+     <link rel="stylesheet" href="template/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+     <link rel="stylesheet" href="template/assets/vendor/remixicon/fonts/remixicon.css"> 
     @include('client.layout.main.head')
 </head>
 
@@ -142,6 +142,7 @@
                                                         <th>Thời gian chiếu</th>
                                                         <th style="">Vị trí ghế</th>
                                                         <th>Tổng tiền</th>
+                                                        <th>Action</th>
                                                         
                                                       
 
@@ -166,7 +167,13 @@
                                                         <td>{{ $item->selected_seats }}</td>
                                                     
                                                         <td>{{number_format( $item->total) }} VND</td>
-                                                        
+                                                        <td>
+                                                            <div class="d-flex align-items-center list-action">
+                                                                <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                                                    href="{{route("detail.show",$item->id)}}"><i class="ri-eye-line mr-1"></i></a>
+                                                            </div>
+                                                        </td>
+
                                                     </tr>
                                                     @endforeach
                                                 </tbody>

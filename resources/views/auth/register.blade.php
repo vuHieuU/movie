@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en-US">
 <!--[if IE]><![endif]-->
@@ -13,14 +9,11 @@
     {{-- <title>{{$taitel}}</title> --}}
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <link rel='dns-prefetch' href='//s.w.org' />
-    <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Comments Feed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Comments Feed" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" />
     <script type="text/javascript">
         window._wpemojiSettings = {
             "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/",
@@ -93,11 +86,9 @@
             padding: 0 !important;
         }
     </style>
-    <link rel='stylesheet' id='wp-block-library-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7'
-        type='text/css' media='all' />
+    <link rel='stylesheet' id='wp-block-library-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7' type='text/css' media='all' />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        
+
     <style id='global-styles-inline-css' type='text/css'>
         body {
             --wp--preset--color--black: #000000;
@@ -346,76 +337,37 @@
             font-size: var(--wp--preset--font-size--x-large) !important;
         }
     </style>
-    <link rel='stylesheet' id='elementor-icons-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-frontend-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.6.5'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-post-5-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-5.css?ver=1651538276'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-global-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/global.css?ver=1651538276'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-post-142-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='font-awesome-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='slick-style-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick.css?ver=5.9.7'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='slick-theme-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick-theme.css?ver=5.9.7'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='fancybox-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.fancybox.css?ver=3.5.7'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='tooltipster-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/tooltipster.bundle.css?ver=1.0.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='mCustomScrollbar-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.mCustomScrollbar.css?ver=1.0.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='plyr-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/plyr.css?ver=1.0.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='amy-movie-style-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/style.css?ver=1.0.0'
-        type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-icons-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-frontend-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.6.5' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-post-5-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-5.css?ver=1651538276' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-global-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/global.css?ver=1651538276' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-post-142-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='slick-style-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick.css?ver=5.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='slick-theme-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick-theme.css?ver=5.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='fancybox-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.fancybox.css?ver=3.5.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='tooltipster-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/tooltipster.bundle.css?ver=1.0.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='mCustomScrollbar-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.mCustomScrollbar.css?ver=1.0.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='plyr-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/plyr.css?ver=1.0.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='amy-movie-style-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/style.css?ver=1.0.0' type='text/css' media='all' />
     <style id='amy-movie-style-inline-css' type='text/css'>
         .amy-primary-navigation ul.nav-menu>li>a::after {
             top: 70%;
         }
     </style>
-    <link rel='stylesheet' id='csf-google-web-fonts-css'
-        href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css'
-        media='all' />
-    <link rel='stylesheet' id='google-fonts-1-css'
-        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.9.7'
-        type='text/css' media='all' />
-    <script type='text/javascript'
-        src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery.min.js?ver=3.6.0'
-        id='jquery-core-js'></script>
-    <script type='text/javascript'
-        src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2'
-        id='jquery-migrate-js'></script>
+    <link rel='stylesheet' id='csf-google-web-fonts-css' href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css' media='all' />
+    <link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.9.7' type='text/css' media='all' />
+    <script type='text/javascript' src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+    <script type='text/javascript' src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
     <link rel="https://api.w.org/" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/" />
-    <link rel="alternate" type="application/json"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/wp/v2/pages/142" />
-    <link rel="EditURI" type="application/rsd+xml" title="RSD"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/xmlrpc.php?rsd" />
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/wlwmanifest.xml" />
+    <link rel="alternate" type="application/json" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/wp/v2/pages/142" />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/xmlrpc.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/wlwmanifest.xml" />
     <meta name="generator" content="WordPress 5.9.7" />
     <link rel="canonical" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/now-playing/" />
     <link rel='shortlink' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/?p=142' />
-    <link rel="alternate" type="application/json+oembed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F" />
-    <link rel="alternate" type="text/xml+oembed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" />
+    <link rel="alternate" type="application/json+oembed" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F" />
+    <link rel="alternate" type="text/xml+oembed" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" />
     <style type="text/css">
         body {
             font-family: "Roboto Condensed";
@@ -476,115 +428,116 @@
 
 
 
-{{-- csss login --}}
+    {{-- csss login --}}
 
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/plugincss.css?1681350496696" rel="stylesheet"
-type="text/css" media="all" />
+    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/plugincss.css?1681350496696" rel="stylesheet" type="text/css" media="all" />
 
 
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/main.scss.css?1681350496696" rel="stylesheet"
-type="text/css" media="all" />
+    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/main.scss.css?1681350496696" rel="stylesheet" type="text/css" media="all" />
 
-<link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/account_oder_style.scss.css?1681350496696"
-rel="stylesheet" type="text/css" media="all" />
-{{-- csss login --}}
+    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/account_oder_style.scss.css?1681350496696" rel="stylesheet" type="text/css" media="all" />
+    {{-- csss login --}}
 
+@section('title', 'Đăng kí')
 </head>
 
-<body
-    class="page-template-default page page-id-142 amy-header-default  single-author elementor-default elementor-kit-5 elementor-page elementor-page-142">
+<body class="page-template-default page page-id-142 amy-header-default  single-author elementor-default elementor-kit-5 elementor-page elementor-page-142">
     <div id="page" class="hfeed site">
 
         @extends('client.layout.main.main')
         @section('contact')
 
 
- 
-        <div class="main-index mt-5">
-			
-          <div class="page-content-account">
-               <div class="container">
-                    <div class="row">
-                         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-                              <div class="d-group">
-                                   <div class="left-col">
-                                        <div class="group-login group-log">
-                                             <h1>
-                                                  Đăng ký tài khoản
-                                             </h1>
-                                             <form method="post" action="{{ route('register') }}" id="customer_register" accept-charset="UTF-8"><input name="FormType" type="hidden" value="customer_register"/><input name="utf8" type="hidden" value="true"/><input type="hidden" id="Token-44a10eed35c1439c8d3f51fdfbaf03e4" name="Token" /><script src="https://www.google.com/recaptcha/api.js?render=6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK"></script><script>grecaptcha.ready(function() {grecaptcha.execute("6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK", {action: "customer_register"}).then(function(token) {document.getElementById("Token-44a10eed35c1439c8d3f51fdfbaf03e4").value = token});});</script>
-                                             @csrf
-                                                <p class="error">
-                                                  
-                                             </p>
-                                             <fieldset class="form-group">
-                                                  <label>Tên người dùng <span class="required">*</span></label>
-                                                  <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                             </fieldset>
-                                            
-                                             <fieldset class="form-group">	
-                                                  <label>Email <span class="required">*</span></label>
-                                                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                                                  @error('email')
-                                                      <span class="invalid-feedback" role="alert">
-                                                          <strong>{{ $message }}</strong>
-                                                      </span>
-                                                  @enderror
-                                                  @if (session('message'))
-<div class="alert alert-danger">
-    {{ session('message') }}
-</div>
-@endif
-                                             </fieldset>
-                                             <fieldset class="form-group">
-                                                  <label>Mật khẩu <span class="required">*</span></label>
-                                                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                                                  @error('password')
-                                                      <span class="invalid-feedback" role="alert">
-                                                          <strong>{{ $message }}</strong>
-                                                      </span>
-                                                  @enderror
-                                             </fieldset>
-                                             <fieldset class="form-group">
-                                                  <label>Xác nhận mật khẩu <span class="required">*</span> </label>
-                                                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                                             </fieldset>
-                                             <button class="btn-login"  type="submit" value="Đăng ký">Đăng ký</button>
-                                             </form>
-                                             <div class="block social-login--facebooks">
-                                                  <p class="a-center">
-                                                       <span>Hoặc đăng nhập bằng</span>
-                                                  </p>
-                                                  <script>function loginFacebook(){var a={client_id:"947410958642584",redirect_uri:"https://store.mysapo.net/account/facebook_account_callback",state:JSON.stringify({redirect_url:window.location.href}),scope:"email",response_type:"code"},b="https://www.facebook.com/v3.2/dialog/oauth"+encodeURIParams(a,!0);window.location.href=b}function loginGoogle(){var a={client_id:"997675985899-pu3vhvc2rngfcuqgh5ddgt7mpibgrasr.apps.googleusercontent.com",redirect_uri:"https://store.mysapo.net/account/google_account_callback",scope:"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile",access_type:"online",state:JSON.stringify({redirect_url:window.location.href}),response_type:"code"},b="https://accounts.google.com/o/oauth2/v2/auth"+encodeURIParams(a,!0);window.location.href=b}function encodeURIParams(a,b){var c=[];for(var d in a)if(a.hasOwnProperty(d)){var e=a[d];null!=e&&c.push(encodeURIComponent(d)+"="+encodeURIComponent(e))}return 0==c.length?"":(b?"?":"")+c.join("&")}</script>
-                                                  <a href="{{route('loginGithub')}}" class="social-login--github" onclick="loginGithub()"><img width="129px" height="37px" alt="github-login-button" src="//bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"></a>
-                                                  <a href="{{route('loginGoogle')}}" class="social-login--google" onclick="loginGoogle()"><img width="129px" height="37px" alt="google-login-button" src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"></a>
-                                             </div>
-          
-                                        </div>
-          
-                                   </div>
-                                   <div class="right-col">
-                                        <h4>
-                                             Quyền lợi với thành viên
-                                        </h4>
-                                        <div>
-                                             <p>Vận chuyển siêu tốc</p>							<p>Sản phẩm đa dạng				</p>							<p>Đổi trả dễ dàng</p>
-          <p>Tích điểm đổi quà</p>						<p>Được giảm giá cho lần mua tiếp theo lên đến 10%						</p>
-                                        </div>
-                                        <a href="/login" class="btn-register-default">Đăng nhập</a>
-                                   </div>
-                              </div>
-                         </div>
+        <div class="main-index mt-5">
+
+            <div class="page-content-account">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+                            <div class="d-group">
+                                <div class="left-col">
+                                    <div class="group-login group-log">
+                                        <h1>
+                                            Đăng ký tài khoản
+                                        </h1>
+                                        <form method="post" action="{{ route('register') }}" id="customer_register" accept-charset="UTF-8"><input name="FormType" type="hidden" value="customer_register" /><input name="utf8" type="hidden" value="true" /><input type="hidden" id="Token-44a10eed35c1439c8d3f51fdfbaf03e4" name="Token" />
+                                            <script src="https://www.google.com/recaptcha/api.js?render=6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK"></script>
+                                            <script>
+                                                grecaptcha.ready(function() {
+                                                    grecaptcha.execute("6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK", {
+                                                        action: "customer_register"
+                                                    }).then(function(token) {
+                                                        document.getElementById("Token-44a10eed35c1439c8d3f51fdfbaf03e4").value = token
+                                                    });
+                                                });
+                                            </script>
+                                            @csrf
+                                            <p class="error">
+
+                                            </p>
+                                            <fieldset class="form-group">
+                                                <label>Tên người dùng <span class="required">*</span></label>
+                                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                                @error('name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </fieldset>
+
+                                            <fieldset class="form-group">
+                                                <label>Email <span class="required">*</span></label>
+                                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                                @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                                @if (session('message'))
+                                                <div class="alert alert-danger">
+                                                    {{ session('message') }}
+                                                </div>
+                                                @endif
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label>Mật khẩu <span class="required">*</span></label>
+                                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                                @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label>Xác nhận mật khẩu <span class="required">*</span> </label>
+                                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                            </fieldset>
+                                            <button class="btn-login" type="submit" value="Đăng ký">Đăng ký</button>
+                                        </form>
+                                    </div>
+
+                                </div>
+                                <div class="right-col">
+                                    <h4>
+                                        Quyền lợi với thành viên
+                                    </h4>
+                                    <div>
+                                        <p>Nhiều thể loại phim</p>
+                                        <p>Film đa dạng </p>
+                                        <p>Đặt vé rễ dàng</p>
+                                        <p>Tích điểm đổi quà</p>
+                                        <p>Được giảm giá cho lần mua tiếp theo lên đến 10% </p>
+                                    </div>
+                                    <a href="/login" class="btn-register-default">Đăng nhập</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-               </div>	
-          </div>
-                    </div>
+                </div>
+            </div>
+        </div>
 
 
 

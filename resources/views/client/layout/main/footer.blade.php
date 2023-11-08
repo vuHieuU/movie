@@ -32,7 +32,7 @@
                                 <li id="menu-item-347"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347">
                                     <a
-                                        href="{{ route('sap-ra-mat') }}">Sắp chiếu</a>
+                                        href="{{ route('dang-phat') }}">Đang chiếu</a>
                                 </li>
                                 <li id="menu-item-348"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-348">
@@ -48,32 +48,23 @@
                     <div class="amy-widget amy-widget-list">
                         <div class="amy-widget amy-widget-list list-post ">
                             <h4 class="amy-title amy-widget-title">Bài viết mới nhất</h4>
-                            <div class="entry-item">
-                                <div class="entry-thumb"><img
-                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59-115x85_c.jpg" />
+                            @php
+                                $new_footer = \App\Models\News::orderByDesc("created_at")->limit(2)->get();
+                            @endphp
+                            @foreach ($new_footer as $item )
+                                <div class="entry-item">
+                                    <div class="entry-thumb">
+                                        <a href="{{ route('detailblog', [$item->id]) }}">
+                                        <img src="{{ asset('storage/images/' . $item->thumbnail) }}" alt="" width="100px" height="50px">
+                                    </a>
+                                    </div>
+                                    <div class="entry-content">
+                                        <h2 class="entry-title"><a
+                                                href="{{ route('detailblog', [$item->id]) }}">{{ $item->title }}</a></h2>
+                                    </div>
+                                    <div class="clearfix"></div>
                                 </div>
-                                <div class="entry-content">
-                                    <h2 class="entry-title"><a
-                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/2022/04/28/six-book-to-film-adaptations-to-get-excited-about-this-autumn/">Six
-                                            book-to-film adaptations to get excited about this autumn</a></h2>
-                                    <div class="entry-meta"><span class="entry-date">April 28, 2022</span><span>
-                                            / </span><span class="entry-comment">0 Comments</span></div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="entry-item">
-                                <div class="entry-thumb"><img
-                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57-115x85_c.jpg" />
-                                </div>
-                                <div class="entry-content">
-                                    <h2 class="entry-title"><a
-                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/2022/04/28/the-beatles-eight-days-a-week-the-touring/">The
-                                            Beatles: Eight Days a Week – The Touring</a></h2>
-                                    <div class="entry-meta"><span class="entry-date">April 28, 2022</span><span>
-                                            / </span><span class="entry-comment">0 Comments</span></div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="clear"></div>
                     </div>
