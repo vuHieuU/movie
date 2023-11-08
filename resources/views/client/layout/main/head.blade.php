@@ -326,6 +326,17 @@
         top: 70%;
     }
 </style>
+
+<style>
+    .amy-primary-navigation ul.nav-menu > li:last-child > ul:after, .amy-primary-navigation ul.nav-menu > li:last-child > ul:before {
+        right: 5%;
+        left: inherit; }
+
+    .logoUserLogin{
+        display: flex;
+        justify-content: center;
+    }
+</style>
 {{-- <link rel='stylesheet' id='csf-google-web-fonts-css'
     href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css'
     media='all' />

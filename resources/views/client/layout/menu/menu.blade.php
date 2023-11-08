@@ -134,8 +134,18 @@
                 <nav id="amy-site-nav" class="amy-site-navigation amy-primary-navigation ">
                     <div class="menu-mainnav-container">
                         <ul id="menu-mainnav" class="nav-menu">
-                            <li id="menu-item-121"
+                            {{-- <li id="menu-item-121"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-84 current_page_item menu-item-121">
+                                @foreach (\App\Models\cinema::get() as $cinema)
+                                   
+                                    @endforeach
+                                <a href="/" aria-current="page">Trang chủ</a>
+                                <a href="{{ route('homeCinema',[$cinema->id]) }}" aria-current="page">Home</a>
+
+                            </li> --}}
+
+                            <li id="menu-item-146"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
                                 {{-- @foreach (\App\Models\cinema::get() as $cinema)
                                    
                                     @endforeach --}}
@@ -226,7 +236,7 @@
                             @else
                                 <li id="menu-item-278 "
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
-                                    <a href="login"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                                    <a href="login" class="logoUserLogin" style="padding:0px;"><svg xmlns="http://www.w3.org/2000/svg" height="1000px"
                                             viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                             <path
                                                 d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
