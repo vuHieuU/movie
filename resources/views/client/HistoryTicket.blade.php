@@ -170,7 +170,7 @@
                                                         <td>
                                                             <div class="d-flex align-items-center list-action">
                                                                 <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                                                    href="{{route("show.index",$item->id)}}"><i class="ri-eye-line mr-1"></i></a>
+                                                                    href="{{route("detail.show",$item->id)}}"><i class="ri-eye-line mr-1"></i></a>
                                                             </div>
                                                         </td>
 

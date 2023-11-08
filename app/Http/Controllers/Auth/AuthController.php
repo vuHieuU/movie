@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Client\ProfileRequest;
-use App\Models\ticket;
 use App\Models\User;
+use App\Models\ticket;
+use App\Models\Notification;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\Client\ProfileRequest;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class AuthController extends Controller
@@ -79,6 +80,20 @@ class AuthController extends Controller
 
         $taitel = "history";
         return view('client.HistoryTicket', compact("taitel","tickit","counttiket","sumtotal","user"));
+    }
+
+    public function show(string $id)
+    {
+        $status = Notification::where("tickets_id", $id)->value('status');
+        $Notification = Notification::where('tickets_id', $id)->first();
+            if($status==1) {
+                $Notification->status = 2 ;
+                $Notification->save();
+                }
+        $ticket = ticket::with('ticketFoods')->find($id);
+
+    //   dd($ticket);
+        return view("client.DetailTicket", compact("ticket"));
     }
 
     public function edit()
