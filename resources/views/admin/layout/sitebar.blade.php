@@ -229,7 +229,11 @@
                             <i class="las la-minus"></i><span>Cài đặt SMTP</span>
                         </a>
                     </li>
-                   
+                    <li class="">
+                        <a href="{{ route("sliders.index") }}">
+                            <i class="las la-minus"></i><span>Cài Đặt Banner</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 {{-- @endcan --}}

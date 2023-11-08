@@ -5,9 +5,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="profile" href="//gmpg.org/xfn/11">
 <link rel="pingback" href="https://demo.ovatheme.com/aovis/xmlrpc.php">
+@section('title', 'Liên hệ')
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<title>{{ $title }}</title>
 <meta name='robots' content='noindex, nofollow' />
 <link rel='dns-prefetch' href='//demo.ovatheme.com' />
 <link rel="stylesheet" href="/template/fontawesome-free-6.1.1-web/css/all.css">

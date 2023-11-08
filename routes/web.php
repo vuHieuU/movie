@@ -102,7 +102,7 @@ Route::middleware(['auth'])->group(function () {    //profile của user
     Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
 });
 
-Route::middleware('auth', 'role:admin')->group(function () {
+Route::middleware('auth',"role:admin")->group(function () {
     // Các route được bảo vệ bởi middleware 'admin' nên được định nghĩa ở đây
     // ...
     Route::get('/admin', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('admin');
@@ -255,6 +255,16 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('edit/{id}', [App\Http\Controllers\admin\NewController::class, 'edit'])->name('news.edit');
         Route::post('update/{id}', [App\Http\Controllers\admin\NewController::class, 'update'])->name('news.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\NewController::class, 'destroy'])->name('news.destroy');
+    });
+
+    //Banner
+    Route::prefix('sliders')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\SliderController::class, "index"])->name('sliders.index');
+        Route::get('create', [App\Http\Controllers\admin\SliderController::class, "create"])->name('sliders.create');
+        Route::post('store', [App\Http\Controllers\admin\SliderController::class, "store"]);
+        Route::get('edit/{id}', [App\Http\Controllers\admin\SliderController::class, "edit"]);
+        Route::put('update/{id}', [App\Http\Controllers\admin\SliderController::class, "update"]);
+        Route::get('delete/{id}', [App\Http\Controllers\admin\SliderController::class, 'destroy'])->name('sliders.destroy');
     });
     
      // tổng quan
