@@ -870,7 +870,7 @@
                                                                                                 }
 
                                                                                                 // Lưu danh sách ID vào input
-                                                                                                document.getElementById("selectedSeatsValueID").value = selectedSeatIds.join(', ');
+                                                                                                document.getElementById("selectedSeatsValueID").value = selectedSeatIds.slice(0, 8).join(', ');
                                                                                             } else {
                                                                                                 alert("Ghế đã được đặt,không thể chọn lại.");
                                                                                             }
