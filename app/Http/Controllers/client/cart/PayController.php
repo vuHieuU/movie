@@ -96,7 +96,8 @@ class PayController extends Controller
     }
 
     public function PaymentSuccess(Request $request,$film_id)
-    {               
+    {        
+
     $selectedDate = session('selectedDate');
     $selectedHour = session('selectedHour');
     $selectedShowTimeId = session('selectedShowTimeId');
@@ -105,6 +106,8 @@ class PayController extends Controller
     $cinemaName = session('cinemaName');
     $cinemaRoom = session('cinemaRoom');
     $couponCode = session('coupon_code');
+    $payment = $request->input('payment');
+    session(['payment' => $payment]);
     $total = $request->input('total');
     session(['total' => $total]);
     $user = auth()->user();
@@ -124,6 +127,7 @@ class PayController extends Controller
     $ticket->film_id = $ShowTime->id;
     $ticket->coupon_code = $couponCode;
     $ticket->total = $total;
+    $ticket->payment = $payment;
     $ticket->code = date('Ymd-His') . rand(10, 99);
     
     $ticket->save();
@@ -196,6 +200,7 @@ class PayController extends Controller
             $ticket->buyer_name = $user->name;
             $ticket->film_id = $ShowTime->id;
             $ticket->coupon_code = $couponCode;
+            $ticket->payment = "VNPAY";
             $ticket->total = $total;
             $ticket->code = date('Ymd-His') . rand(10, 99);;
             $ticket->save();
@@ -234,6 +239,9 @@ class PayController extends Controller
                        ->whereIn('seat_id',$selectSeatArray)
                        ->update(['isActive' => 2]);
                        session()->forget('applied_coupon');
+                $queryParams = $request->except('vnp_Amount');
+                $newUrl = route('success', ['film_id' => $ShowTime->id], $queryParams);
+                return redirect($newUrl);
         }
         $title = 'payment success';
         $ticket = ticket::latest()->first();

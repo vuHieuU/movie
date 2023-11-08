@@ -2,12 +2,10 @@
     @php
          $ticket_id = \App\Models\ticket::where('code', $ticket->code)->value('id');
     @endphp
-    <div class="col-6">
-        <h1>Bạn đã đặt vé</h1>
-        <p>Bạn có thể xem thông tin vé của mình tại đây :<a href="{{ route('history') }}"> {{ $ticket->code }}</a> </p>
-        
-    </div>
-    <div class="col-6">
-        <h1>{!! DNS2D::getBarcodeHTML("$ticket->code",'QRCODE',5,5)!!}</h1>
-    </div>
+    
+<p>Bạn đã đặt vé xem phim {{ $ticket->film_name }} thành công</p>
+    
+<p>Mã hóa đơn của bạn : {{ $ticket->code }}</p>
+<p>Bạn có thể xem chi tiết hóa đơn của bạn bằng cách nhấp vào liên kết sau:</p>
+<a href="{{ route('detail.show', $ticket_id) }}">Xem chi tiết</a>
 </div>

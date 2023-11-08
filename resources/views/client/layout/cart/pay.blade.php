@@ -156,7 +156,7 @@
                         <div class="cs-invoice_left cs-mr97">
                             <b class="cs-primary_color">Tên người dùng:</b>
                             <p class="cs-mb8">{{ Auth::user()->name }}</p>
-                            <p><b class="cs-primary_color cs-semi_bold">Email:</b> <br>{{ Auth::user()->name }}</p>
+                            <p><b class="cs-primary_color cs-semi_bold">Email:</b> <br>{{ Auth::user()->email }}</p>
                         </div>
                         <div class="cs-invoice_right">
                             <b class="cs-primary_color">Thông tin phim: </b>
@@ -240,41 +240,6 @@
                                             <td class="cs-text_right cs-primary_color">
                                                 {{ number_format($selectedPriceSeatsValue) }} VND</td>
                                         </tr>
-                                        <tr>
-                                            <td>03</td>
-                                            <td>Coupon</td>
-                                            <td></td>
-                                            @if (session('success'))
-                                                <div class="alert alert-success">
-                                                    {{ session('success') }}
-                                                    @if ($discountType === 'amount')
-                                                        <td>Giảm: {{ $discountAmount }} Vnđ</td>
-                                                    @elseif ($discountType === 'percent')
-                                                        <td class="cs-text_right cs-primary_color">Giảm:
-                                                            {{ $discountAmount }} % </td>
-                                                    @endif
-
-                                                </div>
-                                            @endif
-
-                                            @if (session('error'))
-                                                <div class="alert alert-danger">
-                                                    {{ session('error') }}
-                                                </div>
-                                            @endif
-
-                                            {{-- <td>$100.00</td> --}}
-                                            {{-- <td>&nbsp;1</td> --}}
-
-                                        </tr>
-                                        {{-- <tr class="cs-focus_bg">
-                                            <td>04</td>
-                                            <td>Servicing</td>
-                                            <td>2 Hour</td>
-                                            <td>$300.00</td>
-                                            <td>&nbsp;1</td>
-                                            <td class="cs-text_right cs-primary_color">$300.00</td>
-                                        </tr> --}}
                                     </tbody>
 
                                 </table>
@@ -316,29 +281,60 @@
 
 
 
+                        <form id="vnpay-form" action="{{ url('/vnpay_payment/' . $ShowTime->id) }}" method="post">
+                            @csrf
+                            <div class="mb-5 d-flex align-items-center">
+                                <input type="hidden" name="total" value="{{ $total }}">
+                                <div class="btn btn-primary fs-3 px-5 py-2 w-25" id="vnpay-div">Thanh toán bằng Vnpay</div>
+                                <input type="radio" class="ms-4" style="transform: scale(1.5);" name="redirect" value="vnpay">
+                            </div>
+                        </form>
+                        
+                        <form id="quay-form" action="{{ route('payment_success', ['film_id' => $ShowTime->id]) }}" method="post">
+                            @csrf
+                            <div class="mb-5 d-flex align-items-center">
+                                <input type="hidden" name="total" value="{{ $total }}">
+                                <input type="hidden" name="payment" value="Thanh Toán tại quầy">
+                                <div class="btn btn-primary fs-3 px-5 py-2 w-25" id="quay-div">Thanh toán tại quầy</div>
+                                <input type="radio" class="ms-4" style="transform: scale(1.5);" name="redirect" value="quay">
+                            </div>
+                        </form>
+                        
 
-                    <form action="{{ url('/vnpay_payment/' . $ShowTime->id) }}" method="post">
+                                        
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script>
+                     $(document).ready(function() {
+                            $('input[name="redirect"]').click(function() {
+                                // Uncheck other radio buttons in the same group
+                                $('input[name="redirect"]').not(this).prop('checked', false);
+                            });
 
-                        @csrf
+                            $("#thanh-toan-button").click(function() {
+                                var selectedPaymentMethod = $('input[name="redirect"]:checked').val();
 
-                        <div class="mb-5 ">
-                            <input type="hidden" name="total" value="{{ $total }}">
-                            <button class="btn btn-outline-primary  fs-3 px-5 py-2 w-25" value="vnpay"
-                                name="redirect" type="submit">Thanh toán bằng Vnpay </button>
-                        </div>
+                                if (selectedPaymentMethod === "vnpay") {
+                                    $("#vnpay-form").submit();
+                                } else if (selectedPaymentMethod === "quay") {
+                                    $("#quay-form").submit();
+                                } else {
+                                    alert("Mày chưa chọn phương thức thanh toán kìa!");
+                                }
+                            });
+                        });
+                        </script>
+                        
 
-                    </form>
 
 
 
-
-                    <div class="mb-5">
+                    {{-- <div class="mb-5">
                         <input type="checkbox" class="d-none" id="paymentCheckbox" value="the_counter">
                         <label class="btn btn-outline-primary paymentMethod fs-3 px-5 py-2 w-25" for="paymentCheckbox">Thanh
                             toán tại quầy</label>
                     </div>
 
-                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    
                     <script>
                         $(document).ready(function() {
                             var paymentCheckbox = $('#paymentCheckbox');
@@ -352,7 +348,7 @@
                                 }
                             });
                         });
-                    </script>
+                    </script> --}}
 
 
 
@@ -379,7 +375,7 @@
                                         </td>
                                         <td class="cs-width_3 cs-text_rightcs-f16">
                                             <p class="cs-mb5 cs-mb5 cs-text_right cs-f15 cs-primary_color cs-semi_bold">
-                                                {{ number_format($total) }} VND
+                                                {{ number_format($totalPriceFoodValue + $selectedPriceSeatsValue) }} VND
                                             </p>
                                             <p>
                                                 @if (session('success'))
@@ -417,17 +413,8 @@
                                                         style="background-color: #FE7900;"
                                                         class="btn text-white btn-block px-5 py-2 fs-3"> Quay lại</a>
                                                 </div>
-                                                <div class="col-md-5">
-                                                    <form
-                                                        action="{{ route('payment_success', ['film_id' => $ShowTime->id]) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        <button type="submit" style="background-color: #FE7900;"
-                                                            class="btn text-white btn-block px-5 py-2 fs-3"> Thanh
-                                                            toán</button>
-                                                        <input type="hidden" name="total"
-                                                            value="{{ $total }}">
-                                                    </form>
+                                                <div class="col-md-5"> 
+                                                        <button type="button" id="thanh-toan-button" style="background-color: #FE7900;" class="btn text-white btn-block px-5 py-2 fs-3"> Thanh toán</button>
                                                 </div>
                                             </div>
                                         </td>

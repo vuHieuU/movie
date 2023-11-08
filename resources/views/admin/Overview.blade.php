@@ -1,10 +1,6 @@
 @extends('admin.layout.home')
 @section('content')
-    <!-- loader END -->
-    <!-- Wrapper Start -->
     <div class="wrapper">
-
-
         <div class="content-page">
             <div class="container-fluid">
                 <div class="row">
@@ -69,11 +65,7 @@
                                             </div>
                                             <div>
                                                 <p class="mb-2">Phim</p>
-                                                {{-- @foreach ($countfilm as $item) --}}
-
-
                                                 <h4>{{ $countfilm }} </h4>
-                                                {{-- @endforeach --}}
                                             </div>
                                         </div>
                                         <div class="iq-progress-bar mt-2">
@@ -114,68 +106,11 @@
                                             </div>
                                         </div>
 
-                                        <script>
-                                            // Tạo một mảng để lưu trữ tất cả các vé
-                                            var ticketsSevenDaysAgo0 = <?php echo json_encode($ticketsSevenDaysAgo); ?>;
-                                            var ticketsCurrentMonth0 = <?php echo json_encode($ticketsCurrentMonth); ?>;
-                                            var ticketsCurrentYear0 = <?php echo json_encode($ticketsCurrentYear); ?>;
-
-                                            // Hàm hiển thị danh sách vé và số lượng vé đã lọc
-                                            function displayFilteredTickets0(tickets) {
-                                                // Lấy thẻ div để hiển thị danh sách vé và số lượng vé
-                                                var ticketListDiv = document.getElementById("ticketListcount");
-
-                                                // Xóa nội dung hiện tại của thẻ div
-                                                ticketListDiv.innerHTML = "";
-
-                                                // Duyệt qua danh sách vé và hiển thị thông tin của từng vé
-                                                tickets.forEach(function(ticket) {
-                                                    var ticketInfo = document.createElement("div");
-
-
-                                                    // Thêm thông tin vé vào thẻ div
-                                                    ticketListDiv.appendChild(ticketInfo);
-                                                });
-
-                                                // Đếm số lượng vé
-                                                var ticketCount = tickets.length;
-
-                                                // Hiển thị số lượng vé đã lọc
-                                                var ticketCountDiv = document.createElement("div");
-                                                ticketCountDiv.textContent = ticketCount;
-
-                                                // Thêm số lượng vé vào thẻ div
-                                                ticketListDiv.appendChild(ticketCountDiv);
-                                            }
-
-                                            // Bắt sự kiện click trên thẻ <a> và gọi hàm hiển thị danh sách vé đã lọc
-                                            document.getElementById("filterLinkSevenDaysAgo00").addEventListener("click", function(event) {
-                                                event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
-                                                displayFilteredTickets0(ticketsSevenDaysAgo0);
-                                            });
-
-                                            document.getElementById("filterLinkCurrentMonth00").addEventListener("click", function(event) {
-                                                event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
-                                                displayFilteredTickets0(ticketsCurrentMonth0);
-                                            });
-
-                                            document.getElementById("filterLinkCurrentYear00").addEventListener("click", function(event) {
-                                                event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
-                                                displayFilteredTickets0(ticketsCurrentYear0);
-                                            });
-
-
-                                            function changeDropdownText0007(selectedOption) {
-                                                var dropdownButton = document.getElementById("dropdownMenuButton0007");
-                                                dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
-                                            }
-                                        </script>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
-
                         <div class="card card-block card-stretch card-height-helf">
                             <div class="card-body">
                                 <div class="d-flex align-items-top justify-content-between">
@@ -207,81 +142,6 @@
                                                     onclick="changeDropdownText009('Tuần')">Tuần</a>
                                             </div>
                                         </div>
-
-                                        <script>
-                                            // Tạo một mảng để lưu trữ tất cả các vé
-                                            var ticketsSevenDaysAgo1 = <?php echo json_encode($ticketsSevenDaysAgo); ?>;
-                                            var ticketsCurrentMonth1 = <?php echo json_encode($ticketsCurrentMonth); ?>;
-                                            var ticketsCurrentYear1 = <?php echo json_encode($ticketsCurrentYear); ?>;
-
-                                            // Hàm hiển thị danh sách vé và số lượng vé đã lọc
-                                            // Hàm hiển thị danh sách vé và tên phim
-                                            function displayFilteredTickets1(tickets) {
-                                                // Lấy thẻ div để hiển thị danh sách vé và tên phim
-                                                var ticketListDiv = document.getElementById("ticketListfilmname");
-
-                                                // Xóa nội dung hiện tại của thẻ div
-                                                ticketListDiv.innerHTML = "";
-
-                                                // Tạo một đối tượng để theo dõi số lần xuất hiện của từng tên phim
-                                                var filmNameCounts = {};
-
-                                                // Duyệt qua danh sách vé và đếm số lần xuất hiện của mỗi tên phim
-                                                tickets.forEach(function(ticket) {
-                                                    var filmName = ticket.film_name;
-
-                                                    // Kiểm tra xem tên phim đã tồn tại trong filmNameCounts chưa, nếu chưa thì khởi tạo bằng 0
-                                                    if (!filmNameCounts[filmName]) {
-                                                        filmNameCounts[filmName] = 0;
-                                                    }
-
-                                                    // Tăng số lần xuất hiện của tên phim lên 1
-                                                    filmNameCounts[filmName]++;
-                                                });
-
-                                                // Tìm tên phim có số lần xuất hiện nhiều nhất
-                                                var mostBookedFilm = "";
-                                                var maxCount = 0;
-
-                                                for (var filmName in filmNameCounts) {
-                                                    if (filmNameCounts[filmName] > maxCount) {
-                                                        maxCount = filmNameCounts[filmName];
-                                                        mostBookedFilm = filmName;
-                                                    }
-                                                }
-
-                                                // Hiển thị tên phim có lượt đặt nhiều nhất
-                                                var mostBookedFilmDiv = document.createElement("h5");
-                                                mostBookedFilmDiv.textContent = mostBookedFilm;
-                                                ticketListDiv.appendChild(mostBookedFilmDiv);
-
-
-                                            }
-
-
-
-                                            // Bắt sự kiện click trên thẻ <a> và gọi hàm hiển thị danh sách vé đã lọc
-                                            document.getElementById("filterLinkSevenDaysAgo1").addEventListener("click", function(event) {
-                                                event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
-                                                displayFilteredTickets1(ticketsSevenDaysAgo1);
-                                            });
-
-                                            document.getElementById("filterLinkCurrentMonth1").addEventListener("click", function(event) {
-                                                event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
-                                                displayFilteredTickets1(ticketsCurrentMonth1);
-                                            });
-
-                                            document.getElementById("filterLinkCurrentYear1").addEventListener("click", function(event) {
-                                                event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
-                                                displayFilteredTickets1(ticketsCurrentYear1);
-                                            });
-
-
-                                            function changeDropdownText009(selectedOption) {
-                                                var dropdownButton = document.getElementById("dropdownMenuButton009");
-                                                dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
-                                            }
-                                        </script>
                                     </div>
                                 </div>
 
@@ -318,82 +178,6 @@
                                     </div>
 
 
-                                    <script>
-                                        // Tạo một mảng để lưu trữ tất cả các vé
-                                        var ticketsSevenDaysAgo1 = <?php echo json_encode($ticketsSevenDaysAgo); ?>;
-                                        var ticketsCurrentMonth1 = <?php echo json_encode($ticketsCurrentMonth); ?>;
-                                        var ticketsCurrentYear1 = <?php echo json_encode($ticketsCurrentYear); ?>;
-
-                                        // Hàm hiển thị danh sách vé và số lượng vé đã lọc
-                                        // Hàm hiển thị danh sách vé và tên phim
-                                        function displayFilteredTickets2(tickets) {
-                                            // Lấy thẻ div để hiển thị danh sách vé và giờ chiếu có số lần đặt nhiều nhất
-                                            var ticketListDiv = document.getElementById("ticketListfilhour");
-
-                                            // Xóa nội dung hiện tại của thẻ div
-                                            ticketListDiv.innerHTML = "";
-
-                                            // Tạo một đối tượng để theo dõi số lần xuất hiện của từng giờ chiếu
-                                            var hourCounts = {};
-
-                                            // Duyệt qua danh sách vé và đếm số lần xuất hiện của mỗi giờ chiếu
-                                            tickets.forEach(function(ticket) {
-                                                var selectedHour = ticket.selected_hour;
-
-                                                // Kiểm tra xem giờ chiếu đã tồn tại trong hourCounts chưa, nếu chưa thì khởi tạo bằng 0
-                                                if (!hourCounts[selectedHour]) {
-                                                    hourCounts[selectedHour] = 0;
-                                                }
-
-                                                // Tăng số lần xuất hiện của giờ chiếu lên 1
-                                                hourCounts[selectedHour]++;
-                                            });
-
-                                            // Tìm giờ chiếu có số lần đặt nhiều nhất
-                                            var mostBookedHour = "";
-                                            var maxCount = 0;
-
-                                            for (var selectedHour in hourCounts) {
-                                                if (hourCounts[selectedHour] > maxCount) {
-                                                    maxCount = hourCounts[selectedHour];
-                                                    mostBookedHour = selectedHour;
-                                                }
-                                            }
-
-                                            // Hiển thị giờ chiếu có lượt đặt nhiều nhất
-                                            var mostBookedHourDiv = document.createElement("h5");
-                                            mostBookedHourDiv.textContent = mostBookedHour;
-                                            ticketListDiv.appendChild(mostBookedHourDiv);
-                                        }
-
-
-
-
-
-
-                                        // Bắt sự kiện click trên thẻ <a> và gọi hàm hiển thị danh sách vé đã lọc
-                                        document.getElementById("filterLinkSevenDaysAgo2").addEventListener("click", function(event) {
-                                            event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
-                                            displayFilteredTickets2(ticketsSevenDaysAgo1);
-                                        });
-
-                                        document.getElementById("filterLinkCurrentMonth2").addEventListener("click", function(event) {
-                                            event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
-                                            displayFilteredTickets2(ticketsCurrentMonth1);
-                                        });
-
-                                        document.getElementById("filterLinkCurrentYear2").addEventListener("click", function(event) {
-                                            event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
-                                            displayFilteredTickets2(ticketsCurrentYear1);
-                                        });
-
-
-
-                                        function changeDropdownText0001(selectedOption) {
-                                            var dropdownButton = document.getElementById("dropdownMenuButton0001");
-                                            dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
-                                        }
-                                    </script>
                                 </div>
 
                             </div>
@@ -461,132 +245,38 @@
                                         dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
                                     }
                                 </script>
-
-                                {{--
-                                <div class="card-header-toolbar d-flex align-items-center">
-                                    <div class="dropdown">
-                                        <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton008"
-                                            data-toggle="dropdown">
-                                            This Month<i class="ri-arrow-down-s-line ml-1"></i>
-                                        </span>
-                                        <div class="dropdown-menu dropdown-menu-right shadow-none"
-                                            aria-labelledby="dropdownMenuButton008">
-                                            <a class="dropdown-item" href="#" id="filterLinkCurrentYear3"
-                                                onclick="changeDropdownText008('Year')">Year</a>
-                                            <a class="dropdown-item" href="#" id="filterLinkCurrentMonth3"
-                                                onclick="changeDropdownText008('Month')">Month</a>
-                                            <a class="dropdown-item" href="#" id="filterLinkSevenDaysAgo3"
-                                                onclick="changeDropdownText008('Week')">Week</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <script>
-                                    // Tạo một mảng để lưu trữ tất cả các vé
-                                    var ticketsSevenDaysAgo1 = <?php echo json_encode($ticketsSevenDaysAgo); ?>;
-                                    var ticketsCurrentMonth1 = <?php echo json_encode($ticketsCurrentMonth); ?>;
-                                    var ticketsCurrentYear1 = <?php echo json_encode($ticketsCurrentYear); ?>;
-
-                                    function displayFilteredTickets3(tickets) {
-                                        // Lấy thẻ div để hiển thị tổng tiền của rạp
-                                        var ticketListDiv = document.getElementById("ticketListtoltal");
-
-                                        // Xóa nội dung hiện tại của thẻ div
-                                        ticketListDiv.innerHTML = "";
-
-                                        // Tạo biến để tính tổng tiền của tất cả các vé
-                                        var totalRevenue = 0;
-
-                                        // Duyệt qua danh sách vé và tính tổng tiền
-                                        tickets.forEach(function(ticket) {
-                                            totalRevenue += ticket.total;
-                                        });
-
-                                        // Hiển thị tổng tiền của tất cả các vé
-                                        var totalRevenueDiv = document.createElement("h5");
-                                        totalRevenueDiv.textContent = totalRevenue.toLocaleString('en-US');
-                                        ticketListDiv.appendChild(totalRevenueDiv);
-                                    }
-
-
-
-
-
-
-
-
-                                    // Bắt sự kiện click trên thẻ <a> và gọi hàm hiển thị danh sách vé đã lọc
-                                    document.getElementById("filterLinkSevenDaysAgo3").addEventListener("click", function(event) {
-                                        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
-                                        displayFilteredTickets3(ticketsSevenDaysAgo1);
-                                    });
-
-                                    document.getElementById("filterLinkCurrentMonth3").addEventListener("click", function(event) {
-                                        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
-                                        displayFilteredTickets3(ticketsCurrentMonth1);
-                                    });
-
-                                    document.getElementById("filterLinkCurrentYear3").addEventListener("click", function(event) {
-                                        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
-                                        displayFilteredTickets3(ticketsCurrentYear1);
-                                    });
-
-
-                                    function changeDropdownText008(selectedOption) {
-                                        var dropdownButton = document.getElementById("dropdownMenuButton008");
-                                        dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
-                                    }
-                                </script>
---}}
-
                             </div>
-                            {{-- <div id="div1">
-                                @include('client.layout.session.OverviewCinema')
-                            </div> --}}
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap align-items-center mt-2">
-                                    <div class="d-flex align-items-center progress-order-left">
-                                        <div class="progress progress-round m-0 orange conversation-bar"
-                                            data-percent="46">
-                                            <span class="progress-left">
-                                                <span class="progress-bar"></span>
-                                            </span>
-                                            <span class="progress-right">
-                                                <span class="progress-bar"></span>
-                                            </span>
-                                            <div class="progress-value text-secondary">46%</div>
-                                        </div>
-                                        <div class="progress-value ml-3 pr-5 border-right">
-
-                                            <div id="div1">
-
-                                                <h5 id="ticketListtoltal">{{ number_format($tickets) }}</h5>
-                                                <p class="mb-0">Tổng doanh thu </p>
+                            <div id="div1">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap align-items-center mt-2">
+                                        <div class="d-flex align-items-center progress-order-left">
+                                            <div class="progress progress-round m-0 orange conversation-bar"
+                                                data-percent="46">
+                                                <span class="progress-left">
+                                                    <span class="progress-bar"></span>
+                                                </span>
+                                                <span class="progress-right">
+                                                    <span class="progress-bar"></span>
+                                                </span>
+                                                <div class="progress-value text-secondary">46%</div>
                                             </div>
-
+                                            <div class="progress-value ml-3 pr-5 border-right">
+    
+                                                <div>
+    
+                                                    <h5 id="ticketListtoltal">{{ number_format($tickets) }}</h5>
+                                                    <p class="mb-0">Tổng doanh thu </p>
+                                                </div>
+    
+                                            </div>
                                         </div>
                                     </div>
-                                    {{--   <div class="d-flex align-items-center ml-5 progress-order-right">
-                                        <div class="progress progress-round m-0 primary conversation-bar"
-                                            data-percent="46">
-                                            <span class="progress-left">
-                                                <span class="progress-bar"></span>
-                                            </span>
-                                            <span class="progress-right">
-                                                <span class="progress-bar"></span>
-                                            </span>
-                                            <div class="progress-value text-primary">46%</div>
-                                        </div>
-                                        <div class="progress-value ml-3">
-                                            <h5>$59,8478</h5>
-                                            <p class="mb-0">Top Orders</p>
-                                        </div>
-                                    </div> --}}
                                 </div>
-                            </div>
-
-
-                            <div class="card-body pt-0">
-                                <div id="layout1-chart-5"></div>
+    
+    
+                                <div class="card-body pt-0">
+                                    <div id="layout1-chart-5"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -670,67 +360,283 @@
                             </div>
                         </div>
                     </div>
-
-                    {{-- 
-                       <div class="col-lg-6">
-                        <div class="card card-block card-stretch card-height">
-                            <div class="card-header d-flex justify-content-between">
-                                <div class="header-title">
-                                    <h4 class="card-title">Overview</h4>
-                                </div>
-                                <div class="card-header-toolbar d-flex align-items-center">
-                                    <div class="dropdown">
-                                        <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton001"
-                                            data-toggle="dropdown">
-                                            This Month<i class="ri-arrow-down-s-line ml-1"></i>
-                                        </span>
-                                        <div class="dropdown-menu dropdown-menu-right shadow-none"
-                                            aria-labelledby="dropdownMenuButton001">
-                                            <a class="dropdown-item" href="#">Year</a>
-                                            <a class="dropdown-item" href="#">Month</a>
-                                            <a class="dropdown-item" href="#">Week</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div id="layout1-chart1"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card card-block card-stretch card-height">
-                            <div class="card-header d-flex align-items-center justify-content-between">
-                                <div class="header-title">
-                                    <h4 class="card-title">Revenue Vs Cost</h4>
-                                </div>
-                                <div class="card-header-toolbar d-flex align-items-center">
-                                    <div class="dropdown">
-                                        <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton002"
-                                            data-toggle="dropdown">
-                                            This Month<i class="ri-arrow-down-s-line ml-1"></i>
-                                        </span>
-                                        <div class="dropdown-menu dropdown-menu-right shadow-none"
-                                            aria-labelledby="dropdownMenuButton002">
-                                            <a class="dropdown-item" href="#">Yearly</a>
-                                            <a class="dropdown-item" href="#">Monthly</a>
-                                            <a class="dropdown-item" href="#">Weekly</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div id="layout1-chart-2" style="min-height: 360px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    --}}
-
                 </div>
-                <!-- Page end  -->
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        var revenuesData = @json($revenues);
+          if (jQuery("#layout1-chart-5").length) {
+    options = {
+      series: [{
+        name: 'Doanh thu',
+        data: Object.values(revenuesData),
+      }],
+      chart: {
+        type: 'bar',
+        height: 300
+      },
+      colors: ['#32BDEA', '#FF7E41'],
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: '30%',
+          endingShape: 'rounded'
+        },
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        show: true,
+        width: 3,
+        colors: ['transparent']
+      },
+      xaxis: {
+        categories: Object.keys(revenuesData),
+        labels: {
+          minWidth: 0,
+          maxWidth: 0
+        }
+      },
+      yaxis: {
+        show: true,
+        labels: {
+          minWidth: 20,
+          maxWidth: 20
+        }
+      },
+      fill: {
+        opacity: 1
+      },
+      tooltip: {
+        y: {
+          formatter: function (val) {
+            return "$ " + val + " thousands"
+          }
+        }
+      }
+    };
+    const chart = new ApexCharts(document.querySelector("#layout1-chart-5"), options);
+    chart.render();
+    const body = document.querySelector('body')
+    if (body.classList.contains('dark')) {
+      apexChartUpdate(chart, {
+        dark: true
+      })
+    }
 
-    <!-- Wrapper End-->
+    document.addEventListener('ChangeColorMode', function (e) {
+      apexChartUpdate(chart, e.detail)
+    })
+  }
+    </script>
+
+
+
+<script>
+    // Tạo một mảng để lưu trữ tất cả các vé
+    var ticketsSevenDaysAgo0 = <?php echo json_encode($ticketsSevenDaysAgo); ?>;
+    var ticketsCurrentMonth0 = <?php echo json_encode($ticketsCurrentMonth); ?>;
+    var ticketsCurrentYear0 = <?php echo json_encode($ticketsCurrentYear); ?>;
+
+    // Hàm hiển thị danh sách vé và số lượng vé đã lọc
+    function displayFilteredTickets0(tickets) {
+        // Lấy thẻ div để hiển thị danh sách vé và số lượng vé
+        var ticketListDiv = document.getElementById("ticketListcount");
+
+        // Xóa nội dung hiện tại của thẻ div
+        ticketListDiv.innerHTML = "";
+
+        // Duyệt qua danh sách vé và hiển thị thông tin của từng vé
+        tickets.forEach(function(ticket) {
+            var ticketInfo = document.createElement("div");
+
+
+            // Thêm thông tin vé vào thẻ div
+            ticketListDiv.appendChild(ticketInfo);
+        });
+
+        // Đếm số lượng vé
+        var ticketCount = tickets.length;
+
+        // Hiển thị số lượng vé đã lọc
+        var ticketCountDiv = document.createElement("div");
+        ticketCountDiv.textContent = ticketCount;
+
+        // Thêm số lượng vé vào thẻ div
+        ticketListDiv.appendChild(ticketCountDiv);
+    }
+
+    // Bắt sự kiện click trên thẻ <a> và gọi hàm hiển thị danh sách vé đã lọc
+    document.getElementById("filterLinkSevenDaysAgo00").addEventListener("click", function(event) {
+        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+        displayFilteredTickets0(ticketsSevenDaysAgo0);
+    });
+
+    document.getElementById("filterLinkCurrentMonth00").addEventListener("click", function(event) {
+        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+        displayFilteredTickets0(ticketsCurrentMonth0);
+    });
+
+    document.getElementById("filterLinkCurrentYear00").addEventListener("click", function(event) {
+        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+        displayFilteredTickets0(ticketsCurrentYear0);
+    });
+
+
+    function changeDropdownText0007(selectedOption) {
+        var dropdownButton = document.getElementById("dropdownMenuButton0007");
+        dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
+    }
+    // ***************************//
+    // Tạo một mảng để lưu trữ tất cả các vé
+    var ticketsSevenDaysAgo1 = <?php echo json_encode($ticketsSevenDaysAgo); ?>;
+    var ticketsCurrentMonth1 = <?php echo json_encode($ticketsCurrentMonth); ?>;
+    var ticketsCurrentYear1 = <?php echo json_encode($ticketsCurrentYear); ?>;
+
+    // Hàm hiển thị danh sách vé và số lượng vé đã lọc
+    // Hàm hiển thị danh sách vé và tên phim
+    function displayFilteredTickets1(tickets) {
+        // Lấy thẻ div để hiển thị danh sách vé và tên phim
+        var ticketListDiv = document.getElementById("ticketListfilmname");
+
+        // Xóa nội dung hiện tại của thẻ div
+        ticketListDiv.innerHTML = "";
+
+        // Tạo một đối tượng để theo dõi số lần xuất hiện của từng tên phim
+        var filmNameCounts = {};
+
+        // Duyệt qua danh sách vé và đếm số lần xuất hiện của mỗi tên phim
+        tickets.forEach(function(ticket) {
+            var filmName = ticket.film_name;
+
+            // Kiểm tra xem tên phim đã tồn tại trong filmNameCounts chưa, nếu chưa thì khởi tạo bằng 0
+            if (!filmNameCounts[filmName]) {
+                filmNameCounts[filmName] = 0;
+            }
+
+            // Tăng số lần xuất hiện của tên phim lên 1
+            filmNameCounts[filmName]++;
+        });
+
+        // Tìm tên phim có số lần xuất hiện nhiều nhất
+        var mostBookedFilm = "";
+        var maxCount = 0;
+
+        for (var filmName in filmNameCounts) {
+            if (filmNameCounts[filmName] > maxCount) {
+                maxCount = filmNameCounts[filmName];
+                mostBookedFilm = filmName;
+            }
+        }
+
+        // Hiển thị tên phim có lượt đặt nhiều nhất
+        var mostBookedFilmDiv = document.createElement("h5");
+        mostBookedFilmDiv.textContent = mostBookedFilm;
+        ticketListDiv.appendChild(mostBookedFilmDiv);
+
+
+    }
+
+
+
+    // Bắt sự kiện click trên thẻ <a> và gọi hàm hiển thị danh sách vé đã lọc
+    document.getElementById("filterLinkSevenDaysAgo1").addEventListener("click", function(event) {
+        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+        displayFilteredTickets1(ticketsSevenDaysAgo1);
+    });
+
+    document.getElementById("filterLinkCurrentMonth1").addEventListener("click", function(event) {
+        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+        displayFilteredTickets1(ticketsCurrentMonth1);
+    });
+
+    document.getElementById("filterLinkCurrentYear1").addEventListener("click", function(event) {
+        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+        displayFilteredTickets1(ticketsCurrentYear1);
+    });
+
+
+    function changeDropdownText009(selectedOption) {
+        var dropdownButton = document.getElementById("dropdownMenuButton009");
+        dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
+    }
+    // ****************//
+    // Tạo một mảng để lưu trữ tất cả các vé
+    var ticketsSevenDaysAgo1 = <?php echo json_encode($ticketsSevenDaysAgo); ?>;
+    var ticketsCurrentMonth1 = <?php echo json_encode($ticketsCurrentMonth); ?>;
+    var ticketsCurrentYear1 = <?php echo json_encode($ticketsCurrentYear); ?>;
+
+    // Hàm hiển thị danh sách vé và số lượng vé đã lọc
+    // Hàm hiển thị danh sách vé và tên phim
+    function displayFilteredTickets2(tickets) {
+        // Lấy thẻ div để hiển thị danh sách vé và giờ chiếu có số lần đặt nhiều nhất
+        var ticketListDiv = document.getElementById("ticketListfilhour");
+
+        // Xóa nội dung hiện tại của thẻ div
+        ticketListDiv.innerHTML = "";
+
+        // Tạo một đối tượng để theo dõi số lần xuất hiện của từng giờ chiếu
+        var hourCounts = {};
+
+        // Duyệt qua danh sách vé và đếm số lần xuất hiện của mỗi giờ chiếu
+        tickets.forEach(function(ticket) {
+            var selectedHour = ticket.selected_hour;
+
+            // Kiểm tra xem giờ chiếu đã tồn tại trong hourCounts chưa, nếu chưa thì khởi tạo bằng 0
+            if (!hourCounts[selectedHour]) {
+                hourCounts[selectedHour] = 0;
+            }
+
+            // Tăng số lần xuất hiện của giờ chiếu lên 1
+            hourCounts[selectedHour]++;
+        });
+
+        // Tìm giờ chiếu có số lần đặt nhiều nhất
+        var mostBookedHour = "";
+        var maxCount = 0;
+
+        for (var selectedHour in hourCounts) {
+            if (hourCounts[selectedHour] > maxCount) {
+                maxCount = hourCounts[selectedHour];
+                mostBookedHour = selectedHour;
+            }
+        }
+
+        // Hiển thị giờ chiếu có lượt đặt nhiều nhất
+        var mostBookedHourDiv = document.createElement("h5");
+        mostBookedHourDiv.textContent = mostBookedHour;
+        ticketListDiv.appendChild(mostBookedHourDiv);
+    }
+
+
+
+
+
+
+    // Bắt sự kiện click trên thẻ <a> và gọi hàm hiển thị danh sách vé đã lọc
+    document.getElementById("filterLinkSevenDaysAgo2").addEventListener("click", function(event) {
+        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+        displayFilteredTickets2(ticketsSevenDaysAgo1);
+    });
+
+    document.getElementById("filterLinkCurrentMonth2").addEventListener("click", function(event) {
+        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+        displayFilteredTickets2(ticketsCurrentMonth1);
+    });
+
+    document.getElementById("filterLinkCurrentYear2").addEventListener("click", function(event) {
+        event.preventDefault(); // Ngăn chặn trình duyệt chuyển đến một URL
+        displayFilteredTickets2(ticketsCurrentYear1);
+    });
+
+
+
+    function changeDropdownText0001(selectedOption) {
+        var dropdownButton = document.getElementById("dropdownMenuButton0001");
+        dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
+    }
+</script>
 @endsection

@@ -66,14 +66,14 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Phân quyền</label>
+                                                <label>Phân quyền <input type="checkbox" class="check-all" style="margin-left: 7px"></label>
                                                 <div class="row container m-auto">
                                                   @foreach ($permissions as $groupName=>$permission)
                                                   <div class="col-4 pb-3">
-                                                    <h4><b>{{ $groupName }}</b></h4>
+                                                    <h4><b>{{ $groupName }}</b> <input type="checkbox" class="check-one-name" style="margin-left: 7px"></h4>
                                                     @foreach ($permission as $item)
                                                     <div class="form-check">
-                                                        <input class="form-check-input" name="permission_ids[]" type="checkbox" 
+                                                        <input class="form-check-input check-box-all check-one-{{ $groupName }}" name="permission_ids[]" type="checkbox" 
                                                         {{ $role->permissions->contains('name', $item->name) ? 'checked':''}} value="{{ $item->id }}">
                                                         <label class="form-check-label" for="flexCheckDefault">
                                                           {{ $item->display_name }}
@@ -102,3 +102,34 @@
 </form>
 
 @endsection
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).on("change", ".check-one-name", function() {
+        var groupName = $(this).closest(".col-4").find("b").text();
+
+        if (this.checked) {
+            // Iterate over checkboxes within the specific group
+            $('.check-one-' + groupName).each(function() {
+                this.checked = true;
+            });
+        } else {
+            $('.check-one-' + groupName).each(function() {
+                this.checked = false;
+            });
+        }
+    });
+
+    $(document).on("change", ".check-all", function() {
+            if(this.checked) {
+                // Iterate each checkbox
+                $('.check-box-all:checkbox').each(function() {
+                    this.checked = true;
+                });
+            } else {
+                $('.check-box-all:checkbox').each(function() {
+                    this.checked = false;
+                });
+            }
+
+        });
+</script>

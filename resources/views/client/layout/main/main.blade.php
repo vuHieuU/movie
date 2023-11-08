@@ -13,6 +13,22 @@
         @yield('introduction')
 
         @include('client.layout.main.footer')
+
+        <script>
+            @if (Session::has('error'))
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Lỗi!',
+                    text: '{{ Session::get('error') }}',
+                });
+            @elseif (Session::has('success'))
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Thành công!',
+                    text: '{{ Session::get('success') }}',
+                });
+            @endif
+        </script>
 </body>
 
 </html>

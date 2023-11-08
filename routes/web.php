@@ -83,6 +83,7 @@ Route::middleware(['auth'])->group(function () {    //profile của user
     Route::get('/editaccount', [AuthController::class, 'edit'])->name("editaccount");
     Route::post('/myaccount', [AuthController::class, 'profile'])->name('profile');
     Route::get('/history', [AuthController::class, 'historyTicket'])->name('history');
+    Route::get('/detail-show/{id}', [AuthController::class, 'show'])->name('detail.show');
     // roles
     // cart
     Route::get('/seat-food/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'seatFood'])->name('chair');
@@ -101,7 +102,11 @@ Route::middleware(['auth'])->group(function () {    //profile của user
     Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
 });
 
+<<<<<<< HEAD
 Route::middleware('auth', 'role:admin')->group(function () {
+=======
+Route::middleware('auth',"role:admin")->group(function () {
+>>>>>>> 3175005cb42951c3d52af56ce79c5eca29976c53
     // Các route được bảo vệ bởi middleware 'admin' nên được định nghĩa ở đây
     // ...
     Route::get('/admin', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('admin');
@@ -254,6 +259,16 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('edit/{id}', [App\Http\Controllers\admin\NewController::class, 'edit'])->name('news.edit');
         Route::post('update/{id}', [App\Http\Controllers\admin\NewController::class, 'update'])->name('news.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\NewController::class, 'destroy'])->name('news.destroy');
+    });
+
+    //Banner
+    Route::prefix('sliders')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\SliderController::class, "index"])->name('sliders.index');
+        Route::get('create', [App\Http\Controllers\admin\SliderController::class, "create"])->name('sliders.create');
+        Route::post('store', [App\Http\Controllers\admin\SliderController::class, "store"]);
+        Route::get('edit/{id}', [App\Http\Controllers\admin\SliderController::class, "edit"]);
+        Route::put('update/{id}', [App\Http\Controllers\admin\SliderController::class, "update"]);
+        Route::get('delete/{id}', [App\Http\Controllers\admin\SliderController::class, 'destroy'])->name('sliders.destroy');
     });
     
      // tổng quan

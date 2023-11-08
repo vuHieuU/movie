@@ -1,7 +1,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="profile" href="https://gmpg.org/xfn/11" />
-{{-- <title>{{ $title }}</title> --}}
+<title>@yield('title')</title>
 <meta name='robots' content='max-image-preview:large' />
 {{-- <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
@@ -324,6 +324,17 @@
 <style id='amy-movie-style-inline-css' type='text/css'>
     .amy-primary-navigation ul.nav-menu>li>a::after {
         top: 70%;
+    }
+</style>
+
+<style>
+    .amy-primary-navigation ul.nav-menu > li:last-child > ul:after, .amy-primary-navigation ul.nav-menu > li:last-child > ul:before {
+        right: 5%;
+        left: inherit; }
+
+    .logoUserLogin{
+        display: flex;
+        justify-content: center;
     }
 </style>
 {{-- <link rel='stylesheet' id='csf-google-web-fonts-css'

@@ -134,8 +134,18 @@
                 <nav id="amy-site-nav" class="amy-site-navigation amy-primary-navigation ">
                     <div class="menu-mainnav-container">
                         <ul id="menu-mainnav" class="nav-menu">
-                            <li id="menu-item-121"
+                            {{-- <li id="menu-item-121"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-84 current_page_item menu-item-121">
+                                @foreach (\App\Models\cinema::get() as $cinema)
+                                   
+                                    @endforeach
+                                <a href="/" aria-current="page">Trang chủ</a>
+                                <a href="{{ route('homeCinema',[$cinema->id]) }}" aria-current="page">Home</a>
+
+                            </li> --}}
+
+                            <li id="menu-item-146"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
                                 {{-- @foreach (\App\Models\cinema::get() as $cinema)
                                    
                                     @endforeach --}}
@@ -191,11 +201,21 @@
                                         </li>
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                            <a href="{{ route('myaccount') }}">Trang Cá Nhân</a>
+                                            <a href="{{ route('myaccount') }}">Cá Nhân</a>
                                         </li>
+                                 
+                                
+                                    @if (Auth::user()->roles->isNotEmpty() && Auth::user()->hasRole('admin'))
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
+                                            <a href="/admin">Quản trị</a>
+                                        </li>
+                                    @endif
+                                          
+                                            <!-- Các mục menu khác cho admin -->
+                                     
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">
-                                            <a href="/FavoFilm/{{ Auth::user()->id }}">Trang Yêu thích</a>
+                                            <a href="/FavoFilm/{{ Auth::user()->id }}"> Yêu thích</a>
                                         </li>
                                         <li id="menu-item-140"
                                             class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-140">

@@ -502,7 +502,7 @@ body {
 
     <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/account_oder_style.scss.css?1681350496696" rel="stylesheet" type="text/css" media="all" />
     {{-- csss login --}}
-
+    @section('title', 'Đăng nhập')
 </head>
 
 <body class="page-template-default page page-id-142 amy-header-default  single-author elementor-default elementor-kit-5 elementor-page elementor-page-142">
