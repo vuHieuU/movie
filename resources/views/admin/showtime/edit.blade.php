@@ -116,20 +116,26 @@
                                 <div class="mt-5"style="max-width: 1100px;margin: auto">
                                     <img class="img-responsive w-100" src="{{ asset('storage/images/ic-screen.png') }}">
                                     <div class="form-group">
-                                        <label>Ghế ngồi</label>
-                                        <input type="checkbox" class="checkbox mx-3" id="selectAll"
-                                            data-master-checkbox>
+                                        <h5 style="font-weight: bold">Ghế ngồi</h5>
+                                        <div class="d-flex">
+                                                <h6>Tất cả<input type="checkbox" class="check-all mx-3" id="selectAll"
+                                                    data-master-checkbox></h6>
+                                                <h6>A<input type="checkbox" class="checkboxA mx-3"></h6>
+                                                <h6>B<input type="checkbox" class="checkboxB mx-3"></h6>
+                                                <h6>C<input type="checkbox" class="checkboxC mx-3"></h6>
+                                                <h6>D<input type="checkbox" class="checkboxD mx-3"></h6>
+                                        </div>
                                         <div class="row container  "style="max-width: 1100px;">
                                             @foreach ($seats as $item)
                                                 @if ($item->typeSeat_id == 1)
                                                     <div class="form-check col-md-1">
-                                                        <div class="form-check">
-                                                    <input class="form-check-input item" type="checkbox" name="id_seat[]" 
+                                                        <div class="form-check d-flex align-items-center">
+                                                    <input class="form-check-input item check-box-all check-box-A" type="checkbox" name="id_seat[]" 
                                                            {{ $showtime->seats->contains('seat_number', $item->seat_number) ? 'checked' : '' }} 
                                                            value="{{ $item->id }}" id="seat_{{ $item->id }}">
-                                                    <label class="form-check-label" for="seat_{{ $item->id }}">
+                                                    <p class="form-check-label" for="seat_{{ $item->id }}">
                                                         {{ $item->seat_number }}
-                                                    </label>
+                                                    </p>
                                                 </div>
 
                                                     </div>
@@ -140,13 +146,13 @@
                                             @foreach ($seats as $item)
                                                 @if ($item->typeSeat_id == 2)
                                                     <div class="form-check col-md-1">
-                                                        <div class="form-check">
-                                                    <input class="form-check-input item" type="checkbox" name="id_seat[]" 
+                                                        <div class="form-check d-flex align-items-center">
+                                                    <input class="form-check-input item check-box-all check-box-B" type="checkbox" name="id_seat[]" 
                                                            {{ $showtime->seats->contains('seat_number', $item->seat_number) ? 'checked' : '' }} 
                                                            value="{{ $item->id }}" id="seat_{{ $item->id }}">
-                                                    <label class="form-check-label" for="seat_{{ $item->id }}">
+                                                    <p class="form-check-label" for="seat_{{ $item->id }}">
                                                         {{ $item->seat_number }}
-                                                    </label>
+                                                    </p>
                                                 </div>
 
                                                     </div>
@@ -157,13 +163,13 @@
                                             @foreach ($seats as $item)
                                                 @if ($item->typeSeat_id == 3)
                                                     <div class="form-check col-md-1">
-                                                        <div class="form-check">
-                                                    <input class="form-check-input item" type="checkbox" name="id_seat[]" 
+                                                        <div class="form-check d-flex align-items-center">
+                                                    <input class="form-check-input item check-box-all check-box-C" type="checkbox" name="id_seat[]" 
                                                            {{ $showtime->seats->contains('seat_number', $item->seat_number) ? 'checked' : '' }} 
                                                            value="{{ $item->id }}" id="seat_{{ $item->id }}">
-                                                    <label class="form-check-label" for="seat_{{ $item->id }}">
+                                                    <p class="form-check-label" for="seat_{{ $item->id }}">
                                                         {{ $item->seat_number }}
-                                                    </label>
+                                                    </p>
                                                 </div>
 
                                                     </div>
@@ -174,13 +180,13 @@
                                             @foreach ($seats as $item)
                                                 @if ($item->typeSeat_id == 4)
                                                     <div class="form-check col-md-1">
-                                                        <div class="form-check">
-                                                    <input class="form-check-input item" type="checkbox" name="id_seat[]" 
+                                                        <div class="form-check d-flex align-items-center">
+                                                    <input class="form-check-input item check-box-all check-box-D" type="checkbox" name="id_seat[]" 
                                                            {{ $showtime->seats->contains('seat_number', $item->seat_number) ? 'checked' : '' }} 
                                                            value="{{ $item->id }}" id="seat_{{ $item->id }}">
-                                                    <label class="form-check-label" for="seat_{{ $item->id }}">
+                                                    <p class="form-check-label" for="seat_{{ $item->id }}">
                                                         {{ $item->seat_number }}
-                                                    </label>
+                                                    </p>
                                                 </div>
 
                                                     </div>
@@ -225,3 +231,71 @@
 </form>
 
 @endsection
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+       $(document).on("change", ".check-all", function() {
+            if(this.checked) {
+                // Iterate each checkbox
+                $('.check-box-all:checkbox').each(function() {
+                    this.checked = true;
+                });
+            } else {
+                $('.check-box-all:checkbox').each(function() {
+                    this.checked = false;
+                });
+            }
+
+        });
+       $(document).on("change", ".checkboxA", function() {
+            if(this.checked) {
+                // Iterate each checkbox
+                $('.check-box-A:checkbox').each(function() {
+                    this.checked = true;
+                });
+            } else {
+                $('.check-box-A:checkbox').each(function() {
+                    this.checked = false;
+                });
+            }
+
+        });
+       $(document).on("change", ".checkboxB", function() {
+            if(this.checked) {
+                // Iterate each checkbox
+                $('.check-box-B:checkbox').each(function() {
+                    this.checked = true;
+                });
+            } else {
+                $('.check-box-B:checkbox').each(function() {
+                    this.checked = false;
+                });
+            }
+
+        });
+       $(document).on("change", ".checkboxC", function() {
+            if(this.checked) {
+                // Iterate each checkbox
+                $('.check-box-C:checkbox').each(function() {
+                    this.checked = true;
+                });
+            } else {
+                $('.check-box-C:checkbox').each(function() {
+                    this.checked = false;
+                });
+            }
+
+        });
+       $(document).on("change", ".checkboxD", function() {
+            if(this.checked) {
+                // Iterate each checkbox
+                $('.check-box-D:checkbox').each(function() {
+                    this.checked = true;
+                });
+            } else {
+                $('.check-box-D:checkbox').each(function() {
+                    this.checked = false;
+                });
+            }
+
+        });
+</script>

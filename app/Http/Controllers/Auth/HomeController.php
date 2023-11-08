@@ -61,7 +61,7 @@ class HomeController extends Controller
 
             $formattedTime = Carbon::parse($mostBookedHour->selected_hour)->format('H:i:s');
         } else {
-            return view('no_data_to_display');
+            $formattedTime = '';
         }
 
         //lọc film 
