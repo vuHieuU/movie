@@ -9,16 +9,13 @@
     {{-- <title>{{$taitel}}</title> --}}
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     {{-- ảnh url --}}
     <link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
     {{-- ảnh url --}}
     <link rel='dns-prefetch' href='//s.w.org' />
-    <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Comments Feed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Comments Feed" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" />
     <script type="text/javascript">
         window._wpemojiSettings = {
             "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/",
@@ -77,6 +74,68 @@
                     .wpemoji)))
         }(window, document, window._wpemojiSettings);
     </script>
+    <style>
+        .login-with-google-btn {
+  transition: background-color .3s, box-shadow .3s;
+    
+  padding: 12px 16px 12px 42px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
+  
+  color: #757575;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 12px 11px;
+  
+  &:hover {
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);
+  }
+  
+  &:active {
+    background-color: #eeeeee;
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 
+      0 -1px 0 rgba(0, 0, 0, .04),
+      0 2px 4px rgba(0, 0, 0, .25),
+      0 0 0 3px #c8dafc;
+  }
+  
+  &:disabled {
+    filter: grayscale(100%);
+    background-color: #ebebeb;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
+    cursor: not-allowed;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  text-align: center;
+  padding-top: 2rem;
+}
+    </style>
     <style type="text/css">
         img.wp-smiley,
         img.emoji {
@@ -90,12 +149,10 @@
             background: none !important;
             padding: 0 !important;
         }
+        
     </style>
-    <link rel='stylesheet' id='wp-block-library-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7'
-        type='text/css' media='all' />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel='stylesheet' id='wp-block-library-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7' type='text/css' media='all' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style id='global-styles-inline-css' type='text/css'>
         body {
@@ -345,76 +402,37 @@
             font-size: var(--wp--preset--font-size--x-large) !important;
         }
     </style>
-    <link rel='stylesheet' id='elementor-icons-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-frontend-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.6.5'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-post-5-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-5.css?ver=1651538276'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-global-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/global.css?ver=1651538276'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-post-142-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='font-awesome-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='slick-style-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick.css?ver=5.9.7'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='slick-theme-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick-theme.css?ver=5.9.7'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='fancybox-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.fancybox.css?ver=3.5.7'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='tooltipster-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/tooltipster.bundle.css?ver=1.0.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='mCustomScrollbar-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.mCustomScrollbar.css?ver=1.0.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='plyr-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/plyr.css?ver=1.0.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='amy-movie-style-css'
-        href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/style.css?ver=1.0.0'
-        type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-icons-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-frontend-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.6.5' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-post-5-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-5.css?ver=1651538276' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-global-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/global.css?ver=1651538276' type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-post-142-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='slick-style-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick.css?ver=5.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='slick-theme-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick-theme.css?ver=5.9.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='fancybox-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.fancybox.css?ver=3.5.7' type='text/css' media='all' />
+    <link rel='stylesheet' id='tooltipster-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/tooltipster.bundle.css?ver=1.0.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='mCustomScrollbar-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.mCustomScrollbar.css?ver=1.0.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='plyr-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/plyr.css?ver=1.0.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='amy-movie-style-css' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/style.css?ver=1.0.0' type='text/css' media='all' />
     <style id='amy-movie-style-inline-css' type='text/css'>
         .amy-primary-navigation ul.nav-menu>li>a::after {
             top: 70%;
         }
     </style>
-    <link rel='stylesheet' id='csf-google-web-fonts-css'
-        href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css'
-        media='all' />
-    <link rel='stylesheet' id='google-fonts-1-css'
-        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.9.7'
-        type='text/css' media='all' />
-    <script type='text/javascript'
-        src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery.min.js?ver=3.6.0'
-        id='jquery-core-js'></script>
-    <script type='text/javascript'
-        src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2'
-        id='jquery-migrate-js'></script>
+    <link rel='stylesheet' id='csf-google-web-fonts-css' href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css' media='all' />
+    <link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.9.7' type='text/css' media='all' />
+    <script type='text/javascript' src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+    <script type='text/javascript' src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
     <link rel="https://api.w.org/" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/" />
-    <link rel="alternate" type="application/json"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/wp/v2/pages/142" />
-    <link rel="EditURI" type="application/rsd+xml" title="RSD"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/xmlrpc.php?rsd" />
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/wlwmanifest.xml" />
+    <link rel="alternate" type="application/json" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/wp/v2/pages/142" />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/xmlrpc.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/wlwmanifest.xml" />
     <meta name="generator" content="WordPress 5.9.7" />
     <link rel="canonical" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/now-playing/" />
     <link rel='shortlink' href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/?p=142' />
-    <link rel="alternate" type="application/json+oembed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F" />
-    <link rel="alternate" type="text/xml+oembed"
-        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" />
+    <link rel="alternate" type="application/json+oembed" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F" />
+    <link rel="alternate" type="text/xml+oembed" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fnow-playing%2F&#038;format=xml" />
     <style type="text/css">
         body {
             font-family: "Roboto Condensed";
@@ -477,41 +495,37 @@
 
     {{-- csss login --}}
 
-    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/plugincss.css?1681350496696" rel="stylesheet"
-        type="text/css" media="all" />
+    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/plugincss.css?1681350496696" rel="stylesheet" type="text/css" media="all" />
 
 
-    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/main.scss.css?1681350496696" rel="stylesheet"
-        type="text/css" media="all" />
+    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/main.scss.css?1681350496696" rel="stylesheet" type="text/css" media="all" />
 
-    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/account_oder_style.scss.css?1681350496696"
-        rel="stylesheet" type="text/css" media="all" />
+    <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/account_oder_style.scss.css?1681350496696" rel="stylesheet" type="text/css" media="all" />
     {{-- csss login --}}
 
 </head>
 
-<body
-    class="page-template-default page page-id-142 amy-header-default  single-author elementor-default elementor-kit-5 elementor-page elementor-page-142">
+<body class="page-template-default page page-id-142 amy-header-default  single-author elementor-default elementor-kit-5 elementor-page elementor-page-142">
     <div id="page" class="hfeed site">
 
         @extends('client.layout.main.main')
         @section('contact')
-            <div class="main-index">
+        <div class="main-index">
 
 
-                <div class="page-content-account mt-5">
-                    <div class="container">
-                        <div class="row">
+            <div class="page-content-account mt-5">
+                <div class="container">
+                    <div class="row">
 
 
-                            <div class="page-content-account">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-                                            <div class="d-group">
+                        <div class="page-content-account">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+                                        <div class="d-group">
 
-                                                <div class="left-col">
-                                                    <div class="block social-login--facebooks">
+                                            <div class="left-col">
+                                                <!-- <div class="block social-login--facebooks">
                                                         <p class="a-center">
                                                             <span>Hoặc đăng nhập bằng</span>
                                                         </p>
@@ -524,117 +538,143 @@
                                                             onclick="loginGoogle()"><img width="129px" height="37px"
                                                                 alt="google-login-button"
                                                                 src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"></a>
+                                                    </div> -->
+                                                <div class="group-login group-log">
+                                                    <h1>
+                                                        Đăng nhập tài khoản
+                                                    </h1>
+                                                    <form method="post" action="{{ route('login') }}" id="customer_login" accept-charset="UTF-8"><input name="FormType" type="hidden" value="customer_login" /><input name="utf8" type="hidden" value="true" /> @csrf
+                                                        <p class="error">
+
+                                                        </p>
+                                                        <fieldset class="form-group">
+                                                            <label>Email <span class="required">*</span></label>
+                                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                                            @error('email')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                                            @enderror
+                                                        </fieldset>
+                                                        <fieldset class="form-group">
+                                                            <label>Mật khẩu <span class="required">*</span> </label>
+                                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                                            @error('password')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                                            @enderror
+                                                        </fieldset>
+                                                        <button class="btn-login" type="submit" value="Đăng nhập">Đăng nhập</button>
+                                                    </form>
+                                                    <div class="block social-login--facebooks">
+                                                        <p class="a-center">
+                                                            <span>Hoặc đăng nhập bằng</span>
+                                                        </p>
+                                                        <script>
+                                                            function loginFacebook() {
+                                                                var a = {
+                                                                        client_id: "947410958642584",
+                                                                        redirect_uri: "https://store.mysapo.net/account/facebook_account_callback",
+                                                                        state: JSON.stringify({
+                                                                            redirect_url: window.location.href
+                                                                        }),
+                                                                        scope: "email",
+                                                                        response_type: "code"
+                                                                    },
+                                                                    b = "https://www.facebook.com/v3.2/dialog/oauth" + encodeURIParams(a, !0);
+                                                                window.location.href = b
+                                                            }
+
+                                                            function loginGoogle() {
+                                                                var a = {
+                                                                        client_id: "997675985899-pu3vhvc2rngfcuqgh5ddgt7mpibgrasr.apps.googleusercontent.com",
+                                                                        redirect_uri: "https://store.mysapo.net/account/google_account_callback",
+                                                                        scope: "email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile",
+                                                                        access_type: "online",
+                                                                        state: JSON.stringify({
+                                                                            redirect_url: window.location.href
+                                                                        }),
+                                                                        response_type: "code"
+                                                                    },
+                                                                    b = "https://accounts.google.com/o/oauth2/v2/auth" + encodeURIParams(a, !0);
+                                                                window.location.href = b
+                                                            }
+
+                                                            function encodeURIParams(a, b) {
+                                                                var c = [];
+                                                                for (var d in a)
+                                                                    if (a.hasOwnProperty(d)) {
+                                                                        var e = a[d];
+                                                                        null != e && c.push(encodeURIComponent(d) + "=" + encodeURIComponent(e))
+                                                                    } return 0 == c.length ? "" : (b ? "?" : "") + c.join("&")
+                                                            }
+                                                        </script>
+                                                        <!-- <a href="{{route('loginGithub')}}" class="social-login--github" onclick="loginGithub()"><img width="129px" height="37px" alt="github-login-button" src="//bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"></a> -->
+                                                        <a href="{{route('loginGoogle')}}" class="social-login--google" onclick="loginGoogle()">                                                        <button type="button" class="login-with-google-btn" >
+  Sign in with Google
+</button>          </a>                                    
+                                                    
                                                     </div>
-                                                    <div class="group-login group-log">
-                                                        <h1>
-                                                            Đăng nhập tài khoản
-                                                        </h1>
-                                                        <form method="post" action="{{ route('login') }}"
-                                                            id="customer_login" accept-charset="UTF-8"><input
-                                                                name="FormType" type="hidden"
-                                                                value="customer_login" /><input name="utf8"
-                                                                type="hidden" value="true" /> @csrf
-                                                            <p class="error">
-
-                                                            </p>
-                                                            <fieldset class="form-group">
-                                                                <label>Email <span class="required">*</span></label>
-                                                                <input id="email" type="email"
-                                                                    class="form-control @error('email') is-invalid @enderror"
-                                                                    name="email" value="{{ old('email') }}" required
-                                                                    autocomplete="email" autofocus>
-
-                                                                @error('email')
-                                                                    <span class="invalid-feedback" role="alert">
-                                                                        <strong>{{ $message }}</strong>
-                                                                    </span>
-                                                                @enderror
-                                                            </fieldset>
-                                                            <fieldset class="form-group">
-                                                                <label>Mật khẩu <span class="required">*</span> </label>
-                                                                <input id="password" type="password"
-                                                                    class="form-control @error('password') is-invalid @enderror"
-                                                                    name="password" required
-                                                                    autocomplete="current-password">
-
-                                                                @error('password')
-                                                                    <span class="invalid-feedback" role="alert">
-                                                                        <strong>{{ $message }}</strong>
-                                                                    </span>
-                                                                @enderror
-                                                            </fieldset>
-                                                            <button class="btn-login" type="submit"
-                                                                value="Đăng nhập">Đăng nhập</button>
-                                                        </form>
-
-                                                        <p>
-                                                            Bạn quên mật khẩu bấm <a href="#"
-                                                                onclick="showRecoverPasswordForm();return false;">
-                                                                @if (Route::has('password.request'))
-                                                                    <a class="btn btn-link"
-                                                                        href="{{ route('password.request') }}">
-                                                                        {{ __('Vào Đây?') }}
-                                                                    </a>
-                                                                @endif
+                                                    <p>
+                                                        Bạn quên mật khẩu bấm <a href="#" onclick="showRecoverPasswordForm();return false;">
+                                                            @if (Route::has('password.request'))
+                                                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                                {{ __('Vào Đây?') }}
                                                             </a>
-                                                        </p>
-                                                    </div>
-                                                    <div class="group-login group-recover d-none">
-                                                        <h2>
-                                                            Quên mật khẩu
-                                                        </h2>
-                                                        <p class="description">
-                                                            Chúng tôi sẽ gửi cho bạn một email để kích hoạt việc đặt lại mật
-                                                            khẩu.
-                                                        </p>
-                                                        <form method="post" action="/account/recover"
-                                                            id="recover_customer_password" accept-charset="UTF-8"><input
-                                                                name="FormType" type="hidden"
-                                                                value="recover_customer_password" /><input name="utf8"
-                                                                type="hidden" value="true" />
-                                                            <p class="error">
-
-                                                            </p>
-
-                                                            <fieldset class="form-group">
-                                                                <input type="email"
-                                                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
-                                                                    class="form-control form-control-lg" value=""
-                                                                    name="Email" id="recover-email" placeholder="Email"
-                                                                    Required>
-                                                            </fieldset>
-                                                            <input class="btn-login" type="submit"
-                                                                value="Gửi yêu cầu" />
-                                                            <a href="#" class="btn-ref">Hủy</a>
-                                                        </form>
-                                                    </div>
+                                                            @endif
+                                                        </a>
+                                                    </p>
                                                 </div>
-                                                <div class="right-col">
-                                                    <h4>
-                                                        Quyền lợi với thành viên
-                                                    </h4>
-                                                    <div>
-                                                        <p>Nhiều thể loại phim</p>
-                                                        <p>Film đa dạng </p>
-                                                        <p>Đặt vé rễ dàng</p>
-                                                        <p>Tích điểm đổi quà</p>
-                                                        <p>Được giảm giá cho lần mua tiếp theo lên đến 10% </p>
-                                                    </div>
-                                                    <a href="/register" class="btn-register-default">Đăng ký</a>
+                                                <div class="group-login group-recover d-none">
+                                                    <h2>
+                                                        Quên mật khẩu
+                                                    </h2>
+                                                    <p class="description">
+                                                        Chúng tôi sẽ gửi cho bạn một email để kích hoạt việc đặt lại mật
+                                                        khẩu.
+                                                    </p>
+                                                    <form method="post" action="/account/recover" id="recover_customer_password" accept-charset="UTF-8"><input name="FormType" type="hidden" value="recover_customer_password" /><input name="utf8" type="hidden" value="true" />
+                                                        <p class="error">
+
+                                                        </p>
+
+                                                        <fieldset class="form-group">
+                                                            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" class="form-control form-control-lg" value="" name="Email" id="recover-email" placeholder="Email" Required>
+                                                        </fieldset>
+                                                        <input class="btn-login" type="submit" value="Gửi yêu cầu" />
+                                                        <a href="#" class="btn-ref">Hủy</a>
+                                                    </form>
                                                 </div>
+                                            </div>
+                                            <div class="right-col">
+                                                <h4>
+                                                    Quyền lợi với thành viên
+                                                </h4>
+                                                <div>
+                                                    <p>Nhiều thể loại phim</p>
+                                                    <p>Film đa dạng </p>
+                                                    <p>Đặt vé rễ dàng</p>
+                                                    <p>Tích điểm đổi quà</p>
+                                                    <p>Được giảm giá cho lần mua tiếp theo lên đến 10% </p>
+                                                </div>
+                                                <a href="/register" class="btn-register-default">Đăng ký</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
+
+
                     </div>
-
-
-
                 </div>
 
+
+
             </div>
+
+        </div>
         @endsection
