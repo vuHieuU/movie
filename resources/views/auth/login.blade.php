@@ -487,7 +487,7 @@
     <link href="//bizweb.dktcdn.net/100/429/689/themes/869367/assets/account_oder_style.scss.css?1681350496696"
         rel="stylesheet" type="text/css" media="all" />
     {{-- csss login --}}
-
+    @section('title', 'Đăng nhập')
 </head>
 
 <body
