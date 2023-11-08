@@ -114,125 +114,140 @@
                 </li>
 
 
-        {{-- Cinemas --}}
-        <li class="">
-            <a href="#cinemas" class="collapse" data-toggle="collapse" aria-expanded="false">
-                <i class="fa-solid fa-city"></i>
-                <span class="ml-4">Rạp phim</span>
-                <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                </svg>
-            </a>
-            <ul id="cinemas" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                {{-- Cinemas --}}
                 <li class="">
-                    <a href="/cinemas/index">
-                        <i class="las la-minus"></i><span>Danh sách rạp phim</span>
+                    <a href="#cinemas" class="collapse" data-toggle="collapse" aria-expanded="false">
+                        <i class="fa-solid fa-city"></i>
+                        <span class="ml-4">Rạp phim</span>
+                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="10 15 15 20 20 15"></polyline>
+                            <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                        </svg>
                     </a>
+                    <ul id="cinemas" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        <li class="">
+                            <a href="/cinemas/index">
+                                <i class="las la-minus"></i><span>Danh sách rạp phim</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/city/index">
+                                <i class="las la-minus"></i><span>Thành phố</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/food/index">
+                                <i class="las la-minus"></i><span>Danh sách đồ ăn</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="">
-                    <a href="/city/index">
-                        <i class="las la-minus"></i><span>Thành phố</span>
+                {{-- @endcan --}}
+                {{-- showtime --}}
+                <li class=" ">
+                    <a href="#showtime" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                        <i class="fa-solid fa-calendar"></i>
+                        <span class="ml-4">Lịch chiếu</span>
+                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="10 15 15 20 20 15"></polyline>
+                            <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                        </svg>
                     </a>
+                    <ul id="showtime" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        <li class="">
+                            <a href="/showtime/index">
+                                <i class="las la-minus"></i><span>Danh sách chiếu phim</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/typeseats/index">
+                                <i class="las la-minus"></i><span>Danh sách loại ghế</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/seats/index">
+                                <i class="las la-minus"></i><span>Danh sách ghế</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="/rooms/index">
+                                <i class="las la-minus"></i><span>Danh sách phòng</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="">
-                    <a href="/food/index">
-                        <i class="las la-minus"></i><span>Danh sách đồ ăn</span>
+
+
+                {{-- @endcan --}}
+
+
+                {{-- @endcan --}}
+                {{-- showtime --}}
+                <li class=" ">
+                    <a href="#Ticket" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span class="ml-4">Đặt vé</span>
+                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="10 15 15 20 20 15"></polyline>
+                            <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                        </svg>
                     </a>
+                    <ul id="Ticket" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        <li class="">
+                            <a href="{{ route('ticket.index') }}">
+                                <i class="las la-minus"></i><span>Danh sách đặt vé</span>
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
-            </ul>
-        </li>
-          {{-- @endcan --}}
-            {{-- showtime --}}
-            <li class=" ">
-                <a href="#showtime" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                    <i class="fa-solid fa-calendar"></i>
-                    <span class="ml-4">Lịch chiếu</span>
-                    <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                    </svg>
-                </a>
-                <ul id="showtime" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                    <li class="">
-                        <a href="/showtime/index">
-                            <i class="las la-minus"></i><span>Danh sách chiếu phim</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="/typeseats/index">
-                            <i class="las la-minus"></i><span>Danh sách loại ghế</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="/seats/index">
-                            <i class="las la-minus"></i><span>Danh sách ghế</span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="/rooms/index">
-                            <i class="las la-minus"></i><span>Danh sách phòng</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+                <li class=" ">
+                    <a href="#Natification" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <span class="ml-4">Thông báo</span>
+                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="10 15 15 20 20 15"></polyline>
+                            <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                        </svg>
+                    </a>
+                    <ul id="Natification" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        <li class="">
+                            <a href="/NotificationList">
+                                <i class="las la-minus"></i><span>Danh sách thông báo</span>
+                            </a>
+                        </li>
 
+                    </ul>
+                </li>
+                <li class=" ">
+                    <a href="#setting" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="ml-4">Cài đặt</span>
+                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="10 15 15 20 20 15"></polyline>
+                            <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                        </svg>
+                    </a>
+                    <ul id="setting" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        <li class="">
+                            <a href="{{ route('smtp_settings.index') }}">
+                                <i class="las la-minus"></i><span>Cài đặt SMTP</span>
+                            </a>
+                        </li>
 
-{{-- @endcan --}}
-
-
-{{-- @endcan --}}
-            {{-- showtime --}}
-            <li class=" ">
-                <a href="#Ticket" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                    <i class="fa-solid fa-ticket"></i>
-                    <span class="ml-4">Đặt vé</span>
-                    <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                    </svg>
-                </a>
-                <ul id="Ticket" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                    <li class="">
-                        <a href="{{ route('ticket.index') }}">
-                            <i class="las la-minus"></i><span>Danh sách đặt vé</span>
-                        </a>
-                    </li>
-                   
-                </ul>
-            </li>
-            <li class=" ">
-                <a href="#Natification" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                    <i class="fa-solid fa-earth-americas"></i>
-                    <span class="ml-4">Thông báo</span>
-                    <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                    </svg>
-                </a>
-                <ul id="Natification" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                    <li class="">
-                        <a href="/NotificationList">
-                            <i class="las la-minus"></i><span>Danh sách thông báo</span>
-                        </a>
-                    </li>
-                   
-                </ul>
-            </li>
-            <li class=" ">
-                <a href="#setting" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                    <i class="fa-solid fa-gear"></i>
-                    <span class="ml-4">Cài đặt</span>
-                    <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                    </svg>
-                </a>
-                <ul id="setting" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                    <li class="">
-                        <a href="{{ route('smtp_settings.index') }}">
-                            <i class="las la-minus"></i><span>Cài đặt SMTP</span>
-                        </a>
-                    </li>
-                   
-                </ul>
-            </li>
-{{-- @endcan --}}
+                    </ul>
+                </li>
+                {{-- @endcan --}}
             </ul>
         </nav>
 
@@ -251,10 +266,7 @@
                 </a>
             </div>
             <div class="iq-search-bar device-search">
-                <form action="#" class="searchbox">
-                    <a class="search-link" href="#"><i class="ri-search-line"></i></a>
-                    <input type="text" class="text search-input" placeholder="Search here...">
-                </form>
+
             </div>
             <div class="d-flex align-items-center">
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -264,37 +276,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-list align-items-center">
-                        {{-- <li class="nav-item nav-icon dropdown">
-                            <a href="#" class="search-toggle dropdown-toggle btn border add-btn"
-                                id="dropdownMenuButton02" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <img src="/template/assets/images/small/flag-01.png" alt="img-flag"
-                                    class="img-fluid image-flag mr-2">En
-                            </a>
-                            <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                <div class="card shadow-none m-0">
-                                    <div class="card-body p-3">
-                                        <a class="iq-sub-card" href="#"><img
-                                                src="/template/assets/images/small/flag-02.png" alt="img-flag"
-                                                class="img-fluid mr-2">French</a>
-                                        <a class="iq-sub-card" href="#"><img
-                                                src="/template/assets/images/small/flag-03.png" alt="img-flag"
-                                                class="img-fluid mr-2">Spanish</a>
-                                        <a class="iq-sub-card" href="#"><img
-                                                src="/template/assets/images/small/flag-04.png" alt="img-flag"
-                                                class="img-fluid mr-2">Italian</a>
-                                        <a class="iq-sub-card" href="#"><img
-                                                src="/template/assets/images/small/flag-05.png" alt="img-flag"
-                                                class="img-fluid mr-2">German</a>
-                                        <a class="iq-sub-card" href="#"><img
-                                                src="/template/assets/images/small/flag-06.png" alt="img-flag"
-                                                class="img-fluid mr-2">Japanese</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li> --}}
+
                         <li>
-                            <a href="/" class="btn border add-btn shadow-none mx-2 d-none d-md-block">Trang chủ</a>
+                            <a href="/" class="btn border add-btn shadow-none mx-2 d-none d-md-block">Trang
+                                chủ</a>
                         </li>
                         <li class="nav-item nav-icon search-content">
                             <a href="#" class="search-toggle rounded" id="dropdownSearch"
@@ -391,39 +376,89 @@
                         <li class="nav-item nav-icon dropdown">
                             <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
-                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                                </svg>
-                                <span style="font-size: 12px; color:red;">{{\App\Models\Notification::where('status',1)->count()}}</span>
+                                <span class="notification-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
+                                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                    </svg>
+                                    <span
+                                        class="notification-count">{{ \App\Models\Notification::where('status', 1)->count() }}</span>
+                                </span>
                             </a>
+                            <style>
+                                .search-toggle {
+                                    position: relative;
+                                    display: flex;
+                                    align-items: center;
+                                    text-decoration: none;
+                                    color: #333;
+                                    /* Màu chữ */
+                                }
+
+                                .notification-icon {
+                                    position: relative;
+                                    margin-right: 10px;
+                                    /* Khoảng cách giữa biểu tượng và số thông báo */
+                                }
+
+                                .notification-icon svg {
+                                    width: 20px;
+                                    height: 20px;
+                                    stroke: #333;
+                                    /* Màu biểu tượng */
+                                }
+
+                                .notification-count {
+                                    position: absolute;
+                                    top: -8px;
+                                    /* Điều chỉnh vị trí số thông báo */
+                                    right: -8px;
+                                    /* Điều chỉnh vị trí số thông báo */
+                                    background-color: red;
+                                    /* Màu nền của số thông báo */
+                                    color: #fff;
+                                    /* Màu chữ số thông báo */
+                                    border-radius: 50%;
+                                    /* Kích thước góc bo tròn */
+                                    width: 20px;
+                                    height: 40px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-size: 12px;
+                                }
+                            </style>
                             <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="card shadow-none m-0">
                                     <div class="card-body p-0 ">
                                         <div class="cust-title p-3">
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <h5 class="mb-0">Thông báo</h5>
-                                                <a class="badge badge-primary badge-card" href="#">{{\App\Models\Notification::where('status',1)->count()}}</a>
+                                                <a class="badge badge-primary badge-card"
+                                                    href="#">{{ \App\Models\Notification::where('status', 1)->count() }}</a>
                                             </div>
                                         </div>
                                         <div class="px-3 pt-0 pb-0 sub-card">
-                                            @foreach (\App\Models\Notification::where('status',1)->orderBy('created_at', 'desc')->take(3)->get() as $item)
-                                        
-                                            <div class="px-3 pt-0 pb-0 sub-card">
-                                                <a href="{{route("show.index",$item->tickets_id)}}" class="iq-sub-card">
-                                                    <div class="media align-items-center cust-card py-3 border-bottom">
-                                                        <div class="media-body ml-3">
-                                                            <div class="d-flex align-items-center justify-content-between">
-                                                                <p class="mb-0">Đã có phim được đặt vé vào lúc</p>
-                                                                
+                                            @foreach (\App\Models\Notification::where('status', 1)->orderBy('created_at', 'desc')->take(3)->get() as $item)
+                                                <div class="px-3 pt-0 pb-0 sub-card">
+                                                    <a href="{{ route('show.index', $item->tickets_id) }}"
+                                                        class="iq-sub-card">
+                                                        <div
+                                                            class="media align-items-center cust-card py-3 border-bottom">
+                                                            <div class="media-body ml-3">
+                                                                <div
+                                                                    class="d-flex align-items-center justify-content-between">
+                                                                    <p class="mb-0">Đã có phim được đặt vé vào lúc
+                                                                    </p>
+
+                                                                </div>
+                                                                <small class="mb-0">{{ $item->created_at }}</small>
                                                             </div>
-                                                            <small class="mb-0">{{$item->created_at}}</small>
                                                         </div>
-                                                    </div>
-                                                </a>
-                                            </div>
+                                                    </a>
+                                                </div>
                                             @endforeach
                                         </div>
                                         <a class="right-ic btn btn-primary btn-block position-relative p-2"
@@ -437,19 +472,20 @@
                         <li class="nav-item nav-icon dropdown caption-content">
                             <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton4"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="/template/assets/images/user/1.png" class="img-fluid rounded" alt="user">
+                                <img src="/template/assets/images/user/1.png" class="img-fluid rounded"
+                                    alt="user">
                             </a>
                             <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="card shadow-none m-0">
                                     <div class="card-body p-0 text-center">
                                         <div class="media-body profile-detail text-center">
-                                            <img src="/template/assets/images/page-img/profile-bg.jpg" alt="profile-bg"
-                                                class="rounded-top img-fluid mb-4">
+                                            <img src="/template/assets/images/page-img/profile-bg.jpg"
+                                                alt="profile-bg" class="rounded-top img-fluid mb-4">
                                             <img src="/template/assets/images/user/1.png" alt="profile-img"
                                                 class="rounded profile-img img-fluid avatar-70">
                                         </div>
                                         <div class="p-3">
-                                            <h5 class="mb-1">{{Auth::User()->name}}</h5>
+                                            <h5 class="mb-1">{{ Auth::User()->name }}</h5>
                                             <p class="mb-0">Since 10 march, 2020</p>
                                             <div class="d-flex align-items-center justify-content-center mt-3">
                                                 <a href="../app/user-profile.html" class="btn border mr-2">Profile</a>

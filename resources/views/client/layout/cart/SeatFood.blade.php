@@ -1108,7 +1108,7 @@
                                                                                     </div>
                                                                                     <div class="entry-content">
                                                                                         <h2 class="entry-title"><a
-                                                                                                href=" {{ route('filmDetail', [$showTime->id]) }} ">{{ $showTime->film->name }}</a>
+                                                                                                href=" {{ route('filmDetail', [$showTime->film->id]) }} ">{{ $showTime->film->name }}</a>
                                                                                         </h2>
                                                                                         <div><span class="duration"> <svg
                                                                                                     xmlns="http://www.w3.org/2000/svg"
