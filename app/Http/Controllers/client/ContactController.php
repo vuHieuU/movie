@@ -14,9 +14,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $title = "Contact";
         $new_footer  = News::orderByDesc("created_at")->limit(2)->get();
-        return view('client.contact',compact('title',"new_footer"));
+        return view('client.contact',compact("new_footer"));
     }
 
     /**
