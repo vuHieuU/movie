@@ -40,5 +40,5 @@ class CouponController extends Controller
             return redirect()->back()->with('error', 'Mã giảm giá không hợp lệ.');
         }
     }
-    
+
 }

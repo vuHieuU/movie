@@ -2,23 +2,24 @@
 
 namespace App\Http\Controllers\client\cart;
 
-use App\Mail\BookTicket;
-use App\Models\coupon;
-use App\Models\coupon_usage;
+use Carbon\Carbon;
 use App\Models\film;
 use App\Models\food;
 use App\Models\News;
-
 use App\Jobs\SenMail;
 use App\Models\combo;
+
+use App\Models\coupon;
 use App\Models\ticket;
+use App\Mail\BookTicket;
 use App\Models\ShowTime;
 use App\Models\ticketFood;
+use App\Models\coupon_usage;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Models\showtime_seat;
-use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 
@@ -82,18 +83,27 @@ class PayController extends Controller
         $foodData = $request->input("FoodValueName");
         $FoodValueName = json_decode($foodData, true);
         session(['FoodValueName' => $FoodValueName]);
+        $couponIds = Coupon::get()->pluck('id')->toArray();
+        $is_used = coupon_usage::where('user_id', auth()->user()->id)
+                    ->whereIn('coupon_id', $couponIds)
+                    ->get()->pluck('coupon_id')->toArray();
+        $not_useds = Coupon::where('expiry_date', '>=', Carbon::now())
+                    ->orderBy('created_at','desc')
+                    ->whereNotIn('id', $is_used)
+                    ->get();
         return view('client.layout.cart.pay',compact(
             "title",
             'ShowTime',
             'selectedDate',
-            'selectedHour',
+            'selectedHour', 
             'selectedSeatsValue',
             'selectedPriceSeatsValue',
             'totalPriceFoodValue',
             'FoodValueName',
             'cinemaName',
             "tickit",
-            "new_footer"
+            "new_footer",
+            "not_useds"
         ));
     }
 
