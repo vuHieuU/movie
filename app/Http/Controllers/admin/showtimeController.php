@@ -18,7 +18,7 @@ class showtimeController extends Controller
      */
     public function index()
     {
-        $showtime = ShowTime::with('cinema')->get();
+        $showtime = ShowTime::with('cinema')->orderByDesc("day")->get();
         return view('admin.showtime.index',compact('showtime'));
     }
 

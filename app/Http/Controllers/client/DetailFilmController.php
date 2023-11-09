@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\cinema;
 use App\Models\favorite_film;
 use App\Models\film;
+use App\Models\News;
 use App\Models\ShowTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -26,7 +27,7 @@ class DetailFilmController extends Controller
         // $cinema_id = Cinema::findOrFail($id);
         $filmtopmovie = Film::orderByDesc("created_at")->limit(4)->get();
         
-    
+        $newdetail = News::orderByDesc("created_at")->limit(2)->get();
         
             $numberOfDays = 7; // Số ngày bạn muốn liệt kê
             $dateList = array();
@@ -85,7 +86,8 @@ class DetailFilmController extends Controller
             'user',
             'check',
             'film',
-            "filmtopmovie"
+            "filmtopmovie",
+            "newdetail"
         ));
     }
 }

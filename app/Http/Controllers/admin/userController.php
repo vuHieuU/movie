@@ -17,12 +17,12 @@ class userController extends Controller
      */
     public function index()
     {
-        $user = User::whereDoesntHave('roles')->get();
+        $user = User::whereDoesntHave('roles')->orderByDesc("created_at")->get();
         return view('admin.users.index',compact('user'));
     }
 
     public function admin_index(){
-        $admins = User::whereHas('roles')->get();
+        $admins = User::whereHas('roles')->orderByDesc("created_at")->get();
         return view('admin.users.admin.index',compact('admins'));
     }
 
