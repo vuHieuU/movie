@@ -114,13 +114,13 @@
                                                     <h6>C<input type="checkbox" class="checkboxC mx-3"></h6>
                                                     <h6>D<input type="checkbox" class="checkboxD mx-3"></h6> --}}
                                                 
-                                                    <div><h6>96 Ghế <input type="checkbox" class="check-all mx-3" id="chec96k"
+                                                    <div><h6>88 Ghế <input type="checkbox" class="check-all mx-3" id="chec96k"
                                                         data-master-checkbox></h6></div>
                                                     <div><h6>63 Ghế <input type="checkbox" class="check-63 mx-3" id="check63"
                                                             data-master-checkbox></h6></div>
                                             </div>
                                             <div class="d-none" id="type1">
-                                                <div class="row container " style="max-width: 1050px;">
+                                                <div class="row container  " style="max-width: 1050px;">
                                                     @foreach ($f96_1 as $item)
                                                         {{-- @if ($item->typeSeat_id == 2) --}}
                                                             <div class="form-check col-md-1">
