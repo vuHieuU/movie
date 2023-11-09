@@ -245,14 +245,14 @@
                                                 display: inline-block
                                             }
                                         </style>
-                                        <div class="amy-widget-content">
+                                        {{-- <div class="amy-widget-content">
                                             <ul>
                                                 <li><a href="#">Rạp phim</a></li>
                                                 <li><a href="#">Vouchers</a></li>
                                                 <li><a href="#">Đặt vé</a></li>
                                                 <li>popcorn</li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -317,15 +317,16 @@
                                                 data-slick='{"slidesToShow":5,"slidesToScroll":5,"autoplay":true,"autoplaySpeed":3000,"arrows":true,"infinite":true,"centerMode":true,"responsive": [{"breakpoint": 480,"settings": {"slidesToShow": 1,"slidesToScroll": 1}},{"breakpoint": 979,"settings": {"slidesToShow": 3,"slidesToScroll": 3}},{"breakpoint": 1199,"settings": {"slidesToShow": 5,"slidesToScroll": 5}},{"breakpoint": 1999,"settings": {"slidesToShow": 7,"slidesToScroll": 7}},{"breakpoint": 4999,"settings": {"slidesToShow": 20,"slidesToScroll": 20}}],"dots":true}'>
                                                 @foreach ($film_topmovie as $item)
                                                         <div class="carousel-item">
+                                                            <a href="chi-tiet-phim/{{ $item->id }}">
                                                             <div class="carousel-thumb">
-                                                                <a href="{{ $item->trailer }}">
+                                                                <a href="chi-tiet-phim/{{ $item->id }}">
                                                                     <img class=""
                                                                         src="{{ asset('storage/images/' . $item->thumb) }}"
                                                                         alt="The Sleeping Beauty &#8211; Australia" /> </a>
                                                             </div>
                                                             <div class="carousel-content">
                                                                 <h2 class="carousel-title">
-                                                                    <a href="{{ route('filmDetail',[$item->id]) }}">
+                                                                    <a href="chi-tiet-phim/{{ $item->id }}">
                                                                         {{ $item->name }} </a>
                                                                 </h2>
                                                                 <div class="carousel-release">
@@ -335,16 +336,17 @@
                                                                     </span>
                                                                 </div>
                                                                 <div class="carousel-button">
-                                                                    <a href="{{ $item->trailer }}"
+                                                                    <a href="chi-tiet-phim/{{ $item->id }}"
                                                                         class="fancybox.iframe amy-fancybox">
                                                                         <i aria-hidden="true" class="fa fa-play"></i>
                                                                         Trailer </a>
-                                                                    <a href="{{ route('filmDetail',[$item->id]) }}">
+                                                                    {{-- <a href="{{ route('filmDetail',[$item->id]) }}">
                                                                         <i aria-hidden="true"
                                                                             class="fa fa-exclamation"></i>
-                                                                        Chi tiết </a>
+                                                                        Chi tiết </a> --}}
                                                                 </div>
                                                             </div>
+                                                        </a>
                                                         </div>
                                                 @endforeach
 
@@ -876,14 +878,14 @@
                                                 display: inline-block
                                             }
                                         </style>
-                                        <div class="amy-widget-content">
+                                        {{-- <div class="amy-widget-content">
                                             <ul>
                                                 <li><a href="#">Rạp Phim</a></li>
                                                 <li><a href="#">Vouchers</a></li>
                                                 <li><a href="#">Đặt vé</a></li>
                                                 <li>popcorn</li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>

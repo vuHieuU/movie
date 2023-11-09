@@ -103,23 +103,29 @@
                                         </div>
                                     </div>
                                     <div class="mt-5"style="max-width: 1100px;margin: auto">
-                                        <img class="img-responsive w-100" src="{{ asset('storage/images/ic-screen.png') }}">
+                                        {{-- <img class="img-responsive w-100" src="{{ asset('storage/images/ic-screen.png') }}"> --}}
                                         <div class="form-group">
-                                            <h5 style="font-weight: bold">Ghế ngồi</h5>
+                                            <h5 style="font-weight: bold">Số lượng ghế</h5>
                                             <div class="d-flex">
-                                                    <h6>Tất cả<input type="checkbox" class="check-all mx-3" id="selectAll"
+                                                    {{-- <h6>Tất cả<input type="checkbox" class="check-all mx-3" id="selectAll"
                                                         data-master-checkbox></h6>
                                                     <h6>A<input type="checkbox" class="checkboxA mx-3"></h6>
                                                     <h6>B<input type="checkbox" class="checkboxB mx-3"></h6>
                                                     <h6>C<input type="checkbox" class="checkboxC mx-3"></h6>
-                                                    <h6>D<input type="checkbox" class="checkboxD mx-3"></h6>
+                                                    <h6>D<input type="checkbox" class="checkboxD mx-3"></h6> --}}
+                                                
+                                                    <div><h6>96 Ghế <input type="checkbox" class="check-all mx-3" id="chec96k"
+                                                        data-master-checkbox></h6></div>
+                                                    <div><h6>63 Ghế <input type="checkbox" class="check-63 mx-3" id="check63"
+                                                            data-master-checkbox></h6></div>
                                             </div>
+                                            <div class="d-none" id="type1">
                                                 <div class="row container " style="max-width: 1050px;">
-                                                    @foreach ($seats as $item)
-                                                        @if ($item->typeSeat_id == 1)
+                                                    @foreach ($f96_1 as $item)
+                                                        {{-- @if ($item->typeSeat_id == 2) --}}
                                                             <div class="form-check col-md-1">
                                                                 <div class="form-check d-flex align-items-center">
-                                                                    <input class="form-check-input item check-box-all check-box-A" 
+                                                                    <input class="form-check-input item check-box-all check-box-B" 
                                                                         type="checkbox" name="id_seat[]"
                                                                         value="{{ $item->id }}"
                                                                         id="seat_{{ $item->id }}">
@@ -128,15 +134,139 @@
                                                                 </div>
     
                                                             </div>
-                                                        @endif
+                                                        {{-- @endif --}}
                                                     @endforeach
                                                 </div>
+                                                <div class="row container " style="max-width: 1050px;">
+                                                    @foreach ($f96_2 as $item)
+                                                        {{-- @if ($item->typeSeat_id == 2) --}}
+                                                            <div class="form-check col-md-1">
+                                                                <div class="form-check d-flex align-items-center">
+                                                                    <input class="form-check-input item check-box-all check-box-B" 
+                                                                        type="checkbox" name="id_seat[]"
+                                                                        value="{{ $item->id }}"
+                                                                        id="seat_{{ $item->id }}">
+                                                                    <p class="form-check-label"
+                                                                        for="seat_{{ $item->id }}">{{ $item->seat_number }}</p>
+                                                                </div>
+    
+                                                            </div>
+                                                        {{-- @endif --}}
+                                                    @endforeach
+                                                </div>
+                                                
+                                                <div class="row container " style="max-width: 1000px;">
+                                                    @foreach ($f96_3 as $item)
+                                                    
+                                                            <div class="form-check col-md-1">
+                                                                <div class="form-check d-flex align-items-center">
+                                                                    <input class="form-check-input item check-box-all check-box-C" 
+                                                                        type="checkbox" name="id_seat[]"
+                                                                        value="{{ $item->id }}"
+                                                                        id="seat_{{ $item->id }}">
+                                                                    <p class="form-check-label"
+                                                                        for="seat_{{ $item->id }}">{{ $item->seat_number }}</p>
+                                                                </div>
+    
+                                                            </div>
+                                                    
+                                                    @endforeach
+                                                </div>
+                                                <div class="row container " style="max-width: 1000px;">
+                                                    @foreach ($f96_4 as $item)
+                                                    
+                                                            <div class="form-check col-md-1">
+                                                                <div class="form-check d-flex align-items-center">
+                                                                    <input class="form-check-input item check-box-all check-box-D" 
+                                                                        type="checkbox" name="id_seat[]"
+                                                                        value="{{ $item->id }}"
+                                                                        id="seat_{{ $item->id }}">
+                                                                    <p class="form-check-label"
+                                                                        for="seat_{{ $item->id }}">{{ $item->seat_number }}</p>
+                                                                </div>
+    
+                                                            </div>
+                                                    
+                                                    @endforeach
+                                                </div>
+                                                <div class="row container " style="max-width: 1000px;">
+                                                    @foreach ($f96_5 as $item)
+                                                    
+                                                            <div class="form-check col-md-1">
+                                                                <div class="form-check d-flex align-items-center">
+                                                                    <input class="form-check-input item check-box-all check-box-D" 
+                                                                        type="checkbox" name="id_seat[]"
+                                                                        value="{{ $item->id }}"
+                                                                        id="seat_{{ $item->id }}">
+                                                                    <p class="form-check-label"
+                                                                        for="seat_{{ $item->id }}">{{ $item->seat_number }}</p>
+                                                                </div>
+    
+                                                            </div>
+                                                    
+                                                    @endforeach
+                                                </div>
+                                                <div class="row container " style="max-width: 1000px;">
+                                                    @foreach ($f96_6 as $item)
+                                                    
+                                                            <div class="form-check col-md-1">
+                                                                <div class="form-check d-flex align-items-center">
+                                                                    <input class="form-check-input item check-box-all check-box-D" 
+                                                                        type="checkbox" name="id_seat[]"
+                                                                        value="{{ $item->id }}"
+                                                                        id="seat_{{ $item->id }}">
+                                                                    <p class="form-check-label"
+                                                                        for="seat_{{ $item->id }}">{{ $item->seat_number }}</p>
+                                                                </div>
+    
+                                                            </div>
+                                                    
+                                                    @endforeach
+                                                </div>
+                                                <div class="row container " style="max-width: 1000px;">
+                                                    @foreach ($f96_7 as $item)
+                                                    
+                                                            <div class="form-check col-md-1">
+                                                                <div class="form-check d-flex align-items-center">
+                                                                    <input class="form-check-input item check-box-all check-box-D" 
+                                                                        type="checkbox" name="id_seat[]"
+                                                                        value="{{ $item->id }}"
+                                                                        id="seat_{{ $item->id }}">
+                                                                    <p class="form-check-label"
+                                                                        for="seat_{{ $item->id }}">{{ $item->seat_number }}</p>
+                                                                </div>
+    
+                                                            </div>
+                                                    
+                                                    @endforeach
+                                                </div>
+                                                <div class="row container " style="max-width: 1000px;">
+                                                    @foreach ($f96_8 as $item)
+                                                    
+                                                            <div class="form-check col-md-1">
+                                                                <div class="form-check d-flex align-items-center">
+                                                                    <input class="form-check-input item check-box-all check-box-D" 
+                                                                        type="checkbox" name="id_seat[]"
+                                                                        value="{{ $item->id }}"
+                                                                        id="seat_{{ $item->id }}">
+                                                                    <p class="form-check-label"
+                                                                        for="seat_{{ $item->id }}">{{ $item->seat_number }}</p>
+                                                                </div>
+    
+                                                            </div>
+                                                    
+                                                    @endforeach
+                                                </div>
+                                            
+                                            </div>
+                                            {{-- Form 2 --}}
+                                        <div class="d-none" id="type1">
                                             <div class="row container " style="max-width: 1050px;">
-                                                @foreach ($seats as $item)
-                                                    @if ($item->typeSeat_id == 2)
+                                                @foreach ($f2_1 as $item)
+                                                    {{-- @if ($item->typeSeat_id == 2) --}}
                                                         <div class="form-check col-md-1">
                                                             <div class="form-check d-flex align-items-center">
-                                                                <input class="form-check-input item check-box-all check-box-B" 
+                                                                <input class="form-check-input item check-box-63 check-box-B" 
                                                                     type="checkbox" name="id_seat[]"
                                                                     value="{{ $item->id }}"
                                                                     id="seat_{{ $item->id }}">
@@ -145,15 +275,50 @@
                                                             </div>
 
                                                         </div>
-                                                    @endif
+                                                    {{-- @endif --}}
+                                                @endforeach
+                                            </div>
+                                            <div class="row container " style="max-width: 1050px;">
+                                                @foreach ($f2_2 as $item)
+                                                    {{-- @if ($item->typeSeat_id == 2) --}}
+                                                        <div class="form-check col-md-1">
+                                                            <div class="form-check d-flex align-items-center">
+                                                                <input class="form-check-input item check-box-63 check-box-B" 
+                                                                    type="checkbox" name="id_seat[]"
+                                                                    value="{{ $item->id }}"
+                                                                    id="seat_{{ $item->id }}">
+                                                                <p class="form-check-label"
+                                                                    for="seat_{{ $item->id }}">{{ $item->seat_number }}</p>
+                                                            </div>
+
+                                                        </div>
+                                                    {{-- @endif --}}
+                                                @endforeach
+                                            </div>
+                                            
+                                            <div class="row container " style="max-width: 1000px;">
+                                                @foreach ($f2_3 as $item)
+                                                
+                                                        <div class="form-check col-md-1">
+                                                            <div class="form-check d-flex align-items-center">
+                                                                <input class="form-check-input item check-box-63 check-box-C" 
+                                                                    type="checkbox" name="id_seat[]"
+                                                                    value="{{ $item->id }}"
+                                                                    id="seat_{{ $item->id }}">
+                                                                <p class="form-check-label"
+                                                                    for="seat_{{ $item->id }}">{{ $item->seat_number }}</p>
+                                                            </div>
+
+                                                        </div>
+                                                
                                                 @endforeach
                                             </div>
                                             <div class="row container " style="max-width: 1000px;">
-                                                @foreach ($seats as $item)
-                                                    @if ($item->typeSeat_id == 3)
+                                                @foreach ($f2_4 as $item)
+                                                
                                                         <div class="form-check col-md-1">
                                                             <div class="form-check d-flex align-items-center">
-                                                                <input class="form-check-input item check-box-all check-box-C" 
+                                                                <input class="form-check-input item check-box-63 check-box-D" 
                                                                     type="checkbox" name="id_seat[]"
                                                                     value="{{ $item->id }}"
                                                                     id="seat_{{ $item->id }}">
@@ -162,15 +327,15 @@
                                                             </div>
 
                                                         </div>
-                                                    @endif
+                                                
                                                 @endforeach
                                             </div>
                                             <div class="row container " style="max-width: 1000px;">
-                                                @foreach ($seats as $item)
-                                                    @if ($item->typeSeat_id == 4)
+                                                @foreach ($f2_5 as $item)
+                                                
                                                         <div class="form-check col-md-1">
                                                             <div class="form-check d-flex align-items-center">
-                                                                <input class="form-check-input item check-box-all check-box-D" 
+                                                                <input class="form-check-input item check-box-63 check-box-D" 
                                                                     type="checkbox" name="id_seat[]"
                                                                     value="{{ $item->id }}"
                                                                     id="seat_{{ $item->id }}">
@@ -179,11 +344,63 @@
                                                             </div>
 
                                                         </div>
-                                                    @endif
+                                                
                                                 @endforeach
+                                            </div>
+                                            <div class="row container " style="max-width: 1000px;">
+                                                @foreach ($f2_6 as $item)
+                                                
+                                                        <div class="form-check col-md-1">
+                                                            <div class="form-check d-flex align-items-center">
+                                                                <input class="form-check-input item check-box-63 check-box-D" 
+                                                                    type="checkbox" name="id_seat[]"
+                                                                    value="{{ $item->id }}"
+                                                                    id="seat_{{ $item->id }}">
+                                                                <p class="form-check-label"
+                                                                    for="seat_{{ $item->id }}">{{ $item->seat_number }}</p>
+                                                            </div>
+
+                                                        </div>
+                                                
+                                                @endforeach
+                                            </div>
+                                            <div class="row container " style="max-width: 1000px;">
+                                                @foreach ($f2_7 as $item)
+                                                
+                                                        <div class="form-check col-md-1">
+                                                            <div class="form-check d-flex align-items-center">
+                                                                <input class="form-check-input item check-box-63 check-box-D" 
+                                                                    type="checkbox" name="id_seat[]"
+                                                                    value="{{ $item->id }}"
+                                                                    id="seat_{{ $item->id }}">
+                                                                <p class="form-check-label"
+                                                                    for="seat_{{ $item->id }}">{{ $item->seat_number }}</p>
+                                                            </div>
+
+                                                        </div>
+                                                
+                                                @endforeach
+                                            </div>
+                                            <div class="row container " style="max-width: 1000px;">
+                                                @foreach ($f2_8 as $item)
+                                                
+                                                        <div class="form-check col-md-1">
+                                                            <div class="form-check d-flex align-items-center">
+                                                                <input class="form-check-input item check-box-63 check-box-D" 
+                                                                    type="checkbox" name="id_seat[]"
+                                                                    value="{{ $item->id }}"
+                                                                    id="seat_{{ $item->id }}">
+                                                                <p class="form-check-label"
+                                                                    for="seat_{{ $item->id }}">{{ $item->seat_number }}</p>
+                                                            </div>
+
+                                                        </div>
+                                                
+                                                @endforeach
+                                            </div>
                                             </div>
                                         </div>
-
+                                   
                                     </div>
 
 
@@ -218,53 +435,14 @@
             }
 
         });
-       $(document).on("change", ".checkboxA", function() {
+        $(document).on("change", ".check-63", function() {
             if(this.checked) {
                 // Iterate each checkbox
-                $('.check-box-A:checkbox').each(function() {
+                $('.check-box-63:checkbox').each(function() {
                     this.checked = true;
                 });
             } else {
-                $('.check-box-A:checkbox').each(function() {
-                    this.checked = false;
-                });
-            }
-
-        });
-       $(document).on("change", ".checkboxB", function() {
-            if(this.checked) {
-                // Iterate each checkbox
-                $('.check-box-B:checkbox').each(function() {
-                    this.checked = true;
-                });
-            } else {
-                $('.check-box-B:checkbox').each(function() {
-                    this.checked = false;
-                });
-            }
-
-        });
-       $(document).on("change", ".checkboxC", function() {
-            if(this.checked) {
-                // Iterate each checkbox
-                $('.check-box-C:checkbox').each(function() {
-                    this.checked = true;
-                });
-            } else {
-                $('.check-box-C:checkbox').each(function() {
-                    this.checked = false;
-                });
-            }
-
-        });
-       $(document).on("change", ".checkboxD", function() {
-            if(this.checked) {
-                // Iterate each checkbox
-                $('.check-box-D:checkbox').each(function() {
-                    this.checked = true;
-                });
-            } else {
-                $('.check-box-D:checkbox').each(function() {
+                $('.check-box-63:checkbox').each(function() {
                     this.checked = false;
                 });
             }

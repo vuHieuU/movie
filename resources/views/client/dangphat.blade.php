@@ -619,10 +619,10 @@
                                                                                                             <i
                                                                                                                 class="fa fa-info"></i>Chi
                                                                                                             tiết</a>
-                                                                                                        <span
+                                                                                                        {{-- <span
                                                                                                             class="amy-btn-showtimes showtime-btn">Thời
                                                                                                             gian
-                                                                                                            chiếu</span>
+                                                                                                            chiếu</span> --}}
 
                                                                                                     </div>
                                                                                                 </div>
