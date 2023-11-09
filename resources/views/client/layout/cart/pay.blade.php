@@ -230,7 +230,8 @@
                                                             {{ $not_used->name }}
                                                         </h5>
                                                         <h5>
-                                                            Giảm:{{ $not_used->value }}{{ $not_used->type }}
+                                                            Giảm: {{ $not_used->value }}
+                                                            @if ($not_used->type === 'amount')Vnđ@elseif($not_used->type === 'percent')%@endif
                                                         </h5>
                                         
                                                     </div>
