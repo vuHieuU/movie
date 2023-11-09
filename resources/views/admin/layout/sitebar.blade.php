@@ -376,7 +376,7 @@
                         <li class="nav-item nav-icon dropdown">
                             <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<<<<<<< HEAD
+
                                 <span class="notification-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -387,15 +387,9 @@
                                     <span
                                         class="notification-count">{{ \App\Models\Notification::where('status', 1)->count() }}</span>
                                 </span>
-=======
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
-                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                                </svg>
-                                <span class="bg-primary "></span>
->>>>>>> 25737e16cdcdfbce80a094d129b4523c22a32abc
+
+                           
+
                             </a>
                             <style>
                                 .search-toggle {
@@ -445,14 +439,12 @@
                                     <div class="card-body p-0 ">
                                         <div class="cust-title p-3">
                                             <div class="d-flex align-items-center justify-content-between">
-<<<<<<< HEAD
+
                                                 <h5 class="mb-0">Thông báo</h5>
                                                 <a class="badge badge-primary badge-card"
                                                     href="#">{{ \App\Models\Notification::where('status', 1)->count() }}</a>
-=======
-                                                <h5 class="mb-0">Notifications</h5>
-                                                <a class="badge badge-primary badge-card" href="#">{{\App\Models\Notification::where('status',1)->count()}}</a>
->>>>>>> 25737e16cdcdfbce80a094d129b4523c22a32abc
+
+                                                
                                             </div>
                                         </div>
                                         <div class="px-3 pt-0 pb-0 sub-card">

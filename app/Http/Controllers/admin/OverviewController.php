@@ -11,6 +11,7 @@ use App\Models\ticketFood;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\food;
 
 class OverviewController extends Controller
 {
@@ -170,6 +171,8 @@ class OverviewController extends Controller
         $cinemalist = cinema::get();
         $tickettong = ticket::get()->count();
         // dd($tickets);
+        $countfoodsell = DB::table("ticket_food")->sum("quantity");
+        $countfoodremaining = food::get();
         $countfilm = DB::table("films")->count();
         $countuser = DB::table("users")->count();
         $category = category::get();
@@ -220,6 +223,8 @@ class OverviewController extends Controller
                 'ticketFood',
                 'films',
                 'revenues',
+                'countfoodsell',
+                'countfoodremaining'
             )
         );
     }

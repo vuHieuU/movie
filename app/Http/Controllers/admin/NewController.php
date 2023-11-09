@@ -15,7 +15,7 @@ class NewController extends Controller
      */
     public function index()
     {
-        $new = News::get();
+        $new = News::orderByDesc("created_at")->get();
         return view('admin.news.index',compact('new'));
     }
 

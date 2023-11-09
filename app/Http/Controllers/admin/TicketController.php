@@ -18,6 +18,7 @@ class TicketController extends Controller
         $ticket = DB::table("tickets")
         ->join('ticket_food', 'tickets.id', '=', 'ticket_food.ticket_id')
         ->select('tickets.id', 'ticket_food.*','tickets.*','ticket_food.ticket_id')
+        ->orderBy("tickets.created_at","desc")
         ->get();
 
         
