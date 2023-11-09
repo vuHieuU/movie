@@ -243,6 +243,9 @@
                             <a href="{{ route('smtp_settings.index') }}">
                                 <i class="las la-minus"></i><span>Cài đặt SMTP</span>
                             </a>
+                            <a href="{{ route('sliders.index') }}">
+                                <i class="las la-minus"></i><span>Cài đặt Banner</span>
+                            </a>
                         </li>
 
                     </ul>
