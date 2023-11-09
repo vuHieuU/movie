@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\client\cart;
 
 use App\Mail\BookTicket;
+use App\Models\coupon;
+use App\Models\coupon_usage;
 use App\Models\film;
 use App\Models\food;
 use App\Models\News;
@@ -148,6 +150,18 @@ class PayController extends Controller
 
     }
     }
+
+    if ($couponCode) {
+        $coupon = Coupon::where('name', $couponCode)->first();
+        if ($coupon) {
+            $coupon_usage = new coupon_usage;
+            $coupon_usage->user_id = $user->id;
+            $coupon_usage->coupon_id = $coupon->id;
+            $coupon_usage->save();
+        }
+    }
+
+
     $notification = new Notification();
     $notification->users_id = $user->id;
     $notification->tickets_id = $ticket->id;
@@ -220,6 +234,17 @@ class PayController extends Controller
                 }
             }
             }
+
+            if ($couponCode) {
+                $coupon = Coupon::where('name', $couponCode)->first();
+                if ($coupon) {
+                    $coupon_usage = new coupon_usage;
+                    $coupon_usage->user_id = $user->id;
+                    $coupon_usage->coupon_id = $coupon->id;
+                    $coupon_usage->save();
+                }
+            }
+        
 
             $notification = new Notification();
             $notification->users_id = $user->id;
