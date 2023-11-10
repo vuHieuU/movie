@@ -266,6 +266,12 @@ Route::middleware('auth',"role:admin")->group(function () {
         Route::put('update/{id}', [App\Http\Controllers\admin\SliderController::class, "update"]);
         Route::get('delete/{id}', [App\Http\Controllers\admin\SliderController::class, 'destroy'])->name('sliders.destroy');
     });
+    //Statistical
+    Route::prefix('statistical')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\StatisticalController::class, "index"])->name('statistical.index');
+        Route::get('cinema/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailCinema"])->name('cinema.name');
+        Route::get('detailFilm/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFilm"])->name('detailFilm.name');
+    });
     
      // tổng quan
         Route::get('overview', [App\Http\Controllers\admin\OverviewController::class, 'index'])->name('overview');
