@@ -82,7 +82,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4">
+                    <div class="col-lg-12">
                         <div class="card card-block card-stretch card-height-helf">
                             <div class="card-body">
                                 <div class="d-flex align-items-top justify-content-between">
@@ -201,8 +201,23 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card card-block card-stretch card-height-helf">
+                            <div class="card-body">
+                                <div class="d-flex align-items-top justify-content-between">
+                                    <div class="">
+                                        <p class="mb-0">Phương thức thanh toán dùng nhiều nhất:</p>
+
+                                        @if ($payments)
+                                            <h5 id="ticketListfood"> {{ $payments->payment }} </h5>
+                                        @else
+                                            <p>Không có dữ liệu để hiển thị.</p>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-8">
+                    {{-- <div class="col-lg-8">
                         <div class="card card-block card-stretch card-height">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
@@ -217,7 +232,7 @@
                                         <div class="dropdown-menu dropdown-menu-right shadow-none"
                                             aria-labelledby="dropdownMenuButton006">
                                             @foreach ($cinemalist as $item)
-                                                <a class="li dropdown-item " {{-- href="{{ route('overview.cinema', [$item->name]) }}" --}}
+                                                <a class="li dropdown-item "
                                                     data-cinema-id="{{ $item->name }}">
                                                     <li onclick="changeDropdownText('{{ $item->name }}')">
                                                         {{ $item->name }}</li>
@@ -229,8 +244,8 @@
                                         <script>
                                             $(document).ready(function() {
                                                 $("a.li").click(function(event) {
-                                                    event.preventDefault(); // Ngăn chuyển trang khi nhấn vào liên kết.
-                                                    var cinemaId = $(this).data('cinema-id'); // Lấy id của rạp từ thuộc tính data
+                                                    event.preventDefault();
+                                                    var cinemaId = $(this).data('cinema-id');
                                                     $.ajax({
                                                         url: "/overview/" + cinemaId,
                                                         success: function(result) {
@@ -246,7 +261,7 @@
                                 <script>
                                     function changeDropdownText(selectedOption) {
                                         var dropdownButton = document.getElementById("dropdownMenuButton006");
-                                        dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
+                                        dropdownButton.textContent = selectedOption; 
                                     }
                                 </script>
                             </div>
@@ -283,7 +298,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     
                    <div class="row">
                     <div class="col-lg-4">

@@ -70,6 +70,11 @@ class HomeController extends Controller
             ->groupBy('film_name')
             ->orderByRaw('COUNT(*) DESC')
             ->first();
+        //lọc payment 
+        $payments = Ticket::select('payment')
+            ->groupBy('payment')
+            ->orderByRaw('COUNT(*) DESC')
+            ->first();
         //lọc combo 
         $mostBookedfood = ticketFood::select('name')
             ->groupBy('name')
@@ -132,8 +137,8 @@ class HomeController extends Controller
                 'films',
                 'revenues',
                 'countfoodsell',
-                'countfoodremaining'
-                // 'revenuesData'
+                'countfoodremaining',
+                'payments'
             )
         );
     }

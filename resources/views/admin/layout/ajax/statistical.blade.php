@@ -85,7 +85,7 @@
                             <p class="mb-0">Vé đã đặt</p>
                             <h6 id="ticketListcount">{{ $TotalTicketCinema }}</h6>
                         </div>
-                        <div class="card-header-toolbar d-flex align-items-center">
+                        {{-- <div class="card-header-toolbar d-flex align-items-center">
                             <div class="dropdown">
                                 <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton0007"
                                     data-toggle="dropdown">
@@ -105,7 +105,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>
@@ -122,7 +122,7 @@
                             @endif
 
                         </div>
-                        <div class="card-header-toolbar d-flex align-items-center">
+                        {{-- <div class="card-header-toolbar d-flex align-items-center">
                             <div class="dropdown">
                                 <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton009"
                                     data-toggle="dropdown">
@@ -141,7 +141,7 @@
                                         onclick="changeDropdownText009('Tuần')">Tuần</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>
@@ -158,7 +158,7 @@
                                 <p>Không có dữ liệu để hiển thị.</p>
                             @endif
                         </div>
-                        <div class="card-header-toolbar d-flex align-items-center">
+                        {{-- <div class="card-header-toolbar d-flex align-items-center">
                             <div class="dropdown">
                                 <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton0001"
                                     data-toggle="dropdown">
@@ -174,7 +174,7 @@
                                         onclick="changeDropdownText0001('Tuần')">Tuần</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
 
                     </div>
