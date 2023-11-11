@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\User;
+use App\Models\ticket;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\admin\userRequest;
 use App\Http\Requests\admin\userUpdateRequest;
-use Illuminate\Support\Facades\Hash;
 
 class userController extends Controller
 {
@@ -119,6 +120,13 @@ class userController extends Controller
         $user = User::FindOrFail($id);
         $user->delete($id);
         return redirect()->route('index_admin');
+    }
+
+    public function showTicketUser($id){
+         $user = User::findOrFail($id);
+
+         $ticketUser = ticket::where('user_id',$user->id)->get();
+         return view('admin.users.ticketUser',compact('ticketUser'));
     }
 
 }

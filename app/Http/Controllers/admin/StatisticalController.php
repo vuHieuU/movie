@@ -261,11 +261,11 @@ class StatisticalController extends Controller
             $totalRevenue = Ticket::where('film_id', $film->id)->sum('total');
             $revenues[$filmName] = $totalRevenue;
         }
-
+        $CountFilmCinema = film::count();
         $sumtotal = ticket::where('cinema', $cinemaId)->sum("total");
         
         return view('admin.layout.ajax.statistical', compact('sumtotal','TotalTicketCinema','ShowTimeCinemas',
-              'filmCinema','films','revenues','film_name'));
+              'filmCinema','films','revenues','film_name','CountFilmCinema'));
     }
 
     public function detailFilm($film_name){

@@ -118,12 +118,11 @@ Route::middleware('auth',"role:admin")->group(function () {
     // Users
     Route::prefix('user')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\userController::class, 'index'])->name('index_user');
-        // Route::get('create', [App\Http\Controllers\admin\userController::class, 'create']);
-        // Route::post('store', [App\Http\Controllers\admin\userController::class, 'store']);
         Route::get('show/{id}', [App\Http\Controllers\admin\userController::class, 'show'])->name('show.user');
         Route::get('edit/{id}', [App\Http\Controllers\admin\userController::class, 'edit']);
         Route::post('update/{id}', [App\Http\Controllers\admin\userController::class, 'update']);
         Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy'])->name('remove_user');
+        Route::get('showTicketUser/{id}', [App\Http\Controllers\admin\userController::class, 'showTicketUser'])->name('showTicketUser.user');
     });
     Route::prefix('admin')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\userController::class, 'admin_index'])->name('index_admin');

@@ -33,7 +33,7 @@
                                 </div>
                                 <div>
                                     <p class="mb-2">Phim</p>
-                                    {{-- <h4>{{ $countfilm }} </h4> --}}
+                                    <h4>{{ $CountFilmCinema }} </h4>
                                 </div>
                             </div>
                             {{-- <div class="card-header-toolbar d-flex align-items-center">
