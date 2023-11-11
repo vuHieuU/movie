@@ -2,6 +2,7 @@
 @section('content')
 
     <!-- Wrapper Start -->
+    <form class="" id="sort_customers" action="" method="GET">
     <div class="wrapper">
 
         <div class="modal fade" id="new-order" tabindex="-1" role="dialog" aria-hidden="true">
@@ -43,22 +44,31 @@
                     <p style="color: green">
                         {{ session('success') }}
                     </p>
-                      <thead class="bg-white text-uppercase">
-                          <tr class="ligth ligth-data">
-                              {{-- <th>
-                                  <div class="checkbox d-inline-block" >
-                                      <input type="checkbox" class="checkbox-input" id="checkbox1">
-                                      <label for="checkbox1" class="mb-0"></label>
-                                  </div>
-                              </th> --}}
-                              <th style="width: 8%">Mã đơn</th>
+                    <div class="col-md-2 ml-auto">
+                        <select class="form-control form-control-sm aiz-selectpicker mb-2 mb-md-0" name="type" id="type" onchange="sort_customers()">
+                            <option value="">Lọc theo ngày tháng</option>
+                            <option value="tuan" @if($filter == 'tuan') selected @endif >Tuần</option>
+                            <option value="thang" @if($filter == 'thang') selected @endif>Tháng</option>
+                            <option value="nam" @if($filter == 'nam') selected @endif>Năm</option>
+                         
+                        </select>
+                    </div>
+                    <thead class="bg-white text-uppercase">
+                        <tr class="ligth ligth-data">
+                            {{-- <th>
+                                <div class="checkbox d-inline-block" >
+                                    <input type="checkbox" class="checkbox-input" id="checkbox1">
+                                    <label for="checkbox1" class="mb-0"></label>
+                                </div>
+                            </th> --}}
+                            <th style="width: 8%">Mã đơn</th>
                               <th style="width: 13%">Người dùng</th>
                               <th style="width: 10%">Rạp</th>
                               <th style="width: 13%">Tên phim</th>
                               <th style="width: 11%">Ngày đặt</th>
                               <th style="width: 11%">Thời gian</th>
                               <th style="width: 10%">Ghế</th>
-                              <th style="width: 10%">Đồ ăn</th>
+                              {{-- <th style="width: 10%">Đồ ăn</th> --}}
                               <th style="width: 10%">Thanh toán</th>
                               <th style="width: 11%">Tổng tiền</th>
                               {{-- <th>Status</th> --}}
@@ -67,7 +77,7 @@
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
-                             @foreach ($ticket as $item)
+                             @foreach ($tickets as $item)
                           <tr>
                               {{-- <td>
                                   <div class="checkbox d-inline-block">
@@ -89,7 +99,7 @@
                               {{-- @foreach ($ticket as $itemm) --}}
                                   
                              
-                              <td>{{ $item->name }}*{{ $item->quantity }}</td>
+                              {{-- <td>{{ $item->name }}*{{ $item->quantity }}</td> --}}
                               <td style="font-size: 15px;color: darkgreen; font-weight: 600">{{ $item->payment }}</td>
                            {{-- @endforeach --}}
                               <td>{{number_format( $item->total) }} VND</td>
@@ -148,10 +158,14 @@
       </div>
         </div>
       </div>
+      </form>
       <!-- Wrapper End-->
       <script>
         $('.data-tables').DataTable({
             
         });
+        function sort_customers(el){
+            $('#sort_customers').submit();
+        }
     </script> 
 @endsection
