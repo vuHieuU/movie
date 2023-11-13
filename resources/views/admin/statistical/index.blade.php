@@ -18,38 +18,50 @@
                                                 <p class="mb-2">Các Rạp</p>
                                                 <div class="card-header-toolbar d-flex align-items-center">
                                                     <div class="dropdown">
-                                                        <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton006"
-                                                            data-toggle="dropdown">
+                                                        <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton006" data-toggle="dropdown">
                                                             Chọn Rạp<i class="ri-arrow-down-s-line ml-1"></i>
                                                         </span>
-                                                        <div class="dropdown-menu dropdown-menu-right shadow-none"
-                                                            aria-labelledby="dropdownMenuButton006">
+                                                        <div class="dropdown-menu dropdown-menu-right shadow-none" aria-labelledby="dropdownMenuButton006">
+                                                            <a class="li dropdown-item" data-cinema-id="all">
+                                                                <li onclick="changeDropdownText('Tất cả rạp')">Tất cả rạp</li>
+                                                            </a>
                                                             @foreach ($cinemalist as $item)
-                                                                <a class="li dropdown-item "
-                                                                    data-cinema-id="{{ $item->name }}">
-                                                                    <li onclick="changeDropdownText('{{ $item->name }}')">
-                                                                        {{ $item->name }}</li>
+                                                                <a class="li dropdown-item" data-cinema-id="{{ $item->name }}">
+                                                                    <li onclick="changeDropdownText('{{ $item->name }}')">{{ $item->name }}</li>
                                                                 </a>
                                                             @endforeach
                                                         </div>
-                
+                                                
                                                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
                                                         <script>
-                                                            $(document).ready(function() {
-                                                                $("a.li").click(function(event) {
-                                                                    event.preventDefault(); // Ngăn chuyển trang khi nhấn vào liên kết.
-                                                                    var cinemaId = $(this).data('cinema-id'); // Lấy id của rạp từ thuộc tính data
-                                                                    $.ajax({
-                                                                        url: "/statistical/cinema/" + cinemaId,
-                                                                        success: function(result) {
-                                                                            $("#cinema").html(result);
-                                                                        }
-                                                                    });
+                                                            $(document).ready(function () {
+                                                                $("a.li").click(function (event) {
+                                                                    event.preventDefault();
+                                                                    var cinemaId = $(this).data('cinema-id');
+                                                                    if (cinemaId === 'all') {
+                                                                        window.location.href = "/statistical/index";
+                                                                    } else {
+                                                                        $.ajax({
+                                                                            url: "/statistical/cinema/" + cinemaId,
+                                                                            success: function (result) {
+                                                                                $("#cinema").html(result);
+                                                                                changeDropdownText(cinemaId);
+                                                                            }
+                                                                        });
+                                                                    }
                                                                 });
+                                                        
+                                                                function changeDropdownText(selectedOption) {
+                                                                    var dropdownButton = document.getElementById("dropdownMenuButton006");
+                                                                    dropdownButton.textContent = selectedOption;
+                                                                }
                                                             });
                                                         </script>
+                                                        
+                                                        
                                                     </div>
                                                 </div>
+                                                
 
                                             </div>
                                         </div>
@@ -126,6 +138,11 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card-body pt-0">
+                        <div id="layout1-chart-7"></div>
                     </div>
                 </div>
                 <div id="div2" class="row">
@@ -275,12 +292,7 @@
                                     </div>
                                 </div>
 
-                                <script>
-                                    function changeDropdownText(selectedOption) {
-                                        var dropdownButton = document.getElementById("dropdownMenuButton006");
-                                        dropdownButton.textContent = selectedOption; // Sửa lỗi ở đây
-                                    }
-                                </script>
+            
                             </div>
                             <div id="div1">
                                 <div class="card-body">
@@ -465,6 +477,73 @@
                 }
             };
             const chart = new ApexCharts(document.querySelector("#layout1-chart-5"), options);
+            chart.render();
+            const body = document.querySelector('body')
+            if (body.classList.contains('dark')) {
+                apexChartUpdate(chart, {
+                    dark: true
+                })
+            }
+
+            document.addEventListener('ChangeColorMode', function(e) {
+                apexChartUpdate(chart, e.detail)
+            })
+        }
+        // ********************** //
+            var cinemas = @json($cinemas);
+            var cinemaSums = @json($cinemaSums);
+        if (jQuery("#layout1-chart-7").length) {
+            options = {
+                series: [{
+                    name: 'Doanh thu',
+                    data: cinemaSums.map(item => item.revenue),
+                }],
+                chart: {
+                    type: 'bar',
+                    height: 300
+                },
+                colors: ['#32BDEA', '#FF7E41'],
+                plotOptions: {
+                    bar: {
+                        horizontal: false,
+                        columnWidth: '30%',
+                        endingShape: 'rounded'
+                    },
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                stroke: {
+                    show: true,
+                    width: 3,
+                    colors: ['transparent']
+                },
+                xaxis: {
+                    categories: cinemas,
+                    labels: {
+                        minWidth: 0,
+                        maxWidth: 0
+                    }
+                },
+                yaxis: {
+                    show: true,
+                    labels: {
+                        minWidth: 20,
+                        maxWidth: 20
+                    }
+                },
+                fill: {
+                    opacity: 1
+                },
+                tooltip: {
+                    y: {
+                        formatter: function(val) {
+                            return val + " VNĐ"
+                        }
+                    }
+                }
+            };
+            const chart = new ApexCharts(document.querySelector("#layout1-chart-7"), options);
             chart.render();
             const body = document.querySelector('body')
             if (body.classList.contains('dark')) {

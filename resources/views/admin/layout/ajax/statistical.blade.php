@@ -38,12 +38,12 @@
                             </div>
                             {{-- <div class="card-header-toolbar d-flex align-items-center">
                                 <div class="dropdown">
-                                    <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton006"
+                                    <span class="dropdown-toggle dropdown-bg btn" id="z"
                                         data-toggle="dropdown">
                                         Chọn phim<i class="ri-arrow-down-s-line ml-1"></i>
                                     </span>
                                     <div class="dropdown-menu dropdown-menu-right shadow-none"
-                                        aria-labelledby="dropdownMenuButton006">
+                                        aria-labelledby="dropdownMenuButton007">
                                         @foreach ($films as $item)
                                             <a class="li dropdown-item "
                                                 data-film-id="{{ $item->name }}">
@@ -205,12 +205,12 @@
                     </div>
                     {{-- <div class="card-header-toolbar d-flex align-items-center">
                         <div class="dropdown">
-                            <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton006"
+                            <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton007"
                                 data-toggle="dropdown">
                                 Chọn phim<i class="ri-arrow-down-s-line ml-1"></i>
                             </span>
                             <div class="dropdown-menu dropdown-menu-right shadow-none"
-                                aria-labelledby="dropdownMenuButton006">
+                                aria-labelledby="dropdownMenuButton007">
                                 @foreach ($films as $item)
                                     <a class="li dropdown-item "
                                         data-film-id="{{ $item->film_name }}">
@@ -240,7 +240,7 @@
 
                     <script>
                         function changeDropdownText(selectedOption) {
-                            var dropdownButton = document.getElementById("dropdownMenuButton006");
+                            var dropdownButton = document.getElementById("dropdownMenuButton007");
                             dropdownButton.textContent = selectedOption;
                         }
                     </script>
@@ -287,10 +287,10 @@
 
         </div>
         <div class="dropdown dropup">
-            <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton006" data-toggle="dropdown">
+            <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton007" data-toggle="dropdown">
                 Chọn phim<i class="ri-arrow-up-s-line ml-1"></i>
             </span>
-            <div class="dropdown-menu dropdown-menu-right shadow-none" aria-labelledby="dropdownMenuButton006">
+            <div class="dropdown-menu dropdown-menu-right shadow-none" aria-labelledby="dropdownMenuButton007">
                 @foreach ($film_name->unique('film_name') as $item)
                     <a class="li dropdown-item" data-cinema-id="{{ $item->film_name }}">
                         <li onclick="changeDropdownText('{{ $item->film_name }}')">

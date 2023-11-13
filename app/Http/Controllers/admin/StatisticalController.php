@@ -91,6 +91,14 @@ class StatisticalController extends Controller
             $revenues[$filmName] = $totalRevenue;
             // $revenuesData = json_encode($revenues);
         }
+
+        $cinemas = cinema::pluck('name')->toArray();
+        $cinemaSums = [];
+        
+        foreach ($cinemas as $cinema) {
+            $sum = ticket::where('cinema', $cinema)->sum('total');
+            $cinemaSums[] = ['cinema' => $cinema, 'revenue' => $sum];
+        }
         return view('admin.statistical.index',
             compact(
                 'formattedTime',
@@ -118,8 +126,9 @@ class StatisticalController extends Controller
                 'films',
                 'revenues',
                 'countfoodsell',
-                'countfoodremaining'
-                // 'revenuesData'
+                'countfoodremaining',
+                'cinemas',
+                'cinemaSums',
             )
         );
     }
