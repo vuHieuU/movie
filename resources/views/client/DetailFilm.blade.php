@@ -583,51 +583,23 @@
                                             <div class="amy-widget amy-widget-list">
                                                 <div class="amy-widget amy-widget-list list-post ">
                                                     <h4 class="amy-title amy-widget-title">Tin tức gần nhất</h4>
-                                                    <div class="entry-item">
-                                                        <div class="entry-thumb"><img
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59-115x85_c.jpg" />
+                                                    @foreach ($newdetail as $item)
+                                                        <div class="entry-item">
+                                                            <div class="entry-thumb"><img style="width: 120px; height: 150px;object-fit: cover"
+                                                                    src="{{asset("storage/images/".$item->thumbnail)}}" />
+                                                            </div>
+                                                            <div class="entry-content">
+                                                                <h2 class="entry-title"><a
+                                                                        href="">{{$item->title}}</a></h2>
+                                                                <div class="entry-meta"><span class="entry-date">{{Carbon\Carbon::parse( $item->created_at)->format("d/n/Y")}}</span><span>
+                                                                        /
+                                                                    </span><span class="entry-comment">0
+                                                                        Comments</span></div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
                                                         </div>
-                                                        <div class="entry-content">
-                                                            <h2 class="entry-title"><a
-                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/2022/04/28/six-book-to-film-adaptations-to-get-excited-about-this-autumn/">Six
-                                                                    book-to-film
-                                                                    adaptations
-                                                                    to get
-                                                                    excited
-                                                                    about
-                                                                    this
-                                                                    autumn</a></h2>
-                                                            <div class="entry-meta"><span class="entry-date">April
-                                                                    28,
-                                                                    2022</span><span>
-                                                                    /
-                                                                </span><span class="entry-comment">0
-                                                                    Comments</span></div>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                    <div class="entry-item">
-                                                        <div class="entry-thumb"><img
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57-115x85_c.jpg" />
-                                                        </div>
-                                                        <div class="entry-content">
-                                                            <h2 class="entry-title"><a
-                                                                    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/2022/04/28/the-beatles-eight-days-a-week-the-touring/">The
-                                                                    Beatles:
-                                                                    Eight
-                                                                    Days a
-                                                                    Week –
-                                                                    The
-                                                                    Touring</a></h2>
-                                                            <div class="entry-meta"><span class="entry-date">April
-                                                                    28,
-                                                                    2022</span><span>
-                                                                    /
-                                                                </span><span class="entry-comment">0
-                                                                    Comments</span></div>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
+                                                    @endforeach
+
                                                 </div>
                                                 <div class="clear"></div>
                                             </div>

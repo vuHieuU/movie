@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Notification;
 use App\Models\ticket;
+use App\Models\ticketFood;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,19 +14,31 @@ class TicketController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $ticket = DB::table("tickets")
-        ->join('ticket_food', 'tickets.id', '=', 'ticket_food.ticket_id')
-        ->select('tickets.id', 'ticket_food.*','tickets.*','ticket_food.ticket_id')
-        ->get();
-
-        
-        
-        // $ticket = ticket::with("ticketFoods")->get();
-        // dd($ticket);
-        return view("admin.tickets.index", compact("ticket"));
+            ->join('ticket_food', 'tickets.id', '=', 'ticket_food.ticket_id')
+            ->select('tickets.id', 'ticket_food.*', 'tickets.*', 'ticket_food.ticket_id')
+            ->orderBy("tickets.created_at", "desc");
+    
+        $filter = $request->input('type');
+        if ($filter === 'tuan') {
+            $ticket->whereBetween('tickets.created_at', [now()->startOfWeek(), now()->endOfWeek()]);
+            session(['export_filter' => 'tuan']);
+        } elseif ($filter === 'thang') {
+            $startDate = now()->subDays(30)->startOfDay();
+            $endDate = now()->endOfDay();
+            $ticket->whereBetween('tickets.created_at', [$startDate, $endDate]);
+            session(['export_filter' => 'thang']);
+        } elseif ($filter === 'nam') {
+            $ticket->whereYear('tickets.created_at', now()->year);
+            session(['export_filter' => 'nam']);
+        }
+    
+        $tickets = $ticket->get();
+        return view("admin.tickets.index", compact("tickets", "filter"));
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -86,6 +99,8 @@ class TicketController extends Controller
     public function destroy(string $id)
     {
         $ticket = ticket::find($id);
+        Notification::where('tickets_id',$ticket->id)->delete();
+        ticketFood::where('ticket_id',$ticket->id)->delete();
         $ticket->delete();
         return redirect()->route("ticket.index")->with('success', 'tickit delete successfully');
     }

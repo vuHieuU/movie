@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
+use App\Models\ShowTime;
 use Carbon\Carbon;
+use App\Models\food;
 use App\Models\film;
 use App\Models\cinema;
 use App\Models\ticket;
 use App\Models\category;
 use App\Models\ticketFood;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-use App\Models\food;
+use Illuminate\Http\Request;
 
-class OverviewController extends Controller
+class StatisticalController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index(Request $request)
     {
         $category = category::get();
@@ -50,7 +48,7 @@ class OverviewController extends Controller
 
             $formattedTime = Carbon::parse($mostBookedHour->selected_hour)->format('H:i:s');
         } else {
-            return view('no_data_to_display');
+            $formattedTime = '';
         }
 
         //lọc film 
@@ -71,6 +69,10 @@ class OverviewController extends Controller
         // dd($mostBookedfilm);
         $tickets = ticket::get()->sum("total");
         $countfilm = DB::table("films")->count();
+        $countfood = DB::table("food")->count();
+        $countfoodsell = DB::table("ticket_food")->sum("quantity");
+        $countfoodremaining = food::get();
+
         $countuser = DB::table("users")->count();
         $sumtotal = DB::table("tickets")->sum("total");
         $categoriesWithCount = DB::table("categories")
@@ -89,8 +91,15 @@ class OverviewController extends Controller
             $revenues[$filmName] = $totalRevenue;
             // $revenuesData = json_encode($revenues);
         }
-        return view(
-            'admin/overview',
+
+        $cinemas = cinema::pluck('name')->toArray();
+        $cinemaSums = [];
+        
+        foreach ($cinemas as $cinema) {
+            $sum = ticket::where('cinema', $cinema)->sum('total');
+            $cinemaSums[] = ['cinema' => $cinema, 'revenue' => $sum];
+        }
+        return view('admin.statistical.index',
             compact(
                 'formattedTime',
                 'mostBookedHour',
@@ -104,6 +113,7 @@ class OverviewController extends Controller
                 'cinemalist',
                 'cinematotal',
                 'title',
+                "countfood",
                 'tickets',
                 "countuser",
                 "countfilm",
@@ -115,7 +125,10 @@ class OverviewController extends Controller
                 'ticketFood',
                 'films',
                 'revenues',
-                // 'revenuesData'
+                'countfoodsell',
+                'countfoodremaining',
+                'cinemas',
+                'cinemaSums',
             )
         );
     }
@@ -196,7 +209,6 @@ class OverviewController extends Controller
 
         return view(
             'client.layout.session.OverviewCinema',
-            // 'admin/overview',
             compact(
                 'tickettong',
                 'formattedTime',
@@ -229,4 +241,54 @@ class OverviewController extends Controller
         );
     }
 
+    public function detailCinema($cinemaId){
+        session(['cinemaId' => $cinemaId]);
+        $TotalTicketCinema = ticket::where('cinema', $cinemaId)->count();
+        $ShowTimeCinema = Ticket::select('selected_hour')
+            ->groupBy('selected_hour')
+            ->orderByRaw('COUNT(*) DESC')
+            ->where('cinema', $cinemaId)
+            ->first();
+            if ($ShowTimeCinema) {
+                $ShowTimeCinemas = Carbon::parse($ShowTimeCinema->selected_hour)->format('H:i:s');
+            } else {
+                $ShowTimeCinemas = '';
+            }
+         $filmCinema = Ticket::select('film_name')
+            ->groupBy('film_name')
+            ->orderByRaw('COUNT(*) DESC')
+            ->where('cinema', $cinemaId)    
+            ->first();
+
+        $film_name = ticket::where('cinema', $cinemaId)->get();
+
+        $films = Film::get();
+        $revenues = [];
+
+        foreach ($films as $film) {
+            $filmName = $film->name;
+            $totalRevenue = Ticket::where('film_id', $film->id)->sum('total');
+            $revenues[$filmName] = $totalRevenue;
+        }
+        $CountFilmCinema = film::count();
+        $sumtotal = ticket::where('cinema', $cinemaId)->sum("total");
+        
+        return view('admin.layout.ajax.statistical', compact('sumtotal','TotalTicketCinema','ShowTimeCinemas',
+              'filmCinema','films','revenues','film_name','CountFilmCinema'));
+    }
+
+    public function detailFilm($film_name){
+        $cinemaId = session('cinemaId');
+        $data = ticket::where('film_name', $film_name)->where('cinema', $cinemaId)
+                      ->groupBy('selected_date')
+                      ->select('selected_date', \DB::raw('SUM(total) as total'))
+                      ->get();
+    
+        $day = $data->pluck('selected_date')->toArray();
+        $total = $data->pluck('total')->toArray();
+    
+        return view('admin.layout.ajax.statisticalDetail', compact('day', 'total'));
+    }
+    
+    
 }

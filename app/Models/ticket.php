@@ -34,4 +34,9 @@ public function ticketFoods()
     return $this->hasMany(ticketFood::class, 'ticket_id', 'id');
 }
 
+public function showTime()
+    {
+        return $this->belongsTo(ShowTime::class, 'showtime_id', 'id');
+    }
+
 }

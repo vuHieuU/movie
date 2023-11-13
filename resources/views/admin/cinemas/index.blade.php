@@ -49,7 +49,7 @@
                                   </div>
                               </th>
                               <th>Tên rạp</th>
-                              <th>Mô tả</th>
+                              {{-- <th>Mô tả</th> --}}
                               <th>Địa chỉ</th>
                               <th>Thành phố</th>
                               <th>Action</th>
@@ -69,7 +69,7 @@
                                   </div>
                               </td>
                               <td>{{ $item->name }}</td>
-                              <td>{{ $item->description }}</td>
+                              {{-- <td>{{ $item->description }}</td> --}}
                               <td>{{ $item->address }}</td>
                               <td>{{ $item->city }}</td>
                               <td>

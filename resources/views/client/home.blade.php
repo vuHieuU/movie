@@ -22,7 +22,7 @@
                                         <div class="amy-shortcode amy-mv-slide">
                                             <div class="amy-slick "
                                                 data-slick='{"slidesToShow":1,"slidesToScroll":1,"autoplay":true,"autoplaySpeed":3000,"prevArrow": "<a class=\"amy-arrow fa amy-pre fa-chevron-right\"></a>","nextArrow": "<a class=\"amy-arrow fa amy-next fa-chevron-left\"></a>","arrows":true,"infinite":true,"fade":true,"useCSS":true,"useTransform":true,"dots":true}'>
-                                                @foreach ($sliders as $key => $sliderItem )
+                                                @forelse ($sliders as $key => $sliderItem )
                                                     <div class="slide-item">
                                                         <div class="slide-thumb">
                                                             <img src="{{asset($sliderItem->image) }}" alt="">
@@ -39,7 +39,26 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                @endforeach
+                                                @empty
+                                                    <div class="slide-item">
+                                                        <div class="slide-thumb">
+                                                            <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_27.jpg" alt="The Hurricane Heist" />
+                                                        </div>
+                                                        <div class="slide-content">
+                                                            <h2 class="slide-title">
+                                                                <a>
+                                                                    The Hurricane <span class="last_word">Heist</span>
+                                                                </a>
+                                                            </h2>
+
+                                                            <div class="slide-desc">
+                                                                <p>Sed ut perspiciatis unde omnis iste natus error sit
+                                                                    voluptatem accusantium doloremque laudantium, totam
+                                                                    rem aperiam, eaque ipsa quae ab ...</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforelse
                                                 {{-- <div class="slide-item">
                                                     <div class="slide-thumb">
                                                         <a

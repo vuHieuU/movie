@@ -11,6 +11,7 @@ use App\Models\category;
 use App\Models\ticketFood;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\food;
 
 class HomeController extends Controller
 {
@@ -69,6 +70,11 @@ class HomeController extends Controller
             ->groupBy('film_name')
             ->orderByRaw('COUNT(*) DESC')
             ->first();
+        //lọc payment 
+        $payments = Ticket::select('payment')
+            ->groupBy('payment')
+            ->orderByRaw('COUNT(*) DESC')
+            ->first();
         //lọc combo 
         $mostBookedfood = ticketFood::select('name')
             ->groupBy('name')
@@ -82,6 +88,10 @@ class HomeController extends Controller
         // dd($mostBookedfilm);
         $tickets = ticket::get()->sum("total");
         $countfilm = DB::table("films")->count();
+        $countfood = DB::table("food")->count();
+        $countfoodsell = DB::table("ticket_food")->sum("quantity");
+        $countfoodremaining = food::get();
+
         $countuser = DB::table("users")->count();
         $sumtotal = DB::table("tickets")->sum("total");
         $categoriesWithCount = DB::table("categories")
@@ -114,6 +124,7 @@ class HomeController extends Controller
                 'cinemalist',
                 'cinematotal',
                 'title',
+                "countfood",
                 'tickets',
                 "countuser",
                 "countfilm",
@@ -125,7 +136,9 @@ class HomeController extends Controller
                 'ticketFood',
                 'films',
                 'revenues',
-                // 'revenuesData'
+                'countfoodsell',
+                'countfoodremaining',
+                'payments'
             )
         );
     }

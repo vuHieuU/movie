@@ -2,7 +2,6 @@
 @section('content')
 
     <!-- Wrapper Start -->
-    <form class="" id="sort_customers" action="" method="GET">
     <div class="wrapper">
 
         <div class="modal fade" id="new-order" tabindex="-1" role="dialog" aria-hidden="true">
@@ -44,24 +43,15 @@
                     <p style="color: green">
                         {{ session('success') }}
                     </p>
-                    <div class="col-md-2 ml-auto">
-                        <select class="form-control form-control-sm aiz-selectpicker mb-2 mb-md-0" name="type" id="type" onchange="sort_customers()">
-                            <option value="">Lọc theo ngày tháng</option>
-                            <option value="tuan" @if($filter == 'tuan') selected @endif >Tuần</option>
-                            <option value="thang" @if($filter == 'thang') selected @endif>Tháng</option>
-                            <option value="nam" @if($filter == 'nam') selected @endif>Năm</option>
-                         
-                        </select>
-                    </div>
-                    <thead class="bg-white text-uppercase">
-                        <tr class="ligth ligth-data">
-                            {{-- <th>
-                                <div class="checkbox d-inline-block" >
-                                    <input type="checkbox" class="checkbox-input" id="checkbox1">
-                                    <label for="checkbox1" class="mb-0"></label>
-                                </div>
-                            </th> --}}
-                            <th style="width: 8%">Mã đơn</th>
+                      <thead class="bg-white text-uppercase">
+                          <tr class="ligth ligth-data">
+                              {{-- <th>
+                                  <div class="checkbox d-inline-block" >
+                                      <input type="checkbox" class="checkbox-input" id="checkbox1">
+                                      <label for="checkbox1" class="mb-0"></label>
+                                  </div>
+                              </th> --}}
+                              <th style="width: 8%">Mã đơn</th>
                               <th style="width: 13%">Người dùng</th>
                               <th style="width: 10%">Rạp</th>
                               <th style="width: 13%">Tên phim</th>
@@ -77,7 +67,7 @@
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
-                             @foreach ($tickets as $item)
+                             @foreach ($ticketUser as $item)
                           <tr>
                               {{-- <td>
                                   <div class="checkbox d-inline-block">
@@ -158,14 +148,10 @@
       </div>
         </div>
       </div>
-      </form>
       <!-- Wrapper End-->
       <script>
         $('.data-tables').DataTable({
             
         });
-        function sort_customers(el){
-            $('#sort_customers').submit();
-        }
     </script> 
 @endsection

@@ -77,6 +77,8 @@
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                          href="/user/showTicketUser/{{ $item->id }}"><i class="fa-solid fa-ticket"></i></a>
+                                      <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
                                           href="/user/show/{{ $item->id }}"><i class="ri-eye-line mr-0"></i></a>
                                       <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
                                           href="/user/edit/{{ $item->id }}"><i class="ri-pencil-line mr-0"></i></a>
