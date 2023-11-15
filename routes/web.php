@@ -91,6 +91,7 @@ Route::middleware(['auth'])->group(function () {    //profile của user
     Route::post('/apply-coupon', [App\Http\Controllers\client\cart\CouponController::class, 'applyCoupon'])->name('applyCoupon');
     Route::post('/payment-success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
     Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('success');
+    Route::post('/updates/{showtime_seat_id}', [App\Http\Controllers\client\cart\PayController::class, 'updates']);
 
     //vnpay
     Route::post('/vnpay_payment/{film_id}', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);

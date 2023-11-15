@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->command('app:clear-expired-data')->everyMinute();
+        $schedule->command('update:status')->everyTenMinutes();
     }
 
     /**

@@ -619,7 +619,7 @@
                                                                                             id="{{ $item->id }}"
                                                                                             data-price="{{ $item->price }}"
                                                                                             onclick="toggleSeat(this)">
-                                                                                            @if ($item->isActive == 1)
+                                                                                            @if ($item->isActive == 1 && $item->isFreeze == 1)
                                                                                                 <i
                                                                                                     class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4">
                                                                                                     <span class="fs-6">
@@ -660,906 +660,933 @@
                                                                                         });
                                                                                     </script>
                                                                                 </div> --}}
-                                                            @if ($count == 88)
-                                                            <div class="row mt-4 "
-                                                            style="max-width: 800px;margin: auto">
+                                                                                    @if ($count == 88)
+                                                                                        <div class="row mt-4 "
+                                                                                            style="max-width: 800px;margin: auto">
 
-                                                            {{-- <div class="container mt-4"> --}}
-                                                            <style>
-                                                                .iconchuadat {
-                                                                    color: #BABBC3;
-                                                                    font-size: 25px;
-                                                                    transition: color 0.3s;
-                                                                }
+                                                                                            {{-- <div class="container mt-4"> --}}
+                                                                                            <style>
+                                                                                                .iconchuadat {
+                                                                                                    color: #BABBC3;
+                                                                                                    font-size: 25px;
+                                                                                                    transition: color 0.3s;
+                                                                                                }
 
-                                                                .iconchuadat:hover {
-                                                                    color: #03599D;
-                                                                    /* Thay đổi màu khi di chuột qua */
-                                                                }
+                                                                                                .iconchuadat:hover {
+                                                                                                    color: #03599D;
+                                                                                                    /* Thay đổi màu khi di chuột qua */
+                                                                                                }
 
-                                                                .selected .iconchuadat {
-                                                                    color: #03599D;
-                                                                }
-                                                            </style>
-                                      
-                                      <div
-                                      style="max-width: 750px;margin: auto;">
-                          @foreach ($seats1 as $item)
-                                      
-                                      <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
-                                      id="{{ $item->showtime_seat_id }}"
-                                      data-price="{{ $item->price }}"
-                                      data-is-active="{{ $item->isActive }}"
-                                      onclick="toggleSeat(this)">
-                          
-                                      @if ($item->isActive == 1)
-                                          <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                                              style="">
-                                              <span
-                                                  class="fs-6">
-                                                  {{ $item->seat_number }}
-                                              </span>
-                                          </i>
-                                          {{-- @endif --}}
-                                      @else
-                                          {{-- @if ($item->id == 2) --}}
-                                          <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                                              style="font-size: 25px; color: #FD2802;"
-                                              disabled>
-                                              <span
-                                                  class="fs-6">
-                                                  {{ $item->seat_number }}
-                                              </span>
-                                          </i>
-                                      @endif
-                          
-                                  </div>
-                                      
-                              @endforeach
-                                      
+                                                                                                .selected .iconchuadat {
+                                                                                                    color: #03599D;
+                                                                                                }
+                                                                                            </style>
+                                                                                            {{-- @foreach ($seats1 as $item)
+                                                                                                <a href="/updates/{{ $item->id }}"
+                                                                                                    class=""
+                                                                                                    >{{ $item->seat_number }}</a>
+                                                                                            @endforeach
+                                                                                          --}}
 
-                                  </div>
-                                  <div
-                                  style="max-width: 750px;margin: auto;">
-                      @foreach ($seats2 as $item)
-                                  
-                                  <div class="col-md-1 ms-3 col-sm-2 col-xs-3 text-center  seat"
-                                  id="{{ $item->showtime_seat_id }}"
-                                  data-price="{{ $item->price }}"
-                                  data-is-active="{{ $item->isActive }}"
-                                  onclick="toggleSeat(this)">
-                      
-                                  @if ($item->isActive == 1)
-                                      <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                                          style="">
-                                          <span
-                                              class="fs-6">
-                                              {{ $item->seat_number }}
-                                          </span>
-                                      </i>
-                                      {{-- @endif --}}
-                                  @else
-                                      {{-- @if ($item->id == 2) --}}
-                                      <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                                          style="font-size: 25px; color: #FD2802;"
-                                          disabled>
-                                          <span
-                                              class="fs-6">
-                                              {{ $item->seat_number }}
-                                          </span>
-                                      </i>
-                                  @endif
-                      
-                              </div>
-                                  
-                          @endforeach
-                                  
-
-                              </div>
-                              <div
-                              style="max-width: 750px;margin: auto;">
-                  @foreach ($seats3 as $item)
-                              
-                              <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
-                              id="{{ $item->showtime_seat_id }}"
-                              data-price="{{ $item->price }}"
-                              data-is-active="{{ $item->isActive }}"
-                              onclick="toggleSeat(this)">
-                  
-                              @if ($item->isActive == 1)
-                                  <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                                      style="">
-                                      <span
-                                          class="fs-6">
-                                          {{ $item->seat_number }}
-                                      </span>
-                                  </i>
-                                  {{-- @endif --}}
-                              @else
-                                  {{-- @if ($item->id == 2) --}}
-                                  <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                                      style="font-size: 25px; color: #FD2802;"
-                                      disabled>
-                                      <span
-                                          class="fs-6">
-                                          {{ $item->seat_number }}
-                                      </span>
-                                  </i>
-                              @endif
-                  
-                          </div>
-                              
-                      @endforeach
-                              
-
-                          </div>
-                          <div
-                          style="max-width: 750px;margin: auto;">
-              @foreach ($seats4 as $item)
-                          
-                          <div class="col-md-1 ms-3 col-sm-2 col-xs-3 text-center  seat"
-                          id="{{ $item->showtime_seat_id }}"
-                          data-price="{{ $item->price }}"
-                          data-is-active="{{ $item->isActive }}"
-                          onclick="toggleSeat(this)">
-              
-                          @if ($item->isActive == 1)
-                              <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                                  style="">
-                                  <span
-                                      class="fs-6">
-                                      {{ $item->seat_number }}
-                                  </span>
-                              </i>
-                              {{-- @endif --}}
-                          @else
-                              {{-- @if ($item->id == 2) --}}
-                              <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                                  style="font-size: 25px; color: #FD2802;"
-                                  disabled>
-                                  <span
-                                      class="fs-6">
-                                      {{ $item->seat_number }}
-                                  </span>
-                              </i>
-                          @endif
-              
-                      </div>
-                          
-                  @endforeach
-                          
-
-                      </div>
-                      <div
-                      style="max-width: 750px;margin: auto;">
-          @foreach ($seats5 as $item)
-                      
-                      <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
-                      id="{{ $item->showtime_seat_id }}"
-                      data-price="{{ $item->price }}"
-                      data-is-active="{{ $item->isActive }}"
-                      onclick="toggleSeat(this)">
-          
-                      @if ($item->isActive == 1)
-                          <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                              style="">
-                              <span
-                                  class="fs-6">
-                                  {{ $item->seat_number }}
-                              </span>
-                          </i>
-                          {{-- @endif --}}
-                      @else
-                          {{-- @if ($item->id == 2) --}}
-                          <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                              style="font-size: 25px; color: #FD2802;"
-                              disabled>
-                              <span
-                                  class="fs-6">
-                                  {{ $item->seat_number }}
-                              </span>
-                          </i>
-                      @endif
-          
-                  </div>
-                      
-              @endforeach
-                      
-
-                  </div>
-                  <div
-                  style="max-width: 750px;margin: auto;">
-      @foreach ($seats6 as $item)
-                  
-                  <div class="col-md-1 ms-3 col-sm-2 col-xs-3 text-center  seat"
-                  id="{{ $item->showtime_seat_id }}"
-                  data-price="{{ $item->price }}"
-                  data-is-active="{{ $item->isActive }}"
-                  onclick="toggleSeat(this)">
-      
-                  @if ($item->isActive == 1)
-                      <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                          style="">
-                          <span
-                              class="fs-6">
-                              {{ $item->seat_number }}
-                          </span>
-                      </i>
-                      {{-- @endif --}}
-                  @else
-                      {{-- @if ($item->id == 2) --}}
-                      <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                          style="font-size: 25px; color: #FD2802;"
-                          disabled>
-                          <span
-                              class="fs-6">
-                              {{ $item->seat_number }}
-                          </span>
-                      </i>
-                  @endif
-      
-              </div>
-                  
-          @endforeach
-                  
-
-              </div>
-              <div
-              style="max-width: 750px;margin: auto;">
-  @foreach ($seats7 as $item)
-              
-              <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
-              id="{{ $item->showtime_seat_id }}"
-              data-price="{{ $item->price }}"
-              data-is-active="{{ $item->isActive }}"
-              onclick="toggleSeat(this)">
-  
-              @if ($item->isActive == 1)
-                  <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                      style="">
-                      <span
-                          class="fs-6">
-                          {{ $item->seat_number }}
-                      </span>
-                  </i>
-                  {{-- @endif --}}
-              @else
-                  {{-- @if ($item->id == 2) --}}
-                  <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                      style="font-size: 25px; color: #FD2802;"
-                      disabled>
-                      <span
-                          class="fs-6">
-                          {{ $item->seat_number }}
-                      </span>
-                  </i>
-              @endif
-  
-          </div>
-              
-      @endforeach
-              
-
-          </div>
-          <div
-          style="max-width: 750px;margin: auto;">
-@foreach ($seats8 as $item)
-          
-          <div class="col-md-1 ms-3 col-sm-2 col-xs-3 text-center  seat"
-          id="{{ $item->showtime_seat_id }}"
-          data-price="{{ $item->price }}"
-          data-is-active="{{ $item->isActive }}"
-          onclick="toggleSeat(this)">
-
-          @if ($item->isActive == 1)
-              <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                  style="">
-                  <span
-                      class="fs-6">
-                      {{ $item->seat_number }}
-                  </span>
-              </i>
-              {{-- @endif --}}
-          @else
-              {{-- @if ($item->id == 2) --}}
-              <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                  style="font-size: 25px; color: #FD2802;"
-                  disabled>
-                  <span
-                      class="fs-6">
-                      {{ $item->seat_number }}
-                  </span>
-              </i>
-          @endif
-
-      </div>
-          
-  @endforeach
-          
-
-      </div>
-                                  </div>
-
-                                                            @else
-                                                            <div class="row mt-4 "
-                                                            style="max-width: 800px;margin: auto">
-
-                                                            {{-- <div class="container mt-4"> --}}
-                                                            <style>
-                                                                .iconchuadat {
-                                                                    color: #BABBC3;
-                                                                    font-size: 25px;
-                                                                    transition: color 0.3s;
-                                                                }
-
-                                                                .iconchuadat:hover {
-                                                                    color: #03599D;
-                                                                    /* Thay đổi màu khi di chuột qua */
-                                                                }
-
-                                                                .selected .iconchuadat {
-                                                                    color: #03599D;
-                                                                }
-                                                            </style>
-                                      
-                                      <div
-                                      style="max-width: 750px;margin: auto;">
-                          @foreach ($f1 as $item)
-                                      
-                                      <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
-                                      id="{{ $item->showtime_seat_id }}"
-                                      data-price="{{ $item->price }}"
-                                      data-is-active="{{ $item->isActive }}"
-                                      onclick="toggleSeat(this)">
-                          
-                                      @if ($item->isActive == 1)
-                                          <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                                              style="">
-                                              <span
-                                                  class="fs-6">
-                                                  {{ $item->seat_number }}
-                                              </span>
-                                          </i>
-                                          {{-- @endif --}}
-                                      @else
-                                          {{-- @if ($item->id == 2) --}}
-                                          <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                                              style="font-size: 25px; color: #FD2802;"
-                                              disabled>
-                                              <span
-                                                  class="fs-6">
-                                                  {{ $item->seat_number }}
-                                              </span>
-                                          </i>
-                                      @endif
-                          
-                                  </div>
-                                      
-                              @endforeach
-                                      
-
-                                  </div>
-                                  <div
-                                  style="max-width: 750px;margin: auto;">
-                      @foreach ($f2 as $item)
-                                  
-                                  <div class="col-md-1 ms-2 col-sm-2 col-xs-3 text-center  seat"
-                                  id="{{ $item->showtime_seat_id }}"
-                                  data-price="{{ $item->price }}"
-                                  data-is-active="{{ $item->isActive }}"
-                                  onclick="toggleSeat(this)">
-                      
-                                  @if ($item->isActive == 1)
-                                      <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                                          style="">
-                                          <span
-                                              class="fs-6">
-                                              {{ $item->seat_number }}
-                                          </span>
-                                      </i>
-                                      {{-- @endif --}}
-                                  @else
-                                      {{-- @if ($item->id == 2) --}}
-                                      <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                                          style="font-size: 25px; color: #FD2802;"
-                                          disabled>
-                                          <span
-                                              class="fs-6">
-                                              {{ $item->seat_number }}
-                                          </span>
-                                      </i>
-                                  @endif
-                      
-                              </div>
-                                  
-                          @endforeach
-                                  
-
-                              </div>
-                              <div
-                              style="max-width: 750px;margin: auto;">
-                  @foreach ($f3 as $item)
-                              
-                              <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
-                              id="{{ $item->showtime_seat_id }}"
-                              data-price="{{ $item->price }}"
-                              data-is-active="{{ $item->isActive }}"
-                              onclick="toggleSeat(this)">
-                  
-                              @if ($item->isActive == 1)
-                                  <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                                      style="">
-                                      <span
-                                          class="fs-6">
-                                          {{ $item->seat_number }}
-                                      </span>
-                                  </i>
-                                  {{-- @endif --}}
-                              @else
-                                  {{-- @if ($item->id == 2) --}}
-                                  <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                                      style="font-size: 25px; color: #FD2802;"
-                                      disabled>
-                                      <span
-                                          class="fs-6">
-                                          {{ $item->seat_number }}
-                                      </span>
-                                  </i>
-                              @endif
-                  
-                          </div>
-                              
-                      @endforeach
-                              
-
-                          </div>
-                          <div
-                          style="max-width: 750px;margin: auto;">
-              @foreach ($f4 as $item)
-                          
-                          <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
-                          id="{{ $item->showtime_seat_id }}"
-                          data-price="{{ $item->price }}"
-                          data-is-active="{{ $item->isActive }}"
-                          onclick="toggleSeat(this)">
-              
-                          @if ($item->isActive == 1)
-                              <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                                  style="">
-                                  <span
-                                      class="fs-6">
-                                      {{ $item->seat_number }}
-                                  </span>
-                              </i>
-                              {{-- @endif --}}
-                          @else
-                              {{-- @if ($item->id == 2) --}}
-                              <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                                  style="font-size: 25px; color: #FD2802;"
-                                  disabled>
-                                  <span
-                                      class="fs-6">
-                                      {{ $item->seat_number }}
-                                  </span>
-                              </i>
-                          @endif
-              
-                      </div>
-                          
-                  @endforeach
-                          
-
-                      </div>
-                      <div
-                      style="max-width: 750px;margin: auto;">
-          @foreach ($f5 as $item)
-                      
-                      <div class="col-md-1 ms-2 col-sm-2 col-xs-3 text-center  seat"
-                      id="{{ $item->showtime_seat_id }}"
-                      data-price="{{ $item->price }}"
-                      data-is-active="{{ $item->isActive }}"
-                      onclick="toggleSeat(this)">
-          
-                      @if ($item->isActive == 1)
-                          <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                              style="">
-                              <span
-                                  class="fs-6">
-                                  {{ $item->seat_number }}
-                              </span>
-                          </i>
-                          {{-- @endif --}}
-                      @else
-                          {{-- @if ($item->id == 2) --}}
-                          <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                              style="font-size: 25px; color: #FD2802;"
-                              disabled>
-                              <span
-                                  class="fs-6">
-                                  {{ $item->seat_number }}
-                              </span>
-                          </i>
-                      @endif
-          
-                  </div>
-                      
-              @endforeach
-                      
-
-                  </div>
-                  <div
-                  style="max-width: 750px;margin: auto;">
-      @foreach ($f6 as $item)
-                  
-                  <div class="col-md-1 ms-3 col-sm-2 col-xs-3 text-center  seat"
-                  id="{{ $item->showtime_seat_id }}"
-                  data-price="{{ $item->price }}"
-                  data-is-active="{{ $item->isActive }}"
-                  onclick="toggleSeat(this)">
-      
-                  @if ($item->isActive == 1)
-                      <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                          style="">
-                          <span
-                              class="fs-6">
-                              {{ $item->seat_number }}
-                          </span>
-                      </i>
-                      {{-- @endif --}}
-                  @else
-                      {{-- @if ($item->id == 2) --}}
-                      <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                          style="font-size: 25px; color: #FD2802;"
-                          disabled>
-                          <span
-                              class="fs-6">
-                              {{ $item->seat_number }}
-                          </span>
-                      </i>
-                  @endif
-      
-              </div>
-                  
-          @endforeach
-                  
-
-              </div>
-              <div
-              style="max-width: 750px;margin: auto;">
-  @foreach ($f7 as $item)
-              
-              <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
-              id="{{ $item->showtime_seat_id }}"
-              data-price="{{ $item->price }}"
-              data-is-active="{{ $item->isActive }}"
-              onclick="toggleSeat(this)">
-  
-              @if ($item->isActive == 1)
-                  <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                      style="">
-                      <span
-                          class="fs-6">
-                          {{ $item->seat_number }}
-                      </span>
-                  </i>
-                  {{-- @endif --}}
-              @else
-                  {{-- @if ($item->id == 2) --}}
-                  <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                      style="font-size: 25px; color: #FD2802;"
-                      disabled>
-                      <span
-                          class="fs-6">
-                          {{ $item->seat_number }}
-                      </span>
-                  </i>
-              @endif
-  
-          </div>
-              
-      @endforeach
-              
-
-          </div>
-          <div
-          style="max-width: 750px;margin: auto;">
-@foreach ($f8 as $item)
-          
-          <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat"
-          id="{{ $item->showtime_seat_id }}"
-          data-price="{{ $item->price }}"
-          data-is-active="{{ $item->isActive }}"
-          onclick="toggleSeat(this)">
-
-          @if ($item->isActive == 1)
-              <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
-                  style="">
-                  <span
-                      class="fs-6">
-                      {{ $item->seat_number }}
-                  </span>
-              </i>
-              {{-- @endif --}}
-          @else
-              {{-- @if ($item->id == 2) --}}
-              <i class="fa-solid fa-couch fa-couch-icon mb-4"
-                  style="font-size: 25px; color: #FD2802;"
-                  disabled>
-                  <span
-                      class="fs-6">
-                      {{ $item->seat_number }}
-                  </span>
-              </i>
-          @endif
-
-      </div>
-          
-  @endforeach
-          
-
-      </div>
-                                  </div>
-
-                                                            @endif  
-
-                                                              <script>
-                                                                  const maxSeats = 8; // Số lượng ghế tối đa được chọn
-                                                                  const selectedSeats = []; // Mảng lưu các ghế đã chọn
-                                                                  const selectedSeatIds = [];
-                                                                  let totalPrice = 0;
-                                                                  let totalFoodPrice = 0; // Đặt biến totalFoodPrice ở mức toàn cục
-                                                                  const selectedFoodNames = [];
-                                                                  const foodQuantities = {};
-                                                                  const selectedSeatPrices = [];
-
-                                                                  function toggleSeat(seat) {
-                                                                      const seatNumber = seat.textContent.trim(); // Lấy seat_number từ nội dung của phần tử
-                                                                      const seatPrice = parseFloat(seat.getAttribute("data-price"));
-                                                                      const seatId = seat.getAttribute("id");
-                                                                      const isActive = seat.getAttribute("data-is-active");
-                                                                      var selectedSeatsValueID = document.getElementById("selectedSeatsValueID");
-                                                                      if (isActive === "1") {
-                                                                          if (selectedSeats.includes(seatNumber)) {
-                                                                              selectedSeats.splice(selectedSeats.indexOf(seatNumber), 1);
-                                                                              seat.classList.remove("selected");
-                                                                              const priceIndex = selectedSeatPrices.indexOf(seatPrice);
-                                                                              if (priceIndex !== -1) {
-                                                                                  selectedSeatPrices.splice(priceIndex, 1);
-                                                                              }
-                                                                          } else if (selectedSeats.length < maxSeats) {
-                                                                              selectedSeats.push(seatNumber);
-                                                                              seat.classList.add("selected");
-                                                                              selectedSeatPrices.push(seatPrice);
-                                                                          } else {
-                                                                              alert("Bạn chỉ được chọn tối đa 8 ghế.");
-                                                                          }
-
-                                                                          updateSelectedSeatsList();
-                                                                          selectedSeatsValueInput(); // Cập nhật giá trị trường input
-                                                                          updateTotalPrice(selectedSeatPrices);
-                                                                          // Thay đổi mã để lưu ID của ghế đã chọn
-                                                                          if (selectedSeatIds.includes(seatId)) {
-                                                                              selectedSeatIds.splice(selectedSeatIds.indexOf(seatId), 1);
-                                                                          } else {
-                                                                              selectedSeatIds.push(seatId);
-                                                                          }
-
-                                                                          // Lưu danh sách ID vào input
-                                                                          document.getElementById("selectedSeatsValueID").value = selectedSeatIds.slice(0, 8).join(', ');
-                                                                      } else {
-                                                                          alert("Ghế đã được đặt,không thể chọn lại.");
-                                                                      }
-                                                                  }
+ 
 
 
-                                                                  function updateSelectedSeatsList() {
-                                                                      const selectedSeatsSpan = document.getElementById("selected-seats");
-                                                                      selectedSeatsSpan.textContent = selectedSeats.join(',');
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($seats1 as $item)
+                                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
 
-                                                                  }
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
 
-                                                                  function selectedSeatsValueInput() {
-                                                                      var selectedSeatsValue = document.getElementById("selectedSeatsValue");
-                                                                      selectedSeatsValue.value = selectedSeats.join(', ');
-                                                                  }
+                                                                                                    </div>
+                                                                                                @endforeach
 
 
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($seats2 as $item)
+                                                                                                    <div class="col-md-1 ms-3 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
 
-                                                                  function updateTotalPrice(selectedSeatPrices) {
-                                                                      const totalPriceSpan = document.getElementById("total-price");
-                                                                      const selectedPriceSeatsValue = document.getElementById("selectedPriceSeatsValue");
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
 
-                                                                      function sumArrayElements(arr) {
-                                                                          const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-                                                                          return sum;
-                                                                      }
-                                                                      const total = sumArrayElements(selectedSeatPrices);
-                                                                      totalPriceSpan.textContent = total.toLocaleString();
-                                                                      selectedPriceSeatsValue.value = total;
+                                                                                                    </div>
+                                                                                                @endforeach
 
-                                                                  }
-                                                                  // food
-                                                                  function calculateTotal() {
-                                                                      const foodItems = @json($food);
-                                                                      let total = 0;
-                                                                      let foodData = [];
 
-                                                                      foodItems.forEach(item => {
-                                                                          const quantityInput = document.getElementById(`quantity_${item.id}`);
-                                                                          const quantity = parseInt(quantityInput.value);
-                                                                          const itemFoodName = quantityInput.getAttribute('data-food-name');
-                                                                          const foodID = quantityInput.getAttribute('data-food-id');
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($seats3 as $item)
+                                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
 
-                                                                          if (quantity > 0) {
-                                                                              const foodInfo = {
-                                                                                  name: itemFoodName,
-                                                                                  quantity: quantity,
-                                                                                  id: foodID
-                                                                              };
-                                                                              foodData.push(foodInfo);
-                                                                          }
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
 
-                                                                          total += quantity * item.price;
-                                                                      });
+                                                                                                    </div>
+                                                                                                @endforeach
 
-                                                                      // Chuyển đối tượng foodData thành một chuỗi JSON và cập nhật giá trị của input "FoodValueName".
-                                                                      document.getElementById('FoodValueName').value = JSON.stringify(foodData);
-                                                                      document.getElementById('totalPriceFood').textContent = total.toLocaleString();
-                                                                      document.getElementById('totalPriceFoodValue').value = total;
-                                                                  }
 
-                                                                  $(document).ready(function() {
-                                                                      var selectedSeats = [];
-                                                                      var maxSeats = 8; // Số lượng ghế tối đa có thể chọn
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($seats4 as $item)
+                                                                                                    <div class="col-md-1 ms-3 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
 
-                                                                      $('.iconchuadat').click(function() {
-                                                                          var seat = $(this);
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
 
-                                                                          if (selectedSeats.length < maxSeats || seat.hasClass('selected')) {
-                                                                              if (seat.hasClass('selected')) {
-                                                                                  // Trả lại màu ban đầu và loại bỏ khỏi danh sách ghế đã chọn
-                                                                                  seat.css('color', '#BABBC3');
-                                                                                  seat.removeClass('selected');
-                                                                                  selectedSeats.splice(selectedSeats.indexOf(seat), 1);
-                                                                              } else {
-                                                                                  // Thay đổi màu và thêm vào danh sách ghế đã chọn
-                                                                                  seat.css('color', '#03599D');
-                                                                                  seat.addClass('selected');
-                                                                                  selectedSeats.push(seat);
-                                                                              }
-                                                                          }
-                                                                      });
-                                                                  });
+                                                                                                    </div>
+                                                                                                @endforeach
+
+
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($seats5 as $item)
+                                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endforeach
+
+
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($seats6 as $item)
+                                                                                                    <div class="col-md-1 ms-3 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endforeach
+
+
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($seats7 as $item)
+                                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endforeach
+
+
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($seats8 as $item)
+                                                                                                    <div class="col-md-1 ms-3 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endforeach
+
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    @else
+                                                                                        <div class="row mt-4 "
+                                                                                            style="max-width: 800px;margin: auto">
+
+                                                                                            {{-- <div class="container mt-4"> --}}
+                                                                                            <style>
+                                                                                                .iconchuadat {
+                                                                                                    color: #BABBC3;
+                                                                                                    font-size: 25px;
+                                                                                                    transition: color 0.3s;
+                                                                                                }
+
+                                                                                                .iconchuadat:hover {
+                                                                                                    color: #03599D;
+                                                                                                    /* Thay đổi màu khi di chuột qua */
+                                                                                                }
+
+                                                                                                .selected .iconchuadat {
+                                                                                                    color: #03599D;
+                                                                                                }
+                                                                                            </style>
+
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($f1 as $item)
+                                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endforeach
+
+
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($f2 as $item)
+                                                                                                    <div class="col-md-1 ms-2 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endforeach
+
+
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($f3 as $item)
+                                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endforeach
+
+
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($f4 as $item)
+                                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endforeach
+
+
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($f5 as $item)
+                                                                                                    <div class="col-md-1 ms-2 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endforeach
+
+
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($f6 as $item)
+                                                                                                    <div class="col-md-1 ms-3 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endforeach
+
+
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($f7 as $item)
+                                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endforeach
+
+
+                                                                                            </div>
+                                                                                            <div
+                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                @foreach ($f8 as $item)
+                                                                                                    <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat update-seat"
+                                                                                                        id="{{ $item->showtime_seat_id }}"
+                                                                                                        data-seat-id="{{ $item->id}}"
+                                                                                                        data-price="{{ $item->price }}"
+                                                                                                        data-is-active="{{ $item->isActive }}"
+                                                                                                        data-is-freeze="{{ $item->isFreeze }}"
+                                                                                                        onclick="toggleSeat(this)">
+
+                                                                                                        @if ($item->isActive == 1 && $item->isFreeze == 1)
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                                style="">
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                            {{-- @endif --}}
+                                                                                                        @else
+                                                                                                            {{-- @if ($item->id == 2) --}}
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon mb-4"
+                                                                                                                style="font-size: 25px; color: #FD2802;"
+                                                                                                                disabled>
+                                                                                                                <span
+                                                                                                                    class="fs-6">
+                                                                                                                    {{ $item->seat_number }}
+                                                                                                                </span>
+                                                                                                            </i>
+                                                                                                        @endif
+
+                                                                                                    </div>
+                                                                                                @endforeach
+
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    @endif
+                                                                                    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+                                                                                    <script>
+                                                                                        const maxSeats = 8; // Số lượng ghế tối đa được chọn
+                                                                                        const selectedSeats = []; // Mảng lưu các ghế đã chọn
+                                                                                        const selectedSeatIds = [];
+                                                                                        let totalPrice = 0;
+                                                                                        let totalFoodPrice = 0; // Đặt biến totalFoodPrice ở mức toàn cục
+                                                                                        const selectedFoodNames = [];
+                                                                                        const foodQuantities = {};
+                                                                                        const selectedSeatPrices = [];
+
+                                                                                        function toggleSeat(seat) {
+                                                                                            const seatNumber = seat.textContent.trim(); // Lấy seat_number từ nội dung của phần tử
+                                                                                            const seatPrice = parseFloat(seat.getAttribute("data-price"));
+                                                                                            const seatId = seat.getAttribute("id");
+                                                                                            const isActive = seat.getAttribute("data-is-active");
+                                                                                            const isFreeze = seat.getAttribute("data-is-freeze");
+                                                                                            var selectedSeatsValueID = document.getElementById("selectedSeatsValueID");
+                                                                                            if (isActive === "1" && isFreeze === "1") {
+                                                                                                if (selectedSeats.includes(seatNumber)) {
+                                                                                                    selectedSeats.splice(selectedSeats.indexOf(seatNumber), 1);
+                                                                                                    seat.classList.remove("selected");
+                                                                                                    const priceIndex = selectedSeatPrices.indexOf(seatPrice);
+                                                                                                    if (priceIndex !== -1) {
+                                                                                                        selectedSeatPrices.splice(priceIndex, 1);
+                                                                                                    }
+                                                                                                } else if (selectedSeats.length < maxSeats) {
+                                                                                                    selectedSeats.push(seatNumber);
+                                                                                                    seat.classList.add("selected");
+                                                                                                    selectedSeatPrices.push(seatPrice);
+                                                                                                } else {
+                                                                                                    alert("Bạn chỉ được chọn tối đa 8 ghế.");
+                                                                                                }
+
+                                                                                                updateSelectedSeatsList();
+                                                                                                selectedSeatsValueInput(); // Cập nhật giá trị trường input
+                                                                                                updateTotalPrice(selectedSeatPrices);
+                                                                                                // Thay đổi mã để lưu ID của ghế đã chọn
+                                                                                                if (selectedSeatIds.includes(seatId)) {
+                                                                                                    selectedSeatIds.splice(selectedSeatIds.indexOf(seatId), 1);
+                                                                                                } else {
+                                                                                                    selectedSeatIds.push(seatId);
+                                                                                                }
+
+                                                                                                // Lưu danh sách ID vào input
+                                                                                                document.getElementById("selectedSeatsValueID").value = selectedSeatIds.slice(0, 8).join(', ');
+                                                                                            } else {
+                                                                                                alert("Ghế đã được đặt,không thể chọn lại.");
+                                                                                            }
+                                                                                            $.ajax({
+                                                                                                type: 'POST',
+                                                                                                url: '/update-seat-freeze/' + seatId,
+                                                                                                data: {
+                                                                                                    isActive: isActive
+                                                                                                },
+                                                                                                success: function(response) {
+                                                                                                    // Cập nhật trạng thái của trường isActive trực tiếp trên trang nếu cần
+                                                                                                    if (response.success) {
+                                                                                                        seatElement.setAttribute('data-is-freeze', response.updatedStatus);
+
+                                                                                                        // Thực hiện các hành động khác nếu cần
+                                                                                                    }
+                                                                                                },
+                                                                                                error: function(error) {
+                                                                                                    console.error('Error updating seat freeze status:', error);
+                                                                                                }
+                                                                                            });
+                                                                                        }
+
+
+                                                                                        function updateSelectedSeatsList() {
+                                                                                            const selectedSeatsSpan = document.getElementById("selected-seats");
+                                                                                            selectedSeatsSpan.textContent = selectedSeats.join(',');
+
+                                                                                        }
+
+                                                                                        function selectedSeatsValueInput() {
+                                                                                            var selectedSeatsValue = document.getElementById("selectedSeatsValue");
+                                                                                            selectedSeatsValue.value = selectedSeats.join(', ');
+                                                                                        }
 
 
 
-                                                                  function kiemTraChonGhe() {
-                                                                      if (selectedSeats.length === 0) {
-                                                                          alert("Vui lòng chọn ít nhất một ghế trước khi tiếp tục.");
-                                                                          return false;
-                                                                      } else {
-                                                                          return true;
-                                                                      }
-                                                                  }
-                                                              </script>
+                                                                                        function updateTotalPrice(selectedSeatPrices) {
+                                                                                            const totalPriceSpan = document.getElementById("total-price");
+                                                                                            const selectedPriceSeatsValue = document.getElementById("selectedPriceSeatsValue");
 
-                                                          </div>
-                                                          <div class="row text-center m-5 mt-5 p-4"
-                                                              style="margin-top: 30px; background-color: #F8F8F8">
-                                                              <div class="col-md-3 col-sm-4">
-                                                                  <svg style="font-size: 30px; fill: #BABBC3"
-                                                                      xmlns="http://www.w3.org/2000/svg"
-                                                                      height="1em"
-                                                                      viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                                                      <path
-                                                                          d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
-                                                                  </svg>
-                                                                  <p class="fs-2 mt-3"
-                                                                      style="color: gray ;">Ghế
-                                                                      Thường
-                                                                  </p>
-                                                              </div>
+                                                                                            function sumArrayElements(arr) {
+                                                                                                const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+                                                                                                return sum;
+                                                                                            }
+                                                                                            const total = sumArrayElements(selectedSeatPrices);
+                                                                                            totalPriceSpan.textContent = total.toLocaleString();
+                                                                                            selectedPriceSeatsValue.value = total;
 
-                                                              <div class="col-md-3 col-sm-4">
-                                                                  <svg style="font-size: 30px; fill: rgba(0, 128, 0, 0.486)"
-                                                                      xmlns="http://www.w3.org/2000/svg"
-                                                                      height="1em"
-                                                                      viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                                                      <path
-                                                                          d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
-                                                                  </svg>
-                                                                  <p class="fs-2 mt-3"
-                                                                      style="color: gray ;">Ghế Vip
-                                                                  </p>
-                                                                  {{-- {{$count}} --}}
-                                                              </div>
+                                                                                        }
+                                                                                        // food
+                                                                                        function calculateTotal() {
+                                                                                            const foodItems = @json($food);
+                                                                                            let total = 0;
+                                                                                            let foodData = [];
 
+                                                                                            foodItems.forEach(item => {
+                                                                                                const quantityInput = document.getElementById(`quantity_${item.id}`);
+                                                                                                const quantity = parseInt(quantityInput.value);
+                                                                                                const itemFoodName = quantityInput.getAttribute('data-food-name');
+                                                                                                const foodID = quantityInput.getAttribute('data-food-id');
 
-                                                              <div class="col-md-3 col-sm-4">
-                                                                  <svg style="font-size: 30px; fill: rgba(255, 166, 0, 0.492)"
-                                                                      xmlns="http://www.w3.org/2000/svg"
-                                                                      height="1em"
-                                                                      viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                                                      <path
-                                                                          d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
-                                                                  </svg>
-                                                                  <p class="fs-2 mt-3"
-                                                                      style="color: gray ;">Ghế Đôi
-                                                                  </p>
-                                                              </div>
+                                                                                                if (quantity > 0) {
+                                                                                                    const foodInfo = {
+                                                                                                        name: itemFoodName,
+                                                                                                        quantity: quantity,
+                                                                                                        id: foodID
+                                                                                                    };
+                                                                                                    foodData.push(foodInfo);
+                                                                                                }
 
-                                                              <div class="col-md-3 col-sm-4">
-                                                                  <svg style="font-size: 30px; fill: rgba(128, 0, 128, 0.486)"
-                                                                      xmlns="http://www.w3.org/2000/svg"
-                                                                      height="1em"
-                                                                      viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                                                      <path
-                                                                          d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
-                                                                  </svg>
-                                                                  <p class="fs-2 mt-3"
-                                                                      style="color: gray ;">Ghế nằm
-                                                                  </p>
-                                                              </div>
-                                                          </div>
-                                                          {{-- food --}}
-                                                          <div>
-                                                              <hr class="border-3 border-black mt-5">
-                                                              <h3>Đồ ăn</h3>
+                                                                                                total += quantity * item.price;
+                                                                                            });
+
+                                                                                            // Chuyển đối tượng foodData thành một chuỗi JSON và cập nhật giá trị của input "FoodValueName".
+                                                                                            document.getElementById('FoodValueName').value = JSON.stringify(foodData);
+                                                                                            document.getElementById('totalPriceFood').textContent = total.toLocaleString();
+                                                                                            document.getElementById('totalPriceFoodValue').value = total;
+                                                                                        }
+
+                                                                                        $(document).ready(function() {
+                                                                                            var selectedSeats = [];
+                                                                                            var maxSeats = 8; // Số lượng ghế tối đa có thể chọn
+
+                                                                                            $('.iconchuadat').click(function() {
+                                                                                                var seat = $(this);
+
+                                                                                                if (selectedSeats.length < maxSeats || seat.hasClass('selected')) {
+                                                                                                    if (seat.hasClass('selected')) {
+                                                                                                        // Trả lại màu ban đầu và loại bỏ khỏi danh sách ghế đã chọn
+                                                                                                        seat.css('color', '#BABBC3');
+                                                                                                        seat.removeClass('selected');
+                                                                                                        selectedSeats.splice(selectedSeats.indexOf(seat), 1);
+                                                                                                    } else {
+                                                                                                        // Thay đổi màu và thêm vào danh sách ghế đã chọn
+                                                                                                        seat.css('color', '#03599D');
+                                                                                                        seat.addClass('selected');
+                                                                                                        selectedSeats.push(seat);
+                                                                                                    }
+                                                                                                }
+                                                                                            });
+                                                                                        });
 
 
-                                                              <div>
-                                                                  <!-- Đoạn mã HTML -->
-                                                                  @foreach ($food as $item)
-                                                                      <div
-                                                                          class="card mb-3 col-md-5 m-5 product-card">
-                                                                          <div class="row g-0">
-                                                                              <div class="col-md-4">
-                                                                                  <img src="{{ asset('storage/images/' . $item->thumb) }}"
-                                                                                      class="img-fluid rounded-start"
-                                                                                      alt="...">
-                                                                              </div>
-                                                                              <div class="col-md-8">
-                                                                                  <div
-                                                                                      class="card-body">
-                                                                                      <h5
-                                                                                          class="card-title product-title">
-                                                                                          {{ $item->name }}
-                                                                                      </h5>
-                                                                                      <p
-                                                                                          class="card-text product-description">
-                                                                                          {{ $item->content }}
-                                                                                      </p>
-                                                                                      <p
-                                                                                          class="card-text product-price">
-                                                                                          <small
-                                                                                              class="text-body-secondary">Giá:
-                                                                                              {{ $item->price }}đ</small>
-                                                                                      </p>
-                                                                                      <div class="input_number_product  col-md-8 d-flex mb-4"
-                                                                                          style="height: 25px">
-                                                                                          <input
-                                                                                              type="number"
-                                                                                              id="quantity_{{ $item->id }}"
-                                                                                              name="quantity_{{ $item->id }}"
-                                                                                              value="0"
-                                                                                              min="0"
-                                                                                              data-food-name="{{ $item->name }}"
-                                                                                              data-food-id="{{ $item->id }}"
-                                                                                              onchange="calculateTotal()">
-                                                                                      </div>
-                                                                                  </div>
-                                                                              </div>
-                                                                          </div>
-                                                                      </div>
-                                                                  @endforeach
 
-                                                              </div>
-                                                          </div>
-                                                          {{-- food --}}
-                                                      </div>
-                                                      
-                                                  </div>
-                                                  
+                                                                                        function kiemTraChonGhe() {
+                                                                                            if (selectedSeats.length === 0) {
+                                                                                                alert("Vui lòng chọn ít nhất một ghế trước khi tiếp tục.");
+                                                                                                return false;
+                                                                                            } else {
+                                                                                                return true;
+                                                                                            }
+                                                                                        }
+                                                                                    </script>
+
+                                                                                </div>
+                                                                                <div class="row text-center m-5 mt-5 p-4"
+                                                                                    style="margin-top: 30px; background-color: #F8F8F8">
+                                                                                    <div class="col-md-3 col-sm-4">
+                                                                                        <svg style="font-size: 30px; fill: #BABBC3"
+                                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                                            height="1em"
+                                                                                            viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                            <path
+                                                                                                d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+                                                                                        </svg>
+                                                                                        <p class="fs-2 mt-3"
+                                                                                            style="color: gray ;">Ghế
+                                                                                            Thường
+                                                                                        </p>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-3 col-sm-4">
+                                                                                        <svg style="font-size: 30px; fill: rgba(0, 128, 0, 0.486)"
+                                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                                            height="1em"
+                                                                                            viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                            <path
+                                                                                                d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+                                                                                        </svg>
+                                                                                        <p class="fs-2 mt-3"
+                                                                                            style="color: gray ;">Ghế Vip
+                                                                                        </p>
+                                                                                        {{-- {{$count}} --}}
+                                                                                    </div>
+
+
+                                                                                    <div class="col-md-3 col-sm-4">
+                                                                                        <svg style="font-size: 30px; fill: rgba(255, 166, 0, 0.492)"
+                                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                                            height="1em"
+                                                                                            viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                            <path
+                                                                                                d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+                                                                                        </svg>
+                                                                                        <p class="fs-2 mt-3"
+                                                                                            style="color: gray ;">Ghế Đôi
+                                                                                        </p>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-3 col-sm-4">
+                                                                                        <svg style="font-size: 30px; fill: rgba(128, 0, 128, 0.486)"
+                                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                                            height="1em"
+                                                                                            viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                                                            <path
+                                                                                                d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+                                                                                        </svg>
+                                                                                        <p class="fs-2 mt-3"
+                                                                                            style="color: gray ;">Ghế nằm
+                                                                                        </p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                {{-- food --}}
+                                                                                <div>
+                                                                                    <hr class="border-3 border-black mt-5">
+                                                                                    <h3>Đồ ăn</h3>
+
+
+                                                                                    <div>
+                                                                                        <!-- Đoạn mã HTML -->
+                                                                                        @foreach ($food as $item)
+                                                                                            <div
+                                                                                                class="card mb-3 col-md-5 m-5 product-card">
+                                                                                                <div class="row g-0">
+                                                                                                    <div class="col-md-4">
+                                                                                                        <img src="{{ asset('storage/images/' . $item->thumb) }}"
+                                                                                                            class="img-fluid rounded-start"
+                                                                                                            alt="...">
+                                                                                                    </div>
+                                                                                                    <div class="col-md-8">
+                                                                                                        <div
+                                                                                                            class="card-body">
+                                                                                                            <h5
+                                                                                                                class="card-title product-title">
+                                                                                                                {{ $item->name }}
+                                                                                                            </h5>
+                                                                                                            <p
+                                                                                                                class="card-text product-description">
+                                                                                                                {{ $item->content }}
+                                                                                                            </p>
+                                                                                                            <p
+                                                                                                                class="card-text product-price">
+                                                                                                                <small
+                                                                                                                    class="text-body-secondary">Giá:
+                                                                                                                    {{ $item->price }}đ</small>
+                                                                                                            </p>
+                                                                                                            <div class="input_number_product  col-md-8 d-flex mb-4"
+                                                                                                                style="height: 25px">
+                                                                                                                <input
+                                                                                                                    type="number"
+                                                                                                                    id="quantity_{{ $item->id }}"
+                                                                                                                    name="quantity_{{ $item->id }}"
+                                                                                                                    value="0"
+                                                                                                                    min="0"
+                                                                                                                    data-food-name="{{ $item->name }}"
+                                                                                                                    data-food-id="{{ $item->id }}"
+                                                                                                                    onchange="calculateTotal()">
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        @endforeach
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                {{-- food --}}
+                                                                            </div>
+
+                                                                        </div>
+
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1794,3 +1821,27 @@
                     </div>
                 </div>
             @endsection
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('.update-seat').on('click', function(e) {
+                        e.preventDefault();
+
+                        var seatId = $(this).data('seat-id');
+
+                        $.ajax({
+                            type: 'POST', // Hoặc 'GET' tùy thuộc vào cách bạn cài đặt route
+                            url: '/updates/' + seatId,
+                            data: {
+                                _token: '{{ csrf_token() }}'
+                            }, // Cần thêm token CSRF nếu bạn sử dụng POST
+                            success: function(data) {
+                                console.log(data); // Xử lý dữ liệu trả về (nếu cần)
+                            },
+                            error: function(error) {
+                                console.log(error);
+                            }
+                        });
+                    });
+                });
+            </script>

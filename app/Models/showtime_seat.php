@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class showtime_seat extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'isFreeze',
+    ];
 }

@@ -47,112 +47,112 @@ class PayController extends Controller
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(0)->limit(12)->get();
          $seats2 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(12)->limit(10)->get();
          $seats3 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(22)->limit(12)->get();
          $seats4 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(34)->limit(10)->get();
          $seats5 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(44)->limit(12)->get();
          $seats6 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(56)->limit(10)->get();
          $seats7 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(66)->limit(12)->get();
          $seats8 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(78)->limit(12)->get();
          $f1 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(0)->limit(9)->get();
          $f2 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(9)->limit(8)->get();
          $f3 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(17)->limit(9)->get();
          $f4 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(26)->limit(9)->get();
          $f5 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(35)->limit(8)->get();
          $f6 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(43)->limit(8)->get();
          $f7 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(51)->limit(9)->get();
          $f8 = DB::table('showtime_seats')
          ->join('seats', 'showtime_seats.seat_id', '=', 'seats.id')
          ->join('typeseats', 'seats.typeSeat_id', '=', 'typeseats.id')
          ->where('showtime_seats.showtime_id', $selectedShowTimeId)
-         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive', 'showtime_seats.seat_id as showtime_seat_id')
+         ->select('seats.*', 'typeseats.*', 'showtime_seats.isActive','showtime_seats.isFreeze','showtime_seats.id', 'showtime_seats.seat_id as showtime_seat_id')
          ->orderBy("showtime_seats.seat_id", "asc")
          ->offset(60)->limit(9)->get();
          $count = DB::table("showtime_seats")->where("showtime_id",$selectedShowTimeId)->count();
@@ -392,5 +392,19 @@ class PayController extends Controller
             'FoodValueName'
         ));
     }
+
+    public function updates($showtime_seat_id){
+        $showtime_seat = showtime_seat::find($showtime_seat_id);
+        if ($showtime_seat->isFreeze == 1)  {
+            $showtime_seat->update(['isFreeze' => 2]);
+        } else {
+            $showtime_seat->update(['isFreeze' => 1]);
+        }
+    
+        return response()->json(['message' => 'Cập nhật không thành công']);
+    }
+    
+    
+    
 
 }
