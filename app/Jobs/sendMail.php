@@ -18,9 +18,11 @@ class sendMail implements ShouldQueue
     /**
      * Create a new job instance.
      */
+    public $email;
     public $ticket;
-    public function __construct($ticket)
+    public function __construct($email,$ticket)
     {
+        $this->email = $email;
         $this->ticket = $ticket;
     }
 
@@ -29,7 +31,7 @@ class sendMail implements ShouldQueue
      */
     public function handle(): void
     {
-        // $user = auth()->user();
-        // Mail::to($user->email)->send(new BookTicket());
+            Mail::to($this->email)->send(new BookTicket($this->ticket));
+        
     }
 }

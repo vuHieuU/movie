@@ -9,6 +9,7 @@ use App\Models\News;
 use App\Jobs\SenMail;
 use App\Models\combo;
 
+use App\Jobs\sendMail;
 use App\Models\coupon;
 use App\Models\ticket;
 use App\Mail\BookTicket;
@@ -17,8 +18,8 @@ use App\Models\ticketFood;
 use App\Models\coupon_usage;
 use App\Models\Notification;
 use Illuminate\Http\Request;
-use App\Models\showtime_seat;
 
+use App\Models\showtime_seat;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
@@ -282,11 +283,11 @@ class PayController extends Controller
     $notification->tickets_id = $ticket->id;
     $notification->save();
 
-    // SenMail::dispatch($user->email)->delay(now()->addSeconds(10));
-    try {
-        Mail::to($user->email)->send(new BookTicket($ticket));
-    } catch (\Throwable $th) {
-    }
+    sendMail::dispatch($user->email,$ticket)->delay(now()->addSeconds(10));
+    // try {
+    //     Mail::to($user->email)->send(new BookTicket($ticket));
+    // } catch (\Throwable $th) {
+    // }
 
     $selectSeatArray = explode(',', $selectedSeatsValueID);
 
@@ -366,11 +367,11 @@ class PayController extends Controller
             $notification->tickets_id = $ticket->id;
             $notification->save();
         
-            // SenMail::dispatch($user->email)->delay(now()->addSeconds(10));
-            try {
-                Mail::to($user->email)->send(new BookTicket($ticket));
-            } catch (\Throwable $th) {
-            }
+            sendMail::dispatch($user->email,$ticket)->delay(now()->addSeconds(10));
+            // try {
+            //     Mail::to($user->email)->send(new BookTicket($ticket));
+            // } catch (\Throwable $th) {
+            // }
         
 
             $selectSeatArray = explode(',', $selectedSeatsValueID);
