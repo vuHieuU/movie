@@ -13,8 +13,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command('app:clear-expired-data')->everyMinute();
+        $schedule->command('app:clear-expired-data')->daily();
         $schedule->command('update:status')->everyTenMinutes();
+        $schedule->command('queue:work')->everyMinute();
     }
 
     /**
