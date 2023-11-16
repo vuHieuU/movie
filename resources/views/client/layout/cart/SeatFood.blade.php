@@ -1570,6 +1570,7 @@
                                                                                                                     name="quantity_{{ $item->id }}"
                                                                                                                     value="0"
                                                                                                                     min="0"
+                                                                                                                    max="{{ $item->qty }}"
                                                                                                                     data-food-name="{{ $item->name }}"
                                                                                                                     data-food-id="{{ $item->id }}"
                                                                                                                     onchange="calculateTotal()">
