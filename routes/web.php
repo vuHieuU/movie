@@ -109,48 +109,48 @@ Route::middleware('auth', 'role:admin')->group(function () {
     Route::get('/admin', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('admin');
     Route::get('/admin/home', [App\Http\Controllers\admin\HomeController::class, 'index'])->name('index');
     Route::prefix('role')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\roleController::class, 'index']);
-        Route::get('create', [App\Http\Controllers\admin\roleController::class, 'create']);
-        Route::post('store', [App\Http\Controllers\admin\roleController::class, 'store']);
-        Route::get('edit/{id}', [App\Http\Controllers\admin\roleController::class, 'edit']);
-        Route::post('update/{id}', [App\Http\Controllers\admin\roleController::class, 'update']);
-        Route::get('delete/{id}', [App\Http\Controllers\admin\roleController::class, 'destroy']);
+        Route::get('index', [App\Http\Controllers\admin\roleController::class, 'index'])->middleware('permission:show-role');
+        Route::get('create', [App\Http\Controllers\admin\roleController::class, 'create'])->middleware('permission:create-role');
+        Route::post('store', [App\Http\Controllers\admin\roleController::class, 'store'])->middleware('permission:create-role');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\roleController::class, 'edit'])->middleware('permission:show-role');
+        Route::post('update/{id}', [App\Http\Controllers\admin\roleController::class, 'update'])->middleware('permission:update-role');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\roleController::class, 'destroy'])->middleware('permission:delete-role');
     });
     // Users
     Route::prefix('user')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\userController::class, 'index'])->name('index_user');
-        Route::get('show/{id}', [App\Http\Controllers\admin\userController::class, 'show'])->name('show.user');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\userController::class, 'edit']);
-        Route::post('update/{id}', [App\Http\Controllers\admin\userController::class, 'update']);
-        Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy'])->name('remove_user');
-        Route::get('showTicketUser/{id}', [App\Http\Controllers\admin\userController::class, 'showTicketUser'])->name('showTicketUser.user');
+        Route::get('index', [App\Http\Controllers\admin\userController::class, 'index'])->name('index_user')->middleware('permission:show-user');
+        Route::get('show/{id}', [App\Http\Controllers\admin\userController::class, 'show'])->name('show.user')->middleware('permission:create-user');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\userController::class, 'edit'])->middleware('permission:create-user');
+        Route::post('update/{id}', [App\Http\Controllers\admin\userController::class, 'update'])->middleware('permission:show-user');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy'])->name('remove_user')->middleware('permission:update-user');
+        Route::get('showTicketUser/{id}', [App\Http\Controllers\admin\userController::class, 'showTicketUser'])->name('showTicketUser.user')->middleware('permission:delete-user');
     });
     Route::prefix('admin')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\userController::class, 'admin_index'])->name('index_admin');
-        Route::get('create', [App\Http\Controllers\admin\userController::class, 'create']);
-        Route::post('store', [App\Http\Controllers\admin\userController::class, 'store']);
-        Route::get('edit/{id}', [App\Http\Controllers\admin\userController::class, 'edit_admin'])->name('edit_admin');
-        Route::post('update/{id}', [App\Http\Controllers\admin\userController::class, 'update_admin'])->name('update_admin');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy_admin'])->name('remove_admin');
+        Route::get('index', [App\Http\Controllers\admin\userController::class, 'admin_index'])->name('index_admin')->middleware('permission:show-user');
+        Route::get('create', [App\Http\Controllers\admin\userController::class, 'create'])->middleware('permission:create-user');
+        Route::post('store', [App\Http\Controllers\admin\userController::class, 'store'])->middleware('permission:create-user');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\userController::class, 'edit_admin'])->name('edit_admin')->middleware('permission:show-user');
+        Route::post('update/{id}', [App\Http\Controllers\admin\userController::class, 'update_admin'])->name('update_admin')->middleware('permission:update-user');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\userController::class, 'destroy_admin'])->name('remove_admin')->middleware('permission:delete-user');
     });
     //Coupon (ma giam gia)
     Route::prefix('coupon')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\couponController::class, 'index'])->name('coupon.index');
-        Route::get('create', [App\Http\Controllers\admin\couponController::class, 'create'])->name('coupon.create');
-        Route::post('store', [App\Http\Controllers\admin\couponController::class, 'store'])->name('coupon.store');
-        Route::get('edits/{id}', [App\Http\Controllers\admin\couponController::class, 'edit'])->name('coupon.edit');
-        Route::put('update/{id}', [App\Http\Controllers\admin\couponController::class, 'update'])->name('coupon.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\couponController::class, 'destroy'])->name('coupon.delete');
+        Route::get('index', [App\Http\Controllers\admin\couponController::class, 'index'])->name('coupon.index')->middleware('permission:show-coupon');
+        Route::get('create', [App\Http\Controllers\admin\couponController::class, 'create'])->name('coupon.create')->middleware('permission:create-coupon');
+        Route::post('store', [App\Http\Controllers\admin\couponController::class, 'store'])->name('coupon.store')->middleware('permission:create-coupon');
+        Route::get('edits/{id}', [App\Http\Controllers\admin\couponController::class, 'edit'])->name('coupon.edit')->middleware('permission:show-coupon');
+        Route::put('update/{id}', [App\Http\Controllers\admin\couponController::class, 'update'])->name('coupon.update')->middleware('permission:update-coupon');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\couponController::class, 'destroy'])->name('coupon.delete')->middleware('permission:delete-coupon');
     });
     // food
     Route::prefix('food')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\foodController::class, 'index'])->name('food.index');
-        Route::get('create', [App\Http\Controllers\admin\foodController::class, 'create'])->name('food.create');
-        Route::post('store', [App\Http\Controllers\admin\foodController::class, 'store'])->name('food.store');
-        Route::get('show/{id}', [App\Http\Controllers\admin\foodController::class, 'show'])->name('food.show');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\foodController::class, 'edit'])->name('food.edit');
-        Route::put('update/{id}', [App\Http\Controllers\admin\foodController::class, 'update'])->name('food.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\foodController::class, 'destroy'])->name('food.delete');
+        Route::get('index', [App\Http\Controllers\admin\foodController::class, 'index'])->name('food.index')->middleware('permission:show-food');
+        Route::get('create', [App\Http\Controllers\admin\foodController::class, 'create'])->name('food.create')->middleware('permission:create-food');
+        Route::post('store', [App\Http\Controllers\admin\foodController::class, 'store'])->name('food.store')->middleware('permission:create-food');
+        Route::get('show/{id}', [App\Http\Controllers\admin\foodController::class, 'show'])->name('food.show')->middleware('permission:show-food');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\foodController::class, 'edit'])->name('food.edit')->middleware('permission:show-food');
+        Route::put('update/{id}', [App\Http\Controllers\admin\foodController::class, 'update'])->name('food.update')->middleware('permission:update-food');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\foodController::class, 'destroy'])->name('food.delete')->middleware('permission:delete-food');
     });
     // combo
     Route::prefix('combo')->group(function () {
@@ -163,22 +163,22 @@ Route::middleware('auth', 'role:admin')->group(function () {
     });
     // Thể loại Phim
     Route::prefix('categories')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\categoryController::class, 'index'])->name('categories.index');
-        Route::get('create', [App\Http\Controllers\admin\categoryController::class, 'create'])->name('categories.create');
-        Route::post('store', [App\Http\Controllers\admin\categoryController::class, 'store'])->name('categories.store');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\categoryController::class, 'edit'])->name('categories.edit');
-        Route::put('update/{id}', [App\Http\Controllers\admin\categoryController::class, 'update'])->name('categories.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\categoryController::class, 'destroy'])->name('categories.destroy');
+        Route::get('index', [App\Http\Controllers\admin\categoryController::class, 'index'])->name('categories.index')->middleware('permission:show-categories');
+        Route::get('create', [App\Http\Controllers\admin\categoryController::class, 'create'])->name('categories.create')->middleware('permission:create-categories');
+        Route::post('store', [App\Http\Controllers\admin\categoryController::class, 'store'])->name('categories.store')->middleware('permission:create-categories');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\categoryController::class, 'edit'])->name('categories.edit')->middleware('permission:show-categories');
+        Route::put('update/{id}', [App\Http\Controllers\admin\categoryController::class, 'update'])->name('categories.update')->middleware('permission:update-categories');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\categoryController::class, 'destroy'])->name('categories.destroy')->middleware('permission:delete-categories');
     });
     // Danh sách Phim
     Route::prefix('films')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\filmController::class, 'index'])->name('films.index');
-        Route::get('create', [App\Http\Controllers\admin\filmController::class, 'create'])->name('films.create');
-        Route::post('store', [App\Http\Controllers\admin\filmController::class, 'store'])->name('films.store');
-        Route::get('show/{id}', [App\Http\Controllers\admin\filmController::class, 'show'])->name('films.show');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\filmController::class, 'edit'])->name('films.edit');
-        Route::post('update/{id}', [App\Http\Controllers\admin\filmController::class, 'update'])->name('films.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\filmController::class, 'destroy'])->name('films.destroy');
+        Route::get('index', [App\Http\Controllers\admin\filmController::class, 'index'])->name('films.index')->middleware('permission:show-films');
+        Route::get('create', [App\Http\Controllers\admin\filmController::class, 'create'])->name('films.create')->middleware('permission:create-films');
+        Route::post('store', [App\Http\Controllers\admin\filmController::class, 'store'])->name('films.store')->middleware('permission:create-films');
+        Route::get('show/{id}', [App\Http\Controllers\admin\filmController::class, 'show'])->name('films.show')->middleware('permission:show-films');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\filmController::class, 'edit'])->name('films.edit')->middleware('permission:show-films');
+        Route::post('update/{id}', [App\Http\Controllers\admin\filmController::class, 'update'])->name('films.update')->middleware('permission:update-films');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\filmController::class, 'destroy'])->name('films.destroy')->middleware('permission:delete-films');
     });
     //city
     Route::prefix('city')->group(function () {

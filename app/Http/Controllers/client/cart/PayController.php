@@ -22,6 +22,7 @@ use Illuminate\Http\Request;
 use App\Models\showtime_seat;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Jobs\ResetFreezeStatusJob;
 use Illuminate\Support\Facades\Mail;
 
 class PayController extends Controller
@@ -398,6 +399,7 @@ class PayController extends Controller
         $showtime_seat = showtime_seat::find($showtime_seat_id);
         if ($showtime_seat->isFreeze == 1)  {
             $showtime_seat->update(['isFreeze' => 2]);
+            // ResetFreezeStatusJob::dispatch($showtime_seat)->delay(now()->addSeconds(30));
         } else {
             $showtime_seat->update(['isFreeze' => 1]);
         }

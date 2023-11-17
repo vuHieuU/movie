@@ -83,11 +83,13 @@
                                 <i class="las la-minus"></i><span>Danh sách Admin</span>
                             </a>
                         </li>
+                        @can('show-role')
                         <li class="">
                             <a href="/role/index">
                                 <i class="las la-minus"></i><span>Danh sách phân quyền</span>
                             </a>
-                        </li>
+                        </li>  
+                        @endcan
                     </ul>
                 </li>
 
