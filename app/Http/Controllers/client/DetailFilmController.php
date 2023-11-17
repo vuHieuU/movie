@@ -32,13 +32,10 @@ class DetailFilmController extends Controller
             $numberOfDays = 7; // Số ngày bạn muốn liệt kê
             $dateList = array();
             $currentDate = strtotime(date('Y-m-d H:i:s')); // Lấy timestamp của ngày hiện tại
-            
-            // Bỏ qua ngày hiện tại
-            $currentDate = strtotime('+1 day', $currentDate);
-            
+
             while (count($dateList) < $numberOfDays) {
-                $dateList[] = date('Y-m-d', $currentDate); // Thêm ngày hiện tại vào danh sách
-                $currentDate = strtotime('+1 day', $currentDate); // Tăng ngày lên 1
+                $dateList[] = date('Y-m-d', $currentDate);
+                $currentDate = strtotime('+1 day', $currentDate);
             }
             
             $ShowTime = ShowTime::where('film_id', $film->id)
