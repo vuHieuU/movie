@@ -313,38 +313,37 @@
 
                                                         <script>
                                                             var selectedCinemaId = "";
-
-                                                            // Lắng nghe sự kiện khi một rạp được chọn
-                                                            var cinemaLinks = document.querySelectorAll(".li");
-                                                            cinemaLinks.forEach(function(cinemaLink) {
-                                                                cinemaLink.addEventListener("click", function(event) {
-                                                                    event.preventDefault();
-                                                                    selectedCinemaId = cinemaLink.getAttribute("data-cinema-id");
-
-                                                                    // Ẩn tất cả các ngày chiếu
-                                                                    var showtimeDays = document.querySelectorAll(".showtime-day");
-                                                                    showtimeDays.forEach(function(day) {
-                                                                        day.style.display = "none";
-                                                                    });
-
-                                                                    // Hiển thị ngày chiếu cho rạp đã chọn
-                                                                    var selectedShowtimeDays = document.querySelectorAll(
-                                                                        ".showtime-day[data-showtime-cinema-id='" + selectedCinemaId + "']");
-                                                                    selectedShowtimeDays.forEach(function(day) {
-                                                                        day.style.display = "block";
-                                                                    });
+                                                        
+                                                            // Function to show dates and hours for the selected cinema
+                                                            function showDatesAndHoursForCinema(cinemaId) {
+                                                                selectedCinemaId = cinemaId;
+                                                        
+                                                                // Hide all date elements
+                                                                var showtimeDays = document.querySelectorAll(".showtime-day");
+                                                                showtimeDays.forEach(function (day) {
+                                                                    day.style.display = "none";
                                                                 });
-                                                            });
-
-
-                                                            var showtimeDayElements = document.querySelectorAll(".showtime-day");
-                                                            showtimeDayElements.forEach(function(element) {
-                                                                element.addEventListener("click", function() {
-                                                                    var selectedDay = element.getAttribute("data-showtime-date");
-                                                                    selectDate(selectedDay);
-
+                                                        
+                                                                // Show dates for the selected cinema
+                                                                var selectedShowtimeDays = document.querySelectorAll(
+                                                                    ".showtime-day[data-showtime-cinema-id='" + selectedCinemaId + "']"
+                                                                );
+                                                                selectedShowtimeDays.forEach(function (day) {
+                                                                    day.style.display = "block";
+                                                                });
+                                                        
+                                                                // Show hours for the selected cinema and date
+                                                                showHoursForSelectedCinemaAndDate();
+                                                            }
+                                                        
+                                                            // Function to show hours for the selected cinema and date
+                                                            function showHoursForSelectedCinemaAndDate() {
+                                                                var selectedDayElement = document.querySelector(".showtime-day[data-showtime-date='" + selectedDate + "']");
+                                                                if (selectedDayElement) {
+                                                                    var selectedDay = selectedDayElement.getAttribute("data-showtime-date");
+                                                        
                                                                     var hourButtons = document.querySelectorAll(".hour-button");
-                                                                    hourButtons.forEach(function(button) {
+                                                                    hourButtons.forEach(function (button) {
                                                                         var showtimeDate = button.getAttribute("data-showtime-date");
                                                                         var showtimeCinemaId = button.getAttribute("data-showtime-cinema-id");
                                                                         if (showtimeDate === selectedDay && showtimeCinemaId === selectedCinemaId) {
@@ -353,26 +352,47 @@
                                                                             button.style.display = "none";
                                                                         }
                                                                     });
+                                                                }
+                                                            }
+                                                        
+                                                            // Call the function to show dates and hours for the first cinema when the modal is opened
+                                                            document.addEventListener("DOMContentLoaded", function () {
+                                                                showDatesAndHoursForCinema(document.querySelector(".li").getAttribute("data-cinema-id"));
+                                                            });
+                                                        
+                                                            var cinemaLinks = document.querySelectorAll(".li");
+                                                            cinemaLinks.forEach(function (cinemaLink) {
+                                                                cinemaLink.addEventListener("click", function (event) {
+                                                                    event.preventDefault();
+                                                                    showDatesAndHoursForCinema(cinemaLink.getAttribute("data-cinema-id"));
                                                                 });
                                                             });
-
+                                                        
+                                                            var showtimeDayElements = document.querySelectorAll(".showtime-day");
+                                                            showtimeDayElements.forEach(function (element) {
+                                                                element.addEventListener("click", function () {
+                                                                    selectDate(element.getAttribute("data-showtime-date"));
+                                                                    showHoursForSelectedCinemaAndDate();
+                                                                });
+                                                            });
+                                                        
                                                             function selectDate(date) {
                                                                 selectedDate = date;
                                                                 var selectDateElement = document.getElementById("selectedDate");
                                                                 selectDateElement.value = selectedDate;
                                                             }
-
+                                                        
                                                             function selectHour(hour) {
                                                                 selectedHour = hour;
-
                                                                 var selectHourElement = document.getElementById("selectedHour");
-                                                                selectHourElement.value = selectedHour
+                                                                selectHourElement.value = selectedHour;
+                                                        
                                                                 var selectShowTimeId = event.currentTarget.getAttribute("data-showtime-id");
-
-                                                                var selectShowTimeIdElement = document.getElementById("selectedShowTimeId")
-                                                                selectShowTimeIdElement.value = selectShowTimeId
+                                                                var selectShowTimeIdElement = document.getElementById("selectedShowTimeId");
+                                                                selectShowTimeIdElement.value = selectShowTimeId;
                                                             }
                                                         </script>
+                                                        
                                                         {{-- model --}}
 
 
