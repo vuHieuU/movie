@@ -269,6 +269,8 @@ Route::middleware('auth', 'role:admin')->group(function () {
     //Statistical
     Route::prefix('statistical')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\StatisticalController::class, "index"])->name('statistical.index');
+        Route::get('indexFood', [App\Http\Controllers\admin\StatisticalController::class, "indexFood"])->name('statistical.indexFood');
+        Route::get('indexFilm', [App\Http\Controllers\admin\StatisticalController::class, "indexFilm"])->name('statistical.indexFilm');
         Route::get('cinema/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailCinema"])->name('cinema.name');
         Route::get('detailFilm/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFilm"])->name('detailFilm.name');
     });

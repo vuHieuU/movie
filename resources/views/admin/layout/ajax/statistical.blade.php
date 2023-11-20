@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="card card-block card-stretch card-height">
+                    {{--<div class="card card-block card-stretch card-height">
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-4 card-total-sale">
                                 <div class="icon iq-icon-box-2 bg-success-light">
@@ -36,7 +36,7 @@
                                     <h4>{{ $CountFilmCinema }} </h4>
                                 </div>
                             </div>
-                            {{-- <div class="card-header-toolbar d-flex align-items-center">
+                             <div class="card-header-toolbar d-flex align-items-center">
                                 <div class="dropdown">
                                     <span class="dropdown-toggle dropdown-bg btn" id="z"
                                         data-toggle="dropdown">
@@ -69,9 +69,9 @@
                                         });
                                     </script>
                                 </div>
-                            </div> --}}
+                            </div> 
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
             </div>
         </div>
