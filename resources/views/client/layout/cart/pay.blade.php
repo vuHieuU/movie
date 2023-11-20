@@ -202,7 +202,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            </div>
+                            </div>z
                             <div class="col-md-12 mt-3">
                                         <form action="{{ route('applyCoupon') }}" method="POST">
                                             @csrf
