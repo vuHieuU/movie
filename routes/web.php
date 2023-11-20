@@ -274,6 +274,8 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('cinema/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailCinema"])->name('cinema.name');
         Route::get('detailFilm/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFilm"])->name('detailFilm.name');
         Route::get('detailFood/{days}', [App\Http\Controllers\admin\StatisticalController::class, "detailFood"])->name('detailFilm.food');
+        Route::get('detailFoodCinema/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFoodCinema"])->name('detailFilm.food');
+        Route::get('detailFoodCinemas/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFoodCinemas"])->name('detailFilm.food');
         Route::get('detailFilms/{days}', [App\Http\Controllers\admin\StatisticalController::class, "detailFilms"])->name('detailFilm.food');
     });
     
