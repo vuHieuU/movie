@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\admin\filmsRequest;
 use App\Http\Requests\admin\filmUpdateRequest;
-
+use Illuminate\Support\Str;
 class filmController extends Controller
 {
     /**
@@ -39,6 +39,7 @@ class filmController extends Controller
         $data->name = $request->input('name');
         $data->duration = $request->input('duration');
         $data->description = $request->input('description');
+        $data->slug = Str::slug($request->input('name'));
         $data->director = $request->input('director');
         $data->actor = $request->input('actor');
         $data->language = $request->input('language');
@@ -91,6 +92,7 @@ class filmController extends Controller
         $data->name = $request->input('name');
         $data->duration = $request->input('duration');
         $data->description = $request->input('description');
+        $data->slug = Str::slug($request->input('name'));
         $data->director = $request->input('director');
         $data->actor = $request->input('actor');
         $data->language = $request->input('language');

@@ -19,11 +19,12 @@ class DetailFilmController extends Controller
      * Display a listing of the resource.
      */
 
-    public function index($id)
+    public function index($slug)
     {
         $check = 1;
         // $film_show_time = ShowTime::findOrFail($id);
-        $film = film::findOrFail($id);
+        // $film = film::findOrFail($id);
+        $film = film::where('slug', $slug)->firstOrFail();
         // $cinema_id = Cinema::findOrFail($id);
         $filmtopmovie = Film::orderByDesc("created_at")->limit(4)->get();
         
@@ -51,11 +52,11 @@ class DetailFilmController extends Controller
         $categoryfilm_category = DB::table("categories")
             ->join("film_categories", "categories.id", "=", "film_categories.dmid")
             ->select("categories.*", "film_categories.*")
-            ->where("film_categories.film_id", $id)
+            ->where("film_categories.film_id", $slug)
             ->get();
         if (auth()->check()) {
             $user = Auth::user()->id;
-            $exists = favorite_film::where('user_id', $user)->where('film_id', $id)->exists();
+            $exists = favorite_film::where('user_id', $user)->where('film_id', $slug)->exists();
             if ($exists) {
                 $check = 0;
             }
