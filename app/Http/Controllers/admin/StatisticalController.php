@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\ShowTime;
 use Carbon\Carbon;
-use App\Models\food;
 use App\Models\film;
+use App\Models\food;
 use App\Models\cinema;
 use App\Models\ticket;
 use App\Models\category;
+use App\Models\ShowTime;
 use App\Models\ticketFood;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
 
 class StatisticalController extends Controller
 {
-    public function index(Request $request)
-    {
+    public function index(Request $request)    {
         $category = category::get();
         $today = date('Y-m-d');
         // Tính ngày 7 ngày trước
@@ -131,6 +131,144 @@ class StatisticalController extends Controller
                 'cinemaSums',
             )
         );
+    }
+    public function indexFood(Request $request)    {
+        $foodTotals = DB::table('ticket_food')
+        ->join('food', 'ticket_food.name', '=', 'food.name')
+        ->select('food.name', DB::raw('SUM(food.price * ticket_food.quantity) as total'))
+        ->groupBy('food.name')
+        ->get();
+        $grandTotal = 0;
+           foreach($foodTotals as $foodTotal){
+              $grandTotal += $foodTotal->total;
+           }
+           $cinemalist = cinema::get();
+        return view('admin.statistical.Food',compact('grandTotal','foodTotals','cinemalist'));
+    }
+    public function detailFoodCinema($cinema)    {
+        session(['cinema' => $cinema]);
+        $foodTotals = DB::table('ticket_food')
+        ->join('food', 'ticket_food.name', '=', 'food.name')
+        ->select('food.name', DB::raw('SUM(food.price * ticket_food.quantity) as total'))
+        ->where('cinema',$cinema)
+        ->groupBy('food.name')
+        ->get();
+        $grandTotal = 0;
+           foreach($foodTotals as $foodTotal){
+              $grandTotal += $foodTotal->total;
+           }
+           $cinemalist = cinema::get();
+        return view('admin.layout.ajax.foodDetailCinema',compact('grandTotal','foodTotals','cinemalist'));
+    }
+    public function detailFood($days)
+    {
+        $currentDate = Carbon::now();
+        $startDate = $currentDate->copy()->subDays($days);
+        $revenueSelectedDays = $this->calculateRevenue($startDate, $currentDate);
+
+        $startDates = now()->subDays($days);
+
+        $foodTotals = TicketFood::join('food', 'ticket_food.name', '=', 'food.name')
+            ->select('food.name', DB::raw('SUM(food.price * ticket_food.quantity) as total'))
+            ->where('ticket_food.created_at', '>=', $startDates)
+            ->groupBy('food.name')
+            ->get();
+        return view('admin.layout.ajax.foodStatistical', compact('revenueSelectedDays','foodTotals'));
+    }
+    public function detailFoodCinemas($days)
+    {
+        $cinema = session('cinema');
+        $currentDate = Carbon::now();
+        $startDate = $currentDate->copy()->subDays($days);
+        $revenueSelectedDays = $this->calculateRevenues($startDate, $currentDate);
+
+        $startDates = now()->subDays($days);
+
+        $foodTotals = TicketFood::join('food', 'ticket_food.name', '=', 'food.name')
+            ->select('food.name', DB::raw('SUM(food.price * ticket_food.quantity) as total'))
+            ->where('ticket_food.created_at', '>=', $startDates)
+            ->where('cinema', $cinema)
+            ->groupBy('food.name')
+            ->get();
+        return view('admin.layout.ajax.foodStatisticals', compact('revenueSelectedDays','foodTotals'));
+    }
+
+    private function calculateRevenue($startDate, $endDate) {
+        $foodTotals = DB::table('ticket_food')
+            ->join('food', 'ticket_food.name', '=', 'food.name')
+            ->whereBetween('ticket_food.created_at', [$startDate, $endDate])
+            ->select('food.name', DB::raw('SUM(food.price * ticket_food.quantity) as total'))
+            ->groupBy('food.name')
+            ->get();
+    
+        $grandTotal = 0;
+        foreach ($foodTotals as $foodTotal) {
+            $grandTotal += $foodTotal->total;
+        }
+    
+        return $grandTotal;
+    }
+    private function calculateRevenues($startDate, $endDate) {
+        $cinema = session('cinema');
+        $foodTotals = DB::table('ticket_food')
+            ->join('food', 'ticket_food.name', '=', 'food.name')
+            ->whereBetween('ticket_food.created_at', [$startDate, $endDate])
+            ->select('food.name', DB::raw('SUM(food.price * ticket_food.quantity) as total'))
+            ->where('cinema', $cinema)
+            ->groupBy('food.name')
+            ->get();
+    
+        $grandTotal = 0;
+        foreach ($foodTotals as $foodTotal) {
+            $grandTotal += $foodTotal->total;
+        }
+    
+        return $grandTotal;
+    }
+    
+    public function indexFilm(Request $request)   {
+        $foodTotals = DB::table('ticket_food')
+        ->join('food', 'ticket_food.name', '=', 'food.name')
+        ->select('food.name', DB::raw('SUM(food.price * ticket_food.quantity) as total'))
+        ->groupBy('food.name')
+        ->get();
+        $grandTotal = 0;
+           foreach($foodTotals as $foodTotal){
+              $grandTotal += $foodTotal->total;
+           }
+        return view('admin.statistical.Film',compact('foodTotals','grandTotal'));
+    }
+
+    public function detailFilms($days)
+    {
+        $currentDate = Carbon::now();
+        $startDate = $currentDate->copy()->subDays($days);
+        $revenueSelectedDays = $this->calculateRevenueFilm($startDate, $currentDate);
+
+        $startDates = now()->subDays($days);
+
+        $foodTotals = TicketFood::join('food', 'ticket_food.name', '=', 'food.name')
+            ->select('food.name', DB::raw('SUM(food.price * ticket_food.quantity) as total'))
+            ->where('ticket_food.created_at', '>=', $startDates)
+            ->groupBy('food.name')
+            ->get();
+        return view('admin.layout.ajax.foodStatistical', compact('revenueSelectedDays','foodTotals'));
+    }
+
+    private function calculateRevenueFilm($startDate, $endDate) {
+        $foodTotals = DB::table('ticket_food')
+            ->join('food', 'ticket_food.name', '=', 'food.name')
+            ->whereBetween('ticket_food.created_at', [$startDate, $endDate])
+            ->select('food.name', DB::raw('SUM(food.price * ticket_food.quantity) as total'))
+            ->groupBy('food.name')
+            ->get();
+    
+        $grandTotal = 0;
+        foreach ($foodTotals as $foodTotal) {
+            $grandTotal += $foodTotal->total;
+        }
+    
+        return $grandTotal;
     }
     public function show($cinemaName)
     {
@@ -289,6 +427,24 @@ class StatisticalController extends Controller
     
         return view('admin.layout.ajax.statisticalDetail', compact('day', 'total'));
     }
+    public function detailFilmCinemasDay($days)
+    {
+        $cinemaId = session('cinemaId');
+        $revenueLastDays = Ticket::where('cinema', $cinemaId)
+            ->where('created_at', '>=', Carbon::now()->subDays($days))
+            ->sum('total');
+
+            $filmsData = Ticket::where('cinema', $cinemaId)
+            ->where('created_at', '>=', Carbon::now()->subDays($days))
+            ->select('film_name', DB::raw('SUM(total) as total_revenue'))
+            ->groupBy('film_name')
+            ->get();
     
+        // Prepare data for the view
+        $filmNames = $filmsData->pluck('film_name')->toArray();
+        $totalRevenues = $filmsData->pluck('total_revenue')->toArray();
     
+        return view('admin.layout.ajax.statisticalFilmDay', compact('revenueLastDays','filmNames','totalRevenues'));
+    }
+  
 }

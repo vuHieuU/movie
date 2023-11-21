@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="card card-block card-stretch card-height">
+                    {{--<div class="card card-block card-stretch card-height">
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-4 card-total-sale">
                                 <div class="icon iq-icon-box-2 bg-success-light">
@@ -36,7 +36,7 @@
                                     <h4>{{ $CountFilmCinema }} </h4>
                                 </div>
                             </div>
-                            {{-- <div class="card-header-toolbar d-flex align-items-center">
+                             <div class="card-header-toolbar d-flex align-items-center">
                                 <div class="dropdown">
                                     <span class="dropdown-toggle dropdown-bg btn" id="z"
                                         data-toggle="dropdown">
@@ -69,9 +69,9 @@
                                         });
                                     </script>
                                 </div>
-                            </div> --}}
+                            </div> 
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
             </div>
         </div>
@@ -203,40 +203,51 @@
                     <div class="header-title">
                         <h4 class="card-title">Doanh thu </h4>
                     </div>
-                    {{-- <div class="card-header-toolbar d-flex align-items-center">
+                    <div class="card-header-toolbar d-flex align-items-center">
                         <div class="dropdown">
-                            <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton007"
-                                data-toggle="dropdown">
-                                Chọn phim<i class="ri-arrow-down-s-line ml-1"></i>
+                            <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton008" data-toggle="dropdown">
+                                Thời gian<i class="ri-arrow-down-s-line ml-1"></i>
                             </span>
-                            <div class="dropdown-menu dropdown-menu-right shadow-none"
-                                aria-labelledby="dropdownMenuButton007">
-                                @foreach ($films as $item)
-                                    <a class="li dropdown-item "
-                                        data-film-id="{{ $item->film_name }}">
-                                        <li onclick="changeDropdownText('{{ $item->film_name }}')">
-                                            {{ $item->film_name }}</li>
-                                    </a>
-                                @endforeach
+                            <div class="dropdown-menu dropdown-menu-right shadow-none" aria-labelledby="dropdownMenuButton008">
+                                <a class="li dropdown-item" data-film-id="7">
+                                    <li onclick="changeDropdownTexts('7 ngày')">7 ngày</li>
+                                </a>
+                                <a class="li dropdown-item" data-film-id="14">
+                                    <li onclick="changeDropdownTexts('14 ngày')">14 ngày</li>
+                                </a>
+                                <a class="li dropdown-item" data-film-id="30">
+                                    <li onclick="changeDropdownTexts('30 ngày')">30 ngày</li>
+                                </a>
                             </div>
-
+                        
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
                             <script>
-                                $(document).ready(function() {
-                                    $("a.li").click(function(event) {
-                                        event.preventDefault();
-                                        var filmId = $(this).data('film-id');
-                                        $.ajax({
-                                            url: "/statistical/index/" + filmId,
-                                            success: function(result) {
-                                                $("#div1").html(result);
-                                            }
+                                    $(document).ready(function() {
+                                            $("a.li").click(function(event) {
+                                                event.preventDefault();
+                                                var days = $(this).data('film-id');
+                                                $.ajax({
+                                                    url: "/statistical/detailFilmCinemasDay/" + days,
+                                                    method: 'GET',
+                                                    success: function(result) {
+                                                        $("#div1").html(result);
+                                                    },
+                                                    error: function(error) {
+                                                        console.error('Error:', error);
+                                                    }
+                                                });
+                                            });
                                         });
-                                    });
-                                });
+                            </script>
+                              <script>
+                                function changeDropdownTexts(selectedOption) {
+                                    var dropdownButton = document.getElementById("dropdownMenuButton008");
+                                    dropdownButton.textContent = selectedOption;
+                                }
                             </script>
                         </div>
-                    </div> --}}
+                        
+    </div>
 
                     <script>
                         function changeDropdownText(selectedOption) {

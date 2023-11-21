@@ -42,7 +42,7 @@ Route::get('/weeklyshowtime/{id}', [App\Http\Controllers\client\WeeklyShowtimeCo
 // comment detail film
 Route::post('/addComment', [App\Http\Controllers\client\CommentController::class, 'store'])->name("comment.store");
 
-Route::get('/chi-tiet-phim/{id}', [App\Http\Controllers\client\DetailFilmController::class, 'index'])->name("filmDetail");
+Route::get('/chi-tiet-phim/{slug}', [App\Http\Controllers\client\DetailFilmController::class, 'index'])->name("filmDetail");
 
 Route::get('/dang-phat', [App\Http\Controllers\client\DangphatController::class, 'index'])->name("dang-phat");
 Route::get('/sap-ra-mat', [App\Http\Controllers\client\SapramatController::class, 'index'])->name("sap-ra-mat");
@@ -270,8 +270,15 @@ Route::middleware('auth', 'role:admin')->group(function () {
     //Statistical
     Route::prefix('statistical')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\StatisticalController::class, "index"])->name('statistical.index');
+        Route::get('indexFood', [App\Http\Controllers\admin\StatisticalController::class, "indexFood"])->name('statistical.indexFood');
+        Route::get('indexFilm', [App\Http\Controllers\admin\StatisticalController::class, "indexFilm"])->name('statistical.indexFilm');
         Route::get('cinema/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailCinema"])->name('cinema.name');
         Route::get('detailFilm/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFilm"])->name('detailFilm.name');
+        Route::get('detailFood/{days}', [App\Http\Controllers\admin\StatisticalController::class, "detailFood"])->name('detailFilm.food');
+        Route::get('detailFoodCinema/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFoodCinema"])->name('detailFilm.food');
+        Route::get('detailFoodCinemas/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFoodCinemas"])->name('detailFilm.food');
+        Route::get('detailFilms/{days}', [App\Http\Controllers\admin\StatisticalController::class, "detailFilms"])->name('detailFilm.food');
+        Route::get('detailFilmCinemasDay/{days}', [App\Http\Controllers\admin\StatisticalController::class, "detailFilmCinemasDay"])->name('detailFilmCinemasDay.film');
     });
     
      // tổng quan

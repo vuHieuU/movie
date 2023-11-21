@@ -254,6 +254,7 @@ class PayController extends Controller
     foreach ($FoodValueName as $foodItem) {
         $ticketFood = new ticketFood();
         $ticketFood->ticket_id = $ticket->id;
+        $ticketFood->cinema = $cinemaName;
         $ticketFood->name = $foodItem['name'];
         $ticketFood->quantity = $foodItem['quantity'];
         $ticketFood->save();

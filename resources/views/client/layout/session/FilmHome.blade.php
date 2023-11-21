@@ -50,7 +50,7 @@ data-id="e615b68" data-element_type="section">
                                                     <a href="{{ $item->trailer }}">
                                                         <i aria-hidden="true" class="fa fa-play"></i>
                                                         Trailer </a>
-                                                    <a href="detail_film/{{ $item->id }}">
+                                                    <a href="detail_film/{{ $item->slug }}">
                                                         <i aria-hidden="true"
                                                             class="fa fa-exclamation"></i>
                                                         Chi tiết </a>
@@ -87,7 +87,7 @@ data-id="e615b68" data-element_type="section">
                                                         class="fancybox.iframe amy-fancybox">
                                                         <i aria-hidden="true" class="fa fa-play"></i>
                                                         Trailer </a>
-                                                    <a href="{{ route('filmDetail', [$item->id]) }}">
+                                                    <a href="{{ route('filmDetail', [$item->slug]) }}">
 
                                                         <i aria-hidden="true"
                                                             class="fa fa-exclamation"></i>
