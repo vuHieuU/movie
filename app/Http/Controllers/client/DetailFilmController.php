@@ -75,7 +75,7 @@ class DetailFilmController extends Controller
         // }
 
         // lấy tất cả comment có id phim = ...
-        $comments = comment::where("film_id", $id)->where("status", 0)->orderByDesc('created_at')->get();
+        $comments = comment::where("film_id", $slug)->where("status", 0)->orderByDesc('created_at')->get();
 
         $title = "Detail";
         return view('client.DetailFilm', compact(

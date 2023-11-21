@@ -193,6 +193,49 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="mb-3">
+                                        <h3>Seo Tags</h3>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="formFile" class="form-label">Meta Title</label>
+                                                <input class="form-control" type="text" name="meta_title">
+                                                @if ($errors->has('meta_title'))
+                                                <span class="text-danger">{{ $errors->first('meta_title') }}</span>
+                                            @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="formFile" class="form-label">Meta Keyword</label>
+                                                <input class="form-control" type="text" name="meta_keyword">
+                                                @if ($errors->has('meta_keyword'))
+                                                <span class="text-danger">{{ $errors->first('meta_keyword') }}</span>
+                                            @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="formFile" class="form-label">Meta Description</label>
+                                                <textarea name="meta_description" id="" rows="4" class="form-control"></textarea>
+                                                @if ($errors->has('meta_description'))
+                                                <span class="text-danger">{{ $errors->first('meta_description') }}</span>
+                                            @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
                                     <button type="submit" class="btn btn-primary mr-2">Thêm</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     <a href="{{route("films.index")}}" class="btn btn-danger text-white">Back</a>

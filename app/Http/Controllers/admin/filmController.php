@@ -47,12 +47,20 @@ class filmController extends Controller
         $data->trailer = $request->input('trailer');
         $data->status = $request->input('status');
 
-        $thumb = $request->file('thumb')->getClientOriginalName();
-        $request->file('thumb')->storeAs('public/images', $thumb);
+        if($request->has("thumb")){
+            $thumb = $request->file('thumb')->getClientOriginalName();
+            $request->file('thumb')->storeAs('public/images', $thumb);
+            $data->thumb = $thumb;
+        }
 
-        $data->thumb = $thumb;
 
         $data->premiere_date = $request->input('premiere_date');
+
+        // dd($data);
+
+        $data->meta_title = $request->input('meta_title');;
+        $data->meta_keyword = $request->input('meta_keyword');
+        $data->meta_description = $request->input('meta_description');
 
         // dd($data);
 
@@ -100,7 +108,10 @@ class filmController extends Controller
         $data->trailer = $request->input('trailer');
         $data->status = $request->input('status');
         $data->premiere_date = $request->input('premiere_date');
-
+        $data->meta_title = $request->input('meta_title');;
+        $data->meta_keyword = $request->input('meta_keyword');
+        $data->meta_description = $request->input('meta_description');
+        
         if ($request->file('thumb') !== null) {
             $thumb = $request->file('thumb')->getClientOriginalName();
             $request->file('thumb')->storeAs('public/images', $thumb);

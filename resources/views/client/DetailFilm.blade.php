@@ -15,6 +15,19 @@
     <div id="page" class="hfeed site">
 
         @extends('client.layout.main.main')
+
+        @section('title')
+            {{$film->meta_title}}
+        @endsection
+
+        @section('meta_keyword')
+            {{$film->meta_keyword}}
+        @endsection
+
+        @section('meta_description')
+            {{$film->meta_description}}
+        @endsection
+
         @section('contact')
             <div class="modal fade" id="rateStar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -315,37 +328,37 @@
 
                                                         <script>
                                                             var selectedCinemaId = "";
-                                                        
+
                                                             // Function to show dates and hours for the selected cinema
                                                             function showDatesAndHoursForCinema(cinemaId) {
                                                                 selectedCinemaId = cinemaId;
-                                                        
+
                                                                 // Hide all date elements
                                                                 var showtimeDays = document.querySelectorAll(".showtime-day");
-                                                                showtimeDays.forEach(function (day) {
+                                                                showtimeDays.forEach(function(day) {
                                                                     day.style.display = "none";
                                                                 });
-                                                        
+
                                                                 // Show dates for the selected cinema
                                                                 var selectedShowtimeDays = document.querySelectorAll(
                                                                     ".showtime-day[data-showtime-cinema-id='" + selectedCinemaId + "']"
                                                                 );
-                                                                selectedShowtimeDays.forEach(function (day) {
+                                                                selectedShowtimeDays.forEach(function(day) {
                                                                     day.style.display = "block";
                                                                 });
-                                                        
+
                                                                 // Show hours for the selected cinema and date
                                                                 showHoursForSelectedCinemaAndDate();
                                                             }
-                                                        
+
                                                             // Function to show hours for the selected cinema and date
                                                             function showHoursForSelectedCinemaAndDate() {
                                                                 var selectedDayElement = document.querySelector(".showtime-day[data-showtime-date='" + selectedDate + "']");
                                                                 if (selectedDayElement) {
                                                                     var selectedDay = selectedDayElement.getAttribute("data-showtime-date");
-                                                        
+
                                                                     var hourButtons = document.querySelectorAll(".hour-button");
-                                                                    hourButtons.forEach(function (button) {
+                                                                    hourButtons.forEach(function(button) {
                                                                         var showtimeDate = button.getAttribute("data-showtime-date");
                                                                         var showtimeCinemaId = button.getAttribute("data-showtime-cinema-id");
                                                                         if (showtimeDate === selectedDay && showtimeCinemaId === selectedCinemaId) {
@@ -356,45 +369,45 @@
                                                                     });
                                                                 }
                                                             }
-                                                        
+
                                                             // Call the function to show dates and hours for the first cinema when the modal is opened
-                                                            document.addEventListener("DOMContentLoaded", function () {
+                                                            document.addEventListener("DOMContentLoaded", function() {
                                                                 showDatesAndHoursForCinema(document.querySelector(".li").getAttribute("data-cinema-id"));
                                                             });
-                                                        
+
                                                             var cinemaLinks = document.querySelectorAll(".li");
-                                                            cinemaLinks.forEach(function (cinemaLink) {
-                                                                cinemaLink.addEventListener("click", function (event) {
+                                                            cinemaLinks.forEach(function(cinemaLink) {
+                                                                cinemaLink.addEventListener("click", function(event) {
                                                                     event.preventDefault();
                                                                     showDatesAndHoursForCinema(cinemaLink.getAttribute("data-cinema-id"));
                                                                 });
                                                             });
-                                                        
+
                                                             var showtimeDayElements = document.querySelectorAll(".showtime-day");
-                                                            showtimeDayElements.forEach(function (element) {
-                                                                element.addEventListener("click", function () {
+                                                            showtimeDayElements.forEach(function(element) {
+                                                                element.addEventListener("click", function() {
                                                                     selectDate(element.getAttribute("data-showtime-date"));
                                                                     showHoursForSelectedCinemaAndDate();
                                                                 });
                                                             });
-                                                        
+
                                                             function selectDate(date) {
                                                                 selectedDate = date;
                                                                 var selectDateElement = document.getElementById("selectedDate");
                                                                 selectDateElement.value = selectedDate;
                                                             }
-                                                        
+
                                                             function selectHour(hour) {
                                                                 selectedHour = hour;
                                                                 var selectHourElement = document.getElementById("selectedHour");
                                                                 selectHourElement.value = selectedHour;
-                                                        
+
                                                                 var selectShowTimeId = event.currentTarget.getAttribute("data-showtime-id");
                                                                 var selectShowTimeIdElement = document.getElementById("selectedShowTimeId");
                                                                 selectShowTimeIdElement.value = selectShowTimeId;
                                                             }
                                                         </script>
-                                                        
+
                                                         {{-- model --}}
 
 
@@ -489,12 +502,12 @@
                                                                     href="/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/#respond"
                                                                     style="display:none;">Cancel
                                                                     reply</a></small></h3>
-                                                        <form
-                                                            id="FormComment"
-                                                            class="comment-form">
+                                                        <form id="FormComment" class="comment-form">
                                                             @csrf
-                                                            <input type="hidden" name="user_id" value="{{$user}}" hidden>
-                                                            <input type="hidden" name="film_id" value="{{$film->id}}" hidden>
+                                                            <input type="hidden" name="user_id"
+                                                                value="{{ $user }}" hidden>
+                                                            <input type="hidden" name="film_id"
+                                                                value="{{ $film->id }}" hidden>
                                                             <p class="comment-notes"><span id="email-notes">Your
                                                                     email
                                                                     address will
@@ -508,9 +521,9 @@
                                                             </p>
                                                             <p class="comment-form-comment"><label for="comment">Comment
                                                                     <span class="required">*</span></label>
-                                                                <textarea name="comment_text" id="comment_text" cols="45" rows="8" max-length="65525" aria-required="true"
-                                                                    required="required"></textarea>
-                                                                    <div id="commentError" class="text-danger"></div>
+                                                                <textarea name="comment_text" id="comment_text" cols="45" rows="8" max-length="65525"
+                                                                    aria-required="true" required="required"></textarea>
+                                                            <div id="commentError" class="text-danger"></div>
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <p class="comment-form-author"><label
@@ -534,31 +547,32 @@
                                                                     <div id="emailError" class="text-danger"></div>
                                                                 </div>
                                                                 <!-- <div class="col-md-4">
-                                                                    <p class="comment-form-url"><label
-                                                                            for="url">Website</label><input
-                                                                            type="url" value id="url"
-                                                                            name="url" size="30"
-                                                                            maxlength="200" /></p>
-                                                                </div> -->
+                                                                        <p class="comment-form-url"><label
+                                                                                for="url">Website</label><input
+                                                                                type="url" value id="url"
+                                                                                name="url" size="30"
+                                                                                maxlength="200" /></p>
+                                                                    </div> -->
                                                             </div>
                                                             <!-- <p class="comment-form-cookies-consent"><input
-                                                                    id="wp-comment-cookies-consent"
-                                                                    name="wp-comment-cookies-consent" type="checkbox"
-                                                                    value="yes" />
-                                                                <label for="wp-comment-cookies-consent">Save
-                                                                    my name,
-                                                                    email,
-                                                                    and
-                                                                    website
-                                                                    in this
-                                                                    browser
-                                                                    for the
-                                                                    next
-                                                                    time I
-                                                                    comment.</label>
-                                                            </p> -->
+                                                                        id="wp-comment-cookies-consent"
+                                                                        name="wp-comment-cookies-consent" type="checkbox"
+                                                                        value="yes" />
+                                                                    <label for="wp-comment-cookies-consent">Save
+                                                                        my name,
+                                                                        email,
+                                                                        and
+                                                                        website
+                                                                        in this
+                                                                        browser
+                                                                        for the
+                                                                        next
+                                                                        time I
+                                                                        comment.</label>
+                                                                </p> -->
                                                             <p class="form-submit">
-                                                                <button id="post-comment" class="button-comment" type="button">POST COMMENT</button>
+                                                                <button id="post-comment" class="button-comment"
+                                                                    type="button">POST COMMENT</button>
                                                             </p>
                                                         </form>
                                                     </div><!-- #respond -->
@@ -569,48 +583,78 @@
                                         </article>
                                     </div>
                                     <div id="commentNew" class="row"></div>
-                                    @foreach($comments as $item)
-                                    <div class="row">
-                                        <div class="col-md-1">
-                                            <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://vivureviews.com/wp-content/uploads/2022/08/avatar-vo-danh-9.png" alt="Image Description">
-                                        </div>
-                                    <div class="col-md-11">
-                                        <div class="media g-mb-30 media-comment">
-                                            <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
-                                            <div class="g-mb-15">
-                                                <h5 class="h5 g-color-gray-dark-v1 mb-0">{{ $item->name }}</h5>
-                                                <span class="g-color-gray-dark-v4 g-font-size-12">{{ $item->created_at->format('d-m-20y m:h:s') }}</span>
+                                    @foreach ($comments as $item)
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15"
+                                                    src="https://vivureviews.com/wp-content/uploads/2022/08/avatar-vo-danh-9.png"
+                                                    alt="Image Description">
                                             </div>
-                                        
-                                            <p>{{ $item->comment_text }}</p>
-                                        
-                                            <!-- <ul class="list-inline d-sm-flex my-0">
-                                                <li class="list-inline-item g-mr-20">
-                                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                                                    <i class="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3"></i>
-                                                    178
-                                                </a>
-                                                </li>
-                                                <li class="list-inline-item g-mr-20">
-                                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                                                    <i class="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3"></i>
-                                                    34
-                                                </a>
-                                                </li>
-                                                <li class="list-inline-item ml-auto">
-                                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                                                    <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
-                                                    Reply
-                                                </a>
-                                                </li>
-                                            </ul> -->
+                                            <div class="col-md-11">
+                                                <div class="media g-mb-30 media-comment">
+                                                    <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+                                                        <div class="g-mb-15">
+                                                            <h5 class="h5 g-color-gray-dark-v1 mb-0">{{ $item->name }}
+                                                            </h5>
+                                                            <span
+                                                                class="g-color-gray-dark-v4 g-font-size-12">{{ $item->created_at->format('d-m-20y m:h:s') }}</span>
+                                                        </div>
+
+                                                        <p>{{ $item->comment_text }}</p>
+
+                                                        <!-- <ul class="list-inline d-sm-flex my-0">
+                                                    <li class="list-inline-item g-mr-20">
+                                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                                        <i class="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3"></i>
+                                                        178
+                                                    </a>
+                                                    </li>
+                                                    <li class="list-inline-item g-mr-20">
+                                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                                        <i class="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3"></i>
+                                                        34
+                                                    </a>
+                                                    </li>
+                                                    <li class="list-inline-item ml-auto">
+                                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                                        <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
+                                                        Reply
+                                                    </a>
+                                                    </li>
+                                                </ul> -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    </div>
-                                    @endforeach                              
+                                    @endforeach
                                     <br>
-                                    <div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 11 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li></ul></div></div></div>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-5">
+                                            <div class="dataTables_info" id="DataTables_Table_0_info" role="status"
+                                                aria-live="polite">Showing 1 to 10 of 11 entries</div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-7">
+                                            <div class="dataTables_paginate paging_simple_numbers"
+                                                id="DataTables_Table_0_paginate">
+                                                <ul class="pagination">
+                                                    <li class="paginate_button page-item previous disabled"
+                                                        id="DataTables_Table_0_previous"><a href="#"
+                                                            aria-controls="DataTables_Table_0" data-dt-idx="0"
+                                                            tabindex="0" class="page-link">Previous</a></li>
+                                                    <li class="paginate_button page-item active"><a href="#"
+                                                            aria-controls="DataTables_Table_0" data-dt-idx="1"
+                                                            tabindex="0" class="page-link">1</a></li>
+                                                    <li class="paginate_button page-item "><a href="#"
+                                                            aria-controls="DataTables_Table_0" data-dt-idx="2"
+                                                            tabindex="0" class="page-link">2</a></li>
+                                                    <li class="paginate_button page-item next"
+                                                        id="DataTables_Table_0_next"><a href="#"
+                                                            aria-controls="DataTables_Table_0" data-dt-idx="3"
+                                                            tabindex="0" class="page-link">Next</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-4 amy-sidebar-clear">
                                     <div class="amy-page-sidebar amy-sidebar-right">
@@ -655,13 +699,15 @@
                                                     <h4 class="amy-title amy-widget-title">Tin tức gần nhất</h4>
                                                     @foreach ($newdetail as $item)
                                                         <div class="entry-item">
-                                                            <div class="entry-thumb"><img style="width: 120px; height: 150px;object-fit: cover"
-                                                                    src="{{asset("storage/images/".$item->thumbnail)}}" />
+                                                            <div class="entry-thumb"><img
+                                                                    style="width: 120px; height: 150px;object-fit: cover"
+                                                                    src="{{ asset('storage/images/' . $item->thumbnail) }}" />
                                                             </div>
                                                             <div class="entry-content">
                                                                 <h2 class="entry-title"><a
-                                                                        href="">{{$item->title}}</a></h2>
-                                                                <div class="entry-meta"><span class="entry-date">{{Carbon\Carbon::parse( $item->created_at)->format("d/n/Y")}}</span><span>
+                                                                        href="">{{ $item->title }}</a></h2>
+                                                                <div class="entry-meta"><span
+                                                                        class="entry-date">{{ Carbon\Carbon::parse($item->created_at)->format('d/n/Y') }}</span><span>
                                                                         /
                                                                     </span><span class="entry-comment">0
                                                                         Comments</span></div>
@@ -693,21 +739,20 @@
             </div>
 
             <script>
-                $(document).ready(function(){
+                $(document).ready(function() {
                     var commentNew = " ";
                     $.ajaxSetup({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         }
                     });
-                    
+
                     var form = $('#FormComment')[0];
-                   $('#post-comment').click(function()
-                   {    
+                    $('#post-comment').click(function() {
                         var formData = new FormData(form);
 
                         function validateName(name) {
-                        return name.length > 0;
+                            return name.length > 0;
                         }
 
                         function validateEmail(email) {
@@ -722,11 +767,11 @@
                         var nameInput = document.getElementById("name");
                         var emailInput = document.getElementById("email");
                         var commentInput = document.getElementById("comment_text");
-                        
+
                         var nameError = document.getElementById("nameError");
                         var emailError = document.getElementById("emailError");
                         var commentError = document.getElementById("commentError");
-                        
+
                         nameError.textContent = "";
                         emailError.textContent = "";
                         commentError.textContent = "";
@@ -736,59 +781,62 @@
                             commentError.textContent = "Bình luận không được để trống";
                             return;
                         }
-                        
+
                         var name = nameInput.value;
                         if (!validateName(name)) {
                             nameError.textContent = "Tên không được để trống";
-                            return; 
+                            return;
                         }
-                        
-                        
+
+
                         var email = emailInput.value;
                         if (!validateEmail(email)) {
                             emailError.textContent = "Email không được để trống";
                             return;
                         }
-  
-                            $.ajax({
-                            url: '{{ route("comment.store") }}',
+
+                        $.ajax({
+                            url: '{{ route('comment.store') }}',
                             method: 'POST',
                             processData: false,
                             contentType: false,
                             data: formData,
 
-                            success: function(response){
+                            success: function(response) {
                                 let name = document.getElementById("name").value;
                                 let email = document.getElementById("email").value;
                                 let comment = document.getElementById("comment_text").value;
                                 let commentNew1 = " ";
                                 let currentdate = new Date();
-                                let datetime = currentdate.getFullYear() + "-" + currentdate.getMonth() 
-                                + "-" + currentdate.getDay() + " "
-                                + currentdate.getHours() + ":" 
-                                + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+                                let datetime = currentdate.getFullYear() + "-" + currentdate
+                                .getMonth() +
+                                    "-" + currentdate.getDay() + " " +
+                                    currentdate.getHours() + ":" +
+                                    currentdate.getMinutes() + ":" + currentdate.getSeconds();
                                 let form = document.getElementById("FormComment");
                                 form.reset();
-                                commentNew1 += '<div class="row">' 
-                                        + '<div class="col-md-1">'
-                                            + '<img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://vivureviews.com/wp-content/uploads/2022/08/avatar-vo-danh-9.png" alt="Image Description">'
-                                        + '</div>'
-                                    + '<div class="col-md-11">'
-                                        + '<div class="media g-mb-30 media-comment">'
-                                            + '<div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">'
-                                            + '<div class="g-mb-15">'
-                                                + '<h5 class="h5 g-color-gray-dark-v1 mb-0">'+ name +'</h5>'
-                                                + '<span class="g-color-gray-dark-v4 g-font-size-12">' + datetime + '</span>'
-                                            + '</div>'
-                                        
-                                            + '<p>' + comment +'</p>'
-                                            + '</div>'
-                                        + '</div>'
-                                    + '</div>'
-                                    + '</div>';
+                                commentNew1 += '<div class="row">' +
+                                    '<div class="col-md-1">' +
+                                    '<img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://vivureviews.com/wp-content/uploads/2022/08/avatar-vo-danh-9.png" alt="Image Description">' +
+                                    '</div>' +
+                                    '<div class="col-md-11">' +
+                                    '<div class="media g-mb-30 media-comment">' +
+                                    '<div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">' +
+                                    '<div class="g-mb-15">' +
+                                    '<h5 class="h5 g-color-gray-dark-v1 mb-0">' + name + '</h5>' +
+                                    '<span class="g-color-gray-dark-v4 g-font-size-12">' + datetime +
+                                    '</span>' +
+                                    '</div>'
 
-                                    commentNew = commentNew1 + commentNew;
-                                    $('#commentNew').html(commentNew);
+                                    +
+                                    '<p>' + comment + '</p>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>';
+
+                                commentNew = commentNew1 + commentNew;
+                                $('#commentNew').html(commentNew);
                             },
                             // error: function(error){
                             //     if(error){
@@ -798,7 +846,7 @@
                             //     }
                             // }
                         });
-                   })
+                    })
                 })
             </script>
             {{-- <script>

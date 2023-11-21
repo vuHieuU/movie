@@ -104,7 +104,7 @@ Route::middleware(['auth'])->group(function () {    //profile của user
     Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);
 });
 
-Route::middleware('auth', 'role:admin')->group(function () {
+Route::middleware('auth')->group(function () {
     // Các route được bảo vệ bởi middleware 'admin' nên được định nghĩa ở đây
     // ...
     Route::get('/admin', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('admin');
@@ -173,13 +173,13 @@ Route::middleware('auth', 'role:admin')->group(function () {
     });
     // Danh sách Phim
     Route::prefix('films')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\filmController::class, 'index'])->name('films.index')->middleware('permission:show-films');
-        Route::get('create', [App\Http\Controllers\admin\filmController::class, 'create'])->name('films.create')->middleware('permission:create-films');
-        Route::post('store', [App\Http\Controllers\admin\filmController::class, 'store'])->name('films.store')->middleware('permission:create-films');
-        Route::get('show/{id}', [App\Http\Controllers\admin\filmController::class, 'show'])->name('films.show')->middleware('permission:show-films');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\filmController::class, 'edit'])->name('films.edit')->middleware('permission:show-films');
-        Route::post('update/{id}', [App\Http\Controllers\admin\filmController::class, 'update'])->name('films.update')->middleware('permission:update-films');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\filmController::class, 'destroy'])->name('films.destroy')->middleware('permission:delete-films');
+        Route::get('index', [App\Http\Controllers\admin\filmController::class, 'index'])->name('films.index');
+        Route::get('create', [App\Http\Controllers\admin\filmController::class, 'create'])->name('films.create');
+        Route::post('store', [App\Http\Controllers\admin\filmController::class, 'store'])->name('films.store');
+        Route::get('show/{id}', [App\Http\Controllers\admin\filmController::class, 'show'])->name('films.show');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\filmController::class, 'edit'])->name('films.edit');
+        Route::post('update/{id}', [App\Http\Controllers\admin\filmController::class, 'update'])->name('films.update');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\filmController::class, 'destroy'])->name('films.destroy');
     });
     //city
     Route::prefix('city')->group(function () {
