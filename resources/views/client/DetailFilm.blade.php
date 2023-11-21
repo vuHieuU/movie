@@ -3,6 +3,8 @@
 
 <head>
     @include('client.layout.main.HeadDetailFilm')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 {{-- ảnh url --}}
 <link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
@@ -460,39 +462,47 @@
 
                                                 <div class="amy-comment-form">
                                                     <div id="respond" class="comment-respond">
-                                                        <h3 id="reply-title" class="comment-reply-title amy-title">Viết
-                                                            bình
-                                                            luận <small><a rel="nofollow" id="cancel-comment-reply-link"
+                                                        <h3 id="reply-title" class="comment-reply-title amy-title">Write
+                                                            a
+                                                            comment <small><a rel="nofollow"
+                                                                    id="cancel-comment-reply-link"
                                                                     href="/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/#respond"
                                                                     style="display:none;">Cancel
                                                                     reply</a></small></h3>
                                                         <form
-                                                            action="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-comments-post.php"
-                                                            method="post" id="commentform" class="comment-form">
-                                                            <p class="comment-notes"><span id="email-notes">Địa chỉ email
-                                                                    của bạn sẽ không được công bố. Các trường bắt buộc được
-                                                                    đánh dấu</span>
+                                                            id="FormComment"
+                                                            class="comment-form">
+                                                            @csrf
+                                                            <input type="hidden" name="user_id" value="{{$user}}" hidden>
+                                                            <input type="hidden" name="film_id" value="{{$film->id}}" hidden>
+                                                            <p class="comment-notes"><span id="email-notes">Your
+                                                                    email
+                                                                    address will
+                                                                    not be
+                                                                    published.</span>
                                                                 <span class="required-field-message"
-                                                                    aria-hidden="true">Các trường bắt buộc được đánh
-                                                                    dấu<span class="required"
+                                                                    aria-hidden="true">Required
+                                                                    fields are
+                                                                    marked <span class="required"
                                                                         aria-hidden="true">*</span></span>
                                                             </p>
-                                                            <p class="comment-form-comment"><label for="comment">Bình
-                                                                    luận
+                                                            <p class="comment-form-comment"><label for="comment">Comment
                                                                     <span class="required">*</span></label>
-                                                                <textarea name="comment" id="comment" cols="45" rows="8" max-length="65525" aria-required="true"
+                                                                <textarea name="comment_text" id="comment_text" cols="45" rows="8" max-length="65525" aria-required="true"
                                                                     required="required"></textarea>
+                                                                    <div id="commentError" class="text-danger"></div>
                                                             <div class="row">
-                                                                <div class="col-md-4">
+                                                                <div class="col-md-6">
                                                                     <p class="comment-form-author"><label
                                                                             for="author">Name
                                                                             <span class="required">*</span></label><input
-                                                                            type="text" value id="author"
-                                                                            name="author" size="30" maxlength="245"
+                                                                            type="text" value id="name"
+                                                                            name="name" size="30" maxlength="245"
                                                                             aria-required="true" required="required" />
                                                                     </p>
+                                                                    <div id="nameError" class="text-danger"></div>
                                                                 </div>
-                                                                <div class="col-md-4">
+                                                                <div class="col-md-6">
                                                                     <p class="comment-form-email"><label
                                                                             for="email">Email
                                                                             <span class="required">*</span></label><input
@@ -501,16 +511,17 @@
                                                                             aria-describedby="email-notes"
                                                                             aria-required="true" required="required" />
                                                                     </p>
+                                                                    <div id="emailError" class="text-danger"></div>
                                                                 </div>
-                                                                <div class="col-md-4">
+                                                                <!-- <div class="col-md-4">
                                                                     <p class="comment-form-url"><label
                                                                             for="url">Website</label><input
                                                                             type="url" value id="url"
                                                                             name="url" size="30"
                                                                             maxlength="200" /></p>
-                                                                </div>
+                                                                </div> -->
                                                             </div>
-                                                            {{-- <p class="comment-form-cookies-consent"><input
+                                                            <!-- <p class="comment-form-cookies-consent"><input
                                                                     id="wp-comment-cookies-consent"
                                                                     name="wp-comment-cookies-consent" type="checkbox"
                                                                     value="yes" />
@@ -525,13 +536,9 @@
                                                                     next
                                                                     time I
                                                                     comment.</label>
-                                                            </p> --}}
-                                                            <p class="form-submit"><input name="submit" type="submit"
-                                                                    id="submit" class="submit" value="Gửi" />
-                                                                <input type='hidden' name='comment_post_ID'
-                                                                    value='74' id='comment_post_ID' />
-                                                                <input type='hidden' name='comment_parent'
-                                                                    id='comment_parent' value='0' />
+                                                            </p> -->
+                                                            <p class="form-submit">
+                                                                <button id="post-comment" class="button-comment" type="button">POST COMMENT</button>
                                                             </p>
                                                         </form>
                                                     </div><!-- #respond -->
@@ -541,6 +548,49 @@
 
                                         </article>
                                     </div>
+                                    <div id="commentNew" class="row"></div>
+                                    @foreach($comments as $item)
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://vivureviews.com/wp-content/uploads/2022/08/avatar-vo-danh-9.png" alt="Image Description">
+                                        </div>
+                                    <div class="col-md-11">
+                                        <div class="media g-mb-30 media-comment">
+                                            <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+                                            <div class="g-mb-15">
+                                                <h5 class="h5 g-color-gray-dark-v1 mb-0">{{ $item->name }}</h5>
+                                                <span class="g-color-gray-dark-v4 g-font-size-12">{{ $item->created_at->format('d-m-20y m:h:s') }}</span>
+                                            </div>
+                                        
+                                            <p>{{ $item->comment_text }}</p>
+                                        
+                                            <!-- <ul class="list-inline d-sm-flex my-0">
+                                                <li class="list-inline-item g-mr-20">
+                                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                                    <i class="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3"></i>
+                                                    178
+                                                </a>
+                                                </li>
+                                                <li class="list-inline-item g-mr-20">
+                                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                                    <i class="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3"></i>
+                                                    34
+                                                </a>
+                                                </li>
+                                                <li class="list-inline-item ml-auto">
+                                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                                    <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
+                                                    Reply
+                                                </a>
+                                                </li>
+                                            </ul> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    @endforeach                              
+                                    <br>
+                                    <div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 11 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li></ul></div></div></div>
                                 </div>
                                 <div class="col-md-4 amy-sidebar-clear">
                                     <div class="amy-page-sidebar amy-sidebar-right">
@@ -622,6 +672,115 @@
                 </div>
             </div>
 
+            <script>
+                $(document).ready(function(){
+                    var commentNew = " ";
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    
+                    var form = $('#FormComment')[0];
+                   $('#post-comment').click(function()
+                   {    
+                        var formData = new FormData(form);
+
+                        function validateName(name) {
+                        return name.length > 0;
+                        }
+
+                        function validateEmail(email) {
+                            return email.length > 0;
+                        }
+
+                        function validateComment(comment) {
+                            return comment.length > 0;
+                        }
+
+                        var postCommentButton = document.getElementById("post-comment");
+                        var nameInput = document.getElementById("name");
+                        var emailInput = document.getElementById("email");
+                        var commentInput = document.getElementById("comment_text");
+                        
+                        var nameError = document.getElementById("nameError");
+                        var emailError = document.getElementById("emailError");
+                        var commentError = document.getElementById("commentError");
+                        
+                        nameError.textContent = "";
+                        emailError.textContent = "";
+                        commentError.textContent = "";
+
+                        var comment = commentInput.value;
+                        if (!validateComment(comment)) {
+                            commentError.textContent = "Bình luận không được để trống";
+                            return;
+                        }
+                        
+                        var name = nameInput.value;
+                        if (!validateName(name)) {
+                            nameError.textContent = "Tên không được để trống";
+                            return; 
+                        }
+                        
+                        
+                        var email = emailInput.value;
+                        if (!validateEmail(email)) {
+                            emailError.textContent = "Email không được để trống";
+                            return;
+                        }
+  
+                            $.ajax({
+                            url: '{{ route("comment.store") }}',
+                            method: 'POST',
+                            processData: false,
+                            contentType: false,
+                            data: formData,
+
+                            success: function(response){
+                                let name = document.getElementById("name").value;
+                                let email = document.getElementById("email").value;
+                                let comment = document.getElementById("comment_text").value;
+                                let commentNew1 = " ";
+                                let currentdate = new Date();
+                                let datetime = currentdate.getFullYear() + "-" + currentdate.getMonth() 
+                                + "-" + currentdate.getDay() + " "
+                                + currentdate.getHours() + ":" 
+                                + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+                                let form = document.getElementById("FormComment");
+                                form.reset();
+                                commentNew1 += '<div class="row">' 
+                                        + '<div class="col-md-1">'
+                                            + '<img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://vivureviews.com/wp-content/uploads/2022/08/avatar-vo-danh-9.png" alt="Image Description">'
+                                        + '</div>'
+                                    + '<div class="col-md-11">'
+                                        + '<div class="media g-mb-30 media-comment">'
+                                            + '<div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">'
+                                            + '<div class="g-mb-15">'
+                                                + '<h5 class="h5 g-color-gray-dark-v1 mb-0">'+ name +'</h5>'
+                                                + '<span class="g-color-gray-dark-v4 g-font-size-12">' + datetime + '</span>'
+                                            + '</div>'
+                                        
+                                            + '<p>' + comment +'</p>'
+                                            + '</div>'
+                                        + '</div>'
+                                    + '</div>'
+                                    + '</div>';
+
+                                    commentNew = commentNew1 + commentNew;
+                                    $('#commentNew').html(commentNew);
+                            },
+                            // error: function(error){
+                            //     if(error){
+                            //         $('#nameError').html(error.responseJSON.errors.name);
+                            //         $('#emailError').html(error.responseJSON.errors.email);
+                            //         $('#commentError').html(error.responseJSON.errors.comment);
+                            //     }
+                            // }
+                        });
+                   })
+                })
+            </script>
             {{-- <script>
                 @if (Session::has('error'))
                     Swal.fire({

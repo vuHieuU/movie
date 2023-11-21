@@ -39,7 +39,8 @@ Route::get('/detailblog/{id}', [App\Http\Controllers\client\DetailBlogController
 Route::get('/weeklyshowtime', [App\Http\Controllers\client\WeeklyShowtimeController::class, 'index']);
 Route::get('/weeklyshowtime/{id}', [App\Http\Controllers\client\WeeklyShowtimeController::class, 'show'])->name("weeklyshowtime");
 
-
+// comment detail film
+Route::post('/addComment', [App\Http\Controllers\client\CommentController::class, 'store'])->name("comment.store");
 
 Route::get('/chi-tiet-phim/{id}', [App\Http\Controllers\client\DetailFilmController::class, 'index'])->name("filmDetail");
 

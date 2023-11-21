@@ -8,6 +8,7 @@ use App\Models\favorite_film;
 use App\Models\film;
 use App\Models\News;
 use App\Models\ShowTime;
+use App\Models\comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Rating;
@@ -71,6 +72,10 @@ class DetailFilmController extends Controller
         // } else {
         //     $rating_value = 0;
         // }
+
+        // lấy tất cả comment có id phim = ...
+        $comments = comment::where("film_id", $id)->where("status", 0)->orderByDesc('created_at')->get();
+
         $title = "Detail";
         return view('client.DetailFilm', compact(
             'title',
@@ -84,7 +89,8 @@ class DetailFilmController extends Controller
             'check',
             'film',
             "filmtopmovie",
-            "newdetail"
+            "newdetail",
+            "comments"
         ));
     }
 }
