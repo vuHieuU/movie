@@ -248,9 +248,9 @@
                             <a href="{{ route('statistical.indexFood') }}">
                                 <i class="las la-minus"></i><span>Đồ ăn</span>
                             </a>
-                            <a href="{{ route('statistical.indexFilm') }}">
+                            {{-- <a href="{{ route('statistical.indexFilm') }}">
                                 <i class="las la-minus"></i><span>Film</span>
-                            </a>
+                            </a> --}}
                         </li>
 
                     </ul>

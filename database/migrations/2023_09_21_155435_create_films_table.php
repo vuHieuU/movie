@@ -24,6 +24,11 @@ return new class extends Migration
             $table->string('country');
             $table->longText('trailer');
             $table->text('status');
+
+            $table->string("meta_title");
+            $table->string("meta_keyword");
+            $table->mediumText("meta_description");
+            
             $table->timestamps();
         });
     }

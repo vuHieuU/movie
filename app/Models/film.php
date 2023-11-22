@@ -21,6 +21,9 @@ class film extends Model
         'country',
         'trailer',
         'status',
+        'meta_title',
+        'meta_keyword',
+        'meta_description',
     ];
     public function categories()
     {

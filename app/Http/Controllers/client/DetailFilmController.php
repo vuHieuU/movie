@@ -8,6 +8,7 @@ use App\Models\favorite_film;
 use App\Models\film;
 use App\Models\News;
 use App\Models\ShowTime;
+use App\Models\comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Rating;
@@ -19,12 +20,10 @@ class DetailFilmController extends Controller
      * Display a listing of the resource.
      */
 
-    public function index($id)
+    public function index($slug)
     {
         $check = 1;
-        // $film_show_time = ShowTime::findOrFail($id);
-        $film = film::findOrFail($id);
-        // $cinema_id = Cinema::findOrFail($id);
+        $film = film::where('slug', $slug)->firstOrFail();
         $filmtopmovie = Film::orderByDesc("created_at")->limit(4)->get();
         
         $newdetail = News::orderByDesc("created_at")->limit(2)->get();
@@ -44,18 +43,15 @@ class DetailFilmController extends Controller
             ->orderBy('day')
             ->orderBy('hour')
             ->get();
-            
-    // ->sortBy('time');
 
-        // dd($ShowTime);
         $categoryfilm_category = DB::table("categories")
             ->join("film_categories", "categories.id", "=", "film_categories.dmid")
             ->select("categories.*", "film_categories.*")
-            ->where("film_categories.film_id", $id)
+            ->where("film_categories.film_id", $slug)
             ->get();
         if (auth()->check()) {
             $user = Auth::user()->id;
-            $exists = favorite_film::where('user_id', $user)->where('film_id', $id)->exists();
+            $exists = favorite_film::where('user_id', $user)->where('film_id', $slug)->exists();
             if ($exists) {
                 $check = 0;
             }
@@ -71,6 +67,10 @@ class DetailFilmController extends Controller
         // } else {
         //     $rating_value = 0;
         // }
+
+        // lấy tất cả comment có id phim = ...
+        $comments = comment::where("film_id", $film->id)->where("status", 0)->orderByDesc('created_at')->limit(8)->get();
+
         $title = "Detail";
         return view('client.DetailFilm', compact(
             'title',
@@ -84,7 +84,8 @@ class DetailFilmController extends Controller
             'check',
             'film',
             "filmtopmovie",
-            "newdetail"
+            "newdetail",
+            "comments"
         ));
     }
 }

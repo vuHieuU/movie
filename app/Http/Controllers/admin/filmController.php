@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\admin\filmsRequest;
 use App\Http\Requests\admin\filmUpdateRequest;
-
+use Illuminate\Support\Str;
 class filmController extends Controller
 {
     /**
@@ -39,6 +39,7 @@ class filmController extends Controller
         $data->name = $request->input('name');
         $data->duration = $request->input('duration');
         $data->description = $request->input('description');
+        $data->slug = Str::slug($request->input('name'));
         $data->director = $request->input('director');
         $data->actor = $request->input('actor');
         $data->language = $request->input('language');
@@ -46,12 +47,20 @@ class filmController extends Controller
         $data->trailer = $request->input('trailer');
         $data->status = $request->input('status');
 
-        $thumb = $request->file('thumb')->getClientOriginalName();
-        $request->file('thumb')->storeAs('public/images', $thumb);
+        if($request->has("thumb")){
+            $thumb = $request->file('thumb')->getClientOriginalName();
+            $request->file('thumb')->storeAs('public/images', $thumb);
+            $data->thumb = $thumb;
+        }
 
-        $data->thumb = $thumb;
 
         $data->premiere_date = $request->input('premiere_date');
+
+        // dd($data);
+
+        $data->meta_title = $request->input('meta_title');;
+        $data->meta_keyword = $request->input('meta_keyword');
+        $data->meta_description = $request->input('meta_description');
 
         // dd($data);
 
@@ -91,6 +100,7 @@ class filmController extends Controller
         $data->name = $request->input('name');
         $data->duration = $request->input('duration');
         $data->description = $request->input('description');
+        $data->slug = Str::slug($request->input('name'));
         $data->director = $request->input('director');
         $data->actor = $request->input('actor');
         $data->language = $request->input('language');
@@ -98,7 +108,10 @@ class filmController extends Controller
         $data->trailer = $request->input('trailer');
         $data->status = $request->input('status');
         $data->premiere_date = $request->input('premiere_date');
-
+        $data->meta_title = $request->input('meta_title');;
+        $data->meta_keyword = $request->input('meta_keyword');
+        $data->meta_description = $request->input('meta_description');
+        
         if ($request->file('thumb') !== null) {
             $thumb = $request->file('thumb')->getClientOriginalName();
             $request->file('thumb')->storeAs('public/images', $thumb);

@@ -427,6 +427,24 @@ class StatisticalController extends Controller
     
         return view('admin.layout.ajax.statisticalDetail', compact('day', 'total'));
     }
+    public function detailFilmCinemasDay($days)
+    {
+        $cinemaId = session('cinemaId');
+        $revenueLastDays = Ticket::where('cinema', $cinemaId)
+            ->where('created_at', '>=', Carbon::now()->subDays($days))
+            ->sum('total');
+
+            $filmsData = Ticket::where('cinema', $cinemaId)
+            ->where('created_at', '>=', Carbon::now()->subDays($days))
+            ->select('film_name', DB::raw('SUM(total) as total_revenue'))
+            ->groupBy('film_name')
+            ->get();
     
+        // Prepare data for the view
+        $filmNames = $filmsData->pluck('film_name')->toArray();
+        $totalRevenues = $filmsData->pluck('total_revenue')->toArray();
     
+        return view('admin.layout.ajax.statisticalFilmDay', compact('revenueLastDays','filmNames','totalRevenues'));
+    }
+  
 }

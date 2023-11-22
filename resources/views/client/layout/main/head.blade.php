@@ -3,6 +3,8 @@
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <title>@yield('title')</title>
 <meta name='robots' content='max-image-preview:large' />
+<meta name="keyword" content="@yield('meta_keyword')">
+<meta name="description" content="@yield('meta_description')">
 {{-- <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
 <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"

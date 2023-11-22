@@ -35,6 +35,9 @@ class filmsRequest extends FormRequest
             'country' => 'required|string',
             'trailer' => 'required|string',
             'status' => 'required|string',
+            'meta_title' => 'required|string',
+            'meta_keyword' => 'required|string',
+            'meta_description' => 'required|string',
         ];
     }
 
