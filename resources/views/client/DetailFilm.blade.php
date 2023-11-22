@@ -502,77 +502,44 @@
                                                                     href="/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/#respond"
                                                                     style="display:none;">Cancel
                                                                     reply</a></small></h3>
-                                                        <form id="FormComment" class="comment-form">
+                                                        <form action="{{ route('comment.store') }}" method="post" class="comment-form">
                                                             @csrf
                                                             <input type="hidden" name="user_id"
                                                                 value="{{ $user }}" hidden>
                                                             <input type="hidden" name="film_id"
                                                                 value="{{ $film->id }}" hidden>
-                                                            <p class="comment-notes"><span id="email-notes">Your
-                                                                    email
-                                                                    address will
-                                                                    not be
-                                                                    published.</span>
-                                                                <span class="required-field-message"
-                                                                    aria-hidden="true">Required
-                                                                    fields are
-                                                                    marked <span class="required"
-                                                                        aria-hidden="true">*</span></span>
-                                                            </p>
                                                             <p class="comment-form-comment"><label for="comment">Comment
                                                                     <span class="required">*</span></label>
                                                                 <textarea name="comment_text" id="comment_text" cols="45" rows="8" max-length="65525"
                                                                     aria-required="true" required="required"></textarea>
-                                                            <div id="commentError" class="text-danger"></div>
+                                                            {{-- <div id="commentError" class="text-danger"></div> --}}
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <p class="comment-form-author"><label
                                                                             for="author">Name
                                                                             <span class="required">*</span></label><input
-                                                                            type="text" value id="name"
+                                                                            type="text" value="{{ Auth::user()->name }}" id="name"
                                                                             name="name" size="30" maxlength="245"
                                                                             aria-required="true" required="required" />
                                                                     </p>
-                                                                    <div id="nameError" class="text-danger"></div>
+                                                                    {{-- <div id="nameError" class="text-danger"></div> --}}
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <p class="comment-form-email"><label
                                                                             for="email">Email
                                                                             <span class="required">*</span></label><input
-                                                                            type="email" value id="email"
+                                                                            type="email" value="{{ Auth::user()->email }}" id="email"
                                                                             name="email" size="30" maxlength="100"
                                                                             aria-describedby="email-notes"
                                                                             aria-required="true" required="required" />
                                                                     </p>
-                                                                    <div id="emailError" class="text-danger"></div>
+                                                                    {{-- <div id="emailError" class="text-danger"></div> --}}
                                                                 </div>
-                                                                <!-- <div class="col-md-4">
-                                                                        <p class="comment-form-url"><label
-                                                                                for="url">Website</label><input
-                                                                                type="url" value id="url"
-                                                                                name="url" size="30"
-                                                                                maxlength="200" /></p>
-                                                                    </div> -->
                                                             </div>
-                                                            <!-- <p class="comment-form-cookies-consent"><input
-                                                                        id="wp-comment-cookies-consent"
-                                                                        name="wp-comment-cookies-consent" type="checkbox"
-                                                                        value="yes" />
-                                                                    <label for="wp-comment-cookies-consent">Save
-                                                                        my name,
-                                                                        email,
-                                                                        and
-                                                                        website
-                                                                        in this
-                                                                        browser
-                                                                        for the
-                                                                        next
-                                                                        time I
-                                                                        comment.</label>
-                                                                </p> -->
+
                                                             <p class="form-submit">
-                                                                <button id="post-comment" class="button-comment"
-                                                                    type="button">POST COMMENT</button>
+                                                                <button class="btn btn-success button-comment"
+                                                                    type="submit">POST COMMENT</button>
                                                             </p>
                                                         </form>
                                                     </div><!-- #respond -->
@@ -585,50 +552,25 @@
                                     <div id="commentNew" class="row"></div>
                                     @foreach ($comments as $item)
                                         <div class="row">
-                                            <div class="col-md-1">
-                                                <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15"
-                                                    src="https://vivureviews.com/wp-content/uploads/2022/08/avatar-vo-danh-9.png"
-                                                    alt="Image Description">
-                                            </div>
-                                            <div class="col-md-11">
+                                            <div class="col-md-12">
                                                 <div class="media g-mb-30 media-comment">
                                                     <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
                                                         <div class="g-mb-15">
                                                             <h5 class="h5 g-color-gray-dark-v1 mb-0">{{ $item->name }}
                                                             </h5>
                                                             <span
-                                                                class="g-color-gray-dark-v4 g-font-size-12">{{ $item->created_at->format('d-m-20y m:h:s') }}</span>
+                                                                class="g-color-gray-dark-v4 g-font-size-12" style="font-size: 12px">{{ $item->created_at->format('d-m-20y m:h:s') }}</span>
                                                         </div>
 
                                                         <p>{{ $item->comment_text }}</p>
 
-                                                        <!-- <ul class="list-inline d-sm-flex my-0">
-                                                    <li class="list-inline-item g-mr-20">
-                                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                                                        <i class="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3"></i>
-                                                        178
-                                                    </a>
-                                                    </li>
-                                                    <li class="list-inline-item g-mr-20">
-                                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                                                        <i class="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3"></i>
-                                                        34
-                                                    </a>
-                                                    </li>
-                                                    <li class="list-inline-item ml-auto">
-                                                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                                                        <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
-                                                        Reply
-                                                    </a>
-                                                    </li>
-                                                </ul> -->
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     @endforeach
                                     <br>
-                                    <div class="row">
+                                    {{-- <div class="row">
                                         <div class="col-sm-12 col-md-5">
                                             <div class="dataTables_info" id="DataTables_Table_0_info" role="status"
                                                 aria-live="polite">Showing 1 to 10 of 11 entries</div>
@@ -654,7 +596,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="col-md-4 amy-sidebar-clear">
                                     <div class="amy-page-sidebar amy-sidebar-right">
@@ -719,15 +661,6 @@
                                                 </div>
                                                 <div class="clear"></div>
                                             </div>
-                                            <div class="amy-widget widget_block widget_media_image">
-                                                <figure class="wp-block-image size-full"><img loading="lazy"
-                                                        width="350" height="290"
-                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63.png"
-                                                        alt class="wp-image-255"
-                                                        srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63.png 350w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63-300x249.png 300w"
-                                                        sizes="(max-width: 350px) 100vw, 350px" /></figure>
-                                                <div class="clear"></div>
-                                            </div>
                                         </aside>
                                     </div>
                                 </div>
@@ -738,7 +671,7 @@
                 </div>
             </div>
 
-            <script>
+            {{-- <script>
                 $(document).ready(function() {
                     var commentNew = " ";
                     $.ajaxSetup({
@@ -848,7 +781,7 @@
                         });
                     })
                 })
-            </script>
+            </script> --}}
             {{-- <script>
                 @if (Session::has('error'))
                     Swal.fire({
