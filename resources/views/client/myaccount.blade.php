@@ -6,13 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>POS Dash | Responsive Bootstrap 4 Admin Dashboard Template</title>
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="template/assets/images/favicon.ico" />
-    <!-- <link rel="stylesheet" href="template/assets/css/backend-plugin.min.css"> -->
-    <link rel="stylesheet" href="template/assets/css/backend.css?v=1.0.0">
-    <!-- <link rel="stylesheet" href="template/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"> -->
-    <!-- <link rel="stylesheet" href="template/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css"> -->
-    <!-- <link rel="stylesheet" href="template/assets/vendor/remixicon/fonts/remixicon.css">   -->
     @include('client.layout.main.head')
 </head>
 
@@ -47,18 +40,6 @@
                                 <a class="nav-link" data-toggle="pill" href="#profile2" role="tab"
                                     aria-selected="false">Lịch sử</a>
                             </li>
-                            {{-- <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#profile3" role="tab"
-                                    aria-selected="false">Education</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#profile4" role="tab"
-                                    aria-selected="false">Experience</a>
-                            </li>
-                            <li class="nav-item">
-                                <a id="view-btn" class="nav-link" data-toggle="pill" href="#profile5" role="tab"
-                                    aria-selected="true">About</a>
-                            </li> --}}
                         </ul>
                         <div class="profile-content tab-content">
 
@@ -334,205 +315,6 @@
     </div>
     </div>
     </div>
-    {{-- <div id="profile3" class="tab-pane fade">
-                                
-                                       <div class="row">
-                                           <div class="col-lg-12">
-                                               <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
-                                                   <div>
-                                                       <h4 class="mb-3">Customer List</h4>
-                                                       <p class="mb-0">A customer dashboard lets you easily gather and visualize customer data from optimizing <br>
-                                                        the customer experience, ensuring customer retention. </p>
-                                                   </div>
-                                                   <a href="page-add-customers.html" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Customer</a>
-                                               </div>
-                                           </div>
-                                           <div class="col-lg-12">
-                                               <div class="table-responsive rounded mb-3">
-                                               <table class="data-table table mb-0 tbl-server-info">
-                                                   <thead class="bg-white text-uppercase">
-                                                       <tr class="ligth ligth-data">
-                                                           <th>
-                                                               <div class="checkbox d-inline-block">
-                                                                   <input type="checkbox" class="checkbox-input" id="checkbox1">
-                                                                   <label for="checkbox1" class="mb-0"></label>
-                                                               </div>
-                                                           </th>
-                                                           <th>Name</th>
-                                                           <th>Email</th>
-                                                           <th>Phone No.</th>
-                                                           <th>Country</th>
-                                                           <th>Order</th>
-                                                           <th>Status</th>
-                                                           <th>Last Order</th>
-                                                           <th>Action</th>
-                                                       </tr>
-                                                   </thead>
-                                                   <tbody class="ligth-body">
-                                                       <tr>
-                                                           <td>
-                                                               <div class="checkbox d-inline-block">
-                                                                   <input type="checkbox" class="checkbox-input" id="checkbox2">
-                                                                   <label for="checkbox2" class="mb-0"></label>
-                                                               </div>
-                                                           </td>
-                                                           <td>Max Conversion</td>
-                                                           <td>max@gmail.com</td>
-                                                           <td>0123456789</td>
-                                                           <td>USA</td>
-                                                           <td>2</td>
-                                                           <td><div class="badge badge-warning">Pending</div></td>
-                                                           <td>1</td>
-                                                           <td>
-                                                               <div class="d-flex align-items-center list-action">
-                                                                   <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                                                       href="#"><i class="ri-eye-line mr-0"></i></a>
-                                                                   <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                                                       href="#"><i class="ri-pencil-line mr-0"></i></a>
-                                                                   <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                                                       href="#"><i class="ri-delete-bin-line mr-0"></i></a>
-                                                               </div>
-                                                           </td>
-                                                       </tr>
-                                                       
-                                                   </tbody>
-                                               </table>
-                                               </div>
-                                           
-                                       <!-- Page end  -->
-                                   </div>
-                                   <!-- Modal Edit -->
-                                   <div class="modal fade" id="edit-note" tabindex="-1" role="dialog" aria-hidden="true">
-                                       <div class="modal-dialog modal-dialog-centered" role="document">
-                                           <div class="modal-content">
-                                               <div class="modal-body">
-                                                   <div class="popup text-left">
-                                                       <div class="media align-items-top justify-content-between">                            
-                                                           <h3 class="mb-3">Product</h3>
-                                                           <div class="btn-cancel p-0" data-dismiss="modal"><i class="las la-times"></i></div>
-                                                       </div>
-                                                       <div class="content edit-notes">
-                                                           <div class="card card-transparent card-block card-stretch event-note mb-0">
-                                                               <div class="card-body px-0 bukmark">
-                                                                   <div class="d-flex align-items-center justify-content-between pb-2 mb-3 border-bottom">                                                    
-                                                                       <div class="quill-tool">
-                                                                       </div>
-                                                                   </div>
-                                                                   <div id="quill-toolbar1">
-                                                                       <p>Virtual Digital Marketing Course every week on Monday, Wednesday and Saturday.Virtual Digital Marketing Course every week on Monday</p>
-                                                                   </div>
-                                                               </div>
-                                                               <div class="card-footer border-0">
-                                                                   <div class="d-flex flex-wrap align-items-ceter justify-content-end">
-                                                                       <div class="btn btn-primary mr-3" data-dismiss="modal">Cancel</div>
-                                                                       <div class="btn btn-outline-primary" data-dismiss="modal">Save</div>
-                                                                   </div>
-                                                               </div>
-                                                           </div>
-                                                       </div>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                   </div>
-                                     </div>
-                            </div>
-                            <div id="profile4" class="tab-pane fade">
-                                <div
-                                    class="profile-line m-0 d-flex align-items-center justify-content-between position-relative">
-                                    <ul class="list-inline p-0 m-0 w-100">
-                                        <li>
-                                            <div class="row align-items-top">
-                                                <div class="col-md-3">
-                                                    <h6 class="mb-2">2020 - present</h6>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="media profile-media align-items-top">
-                                                        <div class="profile-dots border-primary mt-1"></div>
-                                                        <div class="ml-4">
-                                                            <h6 class=" mb-1">Software Engineer at Mathica Labs</h6>
-                                                            <p class="mb-0 font-size-14">Total : 02 + years of
-                                                                experience</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="row align-items-top">
-                                                <div class="col-md-3">
-                                                    <h6 class="mb-2">2018 - 2019</h6>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="media profile-media align-items-top">
-                                                        <div class="profile-dots border-primary mt-1"></div>
-                                                        <div class="ml-4">
-                                                            <h6 class=" mb-1">Junior Software Engineer at Zimcore
-                                                                Solutions</h6>
-                                                            <p class="mb-0 font-size-14">Total : 1.5 + years of
-                                                                experience</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="row align-items-top">
-                                                <div class="col-md-3">
-                                                    <h6 class="mb-2">2017 - 2018</h6>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="media profile-media align-items-top">
-                                                        <div class="profile-dots border-primary mt-1"></div>
-                                                        <div class="ml-4">
-                                                            <h6 class=" mb-1">Junior Software Engineer at Skycare Ptv.
-                                                                Ltd</h6>
-                                                            <p class="mb-0 font-size-14">Total : 0.5 + years of
-                                                                experience</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="row align-items-top">
-                                                <div class="col-3">
-                                                    <h6 class="mb-2">06 Months</h6>
-                                                </div>
-                                                <div class="col-9">
-                                                    <div class="media profile-media pb-0 align-items-top">
-                                                        <div class="profile-dots border-primary mt-1"></div>
-                                                        <div class="ml-4">
-                                                            <h6 class=" mb-1">Junior Software Engineer at Infosys
-                                                                Solutions</h6>
-                                                            <p class="mb-0 font-size-14">Total : Freshers</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div id="profile5" class="tab-pane fade">
-                                <p>I'm Web Developer from California. I code and design websites worldwide. Mauris
-                                    variustellus vitae
-                                    tristique sagittis. Sed aliquet, est nec auctor aliquet, orci ex vestibulum ex, non
-                                    pharetra lacus
-                                    erat ac nulla.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis mattis nam ipsum
-                                    pharetra porttitor eu
-                                    orci, nisi. Magnis elementum vitae eu, dui et. Tempus etiam feugiat sem augue sed
-                                    sed. Tristique
-                                    feugiat mi feugiat integer consectetur sit enim penatibus. Quis sagittis proin
-                                    fermentum tempus
-                                    uspendisse ultricies. Tellus sapien, convallis proin pretium.</p>
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis
-                                    mattis nam ipsum pharetra porttitor eu.
-                                    Tristique feugiat mi feugiat integer consectetur sit enim penatibus. Quis sagittis
-                                    proin fermentum tempus
-                                    uspendisse ultricies. Tellus sapien, convallis proin pretium.</p>
-                            </div> --}}
     </div>
     </div>
     </div>
@@ -557,5 +339,10 @@
 
     <!-- app JavaScript -->
     <script src="template/assets/js/app.js"></script>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="template/assets/images/favicon.ico" />
+        <!-- <link rel="stylesheet" href="template/assets/css/backend-plugin.min.css"> -->
+        <link rel="stylesheet" href="template/assets/css/backend.css?v=1.0.0">
 
     {{-- @endsection --}}
