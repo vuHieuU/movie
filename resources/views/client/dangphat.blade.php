@@ -66,7 +66,7 @@
                                                                                                         <h3
                                                                                                             class="amy-movie-field-title">
                                                                                                             <a
-                                                                                                                href="chi-tiet-phim/{{ $item->id }}">{{ $item->name }}</a>
+                                                                                                                href="chi-tiet-phim/{{ $item->slug }}">{{ $item->name }}</a>
                                                                                                         </h3>
 
                                                                                                         <div
@@ -139,7 +139,7 @@
                                                                                                             <i
                                                                                                                 class="fa fa-play"></i>Trailer</a>
                                                                                                         <a class="amy-btn-icon-text link-detail"
-                                                                                                            href="chi-tiet-phim/{{ $item->id }}">
+                                                                                                            href="chi-tiet-phim/{{ $item->slug }}">
                                                                                                             <i
                                                                                                                 class="fa fa-info"></i>Chi
                                                                                                             tiết</a>
@@ -258,7 +258,7 @@
                                                                                     </div>
                                                                                     <div class="entry-content">
                                                                                         <h2 class="entry-title"><a
-                                                                                                href="detail_film/{{ $item->id }}">{{ $item->name }}</a>
+                                                                                                href="chi-tiet-phim/{{ $item->slug }}">{{ $item->name }}</a>
                                                                                         </h2>
                                                                                         <div><span class="duration"><i
                                                                                                     class="fa fa-clock-o"></i>{{ $item->duration }}
