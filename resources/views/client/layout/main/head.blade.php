@@ -322,7 +322,7 @@
     type='text/css' media='all' /> 
 <link rel='stylesheet' id='plyr-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/plyr.css?ver=1.0.0'
-    type='text/css' media='all' /> 
+    type='text/css' media='all' />
 <link rel='stylesheet' id='amy-movie-style-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/style.css?ver=1.0.0'
     type='text/css' media='all' /> 
@@ -433,5 +433,5 @@
 </style> 
 <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
 <!-- Trong tệp layout hoặc tệp view của bạn -->
-{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"> --}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
