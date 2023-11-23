@@ -206,16 +206,7 @@
 
                                                                         <div class="amy-pagination">
                                                                             <div class="clear"></div>
-                                                                            <nav class="amy-pagination">
-                                                                                <div class="amy-shadow"><span
-                                                                                        aria-current="page"
-                                                                                        class="page-numbers current">1</span><a
-                                                                                        class="page-numbers"
-                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/now-playing/page/2/">2</a><a
-                                                                                        class="next page-numbers"
-                                                                                        href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/now-playing/page/2/">Next</a>
-                                                                                </div>
-                                                                            </nav>
+                                                                         
                                                                         </div>
                                                                     </div>
                                                                 </div>
