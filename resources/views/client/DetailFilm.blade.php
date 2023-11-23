@@ -147,7 +147,7 @@
                                                     <div class="entry-action">
                                                         {{-- @if ($film_show_time->film->status == 'đang chiếu') --}}
                                                         <div class="mrate w-4  no-rate">
-                                                            @if ($film->status == 'đang chiếu')
+                                                            @if ($film->status == '1')
                                                             <button type="button"  data-bs-toggle="modal"
                                                                 data-bs-target="#exampleModal" class="amy-buy-ticket">Đặt
                                                                 vé</button>     

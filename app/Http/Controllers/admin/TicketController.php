@@ -16,10 +16,12 @@ class TicketController extends Controller
      */
     public function index(Request $request)
     {
-        $ticket = DB::table("tickets")
-            ->join('ticket_food', 'tickets.id', '=', 'ticket_food.ticket_id')
-            ->select('tickets.id', 'ticket_food.*', 'tickets.*', 'ticket_food.ticket_id')
-            ->orderBy("tickets.created_at", "desc");
+        // $ticket = DB::table("tickets")
+        //     ->join('ticket_food', 'tickets.id', '=', 'ticket_food.ticket_id')
+        //     ->select('tickets.id', 'ticket_food.*', 'tickets.*', 'ticket_food.ticket_id')
+        //     ->orderBy("tickets.created_at", "desc");
+
+        $ticket = ticket::orderBy('id','desc');
     
         $filter = $request->input('type');
         if ($filter === 'tuan') {
