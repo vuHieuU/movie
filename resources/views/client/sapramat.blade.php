@@ -57,7 +57,7 @@
                                                                         <div class="entry-content">
                                                                             <h2 class="entry-title">
                                                                                 <a
-                                                                                    href="detail_film/{{$item->id}}">
+                                                                                    href="chi-tiet-phim/{{$item->slug}}">
                                                                                     {{$item->name}}</a>
                                                                             </h2>
                                                                             <div class="info-top">

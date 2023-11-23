@@ -145,13 +145,13 @@ Route::middleware('auth')->group(function () {
     });
     // food
     Route::prefix('food')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\foodController::class, 'index'])->name('food.index')->middleware('permission:show-food');
-        Route::get('create', [App\Http\Controllers\admin\foodController::class, 'create'])->name('food.create')->middleware('permission:create-food');
-        Route::post('store', [App\Http\Controllers\admin\foodController::class, 'store'])->name('food.store')->middleware('permission:create-food');
-        Route::get('show/{id}', [App\Http\Controllers\admin\foodController::class, 'show'])->name('food.show')->middleware('permission:show-food');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\foodController::class, 'edit'])->name('food.edit')->middleware('permission:show-food');
-        Route::put('update/{id}', [App\Http\Controllers\admin\foodController::class, 'update'])->name('food.update')->middleware('permission:update-food');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\foodController::class, 'destroy'])->name('food.delete')->middleware('permission:delete-food');
+        Route::get('index', [App\Http\Controllers\admin\foodController::class, 'index'])->name('food.index');
+        Route::get('create', [App\Http\Controllers\admin\foodController::class, 'create'])->name('food.create');
+        Route::post('store', [App\Http\Controllers\admin\foodController::class, 'store'])->name('food.store');
+        Route::get('show/{id}', [App\Http\Controllers\admin\foodController::class, 'show'])->name('food.show');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\foodController::class, 'edit'])->name('food.edit');
+        Route::put('update/{id}', [App\Http\Controllers\admin\foodController::class, 'update'])->name('food.update');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\foodController::class, 'destroy'])->name('food.delete');
     });
     // combo
     Route::prefix('combo')->group(function () {
