@@ -341,6 +341,7 @@ class PayController extends Controller
                 $ticketFood = new ticketFood();
                 $ticketFood->ticket_id = $ticket->id;
                 $ticketFood->name = $foodItem['name'];
+                $ticketFood->cinema = $cinemaName;
                 $ticketFood->quantity = $foodItem['quantity'];
                 $ticketFood->save();
                 $food = food::where('id', $foodItem['id'])->first();

@@ -43,8 +43,9 @@ class FavoriteController extends Controller
             "film_id"=>$film_id,
         ];
         $id = $request->input("film_id");
+        $slug = film::where('id',$id)->get();
         favorite_film::create($data);
-        return redirect("chi-tiet-phim/{$id}")->with(['success' => 'Yêu thích thành công']);
+        return redirect()->back()->with(['success' => 'Yêu thích thành công']);
         }
 
     }
@@ -91,6 +92,6 @@ class FavoriteController extends Controller
         $user = Auth::user()->id;
         $idDelete = favorite_film::select('id')->where('film_id',$id)->first();
         $idDelete->delete($idDelete);
-        return redirect("/chi-tiet-phim/$id")->with(['success' => 'Bỏ yêu thích thành công']);
+        return redirect("/chi-tiet-phim/$id")->back()->with(['success' => 'Bỏ yêu thích thành công']);
     }
 }

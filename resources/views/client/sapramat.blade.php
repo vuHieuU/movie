@@ -1,4 +1,5 @@
-
+<!DOCTYPE html>
+<html lang="en-US">
     @extends('client.layout.main.main')
     @section('contact')
   
