@@ -525,7 +525,8 @@
                                                                 <textarea name="comment_text" id="comment_text" cols="45" rows="8" max-length="65525"
                                                                     aria-required="true" required="required"></textarea>
                                                             {{-- <div id="commentError" class="text-danger"></div> --}}
-                                                            <div class="row">
+                                                            @if (Auth()->check())
+                                                                   <div class="row">
                                                                 <div class="col-md-6">
                                                                     <p class="comment-form-author"><label
                                                                             for="author">Name
@@ -548,6 +549,32 @@
                                                                     {{-- <div id="emailError" class="text-danger"></div> --}}
                                                                 </div>
                                                             </div>
+                                                            @else
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <p class="comment-form-author"><label
+                                                                            for="author">Name
+                                                                            <span class="required">*</span></label><input
+                                                                            type="text" value="" id="name"
+                                                                            name="name" size="30" maxlength="245"
+                                                                            aria-required="true" required="required" />
+                                                                    </p>
+                                                                    {{-- <div id="nameError" class="text-danger"></div> --}}
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <p class="comment-form-email"><label
+                                                                            for="email">Email
+                                                                            <span class="required">*</span></label><input
+                                                                            type="email" value="" id="email"
+                                                                            name="email" size="30" maxlength="100"
+                                                                            aria-describedby="email-notes"
+                                                                            aria-required="true" required="required" />
+                                                                    </p>
+                                                                    {{-- <div id="emailError" class="text-danger"></div> --}}
+                                                                </div>
+                                                            </div> 
+                                                            @endif
+                                                         
 
                                                             <p class="form-submit">
                                                                 <button class="btn btn-success button-comment"

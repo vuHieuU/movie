@@ -5,6 +5,8 @@
 <meta name='robots' content='max-image-preview:large' />
 <meta name="keyword" content="@yield('meta_keyword')">
 <meta name="description" content="@yield('meta_description')">
+<link rel="stylesheet" href="template/assets/css/index.css">
+
 {{-- <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
 <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
@@ -284,7 +286,8 @@
 {{-- ảnh url --}}
 <link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
 {{-- ảnh url --}}
-<link rel='stylesheet' id='elementor-icons-css'
+
+{{-- <link rel='stylesheet' id='elementor-icons-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0'
     type='text/css' media='all' />
 <link rel='stylesheet' id='elementor-frontend-css'
@@ -316,19 +319,19 @@
     type='text/css' media='all' />
 <link rel='stylesheet' id='mCustomScrollbar-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.mCustomScrollbar.css?ver=1.0.0'
-    type='text/css' media='all' />
+    type='text/css' media='all' /> 
 <link rel='stylesheet' id='plyr-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/plyr.css?ver=1.0.0'
-    type='text/css' media='all' />
+    type='text/css' media='all' />  --}}
 <link rel='stylesheet' id='amy-movie-style-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/style.css?ver=1.0.0'
-    type='text/css' media='all' />
-<link rel='stylesheet' id='elementor-post-142-css'
+    type='text/css' media='all' /> 
+{{-- <link rel='stylesheet' id='elementor-post-142-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
-    type='text/css' media='all' />
-<link rel='stylesheet' id='elementor-post-133-css'
+    type='text/css' media='all' /> 
+ <link rel='stylesheet' id='elementor-post-133-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-133.css?ver=1651871151'
-    type='text/css' media='all' />
+    type='text/css' media='all' /> --}}
 <style id='amy-movie-style-inline-css' type='text/css'>
     .amy-primary-navigation ul.nav-menu>li>a::after {
         top: 70%;
@@ -430,5 +433,5 @@
 </style> 
 <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
 <!-- Trong tệp layout hoặc tệp view của bạn -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"> --}}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
