@@ -45,7 +45,7 @@
                         <div class="card-body">
                             <p><strong>Mã đơn: </strong>{{ $ticket->code }}</p>
                             <p><strong>Rạp:</strong> {{ $ticket->cinema }}</p>
-                            <p><strong>Phòng:</strong> {{ $ticket->selected_room }}</p>
+                            <p class="d-none"><strong>Phòng:</strong> {{ $ticket->selected_room }}</p>
                             <p><strong>Vị trí ghế:</strong> {{ $ticket->selected_seats }}</p>
                             <p><strong>Tổng Vé:</strong> {{ number_format($ticket->total) }} VND</p>
                         </div>

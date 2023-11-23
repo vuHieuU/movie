@@ -96,6 +96,7 @@
                 $appliedCoupon = session('applied_coupon');
                 $discountAmount = $appliedCoupon->value;
                 $discountType = $appliedCoupon->type;
+                $discountName = $appliedCoupon->name;
                 if ($discountType === 'amount') {
                     $total = $total - $discountAmount;
                 } elseif ($discountType === 'percent') {
@@ -177,6 +178,32 @@
                                             <td fs-5>{{ $selectedSeatsValue }}</td>
                                             <td class="cs-text_right cs-primary_color fs-5">
                                                 {{ number_format($selectedPriceSeatsValue) }} VND</td>
+                                        </tr>
+                                        <tr class="cs-focus_bg">
+                                            <td fs-5>03</td>
+                                            <td fs-5>Mã giảm giá</td>
+                                            <td fs-5>
+                                               
+                                                @if (isset($discountType))
+                                                {{ $discountName }}
+                
+                                            @endif</td>
+                                            <td class="cs-text_right cs-primary_color fs-5">
+                                                @if (session('success'))
+                                                <div class="">
+
+                                                    @if ($discountType === 'amount')
+                                                        <p
+                                                            class="cs-primary_color cs-mb5 cs-text_right">
+                                                            Giảm: {{ $discountAmount }} Vnđ</p>
+                                                    @elseif ($discountType === 'percent')
+                                                        <p
+                                                            class="cs-primary_color cs-mb5 cs-text_right">
+                                                            Giảm: {{ $discountAmount }} %</p>
+                                                    @endif
+
+                                                </div>
+                                            @endif</td>
                                         </tr>
                                     </tbody>
 
