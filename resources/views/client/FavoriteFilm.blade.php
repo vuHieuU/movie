@@ -269,7 +269,7 @@ class="page-template page-template-elementor_header_footer page page-id-38 wp-em
                               <th>Tên phim</th>
                               <th>Hình ảnh</th>
                               <th>Thời lượng phim</th>
-                              <th>Miêu tả</th>
+                              <th>Diễn viên</th>
                               <th>Hành Động</th>
                           </tr>
                       </thead>
@@ -288,7 +288,7 @@ class="page-template page-template-elementor_header_footer page page-id-38 wp-em
                                     src="{{ asset('storage/images/'.$item->thumb) }}"
                                     alt="" /></td>
                               <td>{{$item->duration}}</td>
-                              <td>{{$item->description}}</td>
+                              <td>{{$item->actor}}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"

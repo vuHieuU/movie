@@ -128,34 +128,35 @@
 
                                                         </li>
                                                     </ul>
-
+                                                    @if ($check == 0)
+                                                    <form action="/unLikeFilm/{{ $film->id }}" method="GET">
+                                                        @csrf
+                                                        <input type="Submit" value="Bỏ yêu thích">
+                                                    </form>
+                                                @else
+                                                    <form action="/addFavoFilm" method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="user_id"
+                                                            value="{{ $user }}">
+                                                        <input type="hidden" name="film_id"
+                                                            value="{{ $film->id }}">
+                                                        <input type="Submit" value="Yêu thích">
+                                                    </form>
+                                                @endif
                                                     {{-- BUy ticket --}}
                                                     <div class="entry-action">
                                                         {{-- @if ($film_show_time->film->status == 'đang chiếu') --}}
-                                                        <div class="mrate  no-rate">
-                                                            <button type="button" data-bs-toggle="modal"
+                                                        <div class="mrate w-4  no-rate">
+                                                            @if ($film->status == 'đang chiếu')
+                                                            <button type="button"  data-bs-toggle="modal"
                                                                 data-bs-target="#exampleModal" class="amy-buy-ticket">Đặt
-                                                                vé</button>
+                                                                vé</button>     
+                                                            @endif
+                                                           
                                                         </div>
-                                                        {{-- @else --}}
+                                                 
 
-                                                        {{-- @endif --}}
-
-                                                        @if ($check == 0)
-                                                            <form action="/unLikeFilm/{{ $film->id }}" method="GET">
-                                                                @csrf
-                                                                <input type="Submit" value="Bỏ yêu thích">
-                                                            </form>
-                                                        @else
-                                                            <form action="/addFavoFilm" method="POST">
-                                                                @csrf
-                                                                <input type="hidden" name="user_id"
-                                                                    value="{{ $user }}">
-                                                                <input type="hidden" name="film_id"
-                                                                    value="{{ $film->id }}">
-                                                                <input type="Submit" value="Yêu thích">
-                                                            </form>
-                                                        @endif
+                                                   
                                                         <style>
                                                             /* Đặt màu nền cho modal */
                                                             .modal-content {

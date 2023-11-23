@@ -63,19 +63,17 @@
                                                                                                     class="amy-movie-item-back-inner">
                                                                                                     <div
                                                                                                         class="amy-movie-item-content">
-                                                                                                        <h3
-                                                                                                            class="amy-movie-field-title">
-                                                                                                            <a
-                                                                                                                href="chi-tiet-phim/{{ $item->id }}">{{ $item->name }}</a>
-                                                                                                        </h3>
-
+                                                                                                        <h2 class="carousel-title">
+                                                                                                            <a href="chi-tiet-phim/{{ $item->id }}">
+                                                                                                                {{ $item->name }} </a>
+                                                                                                        </h2>
                                                                                                         <div
                                                                                                             class="amy-movie-item-meta">
                                                                                                             <span
                                                                                                                 class="amy-movie-field-mpaa">G</span>
                                                                                                             <span
                                                                                                                 class="amy-movie-field-duration"><i
-                                                                                                                    class="fa fa-clock-o"></i>{{ $item->duration }}
+                                                                                                                    class="fa fa-clock-o"></i>{!! $item->duration !!}
                                                                                                                 phút</span>
                                                                                                         </div>
 
@@ -207,14 +205,7 @@
                                                                                 <div class="amy-pagination">
                                                                                     <div class="clear"></div>
                                                                                     <nav class="amy-pagination">
-                                                                                        <div class="amy-shadow"><span
-                                                                                                aria-current="page"
-                                                                                                class="page-numbers current">1</span><a
-                                                                                                class="page-numbers"
-                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/now-playing/page/2/">2</a><a
-                                                                                                class="next page-numbers"
-                                                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/now-playing/page/2/">Next</a>
-                                                                                        </div>
+                                                                                      
                                                                                     </nav>
                                                                                 </div>
                                                                             </div>

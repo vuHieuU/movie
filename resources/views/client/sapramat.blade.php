@@ -111,12 +111,7 @@
                                                                             </ul>
 
 
-                                                                            <a class="showtime-btn"
-                                                                                data-src="#entry-showtime-79"
-                                                                                href="javascript::void(0);">
-                                                                                Showtime <i
-                                                                                    class="fa fa-caret-down"></i>
-                                                                            </a>
+                                                            
                                                                         </div>
                                                                         <div class="clearfix"></div>
 
@@ -191,16 +186,7 @@
                                                                 </div>
 
                                                                 <div class="clear"></div>
-                                                                <nav class="amy-pagination">
-                                                                    <div class="amy-shadow"><span
-                                                                            aria-current="page"
-                                                                            class="page-numbers current">1</span><a
-                                                                            class="page-numbers"
-                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/coming-soon/page/2/">2</a><a
-                                                                            class="next page-numbers"
-                                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/coming-soon/page/2/">Next</a>
-                                                                    </div>
-                                                                </nav>
+                                                               
                                                             </div>
                                                         </div>
                                                     </div>
