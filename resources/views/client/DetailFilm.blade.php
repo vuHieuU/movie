@@ -263,7 +263,7 @@
                                                                                             @php
                                                                                                 $cinemaDates[] = $item->day;
                                                                                             @endphp
-                                                                                            <a class="showtime-day fs-3"
+                                                                                            <a class="A showtime-day fs-3"
                                                                                                 style="display: none;font-weight: 700; margin-left:40px"
                                                                                                 data-showtime-date="{{ $item->day }}"
                                                                                                 data-showtime-cinema-id="{{ $item->cinema_id }}">
@@ -274,7 +274,12 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-
+                                                                    <style>
+                                                                        .A.active {
+                                                                            text-decoration: underline;
+                                                                            color: red; /* Add this line to change the text color to red */
+                                                                        }
+                                                                    </style>
 
                                                                     <div class="modal-header px-5">
                                                                         <div class="container">
@@ -387,6 +392,12 @@
                                                             var showtimeDayElements = document.querySelectorAll(".showtime-day");
                                                             showtimeDayElements.forEach(function(element) {
                                                                 element.addEventListener("click", function() {
+                                                                    showtimeDayElements.forEach(function(dateElement) {
+                                                                            dateElement.classList.remove("active");
+                                                                        });
+
+                                                                        // Select the clicked date
+                                                                        element.classList.add("active");
                                                                     selectDate(element.getAttribute("data-showtime-date"));
                                                                     showHoursForSelectedCinemaAndDate();
                                                                 });
