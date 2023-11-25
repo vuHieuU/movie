@@ -379,10 +379,10 @@
 
                                             <div class="row text-center  gap-2" style="margin-top: 70px">
                                                 <div class="col-md-4">
-
+{{-- 
                                                     <a href="{{ route('chair', [$ShowTime->id]) }}"
                                                         style="background-color: #FE7900;"
-                                                        class="btn text-white btn-block px-5 py-2 fs-3"> Quay lại</a>
+                                                        class="btn text-white btn-block px-5 py-2 fs-3"> Quay lại</a> --}}
                                                 </div>
                                                 <div class="col-md-5"> 
                                                         <button type="button" id="thanh-toan-button" style="background-color: #FE7900;" class="btn text-white btn-block px-5 py-2 fs-3"> Thanh toán</button>

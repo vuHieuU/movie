@@ -54,8 +54,8 @@
                                                                                                     src="{{ asset('storage/images/' . $item->thumb) }}"
                                                                                                     alt="Kubo and the Two Strings" />
                                                                                             </a>
-                                                                                            <span
-                                                                                                class="amy-movie-field-imdb">8.5</span>
+                                                                                            {{-- <span
+                                                                                                class="amy-movie-field-imdb">8.5</span> --}}
                                                                                         </div>
                                                                                     </div>
 

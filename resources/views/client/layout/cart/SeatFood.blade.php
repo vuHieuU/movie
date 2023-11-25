@@ -192,7 +192,7 @@
                                                                                     </div>
 
                                                                                     <div class="py-5">
-                                                                                        <img class="img-responsive"
+                                                                                        <img class="img-responsive "
                                                                                             src="{{ asset('storage/images/ic-screen.png') }}">
 
                                                                                     </div>
@@ -293,7 +293,7 @@
 
 
                                                                                             <div
-                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                style="max-width: 750px;margin: auto; text-center">
                                                                                                 @foreach ($seats1 as $item)
                                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat update-seat"
                                                                                                         id="{{ $item->showtime_seat_id }}"
@@ -1349,10 +1349,10 @@
 
                                                                                     <hr class="border-2 border-black py-4">
                                                                                     <div class="d-flex">
-                                                                                        <a href="{{ route('filmDetail', [$film->id]) }}"
+                                                                                        {{-- <a href="{{ route('filmDetail', [$film->id]) }}"
                                                                                             style="background-color: #FE7900;"
                                                                                             class="btn text-white btn-lg fs-4 px-4">Quay
-                                                                                            lại</a>
+                                                                                            lại</a> --}}
                                                                                         <form
                                                                                             action="{{ route('pay', ['film_id' => $film->id]) }}"
                                                                                             method="get">

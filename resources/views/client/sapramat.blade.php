@@ -101,13 +101,13 @@
                                                                                         {{$item->language}} </span>
                                                                                 </li>
 
-                                                                                <li>
+                                                                                {{-- <li>
                                                                                     <label>
                                                                                         Imdb:
                                                                                     </label>
                                                                                     <span>
                                                                                         8.5 </span>
-                                                                                </li>
+                                                                                </li> --}}
 
                                                                             </ul>
 

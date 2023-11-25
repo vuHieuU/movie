@@ -1,11 +1,11 @@
 <div class="iq-sidebar  sidebar-default ">
     <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-        <a href="../backend/index.html" class="header-logo">
+        {{-- <a href="../backend/index.html" class="header-logo">
             <img src="../storage/images/img_66.png" class="img-fluid rounded-normal light-logo w-100" alt="logo">
-        </a>
-        <div class="iq-menu-bt-sidebar ml-0">
+        </a> --}}
+        {{-- <div class="iq-menu-bt-sidebar ml-0">
             <i class="las la-bars wrapper-menu"></i> 
-        </div>
+        </div> --}}
     </div>
     <div class="data-scrollbar" data-scroll="1">
         <nav class="iq-sidebar-menu">

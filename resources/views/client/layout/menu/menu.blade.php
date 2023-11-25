@@ -159,7 +159,7 @@
                             </li>
                             <li id="menu-item-276"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-276">
-                                <a href="/movie">Phim</a>
+                                <a href="#">Phim</a>
                                 <ul class="sub-menu">
                                     <li id="menu-item-143"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143">

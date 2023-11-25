@@ -34,7 +34,7 @@
                                         <div class="card card-block card-stretch">
                                             <div class="card-body p-3">
                                                 <div class="row align-items-center text-center py-2">
-                                                    <div class="profile-info col-xl-3 col-lg-6">
+                                                    <div class="profile-info col-xl-6 col-lg-3">
                                                         <div class="profile-icon icon m-auto rounded bg-warning">
                                                             <svg class="svg-icon" width="22" height="22"
                                                                 viewBox="0 0 36 48" fill="none"
@@ -66,7 +66,7 @@
                                                         @endforeach
                                                         <p class="mb-0">Vé đã đặt</p>
                                                     </div>
-                                                    <div class="profile-info col-xl-3 col-lg-6">
+                                                    {{-- <div class="profile-info col-xl-3 col-lg-6">
                                                         <div class="profile-icon icon m-auto rounded bg-danger">
                                                             <svg class="svg-icon" width="22" height="22"
                                                                 viewBox="0 0 48 48" fill="none"
@@ -93,8 +93,8 @@
                                                         @endforeach
                                                        
                                                         <p class="mb-0">Hạng thẻ</p>
-                                                    </div>
-                                                    <div class="profile-info col-xl-3 col-lg-6">
+                                                    </div> --}}
+                                                    {{-- <div class="profile-info col-xl-3 col-lg-6">
                                                         <div class="profile-icon icon m-auto rounded bg-success">
                                                             <svg class="svg-icon" width="22" height="22"
                                                                 viewBox="0 0 36 48" fill="none"
@@ -106,7 +106,7 @@
                                                         </div>
                                                         <h5 class="mb-2 mt-3 icon-text-success">90+</h5>
                                                         <p class="mb-0">Participated</p>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             </div>
                                         </div>

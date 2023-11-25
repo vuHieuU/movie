@@ -150,7 +150,7 @@
                 </footer>
 
                 <!-- Back to My Account Link -->
-                <p class="text-center d-print-none py-4"><a href="{{ route('ticket.index') }}">&laquo; Quay lại</a></p>
+                <p class="text-center d-print-none py-4"><a href="http://127.0.0.1:8000">&laquo; Quay lại</a></p>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
