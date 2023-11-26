@@ -6,9 +6,10 @@ use Carbon\Carbon;
 use App\Models\film;
 use App\Models\food;
 use App\Models\News;
+use App\Models\User;
 use App\Jobs\SenMail;
-use App\Models\combo;
 
+use App\Models\combo;
 use App\Jobs\sendMail;
 use App\Models\coupon;
 use App\Models\ticket;
@@ -17,12 +18,12 @@ use App\Models\ShowTime;
 use App\Models\ticketFood;
 use App\Models\coupon_usage;
 use App\Models\Notification;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
 use App\Models\showtime_seat;
+use App\Jobs\ResetFreezeStatusJob;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Jobs\ResetFreezeStatusJob;
 use Illuminate\Support\Facades\Mail;
 
 class PayController extends Controller
@@ -231,6 +232,10 @@ class PayController extends Controller
     session(['total' => $total]);
     $user = auth()->user();
     $FoodValueName = session('FoodValueName');
+    $user = auth()->user();
+    $point = $user->point;
+    $user->point = $point + $total / 100;
+    $user->save();
     $ShowTime = film::findOrFail($film_id);
 
     $ticket = new Ticket();
@@ -317,6 +322,9 @@ class PayController extends Controller
             $total = $_GET['vnp_Amount'] / 100;
             $FoodValueName = session('FoodValueName');
             $user = auth()->user();
+            $point = $user->point;
+            $user->point = $point + $total / 100;
+            $user->save();
 
             $ShowTime = film::findOrFail($id);
         
@@ -336,6 +344,7 @@ class PayController extends Controller
             $ticket->total = $total;
             $ticket->code = date('Ymd-His') . rand(10, 99);;
             $ticket->save();
+
             if($FoodValueName){
             foreach ($FoodValueName as $foodItem) {
                 $ticketFood = new ticketFood();

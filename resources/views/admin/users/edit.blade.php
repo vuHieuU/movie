@@ -104,6 +104,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Cấp bậc</label>
+                                            <select name="rank_id" class="selectpicker form-control" data-style="py-0">
+                                                @foreach ($rank as $item)
+                                                    <option value="{{$item->id}}">{{$item->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
                                     {{-- <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">

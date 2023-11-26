@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Models\rank;
 use App\Models\User;
 use App\Models\ticket;
 use Illuminate\Http\Request;
@@ -66,7 +67,8 @@ class userController extends Controller
     {
         $user = User::FindOrFail($id);
         $role = Role::all()->groupBy('group');
-        return view('admin.users.edit',compact('user','role'));
+        $rank = rank::get();
+        return view('admin.users.edit',compact('user','role','rank'));
     }
 
     /**

@@ -34,7 +34,7 @@
                                         <div class="card card-block card-stretch">
                                             <div class="card-body p-3">
                                                 <div class="row align-items-center text-center py-2">
-                                                    <div class="profile-info col-xl-6 col-lg-3">
+                                                    <div class="profile-info col-xl-3 col-lg-3">
                                                         <div class="profile-icon icon m-auto rounded bg-warning">
                                                             <svg class="svg-icon" width="22" height="22"
                                                                 viewBox="0 0 36 48" fill="none"
@@ -66,7 +66,7 @@
                                                         @endforeach
                                                         <p class="mb-0">Vé đã đặt</p>
                                                     </div>
-                                                    {{-- <div class="profile-info col-xl-3 col-lg-6">
+                                                    <div class="profile-info col-xl-3 col-lg-6">
                                                         <div class="profile-icon icon m-auto rounded bg-danger">
                                                             <svg class="svg-icon" width="22" height="22"
                                                                 viewBox="0 0 48 48" fill="none"
@@ -78,23 +78,14 @@
                                                         </div>
                                                        
                                                        
-                                                        @foreach ($sumtotal as $item)
-                                                        @if ($item->sumtotal >= "0" && $item->sumtotal <= "500000")
-                                                        <h5 class="mb-2 mt-3 icon-text-warning">Thành viên</h5>
-                                                        @elseif ($item->sumtotal > "500000" && $item->sumtotal <= "1000000")
-                                                        <h5 class="mb-2 mt-3 icon-text-warning">Thành viên Bạc</h5>
-                                                        @elseif ($item->sumtotal > "1000000" && $item->sumtotal <= "3000000")
-                                                        <h5 class="mb-2 mt-3 icon-text-warning">Thành viên Vàng</h5>
-                                                        @elseif ($item->sumtotal > "3000000" && $item->sumtotal <= "5000000")
-                                                        <h5 class="mb-2 mt-3 icon-text-warning">Thành viên Vip</h5>
-                                                        @else
-                                                        <h5 class="mb-2 mt-3 icon-text-warning">Thành viên Siêu vip</h5>
+                                                        @if ($rank)
+                                                        <h5 class="mb-2 mt-3 icon-text-warning">{{ $rank->user_rank->name }}</h5>
                                                         @endif
-                                                        @endforeach
+
                                                        
                                                         <p class="mb-0">Hạng thẻ</p>
-                                                    </div> --}}
-                                                    {{-- <div class="profile-info col-xl-3 col-lg-6">
+                                                    </div>
+                                                    <div class="profile-info col-xl-3 col-lg-6">
                                                         <div class="profile-icon icon m-auto rounded bg-success">
                                                             <svg class="svg-icon" width="22" height="22"
                                                                 viewBox="0 0 36 48" fill="none"
@@ -104,9 +95,11 @@
                                                                     fill="#336c47" />
                                                             </svg>
                                                         </div>
-                                                        <h5 class="mb-2 mt-3 icon-text-success">90+</h5>
-                                                        <p class="mb-0">Participated</p>
-                                                    </div> --}}
+                                                        @if ($rank)
+                                                        <h5 class="mb-2 mt-3 icon-text-success">{{ $rank->point }}</h5>
+                                                        @endif
+                                                        <p class="mb-0">Điểm</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

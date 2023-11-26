@@ -32,66 +32,60 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Danh sách người dùng</h4>
+                          <h4 class="mb-3">Danh sách cấp bậc</h4>
                       </div>
-                      {{-- <a href="/user/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm người dùng</a> --}}
+                      <a href="{{route("rank.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm mới cấp bậc</a>
                   </div>
               </div>
               <div class="col-lg-12">
                   <div class="table-responsive rounded mb-3">
                   <table class="data-tables table mb-0 tbl-server-info">
+                    <p style="color: green">
+                        {{ session('success') }}
+                    </p>
                       <thead class="bg-white text-uppercase">
                           <tr class="ligth ligth-data">
+                            
                               <th>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox1">
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
                               </th>
-                              <th>Tên người dùng</th>
-                              <th>Số điện thoại</th>
-                              <th>Email</th>
-                              <th>Địa chỉ</th>
-                              <th>Giới tính</th>
+                              <th>ID</th>
                               <th>Cấp bậc</th>
-                              <th>Điểm</th>
+                              <th>Điểm tối thiểu</th>
+                           
                               <th>Action</th>
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
-
-                        @foreach ($user as $item)
-                            
-                    
-              
+                             @foreach ($rank as $item)
                           <tr>
+                            
                               <td>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox10">
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
                               </td>
+                              <td>{{$item->id}}</td>
                               <td>{{ $item->name }}</td>
-                              <td>{{ $item->phone }}</td>
-                              <td>{{ $item->email }}</td>
-                              <td>{{ $item->address }}</td>
-                              <td>{{ $item->gender  }}</td>
-                              <td>{{ $item->user_rank->name }}</td>
-                              <td>{{ $item->point }}</td>
+                              <td>{{ $item->minium_score }}</td>
+                              
+
+                              
                               <td>
                                   <div class="d-flex align-items-center list-action">
-                                      <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="ticket"
-                                          href="/user/showTicketUser/{{ $item->id }}"><i class="fa-solid fa-ticket"></i></a>
-                                      <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                          href="/user/show/{{ $item->id }}"><i class="ri-eye-line mr-0"></i></a>
+                                      {{-- <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                          href="#"><i class="ri-eye-line mr-0"></i></a> --}}
                                       <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                          href="/user/edit/{{ $item->id }}"><i class="ri-pencil-line mr-0"></i></a>
+                                          href="{{route("rank.edit",$item->id)}}"><i class="ri-pencil-line mr-0"></i></a>
                                       <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                          href="{{ route('remove_user',[$item->id]) }}"><i class="ri-delete-bin-line mr-0"></i></a>
+                                          href="{{route("rank.destroy",$item->id)}}" onclick="return confirm('Xóa là không Ctrl lại cuộc đời ?')"><i class="ri-delete-bin-line mr-0"></i></a>
                                   </div>
                               </td>
                           </tr>
-
                           @endforeach
                       </tbody>
                   </table>
@@ -137,5 +131,9 @@
         </div>
       </div>
       <!-- Wrapper End-->
-    
+      <script>
+        $('.data-tables').DataTable({
+            
+        });
+    </script> 
 @endsection

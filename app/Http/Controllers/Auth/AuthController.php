@@ -78,8 +78,11 @@ class AuthController extends Controller
         
         $user = User::get();
 
+        $rank = User::where('id', $loggedInUser->id)->select('rank_id', 'point')->first();
+        $user = User::get();
+
         $taitel = "history";
-        return view('client.HistoryTicket', compact("taitel","tickit","counttiket","sumtotal","user"));
+        return view('client.HistoryTicket', compact("taitel","tickit","counttiket","sumtotal","user","rank"));
     }
 
     public function show(string $id)

@@ -257,6 +257,15 @@ Route::middleware('auth')->group(function () {
         Route::post('update/{id}', [App\Http\Controllers\admin\NewController::class, 'update'])->name('news.update');
         Route::get('delete/{id}', [App\Http\Controllers\admin\NewController::class, 'destroy'])->name('news.destroy');
     });
+    // Hội viên
+    Route::prefix('rank')->group(function () {
+        Route::get('index', [App\Http\Controllers\admin\rankController::class, 'index'])->name('rank.index');
+        Route::get('create', [App\Http\Controllers\admin\rankController::class, 'create'])->name('rank.create');
+        Route::post('store', [App\Http\Controllers\admin\rankController::class, 'store'])->name('rank.store');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\rankController::class, 'edit'])->name('rank.edit');
+        Route::post('update/{id}', [App\Http\Controllers\admin\rankController::class, 'update'])->name('rank.update');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\rankController::class, 'destroy'])->name('rank.destroy');
+    });
 
     //Banner
     Route::prefix('sliders')->group(function () {

@@ -23,6 +23,8 @@ class User extends Authenticatable
         'name',
         'google_id',
         'github_id',
+        'rank_id',
+        'point',
         'phone',
         'address',
         'email',
@@ -56,4 +58,7 @@ class User extends Authenticatable
 {
     return $this->belongsToMany(Role::class, 'model_has_roles', 'model_id', 'role_id');
 }
+    public function user_rank() {
+        return $this->belongsTo(rank::class,'rank_id');
+    }
 }
