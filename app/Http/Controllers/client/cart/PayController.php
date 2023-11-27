@@ -24,6 +24,7 @@ use App\Models\showtime_seat;
 use App\Jobs\ResetFreezeStatusJob;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class PayController extends Controller
@@ -192,13 +193,21 @@ class PayController extends Controller
         $FoodValueName = json_decode($foodData, true);
         session(['FoodValueName' => $FoodValueName]);
         $couponIds = Coupon::get()->pluck('id')->toArray();
+        $selectedShowTimeId = session('selectedShowTimeId');
         $is_used = coupon_usage::where('user_id', auth()->user()->id)
                     ->whereIn('coupon_id', $couponIds)
-                    ->get()->pluck('coupon_id')->toArray();
+                    ->get()->pluck('coupon_selectedShowTimeIdid')->toArray();
         $not_useds = Coupon::where('expiry_date', '>=', Carbon::now())
                     ->orderBy('created_at','desc')
                     ->whereNotIn('id', $is_used)
                     ->get();
+        $userId = Auth::id();
+        $userExists = ticket::where("showtime_id",$selectedShowTimeId)->where("user_Id",$userId)->exists();
+        if($userExists){
+            $check = 1;
+        }else{
+            $check = 0;
+        }
         return view('client.layout.cart.pay',compact(
             "title",
             'ShowTime',
@@ -211,7 +220,10 @@ class PayController extends Controller
             'cinemaName',
             "tickit",
             "new_footer",
-            "not_useds"
+            "not_useds",
+            "selectedShowTimeId",
+            "userId",
+            "check",
         ));
     }
 
