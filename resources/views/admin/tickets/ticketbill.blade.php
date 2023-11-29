@@ -77,6 +77,41 @@
                                 <div class="col-sm-5"> <strong>Thanh toán:</strong>
                                     <p>{{ $ticket->payment }}</p>
                                 </div>
+                                <form id="paymentForm" method="post" action="{{ route('updatePaymentStatus', ['id' => $ticket->id]) }}">
+                                    @csrf
+                                    <div class="col-sm-5">
+                                        <strong>Thanh toán:</strong>
+                                        <select name="status" id="payment_status" {{ $ticket->status == 'Đã thanh toán' ? 'disabled' : '' }}>
+                                            <option value="Đã thanh toán" {{ $ticket->status == 'Đã thanh toán' ? 'selected':'' }}>Đã thanh toán</option>
+                                            <option value="Chưa thanh toán" {{ $ticket->status == 'Chưa thanh toán' ? 'selected':'' }}>Chưa thanh toán</option>
+                                        </select>
+                                    </div>
+                                    <!-- Loại bỏ nút Lưu và thêm script JavaScript -->
+                                </form>
+                                    {{-- @if($ticket->status == 'Đã thanh toán')
+                                    @php
+                                    $product_point_total = 0;             
+                                    $user = $order->user;
+                                    $user_point = $user->point;
+                                    $club_point = \App\Models\ClubPoint::where('ticket_id', $ticket->id)->first();
+                                    
+                                    if ($club_point && $club_point->status == 0) {
+                                        $order_point = $club_point->points;
+                                        $user_point += $order_point;
+                                        $user_point_rank += $order_point;
+                                        $user->user_point = $user_point;
+                                        $user->save();
+                                        $club_point->status = 1;
+                                        $club_point->save();
+                                    }
+                                    @endphp --}}
+                                
+                                <script>
+                                    document.getElementById('payment_status').addEventListener('change', function() {
+                                        document.getElementById('paymentForm').submit();
+                                    });
+                                </script>
+                                
                             </div> 
                         </div>
                         <div class="col-sm-2" style="margin-top: -15px;">

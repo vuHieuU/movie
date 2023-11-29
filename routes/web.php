@@ -245,6 +245,7 @@ Route::middleware('auth')->group(function () {
         Route::get('index', [App\Http\Controllers\admin\TicketController::class, 'index'])->name('ticket.index');
         Route::get('delete/{id}', [App\Http\Controllers\admin\TicketController::class, 'destroy'])->name('destroy.index');
         Route::get('show/{id}', [App\Http\Controllers\admin\TicketController::class, 'show'])->name('show.index');
+        Route::post('/tickets/{id}/updatePaymentStatus', [App\Http\Controllers\admin\TicketController::class, 'updatePaymentStatus'])->name('updatePaymentStatus');
     });
 
     // Danh sách Tin tức

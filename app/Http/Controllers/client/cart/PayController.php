@@ -24,6 +24,7 @@ use App\Models\showtime_seat;
 use App\Jobs\ResetFreezeStatusJob;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\club_point;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -244,10 +245,6 @@ class PayController extends Controller
     session(['total' => $total]);
     $user = auth()->user();
     $FoodValueName = session('FoodValueName');
-    $user = auth()->user();
-    $point = $user->point;
-    $user->point = $point + $total / 100;
-    $user->save();
     $ShowTime = film::findOrFail($film_id);
 
     $ticket = new Ticket();
@@ -264,9 +261,17 @@ class PayController extends Controller
     $ticket->coupon_code = $couponCode;
     $ticket->total = $total;
     $ticket->payment = $payment;
+    $ticket->status = "Chưa thanh toán";
     $ticket->code = date('Ymd-His') . rand(10, 99);
     
     $ticket->save();
+
+    $club_point = new club_point();
+    $club_point->user_id = $user->id;
+    $club_point->point = $total / 100;
+    $club_point->ticket_id = $ticket->id;
+    $club_point->save();
+
     if($FoodValueName){
     foreach ($FoodValueName as $foodItem) {
         $ticketFood = new ticketFood();
@@ -353,6 +358,7 @@ class PayController extends Controller
             $ticket->film_id = $ShowTime->id;
             $ticket->coupon_code = $couponCode;
             $ticket->payment = "VNPAY";
+            $ticket->status = "Đã thanh toán";
             $ticket->total = $total;
             $ticket->code = date('Ymd-His') . rand(10, 99);;
             $ticket->save();

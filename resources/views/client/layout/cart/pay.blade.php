@@ -356,6 +356,7 @@
                                         <td class="cs-width_3 cs-text_right">
                                             <p class="cs-mb5 cs-mb5 cs-f15 cs-primary_color cs-semi_bold">Tiền:</p>
                                             <p class="cs-primary_color cs-bold cs-f16 cs-mb5 ">Giảm giá:</p>
+                                            <p class="cs-mb5 cs-mb5 cs-f15 cs-primary_color cs-semi_bold">Điểm:</p>
 
                                             <p class="cs-border border-none"></p>
                                             <p class="cs-primary_color cs-bold cs-f16 cs-mb5 ">Tổng tiền:</p>
@@ -390,6 +391,8 @@
                                             </p>
                                             <p class="cs-border"></p>
 
+                                            <p class="cs-primary_color cs-bold cs-f16 cs-mb5 cs-text_right">
+                                                {{ number_format($total/100) }} Điểm</p>
                                             <p class="cs-primary_color cs-bold cs-f16 cs-mb5 cs-text_right">
                                                 {{ number_format($total) }} VND</p>
 
