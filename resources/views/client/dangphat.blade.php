@@ -151,7 +151,7 @@
                                                                                     </div>
                                                                                 </div>
 
-                                                                                <div class="entry-showtime as">
+                                                                                {{-- <div class="entry-showtime as">
                                                                                     @php
                                                                                         $Showtime = \App\Models\Showtime::where('film_id', $item->id)
                                                                                             ->where('day', '>=', date('Y-m-d'))
@@ -201,7 +201,7 @@
                                                                                     </div>
 
 
-                                                                                </div>
+                                                                                </div> --}}
                                                                             </div>
                                                                         @endforeach
 

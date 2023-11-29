@@ -227,7 +227,7 @@
                                                                             <h1 class="modal-title fs-2 py-3 text-muted fw-bold"
                                                                                 id="exampleModalLabel">Chọn rạp</h1>
                                                                             <div class="d-flex justify-content-around">
-                                                                                @foreach (\App\Models\cinema::get() as $cinema)
+                                                                                @foreach (\App\Models\Cinema::get() as $cinema)
                                                                                     <a class="li" href="#"
                                                                                         data-cinema-id="{{ $cinema->id }}">
                                                                                         <li> {{ $cinema->name }}</li>
