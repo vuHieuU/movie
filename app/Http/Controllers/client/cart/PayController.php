@@ -190,14 +190,16 @@ class PayController extends Controller
         session(['cinemaRoom' => $cinemaRoom]);
         $selectedPriceSeatsValue = $request->input("selectedPriceSeatsValue");
         $totalPriceFoodValue = $request->input("totalPriceFoodValue");
+        session(['selectedPriceSeatsValue' => $selectedPriceSeatsValue]);
+        session(['totalPriceFoodValue' => $totalPriceFoodValue]);
         $foodData = $request->input("FoodValueName");
         $FoodValueName = json_decode($foodData, true);
         session(['FoodValueName' => $FoodValueName]);
         $couponIds = Coupon::get()->pluck('id')->toArray();
         $selectedShowTimeId = session('selectedShowTimeId');
         $is_used = coupon_usage::where('user_id', auth()->user()->id)
-                    ->whereIn('coupon_id', $couponIds)
-                    ->get()->pluck('coupon_selectedShowTimeIdid')->toArray();
+        ->whereIn('coupon_id', $couponIds)
+        ->get()->pluck('coupon_id')->toArray();
         $not_useds = Coupon::where('expiry_date', '>=', Carbon::now())
                     ->orderBy('created_at','desc')
                     ->whereNotIn('id', $is_used)
@@ -242,6 +244,7 @@ class PayController extends Controller
     $payment = $request->input('payment');
     session(['payment' => $payment]);
     $total = $request->input('total');
+    $total_not_coupon = $request->input('total_not_coupon');
     session(['total' => $total]);
     $user = auth()->user();
     $FoodValueName = session('FoodValueName');
@@ -268,7 +271,7 @@ class PayController extends Controller
 
     $club_point = new club_point();
     $club_point->user_id = $user->id;
-    $club_point->point = $total / 100;
+    $club_point->point = $total_not_coupon / 100;
     $club_point->ticket_id = $ticket->id;
     $club_point->save();
 
@@ -336,11 +339,14 @@ class PayController extends Controller
             $cinemaName = session('cinemaName');
             $cinemaRoom = session('cinemaRoom');
             $couponCode = session('coupon_code');
+            $selectedPriceSeatsValue = session('selectedPriceSeatsValue');
+            $totalPriceFoodValue = session('totalPriceFoodValue');
+            $total_not_coupon = $selectedPriceSeatsValue + $totalPriceFoodValue;
             $total = $_GET['vnp_Amount'] / 100;
             $FoodValueName = session('FoodValueName');
             $user = auth()->user();
             $point = $user->point;
-            $user->point = $point + $total / 100;
+            $user->point = $point + $total_not_coupon / 100;
             $user->save();
 
             $ShowTime = film::findOrFail($id);

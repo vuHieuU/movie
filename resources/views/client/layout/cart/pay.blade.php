@@ -92,6 +92,7 @@
         @php
             $total = 0;
             $total = $selectedPriceSeatsValue + $totalPriceFoodValue;
+            $total_not_coupon = $selectedPriceSeatsValue + $totalPriceFoodValue;
             if (session()->has('applied_coupon')) {
                 $appliedCoupon = session('applied_coupon');
                 $discountAmount = $appliedCoupon->value;
@@ -229,7 +230,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            </div>z
+                            </div>
                             <div class="col-md-12 mt-3">
                                         <form action="{{ route('applyCoupon') }}" method="POST">
                                             @csrf
@@ -292,6 +293,7 @@
                             @csrf
                             <div class="mb-5 d-flex align-items-center">
                                 <input type="hidden" name="total" value="{{ $total }}">
+                                <input type="hidden" name="total_not_coupon" value="{{ $total_not_coupon }}">
                                 <div class="btn btn-primary fs-3 px-5 py-2 w-25" id="vnpay-div">Thanh toán bằng Vnpay</div>
                                 <input type="radio" class="ms-4" style="transform: scale(1.5);" name="redirect" value="vnpay">
                             </div>
@@ -304,6 +306,7 @@
                            
                             <div class="mb-5 d-flex align-items-center">
                                 <input type="hidden" name="total" value="{{ $total }}">
+                                <input type="hidden" name="total_not_coupon" value="{{ $total_not_coupon }}">
                                 <input type="hidden" name="payment" value="Thanh Toán tại quầy">
                                 <div class="btn btn-primary fs-3 px-5 py-2 w-25" id="quay-div">Thanh toán tại quầy</div>
                                 <input type="radio" class="ms-4" style="transform: scale(1.5);" name="redirect" value="quay">
@@ -392,7 +395,7 @@
                                             <p class="cs-border"></p>
 
                                             <p class="cs-primary_color cs-bold cs-f16 cs-mb5 cs-text_right">
-                                                {{ number_format($total/100) }} Điểm</p>
+                                                {{ number_format($total_not_coupon/100) }} Điểm</p>
                                             <p class="cs-primary_color cs-bold cs-f16 cs-mb5 cs-text_right">
                                                 {{ number_format($total) }} VND</p>
 
