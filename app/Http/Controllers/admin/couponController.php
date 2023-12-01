@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\coupon;
+use App\Models\rank;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Requests\Admin\CouponRequest;
@@ -15,7 +16,7 @@ class couponController extends Controller
      */
     public function index()
     {
-        $coupon = coupon::all();
+        $coupon = coupon::orderBy('created_at','desc')->get();
         return view('admin.coupons.index', compact('coupon'));
     }
 
@@ -24,7 +25,8 @@ class couponController extends Controller
      */
     public function create()
     {
-        return view('admin.coupons.create');
+        $ranks = rank::get();
+        return view('admin.coupons.create',compact('ranks'));
     }
 
     /**
@@ -40,6 +42,7 @@ class couponController extends Controller
          $newRecord->type = $request->input('type');
          $newRecord->value = $request->input('value');
          $newRecord->expiry_date = $request->input('expiry_date');
+         $newRecord->rank_id = $request->input('rank_id');
      
          $newRecord->save();
      
@@ -64,14 +67,15 @@ class couponController extends Controller
     public function edit($id)
     {
         $coupon = Coupon::find($id);
-        return view('admin.coupons.edit', compact('coupon'));
+        $ranks = rank::get();
+        return view('admin.coupons.edit', compact('coupon','ranks'));
     }
     
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(CouponRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $coupon = Coupon::find($id);
     
@@ -83,6 +87,7 @@ class couponController extends Controller
         $coupon->type = $request->input('type');
         $coupon->value = $request->input('value');
         $coupon->expiry_date = $request->input('expiry_date');
+        $coupon->rank_id = $request->input('rank_id');
             $coupon->save();
             return redirect()->route('coupon.index')->with('success', 'Coupon updated successfully');
     }

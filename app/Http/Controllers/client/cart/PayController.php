@@ -197,13 +197,19 @@ class PayController extends Controller
         session(['FoodValueName' => $FoodValueName]);
         $couponIds = Coupon::get()->pluck('id')->toArray();
         $selectedShowTimeId = session('selectedShowTimeId');
+        $user_rank_id = auth()->user()->rank_id;
         $is_used = coupon_usage::where('user_id', auth()->user()->id)
         ->whereIn('coupon_id', $couponIds)
         ->get()->pluck('coupon_id')->toArray();
         $not_useds = Coupon::where('expiry_date', '>=', Carbon::now())
-                    ->orderBy('created_at','desc')
-                    ->whereNotIn('id', $is_used)
-                    ->get();
+        ->where(function ($query) use ($user_rank_id) {
+            $query->where('rank_id', $user_rank_id)
+                ->orWhereNull('rank_id');
+        })
+            ->orderBy('created_at', 'desc')
+            ->whereNotIn('id', $is_used)
+            ->get();
+    
         $userId = Auth::id();
         $userExists = ticket::where("showtime_id",$selectedShowTimeId)->where("user_Id",$userId)->exists();
         if($userExists){

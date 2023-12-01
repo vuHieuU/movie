@@ -96,7 +96,7 @@
                                                             </svg>
                                                         </div>
                                                         @if ($rank)
-                                                        <h5 class="mb-2 mt-3 icon-text-success">{{ $rank->point }}</h5>
+                                                        <h5 class="mb-2 mt-3 icon-text-success">{{ number_format($rank->point) }}</h5>
                                                         @endif
                                                         <p class="mb-0">Điểm</p>
                                                     </div>
