@@ -78,8 +78,10 @@
                                                         </div>
                                                        
                                                        
-                                                        @if ($rank)
-                                                        <h5 class="mb-2 mt-3 icon-text-warning">{{ $rank->user_rank->name }}</h5>
+                                                        @if ($rank->user_rank)
+                                                          <h5 class="mb-2 mt-3 icon-text-warning">{{ $rank->user_rank->name }}</h5>
+                                                        @else
+                                                          <h5 class="mb-2 mt-3 icon-text-warning">Hạng thường</h5>
                                                         @endif
 
                                                        
