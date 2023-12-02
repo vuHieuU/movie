@@ -184,6 +184,11 @@ class PayController extends Controller
         session(['selectedSeatsValue' => $selectedSeatsValue]);
         $selectedSeatsValueID = $request->input("selectedSeatsValueID");
         session(['selectedSeatsValueID' => $selectedSeatsValueID]);
+        $selectedShowTimeId = session('selectedShowTimeId');
+        $selectSeatArray = explode(',', $selectedSeatsValueID);
+        $seats = showtime_seat::where('showtime_id', $selectedShowTimeId)
+            ->whereIn('seat_id', $selectSeatArray)
+            ->pluck('isActive');
         $cinemaName = $request->input("cinemaName");
         session(['cinemaName' => $cinemaName]);
         $cinemaRoom = $request->input("cinemaRoom");
@@ -233,6 +238,7 @@ class PayController extends Controller
             "selectedShowTimeId",
             "userId",
             "check",
+            "seats",
         ));
     }
 

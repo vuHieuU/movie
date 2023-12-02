@@ -344,7 +344,7 @@
                                 } else if (selectedPaymentMethod === "quay") {
                                     $("#quay-form").submit();
                                 } else {
-                                    alert("Mày chưa chọn phương thức thanh toán kìa!");
+                                    alert("Bạn chưa chọn phương thức thanh toán");
                                 }
                             });
                         });
@@ -406,9 +406,28 @@
                                                         style="background-color: #FE7900;"
                                                         class="btn text-white btn-block px-5 py-2 fs-3"> Quay lại</a> --}}
                                                 </div>
+                                                @php
+                                                $allSeatsActive = $seats->every(function ($value) {
+                                                    return $value == 1;
+                                                });
+                                            @endphp
+                                            
+                                            @if ($allSeatsActive)
                                                 <div class="col-md-5"> 
-                                                        <button type="button" id="thanh-toan-button" style="background-color: #FE7900;" class="btn text-white btn-block px-5 py-2 fs-3"> Thanh toán</button>
+                                                    <button type="button" id="thanh-toan-button" style="background-color: #FE7900;" class="btn text-white btn-block px-5 py-2 fs-3"> Thanh toán</button>
                                                 </div>
+                                            @else
+                                                <div class="col-md-5"> 
+                                                    <button type="button" onclick="showAlert()" style="background-color: #FE7900;" class="btn text-white btn-block px-5 py-2 fs-3"> Thanh toán</button>
+                                                </div>
+                                            @endif
+                                            
+                                            <script>
+                                                function showAlert() {
+                                                    alert('Xin lỗi, có ít nhất một ghế đã có người chọn.');
+                                                }
+                                            </script>
+                                            
                                             </div>
                                         </td>
 
