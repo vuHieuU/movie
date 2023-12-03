@@ -298,7 +298,7 @@
                         </form>
                         {{-- {{$selectedShowTimeId}} --}}
                         {{-- {{$check}} --}}
-                        @if ($check == 0)
+                        {{-- @if ($check == 0) --}}
                         <form id="quay-form" action="{{ route('payment_success', ['film_id' => $ShowTime->id]) }}" method="post">
                             @csrf
                            
@@ -309,7 +309,7 @@
                                 <input type="radio" class="ms-4" style="transform: scale(1.5);" name="redirect" value="quay">
                             </div>
                         </form>
-                        @else
+                        {{-- @else --}}
                         {{-- <form id="quay-form" action="{{ route('payment_success', ['film_id' => $ShowTime->id]) }}" method="post">
                             @csrf
                            
@@ -320,7 +320,7 @@
                                 <input type="radio" class="ms-4" style="transform: scale(1.5);" name="redirect" value="quay">
                             </div>
                         </form>  --}}
-                        @endif
+                        {{-- @endif --}}
                       
                         
 
