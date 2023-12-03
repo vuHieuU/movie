@@ -274,6 +274,7 @@ class PayController extends Controller
     $ticket->buyer_name = $user->name;
     $ticket->film_id = $ShowTime->id;
     $ticket->coupon_code = $couponCode;
+    $ticket->point = $total_not_coupon / 100;
     $ticket->total = $total;
     $ticket->payment = $payment;
     $ticket->status = "Chưa thanh toán";
@@ -323,10 +324,6 @@ class PayController extends Controller
     $notification->save();
 
     sendMail::dispatch($user->email,$ticket)->delay(now()->addSeconds(10));
-    // try {
-    //     Mail::to($user->email)->send(new BookTicket($ticket));
-    // } catch (\Throwable $th) {
-    // }
 
     $selectSeatArray = explode(',', $selectedSeatsValueID);
 
@@ -375,6 +372,7 @@ class PayController extends Controller
             $ticket->buyer_name = $user->name;
             $ticket->film_id = $ShowTime->id;
             $ticket->coupon_code = $couponCode;
+            $ticket->point = $total_not_coupon / 100;
             $ticket->payment = "VNPAY";
             $ticket->status = "Đã thanh toán";
             $ticket->total = $total;

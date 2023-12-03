@@ -125,7 +125,7 @@
                                                         <th style="">Tên phim</th>
                                                         <th style="">Ngày đặt</th>
                                                         <th>Thời gian chiếu</th>
-                                                        <th style="">Vị trí ghế</th>
+                                                        <th style="">Trạng thái</th>
                                                         <th>Tổng tiền</th>
                                                         <th>Action</th>
                                                         
@@ -149,7 +149,7 @@
                                                         </td>
                                                         <td>{{ $item->selected_date }}</td>
                                                         <td>{{ $item->selected_hour }}</td>
-                                                        <td>{{ $item->selected_seats }}</td>
+                                                        <td>{{ $item->status }}</td>
                                                     
                                                         <td>{{number_format( $item->total) }} VND</td>
                                                         <td>

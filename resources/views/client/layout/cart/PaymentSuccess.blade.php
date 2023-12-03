@@ -48,6 +48,7 @@
                             <p class="d-none"><strong>Phòng:</strong> {{ $ticket->selected_room }}</p>
                             <p><strong>Vị trí ghế:</strong> {{ $ticket->selected_seats }}</p>
                             <p><strong>Tổng Vé:</strong> {{ number_format($ticket->total) }} VND</p>
+                            <p><strong>Điểm nhận được:</strong> {{ number_format($ticket->point) }}đ</p>
                         </div>
                         </div>
                         <div class="col-md-1"></div>

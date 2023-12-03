@@ -86,26 +86,7 @@
                                             <option value="Chưa thanh toán" {{ $ticket->status == 'Chưa thanh toán' ? 'selected':'' }}>Chưa thanh toán</option>
                                         </select>
                                     </div>
-                                    <!-- Loại bỏ nút Lưu và thêm script JavaScript -->
-                                </form>
-                                    {{-- @if($ticket->status == 'Đã thanh toán')
-                                    @php
-                                    $product_point_total = 0;             
-                                    $user = $order->user;
-                                    $user_point = $user->point;
-                                    $club_point = \App\Models\ClubPoint::where('ticket_id', $ticket->id)->first();
-                                    
-                                    if ($club_point && $club_point->status == 0) {
-                                        $order_point = $club_point->points;
-                                        $user_point += $order_point;
-                                        $user_point_rank += $order_point;
-                                        $user->user_point = $user_point;
-                                        $user->save();
-                                        $club_point->status = 1;
-                                        $club_point->save();
-                                    }
-                                    @endphp --}}
-                                
+                                </form>                                
                                 <script>
                                     document.getElementById('payment_status').addEventListener('change', function() {
                                         document.getElementById('paymentForm').submit();
@@ -152,6 +133,11 @@
                                             <td>Chi phí khác</td>
                                             <td class="text-end">0</td>
                                             <td class="text-end">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chi phí khác</td>
+                                            <td class="text-end"></td>
+                                            <td class="text-end">{{ $ticket->point }}</td>
                                         </tr>
 
                                     </tbody>
