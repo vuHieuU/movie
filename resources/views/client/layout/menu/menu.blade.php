@@ -4,7 +4,7 @@
             <div class="amy-left">
                 <div id="amy-site-logo " style="width: 70%;">
                     <a href="/">
-                        <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_66.png"
+                        <img src="{{asset("storage/images/img_66.png")}}"
                             alt="Elementor Single Cinema" />
                     </a>
 
