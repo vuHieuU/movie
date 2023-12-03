@@ -943,9 +943,9 @@
                                                                     sizes="(max-width: 750px) 100vw, 750px" /></div>
                                                             <div class="entry-content">
                                                                 <h2 class="entry-title"><a
-                                                                        href="{{ route('detailblog', [$item->id]) }}">{{ $item->title }}</a>
+                                                                        href="{{ route('detailblog', [$item->slug]) }}">{{ $item->title }}</a>
                                                                 </h2><a class="entry-btn"
-                                                                    href="{{ route('detailblog', [$item->id]) }}">Xem thêm</a>
+                                                                    href="{{ route('detailblog', [$item->slug]) }}">Xem thêm</a>
                                                             </div>
                                                             <div class="clearfix"></div>
                                                         </div>
@@ -961,11 +961,11 @@
                                                                     sizes="(max-width: 750px) 100vw, 750px" /></div>
                                                             <div class="entry-content">
                                                                 <h2 class="entry-title"><a
-                                                                        href="{{ route('detailblog', [$item->id]) }}">{{ $item->title }}</a>
+                                                                        href="{{ route('detailblog', [$item->slug]) }}">{{ $item->title }}</a>
                                                                 </h2>
-                                                                <div class="entry-summary">{{ $item->content }}
+                                                                <div class="entry-summary">
                                                                 </div><a class="entry-btn"
-                                                                    href="{{ route('detailblog', [$item->id]) }}">Xem thêm</a>
+                                                                    href="{{ route('detailblog', [$item->slug]) }}">Xem thêm</a>
                                                             </div>
                                                             <div class="clearfix"></div>
                                                         </div>
@@ -982,9 +982,9 @@
                                                                     sizes="(max-width: 750px) 100vw, 750px" /></div>
                                                             <div class="entry-content">
                                                                 <h2 class="entry-title"><a
-                                                                        href="{{ route('detailblog', [$item->id]) }}">{{ $item->title }}</a>
+                                                                        href="{{ route('detailblog', [$item->slug]) }}">{{ $item->title }}</a>
                                                                 </h2><a class="entry-btn"
-                                                                    href="{{ route('detailblog', [$item->id]) }}">Read
+                                                                    href="{{ route('detailblog', [$item->slug]) }}">Read
                                                                     more</a>
                                                             </div>
                                                             <div class="clearfix"></div>

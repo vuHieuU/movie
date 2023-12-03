@@ -27,57 +27,32 @@
 <article id="post-55" class="post-55 post type-post status-publish format-standard has-post-thumbnail category-news">
 	<div class="entry-top ">
 		<div class="entry-thumb">
-			<img style="width: 30%;" src="{{ asset('/storage/images/' . $detailblog->thumbnail) }}" class="attachment-full size-full wp-post-image" alt=""   />		</div>
+			{{-- <img style="width: 30%;" src="{{ asset('/storage/images/' . $detailblog->thumbnail) }}" class="attachment-full size-full wp-post-image" alt=""   />		</div> --}}
 	</div>
 	<div class="entry-bottom ">
 		<!-- Post Meta -->
 		<div class="entry-meta">
-			<div class="entry-date">
+			{{-- <div class="entry-date">
 				<span class="d">28</span>
 				<span class="m">Apr</span>
-			</div>
-			<div class="entry-comment">
+				<span>{{$detailblog->created_at->format("d-m-Y")}}</span>
+			</div> --}}
+			{{-- <div class="entry-comment">
 				<i class="fa fa-comments" aria-hidden="true"></i>
-				0			</div>
+				0
+			</div> --}}
 		</div>
 		<div class="entry-left">
 			<h1 class="entry-title p-name" itemprop="name headline"><a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/2022/04/28/win-a-wizarding-world-holiday-with-fantastic/" rel="bookmark" class="u-url url" itemprop="url">{{$detailblog->title}}   </a></h1>
+			<div>
+				<span>Ngày đăng: {{$detailblog->created_at->format("d/m/Y")}}</span>
+			</div>
 							<!-- Content -->
 				<div class="entry-content e-content" itemprop="description articleBody">
-					
-<p id="block-e8186da3-9e18-4094-880b-0c72ef1fe54a">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 
 
 
-<figure class="wp-block-image size-full" id="block-0cfc080c-676c-442e-bee9-50fbc1ab71e3"><img loading="lazy" width="750" height="500" src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59.jpg" alt="" class="wp-image-251" srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59-300x200.jpg 300w" sizes="(max-width: 750px) 100vw, 750px" /></figure>
-
-
-
-<p id="block-e77a294d-d103-4d17-9c56-05deca63c918">    {{$detailblog->content}}   </p>
-
-
-
-
-
-
-
-<h2 id="block-bfcd12da-6666-4cd1-97dd-7cd39080351e">Ut Enim ad minima denim</h2>
-
-
-
-<p id="block-fa7008ad-372e-4da2-b6da-4ecedcae6628">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-
-
-
-<ul id="block-6251bd0b-cc21-4b11-808c-062378b66c52"><li>Eque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</li><li>Quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</li><li>Ut enim ad minima veniam, quis nostrum exercitationem.</li></ul>
-
-
-
-<h2 id="block-b1e5ccc5-3480-4547-92ba-dd95fc79fc6e">Marvel&#8217;s Doctor Strange</h2>
-
-
-
-<p id="block-e5a4441b-f8c7-47c3-9111-7546867a7896">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+<p id="block-e77a294d-d103-4d17-9c56-05deca63c918">    {!!$detailblog->content !!}   </p>
 									</div>
 					</div>
 		<div class="clearfix"></div>
