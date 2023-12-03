@@ -54,13 +54,13 @@
                             @foreach ($new_footer as $item )
                                 <div class="entry-item">
                                     <div class="entry-thumb">
-                                        <a href="{{ route('detailblog', [$item->id]) }}">
+                                        <a href="{{ route('detailblog', [$item->slug]) }}">
                                         <img src="{{ asset('storage/images/' . $item->thumbnail) }}" alt="" width="100px" style="height: 140px">
                                     </a>
                                     </div>
                                     <div class="entry-content">
                                         <h2 class="entry-title"><a
-                                                href="{{ route('detailblog', [$item->id]) }}">{{ $item->title }}</a></h2>
+                                                href="{{ route('detailblog', [$item->slug]) }}">{{ $item->title }}</a></h2>
                                                 <span class="entry-date">{{Carbon\Carbon::parse( $item->created_at)->format("d/n/Y")}}</span>
                                     </div>
                                     <div class="clearfix"></div>

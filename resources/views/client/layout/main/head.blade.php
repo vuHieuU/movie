@@ -5,8 +5,9 @@
 <meta name='robots' content='max-image-preview:large' />
 <meta name="keyword" content="@yield('meta_keyword')">
 <meta name="description" content="@yield('meta_description')">
-{{-- <link rel="stylesheet" href="template/assets/css/index.css"> --}}
-
+<link rel="stylesheet" href="/template/assets/css/index.css">
+<link rel="stylesheet" href="/template/assets/css/head.css">
+{{-- <script src="/template/assets/js/head.js"></script> --}}
 {{-- <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
 <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
@@ -287,67 +288,52 @@
 <link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
 {{-- ảnh url --}}
 
-<link rel='stylesheet' id='elementor-icons-css'
+{{-- <link rel='stylesheet' id='elementor-icons-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0'
-    type='text/css' media='all' />
+    type='text/css' media='all' /> 
 <link rel='stylesheet' id='elementor-frontend-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.6.5'
-    type='text/css' media='all' />
+    type='text/css' media='all' /> 
 <link rel='stylesheet' id='elementor-post-5-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-5.css?ver=1651538276'
-    type='text/css' media='all' />
+    type='text/css' media='all' /> 
 <link rel='stylesheet' id='elementor-global-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/global.css?ver=1651538276'
-    type='text/css' media='all' />
+    type='text/css' media='all' /> 
 <link rel='stylesheet' id='elementor-post-84-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-84.css?ver=1651785613'
-    type='text/css' media='all' />
+    type='text/css' media='all' /> 
 <link rel='stylesheet' id='font-awesome-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0'
-    type='text/css' media='all' />
+    type='text/css' media='all' /> 
 <link rel='stylesheet' id='slick-style-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick.css?ver=5.9.7'
-    type='text/css' media='all' />
+    type='text/css' media='all' /> 
 <link rel='stylesheet' id='slick-theme-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/slick-theme.css?ver=5.9.7'
-    type='text/css' media='all' />
+    type='text/css' media='all' /> 
 <link rel='stylesheet' id='fancybox-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.fancybox.css?ver=3.5.7'
-    type='text/css' media='all' />
+    type='text/css' media='all' /> 
 <link rel='stylesheet' id='tooltipster-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/tooltipster.bundle.css?ver=1.0.0'
-    type='text/css' media='all' />
+    type='text/css' media='all' /> 
 <link rel='stylesheet' id='mCustomScrollbar-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.mCustomScrollbar.css?ver=1.0.0'
-    type='text/css' media='all' /> 
+    type='text/css' media='all' />  
 <link rel='stylesheet' id='plyr-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/plyr.css?ver=1.0.0'
-    type='text/css' media='all' />
+    type='text/css' media='all' /> 
 <link rel='stylesheet' id='amy-movie-style-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/style.css?ver=1.0.0'
-    type='text/css' media='all' /> 
+    type='text/css' media='all' />  
 <link rel='stylesheet' id='elementor-post-142-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
-    type='text/css' media='all' /> 
+    type='text/css' media='all' />  
  <link rel='stylesheet' id='elementor-post-133-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-133.css?ver=1651871151'
-    type='text/css' media='all' />
-<style id='amy-movie-style-inline-css' type='text/css'>
-    .amy-primary-navigation ul.nav-menu>li>a::after {
-        top: 70%;
-    }
-</style>
+    type='text/css' media='all' />  --}}
 
-<style>
-    .amy-primary-navigation ul.nav-menu > li:last-child > ul:after, .amy-primary-navigation ul.nav-menu > li:last-child > ul:before {
-        right: 5%;
-        left: inherit; }
-
-    .logoUserLogin{
-        display: flex;
-        justify-content: center;
-    }
-</style>
 {{-- <link rel='stylesheet' id='csf-google-web-fonts-css'
     href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css'
     media='all' />
@@ -374,7 +360,7 @@
     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2F" />
 <link rel="alternate" type="text/xml+oembed"
     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2F&#038;format=xml" />--}}
-<style type="text/css">
+{{-- <style type="text/css">
     body {
         font-family: "Roboto Condensed";
         color: #333;
@@ -430,8 +416,8 @@
     #amy-page-header {
         background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
     }
-</style> 
+</style>  --}}
 <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
 <!-- Trong tệp layout hoặc tệp view của bạn -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"> --}}
+{{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script> --}}

@@ -9,8 +9,7 @@
         <meta name='robots' content='max-image-preview:large' />
         <link rel='dns-prefetch' href='//fonts.googleapis.com' />
         <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="/template/assets/css/seatfood.css">
         <style type="text/css">
             body {
                 font-family: "Roboto Condensed";
