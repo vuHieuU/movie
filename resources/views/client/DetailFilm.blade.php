@@ -661,7 +661,7 @@
                                                                     alt="Kubo and the Two Strings" /></div>
                                                             <div class="entry-content">
                                                                 <h2 class="entry-title"><a
-                                                                        href="{{ route('filmDetail', [$item->id]) }}">{{ $item->name }}</a>
+                                                                        href="{{ route('filmDetail', [$item->slug]) }}">{{ $item->name }}</a>
                                                                 </h2>
                                                                 <div><span class="duration"><i class="fa fa-clock-o"></i>
                                                                         {{ $item->duration }}
@@ -686,7 +686,7 @@
                                                             </div>
                                                             <div class="entry-content">
                                                                 <h2 class="entry-title"><a
-                                                                        href="">{{ $item->title }}</a></h2>
+                                                                        href="{{ route('detailblog', [$item->slug]) }}">{{ $item->title }}</a></h2>
                                                                 <div class="entry-meta"><span
                                                                         class="entry-date">{{ Carbon\Carbon::parse($item->created_at)->format('d/n/Y') }}</span><span>
                                                                         /
