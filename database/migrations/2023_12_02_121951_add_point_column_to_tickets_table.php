@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('films', function (Blueprint $table) {
-            $table->string("meta_title")->after('description');
-            $table->string("meta_keyword")->after('description');
-            $table->mediumText("meta_description")->after('description');
+        Schema::table('tickets', function (Blueprint $table) {
+            $table->integer('point')->nullable()->after('coupon_code');
         });
     }
 
@@ -23,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('films', function (Blueprint $table) {
+        Schema::table('tickets', function (Blueprint $table) {
             //
         });
     }

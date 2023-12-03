@@ -118,6 +118,11 @@
                                             <td class="text-end">0</td>
                                             <td class="text-end">0</td>
                                         </tr>
+                                        <tr>
+                                            <td>Điểm nhận được</td>
+                                            <td class="text-end"></td>
+                                            <td class="text-end">{{$ticket->point}}đ</td>
+                                        </tr>
 
                                     </tbody>
                                     <tfoot class="card-footer">

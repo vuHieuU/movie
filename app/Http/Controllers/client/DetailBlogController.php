@@ -37,10 +37,10 @@ class DetailBlogController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $blog_slug)
     {
         $title = "Detail Blog";
-        $detailblog  =News::find($id);
+        $detailblog  =News::where("slug",$blog_slug)->where("status",1)->first();
         return view('client.DetailBlog',compact('title',"detailblog"));
     }
 

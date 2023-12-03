@@ -78,8 +78,10 @@
                                                         </div>
                                                        
                                                        
-                                                        @if ($rank)
-                                                        <h5 class="mb-2 mt-3 icon-text-warning">{{ $rank->user_rank->name }}</h5>
+                                                        @if ($rank->user_rank)
+                                                          <h5 class="mb-2 mt-3 icon-text-warning">{{ $rank->user_rank->name }}</h5>
+                                                        @else
+                                                          <h5 class="mb-2 mt-3 icon-text-warning">Hạng thường</h5>
                                                         @endif
 
                                                        
@@ -96,7 +98,7 @@
                                                             </svg>
                                                         </div>
                                                         @if ($rank)
-                                                        <h5 class="mb-2 mt-3 icon-text-success">{{ $rank->point }}</h5>
+                                                        <h5 class="mb-2 mt-3 icon-text-success">{{ number_format($rank->point) }}</h5>
                                                         @endif
                                                         <p class="mb-0">Điểm</p>
                                                     </div>
@@ -123,7 +125,7 @@
                                                         <th style="">Tên phim</th>
                                                         <th style="">Ngày đặt</th>
                                                         <th>Thời gian chiếu</th>
-                                                        <th style="">Vị trí ghế</th>
+                                                        <th style="">Trạng thái</th>
                                                         <th>Tổng tiền</th>
                                                         <th>Action</th>
                                                         
@@ -147,7 +149,7 @@
                                                         </td>
                                                         <td>{{ $item->selected_date }}</td>
                                                         <td>{{ $item->selected_hour }}</td>
-                                                        <td>{{ $item->selected_seats }}</td>
+                                                        <td>{{ $item->status }}</td>
                                                     
                                                         <td>{{number_format( $item->total) }} VND</td>
                                                         <td>

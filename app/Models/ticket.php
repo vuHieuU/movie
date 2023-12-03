@@ -20,6 +20,7 @@ class ticket extends Model
         'cinema',
         'film_id',
         'coupon_code',
+        'point',
         'total',
         'payment',
         'code',

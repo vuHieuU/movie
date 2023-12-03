@@ -184,24 +184,37 @@ class PayController extends Controller
         session(['selectedSeatsValue' => $selectedSeatsValue]);
         $selectedSeatsValueID = $request->input("selectedSeatsValueID");
         session(['selectedSeatsValueID' => $selectedSeatsValueID]);
+        $selectedShowTimeId = session('selectedShowTimeId');
+        $selectSeatArray = explode(',', $selectedSeatsValueID);
+        $seats = showtime_seat::where('showtime_id', $selectedShowTimeId)
+            ->whereIn('seat_id', $selectSeatArray)
+            ->pluck('isActive');
         $cinemaName = $request->input("cinemaName");
         session(['cinemaName' => $cinemaName]);
         $cinemaRoom = $request->input("cinemaRoom");
         session(['cinemaRoom' => $cinemaRoom]);
         $selectedPriceSeatsValue = $request->input("selectedPriceSeatsValue");
         $totalPriceFoodValue = $request->input("totalPriceFoodValue");
+        session(['selectedPriceSeatsValue' => $selectedPriceSeatsValue]);
+        session(['totalPriceFoodValue' => $totalPriceFoodValue]);
         $foodData = $request->input("FoodValueName");
         $FoodValueName = json_decode($foodData, true);
         session(['FoodValueName' => $FoodValueName]);
         $couponIds = Coupon::get()->pluck('id')->toArray();
         $selectedShowTimeId = session('selectedShowTimeId');
+        $user_rank_id = auth()->user()->rank_id;
         $is_used = coupon_usage::where('user_id', auth()->user()->id)
-                    ->whereIn('coupon_id', $couponIds)
-                    ->get()->pluck('coupon_selectedShowTimeIdid')->toArray();
+        ->whereIn('coupon_id', $couponIds)
+        ->get()->pluck('coupon_id')->toArray();
         $not_useds = Coupon::where('expiry_date', '>=', Carbon::now())
-                    ->orderBy('created_at','desc')
-                    ->whereNotIn('id', $is_used)
-                    ->get();
+        ->where(function ($query) use ($user_rank_id) {
+            $query->where('rank_id', $user_rank_id)
+                ->orWhereNull('rank_id');
+        })
+            ->orderBy('created_at', 'desc')
+            ->whereNotIn('id', $is_used)
+            ->get();
+    
         $userId = Auth::id();
         $userExists = ticket::where("showtime_id",$selectedShowTimeId)->where("user_Id",$userId)->exists();
         if($userExists){
@@ -225,6 +238,7 @@ class PayController extends Controller
             "selectedShowTimeId",
             "userId",
             "check",
+            "seats",
         ));
     }
 
@@ -242,6 +256,7 @@ class PayController extends Controller
     $payment = $request->input('payment');
     session(['payment' => $payment]);
     $total = $request->input('total');
+    $total_not_coupon = $request->input('total_not_coupon');
     session(['total' => $total]);
     $user = auth()->user();
     $FoodValueName = session('FoodValueName');
@@ -259,6 +274,7 @@ class PayController extends Controller
     $ticket->buyer_name = $user->name;
     $ticket->film_id = $ShowTime->id;
     $ticket->coupon_code = $couponCode;
+    $ticket->point = $total_not_coupon / 100;
     $ticket->total = $total;
     $ticket->payment = $payment;
     $ticket->status = "Chưa thanh toán";
@@ -268,7 +284,7 @@ class PayController extends Controller
 
     $club_point = new club_point();
     $club_point->user_id = $user->id;
-    $club_point->point = $total / 100;
+    $club_point->point = $total_not_coupon / 100;
     $club_point->ticket_id = $ticket->id;
     $club_point->save();
 
@@ -308,10 +324,6 @@ class PayController extends Controller
     $notification->save();
 
     sendMail::dispatch($user->email,$ticket)->delay(now()->addSeconds(10));
-    // try {
-    //     Mail::to($user->email)->send(new BookTicket($ticket));
-    // } catch (\Throwable $th) {
-    // }
 
     $selectSeatArray = explode(',', $selectedSeatsValueID);
 
@@ -336,11 +348,14 @@ class PayController extends Controller
             $cinemaName = session('cinemaName');
             $cinemaRoom = session('cinemaRoom');
             $couponCode = session('coupon_code');
+            $selectedPriceSeatsValue = session('selectedPriceSeatsValue');
+            $totalPriceFoodValue = session('totalPriceFoodValue');
+            $total_not_coupon = $selectedPriceSeatsValue + $totalPriceFoodValue;
             $total = $_GET['vnp_Amount'] / 100;
             $FoodValueName = session('FoodValueName');
             $user = auth()->user();
             $point = $user->point;
-            $user->point = $point + $total / 100;
+            $user->point = $point + $total_not_coupon / 100;
             $user->save();
 
             $ShowTime = film::findOrFail($id);
@@ -357,6 +372,7 @@ class PayController extends Controller
             $ticket->buyer_name = $user->name;
             $ticket->film_id = $ShowTime->id;
             $ticket->coupon_code = $couponCode;
+            $ticket->point = $total_not_coupon / 100;
             $ticket->payment = "VNPAY";
             $ticket->status = "Đã thanh toán";
             $ticket->total = $total;
