@@ -66,7 +66,7 @@ class couponController extends Controller
      */
     public function edit($id)
     {
-        $coupon = Coupon::find($id);
+        $coupon = coupon::find($id);
         $ranks = rank::get();
         return view('admin.coupons.edit', compact('coupon','ranks'));
     }
@@ -77,7 +77,7 @@ class couponController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $coupon = Coupon::find($id);
+        $coupon = coupon::find($id);
     
         if (!$coupon) {
             return redirect()->back()->with('error', 'Coupon not found');
@@ -96,7 +96,7 @@ class couponController extends Controller
      */
     public function destroy($id)
     {
-        $coupon = Coupon::find($id);
+        $coupon = coupon::find($id);
     
         if (!$coupon) {
             return redirect()->back()->with('error', 'Coupon not found');

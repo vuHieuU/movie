@@ -108,7 +108,7 @@ class TicketController extends Controller
     }
     public function updatePaymentStatus(Request $request, $id)
     {
-        $ticket = Ticket::findOrFail($id);
+        $ticket = ticket::findOrFail($id);
         $ticket->status = $request->input('status');
         $ticket->save();
         $point_user = User::findOrFail($ticket->user_id);

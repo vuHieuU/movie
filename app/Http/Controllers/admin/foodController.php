@@ -58,7 +58,7 @@ class foodController extends Controller
      */
     public function show(string $id)
     {
-        $food = Food::findOrFail($id);
+        $food = food::findOrFail($id);
         return view('admin.foods.show', compact('food'));
     }
 
@@ -67,7 +67,7 @@ class foodController extends Controller
      */
     public function edit($id)
     {
-        $food = Food::findOrFail($id);
+        $food = food::findOrFail($id);
         return view('admin.foods.edit', compact('food'));
     }
     
@@ -77,7 +77,7 @@ class foodController extends Controller
      */
     public function update(FoodRequest $request, $id)
     {
-        $food = Food::findOrFail($id);
+        $food = food::findOrFail($id);
          $dataupdate = [
             'name' => $request->name,
             'qty' => $request->qty,
@@ -99,7 +99,7 @@ class foodController extends Controller
      */
     public function destroy($id)
     {
-        $food = Food::findOrFail($id);
+        $food = food::findOrFail($id);
     
         if (!$id) {
             return redirect()->back()->with('error', 'Food not found');

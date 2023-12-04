@@ -42,7 +42,7 @@ class OverviewController extends Controller
         // Lấy danh sách các vé được đặt trong năm hiện tại
         $ticketfoodCurrentYear = ticketFood::whereYear('created_at', $currentYear)->get();
         //lọc giờ 
-        $mostBookedHour = Ticket::select('selected_hour')
+        $mostBookedHour = ticket::select('selected_hour')
             ->groupBy('selected_hour')
             ->orderByRaw('COUNT(*) DESC')
             ->first();
@@ -54,7 +54,7 @@ class OverviewController extends Controller
         }
 
         //lọc film 
-        $mostBookedfilm = Ticket::select('film_name')
+        $mostBookedfilm = ticket::select('film_name')
             ->groupBy('film_name')
             ->orderByRaw('COUNT(*) DESC')
             ->first();
@@ -80,12 +80,12 @@ class OverviewController extends Controller
             ->get();
 
         $title = "Overview";
-        $films = Film::get();
+        $films = film::get();
         $revenues = [];
 
         foreach ($films as $film) {
             $filmName = $film->name;
-            $totalRevenue = Ticket::where('film_id', $film->id)->sum('total');
+            $totalRevenue = ticket::where('film_id', $film->id)->sum('total');
             $revenues[$filmName] = $totalRevenue;
             // $revenuesData = json_encode($revenues);
         }
@@ -146,7 +146,7 @@ class OverviewController extends Controller
         $cinema = cinema::get();
         // $cinemas = ticket::get();
         //lọc giờ film được đặt nhiều nhất
-        $mostBookedHour = Ticket::select('selected_hour')
+        $mostBookedHour = ticket::select('selected_hour')
             ->groupBy('selected_hour')
             ->orderByRaw('COUNT(*) DESC')
             ->first();
@@ -158,7 +158,7 @@ class OverviewController extends Controller
         }
 
         //lọc film film được đặt nhiều nhất
-        $mostBookedfilm = Ticket::select('film_name')
+        $mostBookedfilm = ticket::select('film_name')
             ->groupBy('film_name')
             ->orderByRaw('COUNT(*) DESC')
             ->first();
@@ -167,7 +167,7 @@ class OverviewController extends Controller
             ->orderByRaw('COUNT(*) DESC')
             ->first();
         $ticketFood = ticketFood::all();
-        $tickets = Ticket::where('cinema', $cinemaName)->sum("total");
+        $tickets = ticket::where('cinema', $cinemaName)->sum("total");
         $cinemalist = cinema::get();
         $tickettong = ticket::get()->count();
         // dd($tickets);
@@ -189,7 +189,7 @@ class OverviewController extends Controller
 
         foreach ($films as $film) {
             $filmName = $film->name;
-            $totalRevenue = Ticket::where('cinema', $cinemaName)->where('film_id', $film->id)->sum('total');
+            $totalRevenue = ticket::where('cinema', $cinemaName)->where('film_id', $film->id)->sum('total');
             $revenues[$filmName] = $totalRevenue;
             // $revenuesData = json_encode($revenues);
         }

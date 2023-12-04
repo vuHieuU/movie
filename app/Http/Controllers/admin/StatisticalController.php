@@ -40,7 +40,7 @@ class StatisticalController extends Controller
         // Lấy danh sách các vé được đặt trong năm hiện tại
         $ticketfoodCurrentYear = ticketFood::whereYear('created_at', $currentYear)->get();
         //lọc giờ 
-        $mostBookedHour = Ticket::select('selected_hour')
+        $mostBookedHour = ticket::select('selected_hour')
             ->groupBy('selected_hour')
             ->orderByRaw('COUNT(*) DESC')
             ->first();
@@ -52,7 +52,7 @@ class StatisticalController extends Controller
         }
 
         //lọc film 
-        $mostBookedfilm = Ticket::select('film_name')
+        $mostBookedfilm = ticket::select('film_name')
             ->groupBy('film_name')
             ->orderByRaw('COUNT(*) DESC')
             ->first();
@@ -82,12 +82,12 @@ class StatisticalController extends Controller
             ->get();
 
         $title = "Overview";
-        $films = Film::get();
+        $films = film::get();
         $revenues = [];
 
         foreach ($films as $film) {
             $filmName = $film->name;
-            $totalRevenue = Ticket::where('film_id', $film->id)->sum('total');
+            $totalRevenue = ticket::where('film_id', $film->id)->sum('total');
             $revenues[$filmName] = $totalRevenue;
             // $revenuesData = json_encode($revenues);
         }
@@ -168,7 +168,7 @@ class StatisticalController extends Controller
 
         $startDates = now()->subDays($days);
 
-        $foodTotals = TicketFood::join('food', 'ticket_food.name', '=', 'food.name')
+        $foodTotals = ticketFood::join('food', 'ticket_food.name', '=', 'food.name')
             ->select('food.name', DB::raw('SUM(food.price * ticket_food.quantity) as total'))
             ->where('ticket_food.created_at', '>=', $startDates)
             ->groupBy('food.name')
@@ -184,7 +184,7 @@ class StatisticalController extends Controller
 
         $startDates = now()->subDays($days);
 
-        $foodTotals = TicketFood::join('food', 'ticket_food.name', '=', 'food.name')
+        $foodTotals = ticketFood::join('food', 'ticket_food.name', '=', 'food.name')
             ->select('food.name', DB::raw('SUM(food.price * ticket_food.quantity) as total'))
             ->where('ticket_food.created_at', '>=', $startDates)
             ->where('cinema', $cinema)
@@ -247,7 +247,7 @@ class StatisticalController extends Controller
 
         $startDates = now()->subDays($days);
 
-        $foodTotals = TicketFood::join('food', 'ticket_food.name', '=', 'food.name')
+        $foodTotals = ticketFood::join('food', 'ticket_food.name', '=', 'food.name')
             ->select('food.name', DB::raw('SUM(food.price * ticket_food.quantity) as total'))
             ->where('ticket_food.created_at', '>=', $startDates)
             ->groupBy('food.name')
@@ -297,7 +297,7 @@ class StatisticalController extends Controller
         $cinema = cinema::get();
         // $cinemas = ticket::get();
         //lọc giờ film được đặt nhiều nhất
-        $mostBookedHour = Ticket::select('selected_hour')
+        $mostBookedHour = ticket::select('selected_hour')
             ->groupBy('selected_hour')
             ->orderByRaw('COUNT(*) DESC')
             ->first();
@@ -309,7 +309,7 @@ class StatisticalController extends Controller
         }
 
         //lọc film film được đặt nhiều nhất
-        $mostBookedfilm = Ticket::select('film_name')
+        $mostBookedfilm = ticket::select('film_name')
             ->groupBy('film_name')
             ->orderByRaw('COUNT(*) DESC')
             ->first();
@@ -318,7 +318,7 @@ class StatisticalController extends Controller
             ->orderByRaw('COUNT(*) DESC')
             ->first();
         $ticketFood = ticketFood::all();
-        $tickets = Ticket::where('cinema', $cinemaName)->sum("total");
+        $tickets = ticket::where('cinema', $cinemaName)->sum("total");
         $cinemalist = cinema::get();
         $tickettong = ticket::get()->count();
         // dd($tickets);
@@ -335,12 +335,12 @@ class StatisticalController extends Controller
             ->get();
 
         $title = "Overview";
-        $films = Film::get();
+        $films = film::get();
         $revenues = [];
 
         foreach ($films as $film) {
             $filmName = $film->name;
-            $totalRevenue = Ticket::where('cinema', $cinemaName)->where('film_id', $film->id)->sum('total');
+            $totalRevenue = ticket::where('cinema', $cinemaName)->where('film_id', $film->id)->sum('total');
             $revenues[$filmName] = $totalRevenue;
             // $revenuesData = json_encode($revenues);
         }
@@ -382,7 +382,7 @@ class StatisticalController extends Controller
     public function detailCinema($cinemaId){
         session(['cinemaId' => $cinemaId]);
         $TotalTicketCinema = ticket::where('cinema', $cinemaId)->count();
-        $ShowTimeCinema = Ticket::select('selected_hour')
+        $ShowTimeCinema = ticket::select('selected_hour')
             ->groupBy('selected_hour')
             ->orderByRaw('COUNT(*) DESC')
             ->where('cinema', $cinemaId)
@@ -392,7 +392,7 @@ class StatisticalController extends Controller
             } else {
                 $ShowTimeCinemas = '';
             }
-         $filmCinema = Ticket::select('film_name')
+         $filmCinema = ticket::select('film_name')
             ->groupBy('film_name')
             ->orderByRaw('COUNT(*) DESC')
             ->where('cinema', $cinemaId)    
@@ -400,12 +400,12 @@ class StatisticalController extends Controller
 
         $film_name = ticket::where('cinema', $cinemaId)->get();
 
-        $films = Film::get();
+        $films = film::get();
         $revenues = [];
 
         foreach ($films as $film) {
             $filmName = $film->name;
-            $totalRevenue = Ticket::where('film_id', $film->id)->sum('total');
+            $totalRevenue = ticket::where('film_id', $film->id)->sum('total');
             $revenues[$filmName] = $totalRevenue;
         }
         $CountFilmCinema = film::count();
@@ -430,11 +430,11 @@ class StatisticalController extends Controller
     public function detailFilmCinemasDay($days)
     {
         $cinemaId = session('cinemaId');
-        $revenueLastDays = Ticket::where('cinema', $cinemaId)
+        $revenueLastDays = ticket::where('cinema', $cinemaId)
             ->where('created_at', '>=', Carbon::now()->subDays($days))
             ->sum('total');
 
-            $filmsData = Ticket::where('cinema', $cinemaId)
+            $filmsData = ticket::where('cinema', $cinemaId)
             ->where('created_at', '>=', Carbon::now()->subDays($days))
             ->select('film_name', DB::raw('SUM(total) as total_revenue'))
             ->groupBy('film_name')

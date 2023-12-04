@@ -14,7 +14,7 @@ class roleController extends Controller
      */
     public function index()
     {
-        $role = Role::get();
+        $role = role::get();
         return view('admin.roles.index',compact('role'));
     }
 
@@ -23,7 +23,7 @@ class roleController extends Controller
      */
     public function create()
     {
-        $permissions = Permission::all()->groupBy('group');
+        $permissions = permission::all()->groupBy('group');
         return view('admin.roles.create',compact('permissions'));
     }
 
@@ -34,7 +34,7 @@ class roleController extends Controller
     {
         $create_role = $request->all();
         $create_role['guard_name'] = 'web';
-        $role = Role::create($create_role);
+        $role = role::create($create_role);
         $role->permissions()->attach($create_role['permission_ids'] ?? []);
         return redirect('role/index')->with(['message'=>'create success']);
     }
@@ -52,8 +52,8 @@ class roleController extends Controller
      */
     public function edit(string $id)
     {
-        $role = Role::find($id);
-        $permissions = Permission::all()->groupBy('group');
+        $role = role::find($id);
+        $permissions = permission::all()->groupBy('group');
         return view('admin.roles.edit',compact('role','permissions'));
     }
 
@@ -62,7 +62,7 @@ class roleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $role = Role::findOrFail($id);
+        $role = role::findOrFail($id);
         $updateData = $request->all();
         $role->update($updateData);
         $role->permissions()->sync($updateData['permission_ids'] ?? []);
@@ -74,7 +74,7 @@ class roleController extends Controller
      */
     public function destroy(string $id)
     {
-        $role = Role::findOrFail($id);
+        $role = role::findOrFail($id);
         $role->delete($id);
         return redirect('role/index');
     }
