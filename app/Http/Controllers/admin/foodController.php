@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\food;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use App\Http\Requests\Admin\FoodRequest;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\Admin\FoodRequest;
 
 
 class foodController extends Controller
@@ -37,16 +38,23 @@ class foodController extends Controller
 
      public function store(FoodRequest $request)
      {
-        $thumb = $request->file('thumb')->getClientOriginalName();
-        $request->file('thumb')->storeAs('public/images',$thumb);
+        // $thumb = $request->file('thumb')->getClientOriginalName();
+        // $request->file('thumb')->storeAs('public/images',$thumb);
          $data = [
             'name' => $request->name,
-            'thumb' => $thumb,
             'qty' => $request->qty,
             'price' => $request->price,
             'status' => $request->status,
             'content' => $request->content,
          ];
+         if($request->hasFile('thumb')){
+            $file = $request->file("thumb");
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $file->move("uploads/images",$filename);
+
+            $data["thumb"] = "uploads/images/$filename";
+        }
          food::create($data);
 
 
@@ -85,10 +93,27 @@ class foodController extends Controller
             'status' => $request->status,
             'content' => $request->content,
          ];
-         if($request->file('thumb') !== null){
-            $thumb = $request->file('thumb')->getClientOriginalName();
-            $request->file('thumb')->storeAs('public/images', $thumb);
-            $dataupdate['thumb'] = $thumb;
+        //  if($request->file('thumb') !== null){
+        //     $thumb = $request->file('thumb')->getClientOriginalName();
+        //     $request->file('thumb')->storeAs('public/images', $thumb);
+        //     $dataupdate['thumb'] = $thumb;
+        //     }
+            if($request->hasFile('thumb')){
+
+                $destination = $food->image;
+    
+                if(File::exists($destination)){
+                    File::delete($destination);
+                }
+    
+                $file = $request->file("thumb");
+                $ext = $file->getClientOriginalExtension();
+                $filename = time().'.'.$ext;
+                $file->move("uploads/images",$filename);
+    
+                $dataupdate["thumb"] = "uploads/images/$filename";
+            }else{
+                $dataupdate["thumb"] = $food->image;
             }
          $food->update($dataupdate);
 

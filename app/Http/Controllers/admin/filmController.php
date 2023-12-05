@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\admin\filmsRequest;
 use App\Http\Requests\admin\filmUpdateRequest;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 class filmController extends Controller
 {
     /**
@@ -33,7 +34,7 @@ class filmController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(filmsRequest $request)
+    public function store(Request $request)
     {
         $data = new film();
         $data->name = $request->input('name');
@@ -47,10 +48,18 @@ class filmController extends Controller
         $data->trailer = $request->input('trailer');
         $data->status = $request->input('status');
 
-        if($request->has("thumb")){
-            $thumb = $request->file('thumb')->getClientOriginalName();
-            $request->file('thumb')->storeAs('public/images', $thumb);
-            $data->thumb = $thumb;
+        // if($request->has("thumb")){
+        //     $thumb = $request->file('thumb')->getClientOriginalName();
+        //     $request->file('thumb')->storeAs('public/images', $thumb);
+        //     $data->thumb = $thumb;
+        // }
+        if($request->hasFile('thumb')){
+            $file = $request->file("thumb");
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $file->move("uploads/images",$filename);
+
+            $data["thumb"] = "uploads/images/$filename";
         }
 
 
@@ -93,7 +102,7 @@ class filmController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(filmUpdateRequest $request, string $id, film $film)
+    public function update(Request $request, string $id, film $film)
     {
         $data = film::find($id);
 
@@ -112,17 +121,34 @@ class filmController extends Controller
         $data->meta_keyword = $request->input('meta_keyword');
         $data->meta_description = $request->input('meta_description');
         
-        if ($request->file('thumb') !== null) {
-            $thumb = $request->file('thumb')->getClientOriginalName();
-            $request->file('thumb')->storeAs('public/images', $thumb);
+        // if ($request->file('thumb') !== null) {
+        //     $thumb = $request->file('thumb')->getClientOriginalName();
+        //     $request->file('thumb')->storeAs('public/images', $thumb);
 
-            $oldThumb = $data->thumb;
+        //     $oldThumb = $data->thumb;
 
-            Storage::delete('public/images/' . $oldThumb);
+        //     Storage::delete('public/images/' . $oldThumb);
 
-            $data->fill([
-                'thumb' => $thumb,
-            ])->save();
+        //     $data->fill([
+        //         'thumb' => $thumb,
+        //     ])->save();
+        // }
+        if($request->hasFile('thumb')){
+
+            $destination = $data->image;
+
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+
+            $file = $request->file("thumb");
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $file->move("uploads/images",$filename);
+
+            $data["thumb"] = "uploads/images/$filename";
+        }else{
+            $data["thumb"] = $data->image;
         }
 
         $data->save();
