@@ -187,7 +187,7 @@
                                                 data-slick='{"slidesToShow":5,"slidesToScroll":5,"autoplay":true,"autoplaySpeed":3000,"arrows":true,"infinite":true,"centerMode":true,"responsive": [{"breakpoint": 480,"settings": {"slidesToShow": 1,"slidesToScroll": 1}},{"breakpoint": 979,"settings": {"slidesToShow": 3,"slidesToScroll": 3}},{"breakpoint": 1199,"settings": {"slidesToShow": 5,"slidesToScroll": 5}},{"breakpoint": 1999,"settings": {"slidesToShow": 7,"slidesToScroll": 7}},{"breakpoint": 4999,"settings": {"slidesToShow": 20,"slidesToScroll": 20}}],"dots":true}'>
                                                 @foreach ($film_topmovie as $item)
                                                         <div class="carousel-item">
-                                                            <a href="chi-tiet-phim/{{ $item->id }}">
+                                                            <a href="chi-tiet-phim/{{ $item->slug }}">
                                                             <div class="carousel-thumb">
                                                                 <a href="chi-tiet-phim/{{ $item->id }}">
                                                                     <img class=""
@@ -206,7 +206,7 @@
                                                                     </span>
                                                                 </div>
                                                                 <div class="carousel-button">
-                                                                    <a href="chi-tiet-phim/{{ $item->id }}"
+                                                                    <a href="chi-tiet-phim/{{ $item->slug }}"
                                                                         class="fancybox.iframe amy-fancybox">
                                                                         <i aria-hidden="true" class="fa fa-play"></i>
                                                                         Trailer </a>
