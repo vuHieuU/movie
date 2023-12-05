@@ -260,7 +260,8 @@
                                                                                                     <a
                                                                                                         href="{{ route('filmDetail', [$item->id]) }}">
                                                                                                         <img class=""
-                                                                                                            src="{{ asset('storage/images/' . $item->thumb) }}"
+                                                                                                            {{-- src="{{ asset('storage/images/' . $item->thumb) }}" --}}
+                                                                                                            src="{{ asset("$item->thumb")}}"
                                                                                                             alt="Swiss Army Man" />
                                                                                                     </a>
                                                                                                 </div>

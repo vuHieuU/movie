@@ -1141,7 +1141,9 @@
                                                                                                 class="card mb-3 col-md-5 m-5 product-card">
                                                                                                 <div class="row g-0">
                                                                                                     <div class="col-md-4">
-                                                                                                        <img src="{{ asset('storage/images/' . $item->thumb) }}"
+                                                                                                        <img 
+                                                                                                        {{-- src="{{ asset('storage/images/' . $item->thumb) }}" --}}
+                                                                                                        src="{{ asset("$item->thumbnail")}}"
                                                                                                             class="img-fluid rounded-start"
                                                                                                             alt="...">
                                                                                                     </div>

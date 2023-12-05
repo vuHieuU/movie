@@ -191,7 +191,8 @@
                                                             <div class="carousel-thumb">
                                                                 <a href="chi-tiet-phim/{{ $item->id }}">
                                                                     <img class=""
-                                                                        src="{{ asset('storage/images/' . $item->thumb) }}"
+                                                                        {{-- src="{{ asset('storage/images/' . $item->thumb) }}" --}}
+                                                                        src="{{ asset("$item->thumb")}}"
                                                                         alt="The Sleeping Beauty &#8211; Australia" /> </a>
                                                             </div>
                                                             <div class="carousel-content">
@@ -524,7 +525,8 @@
                                                         <div class="entry-item">
                                                             <div class="entry-thumb"><img loading="lazy" width="750"
                                                                     height="500"
-                                                                    src="{{ asset('/storage/images/' . $item->thumbnail) }}"
+                                                                    {{-- src="{{ asset('/storage/images/' . $item->thumbnail) }}" --}}
+                                                                    src="{{ asset("$item->thumbnail")}}"
                                                                     class="attachment-full size-full wp-post-image"
                                                                     alt="" srcset=" "
                                                                     sizes="(max-width: 750px) 100vw, 750px" /></div>
@@ -542,7 +544,8 @@
                                                     <div class="col-md-6 full">
                                                         <div class="entry-item">
                                                             <div class="entry-thumb"><img width="750" height="500"
-                                                                    src="{{ asset('storage/images/' . $item->thumbnail) }}"
+                                                                    {{-- src="{{ asset('storage/images/' . $item->thumbnail) }}" --}}
+                                                                    src="{{ asset("$item->thumbnail")}}"
                                                                     class="attachment-full size-full wp-post-image"
                                                                     alt="" loading="lazy" srcset=","
                                                                     sizes="(max-width: 750px) 100vw, 750px" /></div>
@@ -563,7 +566,8 @@
                                                         <div class="entry-item">
                                                             <div class="entry-thumb"><img loading="lazy" width="750"
                                                                     height="500"
-                                                                    src="{{ asset('storage/images/' . $item->thumbnail) }}"
+                                                                    {{-- src="{{ asset('storage/images/' . $item->thumbnail) }}" --}}
+                                                                    src="{{ asset("$item->thumbnail")}}"
                                                                     class="attachment-full size-full wp-post-image"
                                                                     alt="" srcset=" "
                                                                     sizes="(max-width: 750px) 100vw, 750px" /></div>

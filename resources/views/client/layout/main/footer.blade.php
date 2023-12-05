@@ -55,7 +55,7 @@
                                 <div class="entry-item">
                                     <div class="entry-thumb">
                                         <a href="{{ route('detailblog', [$item->slug]) }}">
-                                        <img src="{{ asset('storage/images/' . $item->thumbnail) }}" alt="" width="100px" style="height: 140px">
+                                        <img src="{{ asset("$item->thumbnail")}}" alt="" width="100px" style="height: 140px">
                                     </a>
                                     </div>
                                     <div class="entry-content">

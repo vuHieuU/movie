@@ -285,7 +285,8 @@ class="page-template page-template-elementor_header_footer page page-id-38 wp-em
                               </td>
                               <td>{{$item->name}}</td>
                               <td><img  class=""
-                                    src="{{ asset('storage/images/'.$item->thumb) }}"
+                                    {{-- src="{{ asset('storage/images/'.$item->thumb) }}" --}}
+                                    src="{{ asset("$item->thumb")}}"
                                     alt="" /></td>
                               <td>{{$item->duration}}</td>
                               <td>{{$item->actor}}</td>
