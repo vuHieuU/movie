@@ -8,7 +8,7 @@
         <div id="content" class="site-content">
 
 
-            <section id="amy-page-header" class="amy-page-header">
+            {{-- <section id="amy-page-header" class="amy-page-header">
                 <div class="amy-page-title amy-center">
                     <div class="amy-inner container">
                         <h1 class="page-title">
@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <span class="amy-section-overlay"></span>
-            </section>
+            </section> --}}
             <section class="main-content page-layout-">
                 <div class="container">
                     <div class="row">
@@ -203,14 +203,16 @@
                                                         <div class="elementor-widget-container">
                                                             <div
                                                                 class="amy-widget widget_block widget_media_image">
-                                                                <figure class="wp-block-image size-full"><img
-                                                                        loading="lazy" width="350"
-                                                                        height="272"
-                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62.png"
-                                                                        alt="" class="wp-image-254"
-                                                                        srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62.png 350w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62-300x233.png 300w"
-                                                                        sizes="(max-width: 350px) 100vw, 350px" />
-                                                                </figure>
+                                                                @php
+                                                                $banner = \App\Models\Slider::where("status", "1")->where('position','4')->first();
+                                                               @endphp
+                                                              @if ($banner)
+                                                                <figure class="wp-block-image size-full"><img loading="lazy"
+                                                                    width="350" height="272"
+                                                                    src="{{ asset("$banner->image")}}"
+                                                                    alt class="wp-image-254"
+                                                                    sizes="(max-width: 350px) 100vw, 350px" /></figure>
+                                                              @endif
                                                                 <div class="clear"></div>
                                                             </div>
                                                            
@@ -254,18 +256,6 @@
                                                                         <div class="clearfix"></div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="clear"></div>
-                                                            </div>
-                                                            <div
-                                                                class="amy-widget widget_block widget_media_image">
-                                                                <figure class="wp-block-image size-full"><img
-                                                                        loading="lazy" width="350"
-                                                                        height="290"
-                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63.png"
-                                                                        alt="" class="wp-image-255"
-                                                                        srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63.png 350w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63-300x249.png 300w"
-                                                                        sizes="(max-width: 350px) 100vw, 350px" />
-                                                                </figure>
                                                                 <div class="clear"></div>
                                                             </div>
                                                         </div>

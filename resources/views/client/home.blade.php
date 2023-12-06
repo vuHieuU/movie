@@ -129,7 +129,7 @@
                         </div>
                     </div>
                 </section>
-                <section
+                {{-- <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-d06313b elementor-section-full_width elementor-section-height-default elementor-section-height-default"
                     data-id="d06313b" data-element_type="section"
                     data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -191,7 +191,6 @@
                                                             <div class="carousel-thumb">
                                                                 <a href="chi-tiet-phim/{{ $item->id }}">
                                                                     <img class=""
-                                                                        {{-- src="{{ asset('storage/images/' . $item->thumb) }}" --}}
                                                                         src="{{ asset("$item->thumb")}}"
                                                                         alt="The Sleeping Beauty &#8211; Australia" /> </a>
                                                             </div>
@@ -211,10 +210,10 @@
                                                                         class="fancybox.iframe amy-fancybox">
                                                                         <i aria-hidden="true" class="fa fa-play"></i>
                                                                         Trailer </a>
-                                                                    {{-- <a href="{{ route('filmDetail',[$item->id]) }}">
+                                                                    <a href="{{ route('filmDetail',[$item->id]) }}">
                                                                         <i aria-hidden="true"
                                                                             class="fa fa-exclamation"></i>
-                                                                        Chi tiết </a> --}}
+                                                                        Chi tiết </a>
                                                                 </div>
                                                             </div>
                                                         </a>
@@ -233,12 +232,12 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> --}}
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-bae4559 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                     data-id="bae4559" data-element_type="section">
-                    <div class="elementor-container elementor-column-gap-default">
-                        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c982f26"
+                    <div class="row elementor-container elementor-column-gap-default">
+                        <div class="col-md-12 elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c982f26"
                             data-id="c982f26" data-element_type="column">
                             <div class="elementor-widget-wrap elementor-element-populated">
                                 <div class="elementor-element elementor-element-4a8597b elementor-widget elementor-widget-heading"
@@ -270,8 +269,8 @@
                                                 display: inline-block
                                             }
                                         </style> <img
-                                            src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_30.jpg"
-                                            title="" alt="" />
+                                            src="uploads/imageVideo/img_30.jpg"
+                                            title="" alt=""/>
                                     </div>
                                 </div>
                                 <div class="elementor-element elementor-element-8d1a5bd elementor-widget elementor-widget-text-editor"
@@ -289,156 +288,42 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-16ca592"
-                            data-id="16ca592" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <div class="elementor-element elementor-element-9df2d84 elementor-widget elementor-widget-Amy_V2_Movie_Gallery_Grid"
-                                    data-id="9df2d84" data-element_type="widget"
-                                    data-widget_type="Amy_V2_Movie_Gallery_Grid.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="amy-gallery-grid amy-gallery ">
-                                            <div class="gallery-grid-inner amy-lightgallery" data-column="3">
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_60.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_60.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_60.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_60.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_60-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_58.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_58.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_58.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_58.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_58-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_56.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_56.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_56.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_56.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_56-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_55.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_55.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_55.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_55.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_55-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_54.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_54.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_54.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_54.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_54-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_53.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_53.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_53.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_53.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_53-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_52.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_52.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_52.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_52.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_52-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="col-md-12">
+                            <div>
+                                <div class="col-md-4" style="padding-bottom: 8px">
+                                    <img src="uploads/imageVideo/img_52.jpg" alt="">
+                                </div>
+                                <div class="col-md-4" style="padding-bottom: 8px">
+                                    <img src="uploads/imageVideo/img_53.jpg" alt="">
+                                </div>
+                                <div class="col-md-4" style="padding-bottom: 8px">
+                                    <img src="uploads/imageVideo/img_54.jpg" alt="">
                                 </div>
                             </div>
-                        </div>
+                                   <div>
+                                    <div class="col-md-4" style="padding-bottom: 8px">
+                                        <img src="uploads/imageVideo/img_55.jpg" alt="">
+                                    </div>
+                                    <div class="col-md-4" style="padding-bottom: 8px">
+                                        <img src="uploads/imageVideo/img_56.jpg" alt="">
+                                    </div>
+                                    <div class="col-md-4" style="padding-bottom: 8px">
+                                        <img src="uploads/imageVideo/img_57.jpg" alt="">
+                                    </div>
+                                   </div>
+                                  
+                                  <div>
+                                      <div class="col-md-4">
+                                        <img src="uploads/imageVideo/img_58.jpg" alt="">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="uploads/imageVideo/img_59.jpg" alt="">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="uploads/imageVideo/img_60.jpg" alt="">
+                                    </div>
+                                  </div>
+                                </div>
                     </div>
                 </section>
 

@@ -8,9 +8,11 @@
                     <div class="amy-widget amy-widget-module">
                         <div class="amy-widget amy-widget-module about ">
                             <h4 class="amy-title amy-widget-title"></h4>
-                            <div class="footer-logo"><a
+                            <div class="footer-logo">
+                                <a
                                     href="/"><img
-                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_65.png" /></a>
+                                        src="uploads/slider/img_65.png" />
+                                    </a>
                             </div>
                             <div class="summary">Chào mừng bạn đã đến với webiste đặt vé Tomorrow and Future. Chúc bạn sẽ có những trải nghiệm tốt nhất ở đây.</div>
                         </div>

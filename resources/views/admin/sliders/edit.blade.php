@@ -63,7 +63,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Ảnh *</label>
                                             <input type="file" class="form-control" name="image">
@@ -75,6 +75,19 @@
                                                 <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Vị trí</label>
+                                            <select name="position" class="form-control">
+                                                    <option value="1">Logo</option>
+                                                    <option value="2">Banner</option>
+                                                    <option value="3">Banner trang chi tiết</option>
+                                                    <option value="4">Banner nhỏ trang chi tiết</option>
+                                                    <option value="5">Banner top</option>
+                                                    <option value="6">Banner footer</option>
+                                            </select>
                                         </div>
                                     </div>
 

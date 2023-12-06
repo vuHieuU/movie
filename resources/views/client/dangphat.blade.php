@@ -6,7 +6,7 @@
         <div id="content" class="site-content">
 
 
-            <section id="amy-page-header" class="amy-page-header">
+            {{-- <section id="amy-page-header" class="amy-page-header">
                 <div class="amy-page-title amy-center">
                     <div class="amy-inner container">
                         <h1 class="page-title">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <span class="amy-section-overlay"></span>
-            </section>
+            </section> --}}
             <section class="main-content page-layout-">
                 <div class="container">
                     <div class="row">
@@ -151,58 +151,6 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-
-                                                                                {{-- <div class="entry-showtime as">
-                                                                                    @php
-                                                                                        $Showtime = \App\Models\Showtime::where('film_id', $item->id)
-                                                                                            ->where('day', '>=', date('Y-m-d'))
-                                                                                            ->orderBy('day')
-                                                                                            ->orderBy('hour')
-                                                                                            ->where('isActive', 1)
-                                                                                            ->get();
-
-                                                                                    @endphp
-                                                                                    <div
-                                                                                        class="showtime-item single-cinema" style="padding: 20px">
-                                                                                        @php
-                                                                                            $uniqueDates = [];
-                                                                                        @endphp
-                                                                                        @forelse ($Showtime as $item)
-                                                                                        @if (!in_array($item->day, $uniqueDates))                                                                                           
-                                                                                            @php
-                                                                                                 $uniqueDates[] = $item->day;
-                                                                                                $ngayTuDatabase = $item->day;
-                                                                                                $carbonDate = Carbon\Carbon::parse($ngayTuDatabase);
-                                                                                                $formattedDate = $carbonDate->format('d/m/Y');
-                                                                                            @endphp
-                                                                                            
-                                                                                            <div class="st-item">
-                                                                                                <div
-                                                                                                    class="st-title">
-                                                                                                    <label>{{ $formattedDate }}</label>
-                                                                                                </div>
-                                                                                                <ul>
-                                                                                                    @foreach ($Showtime as $item)
-                                                                                                            
-
-                                                                                                        <li>{{ $item->hour }}</li> 
-                                                                                                        @endforeach
-                                                                                                    </li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                            @endif
-                                                                                        @empty
-                                                                                            <div class="st-item">
-                                                                                                <span
-                                                                                                    class="text-center text-bold">Không
-                                                                                                    có lịch chiếu
-                                                                                                    phim</span>
-                                                                                            </div>
-                                                                                        @endforelse
-                                                                                    </div>
-
-
-                                                                                </div> --}}
                                                                             </div>
                                                                         @endforeach
 
@@ -227,14 +175,16 @@
                                                         <div class="elementor-widget-container">
                                                             <div
                                                                 class="amy-widget widget_block widget_media_image">
-                                                                <figure class="wp-block-image size-full"><img
-                                                                        loading="lazy" width="350"
-                                                                        height="272"
-                                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62.png"
-                                                                        alt="" class="wp-image-254"
-                                                                        srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62.png 350w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62-300x233.png 300w"
-                                                                        sizes="(max-width: 350px) 100vw, 350px" />
-                                                                </figure>
+                                                                @php
+                                                                $banner = \App\Models\Slider::where("status", "1")->where('position','4')->first();
+                                                               @endphp
+                                                              @if ($banner)
+                                                                <figure class="wp-block-image size-full"><img loading="lazy"
+                                                                    width="350" height="272"
+                                                                    src="{{ asset("$banner->image")}}"
+                                                                    alt class="wp-image-254"
+                                                                    sizes="(max-width: 350px) 100vw, 350px" /></figure>
+                                                              @endif
                                                                 <div class="clear"></div>
                                                             </div>
                                                             <div class="amy-widget amy-widget-list">

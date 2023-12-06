@@ -41,8 +41,13 @@
                 <div id="content" class="site-content">
 
                     <section id="amy-page-header" class="amy-page-header">
-                        <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_25.jpg"
+                        @php
+                           $banner = \App\Models\Slider::where("status", "1")->where('position','3')->first();
+                        @endphp
+                        @if ($banner)                      
+                        <img src="{{ asset($banner->image) }}"
                             alt="Jumanji: Welcome to the Jungle" />
+                        @endif
                     </section>
 
                     <section class="main-content amy-movie single-movie layout-right has-banner">
@@ -56,11 +61,8 @@
                                             <div class="entry-top">
 
                                                 <div class="entry-poster mx-5"style="max-width: 250px;width: 100%;">
-                                                    <img class="" src="{{ asset('storage/images/' . $film->thumb) }}"
+                                                    <img class="" src="{{ asset($film->thumb) }}"
                                                         alt="The Hurricane Heist" />
-                                                    {{-- <img class="" 
-                                                        src="{{ asset('storage/images/'.$film->thumb) }}"
-                                                        alt="Jumanji: Welcome to the Jungle" /> --}}
                                                 </div>
                                                 <div class="entry-info">
                                                     <h1 class="entry-title p-name" itemprop="name headline">
@@ -426,12 +428,9 @@
                                                         <div class="entry-share">
                                                             <label>Share:</label>
                                                             <ul class="amy-social-links clearfix">
-                                                                <li><a href="https://www.facebook.com/sharer.php?u=http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/"
+                                                                <li><a href="https://www.facebook.com/sharer.php?u=https://tomorrowfuture.click/chi-tiet-phim/{{ $item->slug }}"
                                                                         class="fab fa-facebook" target="_blank"></a></li>
-                                                                <li><a href="http://www.twitter.com/share?url=http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/"
-                                                                        class="fab fa-twitter" target="_blank"></a></li>
-                                                                <li><a href="http://pinterest.com/pin/create/button/?url=http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/"
-                                                                        class="fab fa-pinterest" target="_blank"></a></li>
+                                                           
                                                             </ul>
                                                         </div>
                                                         <div class="clearfix"></div>
@@ -447,57 +446,13 @@
                                             </div>
 
                                             <div class="entry-media">
-                                                <h3 class="info-name amy-title">Video
-                                                    &amp; Ảnh</h3>
+                                                <h3 class="info-name amy-title">Trailer</h3>
                                                 <div class="number-media">
-                                                    <span class="gallery"><i></i>5
-                                                        photos</span>
+                                                    {{-- <span class="gallery"><i></i>5
+                                                        photos</span> --}}
                                                 </div>
                                                 <div class="media-carousel">
-                                                    <div class="amy-slick"
-                                                        data-slick='{"slidesToShow":4,"slidesToScroll":4,"autoplay":true,"autoplaySpeed":3000,"arrows":true,"infinite":true,"responsive": [{"breakpoint": 480,"settings": {"slidesToShow": 1,"slidesToScroll": 1}},{"breakpoint": 979,"settings": {"slidesToShow": 3,"slidesToScroll": 3}}],"dots":false}'>
-                                                        <div class="media-item">
-                                                            <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57.jpg"
-                                                                class="amy-fancybox" rel="movie-gallery">
-                                                                <img
-                                                                    src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57-200x150_c.jpg" />
-                                                            </a>
-                                                        </div>
-                                                        <div class="media-item">
-                                                            <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_56.jpg"
-                                                                class="amy-fancybox" rel="movie-gallery">
-                                                                <img
-                                                                    src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_56-200x150_c.jpg" />
-                                                            </a>
-                                                        </div>
-                                                        <div class="media-item">
-                                                            <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_55.jpg"
-                                                                class="amy-fancybox" rel="movie-gallery">
-                                                                <img
-                                                                    src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_55-200x150_c.jpg" />
-                                                            </a>
-                                                        </div>
-                                                        <div class="media-item">
-                                                            <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_54.jpg"
-                                                                class="amy-fancybox" rel="movie-gallery">
-                                                                <img
-                                                                    src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_54-200x150_c.jpg" />
-                                                            </a>
-                                                        </div>
-                                                        <div class="media-item">
-                                                            <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_53.jpg"
-                                                                class="amy-fancybox" rel="movie-gallery">
-                                                                <img
-                                                                    src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_53-200x150_c.jpg" />
-                                                            </a>
-                                                        </div>
-                                                        <div class="media-item">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox"><img
-                                                                    src="https://i.vimeocdn.com/video/357455249-732b250e69cba9e97ba604b86d2966bd6e105ddef1602ece3eedca1460d6b1d6-d_640" /><i
-                                                                    class="fa fa-play"></i></a>
-                                                        </div>
-                                                    </div>
+                                                    {!! $film->trailer !!}  
                                                 </div>
                                             </div>
 
@@ -641,12 +596,17 @@
                                     <div class="amy-page-sidebar amy-sidebar-right">
                                         <aside id="sidebar">
                                             <div class="amy-widget widget_block widget_media_image">
+                                                @php
+                                                $banner = \App\Models\Slider::where("status", "1")->where('position','4')->first();
+                                               @endphp
+                                              @if ($banner)
                                                 <figure class="wp-block-image size-full"><img loading="lazy"
-                                                        width="350" height="272"
-                                                        src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62.png"
-                                                        alt class="wp-image-254"
-                                                        srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62.png 350w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62-300x233.png 300w"
-                                                        sizes="(max-width: 350px) 100vw, 350px" /></figure>
+                                                    width="350" height="272"
+                                                    src="{{ asset("$banner->image")}}"
+                                                    alt class="wp-image-254"
+                                                    sizes="(max-width: 350px) 100vw, 350px" /></figure>
+                                              @endif
+
                                                 <div class="clear"></div>
                                             </div>
                                             <div class="amy-widget amy-widget-list">
@@ -712,131 +672,4 @@
 
                 </div>
             </div>
-
-            {{-- <script>
-                $(document).ready(function() {
-                    var commentNew = " ";
-                    $.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    });
-
-                    var form = $('#FormComment')[0];
-                    $('#post-comment').click(function() {
-                        var formData = new FormData(form);
-
-                        function validateName(name) {
-                            return name.length > 0;
-                        }
-
-                        function validateEmail(email) {
-                            return email.length > 0;
-                        }
-
-                        function validateComment(comment) {
-                            return comment.length > 0;
-                        }
-
-                        var postCommentButton = document.getElementById("post-comment");
-                        var nameInput = document.getElementById("name");
-                        var emailInput = document.getElementById("email");
-                        var commentInput = document.getElementById("comment_text");
-
-                        var nameError = document.getElementById("nameError");
-                        var emailError = document.getElementById("emailError");
-                        var commentError = document.getElementById("commentError");
-
-                        nameError.textContent = "";
-                        emailError.textContent = "";
-                        commentError.textContent = "";
-
-                        var comment = commentInput.value;
-                        if (!validateComment(comment)) {
-                            commentError.textContent = "Bình luận không được để trống";
-                            return;
-                        }
-
-                        var name = nameInput.value;
-                        if (!validateName(name)) {
-                            nameError.textContent = "Tên không được để trống";
-                            return;
-                        }
-
-
-                        var email = emailInput.value;
-                        if (!validateEmail(email)) {
-                            emailError.textContent = "Email không được để trống";
-                            return;
-                        }
-
-                        $.ajax({
-                            url: '{{ route('comment.store') }}',
-                            method: 'POST',
-                            processData: false,
-                            contentType: false,
-                            data: formData,
-
-                            success: function(response) {
-                                let name = document.getElementById("name").value;
-                                let email = document.getElementById("email").value;
-                                let comment = document.getElementById("comment_text").value;
-                                let commentNew1 = " ";
-                                let currentdate = new Date();
-                                let datetime = currentdate.getFullYear() + "-" + currentdate
-                                .getMonth() +
-                                    "-" + currentdate.getDay() + " " +
-                                    currentdate.getHours() + ":" +
-                                    currentdate.getMinutes() + ":" + currentdate.getSeconds();
-                                let form = document.getElementById("FormComment");
-                                form.reset();
-                                commentNew1 += '<div class="row">' +
-                                    '<div class="col-md-1">' +
-                                    '<img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://vivureviews.com/wp-content/uploads/2022/08/avatar-vo-danh-9.png" alt="Image Description">' +
-                                    '</div>' +
-                                    '<div class="col-md-11">' +
-                                    '<div class="media g-mb-30 media-comment">' +
-                                    '<div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">' +
-                                    '<div class="g-mb-15">' +
-                                    '<h5 class="h5 g-color-gray-dark-v1 mb-0">' + name + '</h5>' +
-                                    '<span class="g-color-gray-dark-v4 g-font-size-12">' + datetime +
-                                    '</span>' +
-                                    '</div>'
-
-                                    +
-                                    '<p>' + comment + '</p>' +
-                                    '</div>' +
-                                    '</div>' +
-                                    '</div>' +
-                                    '</div>';
-
-                                commentNew = commentNew1 + commentNew;
-                                $('#commentNew').html(commentNew);
-                            },
-                            // error: function(error){
-                            //     if(error){
-                            //         $('#nameError').html(error.responseJSON.errors.name);
-                            //         $('#emailError').html(error.responseJSON.errors.email);
-                            //         $('#commentError').html(error.responseJSON.errors.comment);
-                            //     }
-                            // }
-                        });
-                    })
-                })
-            </script> --}}
-            {{-- <script>
-                @if (Session::has('error'))
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Lỗi!',
-                        text: '{{ Session::get('error') }}',
-                    });
-                @elseif (Session::has('success'))
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Thành công!',
-                        text: '{{ Session::get('success') }}',
-                    });
-                @endif
-            </script> --}}
         @endsection

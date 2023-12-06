@@ -79,7 +79,7 @@
         <div id="content" class="site-content">
 
 
-            <section id="amy-page-header" class="amy-page-header">
+            {{-- <section id="amy-page-header" class="amy-page-header">
                 <div class="amy-page-title amy-center">
                     <div class="amy-inner container">
                         <h1 class="page-title">
@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <span class="amy-section-overlay"></span>
-            </section>
+            </section> --}}
         </div>
         @php
             $total = 0;

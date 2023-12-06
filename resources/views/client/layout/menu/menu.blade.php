@@ -3,10 +3,16 @@
         <div class="amy-inner">
             <div class="amy-left">
                 <div id="amy-site-logo " style="width: 70%;">
-                    <a href="/">
-                        <img src="{{asset("storage/images/img_66.png")}}"
-                            alt="Elementor Single Cinema" />
-                    </a>
+                  @php
+                      $logo = \App\Models\Slider::where("status", "1")->where('position','1')->first();
+                  @endphp
+                    @if ($logo)
+                        <a href="/">
+                            <img src="{{ asset("$logo->image")}}"
+                                alt="Elementor Single Cinema" />
+                        </a>
+                    @endif
+               
 
                 </div>
 

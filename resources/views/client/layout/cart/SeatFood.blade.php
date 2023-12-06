@@ -78,7 +78,7 @@
                     <div id="content" class="site-content">
 
 
-                        <section id="amy-page-header" class="amy-page-header">
+                        {{-- <section id="amy-page-header" class="amy-page-header">
                             <div class="amy-page-title amy-center">
                                 <div class="amy-inner container">
                                     <h1 class="page-title">
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                             <span class="amy-section-overlay"></span>
-                        </section>
+                        </section> --}}
                         <section class="main-content page-layout-">
                             <div class="container">
                                 <div class="row">
@@ -114,8 +114,8 @@
 
 
 
-                                                                                    <h3 class="col-12 text-center ">Chọn ghế
-                                                                                        và đồ ăn </h3>
+                                                                                    <h2 class="col-12 text-center ">Chọn ghế
+                                                                                        và đồ ăn </h2>
                                                                                     <hr class="border">
                                                                                     <div class="row text-center "
                                                                                         style="margin-top: 30px; ">
@@ -1142,8 +1142,7 @@
                                                                                                 <div class="row g-0">
                                                                                                     <div class="col-md-4">
                                                                                                         <img 
-                                                                                                        {{-- src="{{ asset('storage/images/' . $item->thumb) }}" --}}
-                                                                                                        src="{{ asset("$item->thumbnail")}}"
+                                                                                                        src="{{ asset("$item->thumb")}}"
                                                                                                             class="img-fluid rounded-start"
                                                                                                             alt="...">
                                                                                                     </div>
@@ -1211,7 +1210,7 @@
                                                                                     <div class="entry-thumb"><img
                                                                                             class=""
                                                                                             style="width: 120px;"
-                                                                                            src="{{ asset('storage/images/' . $showTime->film->thumb) }}"
+                                                                                            src="{{ asset($showTime->film->thumb) }}"
                                                                                             alt="Kubo and the Two Strings" />
                                                                                     </div>
                                                                                     <div class="entry-content">

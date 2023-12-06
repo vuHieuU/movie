@@ -38,51 +38,44 @@
                             </div>
                             <div class="card-body">
                                   <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Tên tiêu đề *</label>
-                                            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
-                                                @error('title')
-                                                    
-                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
-
-                                                @enderror
+                                            <input type="text" class="form-control" name="title" value="{{ old('title') }}" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Mô tả *</label>
+                                            <label>Mô tả</label>
                                             <textarea name="description" id="" rows="3" class="form-control">{{ old('description') }}</textarea>
-                                                @error('description')
-                                                    
-                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
-
-                                                @enderror
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Ảnh *</label>
-                                            <input type="file" class="form-control" name="image">
-                                                @error('image')
-                                                    
-                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
-
-                                                @enderror
+                                            <input type="file" class="form-control" name="image" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Vị trí</label>
+                                            <select name="position" class="form-control">
+                                                        <option value="1">Logo</option>
+                                                        <option value="2">Banner</option>
+                                                        <option value="3">Banner trang chi tiết</option>
+                                                        <option value="4">Banner nhỏ trang chi tiết</option>
+                                                        <option value="5">Banner top</option>
+                                                        <option value="6">Banner footer</option>
+                                            </select>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Trạng thái *</label><br>
-                                            <input type="checkbox" name="status" style="width:30px; height:30px;">
-                                                @error('status')
-                                                    
-                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
-
-                                                @enderror
+                                            <input type="checkbox" name="status" style="width:30px; height:30px;" required>
                                         </div>
                                     </div>
                                   </div>

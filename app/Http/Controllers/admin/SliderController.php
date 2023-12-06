@@ -39,6 +39,7 @@ class SliderController extends Controller
             'description' => $request->input("description"),
             'image' => $validatedData["image"],
             'status' => $validatedData["status"],
+            'position' => $request->input("position"),
         ]);
 
         return redirect("sliders/index")->with("message","Thêm Slider thành công!");
@@ -81,6 +82,7 @@ class SliderController extends Controller
             'description' => $request->input("description"),
             'image' => $validatedData["image"],
             'status' => $validatedData["status"],
+            'position' => $request->input("position"),
         ]);
 
         return redirect("sliders/index")->with("message","Cập nhật Slider thành công!");

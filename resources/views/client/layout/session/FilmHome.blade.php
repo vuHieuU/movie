@@ -36,9 +36,15 @@ data-id="e615b68" data-element_type="section">
                                                     src="{{ asset("$item->thumb")}}"
                                                     alt="Kubo and the Two Strings" />
                                                 <div class="right-info">
+                                                    @if ($item->status == 1)    
                                                     <span class="pg">
-                                                        G </span>
+                                                         G</span>
+                                                    @elseif ($item->status == 2)
+                                                    <span class="pg">
+                                                        Sắp ra mắt </span>
+                                                    @endif
                                                 </div>
+                                                                
                                             </div>
                                             <div class="entry-content">
                                                 <h4 class="entry-title">
