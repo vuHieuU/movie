@@ -423,16 +423,6 @@
                                                         </script>
 
                                                         {{-- model --}}
-
-
-                                                        <div class="entry-share">
-                                                            <label>Share:</label>
-                                                            <ul class="amy-social-links clearfix">
-                                                                <li><a href="https://www.facebook.com/sharer.php?u=https://tomorrowfuture.click/chi-tiet-phim/{{ $item->slug }}"
-                                                                        class="fab fa-facebook" target="_blank"></a></li>
-                                                           
-                                                            </ul>
-                                                        </div>
                                                         <div class="clearfix"></div>
                                                     </div>
                                                     {{-- BUy ticket --}}

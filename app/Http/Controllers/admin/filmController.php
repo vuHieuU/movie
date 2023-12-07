@@ -167,6 +167,7 @@ class filmController extends Controller
         if (!$data) {
             return redirect()->back()->with('error', 'Không tìm thấy');
         }
+        $data->categories()->detach();
         $data->delete();
         return redirect()->route('films.index')->with('success', 'Xóa thành công');
     }
