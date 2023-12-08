@@ -76,7 +76,13 @@
                               <td>{{ $item->email }}</td>
                               <td>{{ $item->address }}</td>
                               <td>{{ $item->gender  }}</td>
-                              <td>{{ $item->user_rank->name }}</td>
+                              <td>
+                                @if ($item->user_rank)
+                                    {{ $item->user_rank->name }}
+                                @else
+                                    Đồng
+                                @endif
+                              </td>
                               <td>{{ $item->point }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
