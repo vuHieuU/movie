@@ -300,4 +300,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/smtp-settings',[App\Http\Controllers\admin\SettingController::class,'smtp_settings'])->name('smtp_settings.index');
     Route::post('/env_key_update',[App\Http\Controllers\admin\SettingController::class,'env_key_update'])->name('smtp_settings.update');
     Route::get('/NotificationList', [App\Http\Controllers\admin\NotificationController::class, 'index']);
+
+
+     // *********** cinema //
+    Route::get('allCinema', [App\Http\Controllers\admin\StatisticalController::class, "allCinema"])->name('allCinema');
+    Route::get('allCinemaDay/{day}', [App\Http\Controllers\admin\StatisticalController::class, "allCinemaDay"]);
+     // *********** film //
+    Route::get('allFilm', [App\Http\Controllers\admin\StatisticalController::class, "allFilm"])->name('allFilm');
+    Route::get('allCinemaFilm/{id}', [App\Http\Controllers\admin\StatisticalController::class, "allCinemaFilm"])->name('allCinemaFilm');
 });

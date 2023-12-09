@@ -15,7 +15,7 @@
 
                 <div>
 
-                    <h5 id="ticketListtoltal">{{ number_format($sumtotal) }}</h5>
+                    <h5 id="ticketListtoltal">{{ number_format($grandTotal) }}</h5>
                     <p class="mb-0">Tổng doanh thu </p>
                 </div>
 
@@ -26,22 +26,18 @@
 
 
 <div class="card-body pt-0">
-    <div id="layout1-chart-6"></div>
+    <div id="layout1-chart-8"></div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
-    var revenuesData = @json($day);
-    var revenuesTotal = @json($total);
-
-    if (jQuery("#layout1-chart-6").length) {
-        var seriesData = revenuesData.map(function(date, index) {
-            return { x: date, y: revenuesTotal[index] };
-        });
-
+        var cinemas = @json($cinemas);
+        var cinemaSums = @json($cinemaSums);
+    if (jQuery("#layout1-chart-8").length) {
         options = {
             series: [{
                 name: 'Doanh thu',
-                data: seriesData,
+                data: cinemaSums.map(item => item.revenue),
             }],
             chart: {
                 type: 'bar',
@@ -64,8 +60,7 @@
                 colors: ['transparent']
             },
             xaxis: {
-                type: 'category',
-                categories: revenuesData,
+                categories: cinemas,
                 labels: {
                     minWidth: 0,
                     maxWidth: 0
@@ -84,22 +79,22 @@
             tooltip: {
                 y: {
                     formatter: function(val) {
-                        return "$ " + val + " thousands"
+                        return val + " VNĐ"
                     }
                 }
             }
         };
-
-        const chart = new ApexCharts(document.querySelector("#layout1-chart-6"), options);
+        const chart = new ApexCharts(document.querySelector("#layout1-chart-8"), options);
         chart.render();
-
-        const body = document.querySelector('body');
+        const body = document.querySelector('body')
         if (body.classList.contains('dark')) {
-            apexChartUpdate(chart, { dark: true });
+            apexChartUpdate(chart, {
+                dark: true
+            })
         }
 
         document.addEventListener('ChangeColorMode', function(e) {
-            apexChartUpdate(chart, e.detail);
-        });
+            apexChartUpdate(chart, e.detail)
+        })
     }
 </script>

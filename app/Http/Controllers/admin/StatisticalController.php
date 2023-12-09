@@ -143,7 +143,9 @@ class StatisticalController extends Controller
               $grandTotal += $foodTotal->total;
            }
            $cinemalist = cinema::get();
-        return view('admin.statistical.Food',compact('grandTotal','foodTotals','cinemalist'));
+        $countfood = food::get()->count();
+        $countfoodsell = ticketFood::get()->count();
+        return view('admin.statistical.Food',compact('grandTotal','foodTotals','cinemalist','countfood','countfoodsell'));
     }
     public function detailFoodCinema($cinema)    {
         session(['cinema' => $cinema]);
@@ -405,28 +407,17 @@ class StatisticalController extends Controller
 
         foreach ($films as $film) {
             $filmName = $film->name;
-            $totalRevenue = ticket::where('film_id', $film->id)->sum('total');
+            $totalRevenue = ticket::where('film_id', $film->id)->where('cinema', $cinemaId)->sum('total');
             $revenues[$filmName] = $totalRevenue;
         }
         $CountFilmCinema = film::count();
         $sumtotal = ticket::where('cinema', $cinemaId)->sum("total");
-        
+        $cinemalist = cinema::get();
         return view('admin.layout.ajax.statistical', compact('sumtotal','TotalTicketCinema','ShowTimeCinemas',
-              'filmCinema','films','revenues','film_name','CountFilmCinema'));
+              'filmCinema','films','revenues','film_name','CountFilmCinema','cinemalist'));
     }
 
-    public function detailFilm($film_name){
-        $cinemaId = session('cinemaId');
-        $data = ticket::where('film_name', $film_name)->where('cinema', $cinemaId)
-                      ->groupBy('selected_date')
-                      ->select('selected_date', \DB::raw('SUM(total) as total'))
-                      ->get();
-    
-        $day = $data->pluck('selected_date')->toArray();
-        $total = $data->pluck('total')->toArray();
-    
-        return view('admin.layout.ajax.statisticalDetail', compact('day', 'total'));
-    }
+
     public function detailFilmCinemasDay($days)
     {
         $cinemaId = session('cinemaId');
@@ -446,5 +437,224 @@ class StatisticalController extends Controller
     
         return view('admin.layout.ajax.statisticalFilmDay', compact('revenueLastDays','filmNames','totalRevenues'));
     }
-  
+
+
+    // ********** cinema // 
+    public function allCinema(Request $request)    {
+        $countfilm = DB::table("tickets")->where('status','Đã thanh toán')->count();
+        $countuser = DB::table("users")->count();
+        $sumtotal = DB::table("tickets")->where('status','Đã thanh toán')->sum("total");
+        $title = "Overview";
+        $films = film::get();
+        $revenues = [];
+        foreach ($films as $film) {
+            $filmName = $film->name;
+            $totalRevenue = ticket::where('film_id', $film->id)->where('status','Đã thanh toán')->sum('total');
+            $revenues[$filmName] = $totalRevenue;
+        }
+        $cinemas = cinema::pluck('name')->toArray();
+        $cinemaSums = [];
+        foreach ($cinemas as $cinema) {
+            $sum = ticket::where('cinema', $cinema)->where('status','Đã thanh toán')->sum('total');
+            $cinemaSums[] = ['cinema' => $cinema, 'revenue' => $sum];
+        }
+        return view('admin.statistical.all_cinema',
+            compact(
+                "countuser",
+                "countfilm",
+                "sumtotal",
+                'revenues',
+                'cinemas',
+                'cinemaSums',
+            )
+        );
+    }
+
+    public function allCinemaDay($days){
+        $cinemas = cinema::pluck('name')->toArray();
+        $cinemaSums = [];
+        $grandTotal = 0; // Khởi tạo tổng doanh thu toàn bộ các rạp
+    
+        foreach ($cinemas as $cinema) {
+            $sum = ticket::where('cinema', $cinema)
+                ->where('status','Đã thanh toán')
+                ->where('created_at', '>=', now()->subDays($days))
+                ->sum('total');
+    
+            $grandTotal += $sum; // Cộng tổng doanh thu của mỗi rạp vào tổng doanh thu toàn bộ
+    
+            $cinemaSums[] = ['cinema' => $cinema, 'revenue' => $sum];
+        }
+    
+        return view('admin.statistical.ajax.cinemaDay', compact('cinemas', 'cinemaSums', 'grandTotal'));
+    }
+    // ********** film // 
+    public function allFilm(){
+        $category = category::get();
+        $today = date('Y-m-d');
+        // Tính ngày 7 ngày trước
+        $sevenDaysAgo = date('Y-m-d', strtotime('-7 days'));
+        // Lấy tháng hiện tại
+        // $currentMonth = date('m');
+        // Lấy tháng trước
+        $previousMonth = date('m', strtotime('-1 month'));
+        // Lấy năm hiện tại
+        $currentYear = date('Y');
+        // Lấy danh sách các vé được đặt trong khoảng thời gian 7 ngày trước
+        $ticketsSevenDaysAgo = ticket::where('created_at', '>=', $sevenDaysAgo)->where('created_at', '<=', $today)->get();
+        // Lấy danh sách các vé được đặt trong tháng hiện tại
+        $ticketsCurrentMonth = ticket::whereMonth('created_at', $previousMonth)->get();
+        // Lấy danh sách các vé được đặt trong năm hiện tại
+        $ticketsCurrentYear = ticket::whereYear('created_at', $currentYear)->get();
+        $ticketfoodSevenDaysAgo = ticketFood::where('created_at', '>=', $sevenDaysAgo)->where('created_at', '<=', $today)->get();
+        // Lấy danh sách các vé được đặt trong tháng hiện tại
+        $ticketfoodCurrentMonth = ticketFood::whereMonth('created_at', $previousMonth)->get();
+        // Lấy danh sách các vé được đặt trong năm hiện tại
+        $ticketfoodCurrentYear = ticketFood::whereYear('created_at', $currentYear)->get();
+        //lọc giờ 
+        $mostBookedHour = ticket::select('selected_hour')
+            ->groupBy('selected_hour')
+            ->orderByRaw('COUNT(*) DESC')
+            ->first();
+        if ($mostBookedHour) {
+
+            $formattedTime = Carbon::parse($mostBookedHour->selected_hour)->format('H:i:s');
+        } else {
+            $formattedTime = '';
+        }
+
+        //lọc film 
+        $mostBookedfilm = ticket::select('film_name')
+            ->groupBy('film_name')
+            ->orderByRaw('COUNT(*) DESC')
+            ->first();
+        //lọc combo 
+        $mostBookedfood = ticketFood::select('name')
+            ->groupBy('name')
+            ->orderByRaw('COUNT(*) DESC')
+            ->first();
+        $ticketFood = ticketFood::all();
+        $tickettong = ticket::get()->count();
+        $cinemalist = cinema::get();
+        $cinematotal = ticket::get()->where('status','Đã thanh toán')->sum("total");
+
+        // dd($mostBookedfilm);
+        $tickets = ticket::get()->where('status','Đã thanh toán')->sum("total");
+        $countfilm = DB::table("tickets")->where('status','Đã thanh toán')->count();
+        $countfood = DB::table("food")->count();
+        $countfoodsell = DB::table("ticket_food")->sum("quantity");
+        $countfoodremaining = food::get();
+
+        $countuser = DB::table("users")->count();
+        $sumtotal = DB::table("tickets")->where('status','Đã thanh toán')->sum("total");
+        $categoriesWithCount = DB::table("categories")
+            ->select("categories.id", "categories.name", DB::raw("COUNT(film_categories.dmid) as countcategory"))
+            ->Join('film_categories', 'categories.id', '=', 'film_categories.dmid')
+            ->groupBy("categories.id", "categories.name")
+            ->get();
+
+        $title = "Overview";
+        $films = film::get();
+        $revenues = [];
+
+        foreach ($films as $film) {
+            $filmName = $film->name;
+            $totalRevenue = ticket::where('film_id', $film->id)->where('status','Đã thanh toán')->sum('total');
+            $revenues[$filmName] = $totalRevenue;
+            // $revenuesData = json_encode($revenues);
+        }
+
+        $cinemas = cinema::pluck('name')->toArray();
+        $cinemaSums = [];
+        
+        foreach ($cinemas as $cinema) {
+            $sum = ticket::where('cinema', $cinema)->where('status','Đã thanh toán')->sum('total');
+            $cinemaSums[] = ['cinema' => $cinema, 'revenue' => $sum];
+        }
+        return view('admin.statistical.all_film',
+            compact(
+                'formattedTime',
+                'mostBookedHour',
+                'ticketsCurrentYear',
+                'ticketsCurrentMonth',
+                'ticketsSevenDaysAgo',
+                'ticketfoodCurrentYear',
+                'ticketfoodCurrentMonth',
+                'ticketfoodSevenDaysAgo',
+                'tickettong',
+                'cinemalist',
+                'cinematotal',
+                'title',
+                "countfood",
+                'tickets',
+                "countuser",
+                "countfilm",
+                "sumtotal",
+                "category",
+                "categoriesWithCount",
+                "mostBookedfilm",
+                'mostBookedfood',
+                'ticketFood',
+                'films',
+                'revenues',
+                'countfoodsell',
+                'countfoodremaining',
+                'cinemas',
+                'cinemaSums',
+            )
+        );
+    }
+    public function allCinemaFilm($id){
+        $cinema = cinema::find($id);
+        session(['cinemaId' => $cinema->name]);
+        $category = category::get();
+        $cinemalist = cinema::get();
+        // dd($mostBookedfilm);
+        $tickets = ticket::get()->where('status','Đã thanh toán')->sum("total");
+        $countfilm = DB::table("tickets")->where('cinema',$cinema->name)->where('status','Đã thanh toán')->count();
+        $countuser = DB::table("users")->count();
+        $sumtotal = DB::table("tickets")->where('cinema',$cinema->name)->where('status','Đã thanh toán')->sum("total");
+        $categoriesWithCount = DB::table("categories")
+            ->select("categories.id", "categories.name", DB::raw("COUNT(film_categories.dmid) as countcategory"))
+            ->Join('film_categories', 'categories.id', '=', 'film_categories.dmid')
+            ->groupBy("categories.id", "categories.name")
+            ->get();
+
+        $title = "Overview";
+        $film_name = ticket::where('cinema', $cinema->name)->get();
+        $films = film::get();
+        $revenues = [];
+
+        foreach ($films as $film) {
+            $filmName = $film->name;
+            $totalRevenue = ticket::where('film_id', $film->id)->where('cinema', $cinema->name)->where('status','Đã thanh toán')->sum('total');
+            $revenues[$filmName] = $totalRevenue;
+        }
+        return view('admin.statistical.all_cinemaFilm',
+            compact(
+                'cinemalist',
+                'title',
+                'tickets',
+                "countuser",
+                "countfilm",
+                "sumtotal",
+                "category",
+                "film_name",
+                "revenues",
+            )
+        );
+    }
+    public function detailFilm($film_name){
+        $cinemaId = session('cinemaId');
+        $data = ticket::where('film_name', $film_name)->where('cinema', $cinemaId)
+                      ->where('status','Đã thanh toán')
+                      ->groupBy('selected_date')
+                      ->select('selected_date', \DB::raw('SUM(total) as total'))
+                      ->get();
+    
+        $day = $data->pluck('selected_date')->toArray();
+        $total = $data->pluck('total')->toArray();
+        $sumtotal = ticket::where('cinema', $cinemaId)->where('film_name',$film_name)->where('status','Đã thanh toán')->sum("total");
+        return view('admin.layout.ajax.statisticalDetail', compact('day', 'total','sumtotal'));
+    }
 }

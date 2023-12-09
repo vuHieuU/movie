@@ -262,8 +262,14 @@
                     </a>
                     <ul id="statistical" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
-                            <a href="{{ route('statistical.index') }}">
+                            {{-- <a href="{{ route('statistical.index') }}">
                                 <i class="las la-minus"></i><span>Thống kê</span>
+                            </a> --}}
+                            <a href="{{ route('allCinema') }}">
+                                <i class="las la-minus"></i><span>Rạp</span>
+                            </a>
+                            <a href="{{ route('allFilm') }}">
+                                <i class="las la-minus"></i><span>Phim</span>
                             </a>
                             <a href="{{ route('statistical.indexFood') }}">
                                 <i class="las la-minus"></i><span>Đồ ăn</span>
