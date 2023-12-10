@@ -604,7 +604,7 @@
                                             <h5 class="mb-1">{{ Auth::User()->name }}</h5>
                                             <p class="mb-0">Since 10 march, 2020</p>
                                             <div class="d-flex align-items-center justify-content-center mt-3">
-                                                <a href="../app/user-profile.html" class="btn border mr-2">Profile</a>
+                                                {{-- <a href="../app/user-profile.html" class="btn border mr-2">Profile</a> --}}
                                                 <a href="{{ route('logout') }}" class="btn border">Sign Out</a>
                                             </div>
                                         </div>

@@ -88,7 +88,7 @@
                                                                 Diễn viên:
                                                             </label>
                                                             <span>
-                                                                <a href="">{{ $film->actor }}</a>
+                                                                <a href="" style="font-size: 14px">{{ $film->actor }}</a>
 
                                                             </span>
 
@@ -99,7 +99,7 @@
                                                                 Đạo diễn:
                                                             </label>
                                                             <span>
-                                                                <a href="">{{ $film->director }}</a>
+                                                                <a href="" style="font-size: 14px">{{ $film->director }}</a>
                                                             </span>
 
                                                         </li>
@@ -125,7 +125,7 @@
                                                             <label>
                                                                 Ngôn ngữ:
                                                             </label>
-                                                            <span>
+                                                            <span style="font-size: 14px">
                                                                 {{ $film->country }}</span>
 
                                                         </li>
@@ -133,8 +133,10 @@
                                                     @if ($check == 0)
                                                     <form action="/unLikeFilm/{{ $film->id }}" method="GET">
                                                         @csrf
-                                                        <input type="Submit" value="Bỏ yêu thích">
+                                                        {{-- <input type="Submit" style="border-radius: 50%" value="Bỏ yêu thích"> --}}
+                                                        <button type="Submit" class="bg-white" style="border: 0"> <i class="fa-regular fa-heart"></i></button>
                                                     </form>
+                                                   
                                                 @else
                                                     <form action="/addFavoFilm" method="POST">
                                                         @csrf
@@ -142,7 +144,8 @@
                                                             value="{{ $user }}">
                                                         <input type="hidden" name="film_id"
                                                             value="{{ $film->id }}">
-                                                        <input type="Submit" value="Yêu thích">
+                                                            <button type="Submit" class="bg-white" style="border: 0"><i class="fa-solid fa-heart"></i></button>
+                                                        {{-- <input  style="border-radius: 50%" value="Yêu thích"> --}}
                                                     </form>
                                                 @endif
                                                     {{-- BUy ticket --}}
@@ -150,7 +153,7 @@
                                                         {{-- @if ($film_show_time->film->status == 'đang chiếu') --}}
                                                         <div class="mrate w-4  no-rate">
                                                             @if ($film->status == '1')
-                                                            <button type="button"  data-bs-toggle="modal"
+                                                            <button type="button" data-bs-toggle="modal"
                                                                 data-bs-target="#exampleModal" class="amy-buy-ticket">Đặt
                                                                 vé</button>     
                                                             @endif

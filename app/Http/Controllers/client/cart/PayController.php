@@ -429,6 +429,96 @@ class PayController extends Controller
                 $queryParams = $request->except('vnp_Amount');
                 $newUrl = route('success', ['film_id' => $ShowTime->id], $queryParams);
                 return redirect($newUrl);
+        }elseif(isset($_GET['amount'])){
+            $selectedDate = session('selectedDate');
+            $selectedHour = session('selectedHour');
+            $selectedShowTimeId = session('selectedShowTimeId');
+            $selectedSeatsValue = session('selectedSeatsValue');
+            $selectedSeatsValueID = session('selectedSeatsValueID');
+            $cinemaName = session('cinemaName');
+            $cinemaRoom = session('cinemaRoom');
+            $couponCode = session('coupon_code');
+            $selectedPriceSeatsValue = session('selectedPriceSeatsValue');
+            $totalPriceFoodValue = session('totalPriceFoodValue');
+            $total_not_coupon = $selectedPriceSeatsValue + $totalPriceFoodValue;
+            $total = $_GET['amount'];
+            $FoodValueName = session('FoodValueName');
+            $user = auth()->user();
+            $point = $user->point;
+            $user->point = $point + $total_not_coupon / 100;
+            $user->save();
+
+            $ShowTime = film::findOrFail($id);
+        
+            $ticket = new Ticket();
+            $ticket->showtime_id = $selectedShowTimeId;
+            $ticket->film_name = $ShowTime->name;
+            $ticket->selected_date = $selectedDate;
+            $ticket->selected_hour = $selectedHour;
+            $ticket->selected_room = $cinemaRoom;
+            $ticket->cinema = $cinemaName;
+            $ticket->selected_seats = $selectedSeatsValue;
+            $ticket->user_id = $user->id;
+            $ticket->buyer_name = $user->name;
+            $ticket->film_id = $ShowTime->id;
+            $ticket->coupon_code = $couponCode;
+            $ticket->point = $total_not_coupon / 100;
+            $ticket->payment = "MOMO";
+            $ticket->status = "Đã thanh toán";
+            $ticket->total = $total;
+            $ticket->code = date('Ymd-His') . rand(10, 99);;
+            $ticket->save();
+
+            if($FoodValueName){
+            foreach ($FoodValueName as $foodItem) {
+                $ticketFood = new ticketFood();
+                $ticketFood->ticket_id = $ticket->id;
+                $ticketFood->name = $foodItem['name'];
+                $ticketFood->cinema = $cinemaName;
+                $ticketFood->quantity = $foodItem['quantity'];
+                $ticketFood->save();
+                $food = food::where('id', $foodItem['id'])->first();
+
+                if ($food) {
+                    $newQty = $food->qty - $foodItem['quantity'];
+                    $food->qty = $newQty;
+                    $food->save();
+                }
+            }
+            }
+
+            if ($couponCode) {
+                $coupon = Coupon::where('name', $couponCode)->first();
+                if ($coupon) {
+                    $coupon_usage = new coupon_usage;
+                    $coupon_usage->user_id = $user->id;
+                    $coupon_usage->coupon_id = $coupon->id;
+                    $coupon_usage->save();
+                }
+            }
+        
+
+            $notification = new Notification();
+            $notification->users_id = $user->id;
+            $notification->tickets_id = $ticket->id;
+            $notification->save();
+        
+            sendMail::dispatch($user->email,$ticket)->delay(now()->addSeconds(10));
+            // try {
+            //     Mail::to($user->email)->send(new BookTicket($ticket));
+            // } catch (\Throwable $th) {
+            // }
+        
+
+            $selectSeatArray = explode(',', $selectedSeatsValueID);
+        
+            showtime_seat::where('showtime_id',$selectedShowTimeId)
+                       ->whereIn('seat_id',$selectSeatArray)
+                       ->update(['isActive' => 2]);
+                       session()->forget('applied_coupon');
+                $queryParams = $request->except('amount');
+                $newUrl = route('success', ['film_id' => $ShowTime->id], $queryParams);
+                return redirect($newUrl);
         }
         $title = 'payment success';
         $ticket = ticket::latest()->first();

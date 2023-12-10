@@ -287,7 +287,16 @@
 
 
 
-
+                        <form id="momo-form" action="{{ url('/momo_payment/'. $ShowTime->id) }}" method="post">
+                            @csrf
+                            <div class="mb-5 d-flex align-items-center">
+                                <input type="hidden" name="total" value="{{ $total }}">
+                                <input type="hidden" name="total_not_coupon" value="{{ $total_not_coupon }}">
+                                <input type="hidden" name="payUrl">
+                                <div class="btn btn-primary fs-3 px-5 py-2 w-25" id="vnpay-div">Thanh toán bằng Momo</div>
+                                <input type="radio" class="ms-4" style="transform: scale(1.5);" name="redirect" value="momo">
+                            </div>
+                        </form>
 
                         <form id="vnpay-form" action="{{ url('/vnpay_payment/' . $ShowTime->id) }}" method="post">
                             @csrf
@@ -298,9 +307,6 @@
                                 <input type="radio" class="ms-4" style="transform: scale(1.5);" name="redirect" value="vnpay">
                             </div>
                         </form>
-                        {{-- {{$selectedShowTimeId}} --}}
-                        {{-- {{$check}} --}}
-                        {{-- @if ($check == 0) --}}
                         <form id="quay-form" action="{{ route('payment_success', ['film_id' => $ShowTime->id]) }}" method="post">
                             @csrf
                            
@@ -312,18 +318,6 @@
                                 <input type="radio" class="ms-4" style="transform: scale(1.5);" name="redirect" value="quay">
                             </div>
                         </form>
-                        {{-- @else --}}
-                        {{-- <form id="quay-form" action="{{ route('payment_success', ['film_id' => $ShowTime->id]) }}" method="post">
-                            @csrf
-                           
-                            <div class="mb-5 d-flex align-items-center">
-                                <input type="hidden" name="total" value="{{ $total }}">
-                                <input type="hidden" name="payment" value="Thanh Toán tại quầy">
-                                <div class="btn btn-primary fs-3 px-5 py-2 w-25" id="quay-div">Thanh toán tại quầy</div>
-                                <input type="radio" class="ms-4" style="transform: scale(1.5);" name="redirect" value="quay">
-                            </div>
-                        </form>  --}}
-                        {{-- @endif --}}
                       
                         
 
@@ -343,6 +337,8 @@
                                     $("#vnpay-form").submit();
                                 } else if (selectedPaymentMethod === "quay") {
                                     $("#quay-form").submit();
+                                } else if (selectedPaymentMethod === "momo") {
+                                    $("#momo-form").submit();
                                 } else {
                                     alert("Bạn chưa chọn phương thức thanh toán");
                                 }

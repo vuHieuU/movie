@@ -106,9 +106,9 @@
                                 <table class="table mb-0">
                                     <thead class="card-header">
                                         <tr>
-                                            <td class="col-6"><strong>Mô tả</strong></td>
+                                            <td class="col-6"><strong>Loại </strong></td>
                                             <td class="col-4 text-end"><strong>Tỉ lệ</strong></td>
-                                            <td class="col-2 text-end"><strong>Số lượng</strong></td>
+                                            <td class="col-2 text-end"><strong>Giá</strong></td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -116,26 +116,37 @@
                                         <tr>
                                             <td>Ghế</td>
                                             <td class="text-end">{{ $ticket->selected_seats }}</td>
-                                            <td class="text-end"></td>
+                                            @php
+                                                $array = explode(', ', $ticket->selected_seats);
+                                                $totalPrice = 0;
+                                                foreach ($array as $item) {
+                                                    $seats = \App\Models\seats::where('seat_number',$item)->select('typeSeat_id')->first();
+                                                    $typeseats = \App\Models\typeseats::where('id',$seats->typeSeat_id)->select('price')->first();
+                                                    if ($typeseats) {
+                                                            $totalPrice += $typeseats->price;
+                                                        }
+                                                    }
+                                            @endphp
+                                                
+                                            <td class="text-end">{{ $totalPrice }}</td>
                                         </tr> 
                                         @foreach ($ticket->ticketFoods as $item)
                                         <tr>
                                             <td>Đồ ăn</td>
+                                            @php
+                                                $foods = \App\Models\food::where('name',$item->name)->select('price')->first();
+                                            @endphp
                                            
-                                            <td class="text-end">{{ $item->name }}</td>
+                                            <td class="text-end">{{ $item->name }} * {{ $item->quantity }}</td>
                                             
-                                            <td class="text-end">{{ $item->quantity }}
-                                                </td>
+                                            <td class="text-end">
+                                                 {{ $foods->price * $item->quantity }}
+                                            </td>
                                             
                                         </tr>
                                         @endforeach
                                         <tr>
-                                            <td>Chi phí khác</td>
-                                            <td class="text-end">0</td>
-                                            <td class="text-end">0</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Chi phí khác</td>
+                                            <td>Điểm</td>
                                             <td class="text-end"></td>
                                             <td class="text-end">{{ $ticket->point }}</td>
                                         </tr>
@@ -155,7 +166,7 @@
                         </div>
                     </div>
                     <br>
-                    <p class="text-1 text-muted"><strong>Xin lưu ý:</strong>  . Vui lòng yêu cầu Khách sạn xuất hóa đơn khi trả phòng.</p>
+                    {{-- <p class="text-1 text-muted"><strong>Xin lưu ý:</strong>  . Vui lòng yêu cầu Khách sạn xuất hóa đơn khi trả phòng.</p> --}}
                 </main>
                 <!-- Footer -->
                 <footer class="text-center">

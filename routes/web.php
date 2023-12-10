@@ -98,7 +98,7 @@ Route::middleware(['auth'])->group(function () {    //profile của user
     Route::post('/vnpay_payment/{film_id}', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);
 
     //momo
-    Route::post('/momo_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'momo_payment']);
+    Route::post('/momo_payment/{film_id}', [App\Http\Controllers\client\cart\PaymentController::class, 'momo_payment']);
 
     //onepay
     Route::post('/onepay_payment', [App\Http\Controllers\client\cart\PaymentController::class, 'onepay_payment']);

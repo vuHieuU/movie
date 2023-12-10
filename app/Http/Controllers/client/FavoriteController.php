@@ -85,13 +85,13 @@ class FavoriteController extends Controller
         $user = Auth::user()->id;
         $idDelete = favorite_film::select('id')->where('film_id',$id)->first();
         $idDelete->delete($idDelete);
-        return redirect("/listFavoFilm/$user")->with(['success' => 'Xóa yêu thích thành công']);
+        return redirect()->back()->with(['success' => 'Xóa yêu thích thành công']);
     }
     public function unLike(string $id)
     {
         $user = Auth::user()->id;
         $idDelete = favorite_film::select('id')->where('film_id',$id)->first();
         $idDelete->delete($idDelete);
-        return redirect("/chi-tiet-phim/$id")->back()->with(['success' => 'Bỏ yêu thích thành công']);
+        return redirect()->back()->with(['success' => 'Bỏ yêu thích thành công']);
     }
 }
