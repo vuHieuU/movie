@@ -105,8 +105,17 @@ class DatabaseSeeder extends Seeder
            ['name'=>'update-news','display_name'=>'update news','group'=>'news'],
            ['name'=>'show-news','display_name'=>'show news','group'=>'news'],
            ['name'=>'delete-news','display_name'=>'delete news','group'=>'news'],
+            //rank
+            ['name'=>'create-rank','display_name'=>'create rank','group'=>'rank'],
+            ['name'=>'update-rank','display_name'=>'update rank','group'=>'rank'],
+            ['name'=>'show-rank','display_name'=>'show rank','group'=>'rank'],
+            ['name'=>'delete-rank','display_name'=>'delete rank','group'=>'rank'],
         //overview
            ['name'=>'show-overview','display_name'=>'show overview','group'=>'overview'],
+            //thông báo
+            ['name'=>'show-Notification','display_name'=>'show Notification','group'=>'Notification'],
+             //thống kê
+             ['name'=>'show-statistical','display_name'=>'show statistical','group'=>'statistical'],
       ];
       foreach ($permissions as $permission) {
           permission::updateOrCreate($permission);

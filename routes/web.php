@@ -145,13 +145,13 @@ Route::middleware('auth')->group(function () {
     });
     // food
     Route::prefix('food')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\foodController::class, 'index'])->name('food.index');
-        Route::get('create', [App\Http\Controllers\admin\foodController::class, 'create'])->name('food.create');
-        Route::post('store', [App\Http\Controllers\admin\foodController::class, 'store'])->name('food.store');
-        Route::get('show/{id}', [App\Http\Controllers\admin\foodController::class, 'show'])->name('food.show');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\foodController::class, 'edit'])->name('food.edit');
-        Route::put('update/{id}', [App\Http\Controllers\admin\foodController::class, 'update'])->name('food.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\foodController::class, 'destroy'])->name('food.delete');
+        Route::get('index', [App\Http\Controllers\admin\foodController::class, 'index'])->name('food.index')->middleware('permission:show-food');
+        Route::get('create', [App\Http\Controllers\admin\foodController::class, 'create'])->name('food.create')->middleware('permission:create-food');
+        Route::post('store', [App\Http\Controllers\admin\foodController::class, 'store'])->name('food.store')->middleware('permission:create-food');
+        Route::get('show/{id}', [App\Http\Controllers\admin\foodController::class, 'show'])->name('food.show')->middleware('permission:show-food');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\foodController::class, 'edit'])->name('food.edit')->middleware('permission:show-food');
+        Route::put('update/{id}', [App\Http\Controllers\admin\foodController::class, 'update'])->name('food.update')->middleware('permission:update-food');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\foodController::class, 'destroy'])->name('food.delete')->middleware('permission:delete-food');
     });
     // combo
     Route::prefix('combo')->group(function () {
@@ -173,66 +173,66 @@ Route::middleware('auth')->group(function () {
     });
     // Danh sách Phim
     Route::prefix('films')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\filmController::class, 'index'])->name('films.index');
-        Route::get('create', [App\Http\Controllers\admin\filmController::class, 'create'])->name('films.create');
-        Route::post('store', [App\Http\Controllers\admin\filmController::class, 'store'])->name('films.store');
-        Route::get('show/{id}', [App\Http\Controllers\admin\filmController::class, 'show'])->name('films.show');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\filmController::class, 'edit'])->name('films.edit');
-        Route::post('update/{id}', [App\Http\Controllers\admin\filmController::class, 'update'])->name('films.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\filmController::class, 'destroy'])->name('films.destroy');
+        Route::get('index', [App\Http\Controllers\admin\filmController::class, 'index'])->name('films.index')->middleware('permission:show-films');
+        Route::get('create', [App\Http\Controllers\admin\filmController::class, 'create'])->name('films.create')->middleware('permission:create-films');
+        Route::post('store', [App\Http\Controllers\admin\filmController::class, 'store'])->name('films.store')->middleware('permission:create-films');
+        Route::get('show/{id}', [App\Http\Controllers\admin\filmController::class, 'show'])->name('films.show')->middleware('permission:show-films');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\filmController::class, 'edit'])->name('films.edit')->middleware('permission:show-films');
+        Route::post('update/{id}', [App\Http\Controllers\admin\filmController::class, 'update'])->name('films.update')->middleware('permission:update-films');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\filmController::class, 'destroy'])->name('films.destroy')->middleware('permission:delete-films');
     });
     //city
     Route::prefix('city')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\CityController::class, "index"]);
-        Route::get('create', [App\Http\Controllers\admin\CityController::class, "create"]);
-        Route::post('store', [App\Http\Controllers\admin\CityController::class, "store"]);
-        Route::get('edit/{id}', [App\Http\Controllers\admin\CityController::class, "edit"]);
-        Route::post('update/{id}', [App\Http\Controllers\admin\CityController::class, "update"]);
+        Route::get('index', [App\Http\Controllers\admin\CityController::class, "index"])->middleware('permission:show-city');
+        Route::get('create', [App\Http\Controllers\admin\CityController::class, "create"])->middleware('permission:create-city');
+        Route::post('store', [App\Http\Controllers\admin\CityController::class, "store"])->middleware('permission:create-city');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\CityController::class, "edit"])->middleware('permission:show-city');
+        Route::post('update/{id}', [App\Http\Controllers\admin\CityController::class, "update"])->middleware('permission:update-city');
     });
     // cinemas
     Route::prefix('cinemas')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\CinemasController::class, "index"]);
-        Route::get('create', [App\Http\Controllers\admin\CinemasController::class, "create"]);
-        Route::post('store', [App\Http\Controllers\admin\CinemasController::class, "store"]);
-        Route::get('edit/{id}', [App\Http\Controllers\admin\CinemasController::class, "edit"]);
-        Route::post('update/{id}', [App\Http\Controllers\admin\CinemasController::class, "update"]);
+        Route::get('index', [App\Http\Controllers\admin\CinemasController::class, "index"])->middleware('permission:show-cinemas');
+        Route::get('create', [App\Http\Controllers\admin\CinemasController::class, "create"])->middleware('permission:create-cinemas');
+        Route::post('store', [App\Http\Controllers\admin\CinemasController::class, "store"])->middleware('permission:create-cinemas');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\CinemasController::class, "edit"])->middleware('permission:show-cinemas');
+        Route::post('update/{id}', [App\Http\Controllers\admin\CinemasController::class, "update"])->middleware('permission:update-cinemas');
     });
     // seats
     Route::prefix('seats')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\SeatController::class, 'index'])->name('seats.index');
-        Route::get('create', [App\Http\Controllers\admin\SeatController::class, 'create'])->name('seats.create');
-        Route::post('store', [App\Http\Controllers\admin\SeatController::class, 'store'])->name('seats.store');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\SeatController::class, 'edit'])->name('seats.edit');
-        Route::post('update/{id}', [App\Http\Controllers\admin\SeatController::class, 'update'])->name('seats.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\SeatController::class, 'destroy'])->name('seats.destroy');
+        Route::get('index', [App\Http\Controllers\admin\SeatController::class, 'index'])->name('seats.index')->middleware('permission:show-seats');
+        Route::get('create', [App\Http\Controllers\admin\SeatController::class, 'create'])->name('seats.create')->middleware('permission:create-seats');
+        Route::post('store', [App\Http\Controllers\admin\SeatController::class, 'store'])->name('seats.store')->middleware('permission:create-seats');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\SeatController::class, 'edit'])->name('seats.edit')->middleware('permission:show-seats');
+        Route::post('update/{id}', [App\Http\Controllers\admin\SeatController::class, 'update'])->name('seats.update')->middleware('permission:update-seats');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\SeatController::class, 'destroy'])->name('seats.destroy')->middleware('permission:delete-seats');
     });
     // typeseats
     Route::prefix('typeseats')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\TypeSeatController::class, 'index'])->name('typeseats.index');
-        Route::get('create', [App\Http\Controllers\admin\TypeSeatController::class, 'create'])->name('typeseats.create');
-        Route::post('store', [App\Http\Controllers\admin\TypeSeatController::class, 'store'])->name('typeseats.store');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\TypeSeatController::class, 'edit'])->name('typeseats.edit');
-        Route::post('update/{id}', [App\Http\Controllers\admin\TypeSeatController::class, 'update'])->name('typeseats.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\TypeSeatController::class, 'destroy'])->name('typeseats.destroy');
+        Route::get('index', [App\Http\Controllers\admin\TypeSeatController::class, 'index'])->name('typeseats.index')->middleware('permission:show-typeseats');
+        Route::get('create', [App\Http\Controllers\admin\TypeSeatController::class, 'create'])->name('typeseats.create')->middleware('permission:create-typeseats');
+        Route::post('store', [App\Http\Controllers\admin\TypeSeatController::class, 'store'])->name('typeseats.store')->middleware('permission:create-typeseats');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\TypeSeatController::class, 'edit'])->name('typeseats.edit')->middleware('permission:show-typeseats');
+        Route::post('update/{id}', [App\Http\Controllers\admin\TypeSeatController::class, 'update'])->name('typeseats.update')->middleware('permission:update-typeseats');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\TypeSeatController::class, 'destroy'])->name('typeseats.destroy')->middleware('permission:delete-typeseats');
     });
 
     // room
     Route::prefix('rooms')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\RoomController::class, 'index'])->name('rooms.index');
-        Route::get('create', [App\Http\Controllers\admin\RoomController::class, 'create'])->name('rooms.create');
-        Route::post('store', [App\Http\Controllers\admin\RoomController::class, 'store'])->name('rooms.store');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\RoomController::class, 'edit'])->name('rooms.edit');
-        Route::post('update/{id}', [App\Http\Controllers\admin\RoomController::class, 'update'])->name('rooms.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\RoomController::class, 'destroy'])->name('rooms.destroy');
+        Route::get('index', [App\Http\Controllers\admin\RoomController::class, 'index'])->name('rooms.index')->middleware('permission:show-rooms');
+        Route::get('create', [App\Http\Controllers\admin\RoomController::class, 'create'])->name('rooms.create')->middleware('permission:create-rooms');
+        Route::post('store', [App\Http\Controllers\admin\RoomController::class, 'store'])->name('rooms.store')->middleware('permission:create-rooms');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\RoomController::class, 'edit'])->name('rooms.edit')->middleware('permission:show-rooms');
+        Route::post('update/{id}', [App\Http\Controllers\admin\RoomController::class, 'update'])->name('rooms.update')->middleware('permission:update-rooms');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\RoomController::class, 'destroy'])->name('rooms.destroy')->middleware('permission:delete-rooms');
     });
     // showtime
     Route::prefix('showtime')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\showtimeController::class, 'index'])->name('showtime.index');
-        Route::get('create', [App\Http\Controllers\admin\showtimeController::class, 'create'])->name('showtime.create');
-        Route::post('store', [App\Http\Controllers\admin\showtimeController::class, 'store'])->name('showtime.store');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\showtimeController::class, 'edit'])->name('showtime.edit');
-        Route::post('update/{id}', [App\Http\Controllers\admin\showtimeController::class, 'update'])->name('showtime.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\showtimeController::class, 'destroy'])->name('showtime.destroy');
+        Route::get('index', [App\Http\Controllers\admin\showtimeController::class, 'index'])->name('showtime.index')->middleware('permission:show-showtime');
+        Route::get('create', [App\Http\Controllers\admin\showtimeController::class, 'create'])->name('showtime.create')->middleware('permission:create-showtime');
+        Route::post('store', [App\Http\Controllers\admin\showtimeController::class, 'store'])->name('showtime.store')->middleware('permission:create-showtime');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\showtimeController::class, 'edit'])->name('showtime.edit')->middleware('permission:show-showtime');
+        Route::post('update/{id}', [App\Http\Controllers\admin\showtimeController::class, 'update'])->name('showtime.update')->middleware('permission:update-showtime');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\showtimeController::class, 'destroy'])->name('showtime.destroy')->middleware('permission:delete-showtime');
     });
     // comment
     Route::prefix('comment')->group(function () {
@@ -242,30 +242,30 @@ Route::middleware('auth')->group(function () {
     });
     // tickit
     Route::prefix('ticket')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\TicketController::class, 'index'])->name('ticket.index');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\TicketController::class, 'destroy'])->name('destroy.index');
-        Route::get('show/{id}', [App\Http\Controllers\admin\TicketController::class, 'show'])->name('show.index');
-        Route::post('/tickets/{id}/updatePaymentStatus', [App\Http\Controllers\admin\TicketController::class, 'updatePaymentStatus'])->name('updatePaymentStatus');
+        Route::get('index', [App\Http\Controllers\admin\TicketController::class, 'index'])->name('ticket.index')->middleware('permission:show-ticket');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\TicketController::class, 'destroy'])->name('destroy.index')->middleware('permission:delete-ticket');
+        Route::get('show/{id}', [App\Http\Controllers\admin\TicketController::class, 'show'])->name('show.index')->middleware('permission:show-ticket');
+        Route::post('/tickets/{id}/updatePaymentStatus', [App\Http\Controllers\admin\TicketController::class, 'updatePaymentStatus'])->name('updatePaymentStatus')->middleware('permission:show-ticket');
     });
 
     // Danh sách Tin tức
     Route::prefix('news')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\NewController::class, 'index'])->name('news.index');
-        Route::get('create', [App\Http\Controllers\admin\NewController::class, 'create'])->name('news.create');
-        Route::post('store', [App\Http\Controllers\admin\NewController::class, 'store'])->name('news.store');
-        Route::get('show/{id}', [App\Http\Controllers\admin\NewController::class, 'show'])->name('news.show');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\NewController::class, 'edit'])->name('news.edit');
-        Route::post('update/{id}', [App\Http\Controllers\admin\NewController::class, 'update'])->name('news.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\NewController::class, 'destroy'])->name('news.destroy');
+        Route::get('index', [App\Http\Controllers\admin\NewController::class, 'index'])->name('news.index')->middleware('permission:show-news');
+        Route::get('create', [App\Http\Controllers\admin\NewController::class, 'create'])->name('news.create')->middleware('permission:create-news');
+        Route::post('store', [App\Http\Controllers\admin\NewController::class, 'store'])->name('news.store')->middleware('permission:create-news');
+        Route::get('show/{id}', [App\Http\Controllers\admin\NewController::class, 'show'])->name('news.show')->middleware('permission:show-news');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\NewController::class, 'edit'])->name('news.edit')->middleware('permission:show-news');
+        Route::post('update/{id}', [App\Http\Controllers\admin\NewController::class, 'update'])->name('news.update')->middleware('permission:update-news');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\NewController::class, 'destroy'])->name('news.destroy')->middleware('permission:delete-news');
     });
     // Hội viên
     Route::prefix('rank')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\rankController::class, 'index'])->name('rank.index');
-        Route::get('create', [App\Http\Controllers\admin\rankController::class, 'create'])->name('rank.create');
-        Route::post('store', [App\Http\Controllers\admin\rankController::class, 'store'])->name('rank.store');
-        Route::get('edit/{id}', [App\Http\Controllers\admin\rankController::class, 'edit'])->name('rank.edit');
-        Route::post('update/{id}', [App\Http\Controllers\admin\rankController::class, 'update'])->name('rank.update');
-        Route::get('delete/{id}', [App\Http\Controllers\admin\rankController::class, 'destroy'])->name('rank.destroy');
+        Route::get('index', [App\Http\Controllers\admin\rankController::class, 'index'])->name('rank.index')->middleware('permission:show-rank');
+        Route::get('create', [App\Http\Controllers\admin\rankController::class, 'create'])->name('rank.create')->middleware('permission:create-rank');
+        Route::post('store', [App\Http\Controllers\admin\rankController::class, 'store'])->name('rank.store')->middleware('permission:create-rank');
+        Route::get('edit/{id}', [App\Http\Controllers\admin\rankController::class, 'edit'])->name('rank.edit')->middleware('permission:show-rank');
+        Route::post('update/{id}', [App\Http\Controllers\admin\rankController::class, 'update'])->name('rank.update')->middleware('permission:update-rank');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\rankController::class, 'destroy'])->name('rank.destroy')->middleware('permission:delete-rank');
     });
 
     //Banner
@@ -279,16 +279,16 @@ Route::middleware('auth')->group(function () {
     });
     //Statistical
     Route::prefix('statistical')->group(function () {
-        Route::get('index', [App\Http\Controllers\admin\StatisticalController::class, "index"])->name('statistical.index');
-        Route::get('indexFood', [App\Http\Controllers\admin\StatisticalController::class, "indexFood"])->name('statistical.indexFood');
-        Route::get('indexFilm', [App\Http\Controllers\admin\StatisticalController::class, "indexFilm"])->name('statistical.indexFilm');
-        Route::get('cinema/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailCinema"])->name('cinema.name');
-        Route::get('detailFilm/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFilm"])->name('detailFilm.name');
-        Route::get('detailFood/{days}', [App\Http\Controllers\admin\StatisticalController::class, "detailFood"])->name('detailFilm.food');
-        Route::get('detailFoodCinema/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFoodCinema"])->name('detailFilm.food');
-        Route::get('detailFoodCinemas/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFoodCinemas"])->name('detailFilm.food');
-        Route::get('detailFilms/{days}', [App\Http\Controllers\admin\StatisticalController::class, "detailFilms"])->name('detailFilm.food');
-        Route::get('detailFilmCinemasDay/{days}', [App\Http\Controllers\admin\StatisticalController::class, "detailFilmCinemasDay"])->name('detailFilmCinemasDay.film');
+        Route::get('index', [App\Http\Controllers\admin\StatisticalController::class, "index"])->name('statistical.index')->middleware('permission:show-statistical');
+        Route::get('indexFood', [App\Http\Controllers\admin\StatisticalController::class, "indexFood"])->name('statistical.indexFood')->middleware('permission:show-statistical');
+        Route::get('indexFilm', [App\Http\Controllers\admin\StatisticalController::class, "indexFilm"])->name('statistical.indexFilm')->middleware('permission:show-statistical');
+        Route::get('cinema/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailCinema"])->name('cinema.name')->middleware('permission:show-statistical');
+        Route::get('detailFilm/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFilm"])->name('detailFilm.name')->middleware('permission:show-statistical');
+        Route::get('detailFood/{days}', [App\Http\Controllers\admin\StatisticalController::class, "detailFood"])->name('detailFilm.food')->middleware('permission:show-statistical');
+        Route::get('detailFoodCinema/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFoodCinema"])->name('detailFilm.food')->middleware('permission:show-statistical');
+        Route::get('detailFoodCinemas/{name}', [App\Http\Controllers\admin\StatisticalController::class, "detailFoodCinemas"])->name('detailFilm.food')->middleware('permission:show-statistical');
+        Route::get('detailFilms/{days}', [App\Http\Controllers\admin\StatisticalController::class, "detailFilms"])->name('detailFilm.food')->middleware('permission:show-statistical');
+        Route::get('detailFilmCinemasDay/{days}', [App\Http\Controllers\admin\StatisticalController::class, "detailFilmCinemasDay"])->name('detailFilmCinemasDay.film')->middleware('permission:show-statistical');
     });
     
      // tổng quan
@@ -299,13 +299,13 @@ Route::middleware('auth')->group(function () {
     //setting
     Route::get('/smtp-settings',[App\Http\Controllers\admin\SettingController::class,'smtp_settings'])->name('smtp_settings.index');
     Route::post('/env_key_update',[App\Http\Controllers\admin\SettingController::class,'env_key_update'])->name('smtp_settings.update');
-    Route::get('/NotificationList', [App\Http\Controllers\admin\NotificationController::class, 'index']);
+    Route::get('/NotificationList', [App\Http\Controllers\admin\NotificationController::class, 'index'])->middleware('permission:show-Notification');
 
 
      // *********** cinema //
-    Route::get('allCinema', [App\Http\Controllers\admin\StatisticalController::class, "allCinema"])->name('allCinema');
-    Route::get('allCinemaDay/{day}', [App\Http\Controllers\admin\StatisticalController::class, "allCinemaDay"]);
+    Route::get('allCinema', [App\Http\Controllers\admin\StatisticalController::class, "allCinema"])->name('allCinema')->middleware('permission:show-statistical');
+    Route::get('allCinemaDay/{day}', [App\Http\Controllers\admin\StatisticalController::class, "allCinemaDay"])->middleware('permission:show-statistical');
      // *********** film //
-    Route::get('allFilm', [App\Http\Controllers\admin\StatisticalController::class, "allFilm"])->name('allFilm');
-    Route::get('allCinemaFilm/{id}', [App\Http\Controllers\admin\StatisticalController::class, "allCinemaFilm"])->name('allCinemaFilm');
+    Route::get('allFilm', [App\Http\Controllers\admin\StatisticalController::class, "allFilm"])->name('allFilm')->middleware('permission:show-statistical');
+    Route::get('allCinemaFilm/{id}', [App\Http\Controllers\admin\StatisticalController::class, "allCinemaFilm"])->name('allCinemaFilm')->middleware('permission:show-statistical');
 });
