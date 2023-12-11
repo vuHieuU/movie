@@ -54,11 +54,7 @@ Route::get('/movie/{id}', [App\Http\Controllers\client\AllfilmController::class,
 Route::get('/introduction', [App\Http\Controllers\client\InTroDucTionController::class, 'index'])->name("introduction");
 
 
-//Favarite Film
-Route::post('/addFavoFilm', [App\Http\Controllers\client\FavoriteController::class, 'store']);
-Route::get('/deleteFavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'destroy']);
-Route::get('/unLikeFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'unLike']);
-Route::get('/FavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'show']);
+
 
 Route::get('auth/google', [GoogleController::class, "redirectToGoogle"])->name("loginGoogle");
 Route::get('auth/google/callback', [GoogleController::class, "handleGoogleCallback"]);
@@ -93,6 +89,12 @@ Route::middleware(['auth'])->group(function () {    //profile của user
     Route::post('/payment-success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'PaymentSuccess'])->name('payment_success');
     Route::get('/success/{film_id}', [App\Http\Controllers\client\cart\PayController::class, 'show'])->name('success');
     Route::post('/updates/{showtime_seat_id}', [App\Http\Controllers\client\cart\PayController::class, 'updates']);
+
+    //Favarite Film
+    Route::post('/addFavoFilm', [App\Http\Controllers\client\FavoriteController::class, 'store']);
+    Route::get('/deleteFavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'destroy']);
+    Route::get('/unLikeFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'unLike']);
+    Route::get('/FavoFilm/{id}', [App\Http\Controllers\client\FavoriteController::class, 'show']);
 
     //vnpay
     Route::post('/vnpay_payment/{film_id}', [App\Http\Controllers\client\cart\PaymentController::class, 'vnpay_payment']);
@@ -188,6 +190,7 @@ Route::middleware('auth')->group(function () {
         Route::post('store', [App\Http\Controllers\admin\CityController::class, "store"])->middleware('permission:create-city');
         Route::get('edit/{id}', [App\Http\Controllers\admin\CityController::class, "edit"])->middleware('permission:show-city');
         Route::post('update/{id}', [App\Http\Controllers\admin\CityController::class, "update"])->middleware('permission:update-city');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\CityController::class, 'destroy'])->middleware('permission:delete-city');
     });
     // cinemas
     Route::prefix('cinemas')->group(function () {
@@ -196,6 +199,7 @@ Route::middleware('auth')->group(function () {
         Route::post('store', [App\Http\Controllers\admin\CinemasController::class, "store"])->middleware('permission:create-cinemas');
         Route::get('edit/{id}', [App\Http\Controllers\admin\CinemasController::class, "edit"])->middleware('permission:show-cinemas');
         Route::post('update/{id}', [App\Http\Controllers\admin\CinemasController::class, "update"])->middleware('permission:update-cinemas');
+        Route::get('delete/{id}', [App\Http\Controllers\admin\CinemasController::class, 'destroy'])->middleware('permission:delete-cinemas');
     });
     // seats
     Route::prefix('seats')->group(function () {

@@ -33,20 +33,12 @@ class FavoriteController extends Controller
     {
         $user = $request->input("user_id");
         $film_id = $request->input("film_id");
-        if($user==0){
-            // return redirect("/login");
-            return redirect()->back()->with(['error' => 'Vui lòng đăng nhập để thực hiện được chức năng']);
-        }
-        else{    
            $data = [
             "user_id"=>$user,
             "film_id"=>$film_id,
         ];
-        $id = $request->input("film_id");
-        $slug = film::where('id',$id)->get();
         favorite_film::create($data);
-        return redirect()->back()->with(['success' => 'Yêu thích thành công']);
-        }
+        return redirect()->back();
 
     }
 
