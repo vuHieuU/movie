@@ -335,7 +335,7 @@
                                 <i class="las la-minus"></i><span>Cài đặt SMTP</span>
                             </a> --}}
                             <a href="{{ route('sliders.index') }}">
-                                <i class="las la-minus"></i><span>Cài đặt Banner</span>
+                                <i class="las la-minus"></i><span>Cài đặt banner và ảnh</span>
                             </a>
                         </li>
 

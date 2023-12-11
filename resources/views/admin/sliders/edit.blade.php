@@ -81,12 +81,14 @@
                                         <div class="form-group">
                                             <label>Vị trí</label>
                                             <select name="position" class="form-control">
-                                                    <option value="1">Logo</option>
-                                                    <option value="2">Banner</option>
-                                                    <option value="3">Banner trang chi tiết</option>
-                                                    <option value="4">Banner nhỏ trang chi tiết</option>
-                                                    <option value="5">Banner top</option>
-                                                    <option value="6">Banner footer</option>
+                                                    <option value="1" {{ $slider->position == '1' ? 'selected':'' }}>Logo</option>
+                                                    <option value="2" {{ $slider->position == '2' ? 'selected':'' }}>Banner</option>
+                                                    <option value="3" {{ $slider->position == '3' ? 'selected':'' }}>Banner trang chi tiết</option>
+                                                    <option value="4" {{ $slider->position == '4' ? 'selected':'' }}>Banner nhỏ trang chi tiết</option>
+                                                    <option value="5" {{ $slider->position == '5' ? 'selected':'' }}>Banner top</option>
+                                                    <option value="6" {{ $slider->position == '6' ? 'selected':'' }}>Banner footer</option>
+                                                    <option value="7" {{ $slider->position == '7' ? 'selected':'' }}>Ảnh trang home</option>
+                                                    <option value="8" {{ $slider->position == '8' ? 'selected':'' }}>Ảnh title trang home</option>
                                             </select>
                                         </div>
                                     </div>

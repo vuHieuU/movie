@@ -49,7 +49,7 @@
                 <div class="col-md-3 col-xs-12">
                     <div class="amy-widget amy-widget-list">
                         <div class="amy-widget amy-widget-list list-post ">
-                            <h4 class="amy-title amy-widget-title">Bài viết mới nhất</h4>
+                            <h4 class="amy-title amy-widget-title">Tin tức mới nhất</h4>
                             @php
                                 $new_footer = \App\Models\News::orderByDesc("created_at")->limit(2)->get();
                             @endphp

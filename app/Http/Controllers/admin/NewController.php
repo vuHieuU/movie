@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class NewController extends Controller
 {
@@ -38,10 +39,18 @@ class NewController extends Controller
         $data->content = $request->input('content');;
         $data->status = $request->input('status');
 
-        $thumbnail = $request->file('thumbnail')->getClientOriginalName();
-        $request->file('thumbnail')->storeAs('public/images', $thumbnail);
+        // $thumbnail = $request->file('thumbnail')->getClientOriginalName();
+        // $request->file('thumbnail')->storeAs('public/images', $thumbnail);
 
-        $data->thumbnail = $thumbnail;
+        // $data->thumbnail = $thumbnail;
+        if($request->hasFile('thumbnail')){
+            $file = $request->file("thumbnail");
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $file->move("uploads/blog",$filename);
+
+            $data["thumbnail"] = "uploads/blog/$filename";
+        }
 
         $data->status = $request->status == true ? "1" : "0";
 
@@ -88,17 +97,34 @@ class NewController extends Controller
         $data->slug = Str::slug($request->input('title'));
         $data->status = $request->status == true ? "1" : "0";
         
-        if ($request->file('thumbnail') !== null) {
-            $thumbnail = $request->file('thumbnail')->getClientOriginalName();
-            $request->file('thumbnail')->storeAs('public/images', $thumbnail);
+        // if ($request->file('thumbnail') !== null) {
+        //     $thumbnail = $request->file('thumbnail')->getClientOriginalName();
+        //     $request->file('thumbnail')->storeAs('public/images', $thumbnail);
 
-            $oldThumb = $data->thumbnail;
+        //     $oldThumb = $data->thumbnail;
             
-            Storage::delete('public/images/'.$oldThumb);
+        //     Storage::delete('public/images/'.$oldThumb);
 
-            $data->fill([
-                'thumbnail' => $thumbnail,
-            ])->save();
+        //     $data->fill([
+        //         'thumbnail' => $thumbnail,
+        //     ])->save();
+        // }
+        if($request->hasFile('thumbnail')){
+
+            $destination = $data->image;
+
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+
+            $file = $request->file("thumbnail");
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $file->move("uploads/blog",$filename);
+
+            $data["thumbnail"] = "uploads/blog/$filename";
+        }else{
+            $data["thumbnail"] = $data->image;
         }
 
         $data->meta_title = $request->input('meta_title');;

@@ -55,10 +55,10 @@ class HomeController extends Controller
             ->groupBy('name')
             ->orderByRaw('COUNT(*) DESC')
             ->first();
-        $tickettong = ticket::get()->count();
+        $tickettong = ticket::where('status','Đã thanh toán')->get()->count();
         $countfilm = film::count();
         $countuser = User::count();
-        $sumtotal = ticket::sum("total");
+        $sumtotal = ticket::where('status','Đã thanh toán')->sum("total");
         $title = "Overview";
         $films = film::get();
         return view('admin/Overview',

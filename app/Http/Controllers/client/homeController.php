@@ -19,15 +19,14 @@ class homeController extends Controller
     public function index()
     {
         $sliders = Slider::where("status", "1")->where('position','2')->get();
-        $new_footer  = News::inRandomOrder()->limit(2)->get();
-        $new_latest  = News::orderByDesc("created_at")->limit(1)->get();
-        $new_latest_new  = News::inRandomOrder()->limit(2)->get();
+        $blogs  = News::where('status','1')->orderByDesc("created_at")->limit(3)->get();
         $film_nowplaying = film::orderByDesc("created_at")->limit(5)->get();
         $film_topmovie = film::orderByDesc("created_at")->limit(15)->get();
         $categories =category::get();
         $film = film::orderByDesc("created_at")->limit(15)->get();
-        
-        return view('client.home',compact("sliders","film_nowplaying","categories","film","film_topmovie","new_footer","new_latest","new_latest_new"));
+        $imageHome1 = Slider::where('position','8')->where('status','1')->orderByDesc('created_at')->limit(1)->first();
+        $imageHome9 = Slider::where('position','7')->where('status','1')->orderByDesc('created_at')->limit(9)->get();
+        return view('client.home',compact("sliders","film_nowplaying","categories","film","film_topmovie","blogs",'imageHome1','imageHome9'));
 
     }
     // public function show($id)

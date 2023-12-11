@@ -68,6 +68,8 @@
                                                         <option value="4">Banner nhỏ trang chi tiết</option>
                                                         <option value="5">Banner top</option>
                                                         <option value="6">Banner footer</option>
+                                                        <option value="7">Ảnh trang home</option>
+                                                        <option value="8">Ảnh title trang home</option>
                                             </select>
                                         </div>
                                     </div>
