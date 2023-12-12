@@ -24,7 +24,7 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 |
 */
 
-Route::get('/', [App\Http\Controllers\client\homeController::class, 'index'])->name('home')->middleware('verified');
+Route::get('/', [App\Http\Controllers\client\homeController::class, 'index'])->name('home');
 // Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index']);
 
 // Route::get('/', [App\Http\Controllers\client\homeController::class, 'index']);
@@ -91,7 +91,7 @@ Auth::routes([
  
 //     return back()->with('message', 'Verification link sent!');
 // })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
-Route::middleware(['auth'])->group(function () {    //profile của user
+Route::middleware(['auth','verified'])->group(function () {    //profile của user
     Route::get('/myaccount', [AuthController::class, 'index'])->name("myaccount");
     Route::get('/editaccount', [AuthController::class, 'edit'])->name("editaccount");
     Route::post('/myaccount', [AuthController::class, 'profile'])->name('profile');
