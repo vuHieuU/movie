@@ -8,9 +8,11 @@ use App\Http\Controllers\cityController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
-
+use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +24,7 @@ use App\Http\Controllers\Controller;
 |
 */
 
-Route::get('/', [App\Http\Controllers\client\homeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\client\homeController::class, 'index'])->name('home')->middleware('verified');
 // Route::get('/contact', [App\Http\Controllers\client\ContactController::class, 'index']);
 
 // Route::get('/', [App\Http\Controllers\client\homeController::class, 'index']);
@@ -77,8 +79,22 @@ Route::post('add-rating', [App\Http\Controllers\client\RatingController::class, 
 
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-Auth::routes();
-
+Auth::routes([
+    'verify' => true
+]);
+// Route::get('/email/verify', function () {
+//     return view('auth.verify-email');
+// })->middleware('auth')->name('verification.notice');
+// Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+//     $request->fulfill();
+ 
+//     return redirect('/home');
+// })->middleware(['auth', 'signed'])->name('verification.verify');
+// Route::post('/email/verification-notification', function (Request $request) {
+//     $request->user()->sendEmailVerificationNotification();
+ 
+//     return back()->with('message', 'Verification link sent!');
+// })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 Route::middleware(['auth'])->group(function () {    //profile của user
     Route::get('/myaccount', [AuthController::class, 'index'])->name("myaccount");
     Route::get('/editaccount', [AuthController::class, 'edit'])->name("editaccount");

@@ -509,7 +509,10 @@
                                             <div class="d-group">
                                                 <div class="left-col">
                                                     <div class="group-login group-log">
-
+                       <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+    
                                                         <h2 class="mb-5">
                                                             Quên mật khẩu
                                                         </h2>
