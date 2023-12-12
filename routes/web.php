@@ -304,6 +304,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/smtp-settings',[App\Http\Controllers\admin\SettingController::class,'smtp_settings'])->name('smtp_settings.index');
     Route::post('/env_key_update',[App\Http\Controllers\admin\SettingController::class,'env_key_update'])->name('smtp_settings.update');
     Route::get('/NotificationList', [App\Http\Controllers\admin\NotificationController::class, 'index'])->middleware('permission:show-Notification');
+    Route::get('/admin/contact', [App\Http\Controllers\admin\ContactController::class, 'index'])->name('contact.index');
+    Route::get('/admin/contacts/{id}', [App\Http\Controllers\admin\ContactController::class, 'show'])->name('contact.show');
 
 
      // *********** cinema //
