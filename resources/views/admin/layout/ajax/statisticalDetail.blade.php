@@ -1,3 +1,30 @@
+<div class="card-body">
+    <div class="d-flex flex-wrap align-items-center mt-2">
+        <div class="d-flex align-items-center progress-order-left">
+            <div class="progress progress-round m-0 orange conversation-bar"
+                data-percent="46">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value text-secondary">46%</div>
+            </div>
+            <div class="progress-value ml-3 pr-5 border-right">
+
+                <div>
+
+                    <h5 id="ticketListtoltal">{{ number_format($sumtotal) }}</h5>
+                    <p class="mb-0">Tổng doanh thu </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="card-body pt-0">
     <div id="layout1-chart-6"></div>
 </div>

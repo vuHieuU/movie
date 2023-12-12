@@ -1,92 +1,4 @@
-<div class="col-lg-4">
-    <div class="card card-block card-stretch card-height-helf">
-        <div class="card-body">
-            <div class="d-flex align-items-top justify-content-between">
-                <div class="">
-                    <p class="mb-0">Phim được đặt nhiều nhất:</p>
-                    {{-- @if ($mostBookedfilm)
-                        <h6 id="ticketListfilmname">{{ $mostBookedfilm->film_name }}</h6>
-                    @else
-                        <p>Không có dữ liệu để hiển thị.</p>
-                    @endif --}}
-
-                </div>
-                <div class="card-header-toolbar d-flex align-items-center">
-                    <div class="dropdown">
-                        <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton009"
-                            data-toggle="dropdown">
-                            This Month<i class="ri-arrow-down-s-line ml-1"></i>
-                        </span>
-                        <div class="dropdown-menu dropdown-menu-right shadow-none"
-                            aria-labelledby="dropdownMenuButton009">
-                            <a class="dropdown-item" value="" href="#"
-                                id="filterLinkCurrentYear1"
-                                onclick="changeDropdownText009('Năm')">Năm</a>
-                            <a class="dropdown-item" value="" href="#"
-                                id="filterLinkCurrentMonth1"
-                                onclick="changeDropdownText009('Tháng')">Tháng</a>
-                            <a class="dropdown-item" value="" href="#"
-                                id="filterLinkSevenDaysAgo1"
-                                onclick="changeDropdownText009('Tuần')">Tuần</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="card card-block card-stretch card-height-helf">
-        <div class="card-body">
-            <div class="d-flex align-items-top justify-content-between">
-                <div class="">
-                    <p class="mb-0">Khung giờ xem được đặt nhiều nhất:</p>
-
-                    {{-- @if ($formattedTime)
-                        <h6 id="ticketListfilhour"> {{ $formattedTime }} </h6>
-                    @else
-                        <p>Không có dữ liệu để hiển thị.</p>
-                    @endif --}}
-                </div>
-                <div class="card-header-toolbar d-flex align-items-center">
-                    <div class="dropdown">
-                        <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton0001"
-                            data-toggle="dropdown">
-                            This Month<i class="ri-arrow-down-s-line ml-1"></i>
-                        </span>
-                        <div class="dropdown-menu dropdown-menu-right shadow-none"
-                            aria-labelledby="dropdownMenuButton0001">
-                            <a class="dropdown-item" href="#" id="filterLinkCurrentYear2"
-                                onclick="changeDropdownText0001('Năm')">Năm</a>
-                            <a class="dropdown-item" href="#" id="filterLinkCurrentMonth2"
-                                onclick="changeDropdownText0001('Tháng')">Tháng</a>
-                            <a class="dropdown-item" href="#" id="filterLinkSevenDaysAgo2"
-                                onclick="changeDropdownText0001('Tuần')">Tuần</a>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-        </div>
-    </div>
-    {{-- <div class="card card-block card-stretch card-height-helf">
-        <div class="card-body">
-            <div class="d-flex align-items-top justify-content-between">
-                <div class="">
-                    <p class="mb-0">Combo đồ ăn được đặt nhiều nhất:</p>
-
-                    @if ($mostBookedfood)
-                        <h6 id="ticketListfood"> {{ $mostBookedfood->name }} </h6>
-                    @else
-                        <p>Không có dữ liệu để hiển thị.</p>
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div> --}}
-</div>
-<div class="col-lg-8">
+<div class="col-lg-12 ">
     <div class="card card-block card-stretch card-height">
         <div class="card-header d-flex justify-content-between">
             <div class="header-title">
@@ -98,6 +10,9 @@
                             Thời gian<i class="ri-arrow-down-s-line ml-1"></i>
                         </span>
                         <div class="dropdown-menu dropdown-menu-right shadow-none" aria-labelledby="dropdownMenuButton008">
+                            <a class="li dropdown-item" data-film-id="1">
+                                <li onclick="changeDropdownText('1 ngày')">Hôm nay</li>
+                            </a>
                             <a class="li dropdown-item" data-film-id="7">
                                 <li onclick="changeDropdownText('7 ngày')">7 ngày</li>
                             </a>
@@ -106,6 +21,9 @@
                             </a>
                             <a class="li dropdown-item" data-film-id="30">
                                 <li onclick="changeDropdownText('30 ngày')">30 ngày</li>
+                            </a>
+                            <a class="li dropdown-item" data-film-id="365">
+                                <li onclick="changeDropdownText('365 ngày')">365 ngày</li>
                             </a>
                         </div>
                     

@@ -153,8 +153,8 @@
                                             <div class="form-group">
                                                 <label>Trạng thái *</label>
                                                 <select name="status" id="" class="form-control">
-                                                    <option value="1">Đang chiếu</option>
-                                                    <option value="2">Sắp ra mắt</option>
+                                                    <option value="1" {{ $film->status == 1 ? 'selected':'' }}>Đang chiếu</option>
+                                                    <option value="2" {{ $film->status == 2 ? 'selected':'' }}>Sắp ra mắt</option>
                                                 </select>
                                                 <div class="help-block with-errors"></div>
                                                 @if ($errors->has('status'))

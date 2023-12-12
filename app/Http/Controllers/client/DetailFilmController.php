@@ -23,10 +23,7 @@ class DetailFilmController extends Controller
     public function index($slug)
     {
         $check = 1;
-        // $film_show_time = ShowTime::findOrFail($id);
-        // $film = film::findOrFail($id);
         $film = film::where('slug', $slug)->firstOrFail();
-        // $cinema_id = Cinema::findOrFail($id);
         $filmtopmovie = Film::orderByDesc("created_at")->limit(4)->get();
         
         $newdetail = News::orderByDesc("created_at")->limit(2)->get();
@@ -46,10 +43,7 @@ class DetailFilmController extends Controller
             ->orderBy('day')
             ->orderBy('hour')
             ->get();
-            
-    // ->sortBy('time');
 
-        // dd($ShowTime);
         $categoryfilm_category = DB::table("categories")
             ->join("film_categories", "categories.id", "=", "film_categories.dmid")
             ->select("categories.*", "film_categories.*")
@@ -75,7 +69,7 @@ class DetailFilmController extends Controller
         // }
 
         // lấy tất cả comment có id phim = ...
-        $comments = comment::where("film_id", $slug)->where("status", 0)->orderByDesc('created_at')->get();
+        $comments = comment::where("film_id", $film->id)->where("status", 0)->orderByDesc('created_at')->limit(8)->get();
 
         $title = "Detail";
         return view('client.DetailFilm', compact(

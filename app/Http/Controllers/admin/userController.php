@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Models\rank;
 use App\Models\User;
 use App\Models\ticket;
 use Illuminate\Http\Request;
@@ -32,7 +33,7 @@ class userController extends Controller
      */
     public function create()
     {
-        $role = Role::all()->groupBy('group');
+        $role = role::all()->groupBy('group');
         return view('admin.users.admin.create',compact('role'));
     }
 
@@ -55,7 +56,7 @@ class userController extends Controller
     public function show(string $id)
     {
         $user = User::FindOrFail($id);
-        $role = Role::all()->groupBy('group');
+        $role = role::all()->groupBy('group');
         return view('admin.users.show',compact('user','role'));
     }
 
@@ -65,8 +66,9 @@ class userController extends Controller
     public function edit(string $id)
     {
         $user = User::FindOrFail($id);
-        $role = Role::all()->groupBy('group');
-        return view('admin.users.edit',compact('user','role'));
+        $role = role::all()->groupBy('group');
+        $rank = rank::get();
+        return view('admin.users.edit',compact('user','role','rank'));
     }
 
     /**
@@ -87,7 +89,7 @@ class userController extends Controller
     public function edit_admin(string $id)
     {
         $user = User::FindOrFail($id);
-        $role = Role::all()->groupBy('group');
+        $role = role::all()->groupBy('group');
         return view('admin.users.admin.edit',compact('user','role'));
     }
 

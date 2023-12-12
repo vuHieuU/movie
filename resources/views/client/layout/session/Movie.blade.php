@@ -28,7 +28,7 @@
                             <a  class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox"
                                 href="{{ $item->trailer }}">
                                 <img class=""
-                                    src="{{ asset('storage/images/' . $item->thumb) }}" style="height:314px; width:200px;" 
+                                src="{{ asset("$item->thumb")}}" style="height:314px; width:200px;" 
                                     alt="Kubo and the Two Strings" />
                             </a>
                             <span

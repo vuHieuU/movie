@@ -37,10 +37,9 @@ class CommentController extends Controller
         $data->email = $request->input("email");
         $data->status = 0;
         $data->comment_text = $request->input("comment_text");
-        
         $data->save();
         
-        return redirect("detail_film/{$data->film_id}");
+        return redirect()->back();
     }
 
     /**

@@ -3,10 +3,16 @@
         <div class="amy-inner">
             <div class="amy-left">
                 <div id="amy-site-logo " style="width: 70%;">
-                    <a href="/">
-                        <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_66.png"
-                            alt="Elementor Single Cinema" />
-                    </a>
+                  @php
+                      $logo = \App\Models\Slider::where("status", "1")->where('position','1')->first();
+                  @endphp
+                    @if ($logo)
+                        <a href="/">
+                            <img src="{{ asset("$logo->image")}}"
+                                alt="Elementor Single Cinema" />
+                        </a>
+                    @endif
+               
 
                 </div>
 
@@ -159,7 +165,7 @@
                             </li>
                             <li id="menu-item-276"
                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-276">
-                                <a href="/movie">Phim</a>
+                                <a href="#">Phim</a>
                                 <ul class="sub-menu">
                                     <li id="menu-item-143"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143">

@@ -19,9 +19,9 @@ class SliderController extends Controller
         return view("admin.sliders.create");
     }
 
-    public function store(SliderFormRequest $request){
+    public function store(Request $request){
 
-        $validatedData = $request->validated();
+        // $validatedData = $request->validated();
 
         if($request->hasFile('image')){
             $file = $request->file("image");
@@ -29,16 +29,17 @@ class SliderController extends Controller
             $filename = time().'.'.$ext;
             $file->move("uploads/slider",$filename);
 
-            $validatedData["image"] = "uploads/slider/$filename";
+            $data["image"] = "uploads/slider/$filename";
         }
 
-        $validatedData["status"] = $request->status == true ? "1" : "2";
+        $data["status"] = $request->status == true ? "1" : "2";
 
         Slider::create([
             'title' => $request->input("title"),
             'description' => $request->input("description"),
-            'image' => $validatedData["image"],
-            'status' => $validatedData["status"],
+            'image' => $data["image"],
+            'status' => $data["status"],
+            'position' => $request->input("position"),
         ]);
 
         return redirect("sliders/index")->with("message","Thêm Slider thành công!");
@@ -49,12 +50,12 @@ class SliderController extends Controller
         return view("admin.sliders.edit",compact("slider"));
     }
 
-    public function update(SliderFormRequest $request,$id){
+    public function update(Request $request,$id){
 
         $slider = Slider::findOrFail($id);
 
         
-        $validatedData = $request->validated();
+        // $validatedData = $request->validated();
 
         if($request->hasFile('image')){
 
@@ -69,18 +70,19 @@ class SliderController extends Controller
             $filename = time().'.'.$ext;
             $file->move("uploads/slider",$filename);
 
-            $validatedData["image"] = "uploads/slider/$filename";
+            $slider["image"] = "uploads/slider/$filename";
         }else{
-            $validatedData["image"] = $slider->image;
+            $slider["image"] = $slider->image;
         }
 
-        $validatedData["status"] = $request->status == true ? "1" : "2";
+        $slider["status"] = $request->status == true ? "1" : "2";
 
         Slider::where("id",$slider->id)->update([
             'title' => $request->input("title"),
             'description' => $request->input("description"),
-            'image' => $validatedData["image"],
-            'status' => $validatedData["status"],
+            'image' => $slider["image"],
+            'status' => $slider["status"],
+            'position' => $request->input("position"),
         ]);
 
         return redirect("sliders/index")->with("message","Cập nhật Slider thành công!");

@@ -44,7 +44,7 @@
                     <p style="color: green">
                         {{ session('success') }}
                     </p>
-                    <div class="col-md-2 ml-auto">
+                    <div class="col-md-2 mb-1" style="position: absolute; right: 0px; top:-20px">
                         <select class="form-control form-control-sm aiz-selectpicker mb-2 mb-md-0" name="type" id="type" onchange="sort_customers()">
                             <option value="">Lọc theo ngày tháng</option>
                             <option value="tuan" @if($filter == 'tuan') selected @endif >Tuần</option>
@@ -67,9 +67,10 @@
                               <th style="width: 13%">Tên phim</th>
                               <th style="width: 11%">Ngày đặt</th>
                               <th style="width: 11%">Thời gian</th>
-                              <th style="width: 10%">Ghế</th>
+                              {{-- <th style="width: 10%">Ghế</th> --}}
                               {{-- <th style="width: 10%">Đồ ăn</th> --}}
                               <th style="width: 10%">Thanh toán</th>
+                              <th style="width: 10%">Trạng thái</th>
                               <th style="width: 11%">Tổng tiền</th>
                               {{-- <th>Status</th> --}}
                               <th>Action</th>
@@ -95,12 +96,13 @@
                               </td>
                               <td>{{ $item->selected_date }}</td>
                               <td>{{ $item->selected_hour }}</td>
-                              <td>{{ $item->selected_seats }}</td>
+                              {{-- <td>{{ $item->selected_seats }}</td> --}}
                               {{-- @foreach ($ticket as $itemm) --}}
                                   
                              
                               {{-- <td>{{ $item->name }}*{{ $item->quantity }}</td> --}}
                               <td style="font-size: 15px;color: darkgreen; font-weight: 600">{{ $item->payment }}</td>
+                              <td style="font-size: 15px;color: darkgreen; font-weight: 600">{{ $item->status }}</td>
                            {{-- @endforeach --}}
                               <td>{{number_format( $item->total) }} VND</td>
     {{-- <td>{{($item->active==1) ?"Thành công" :"Đang xử lý"}}</td> --}}
@@ -109,8 +111,8 @@
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
                                           href="{{route("show.index",$item->id)}}"><i class="ri-eye-line mr-0"></i></a>
                                      
-                                      <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                          href="{{route("destroy.index",$item->id)}}" onclick="return confirm('Xóa là không Ctrl lại cuộc đời ?')"><i class="ri-delete-bin-line mr-0"></i></a>
+                                      {{-- <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
+                                          href="{{route("destroy.index",$item->id)}}" onclick="return confirm('Xóa là không Ctrl lại cuộc đời ?')"><i class="ri-delete-bin-line mr-0"></i></a> --}}
                                   </div>
                               </td>
                           </tr>

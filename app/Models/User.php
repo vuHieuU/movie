@@ -23,6 +23,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'google_id',
         'github_id',
+        'rank_id',
+        'point',
         'phone',
         'address',
         'email',
@@ -57,6 +59,9 @@ class User extends Authenticatable implements MustVerifyEmail
     }
     public function roles()
 {
-    return $this->belongsToMany(Role::class, 'model_has_roles', 'model_id', 'role_id');
+    return $this->belongsToMany(role::class, 'model_has_roles', 'model_id', 'role_id');
 }
+    public function user_rank() {
+        return $this->belongsTo(rank::class,'rank_id');
+    }
 }

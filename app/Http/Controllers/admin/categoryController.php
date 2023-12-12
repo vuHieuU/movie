@@ -78,7 +78,7 @@ class categoryController extends Controller
      */
    public function destroy(string $id)
 {
-    $category = Category::find($id);
+    $category = category::find($id);
 
     film_category::where('dmid',$category->id)->delete();
     $category->delete();

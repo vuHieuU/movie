@@ -53,6 +53,8 @@
                               <th>Email</th>
                               <th>Địa chỉ</th>
                               <th>Giới tính</th>
+                              <th>Cấp bậc</th>
+                              <th>Điểm</th>
                               <th>Action</th>
                           </tr>
                       </thead>
@@ -75,8 +77,16 @@
                               <td>{{ $item->address }}</td>
                               <td>{{ $item->gender  }}</td>
                               <td>
+                                @if ($item->user_rank)
+                                    {{ $item->user_rank->name }}
+                                @else
+                                    Đồng
+                                @endif
+                              </td>
+                              <td>{{ $item->point }}</td>
+                              <td>
                                   <div class="d-flex align-items-center list-action">
-                                      <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                      <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="ticket"
                                           href="/user/showTicketUser/{{ $item->id }}"><i class="fa-solid fa-ticket"></i></a>
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
                                           href="/user/show/{{ $item->id }}"><i class="ri-eye-line mr-0"></i></a>

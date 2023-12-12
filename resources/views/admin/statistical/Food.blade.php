@@ -4,15 +4,15 @@
         <div class="content-page">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-4">
+                    {{-- <div class="col-lg-4">
                         <div class="card card-transparent card-block card-stretch card-height border-none">
                             <div class="card-body p-0 mt-lg-2 mt-0">
                                 <h3 class="mb-3">Xin chào, {{ Auth::user()->name }}</h3>
                                 <p class="mb-0 mr-4">Trang tổng quan về đồ ăn.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-8">
+                    </div> --}}
+                    <div class="col-lg-12">
 
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
@@ -88,8 +88,9 @@
                                                     alt="image">
                                             </div>
                                             <div>
-                                                <p class="mb-2">Tổng đồ ăn </p>
-                                                {{-- <h4>{{ $countfood }}</h4> --}}
+                                                <p class="mb-2">Tổng các loại đồ ăn </p>
+                                                <h4>{{ $countfood }}</h4>
+                                               
                                             </div>
                                         </div>
                                         <div class="iq-progress-bar mt-2">
@@ -108,8 +109,8 @@
                                                     alt="image">
                                             </div>
                                             <div>
-                                                <p class="mb-2">Đồ ăn đã bán</p>
-                                                {{-- <h4>{{ $countfoodsell }} </h4> --}}
+                                                <p class="mb-2">Số lượng đã bán</p>
+                                                <h4>{{ $countfoodsell }} </h4>
                                             </div>
                                         </div>
                                         {{-- <div class=" ">

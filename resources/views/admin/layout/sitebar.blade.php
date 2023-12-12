@@ -1,11 +1,11 @@
 <div class="iq-sidebar  sidebar-default ">
     <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-        <a href="../backend/index.html" class="header-logo">
+        {{-- <a href="../backend/index.html" class="header-logo">
             <img src="../storage/images/img_66.png" class="img-fluid rounded-normal light-logo w-100" alt="logo">
-        </a>
-        <div class="iq-menu-bt-sidebar ml-0">
+        </a> --}}
+        {{-- <div class="iq-menu-bt-sidebar ml-0">
             <i class="las la-bars wrapper-menu"></i> 
-        </div>
+        </div> --}}
     </div>
     <div class="data-scrollbar" data-scroll="1">
         <nav class="iq-sidebar-menu">
@@ -36,22 +36,30 @@
                             <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
                         </svg>
                     </a>
+
                     <ul id="film" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
-                            <a href="{{ route('films.index') }}">
-                                <i class="las la-minus"></i><span>Danh sách phim</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="/categories/index">
-                                <i class="las la-minus"></i><span>Danh sách danh mục</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="/coupon/index">
-                                <i class="las la-minus"></i><span>Danh sách mã giảm giá</span>
-                            </a>
-                        </li>
+                        @can('show-films')
+                            <li class="">
+                                <a href="{{ route('films.index') }}">
+                                    <i class="las la-minus"></i><span>Danh sách phim</span>
+                                </a>
+                            </li>
+                        @endcan
+                        @can('show-categories')
+                            <li class="">
+                                <a href="/categories/index">
+                                    <i class="las la-minus"></i><span>Danh sách danh mục</span>
+                                </a>
+                            </li>
+                        @endcan
+                        @can('show-coupon')
+                            <li class="">
+                                <a href="/coupon/index">
+                                    <i class="las la-minus"></i><span>Danh sách mã giảm giá</span>
+                                </a>
+                            </li>
+                        @endcan
+
                         <li class="">
                             <a href="/comment/index">
                                 <i class="las la-minus"></i><span>Danh sách bình luận</span>
@@ -60,7 +68,7 @@
                     </ul>
                 </li>
                 {{-- User --}}
-                {{-- @can('show-user') --}}
+                {{-- @can('show-user') --}} @can('show-user')
                 <li class=" ">
                     <a href="#user" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fa-solid fa-user"></i>
@@ -73,28 +81,32 @@
                         </svg>
                     </a>
                     <ul id="user" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
-                            <a href="{{ route('index_user') }}">
-                                <i class="las la-minus"></i><span>Danh sách người dùng</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="{{ route('index_admin') }}">
-                                <i class="las la-minus"></i><span>Danh sách Admin</span>
-                            </a>
-                        </li>
+                       
+                            <li class="">
+                                <a href="{{ route('index_user') }}">
+                                    <i class="las la-minus"></i><span>Danh sách người dùng</span>
+                                </a>
+                            </li>
+                       
+                        @can('show-user')
+                            <li class="">
+                                <a href="{{ route('index_admin') }}">
+                                    <i class="las la-minus"></i><span>Danh sách Admin</span>
+                                </a>
+                            </li>
+                        @endcan
                         @can('show-role')
-                        <li class="">
-                            <a href="/role/index">
-                                <i class="las la-minus"></i><span>Danh sách phân quyền</span>
-                            </a>
-                        </li>  
+                            <li class="">
+                                <a href="/role/index">
+                                    <i class="las la-minus"></i><span>Danh sách phân quyền</span>
+                                </a>
+                            </li>
                         @endcan
                     </ul>
                 </li>
+ @endcan
 
-
-                {{-- News --}}
+                {{-- News --}}   @can('show-news')
                 <li class=" ">
                     <a href="#news" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fa-solid fa-newspaper"></i>
@@ -107,16 +119,40 @@
                         </svg>
                     </a>
                     <ul id="news" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
-                            <a href="{{ route('news.index') }}">
-                                <i class="las la-minus"></i><span>Danh sách tin tức</span>
-                            </a>
-                        </li>
+                     
+                            <li class="">
+                                <a href="{{ route('news.index') }}">
+                                    <i class="las la-minus"></i><span>Danh sách tin tức</span>
+                                </a>
+                            </li>
+                       
+                    </ul>
+                </li> @endcan
+                {{-- Hội viên --}}@can('show-rank')
+                <li class=" ">
+                    <a href="#rank" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                        <i class="fa-solid fa-newspaper"></i>
+                        <span class="ml-4">Hội viên</span>
+                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="10 15 15 20 20 15"></polyline>
+                            <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                        </svg>
+                    </a>
+                    <ul id="rank" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        
+                            <li class="">
+                                <a href="{{ route('rank.index') }}">
+                                    <i class="las la-minus"></i><span>Cấp bậc hội viên</span>
+                                </a>
+                            </li>
+                        
                     </ul>
                 </li>
+@endcan
 
-
-                {{-- Cinemas --}}
+                {{-- Cinemas --}}@can('show-cinemas')
                 <li class="">
                     <a href="#cinemas" class="collapse" data-toggle="collapse" aria-expanded="false">
                         <i class="fa-solid fa-city"></i>
@@ -129,25 +165,31 @@
                         </svg>
                     </a>
                     <ul id="cinemas" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
-                            <a href="/cinemas/index">
-                                <i class="las la-minus"></i><span>Danh sách rạp phim</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="/city/index">
-                                <i class="las la-minus"></i><span>Thành phố</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="/food/index">
-                                <i class="las la-minus"></i><span>Danh sách đồ ăn</span>
-                            </a>
-                        </li>
+                        
+                            <li class="">
+                                <a href="/cinemas/index">
+                                    <i class="las la-minus"></i><span>Danh sách rạp phim</span>
+                                </a>
+                            </li>
+                        
+                        @can('show-city')
+                            <li class="">
+                                <a href="/city/index">
+                                    <i class="las la-minus"></i><span>Thành phố</span>
+                                </a>
+                            </li>
+                        @endcan
+                        @can('show-food')
+                            <li class="">
+                                <a href="/food/index">
+                                    <i class="las la-minus"></i><span>Danh sách đồ ăn</span>
+                                </a>
+                            </li>
+                        @endcan
                     </ul>
-                </li>
+                </li>@endcan
                 {{-- @endcan --}}
-                {{-- showtime --}}
+                {{-- showtime --}}@can('show-showtime')
                 <li class=" ">
                     <a href="#showtime" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fa-solid fa-calendar"></i>
@@ -160,35 +202,44 @@
                         </svg>
                     </a>
                     <ul id="showtime" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
-                            <a href="/showtime/index">
-                                <i class="las la-minus"></i><span>Danh sách chiếu phim</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="/typeseats/index">
-                                <i class="las la-minus"></i><span>Danh sách loại ghế</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="/seats/index">
-                                <i class="las la-minus"></i><span>Danh sách ghế</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="/rooms/index">
-                                <i class="las la-minus"></i><span>Danh sách phòng</span>
-                            </a>
-                        </li>
+                        
+                            <li class="">
+                                <a href="/showtime/index">
+                                    <i class="las la-minus"></i><span>Danh sách chiếu phim</span>
+                                </a>
+                            </li>
+                       
+                        @can('show-typeseats')
+                            <li class="">
+                                <a href="/typeseats/index">
+                                    <i class="las la-minus"></i><span>Danh sách loại ghế</span>
+                                </a>
+                            </li>
+                        @endcan
+                        @can('show-seats')
+                            <li class="">
+                                <a href="/seats/index">
+                                    <i class="las la-minus"></i><span>Danh sách ghế</span>
+                                </a>
+                            </li>
+                        @endcan
+                        @can('show-rooms')
+                            <li class="">
+                                <a href="/rooms/index">
+                                    <i class="las la-minus"></i><span>Danh sách phòng</span>
+                                </a>
+                            </li>
+                        @endcan
                     </ul>
                 </li>
-
+ @endcan
 
                 {{-- @endcan --}}
 
 
                 {{-- @endcan --}}
                 {{-- showtime --}}
+                @can('show-ticket')
                 <li class=" ">
                     <a href="#Ticket" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fa-solid fa-ticket"></i>
@@ -201,6 +252,7 @@
                         </svg>
                     </a>
                     <ul id="Ticket" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        
                         <li class="">
                             <a href="{{ route('ticket.index') }}">
                                 <i class="las la-minus"></i><span>Danh sách đặt vé</span>
@@ -209,6 +261,8 @@
 
                     </ul>
                 </li>
+                @endcan
+                @can('show-Notification')
                 <li class=" ">
                     <a href="#Natification" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fa-solid fa-earth-americas"></i>
@@ -228,7 +282,17 @@
                         </li>
 
                     </ul>
+                    <ul id="Natification" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        <li class="">
+                            <a href="{{ route('contact.index') }}">
+                                <i class="las la-minus"></i><span>Phản hồi từ khách hàng</span>
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
+                @endcan
+                @can('show-statistical')
                 <li>
                     <a href="#statistical" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fa-solid fa-earth-americas"></i>
@@ -242,8 +306,14 @@
                     </a>
                     <ul id="statistical" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
-                            <a href="{{ route('statistical.index') }}">
+                            {{-- <a href="{{ route('statistical.index') }}">
                                 <i class="las la-minus"></i><span>Thống kê</span>
+                            </a> --}}
+                            <a href="{{ route('allCinema') }}">
+                                <i class="las la-minus"></i><span>Rạp</span>
+                            </a>
+                            <a href="{{ route('allFilm') }}">
+                                <i class="las la-minus"></i><span>Phim</span>
                             </a>
                             <a href="{{ route('statistical.indexFood') }}">
                                 <i class="las la-minus"></i><span>Đồ ăn</span>
@@ -255,6 +325,7 @@
 
                     </ul>
                 </li>
+                @endcan
                 <li class=" ">
                     <a href="#setting" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fa-solid fa-gear"></i>
@@ -268,11 +339,11 @@
                     </a>
                     <ul id="setting" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
-                            <a href="{{ route('smtp_settings.index') }}">
+                            {{-- <a href="{{ route('smtp_settings.index') }}">
                                 <i class="las la-minus"></i><span>Cài đặt SMTP</span>
-                            </a>
+                            </a> --}}
                             <a href="{{ route('sliders.index') }}">
-                                <i class="las la-minus"></i><span>Cài đặt Banner</span>
+                                <i class="las la-minus"></i><span>Cài đặt banner và ảnh</span>
                             </a>
                         </li>
 
@@ -419,7 +490,7 @@
                                         class="notification-count">{{ \App\Models\Notification::where('status', 1)->count() }}</span>
                                 </span>
 
-                           
+
 
                             </a>
                             <style>
@@ -475,7 +546,7 @@
                                                 <a class="badge badge-primary badge-card"
                                                     href="#">{{ \App\Models\Notification::where('status', 1)->count() }}</a>
 
-                                                
+
                                             </div>
                                         </div>
                                         <div class="px-3 pt-0 pb-0 sub-card">
@@ -541,7 +612,7 @@
                                             <h5 class="mb-1">{{ Auth::User()->name }}</h5>
                                             <p class="mb-0">Since 10 march, 2020</p>
                                             <div class="d-flex align-items-center justify-content-center mt-3">
-                                                <a href="../app/user-profile.html" class="btn border mr-2">Profile</a>
+                                                {{-- <a href="../app/user-profile.html" class="btn border mr-2">Profile</a> --}}
                                                 <a href="{{ route('logout') }}" class="btn border">Sign Out</a>
                                             </div>
                                         </div>

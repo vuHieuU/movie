@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="value">Giá trị *</label>
                                             <input type="text" class="form-control" placeholder="Value" name="value" value="{{ $coupon->value}}" required
@@ -55,6 +55,16 @@
                                             @if ($errors->has('value'))
                                                 <span class="text-danger">{{ $errors->first('value') }}</span>
                                             @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="type">Cấp bậc sử dụng</label>
+                                            <select name="rank_id" class="selectpicker form-control" data-style="py-0">
+                                                    @foreach ($ranks as $rank) 
+                                                       <option value="{{ $rank->id }}" {{ $coupon->rank_id == $rank->id ? 'selected':'' }}>{{ $rank->name }}</option>
+                                                    @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
