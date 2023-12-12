@@ -131,9 +131,14 @@
                                                         </li>
                                                     </ul>
                                                     @php
-                                                    $user = Auth::user()->id;
+                                                    if (Auth::check()) {
+                                                        $user = Auth::user()->id;
                                                         $favoriteFilm = \App\Models\favorite_film::where('user_id', $user)->where('film_id', $film->id)->first();
-                                                    @endphp
+                                                    } else {
+                                                        $user = null;
+                                                        $favoriteFilm = null;
+                                                    }
+                                                @endphp
                                                     @if ($favoriteFilm)
                                                     <form action="/unLikeFilm/{{ $film->id }}" method="GET">
                                                         @csrf

@@ -44,7 +44,7 @@
                     <p style="color: green">
                         {{ session('success') }}
                     </p>
-                    <div class="col-md-2 ml-auto">
+                    <div class="col-md-2 mb-1" style="position: absolute; right: 0px; top:-20px">
                         <select class="form-control form-control-sm aiz-selectpicker mb-2 mb-md-0" name="type" id="type" onchange="sort_customers()">
                             <option value="">Lọc theo ngày tháng</option>
                             <option value="tuan" @if($filter == 'tuan') selected @endif >Tuần</option>
