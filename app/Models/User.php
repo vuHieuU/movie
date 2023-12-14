@@ -64,4 +64,12 @@ class User extends Authenticatable implements MustVerifyEmail
     public function user_rank() {
         return $this->belongsTo(rank::class,'rank_id');
     }
+    public function notifications()
+{
+    return $this->hasMany(Notification::class, 'users_id');
+}
+    public function tickets()
+{
+    return $this->hasMany(ticket::class, 'user_id');
+}
 }
