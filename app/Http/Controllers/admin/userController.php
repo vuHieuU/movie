@@ -103,8 +103,8 @@ class userController extends Controller
         if($request->password){
              $userUpdate['password'] = Hash::make($request->password);
         }
-        $modelType = $user->getMorphClass();
-        $user->roles()->sync($userUpdate['role_ids'] ?? [], ['model_type' => $modelType]);        
+        $user->update($userUpdate);
+        $user->roles()->sync($userUpdate['role_ids'] ?? []);
         return redirect()->route('index_admin');
     }
 
