@@ -58,11 +58,11 @@
                                             </p>
                                             <div class="row py-2 border-1 border-bottom align-items-center mx-5">
                                                 <div class="col-md-4">
-                                                    <p class="fs-4 text-gray">Hình ảnh</p>
+                                                    <p class="fs-4 text-gray">Ảnh đại diện</p>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <div class="rounded-circle overflow-hidden" style="width: 40%">
-                                                        <img src="{{ asset('/storage/images/' . Auth::user()->logo) }}" style="width: 100%; height: 100%;">
+                                                    <div class="rounded-4 overflow-hidden" style="width: 20%">
+                                                        <img src="{{ asset(Auth::user()->logo) }}" style="width: 100%; height: 100%;" alt="Vui lòng cập nhật ảnh đại diện của bạn">
                                                        
                                                     </div> 
                                                 </div>

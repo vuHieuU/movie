@@ -94,8 +94,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Giới tính</label>
-                                                <input type="text" class="form-control" placeholder="gender"
-                                                    name="gender" value="{{ old('gender') }}">
+                                                {{-- <input type="text" class="form-control" placeholder="gender"
+                                                    name="gender" value="{{ old('gender') }}"> --}}
+                                                    <select name="gender" class="selectpicker form-control" data-style="py-0">
+                                                        <option value="">Chọn giới tính</option>
+                                                        <option value="Nam">Nam</option>
+                                                        <option value="Nữ">Nữ</option>
+                                                    </select>
                                                 @error('gender')
                                                     
                                                    <div class="help-block with-errors">{{ $message }}</div>
