@@ -1349,10 +1349,10 @@
 
                                                                                     <hr class="border-2 border-black py-4">
                                                                                     <div class="d-flex">
-                                                                                        {{-- <a href="{{ route('filmDetail', [$film->id]) }}"
+                                                                                        <a href="{{ route('filmDetail', [$film->slug]) }}"
                                                                                             style="background-color: #FE7900;"
                                                                                             class="btn text-white btn-lg fs-4 px-4">Quay
-                                                                                            lại</a> --}}
+                                                                                            lại</a>
                                                                                         <form
                                                                                             action="{{ route('pay', ['film_id' => $film->id]) }}"
                                                                                             method="get">

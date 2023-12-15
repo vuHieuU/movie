@@ -60,7 +60,7 @@
                                             class="post-74 amy_movie type-amy_movie status-publish amy_genre-cartoon amy_genre-sci-fi amy_actor-alexander-cattly amy_actor-cartin-hollia amy_actor-humpray-richard amy_director-gally-peckin amy_director-mae-west">
                                             <div class="entry-top">
 
-                                                <div class="entry-poster mx-5"style="max-width: 250px;width: 100%;">
+                                                <div class="entry-poster mx-5 mx-auto mx-md-5"style="max-width: 250px;width: 100%;">
                                                     <img class="" src="{{ asset($film->thumb) }}"
                                                         alt="The Hurricane Heist" />
                                                 </div>
@@ -454,7 +454,8 @@
                                                         photos</span> --}}
                                                 </div>
                                                 <div class="media-carousel">
-                                                    {!! $film->trailer !!}  
+                                                    <iframe width="560" height="315" src="{{ $film->trailer }}" title="YouTube video player" frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                                 </div>
                                             </div>
 
