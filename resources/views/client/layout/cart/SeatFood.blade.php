@@ -1071,7 +1071,7 @@
                                                                                     </script>
 
                                                                                 </div>
-                                                                                <div class="row text-center m-5 mt-5 p-4"
+                                                                                {{-- <div class="row text-center m-5 mt-5 p-4"
                                                                                     style="margin-top: 30px; background-color: #F8F8F8">
                                                                                     <div class="col-md-3 col-sm-4">
                                                                                         <svg style="font-size: 30px; fill: #BABBC3"
@@ -1098,7 +1098,7 @@
                                                                                         <p class="fs-2 mt-3"
                                                                                             style="color: gray ;">Ghế Vip
                                                                                         </p>
-                                                                                        {{-- {{$count}} --}}
+                                                                                      
                                                                                     </div>
 
 
@@ -1127,7 +1127,7 @@
                                                                                             style="color: gray ;">Ghế nằm
                                                                                         </p>
                                                                                     </div>
-                                                                                </div>
+                                                                                </div> --}}
                                                                                 {{-- food --}}
                                                                                 <div>
                                                                                     <hr class="border-3 border-black mt-5">

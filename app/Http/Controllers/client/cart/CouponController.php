@@ -15,8 +15,10 @@ class CouponController extends Controller
     public function applyCoupon(Request $request)
     {
         $couponCode = $request->input('coupon_code');
+        $rank = auth()->user()->rank_id;
         $coupon = Coupon::where('name', $couponCode)
-            ->where('expiry_date', '>=', now()) // Kiểm tra hạn sử dụng
+            ->where('expiry_date', '>=', now())
+            ->where('rank_id', '==', $rank)
             ->first();
             $is_used = false;
             if ($coupon) {
