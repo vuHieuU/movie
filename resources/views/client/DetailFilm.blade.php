@@ -322,15 +322,16 @@
                                                                         </div>
                                                                     </div>
 
-                                                                    <form
+                                                                    <form id="yourFormId"
                                                                         action="{{ route('chair', ['film_id' => $film->id]) }}"
                                                                         method="GET">
                                                                         <div class="modal-footer">
                                                                             <button type="button"
                                                                                 class="btn btn-secondary amy-buy-ticket"
                                                                                 data-bs-dismiss="modal">Close</button>
-                                                                            <button type="submit"
-                                                                                class="amy-buy-ticket">Next</button>
+                                                                                <button type="button" class="amy-buy-ticket" 
+                                                                                onclick="submitForm()">Next</button>
+
                                                                             <input type="hidden" id="selectedCinemaId"
                                                                                 name="selectedCinemaId" value="">
                                                                             <input type="hidden" id="selectedDate"
@@ -432,6 +433,22 @@
                                                                 var selectShowTimeIdElement = document.getElementById("selectedShowTimeId");
                                                                 selectShowTimeIdElement.value = selectShowTimeId;
                                                             }
+                                                            function submitForm() {
+                                                                // Kiểm tra xem đã chọn giờ chưa
+                                                                var selectedHourElement = document.getElementById("selectedHour");
+                                                                var selectedHour = selectedHourElement.value;
+
+                                                                if (!selectedHour) {
+                                                                    // Nếu không có giờ, hiển thị cảnh báo và không cho submit form
+                                                                    alert("Bạn chưa chọn suất chiếu");
+                                                                    return;
+                                                                }
+
+                                                                // Tiếp tục với logic submit form nếu đã chọn giờ
+                                                                var form = document.getElementById("yourFormId"); // Thay thế "yourFormId" bằng ID của form thực tế của bạn
+                                                                form.submit();
+                                                            }
+
                                                         </script>
 
                                                         {{-- model --}}
