@@ -10,7 +10,9 @@
     <link rel="stylesheet"href="/template/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
      <link rel="stylesheet" href="/template/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
       <link rel="stylesheet" href="/template/assets/vendor/remixicon/fonts/remixicon.css">  
-      
+      <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/bd9a701ba3.js" crossorigin="anonymous"></script>
     </head>
   <body class="  ">
     <div class="wrapper mt-5">
@@ -22,20 +24,30 @@
             <div class="col-xl-3 col-lg-4">
                   <div class="card">
                      <div class="card-header d-flex justify-content-between">
-                        <div class="header-title">
+                        <div class="header-title text-center">
                            <h4 class="card-title">Ảnh đại diện</h4>
                         </div>
                      </div>
                      <div class="card-body">
                       
                            <div class="form-group">
-                              <div class="crm-profile-img-edit position-relative">
-                                 <img src="{{ asset(Auth::user()->logo) }}" class="img-fluid rounded"
-                                 alt="IMG">
-                                 {{-- <div class="crm-p-image bg-primary">
-                                    <i class="las la-pen upload-button"></i>
-                                 </div> --}}
-                              </div>
+                            @if (Auth::user()->logo)
+                            <div class="crm-profile-img-edit position-relative">
+                                <img src="{{ asset(Auth::user()->logo) }}" class="img-fluid rounded"
+                                alt="IMG">
+                                {{-- <div class="crm-p-image bg-primary">
+                                   <i class="las la-pen upload-button"></i>
+                                </div> --}}
+                             </div>  
+                            @else
+                            <div class="crm-profile-img-edit position-relative text-center">
+                                <i style="font-size:50px" class="fa-solid fa-user"></i>
+                                {{-- <div class="crm-p-image bg-primary">
+                                   <i class="las la-pen upload-button"></i>
+                                </div> --}}
+                             </div>  
+                            @endif
+                            
                            </div>
                          
                     

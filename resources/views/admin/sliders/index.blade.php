@@ -33,6 +33,7 @@
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
                           <h4 class="mb-3">Danh sách Banner</h4>
+
                       </div>
                       <a href="/sliders/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm Banner</a>
                   </div>
@@ -49,6 +50,7 @@
                                   </div>
                               </th>
                               <th>Ảnh</th>
+                              <th>Tiêu đề</th>
                               <th>Trạng thái</th>
                               <th>Action</th>
                           </tr>
@@ -65,6 +67,9 @@
                               </td>
                               <td>
                                 <img src="{{ asset("$item->image")}}" alt="" height="200px">
+                              </td>
+                              <td>
+                                {{$item->title}}
                               </td>
                               <td>{{ $item->status == "1" ? "Hiện" : "Ẩn" }}</td>
                               <td>

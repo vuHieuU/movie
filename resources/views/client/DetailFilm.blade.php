@@ -143,7 +143,7 @@
                                                     <form action="/unLikeFilm/{{ $film->id }}" method="GET">
                                                         @csrf
                                                         {{-- <input type="Submit" style="border-radius: 50%" value="Bỏ yêu thích"> --}}
-                                                        <button type="Submit" class="bg-white" style="border: 0; font-size: 20px"> <i class="fa-solid fa-heart"></i></button>
+                                                        <button type="Submit" class="bg-white" style="border: 0; font-size: 20px"> <i class="fa-solid fa-heart" style="color: red"></i></button>
                                                     </form>
                                                    
                                                 @else
@@ -153,7 +153,7 @@
                                                             value="{{ $user }}">
                                                         <input type="hidden" name="film_id"
                                                             value="{{ $film->id }}">
-                                                            <button type="Submit" class="bg-white" style="border: 0;font-size: 20px"><i class="fa-regular fa-heart"></i></button>
+                                                            <button type="Submit" class="bg-white" style="border: 0;font-size: 20px"><i class="fa-solid fa-heart"></i></button>
                                                         {{-- <input  style="border-radius: 50%" value="Yêu thích"> --}}
                                                     </form>
                                                 @endif

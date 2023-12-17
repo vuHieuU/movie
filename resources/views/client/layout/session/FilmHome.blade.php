@@ -11,7 +11,7 @@ data-id="e615b68" data-element_type="section">
                 <div class="elementor-widget-container">
                     <div class="amy-heading text-center has-seperator    seperator-1 ">
                         <header class="entry-header"><span class="seperator seperator-left"></span>
-                            <h2 class="title-heading"><span class="title">Đang chiếu</span>
+                            <h2 class="title-heading"><span class="title">Films</span>
                             </h2><span class="seperator seperator-right"></span>
                         </header>
 
