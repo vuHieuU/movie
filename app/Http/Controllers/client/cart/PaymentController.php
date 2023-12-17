@@ -5,6 +5,7 @@ namespace App\Http\Controllers\client\cart;
 use App\Http\Controllers\Controller;
 use App\Models\film;
 use App\Models\ShowTime;
+use App\Models\showtime_seat;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
@@ -12,6 +13,18 @@ class PaymentController extends Controller
     public function vnpay_payment(Request $request,$id)
     {
         $data = $request->all();
+        $selectedSeatsValueID = $request->input('selectedSeatsValueID');
+        $selectedShowTimeId = $request->input('selectedShowTimeId');
+        $user_id = auth()->user()->id;
+        $selectSeatArray = explode(',', $selectedSeatsValueID);
+        $seats = showtime_seat::where('showtime_id', $selectedShowTimeId)
+            ->whereIn('seat_id', $selectSeatArray)
+            ->get(['isActive', 'user_id']);
+        foreach ($seats as $seat) {
+            if ($seat->isActive == '2') {                
+                return redirect('/')->with('error', 'Xin lỗi đã có người nhanh tay hơn bạn.');
+            }
+        }
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
         $vnp_Returnurl = "http://127.0.0.1:8000/success/{$id}";
         $vnp_TmnCode = "879T3X99"; //Mã website tại VNPAY 
@@ -100,6 +113,18 @@ class PaymentController extends Controller
     }
     
        public function momo_payment(Request $request, $id){
+        $selectedSeatsValueID = $request->input('selectedSeatsValueID');
+        $selectedShowTimeId = $request->input('selectedShowTimeId');
+        $user_id = auth()->user()->id;
+        $selectSeatArray = explode(',', $selectedSeatsValueID);
+        $seats = showtime_seat::where('showtime_id', $selectedShowTimeId)
+            ->whereIn('seat_id', $selectSeatArray)
+            ->get(['isActive', 'user_id']);
+        foreach ($seats as $seat) {
+            if ($seat->isActive == '2') {                
+                return redirect('/')->with('error', 'Xin lỗi đã có người nhanh tay hơn bạn.');
+            }
+        }
         $total = 0;
         $total = $request->total / 100;
                 $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";

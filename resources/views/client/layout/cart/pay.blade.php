@@ -292,6 +292,8 @@
                             <div class="mb-5 d-flex align-items-center">
                                 <input type="hidden" name="total" value="{{ $total }}">
                                 <input type="hidden" name="total_not_coupon" value="{{ $total_not_coupon }}">
+                                <input type="hidden" name="selectedShowTimeId" value="{{ $selectedShowTimeId }}">
+                                <input type="hidden" name="selectedSeatsValueID" value="{{ $selectedSeatsValueID }}">
                                 <input type="hidden" name="payUrl">
                                 <div class="btn btn-primary fs-3 px-5 py-2 w-25" id="vnpay-div">Thanh toán bằng Momo</div>
                                 <input type="radio" class="ms-4" style="transform: scale(1.5);" name="redirect" value="momo">
@@ -302,6 +304,8 @@
                             @csrf
                             <div class="mb-5 d-flex align-items-center">
                                 <input type="hidden" name="total" value="{{ $total }}">
+                                <input type="hidden" name="selectedShowTimeId" value="{{ $selectedShowTimeId }}">
+                                <input type="hidden" name="selectedSeatsValueID" value="{{ $selectedSeatsValueID }}">
                                 <input type="hidden" name="total_not_coupon" value="{{ $total_not_coupon }}">
                                 <div class="btn btn-primary fs-3 px-5 py-2 w-25" id="vnpay-div">Thanh toán bằng Vnpay</div>
                                 <input type="radio" class="ms-4" style="transform: scale(1.5);" name="redirect" value="vnpay">

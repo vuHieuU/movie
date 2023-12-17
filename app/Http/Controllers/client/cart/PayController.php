@@ -187,6 +187,19 @@ class PayController extends Controller
         $selectedSeatsValueID = $request->input("selectedSeatsValueID");
         session(['selectedSeatsValueID' => $selectedSeatsValueID]);
         $selectedShowTimeId = session('selectedShowTimeId');
+
+        $user_id = auth()->user()->id;
+        $selectSeatArray = explode(',', $selectedSeatsValueID);
+        $seats = showtime_seat::where('showtime_id', $selectedShowTimeId)
+            ->whereIn('seat_id', $selectSeatArray)
+            ->get(['isFreeze', 'user_id']);
+        
+        foreach ($seats as $seat) {
+            if ($seat->user_id != $user_id) {                
+                return redirect()->back()->with('error', 'Xin lỗi đã có người nhanh tay hơn bạn.');
+            }
+        }
+        
         $selectSeatArray = explode(',', $selectedSeatsValueID);
         $seats = showtime_seat::where('showtime_id', $selectedShowTimeId)
             ->whereIn('seat_id', $selectSeatArray)
@@ -241,6 +254,7 @@ class PayController extends Controller
             "userId",
             "check",
             "seats",
+            "selectedSeatsValueID"
         ));
     }
 
@@ -565,11 +579,12 @@ class PayController extends Controller
 
     public function updates($showtime_seat_id){
         $showtime_seat = showtime_seat::find($showtime_seat_id);
+        $user_id =  auth()->user()->id;
         if ($showtime_seat->isFreeze == 1)  {
-            $showtime_seat->update(['isFreeze' => 2]);
+            $showtime_seat->update(['isFreeze' => 2, 'user_id' => $user_id]);
             // ResetFreezeStatusJob::dispatch($showtime_seat)->delay(now()->addSeconds(30));
-        } else {
-            $showtime_seat->update(['isFreeze' => 1]);
+        } elseif($user_id == $showtime_seat->user_id) {
+            $showtime_seat->update(['isFreeze' => 1 , 'user_id' => null]);
         }
     
         return response()->json(['message' => 'Cập nhật không thành công']);

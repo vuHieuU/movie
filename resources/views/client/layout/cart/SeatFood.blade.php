@@ -170,7 +170,7 @@
                                                                                                 function demNguocVaChuyenTrang() {
                                                                                                     if (thoiGianDemNguoc <= 0) {
                                                                                                         // Hết thời gian, chuyển trang
-                                                                                                        window.location.href = "{{ route('filmDetail', [$showTime->id]) }} "; // Sử dụng named route của Laravel
+                                                                                                        window.location.href = "/"; // Sử dụng named route của Laravel
                                                                                                     } else {
                                                                                                         var minutes = Math.floor(thoiGianDemNguoc);
                                                                                                         var seconds = (thoiGianDemNguoc - minutes) * 60;
@@ -1422,6 +1422,15 @@
 
                     </div>
                 </div>
+                @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                    <script>
+                        alert('{{ session('error') }}');
+                    </script>
+                </div>
+            @endif
+            
             @endsection
             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
             <script>
