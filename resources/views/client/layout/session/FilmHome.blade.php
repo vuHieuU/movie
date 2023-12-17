@@ -11,7 +11,7 @@ data-id="e615b68" data-element_type="section">
                 <div class="elementor-widget-container">
                     <div class="amy-heading text-center has-seperator    seperator-1 ">
                         <header class="entry-header"><span class="seperator seperator-left"></span>
-                            <h2 class="title-heading"><span class="title">Đang chiếu</span>
+                            <h2 class="title-heading"><span class="title">Films</span>
                             </h2><span class="seperator seperator-right"></span>
                         </header>
 
@@ -57,7 +57,7 @@ data-id="e615b68" data-element_type="section">
                                                     <a href="{{ $item->trailer }}">
                                                         <i aria-hidden="true" class="fa fa-play"></i>
                                                         Trailer </a>
-                                                    <a href="detail_film/{{ $item->slug }}">
+                                                    <a href="{{ route('filmDetail', [$item->slug]) }}">
                                                         <i aria-hidden="true"
                                                             class="fa fa-exclamation"></i>
                                                         Chi tiết </a>
@@ -65,7 +65,7 @@ data-id="e615b68" data-element_type="section">
                                             </div>
                                             <div class="pic-caption open-left">
                                                 <h4 class="entry-title">
-                                                    <a href="detail_film/{{ $item->id }}">
+                                                    <a href="{{ route('filmDetail', [$item->slug]) }}">
                                                         {{ $item->name }}</a>
                                                 </h4>
                                                 <span class="pg">
