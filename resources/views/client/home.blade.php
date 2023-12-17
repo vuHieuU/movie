@@ -393,18 +393,30 @@
                                     <div class="amy-related">
                                         <div class="row">
                                             @foreach ($blogs as $blog)
-                                            
                                                 <article class="col-md-4">
-                                                    <div class="entry-thumb"><img width="360" height="240"
+                                                    <style>
+                                                        .h34 {
+                                                            max-width: 300px;
+                                                            /* Đặt chiều rộng tối đa của tiêu đề */
+                                                            overflow: hidden;
+                                                            /* Tránh tràn bề ngang */
+                                                            white-space: nowrap;
+                                                            /* Ngăn chặn xuống dòng */
+                                                            text-overflow: ellipsis;
+                                                            /* Thêm dấu chấm ba chấm (...) khi văn bản bị cắt bớt */
+                                                        }
+                                                    </style>
+                                                    <div class="entry-thumb "><img width="360" height="240"
                                                             src="{{ asset($blog->thumbnail) }}"
                                                             class="attachment-360x240 size-360x240 wp-post-image"
                                                             alt="" loading="lazy"
                                                             sizes="(max-width: 360px) 100vw, 360px" /></div>
-                                                    <h3 class="entry-title p-name" itemprop="name headline"><a
-                                                            href="{{ route('detailblog',[$blog->slug]) }}"
-                                                            rel="bookmark" class="u-url url" itemprop="url">{{ $blog->title }}</a></h3>
+                                                    <h3 class="entry-title p-name h34" itemprop="name headline"><a
+                                                            href="{{ route('detailblog', [$blog->slug]) }}" rel="bookmark"
+                                                            class="u-url url" itemprop="url">{{ $blog->title }}</a></h3>
                                                     <div class="entry-info">
-                                                        <span class="entry-date" style="color: grey">{{Carbon\Carbon::parse( $blog->created_at)->format("d/n/Y")}}</span>
+                                                        <span class="entry-date"
+                                                            style="color: grey">{{ Carbon\Carbon::parse($blog->created_at)->format('d/n/Y') }}</span>
                                                         {{-- <span>/</span> --}}
                                                         {{-- <span class="entry-comment">0 Comment</span> --}}
                                                     </div>

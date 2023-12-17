@@ -22,8 +22,7 @@
 
                         <div class="col-md-12">
                             <div class="page-content">
-                                <div data-elementor-type="wp-page" data-elementor-id="142"
-                                    class="elementor elementor-142">
+                                <div data-elementor-type="wp-page" data-elementor-id="142" class="elementor elementor-142">
                                     <section
                                         class="elementor-section elementor-top-section elementor-element elementor-element-19a978c elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                         data-id="19a978c" data-element_type="section">
@@ -44,15 +43,13 @@
                                                                         @foreach ($film_nowplaying as $item)
                                                                             <div class="amy-movie-item entry-item">
                                                                                 <div class="amy-movie-item-inner">
-                                                                                    <div
-                                                                                        class="amy-movie-item-front">
-                                                                                        <div
-                                                                                            class="amy-movie-item-poster">
+                                                                                    <div class="amy-movie-item-front">
+                                                                                        <div class="amy-movie-item-poster">
                                                                                             <a class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox"
                                                                                                 href="{{ $item->trailer }} ">
                                                                                                 <img class=""
                                                                                                     {{-- src="{{ asset('storage/images/' . $item->thumb) }}" --}}
-                                                                                                    src="{{ asset("$item->thumb")}}"
+                                                                                                    src="{{ asset("$item->thumb") }}"
                                                                                                     alt="Kubo and the Two Strings" />
                                                                                             </a>
                                                                                             {{-- <span
@@ -60,8 +57,7 @@
                                                                                         </div>
                                                                                     </div>
 
-                                                                                    <div
-                                                                                        class="amy-movie-item-back">
+                                                                                    <div class="amy-movie-item-back">
                                                                                         <div
                                                                                             class="amy-movie-item-back-inner">
                                                                                             <div
@@ -81,10 +77,22 @@
                                                                                                             class="fa fa-clock-o"></i>{{ $item->duration }}
                                                                                                         phút</span>
                                                                                                 </div>
-
+                                                                                                <style>
+                                                                                                    .h34 {
+                                                                                                        max-width: 300px;
+                                                                                                        /* Đặt chiều rộng tối đa của tiêu đề */
+                                                                                                        overflow: hidden;
+                                                                                                        /* Tránh tràn bề ngang */
+                                                                                                        white-space: nowrap;
+                                                                                                        /* Ngăn chặn xuống dòng */
+                                                                                                        text-overflow: ellipsis;
+                                                                                                        /* Thêm dấu chấm ba chấm (...) khi văn bản bị cắt bớt */
+                                                                                                    }
+                                                                                                </style>
                                                                                                 <div
-                                                                                                    class="amy-movie-field-desc">
-                                                                                                    <p>{!! $item->description !!}
+                                                                                                    class="amy-movie-field-desc ">
+                                                                                                    <p class="h34">
+                                                                                                        {{ $item->description }}
                                                                                                     </p>
                                                                                                 </div>
                                                                                                 <div
@@ -173,32 +181,32 @@
                                                         data-id="050b7f2" data-element_type="widget"
                                                         data-widget_type="sidebar.default">
                                                         <div class="elementor-widget-container">
-                                                            <div
-                                                                class="amy-widget widget_block widget_media_image">
+                                                            <div class="amy-widget widget_block widget_media_image">
                                                                 @php
-                                                                $banner = \App\Models\Slider::where("status", "1")->where('position','4')->first();
-                                                               @endphp
-                                                              @if ($banner)
-                                                                <figure class="wp-block-image size-full"><img loading="lazy"
-                                                                    width="350" height="272"
-                                                                    src="{{ asset("$banner->image")}}"
-                                                                    alt class="wp-image-254"
-                                                                    sizes="(max-width: 350px) 100vw, 350px" /></figure>
-                                                              @endif
+                                                                    $banner = \App\Models\Slider::where('status', '1')
+                                                                        ->where('position', '4')
+                                                                        ->first();
+                                                                @endphp
+                                                                @if ($banner)
+                                                                    <figure class="wp-block-image size-full"><img
+                                                                            loading="lazy" width="350" height="272"
+                                                                            src="{{ asset("$banner->image") }}" alt
+                                                                            class="wp-image-254"
+                                                                            sizes="(max-width: 350px) 100vw, 350px" />
+                                                                    </figure>
+                                                                @endif
                                                                 <div class="clear"></div>
                                                             </div>
                                                             <div class="amy-widget amy-widget-list">
-                                                                <div
-                                                                    class="amy-widget amy-widget-list list-movie ">
+                                                                <div class="amy-widget amy-widget-list list-movie ">
                                                                     <h4 class="amy-title amy-widget-title">Top
                                                                         Movie</h4>
                                                                     @foreach ($film_topmovie as $item)
                                                                         <div class="entry-item">
-                                                                            <div class="entry-thumb"><img
-                                                                                    class=""
+                                                                            <div class="entry-thumb"><img class=""
                                                                                     style="height: 150px;width: 110px"
                                                                                     {{-- src="{{ asset('storage/images/' . $item->thumb) }}" --}}
-                                                                                    src="{{ asset("$item->thumb")}}"
+                                                                                    src="{{ asset("$item->thumb") }}"
                                                                                     alt="Kubo and the Two Strings" />
                                                                             </div>
                                                                             <div class="entry-content">
