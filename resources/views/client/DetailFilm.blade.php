@@ -668,7 +668,19 @@
                                                                      />
                                                             </div>
                                                             <div class="entry-content">
-                                                                <h2 class="entry-title"><a
+                                                                <style>
+                                                                       .h34 {
+                                                            max-width: 300px;
+                                                            /* Đặt chiều rộng tối đa của tiêu đề */
+                                                            overflow: hidden;
+                                                            /* Tránh tràn bề ngang */
+                                                            white-space: nowrap;
+                                                            /* Ngăn chặn xuống dòng */
+                                                            text-overflow: ellipsis;
+                                                            /* Thêm dấu chấm ba chấm (...) khi văn bản bị cắt bớt */
+                                                        }
+                                                                </style>
+                                                                <h2 class="entry-title h34"><a
                                                                         href="{{ route('detailblog', [$item->slug]) }}">{{ $item->title }}</a></h2>
                                                                 <div class="entry-meta"><span
                                                                         class="entry-date">{{ Carbon\Carbon::parse($item->created_at)->format('d/n/Y') }}</span><span>
