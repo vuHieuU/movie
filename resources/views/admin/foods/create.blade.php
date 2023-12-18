@@ -24,7 +24,7 @@
                                             <div class="form-group">
                                                 <label for="name">Tên đồ ăn *</label>
                                                 <input type="text" class="form-control" placeholder="Name"
-                                                    name="name">
+                                                    name="name" required>
                                                 @if ($errors->has('name'))
                                                     <span class="text-danger">{{ $errors->first('name') }}</span>
                                                 @endif
@@ -36,7 +36,7 @@
                                             <div class="form-group">
                                                 <label for="formFileSm" class="form-label">Hình ảnh *</label>
                                                 <input class="form-control" id="formFileSm" name="thumb" type="file"
-                                                    accept="image/*" required>
+                                                    accept="image/*">
                                                 @if ($errors->has('thumb'))
                                                     <span class="text-danger">{{ $errors->first('thumb') }}</span>
                                                 @endif
@@ -46,7 +46,7 @@
                                             <div class="form-group">
                                                 <label for="expiry_date">Giá *</label>
                                                 <input type="price" class="form-control" placeholder="Price"
-                                                    name="price">
+                                                    name="price" required>
                                                 @if ($errors->has('price'))
                                                     <span class="text-danger">{{ $errors->first('price') }}</span>
                                                 @endif
@@ -70,7 +70,7 @@
                                             <div class="form-group">
                                                 <label for="expiry_date">Số lượng *</label>
                                                 <input type="text" class="form-control" placeholder="Số lượng"
-                                                    name="qty">
+                                                    name="qty" required>
                                                 @if ($errors->has('qty'))
                                                     <span class="text-danger">{{ $errors->first('qty') }}</span>
                                                 @endif
@@ -81,7 +81,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="name">Nội dung </label>
-                                                  <textarea class="form-control" name="content" cols="10" rows="5"></textarea>
+                                                  <textarea class="form-control" name="content" cols="10" rows="5" required></textarea>
 
                                             </div>
                                         </div>

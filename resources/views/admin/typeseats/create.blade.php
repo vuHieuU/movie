@@ -44,7 +44,7 @@
                                             <div class="form-group">
                                                 <label>Tên loại ghế *</label>
                                                 <input type="text" class="form-control" placeholder="Enter Name"
-                                                    data-errors="Please Enter Name." name="name">
+                                                    data-errors="Please Enter Name." name="name" required>
                                                 <div class="help-block with-errors"></div>
                                                 @if ($errors->has('name'))
                                                     <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -53,7 +53,7 @@
                                             <div class="form-group">
                                                 <label>Giá *</label>
                                                 <input type="text" class="form-control" placeholder="Enter Price"
-                                                    data-errors="Please Enter Name." name="price">
+                                                    data-errors="Please Enter Name." name="price" required>
                                                 <div class="help-block with-errors"></div>
                                                 @if ($errors->has('name'))
                                                     <span class="text-danger">{{ $errors->first('name') }}</span>

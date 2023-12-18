@@ -24,7 +24,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="name">Tên đồ ăn *</label>
-                                            <input type="text" class="form-control" placeholder="Name" name="name" value="{{ $food->name }}">
+                                            <input type="text" class="form-control" placeholder="Name" name="name" value="{{ $food->name }}" required>
                                             @if ($errors->has('name'))
                                                 <span class="text-danger">{{ $errors->first('name') }}</span>
                                             @endif
@@ -35,7 +35,7 @@
                                 <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="price">Giá *</label>
-                                            <input type="text" class="form-control" placeholder="Price" name="price" value="{{ $food->price }}">
+                                            <input type="text" class="form-control" placeholder="Price" name="price" value="{{ $food->price }}" required>
                                             @if ($errors->has('price'))
                                                 <span class="text-danger">{{ $errors->first('price') }}</span>
                                             @endif
@@ -65,7 +65,7 @@
                                         <div class="form-group">
                                             <label for="expiry_date">Số lượng *</label>
                                             <input type="text" class="form-control" placeholder="Số lượng"
-                                                name="qty" value="{{ $food->qty }}">
+                                                name="qty" value="{{ $food->qty }}" required>
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="name">Nội dung </label>
-                                              <textarea class="form-control" name="content" cols="10" rows="5">{{ $food->content }}</textarea>
+                                              <textarea class="form-control" name="content" cols="10" rows="5" required>{{ $food->content }}</textarea>
                                         </div>
                                     </div>
                                 </div>

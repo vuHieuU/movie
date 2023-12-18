@@ -96,6 +96,12 @@ return redirect()->route("typeseats.index")->with('success', 'Seat update succes
      */
     public function destroy(string $id)
     {
-        //
+        $typeseat = typeseats::findOrFail($id);
+    
+        if (!$id) {
+            return redirect()->back()->with('error', 'TypeSeat not found');
+        }
+            $typeseat->delete();
+        return redirect()->route('typeseats.index')->with('success', 'TypeSeat deleted successfully');
     }
 }

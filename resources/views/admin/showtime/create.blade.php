@@ -41,7 +41,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Phim</label>
-                                                <select name="film_id" class="form-control">
+                                                <select name="film_id" class="form-control" required>
                                                     @if (!empty($film))
                                                         @foreach ($film as $item)
                                                             <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -56,7 +56,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="value">Rạp phim *</label>
-                                                <select class="form-control" name="cinema_id">
+                                                <select class="form-control" name="cinema_id" required>
                                                     @foreach ($cinemas as $item)
                                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                                                     @endforeach
@@ -73,7 +73,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Ngày</label>
-                                                <input type="date" class="form-control" name="day">
+                                                <input type="date" class="form-control" name="day" required>
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>
@@ -82,7 +82,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Giờ</label>
-                                                <input type="time" class="form-control" name="hour">
+                                                <input type="time" class="form-control" name="hour" required>
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>
@@ -91,7 +91,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Phòng chiếu</label>
-                                                <select name="room_id" class="form-control">
+                                                <select name="room_id" class="form-control" required>
                                                     @if (!empty($room))
                                                         @foreach ($room as $item)
                                                             <option value="{{ $item->id }}">{{ $item->name }}</option>

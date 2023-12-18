@@ -47,7 +47,7 @@
                                                 <label>Vị trí *</label>
                                                 <input type="text" class="form-control" placeholder="Enter Name"
                                                     data-errors="Please Enter Name." name="seat_number"
-                                                    value="{{ $seat_number->seat_number }}">
+                                                    value="{{ $seat_number->seat_number }}" required>
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>

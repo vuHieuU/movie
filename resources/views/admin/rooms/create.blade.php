@@ -24,7 +24,7 @@
                                         <div class="form-group">
                                             <label for="name">Tên phòng *</label>
                                             <input type="text" class="form-control" placeholder="Name"
-                                                name="name">
+                                                name="name" required>
                                         
                                         </div>
                                     </div>
@@ -34,7 +34,7 @@
                                         <div class="form-group">
                                             <label for="expiry_date">Tối đa *</label>
                                             <input type="number" class="form-control" placeholder="Max"
-                                                name="max">
+                                                name="max" required>
                                          
                                         </div>
                                     </div>
@@ -43,7 +43,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="value">Rạp chiếu *</label>
-                                            <select class="form-control" name="cinema_id">
+                                            <select class="form-control" name="cinema_id" required>
                                                 @foreach ($cinemas as $item)
                                                      <option value="{{$item->id}}">{{$item->name}}</option>
                                                 @endforeach
