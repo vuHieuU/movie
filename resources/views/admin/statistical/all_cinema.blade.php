@@ -4,18 +4,9 @@
         <div class="content-page">
             <div class="container-fluid">
                 <div class="row">
-                    {{-- <div class="col-lg-4">
-                        <div class="card card-transparent card-block card-stretch card-height border-none">
-                            <div class="card-body p-0 mt-lg-2 mt-0">
-                                <h3 class="mb-3">Xin chào, {{ Auth::user()->name }}</h3>
-                                <p class="mb-0 mr-4">Trang tổng quan về đồ ăn.</p>
-                            </div>
-                        </div>
-                    </div> --}}
                     <div class="col-lg-12">
-
                         <div class="row">
-                            <div class="col-lg-4 col-md-4">
+                            <div class="col-lg-6 col-md-6">
                                 <div class="card card-block card-stretch card-height">
                                     <div class="card-body">
                                         <div class="d-flex align-items-center mb-4 card-total-sale">
@@ -25,82 +16,18 @@
                                             </div>
                                             <div>
                                                 <p class="mb-2">Tổng doanh thu</p>
-                                                <h4>{{ number_format($grandTotal) }} </h4>
-                                                <div class="dropdown">
-                                                    <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton006" data-toggle="dropdown">
-                                                        Chọn Rạp<i class="ri-arrow-down-s-line ml-1"></i>
-                                                    </span>
-                                                    <div class="dropdown-menu dropdown-menu-right shadow-none" aria-labelledby="dropdownMenuButton006">
-                                                        <a class="li dropdown-item" data-cinema-id="all">
-                                                            <li onclick="changeDropdownText('Tất cả rạp')">Tất cả rạp</li>
-                                                        </a>
-                                                        @foreach ($cinemalist as $item)
-                                                            <a class="li dropdown-item" data-cinema-id="{{ $item->name }}">
-                                                                <li onclick="changeDropdownText('{{ $item->name }}')">{{ $item->name }}</li>
-                                                            </a>
-                                                        @endforeach
-                                                    </div>
-                                            
-                                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-                                                    <script>
-                                                        $(document).ready(function () {
-                                                            $("a.li").click(function (event) {
-                                                                event.preventDefault();
-                                                                var cinemaId = $(this).data('cinema-id');
-                                                                if (cinemaId === 'all') {
-                                                                    window.location.href = "/statistical/indexFood";
-                                                                } else {
-                                                                    $.ajax({
-                                                                        url: "/statistical/detailFoodCinema/" + cinemaId,
-                                                                        success: function (result) {
-                                                                            $("#cinema").html(result);
-                                                                            changeDropdownText(cinemaId);
-                                                                        }
-                                                                    });
-                                                                }
-                                                            });
-                                                    
-                                                            function changeDropdownText(selectedOption) {
-                                                                var dropdownButton = document.getElementById("dropdownMenuButton006");
-                                                                dropdownButton.textContent = selectedOption;
-                                                            }
-                                                        });
-                                                    </script>
-                                                    
-                                                    
-                                                </div>
+                                                <h4>{{ number_format($sumtotal) }} </h4>
+
                                             </div>
                                         </div>
                                         <div class="iq-progress-bar mt-2">
-                                            <span class="bg-info iq-progress progress-1" data-percent="85">
+                                            <span class="bg-info iq-progress progress-1" data-percent="100">
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="col-lg-4 col-md-4">
-                                <div class="card card-block card-stretch card-height">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center mb-4 card-total-sale">
-                                            <div class="icon iq-icon-box-2 bg-danger-light">
-                                                <img src="/template/assets/images/product/2.png" class="img-fluid"
-                                                    alt="image">
-                                            </div>
-                                            <div>
-                                                <p class="mb-2">Tổng các loại đồ ăn </p>
-                                                <h4>{{ $countfood }}</h4>
-                                               
-                                            </div>
-                                        </div>
-                                        <div class="iq-progress-bar mt-2">
-                                            <span class="bg-danger iq-progress progress-1" data-percent="70">
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
+                            <div class="col-lg-6 col-md-6">
                                 <div class="card card-block card-stretch card-height">
                                     <div class="card-body">
                                         <div class="d-flex align-items-center mb-4 card-total-sale">
@@ -109,20 +36,13 @@
                                                     alt="image">
                                             </div>
                                             <div>
-                                                <p class="mb-2">Số lượng đã bán</p>
-                                                <h4>{{ $countfoodsell }} </h4>
+                                                <p class="mb-2">Tổng vé đã bán</p>
+                                                <h4>{{ $countfilm }} </h4>
                                             </div>
+                                            
                                         </div>
-                                        {{-- <div class=" ">
-                                            <select class="form-select form-control-sm border border-secondary-subtle"
-                                                aria-label="Default select example">
-                                                @foreach ($films as $item)
-                                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div> --}}
                                         <div class="iq-progress-bar mt-2">
-                                            <span class="bg-danger iq-progress progress-1" data-percent="70">
+                                            <span class="bg-info iq-progress progress-1" data-percent="100">
                                             </span>
                                         </div>
                                     </div>
@@ -130,9 +50,7 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <div id="cinema" class="row">   
                 <div class="col-lg-12">
                     <div class="card card-block card-stretch card-height">
                         <div class="card-header d-flex justify-content-between">
@@ -140,11 +58,17 @@
                                 <h4 class="card-title">Doanh thu </h4>
                             </div>
                                   <div class="card-header-toolbar d-flex align-items-center">
-                                    {{-- <div class="dropdown">
-                                        <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton007" data-toggle="dropdown">
+                                    <div class="dropdown">
+                                        <span class="dropdown-toggle dropdown-bg btn" id="dropdownMenuButton008" data-toggle="dropdown">
                                             Thời gian<i class="ri-arrow-down-s-line ml-1"></i>
                                         </span>
                                         <div class="dropdown-menu dropdown-menu-right shadow-none" aria-labelledby="dropdownMenuButton007">
+                                            <a class="li dropdown-item" data-film-id="all">
+                                                <li onclick="changeDropdownText('Tất cả rạp')">Tất cả rạp</li>
+                                            </a>
+                                            <a class="li dropdown-item" data-film-id="1">
+                                                <li onclick="changeDropdownText('1 ngày')">Hôm nay</li>
+                                            </a>
                                             <a class="li dropdown-item" data-film-id="7">
                                                 <li onclick="changeDropdownText('7 ngày')">7 ngày</li>
                                             </a>
@@ -154,6 +78,9 @@
                                             <a class="li dropdown-item" data-film-id="30">
                                                 <li onclick="changeDropdownText('30 ngày')">30 ngày</li>
                                             </a>
+                                            <a class="li dropdown-item" data-film-id="365">
+                                                <li onclick="changeDropdownText('365 ngày')">365 ngày</li>
+                                            </a>
                                         </div>
                                     
                                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -162,16 +89,21 @@
                                                         $("a.li").click(function(event) {
                                                             event.preventDefault();
                                                             var days = $(this).data('film-id');
-                                                            $.ajax({
-                                                                url: "/statistical/detailFood/" + days,
+                                                            if (days === 'all') {
+                                                                        window.location.href = "/allCinema";
+                                                                    } else {
+                                                                        $.ajax({
+                                                                url: "/allCinemaDay/" + days,
                                                                 method: 'GET',
                                                                 success: function(result) {
-                                                                    $("#food").html(result);
+                                                                    $("#cinemaDay").html(result);
                                                                 },
                                                                 error: function(error) {
                                                                     console.error('Error:', error);
                                                                 }
                                                             });
+                                                                    }
+                                             
                                                         });
                                                     });
                                         </script>
@@ -181,11 +113,13 @@
                                                 dropdownButton.textContent = selectedOption;
                                             }
                                         </script>
-                                    </div> --}}
+                                    </div>
                                     
                 </div>
+                
+                
                         </div>
-                        <div id="food">
+                        <div id="cinemaDay">
                             <div class="card-body">
                                 <div class="d-flex flex-wrap align-items-center mt-2">
                                     <div class="d-flex align-items-center progress-order-left">
@@ -197,39 +131,41 @@
                                             <span class="progress-right">
                                                 <span class="progress-bar"></span>
                                             </span>
-                                            <div class="progress-value text-secondary">46%</div>
+                                            <div class="progress-value text-secondary">100%</div>
                                         </div>
                                         <div class="progress-value ml-3 pr-5 border-right">
-
+                
                                             <div>
-
-                                                <h5 id="ticketListtoltal">{{ number_format($grandTotal) }}</h5>
+                
+                                                <h5 id="ticketListtoltal">{{ number_format($sumtotal) }}</h5>
                                                 <p class="mb-0">Tổng doanh thu </p>
                                             </div>
-
+                
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
+                
+                
                             <div class="card-body pt-0">
-                                <div id="layout1-chart-5"></div>
+                                <div id="layout1-chart-7"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        var foodTotals = @json($foodTotals);
-        if (jQuery("#layout1-chart-5").length) {
+            var cinemas = @json($cinemas);
+            var cinemaSums = @json($cinemaSums);
+        if (jQuery("#layout1-chart-7").length) {
             options = {
                 series: [{
                     name: 'Doanh thu',
-                    data: foodTotals.map(item => item.total),
+                    data: cinemaSums.map(item => item.revenue),
                 }],
                 chart: {
                     type: 'bar',
@@ -252,7 +188,7 @@
                     colors: ['transparent']
                 },
                 xaxis: {
-                    categories: foodTotals.map(item => item.name),
+                    categories: cinemas,
                     labels: {
                         minWidth: 0,
                         maxWidth: 0
@@ -271,12 +207,12 @@
                 tooltip: {
                     y: {
                         formatter: function(val) {
-                            return "$ " + val + " thousands"
+                            return val + " VNĐ"
                         }
                     }
                 }
             };
-            const chart = new ApexCharts(document.querySelector("#layout1-chart-5"), options);
+            const chart = new ApexCharts(document.querySelector("#layout1-chart-7"), options);
             chart.render();
             const body = document.querySelector('body')
             if (body.classList.contains('dark')) {

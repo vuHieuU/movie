@@ -45,7 +45,7 @@
                                                 name="name" value="{{ $user->name }}">
                                              @error('name')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                         </div>
@@ -60,7 +60,7 @@
                                                     name="email" value="{{ $user->email }}">
                                                  @error('email')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                             </div>
@@ -72,7 +72,7 @@
                                                     name="phone" value="{{ $user->phone }}">
                                                  @error('phone')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                             </div>
@@ -86,7 +86,7 @@
                                                     name="address" value="{{ $user->address }}">
                                                  @error('address')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                             </div>
@@ -94,14 +94,29 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Giới tính</label>
-                                                <input type="text" class="form-control" placeholder="gender"
-                                                    name="gender" value="{{ $user->gender }}">
+                                                {{-- <input type="text" class="form-control" placeholder="gender"
+                                                    name="gender" value="{{ $user->gender }}"> --}}
+                                                    <select name="gender" class="selectpicker form-control" data-style="py-0">
+                                                            <option value="">Chọn giới tính</option>
+                                                            <option value="Nam" {{ $user->gender == "Nam" ? 'selected':'' }}>Nam</option>
+                                                            <option value="Nữ" {{ $user->gender == "Nữ" ? 'selected':'' }}>Nữ</option>
+                                                    </select>
                                                  @error('gender')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Cấp bậc</label>
+                                            <select name="rank_id" class="selectpicker form-control" data-style="py-0">
+                                                @foreach ($rank as $item)
+                                                    <option value="{{$item->id}}">{{$item->name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     {{-- <div class="row">

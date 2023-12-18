@@ -22,27 +22,28 @@
                                         <div class="amy-shortcode amy-mv-slide">
                                             <div class="amy-slick "
                                                 data-slick='{"slidesToShow":1,"slidesToScroll":1,"autoplay":true,"autoplaySpeed":3000,"prevArrow": "<a class=\"amy-arrow fa amy-pre fa-chevron-right\"></a>","nextArrow": "<a class=\"amy-arrow fa amy-next fa-chevron-left\"></a>","arrows":true,"infinite":true,"fade":true,"useCSS":true,"useTransform":true,"dots":true}'>
-                                                @forelse ($sliders as $key => $sliderItem )
+                                                @forelse ($sliders as $key => $sliderItem)
                                                     <div class="slide-item">
                                                         <div class="slide-thumb">
-                                                            <img src="{{asset($sliderItem->image) }}" alt="">
+                                                            <img src="{{ asset($sliderItem->image) }}" alt="">
                                                         </div>
                                                         <div class="slide-content">
                                                             <h2 class="slide-title">
                                                                 <a>
-                                                                    {{ $sliderItem->title}}
+                                                                    {{ $sliderItem->title }}
                                                                 </a>
                                                             </h2>
 
                                                             <div class="slide-desc">
-                                                                <p>{{ $sliderItem->description}}</p>
+                                                                <p>{{ $sliderItem->description }}</p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 @empty
                                                     <div class="slide-item">
                                                         <div class="slide-thumb">
-                                                            <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_27.jpg" alt="The Hurricane Heist" />
+                                                            <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_27.jpg"
+                                                                alt="The Hurricane Heist" />
                                                         </div>
                                                         <div class="slide-content">
                                                             <h2 class="slide-title">
@@ -59,156 +60,7 @@
                                                         </div>
                                                     </div>
                                                 @endforelse
-                                                {{-- <div class="slide-item">
-                                                    <div class="slide-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">
-                                                            <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_27.jpg"
-                                                                alt="The Hurricane Heist" /> </a>
-                                                    </div>
-                                                    <div class="slide-content">
-                                                        <h2 class="slide-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">
-                                                                The Hurricane <span class="last_word">Heist</span>
-                                                            </a>
-                                                        </h2>
 
-                                                        <div class="slide-release">
-                                                            From <span>
-                                                                Apr 29 </span>
-                                                        </div>
-
-                                                        <div class="slide-desc">
-                                                            <p>Sed ut perspiciatis unde omnis iste natus error sit
-                                                                voluptatem accusantium doloremque laudantium, totam
-                                                                rem aperiam, eaque ipsa quae ab ...</p>
-                                                        </div>
-
-                                                        <div class="slide-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="slide-item">
-                                                    <div class="slide-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">
-                                                            <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_25.jpg"
-                                                                alt="Jumanji: Welcome to the Jungle" /> </a>
-                                                    </div>
-                                                    <div class="slide-content">
-                                                        <h2 class="slide-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">
-                                                                Jumanji: Welcome to the <span
-                                                                    class="last_word">Jungle</span> </a>
-                                                        </h2>
-
-                                                        <div class="slide-release">
-                                                            From <span>
-                                                                Feb 16 </span>
-                                                        </div>
-
-                                                        <div class="slide-desc">
-                                                            <p>Sed ut perspiciatis unde omnis iste natus error sit
-                                                                voluptatem accusantium doloremque laudantium, totam
-                                                                rem aperiam, eaque ipsa quae ab ...</p>
-                                                        </div>
-
-                                                        <div class="slide-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="slide-item">
-                                                    <div class="slide-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/death-wish/">
-                                                            <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_24.jpg"
-                                                                alt="Death Wish" /> </a>
-                                                    </div>
-                                                    <div class="slide-content">
-                                                        <h2 class="slide-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/death-wish/">
-                                                                Death <span class="last_word">Wish</span> </a>
-                                                        </h2>
-
-                                                        <div class="slide-release">
-                                                            From <span>
-                                                                Apr 23 </span>
-                                                        </div>
-
-                                                        <div class="slide-desc">
-                                                            <p>Sed ut perspiciatis unde omnis iste natus error sit
-                                                                voluptatem accusantium doloremque laudantium, totam
-                                                                rem aperiam, eaque ipsa quae ab ...</p>
-                                                        </div>
-
-                                                        <div class="slide-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/death-wish/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="slide-item">
-                                                    <div class="slide-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/supersonic/">
-                                                            <img src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_23.jpg"
-                                                                alt="Supersonic" /> </a>
-                                                    </div>
-                                                    <div class="slide-content">
-                                                        <h2 class="slide-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/supersonic/">
-                                                                <span class="last_word">Supersonic</span> </a>
-                                                        </h2>
-
-                                                        <div class="slide-release">
-                                                            From <span>
-                                                                Apr 09 </span>
-                                                        </div>
-
-                                                        <div class="slide-desc">
-                                                            <p>Sed ut perspiciatis unde omnis iste natus error sit
-                                                                voluptatem accusantium doloremque laudantium, totam
-                                                                rem aperiam, eaque ipsa quae ab ...</p>
-                                                        </div>
-
-                                                        <div class="slide-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/supersonic/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -278,7 +130,7 @@
                         </div>
                     </div>
                 </section>
-                <section
+                {{-- <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-d06313b elementor-section-full_width elementor-section-height-default elementor-section-height-default"
                     data-id="d06313b" data-element_type="section"
                     data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -336,11 +188,11 @@
                                                 data-slick='{"slidesToShow":5,"slidesToScroll":5,"autoplay":true,"autoplaySpeed":3000,"arrows":true,"infinite":true,"centerMode":true,"responsive": [{"breakpoint": 480,"settings": {"slidesToShow": 1,"slidesToScroll": 1}},{"breakpoint": 979,"settings": {"slidesToShow": 3,"slidesToScroll": 3}},{"breakpoint": 1199,"settings": {"slidesToShow": 5,"slidesToScroll": 5}},{"breakpoint": 1999,"settings": {"slidesToShow": 7,"slidesToScroll": 7}},{"breakpoint": 4999,"settings": {"slidesToShow": 20,"slidesToScroll": 20}}],"dots":true}'>
                                                 @foreach ($film_topmovie as $item)
                                                         <div class="carousel-item">
-                                                            <a href="chi-tiet-phim/{{ $item->id }}">
+                                                            <a href="chi-tiet-phim/{{ $item->slug }}">
                                                             <div class="carousel-thumb">
                                                                 <a href="chi-tiet-phim/{{ $item->id }}">
                                                                     <img class=""
-                                                                        src="{{ asset('storage/images/' . $item->thumb) }}"
+                                                                        src="{{ asset("$item->thumb")}}"
                                                                         alt="The Sleeping Beauty &#8211; Australia" /> </a>
                                                             </div>
                                                             <div class="carousel-content">
@@ -355,285 +207,21 @@
                                                                     </span>
                                                                 </div>
                                                                 <div class="carousel-button">
-                                                                    <a href="chi-tiet-phim/{{ $item->id }}"
+                                                                    <a href="chi-tiet-phim/{{ $item->slug }}"
                                                                         class="fancybox.iframe amy-fancybox">
                                                                         <i aria-hidden="true" class="fa fa-play"></i>
                                                                         Trailer </a>
-                                                                    {{-- <a href="{{ route('filmDetail',[$item->id]) }}">
+                                                                    <a href="{{ route('filmDetail',[$item->id]) }}">
                                                                         <i aria-hidden="true"
                                                                             class="fa fa-exclamation"></i>
-                                                                        Chi tiết </a> --}}
+                                                                        Chi tiết </a>
                                                                 </div>
                                                             </div>
                                                         </a>
                                                         </div>
                                                 @endforeach
 
-                                                {{-- <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_17-360x618_c.jpg"
-                                                                alt="Jumanji: Welcome to the Jungle" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">
-                                                                Jumanji: Welcome to the Jungle </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Feb 16, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/norma-royal-opera/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_8-360x618_c.jpg"
-                                                                alt="Norma &#8211; Royal Opera" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/norma-royal-opera/">
-                                                                Norma &#8211; Royal Opera </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Apr 22, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/norma-royal-opera/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-magnificent-seven/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_1-360x618_c.jpg"
-                                                                alt="The Magnificent Seven" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-magnificent-seven/">
-                                                                The Magnificent Seven </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                May 20, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-magnificent-seven/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-girl-on-the-train/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_2-360x618_c.jpg"
-                                                                alt="The Girl On The Train" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-girl-on-the-train/">
-                                                                The Girl On The Train </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                May 10, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-girl-on-the-train/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-girl-with-all-the-gifts/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_7-360x618_c.jpg"
-                                                                alt="The Girl With All The Gifts" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-girl-with-all-the-gifts/">
-                                                                The Girl With All The Gifts </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Mar 17, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-girl-with-all-the-gifts/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/ice-age-collision-course/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_11-360x618_c.jpg"
-                                                                alt="Ice Age: Collision Course" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/ice-age-collision-course/">
-                                                                Ice Age: Collision Course </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Apr 30, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/ice-age-collision-course/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-
-
-
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/game-night/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_13-360x618_c.jpg"
-                                                                alt="Game Night" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/game-night/">
-                                                                Game Night </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Mar 17, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/game-night/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="carousel-item">
-                                                    <div class="carousel-thumb">
-                                                        <a
-                                                            href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">
-                                                            <img class=""
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_19-360x618_c.jpg"
-                                                                alt="The Hurricane Heist" /> </a>
-                                                    </div>
-                                                    <div class="carousel-content">
-                                                        <h2 class="carousel-title">
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">
-                                                                The Hurricane Heist </a>
-                                                        </h2>
-                                                        <div class="carousel-release">
-                                                            Release:
-                                                            <span>
-                                                                Apr 29, 2022 </span>
-                                                        </div>
-                                                        <div class="carousel-button">
-                                                            <a href="https://player.vimeo.com/video/51834631"
-                                                                class="fancybox.iframe amy-fancybox">
-                                                                <i aria-hidden="true" class="fa fa-play"></i>
-                                                                Trailer </a>
-                                                            <a
-                                                                href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/the-hurricane-heist/">
-                                                                <i aria-hidden="true" class="fa fa-exclamation"></i>
-                                                                Detail </a>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
+                                    
 
 
 
@@ -645,12 +233,12 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> --}}
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-bae4559 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                     data-id="bae4559" data-element_type="section">
-                    <div class="elementor-container elementor-column-gap-default">
-                        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c982f26"
+                    <div class="row elementor-container elementor-column-gap-default">
+                        <div class="col-md-12 elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c982f26"
                             data-id="c982f26" data-element_type="column">
                             <div class="elementor-widget-wrap elementor-element-populated">
                                 <div class="elementor-element elementor-element-4a8597b elementor-widget elementor-widget-heading"
@@ -681,175 +269,51 @@
                                                 vertical-align: middle;
                                                 display: inline-block
                                             }
-                                        </style> <img
-                                            src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_30.jpg"
-                                            title="" alt="" />
+                                        </style> <img src="{{ asset($imageHome1->image) }}" title="" alt="" />
                                     </div>
                                 </div>
                                 <div class="elementor-element elementor-element-8d1a5bd elementor-widget elementor-widget-text-editor"
                                     data-id="8d1a5bd" data-element_type="widget" data-widget_type="text-editor.default">
                                     <div class="elementor-widget-container">
                                         <div class="amy-widget-content">
-                                            <h4>10 Cloverfield Lane</h4>
-                                            <p>A young woman wakes up after a terrible accident to find that she’s…
-                                                locked in a cellar with a doomsday prepper,… who insists that he
-                                                saved her life and that the world outside is uninhabitable following
-                                                an apocalyptic catastrophe. Uncertain what to believe, the woman
-                                                soon….</p>
+                                            <h4>{{ $imageHome1->title }}</h4>
+                                            <p>{{ $imageHome1->description }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-16ca592"
-                            data-id="16ca592" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <div class="elementor-element elementor-element-9df2d84 elementor-widget elementor-widget-Amy_V2_Movie_Gallery_Grid"
-                                    data-id="9df2d84" data-element_type="widget"
-                                    data-widget_type="Amy_V2_Movie_Gallery_Grid.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="amy-gallery-grid amy-gallery ">
-                                            <div class="gallery-grid-inner amy-lightgallery" data-column="3">
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_60.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_60.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_60.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_60.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_60-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_58.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_58.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_58.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_58.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_58-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_56.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_56.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_56.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_56.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_56-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_55.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_55.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_55.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_55.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_55-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_54.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_54.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_54.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_54.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_54-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_53.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_53.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_53.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_53.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_53-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="grid-item col-sm-6 col-md-4"
-                                                    data-src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_52.jpg">
-                                                    <a href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_52.jpg"
-                                                        class="amy-fancybox">
-                                                        <span class="thumbnail">
-                                                            <img width="750" height="500"
-                                                                src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_52.jpg"
-                                                                class="attachment-full size-full" alt=""
-                                                                loading="lazy"
-                                                                srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_52.jpg 750w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_52-300x200.jpg 300w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" /> </span>
-                                                        <span class="fa fa-search"></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                        <div class="col-md-12">
+                            @foreach ($imageHome9 as $item)
+                                <div>
+                                    <div class="col-md-4" style="padding-bottom: 8px">
+                                        <img src="{{ asset($item->image) }}" alt="">
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
+                            {{-- <div>
+                                <div class="col-md-4" style="padding-bottom: 8px">
+                                    <img src="uploads/imageVideo/img_55.jpg" alt="">
+                                </div>
+                                <div class="col-md-4" style="padding-bottom: 8px">
+                                    <img src="uploads/imageVideo/img_56.jpg" alt="">
+                                </div>
+                                <div class="col-md-4" style="padding-bottom: 8px">
+                                    <img src="uploads/imageVideo/img_57.jpg" alt="">
+                                </div>
+                            </div> --}}
+
+                            {{-- <div>
+                                <div class="col-md-4">
+                                    <img src="uploads/imageVideo/img_58.jpg" alt="">
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="uploads/imageVideo/img_59.jpg" alt="">
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="uploads/imageVideo/img_60.jpg" alt="">
+                                </div>
+                            </div> --}}
                         </div>
                     </div>
                 </section>
@@ -912,7 +376,7 @@
                     </div>
                 </section>
                 <section
-                    class="elementor-section elementor-top-section elementor-element elementor-element-d4a6835 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                    class="elementor-section elementor-top-section elementor-element-d4a6835 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                     data-id="d4a6835" data-element_type="section"
                     data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                     <div class="elementor-container elementor-column-gap-default">
@@ -925,75 +389,42 @@
                                         <h2 class="elementor-heading-title elementor-size-default">Tin tức mới nhất</h2>
                                     </div>
                                 </div>
-                                <div class="elementor-element elementor-element-5131c14 elementor-widget elementor-widget-Amy_Movie_Blog"
-                                    data-id="5131c14" data-element_type="widget"
-                                    data-widget_type="Amy_Movie_Blog.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="amy-shortcode amy-mv-blog layout1 ">
-
-                                            <div class="row">
-                                                <div class="col-md-3 wide">
-                                                    @foreach ($new_latest_new as $item)
-                                                        <div class="entry-item">
-                                                            <div class="entry-thumb"><img loading="lazy" width="750"
-                                                                    height="500"
-                                                                    src="{{ asset('/storage/images/' . $item->thumbnail) }}"
-                                                                    class="attachment-full size-full wp-post-image"
-                                                                    alt="" srcset=" "
-                                                                    sizes="(max-width: 750px) 100vw, 750px" /></div>
-                                                            <div class="entry-content">
-                                                                <h2 class="entry-title"><a
-                                                                        href="{{ route('detailblog', [$item->id]) }}">{{ $item->title }}</a>
-                                                                </h2><a class="entry-btn"
-                                                                    href="{{ route('detailblog', [$item->id]) }}">Xem thêm</a>
-                                                            </div>
-                                                            <div class="clearfix"></div>
-                                                        </div>
-                                                    @endforeach
-                                                </div>
-                                                @foreach ($new_latest as $item)
-                                                    <div class="col-md-6 full">
-                                                        <div class="entry-item">
-                                                            <div class="entry-thumb"><img width="750" height="500"
-                                                                    src="{{ asset('storage/images/' . $item->thumbnail) }}"
-                                                                    class="attachment-full size-full wp-post-image"
-                                                                    alt="" loading="lazy" srcset=","
-                                                                    sizes="(max-width: 750px) 100vw, 750px" /></div>
-                                                            <div class="entry-content">
-                                                                <h2 class="entry-title"><a
-                                                                        href="{{ route('detailblog', [$item->id]) }}">{{ $item->title }}</a>
-                                                                </h2>
-                                                                <div class="entry-summary">{{ $item->content }}
-                                                                </div><a class="entry-btn"
-                                                                    href="{{ route('detailblog', [$item->id]) }}">Xem thêm</a>
-                                                            </div>
-                                                            <div class="clearfix"></div>
-                                                        </div>
+                                <div class="entry-related" style="margin-bottom: 50px">
+                                    <div class="amy-related">
+                                        <div class="row">
+                                            @foreach ($blogs as $blog)
+                                                <article class="col-md-4">
+                                                    <style>
+                                                        .h34 {
+                                                            max-width: 300px;
+                                                            /* Đặt chiều rộng tối đa của tiêu đề */
+                                                            overflow: hidden;
+                                                            /* Tránh tràn bề ngang */
+                                                            white-space: nowrap;
+                                                            /* Ngăn chặn xuống dòng */
+                                                            text-overflow: ellipsis;
+                                                            /* Thêm dấu chấm ba chấm (...) khi văn bản bị cắt bớt */
+                                                        }
+                                                    </style>
+                                                    <div class="entry-thumb "><img width="360" height="240"
+                                                            src="{{ asset($blog->thumbnail) }}"
+                                                            class="attachment-360x240 size-360x240 wp-post-image"
+                                                            alt="" loading="lazy"
+                                                            sizes="(max-width: 360px) 100vw, 360px" /></div>
+                                                    <h3 class="entry-title p-name h34" itemprop="name headline"><a
+                                                            href="{{ route('detailblog', [$blog->slug]) }}" rel="bookmark"
+                                                            class="u-url url" itemprop="url">{{ $blog->title }}</a></h3>
+                                                    <div class="entry-info">
+                                                        <span class="entry-date"
+                                                            style="color: grey">{{ Carbon\Carbon::parse($blog->created_at)->format('d/n/Y') }}</span>
+                                                        {{-- <span>/</span> --}}
+                                                        {{-- <span class="entry-comment">0 Comment</span> --}}
                                                     </div>
-                                                @endforeach
-                                                <div class="col-md-3 wide">
-                                                    @foreach ($new_latest_new as $item)
-                                                        <div class="entry-item">
-                                                            <div class="entry-thumb"><img loading="lazy" width="750"
-                                                                    height="500"
-                                                                    src="{{ asset('storage/images/' . $item->thumbnail) }}"
-                                                                    class="attachment-full size-full wp-post-image"
-                                                                    alt="" srcset=" "
-                                                                    sizes="(max-width: 750px) 100vw, 750px" /></div>
-                                                            <div class="entry-content">
-                                                                <h2 class="entry-title"><a
-                                                                        href="{{ route('detailblog', [$item->id]) }}">{{ $item->title }}</a>
-                                                                </h2><a class="entry-btn"
-                                                                    href="{{ route('detailblog', [$item->id]) }}">Read
-                                                                    more</a>
-                                                            </div>
-                                                            <div class="clearfix"></div>
-                                                        </div>
-                                                    @endforeach
-                                                </div>
-                                            </div>
+                                                </article>
+                                            @endforeach
                                         </div>
                                     </div>
+                                    <div class="clearfix"></div>
                                 </div>
                             </div>
                         </div>

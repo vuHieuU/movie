@@ -2,7 +2,6 @@
 @section('content')
 
     <!-- Wrapper Start -->
-    <form class="" id="sort_customers" action="" method="GET">
     <div class="wrapper">
 
         <div class="modal fade" id="new-order" tabindex="-1" role="dialog" aria-hidden="true">
@@ -33,89 +32,50 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Danh sách vé</h4>
+                          <h4 class="mb-3">Danh sách thành phố</h4>
                       </div>
-                      {{-- <a href="{{route("films.create")}}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Film</a> --}}
+                      <a href="/city/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm thành phố</a>
                   </div>
               </div>
               <div class="col-lg-12">
                   <div class="table-responsive rounded mb-3">
                   <table class="data-tables table mb-0 tbl-server-info">
-                    <p style="color: green">
-                        {{ session('success') }}
-                    </p>
-                    <div class="col-md-2 mb-1" style="position: absolute; right: 0px; top:-20px">
-                        <select class="form-control form-control-sm aiz-selectpicker mb-2 mb-md-0" name="type" id="type" onchange="sort_customers()">
-                            <option value="">Lọc theo ngày tháng</option>
-                            <option value="tuan" @if($filter == 'tuan') selected @endif >Tuần</option>
-                            <option value="thang" @if($filter == 'thang') selected @endif>Tháng</option>
-                            <option value="nam" @if($filter == 'nam') selected @endif>Năm</option>
-                         
-                        </select>
-                    </div>
-                    <thead class="bg-white text-uppercase">
-                        <tr class="ligth ligth-data">
-                            {{-- <th>
-                                <div class="checkbox d-inline-block" >
-                                    <input type="checkbox" class="checkbox-input" id="checkbox1">
-                                    <label for="checkbox1" class="mb-0"></label>
-                                </div>
-                            </th> --}}
-                            <th style="width: 8%">Mã đơn</th>
-                              <th style="width: 13%">Người dùng</th>
-                              <th style="width: 10%">Rạp</th>
-                              <th style="width: 13%">Tên phim</th>
-                              <th style="width: 11%">Ngày đặt</th>
-                              <th style="width: 11%">Thời gian</th>
-                              {{-- <th style="width: 10%">Ghế</th> --}}
-                              {{-- <th style="width: 10%">Đồ ăn</th> --}}
-                              <th style="width: 10%">Thanh toán</th>
-                              <th style="width: 10%">Trạng thái</th>
-                              <th style="width: 11%">Tổng tiền</th>
-                              {{-- <th>Status</th> --}}
+                      <thead class="bg-white text-uppercase">
+                          <tr class="ligth ligth-data">
+                              <th>
+                                  <div class="checkbox d-inline-block">
+                                      <input type="checkbox" class="checkbox-input" id="checkbox1">
+                                      <label for="checkbox1" class="mb-0"></label>
+                                  </div>
+                              </th>
+                              <th>Tên</th>
+                              <th>Email</th>
                               <th>Action</th>
-
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
-                             @foreach ($tickets as $item)
+
+                        @foreach ($contacts as $contact)
+                            
+                    
+              
                           <tr>
-                              {{-- <td>
+                              <td>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox10">
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
-                              </td> --}}
-                              <td>{{ $item->code}}</td>
-                              <td>{{ $item->buyer_name }}</td>
-                              <td>
-                                {{ $item->cinema }}
                               </td>
-                              <td>
-                                {{ $item->film_name }}
-                              </td>
-                              <td>{{ $item->selected_date }}</td>
-                              <td>{{ $item->selected_hour }}</td>
-                              {{-- <td>{{ $item->selected_seats }}</td> --}}
-                              {{-- @foreach ($ticket as $itemm) --}}
-                                  
-                             
-                              {{-- <td>{{ $item->name }}*{{ $item->quantity }}</td> --}}
-                              <td style="font-size: 15px;color: darkgreen; font-weight: 600">{{ $item->payment }}</td>
-                              <td style="font-size: 15px;color: darkgreen; font-weight: 600">{{ $item->status }}</td>
-                           {{-- @endforeach --}}
-                              <td>{{number_format( $item->total) }} VND</td>
-    {{-- <td>{{($item->active==1) ?"Thành công" :"Đang xử lý"}}</td> --}}
+                              <td>{{ $contact->fullName }}</td>
+                              <td>{{ $contact->email }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                          href="{{route("show.index",$item->id)}}"><i class="ri-eye-line mr-0"></i></a>
-                                     
-                                      {{-- <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                          href="{{route("destroy.index",$item->id)}}" onclick="return confirm('Xóa là không Ctrl lại cuộc đời ?')"><i class="ri-delete-bin-line mr-0"></i></a> --}}
+                                          href="{{ route('contact.show',[$contact->id]) }}"><i class="ri-eye-line mr-0"></i></a>
                                   </div>
                               </td>
                           </tr>
+
                           @endforeach
                       </tbody>
                   </table>
@@ -160,14 +120,6 @@
       </div>
         </div>
       </div>
-      </form>
       <!-- Wrapper End-->
-      <script>
-        $('.data-tables').DataTable({
-            
-        });
-        function sort_customers(el){
-            $('#sort_customers').submit();
-        }
-    </script> 
+    
 @endsection

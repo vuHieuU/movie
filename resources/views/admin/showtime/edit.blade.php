@@ -120,14 +120,14 @@
                                         <div class="d-flex">
                                                 <h6>Tất cả<input type="checkbox" class="check-all mx-3" id="selectAll"
                                                     data-master-checkbox></h6>
-                                                <h6>A<input type="checkbox" class="checkboxA mx-3"></h6>
+                                                {{-- <h6>A<input type="checkbox" class="checkboxA mx-3"></h6>
                                                 <h6>B<input type="checkbox" class="checkboxB mx-3"></h6>
                                                 <h6>C<input type="checkbox" class="checkboxC mx-3"></h6>
-                                                <h6>D<input type="checkbox" class="checkboxD mx-3"></h6>
+                                                <h6>D<input type="checkbox" class="checkboxD mx-3"></h6> --}}
                                         </div>
                                         <div class="row container  "style="max-width: 1100px;">
                                             @foreach ($seats as $item)
-                                                @if ($item->typeSeat_id == 1)
+                                                @if ($item->typeSeat_id == 6)
                                                     <div class="form-check col-md-1">
                                                         <div class="form-check d-flex align-items-center">
                                                     <input class="form-check-input item check-box-all check-box-A" type="checkbox" name="id_seat[]" 
@@ -142,7 +142,7 @@
                                                 @endif
                                             @endforeach
                                         </div>
-                                        <div class="row container " style="max-width: 1050px;">
+                                        {{-- <div class="row container " style="max-width: 1050px;">
                                             @foreach ($seats as $item)
                                                 @if ($item->typeSeat_id == 2)
                                                     <div class="form-check col-md-1">
@@ -158,8 +158,8 @@
                                                     </div>
                                                 @endif
                                             @endforeach
-                                        </div>
-                                        <div class="row container " style="max-width: 1000px;">
+                                        </div> --}}
+                                        {{-- <div class="row container " style="max-width: 1000px;">
                                             @foreach ($seats as $item)
                                                 @if ($item->typeSeat_id == 3)
                                                     <div class="form-check col-md-1">
@@ -175,8 +175,8 @@
                                                     </div>
                                                 @endif
                                             @endforeach
-                                        </div>
-                                        <div class="row container " style="max-width: 1000px;">
+                                        </div> --}}
+                                        {{-- <div class="row container " style="max-width: 1000px;">
                                             @foreach ($seats as $item)
                                                 @if ($item->typeSeat_id == 4)
                                                     <div class="form-check col-md-1">
@@ -192,7 +192,7 @@
                                                     </div>
                                                 @endif
                                             @endforeach
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <script>
                                         document.getElementById("selectAll").addEventListener("click", function() {

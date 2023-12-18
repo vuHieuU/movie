@@ -57,15 +57,17 @@
                                                 {{ session('success') }}
                                             </p>
                                             <div class="row py-2 border-1 border-bottom align-items-center mx-5">
+                                                @if (Auth::user()->logo)
                                                 <div class="col-md-4">
-                                                    <p class="fs-4 text-gray">Hình ảnh</p>
+                                                    <p class="fs-4 text-gray">Ảnh đại diện</p>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <div class="rounded-circle overflow-hidden" style="width: 40%">
-                                                        <img src="{{ asset('/storage/images/' . Auth::user()->logo) }}" style="width: 100%; height: 100%;">
-                                                       
+                                                    <div class="rounded-4 overflow-hidden" style="width: 20%">
+                                                        <img src="{{ asset(Auth::user()->logo) }}" style="width: 100%; height: 100%;" alt=""> 
                                                     </div> 
                                                 </div>
+                                                @endif
+                                               
                                                 
                                                
                                             </div>
@@ -242,6 +244,7 @@
                                                         <th>Thời gian chiếu</th>
                                                         <th style="">Vị trí ghế</th>
                                                         <th>Tổng tiền</th>
+                                                        {{-- <th>Action</th> --}}
                                                         
                                                       
 
@@ -262,7 +265,13 @@
                                                             <td>{{ $item->selected_hour }}</td>
                                                             <td>{{ $item->selected_seats }}</td>
                                                     
-                                                            <td>{{ number_format($item->total) }} VND</td>  
+                                                            <td>{{ number_format($item->total) }} VND</td> 
+                                                            {{-- <td>
+                                                                <div class="d-flex align-items-center list-action">
+                                                                    <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                                                        href="{{route("detail.show",$item->id)}}"><i class="ri-eye-line mr-1"></i></a>
+                                                                </div>
+                                                            </td>  --}}
                                                         </tr>
                                                     @empty
                                                         <tr>

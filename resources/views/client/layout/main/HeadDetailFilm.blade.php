@@ -8,7 +8,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
 </script>
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="stylesheet" href="/template/assets/css/detailfilm.css">
+{{-- <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
 <link rel="alternate" type="application/rss+xml" title="Elementor Single Cinema &raquo; Feed"
     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/feed/" />
@@ -16,8 +17,8 @@
     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/comments/feed/" />
 <link rel="alternate" type="application/rss+xml"
     title="Elementor Single Cinema &raquo; Jumanji: Welcome to the Jungle Comments Feed"
-    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/feed/" />
-<script type="text/javascript">
+    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/feed/" /> --}}
+{{-- <script type="text/javascript">
     window._wpemojiSettings = {
         "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/",
         "ext": ".png",
@@ -74,8 +75,8 @@
             })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n
                 .wpemoji)))
     }(window, document, window._wpemojiSettings);
-</script>
-<style type="text/css">
+</script> --}}
+{{-- <style type="text/css">
     img.wp-smiley,
     img.emoji {
         display: inline !important;
@@ -88,11 +89,11 @@
         background: none !important;
         padding: 0 !important;
     }
-</style>
-<link rel='stylesheet' id='wp-block-library-css'
+</style> --}}
+{{-- <link rel='stylesheet' id='wp-block-library-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/css/dist/block-library/style.min.css?ver=5.9.7'
-    type='text/css' media='all' />
-<style id='global-styles-inline-css' type='text/css'>
+    type='text/css' media='all' /> --}}
+{{-- <style id='global-styles-inline-css' type='text/css'>
     body {
         --wp--preset--color--black: #000000;
         --wp--preset--color--cyan-bluish-gray: #abb8c3;
@@ -339,8 +340,8 @@
     .has-x-large-font-size {
         font-size: var(--wp--preset--font-size--x-large) !important;
     }
-</style>
-<link rel='stylesheet' id='font-awesome-css'
+</style> --}}
+{{-- <link rel='stylesheet' id='font-awesome-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0'
     type='text/css' media='all' />
 <link rel='stylesheet' id='slick-style-css'
@@ -354,34 +355,34 @@
     type='text/css' media='all' />
 <link rel='stylesheet' id='tooltipster-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/tooltipster.bundle.css?ver=1.0.0'
-    type='text/css' media='all' />
-<link rel='stylesheet' id='mCustomScrollbar-css'
+    type='text/css' media='all' /> --}}
+{{-- <link rel='stylesheet' id='mCustomScrollbar-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/jquery.mCustomScrollbar.css?ver=1.0.0'
-    type='text/css' media='all' />
-<link rel='stylesheet' id='plyr-css'
+    type='text/css' media='all' /> --}}
+{{-- <link rel='stylesheet' id='plyr-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/plyr.css?ver=1.0.0'
     type='text/css' media='all' />
 <link rel='stylesheet' id='amy-movie-style-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/style.css?ver=1.0.0'
-    type='text/css' media='all' />
-<style id='amy-movie-style-inline-css' type='text/css'>
+    type='text/css' media='all' /> --}}
+{{-- <style id='amy-movie-style-inline-css' type='text/css'>
     .amy-primary-navigation ul.nav-menu>li>a::after {
         top: 70%;
     }
-</style>
+</style> --}}
 {{-- ảnh url --}}
 <link rel="shortcut icon" href="storage/images/img_66.png" type="image/png">
 {{-- ảnh url --}}
-<link rel='stylesheet' id='csf-google-web-fonts-css'
+{{-- <link rel='stylesheet' id='csf-google-web-fonts-css'
     href='//fonts.googleapis.com/css?family=Roboto%20Condensed:400,700&#038;display=swap' type='text/css'
-    media='all' />
-<script type='text/javascript'
+    media='all' /> --}}
+{{-- <script type='text/javascript'
     src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery.min.js?ver=3.6.0'
     id='jquery-core-js'></script>
 <script type='text/javascript'
     src='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2'
-    id='jquery-migrate-js'></script>
-<link rel="https://api.w.org/" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/" />
+    id='jquery-migrate-js'></script> --}}
+{{-- <link rel="https://api.w.org/" href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/" />
 <link rel="EditURI" type="application/rsd+xml" title="RSD"
     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml"
@@ -393,8 +394,8 @@
 <link rel="alternate" type="application/json+oembed"
     href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fmovie%2Fjumanji-welcome-to-the-jungle%2F" />
 <link rel="alternate" type="text/xml+oembed"
-    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fmovie%2Fjumanji-welcome-to-the-jungle%2F&#038;format=xml" />
-<style type="text/css">
+    href="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemo.amytheme.com%2Fmovie%2Fdemo%2Felementor-single-cinema%2Fmovie%2Fjumanji-welcome-to-the-jungle%2F&#038;format=xml" /> --}}
+{{-- <style type="text/css">
     body {
         font-family: "Roboto Condensed";
         color: #333;
@@ -450,7 +451,7 @@
     #amy-page-header {
         background-image: url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_50.jpg);
     }
-</style>
+</style> --}}
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
     integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="

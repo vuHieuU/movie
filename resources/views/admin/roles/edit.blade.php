@@ -42,7 +42,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Tên quyền *</label>
-                                                <input type="text" class="form-control" placeholder="Enter Name"
+                                                <input required type="text" class="form-control" placeholder="Enter Name"
                                                     data-errors="Please Enter Name." name="name" value="{{ $role->name }}">
                                                 <div class="help-block with-errors"></div>
                                             </div>
@@ -50,7 +50,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Display Name *</label>
-                                                <input type="text" class="form-control" placeholder="display_name"
+                                                <input required type="text" class="form-control" placeholder="display_name"
                                                     data-errors="Please Enter Name." name="display_name" value="{{ $role->display_name }}">
                                                 <div class="help-block with-errors"></div>
                                             </div>
@@ -58,7 +58,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Bên</label>
-                                                <select name="group" class="selectpicker form-control" data-style="py-0">
+                                                <select name="group" class="selectpicker form-control" data-style="py-0" required>
                                                     <option value="Admin" {{ $role->group == 'Admin' ? "selected" : "" }}>Admin</option>
                                                     <option value="User" {{ $role->group == 'User' ? "selected" : "" }}>User</option>
                                                 </select>

@@ -9,8 +9,7 @@
         <meta name='robots' content='max-image-preview:large' />
         <link rel='dns-prefetch' href='//fonts.googleapis.com' />
         <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="/template/assets/css/seatfood.css">
         <style type="text/css">
             body {
                 font-family: "Roboto Condensed";
@@ -79,7 +78,7 @@
                     <div id="content" class="site-content">
 
 
-                        <section id="amy-page-header" class="amy-page-header">
+                        {{-- <section id="amy-page-header" class="amy-page-header">
                             <div class="amy-page-title amy-center">
                                 <div class="amy-inner container">
                                     <h1 class="page-title">
@@ -87,7 +86,7 @@
                                 </div>
                             </div>
                             <span class="amy-section-overlay"></span>
-                        </section>
+                        </section> --}}
                         <section class="main-content page-layout-">
                             <div class="container">
                                 <div class="row">
@@ -115,8 +114,8 @@
 
 
 
-                                                                                    <h3 class="col-12 text-center ">Chọn ghế
-                                                                                        và đồ ăn </h3>
+                                                                                    <h2 class="col-12 text-center ">Chọn ghế
+                                                                                        và đồ ăn </h2>
                                                                                     <hr class="border">
                                                                                     <div class="row text-center "
                                                                                         style="margin-top: 30px; ">
@@ -171,7 +170,7 @@
                                                                                                 function demNguocVaChuyenTrang() {
                                                                                                     if (thoiGianDemNguoc <= 0) {
                                                                                                         // Hết thời gian, chuyển trang
-                                                                                                        window.location.href = "{{ route('filmDetail', [$showTime->id]) }} "; // Sử dụng named route của Laravel
+                                                                                                        window.location.href = "/"; // Sử dụng named route của Laravel
                                                                                                     } else {
                                                                                                         var minutes = Math.floor(thoiGianDemNguoc);
                                                                                                         var seconds = (thoiGianDemNguoc - minutes) * 60;
@@ -192,7 +191,7 @@
                                                                                     </div>
 
                                                                                     <div class="py-5">
-                                                                                        <img class="img-responsive"
+                                                                                        <img class="img-responsive "
                                                                                             src="{{ asset('storage/images/ic-screen.png') }}">
 
                                                                                     </div>
@@ -293,7 +292,7 @@
 
 
                                                                                             <div
-                                                                                                style="max-width: 750px;margin: auto;">
+                                                                                                style="max-width: 750px;margin: auto; text-center">
                                                                                                 @foreach ($seats1 as $item)
                                                                                                     <div class="col-md-1 col-sm-2 col-xs-3 text-center  seat update-seat"
                                                                                                         id="{{ $item->showtime_seat_id }}"
@@ -1072,7 +1071,7 @@
                                                                                     </script>
 
                                                                                 </div>
-                                                                                <div class="row text-center m-5 mt-5 p-4"
+                                                                                {{-- <div class="row text-center m-5 mt-5 p-4"
                                                                                     style="margin-top: 30px; background-color: #F8F8F8">
                                                                                     <div class="col-md-3 col-sm-4">
                                                                                         <svg style="font-size: 30px; fill: #BABBC3"
@@ -1099,7 +1098,7 @@
                                                                                         <p class="fs-2 mt-3"
                                                                                             style="color: gray ;">Ghế Vip
                                                                                         </p>
-                                                                                        {{-- {{$count}} --}}
+                                                                                      
                                                                                     </div>
 
 
@@ -1128,7 +1127,7 @@
                                                                                             style="color: gray ;">Ghế nằm
                                                                                         </p>
                                                                                     </div>
-                                                                                </div>
+                                                                                </div> --}}
                                                                                 {{-- food --}}
                                                                                 <div>
                                                                                     <hr class="border-3 border-black mt-5">
@@ -1142,7 +1141,8 @@
                                                                                                 class="card mb-3 col-md-5 m-5 product-card">
                                                                                                 <div class="row g-0">
                                                                                                     <div class="col-md-4">
-                                                                                                        <img src="{{ asset('storage/images/' . $item->thumb) }}"
+                                                                                                        <img 
+                                                                                                        src="{{ asset("$item->thumb")}}"
                                                                                                             class="img-fluid rounded-start"
                                                                                                             alt="...">
                                                                                                     </div>
@@ -1210,7 +1210,7 @@
                                                                                     <div class="entry-thumb"><img
                                                                                             class=""
                                                                                             style="width: 120px;"
-                                                                                            src="{{ asset('storage/images/' . $showTime->film->thumb) }}"
+                                                                                            src="{{ asset($showTime->film->thumb) }}"
                                                                                             alt="Kubo and the Two Strings" />
                                                                                     </div>
                                                                                     <div class="entry-content">
@@ -1247,7 +1247,7 @@
                                                                                         </p>
                                                                                     </div>
                                                                                     <div
-                                                                                        class=" d-flex align-items-center justify-content-between mb-5 px-4">
+                                                                                        class=" d-flex align-items-center justify-content-between mb-5 px-4 d-none">
                                                                                         <div
                                                                                             class="d-flex align-items-center gap-2">
                                                                                             {{-- <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M570.69,236.27,512,184.44V48a16,16,0,0,0-16-16H432a16,16,0,0,0-16,16V99.67L314.78,10.3C308.5,4.61,296.53,0,288,0s-20.46,4.61-26.74,10.3l-256,226A18.27,18.27,0,0,0,0,248.2a18.64,18.64,0,0,0,4.09,10.71L25.5,282.7a21.14,21.14,0,0,0,12,5.3,21.67,21.67,0,0,0,10.69-4.11l15.9-14V480a32,32,0,0,0,32,32H480a32,32,0,0,0,32-32V269.88l15.91,14A21.94,21.94,0,0,0,538.63,288a20.89,20.89,0,0,0,11.87-5.31l21.41-23.81A21.64,21.64,0,0,0,576,248.19,21,21,0,0,0,570.69,236.27ZM288,176a64,64,0,1,1-64,64A64,64,0,0,1,288,176ZM400,448H176a16,16,0,0,1-16-16,96,96,0,0,1,96-96h64a96,96,0,0,1,96,96A16,16,0,0,1,400,448Z"/></svg> --}}
@@ -1349,7 +1349,7 @@
 
                                                                                     <hr class="border-2 border-black py-4">
                                                                                     <div class="d-flex">
-                                                                                        <a href="{{ route('filmDetail', [$film->id]) }}"
+                                                                                        <a href="{{ route('filmDetail', [$film->slug]) }}"
                                                                                             style="background-color: #FE7900;"
                                                                                             class="btn text-white btn-lg fs-4 px-4">Quay
                                                                                             lại</a>
@@ -1422,6 +1422,15 @@
 
                     </div>
                 </div>
+                @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                    <script>
+                        alert('{{ session('error') }}');
+                    </script>
+                </div>
+            @endif
+            
             @endsection
             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
             <script>
