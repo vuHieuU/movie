@@ -45,7 +45,7 @@
                                                 name="name" value="{{ $user->name }}">
                                              @error('name')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                         </div>
@@ -60,7 +60,7 @@
                                                     name="email" value="{{ $user->email }}">
                                                  @error('email')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                             </div>
@@ -72,7 +72,7 @@
                                                     name="phone" value="{{ $user->phone }}">
                                                  @error('phone')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                             </div>
@@ -86,7 +86,7 @@
                                                     name="address" value="{{ $user->address }}">
                                                  @error('address')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                             </div>
@@ -103,7 +103,7 @@
                                                     </select>
                                                  @error('gender')
                                                     
-                                                <div class="help-block with-errors">{{ $message }}</div>
+                                                <div class="help-block with-errors text-danger">{{ $message }}</div>
 
                                                 @enderror
                                             </div>

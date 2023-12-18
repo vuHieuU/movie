@@ -52,11 +52,11 @@
                                     </div>
                                 </div>
                              
-                                      </div>
+                                     
                                       <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
                                       <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     <a href="/user/index"><button type="submit" class="btn btn-danger">Back</button></a>
-                             
+                              </div>
                             </div>
                         </div>
                     </div>
