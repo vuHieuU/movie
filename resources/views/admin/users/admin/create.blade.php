@@ -41,7 +41,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Tên người dùng *</label>
-                                            <input type="text" class="form-control" placeholder="name"
+                                            <input required type="text" class="form-control" placeholder="name"
                                                 name="name" value="{{ old('name') }}">
                                                 @error('name')
                                                     
@@ -56,7 +56,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Email *</label>
-                                                <input type="text" class="form-control" placeholder="Enter email"
+                                                <input required type="text" class="form-control" placeholder="Enter email"
                                                     name="email" value="{{ old('email') }}">
                                                 @error('email')
                                                     
@@ -68,7 +68,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Số điện thoại</label>
-                                                <input type="text" class="form-control" placeholder="phone"
+                                                <input required type="text" class="form-control" placeholder="phone"
                                                     name="phone" value="{{ old('phone') }}">
                                                 @error('phone')
                                                     
@@ -82,7 +82,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Địa chỉ</label>
-                                                <input type="text" class="form-control" placeholder="address"
+                                                <input required type="text" class="form-control" placeholder="address"
                                                     name="address" value="{{ old('address') }}">
                                                 @error('address')
                                                     
@@ -94,7 +94,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Giới tính</label>
-                                                {{-- <input type="text" class="form-control" placeholder="gender"
+                                                {{-- <input required type="text" class="form-control" placeholder="gender"
                                                     name="gender" value="{{ old('gender') }}"> --}}
                                                     <select name="gender" class="selectpicker form-control" data-style="py-0">
                                                         <option value="">Chọn giới tính</option>
@@ -113,7 +113,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Mật khẩu</label>
-                                                <input type="password" class="form-control" placeholder="password"
+                                                <input required type="password" class="form-control" placeholder="password"
                                                     name="password" value="{{ old('password') }}">
                                                     @error('gender')
                                                     
@@ -131,7 +131,7 @@
                                                         <h4><b>{{ $groupName }}</b></h4>
                                                         @foreach ($role as $item)
                                                         <div class="form-check">
-                                                          <input class="form-check-input" name="role_ids[]" type="radio" value="{{ $item->id }}">
+                                                          <input required class="form-check-input" name="role_ids[]" type="radio" value="{{ $item->id }}" required>
                                                           <label class="form-check-label" for="flexCheckDefault">
                                                             {{ $item->display_name }}
                                                           </label>

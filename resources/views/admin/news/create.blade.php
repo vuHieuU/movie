@@ -12,7 +12,7 @@
                                 <div class="content create-workform bg-body">
                                     <div class="pb-3">
                                         <label class="mb-2">Email</label>
-                                        <input type="text" class="form-control" placeholder="Enter Name or Email">
+                                        <input  type="text" class="form-control" placeholder="Enter Name or Email">
                                     </div>
                                     <div class="col-lg-12 mt-4">
                                         <div class="d-flex flex-wrap align-items-ceter justify-content-center">
@@ -41,7 +41,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Tiêu đề *</label>
-                                                <input type="text" class="form-control" placeholder="Nhập tiêu đề"
+                                                <input required type="text" class="form-control" placeholder="Nhập tiêu đề"
                                                     data-errors="Please Enter Name." name="title">
                                                 <div class="help-block with-errors"></div>
                                                 @if ($errors->has('title'))
@@ -54,7 +54,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="formFile" class="form-label">Ảnh Thumbnail</label>
-                                                <input class="form-control" type="file" id="formFile" name="thumbnail">
+                                                <input  class="form-control" type="file" id="formFile" name="thumbnail">
                                             </div>
                                         </div>
                                     </div>
@@ -64,7 +64,7 @@
                                             <div class="form-group">
                                                 <label>Trạng thái</label>
                                                 <div>
-                                                    <input type="checkbox" name="status" style="width: 60px; height: 60px;">
+                                                    <input  type="checkbox" name="status" style="width: 60px; height: 60px;">
                                                 </div>
                                                 <div class="help-block with-errors"></div>
                                                 @if ($errors->has('title'))
@@ -96,7 +96,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="formFile" class="form-label">Meta Title</label>
-                                                <input class="form-control" type="text" name="meta_title">
+                                                <input required class="form-control" type="text" name="meta_title">
                                             </div>
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="formFile" class="form-label">Meta Keyword</label>
-                                                <input class="form-control" type="text" name="meta_keyword">
+                                                <input required class="form-control" type="text" name="meta_keyword">
                                             </div>
                                         </div>
                                     </div>

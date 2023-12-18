@@ -34,7 +34,7 @@ class filmController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(filmsRequest $request)
     {
         $data = new film();
         $data->name = $request->input('name');
@@ -102,7 +102,7 @@ class filmController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id, film $film)
+    public function update(filmUpdateRequest $request, string $id, film $film)
     {
         $data = film::find($id);
 

@@ -77,7 +77,7 @@ class userController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(userUpdateRequest $request, string $id)
     {
         $userUpdate = $request->except('password');
         $user = User::FindOrFail($id);
