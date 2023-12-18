@@ -57,7 +57,6 @@ Route::get('/introduction', [App\Http\Controllers\client\InTroDucTionController:
 
 
 
-
 Route::get('auth/google', [GoogleController::class, "redirectToGoogle"])->name("loginGoogle");
 Route::get('auth/google/callback', [GoogleController::class, "handleGoogleCallback"]);
 
