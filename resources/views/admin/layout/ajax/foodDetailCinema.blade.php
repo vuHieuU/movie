@@ -129,11 +129,11 @@
                 }
             },
             yaxis: {
-                show: true,
-                labels: {
-                    minWidth: 20,
-                    maxWidth: 20
-                }
+                // show: true,
+                // labels: {
+                //     minWidth: 20,
+                //     maxWidth: 20
+                // }
             },
             fill: {
                 opacity: 1

@@ -22,9 +22,9 @@
                                                             Chọn Rạp<i class="ri-arrow-down-s-line ml-1"></i>
                                                         </span>
                                                         <div class="dropdown-menu dropdown-menu-right shadow-none" aria-labelledby="dropdownMenuButton006">
-                                                            <a class="li dropdown-item" data-cinema-id="all">
-                                                                <li onclick="changeDropdownText('Tất cả rạp')">Tất cả rạp</li>
-                                                            </a>
+                                                            {{-- <a class="li dropdown-item" href="{{ route('allFilm') }}">
+                                                                Tất cả rạp
+                                                            </a> --}}
                                                             @foreach ($cinemalist as $item)
                                                                 <a class="li dropdown-item" href="{{ route('allCinemaFilm',[$item->id]) }}">{{ $item->name }}
                                                                 </a>
@@ -247,11 +247,11 @@
                     }
                 },
                 yaxis: {
-                    show: true,
-                    labels: {
-                        minWidth: 20,
-                        maxWidth: 20
-                    }
+                    // show: true,
+                    // labels: {
+                    //     minWidth: 20,
+                    //     maxWidth: 20
+                    // }
                 },
                 fill: {
                     opacity: 1
