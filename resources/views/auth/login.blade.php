@@ -548,7 +548,7 @@ body {
 
                                                         </p>
                                                         <fieldset class="form-group">
-                                                            <label>Email <span class="required">*</span></label>
+                                                            <label>Email <span class="">*</span></label>
                                                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
 
                                                             @error('email')
@@ -558,7 +558,7 @@ body {
                                                             @enderror
                                                         </fieldset>
                                                         <fieldset class="form-group">
-                                                            <label>Mật khẩu <span class=">*</span> </label>
+                                                            <label>Mật khẩu <span class="">*</span> </label>
                                                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
 
                                                             @error('password')
