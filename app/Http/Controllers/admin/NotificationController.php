@@ -16,14 +16,14 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        $Notification = Notification::join('users', 'Notifications.users_id', '=', 'users.id')
-            ->join('tickets', 'Notifications.tickets_id', '=', 'tickets.id')
-            ->select('users.*', 'tickets.*', 'Notifications.*')
-            ->orderBy('Notifications.status', 'asc') // Sắp xếp theo status giảm dần
-            ->orderBy('Notifications.updated_at', 'desc') // Sắp xếp theo updated_at giảm dần
+        $Notification = Notification::join('users', 'notifications.users_id', '=', 'users.id')
+            ->join('tickets', 'notifications.tickets_id', '=', 'tickets.id')
+            ->select('users.*', 'tickets.*', 'notifications.*')
+            ->orderBy('notifications.status', 'asc')
+            ->orderBy('notifications.updated_at', 'desc')
             ->get();
     
-        return view("admin.Notification.index", compact('Notification'));
+        return view("admin.notification.index", compact('Notification'));
     }
     
 

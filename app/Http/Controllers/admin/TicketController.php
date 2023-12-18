@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Notification;
+use App\Models\User;
 use App\Models\ticket;
 use App\Models\ticketFood;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Models\club_point;
 
 class TicketController extends Controller
 {
@@ -16,10 +18,12 @@ class TicketController extends Controller
      */
     public function index(Request $request)
     {
-        $ticket = DB::table("tickets")
-            ->join('ticket_food', 'tickets.id', '=', 'ticket_food.ticket_id')
-            ->select('tickets.id', 'ticket_food.*', 'tickets.*', 'ticket_food.ticket_id')
-            ->orderBy("tickets.created_at", "desc");
+        // $ticket = DB::table("tickets")
+        //     ->join('ticket_food', 'tickets.id', '=', 'ticket_food.ticket_id')
+        //     ->select('tickets.id', 'ticket_food.*', 'tickets.*', 'ticket_food.ticket_id')
+        //     ->orderBy("tickets.created_at", "desc");
+
+        $ticket = ticket::orderBy('id','desc');
     
         $filter = $request->input('type');
         if ($filter === 'tuan') {
@@ -73,8 +77,6 @@ class TicketController extends Controller
                 $Notification->save();
                 }
         $ticket = ticket::with('ticketFoods')->find($id);
-
-    //   dd($ticket);
         return view("admin.tickets.ticketbill", compact("ticket"));
     }
     /**
@@ -103,5 +105,23 @@ class TicketController extends Controller
         ticketFood::where('ticket_id',$ticket->id)->delete();
         $ticket->delete();
         return redirect()->route("ticket.index")->with('success', 'tickit delete successfully');
+    }
+    public function updatePaymentStatus(Request $request, $id)
+    {
+        $ticket = ticket::findOrFail($id);
+        $ticket->status = $request->input('status');
+        $ticket->save();
+        $point_user = User::findOrFail($ticket->user_id);
+        $club_point = club_point::where('ticket_id', $ticket->id)->first();
+    
+        if ($club_point) {
+            $order_point = $club_point->point;
+            $point_user->point += $order_point;
+            $point_user->save();
+    
+            $club_point->status = 1;
+            $club_point->save();
+        }
+        return redirect()->back()->with('success', 'Payment status updated successfully');
     }
 }

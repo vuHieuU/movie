@@ -10,5 +10,6 @@ class showtime_seat extends Model
     use HasFactory;
     protected $fillable = [
         'isFreeze',
+        'user_id',
     ];
 }

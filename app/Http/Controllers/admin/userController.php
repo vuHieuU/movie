@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Models\film;
+use App\Models\rank;
 use App\Models\User;
 use App\Models\ticket;
+use App\Models\ticketFood;
+use App\Models\favorite_film;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
@@ -32,7 +36,7 @@ class userController extends Controller
      */
     public function create()
     {
-        $role = Role::all()->groupBy('group');
+        $role = role::all()->groupBy('group');
         return view('admin.users.admin.create',compact('role'));
     }
 
@@ -55,7 +59,7 @@ class userController extends Controller
     public function show(string $id)
     {
         $user = User::FindOrFail($id);
-        $role = Role::all()->groupBy('group');
+        $role = role::all()->groupBy('group');
         return view('admin.users.show',compact('user','role'));
     }
 
@@ -65,14 +69,15 @@ class userController extends Controller
     public function edit(string $id)
     {
         $user = User::FindOrFail($id);
-        $role = Role::all()->groupBy('group');
-        return view('admin.users.edit',compact('user','role'));
+        $role = role::all()->groupBy('group');
+        $rank = rank::get();
+        return view('admin.users.edit',compact('user','role','rank'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(userUpdateRequest $request, string $id)
     {
         $userUpdate = $request->except('password');
         $user = User::FindOrFail($id);
@@ -87,7 +92,7 @@ class userController extends Controller
     public function edit_admin(string $id)
     {
         $user = User::FindOrFail($id);
-        $role = Role::all()->groupBy('group');
+        $role = role::all()->groupBy('group');
         return view('admin.users.admin.edit',compact('user','role'));
     }
 
@@ -101,8 +106,8 @@ class userController extends Controller
         if($request->password){
              $userUpdate['password'] = Hash::make($request->password);
         }
-        $modelType = $user->getMorphClass();
-        $user->roles()->sync($userUpdate['role_ids'] ?? [], ['model_type' => $modelType]);        
+        $user->update($userUpdate);
+        $user->roles()->sync($userUpdate['role_ids'] ?? []);
         return redirect()->route('index_admin');
     }
 
@@ -111,14 +116,34 @@ class userController extends Controller
      */
     public function destroy(string $id)
     {
-        $user = User::FindOrFail($id);
-        $user->delete($id);
+        $user = User::findOrFail($id);
+        $user->notifications()->delete();
+    
+        $ticket = $user->tickets->first();
+        if ($ticket) {
+            $ticketId = $ticket->id;
+            
+            TicketFood::where('ticket_id', $ticketId)->delete();
+        }
+        $user->tickets()->delete();
+         favorite_film::where('user_id',$id)->delete();
+        $user->delete();
         return redirect()->route('index_user');
     }
     public function destroy_admin(string $id)
     {
-        $user = User::FindOrFail($id);
-        $user->delete($id);
+        $user = User::findOrFail($id);
+        $user->notifications()->delete();
+    
+        $ticket = $user->tickets->first();
+        if ($ticket) {
+            $ticketId = $ticket->id;
+            
+            ticketFood::where('ticket_id', $ticketId)->delete();
+        }
+        $user->tickets()->delete();
+         favorite_film::where('user_id',$id)->delete();
+        $user->delete();
         return redirect()->route('index_admin');
     }
 

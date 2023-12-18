@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
     use HasRoles;
@@ -23,10 +23,12 @@ class User extends Authenticatable
         'name',
         'google_id',
         'github_id',
+        'rank_id',
+        'point',
         'phone',
         'address',
         'email',
-        'avatar',
+        'logo',
         'gender',
         'password',
         'isAdmin',
@@ -51,9 +53,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new \Illuminate\Auth\Notifications\VerifyEmail);
+    }
     public function roles()
 {
-    return $this->belongsToMany(Role::class, 'model_has_roles', 'model_id', 'role_id');
+    return $this->belongsToMany(role::class, 'model_has_roles', 'model_id', 'role_id');
+}
+    public function user_rank() {
+        return $this->belongsTo(rank::class,'rank_id');
+    }
+    public function notifications()
+{
+    return $this->hasMany(Notification::class, 'users_id');
+}
+    public function tickets()
+{
+    return $this->hasMany(ticket::class, 'user_id');
 }
 }

@@ -23,6 +23,7 @@ class UpdateStatusCommand extends Command
             } elseif ($record->isActive != $record->isFreeze) {
                 // Trường hợp isActive và isFreeze khác nhau, cập nhật isFreeze thành 1
                 $record->isFreeze = 1;
+                $record->user_id = null;
                 $record->save();
             }
         }

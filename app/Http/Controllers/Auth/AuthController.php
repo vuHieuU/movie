@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Client\ProfileRequest;
 use Symfony\Component\HttpKernel\Profiler\Profile;
-
+use Illuminate\Support\Facades\File;
 class AuthController extends Controller
 {
     /**
@@ -78,8 +78,11 @@ class AuthController extends Controller
         
         $user = User::get();
 
+        $rank = User::where('id', $loggedInUser->id)->select('rank_id', 'point')->first();
+        $user = User::get();
+
         $taitel = "history";
-        return view('client.HistoryTicket', compact("taitel","tickit","counttiket","sumtotal","user"));
+        return view('client.HistoryTicket', compact("taitel","tickit","counttiket","sumtotal","user","rank"));
     }
 
     public function show(string $id)
@@ -107,23 +110,26 @@ class AuthController extends Controller
         $user = User::find(\auth()->id()); // ham tu lay ID roi
         $user->name = $request->name;
         $user->phone = $request->phone;
-        $user->avatar = $request->avatar;
+        $user->logo = $request->logo;
         $user->gender = $request->gender;
         $user->address = $request->address;
 
-        if ($request->hasFile('avatar')) {
-            $avatar = $request->file('avatar')->getClientOriginalName();
-            $request->file('avatar')->storeAs('public/images', $avatar);
+        if($request->hasFile('logo')){
 
-            $oldLogo = $user->avatar;
+            $destination = $user->image;
 
-            if ($oldLogo !== $avatar) {
-                Storage::delete('public/images/' . $oldLogo);
+            if(File::exists($destination)){
+                File::delete($destination);
             }
 
-            $user->fill([
-                'avatar' => $avatar,
-            ])->save();
+            $file = $request->file("logo");
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $file->move("uploads/user",$filename);
+
+            $user["logo"] = "uploads/user/$filename";
+        }else{
+            $user["logo"] = $user->image;
         }
 
         if ($request->has('change_password')) {
