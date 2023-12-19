@@ -53,7 +53,7 @@
                                                      @foreach ($blogs as $blog)
                                                          <article class="col-md-4">
                                                              <div class="entry-thumb"><img width="360" height="240"
-                                                                     src="{{ asset($blog->thumbnail) }}"
+                                                                     src="{{ asset('storage/images/' . $blog->thumbnail) }}"
                                                                      class="attachment-360x240 size-360x240 wp-post-image"
                                                                      alt="" loading="lazy"
                                                                      sizes="(max-width: 360px) 100vw, 360px" /></div>

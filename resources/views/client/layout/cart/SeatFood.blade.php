@@ -1215,7 +1215,7 @@
                                                                                     <div class="entry-thumb"><img
                                                                                             class=""
                                                                                             style="width: 120px;"
-                                                                                            src="{{ asset($showTime->film->thumb) }}"
+                                                                                            src="{{ asset('storage/images/' . $showTime->film->thumb) }}"
                                                                                             alt="Kubo and the Two Strings" />
                                                                                     </div>
                                                                                     <div class="entry-content">

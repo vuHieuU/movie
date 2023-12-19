@@ -68,7 +68,7 @@
                               </td>
                               <td>{{ $item->title }}</td>
                               <td>
-                                <img src="{{asset($item->thumbnail)}}" style="height: 200px;width:150px;">
+                                <img src="{{ asset('storage/images/' . $item->thumbnail) }}" style="height: 200px;width:150px;">
                               </td>
                               <td>{{ $item->status == "1" ? "Hiện" : "Ẩn" }}</td>
                               <td>

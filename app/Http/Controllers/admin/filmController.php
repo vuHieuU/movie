@@ -48,19 +48,19 @@ class filmController extends Controller
         $data->trailer = $request->input('trailer');
         $data->status = $request->input('status');
 
-        // if($request->has("thumb")){
-        //     $thumb = $request->file('thumb')->getClientOriginalName();
-        //     $request->file('thumb')->storeAs('public/images', $thumb);
-        //     $data->thumb = $thumb;
-        // }
-        if($request->hasFile('thumb')){
-            $file = $request->file("thumb");
-            $ext = $file->getClientOriginalExtension();
-            $filename = time().'.'.$ext;
-            $file->move("uploads/images",$filename);
-
-            $data["thumb"] = "uploads/images/$filename";
+        if($request->has("thumb")){
+            $thumb = $request->file('thumb')->getClientOriginalName();
+            $request->file('thumb')->storeAs('public/images', $thumb);
+            $data->thumb = $thumb;
         }
+        // if($request->hasFile('thumb')){
+        //     $file = $request->file("thumb");
+        //     $ext = $file->getClientOriginalExtension();
+        //     $filename = time().'.'.$ext;
+        //     $file->move("uploads/images",$filename);
+
+        //     $data["thumb"] = "uploads/images/$filename";
+        // }
 
 
         $data->premiere_date = $request->input('premiere_date');
@@ -121,35 +121,35 @@ class filmController extends Controller
         $data->meta_keyword = $request->input('meta_keyword');
         $data->meta_description = $request->input('meta_description');
         
-        // if ($request->file('thumb') !== null) {
-        //     $thumb = $request->file('thumb')->getClientOriginalName();
-        //     $request->file('thumb')->storeAs('public/images', $thumb);
+        if ($request->file('thumb') !== null) {
+            $thumb = $request->file('thumb')->getClientOriginalName();
+            $request->file('thumb')->storeAs('public/images', $thumb);
 
-        //     $oldThumb = $data->thumb;
+            $oldThumb = $data->thumb;
 
-        //     Storage::delete('public/images/' . $oldThumb);
+            Storage::delete('public/images/' . $oldThumb);
 
-        //     $data->fill([
-        //         'thumb' => $thumb,
-        //     ])->save();
-        // }
-        if($request->hasFile('thumb')){
-
-            $destination = $data->image;
-
-            if(File::exists($destination)){
-                File::delete($destination);
-            }
-
-            $file = $request->file("thumb");
-            $ext = $file->getClientOriginalExtension();
-            $filename = time().'.'.$ext;
-            $file->move("uploads/images",$filename);
-
-            $data["thumb"] = "uploads/images/$filename";
-        }else{
-            $data["thumb"] = $data->image;
+            $data->fill([
+                'thumb' => $thumb,
+            ])->save();
         }
+        // if($request->hasFile('thumb')){
+
+        //     $destination = $data->image;
+
+        //     if(File::exists($destination)){
+        //         File::delete($destination);
+        //     }
+
+        //     $file = $request->file("thumb");
+        //     $ext = $file->getClientOriginalExtension();
+        //     $filename = time().'.'.$ext;
+        //     $file->move("uploads/images",$filename);
+
+        //     $data["thumb"] = "uploads/images/$filename";
+        // }else{
+        //     $data["thumb"] = $data->image;
+        // }
 
         $data->save();
         $data->categories()->sync($request->id_cate);

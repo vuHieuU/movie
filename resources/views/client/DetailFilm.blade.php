@@ -61,7 +61,7 @@
                                             <div class="entry-top">
 
                                                 <div class="entry-poster mx-5 mx-auto mx-md-5"style="max-width: 250px;width: 100%;">
-                                                    <img class="" src="{{ asset($film->thumb) }}"
+                                                    <img class="" src="{{ asset('storage/images/' . $film->thumb) }}"
                                                         alt="The Hurricane Heist" />
                                                 </div>
                                                 <div class="entry-info">
@@ -637,8 +637,8 @@
                                                     @foreach ($filmtopmovie as $item)
                                                         <div class="entry-item">
                                                             <div class="entry-thumb"><img style="width: 120px" class
-                                                                    {{-- src="{{ asset('storage/images/' . $item->thumb) }}" --}}
-                                                                    src="{{ asset("$item->thumb")}}"
+                                                                    src="{{ asset('storage/images/' . $item->thumb) }}"
+                                                                    {{-- src="{{ asset("$item->thumb")}}" --}}
                                                                     alt="Kubo and the Two Strings" /></div>
                                                             <div class="entry-content">
                                                                 <h2 class="entry-title"><a
@@ -663,8 +663,8 @@
                                                         <div class="entry-item">
                                                             <div class="entry-thumb"><img
                                                                     style="width: 120px; height: 150px;object-fit: cover"
-                                                                    {{-- src="{{ asset('storage/images/' . $item->thumbnail) }}" --}}
-                                                                    src="{{ asset("$item->thumb")}}"
+                                                                    src="{{ asset('storage/images/' . $item->thumbnail) }}"
+                                                                    {{-- src="{{ asset("$item->thumb")}}" --}}
                                                                      />
                                                             </div>
                                                             <div class="entry-content">

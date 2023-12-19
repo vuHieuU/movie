@@ -48,8 +48,8 @@
                                                                                             <a class="amy-btn-icon-text link-detail fancybox.iframe amy-fancybox"
                                                                                                 href="{{ $item->trailer }} ">
                                                                                                 <img class=""
-                                                                                                    {{-- src="{{ asset('storage/images/' . $item->thumb) }}" --}}
-                                                                                                    src="{{ asset("$item->thumb") }}"
+                                                                                                    src="{{ asset('storage/images/' . $item->thumb) }}"
+                                                                                                    {{-- src="{{ asset("$item->thumb") }}" --}}
                                                                                                     alt="Kubo and the Two Strings" />
                                                                                             </a>
                                                                                             {{-- <span
@@ -205,8 +205,8 @@
                                                                         <div class="entry-item">
                                                                             <div class="entry-thumb"><img class=""
                                                                                     style="height: 150px;width: 110px"
-                                                                                    {{-- src="{{ asset('storage/images/' . $item->thumb) }}" --}}
-                                                                                    src="{{ asset("$item->thumb") }}"
+                                                                                    src="{{ asset('storage/images/' . $item->thumb) }}"
+                                                                                    {{-- src="{{ asset("$item->thumb") }}" --}}
                                                                                     alt="Kubo and the Two Strings" />
                                                                             </div>
                                                                             <div class="entry-content">
