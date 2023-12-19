@@ -221,7 +221,7 @@
                                                                                             onclick="toggleSeat(this)">
                                                                                             @if ($item->isActive == 1 && $item->isFreeze == 1)
                                                                                                 <i
-                                                                                                    class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4">
+                                                                                                    class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4">
                                                                                                     <span class="fs-6">
                                                                                                         {{ $item->seat_number }}</span>
                                                                                                 </i>
@@ -266,7 +266,7 @@
 
                                                                                             {{-- <div class="container mt-4"> --}}
                                                                                             <style>
-                                                                                                .iconchuadat {
+                                                                                                .iconHover {
                                                                                                     color: #BABBC3;
                                                                                                     font-size: 25px;
                                                                                                     transition: color 0.3s;
@@ -303,7 +303,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -340,7 +340,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -377,7 +377,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -414,7 +414,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -451,7 +451,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -488,7 +488,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -525,7 +525,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -562,7 +562,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -594,7 +594,7 @@
 
                                                                                             {{-- <div class="container mt-4"> --}}
                                                                                             <style>
-                                                                                                .iconchuadat {
+                                                                                                .iconHover {
                                                                                                     color: #BABBC3;
                                                                                                     font-size: 25px;
                                                                                                     transition: color 0.3s;
@@ -622,7 +622,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -659,7 +659,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -696,7 +696,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -733,7 +733,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -770,7 +770,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -807,7 +807,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -844,7 +844,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -881,7 +881,7 @@
                                                                                                         onclick="toggleSeat(this)">
 
                                                                                                         @if ($item->isActive == 1 && $item->isFreeze == 1)
-                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat mb-4"
+                                                                                                            <i class="fa-solid fa-couch fa-couch-icon iconchuadat iconHover mb-4"
                                                                                                                 style="">
                                                                                                                 <span
                                                                                                                     class="fs-6">
@@ -946,6 +946,11 @@
                                                                                                 updateSelectedSeatsList();
                                                                                                 selectedSeatsValueInput(); // Cập nhật giá trị trường input
                                                                                                 updateTotalPrice(selectedSeatPrices);
+                                                                                                if (selectedSeats.length === maxSeats) {
+                                                                                                    $(".iconchuadat").removeClass("iconchuadat");
+                                                                                                } else {
+                                                                                                    $(".seat").addClass("iconchuadat");
+                                                                                                }
                                                                                                 // Thay đổi mã để lưu ID của ghế đã chọn
                                                                                                 if (selectedSeatIds.includes(seatId)) {
                                                                                                     selectedSeatIds.splice(selectedSeatIds.indexOf(seatId), 1);
