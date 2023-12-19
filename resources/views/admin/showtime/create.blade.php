@@ -87,7 +87,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    {{-- <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Phòng chiếu</label>
@@ -101,7 +101,7 @@
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="mt-5"style="max-width: 1100px;margin: auto">
                                         {{-- <img class="img-responsive w-100" src="{{ asset('storage/images/ic-screen.png') }}"> --}}
                                         <div class="form-group">

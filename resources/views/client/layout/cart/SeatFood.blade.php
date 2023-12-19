@@ -1439,25 +1439,54 @@
             @endsection
             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
             <script>
-                $(document).ready(function() {
-                    $('.update-seat').on('click', function(e) {
-                        e.preventDefault();
+              $(document).ready(function() {
+    $('.update-seat').on('click', function(e) {
+        e.preventDefault();
+        if (selectedSeats.length < maxSeats || $(this).hasClass('selected')) {
+            var seatId = $(this).data('seat-id');
 
-                        var seatId = $(this).data('seat-id');
+            $.ajax({
+                type: 'POST',
+                url: '/updates/' + seatId,
+                data: {
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(data) {
+                    console.log(data);
+                    // Xử lý dữ liệu trả về (nếu cần)
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        } else {
+            console.log("Đã đủ 8 ghế. Không thực hiện AJAX nữa.");
+        }
+    });
+});
 
-                        $.ajax({
-                            type: 'POST', // Hoặc 'GET' tùy thuộc vào cách bạn cài đặt route
-                            url: '/updates/' + seatId,
-                            data: {
-                                _token: '{{ csrf_token() }}'
-                            }, // Cần thêm token CSRF nếu bạn sử dụng POST
-                            success: function(data) {
-                                console.log(data); // Xử lý dữ liệu trả về (nếu cần)
-                            },
-                            error: function(error) {
-                                console.log(error);
-                            }
-                        });
-                    });
-                });
             </script>
+              {{-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+              <script>
+                  $(document).ready(function() {
+                      $('.update-seat').on('click', function(e) {
+                          e.preventDefault();
+  
+                          var seatId = $(this).data('seat-id');
+  
+                          $.ajax({
+                              type: 'POST', // Hoặc 'GET' tùy thuộc vào cách bạn cài đặt route
+                              url: '/updates/' + seatId,
+                              data: {
+                                  _token: '{{ csrf_token() }}'
+                              }, // Cần thêm token CSRF nếu bạn sử dụng POST
+                              success: function(data) {
+                                  console.log(data); // Xử lý dữ liệu trả về (nếu cần)
+                              },
+                              error: function(error) {
+                                  console.log(error);
+                              }
+                          });
+                      });
+                  });
+              </script> --}}
