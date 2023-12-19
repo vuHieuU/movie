@@ -223,13 +223,13 @@
                                 </a>
                             </li>
                         @endcan
-                        @can('show-rooms')
+                        {{-- @can('show-rooms')
                             <li class="">
                                 <a href="/rooms/index">
                                     <i class="las la-minus"></i><span>Danh sách phòng</span>
                                 </a>
                             </li>
-                        @endcan
+                        @endcan --}}
                     </ul>
                 </li>
  @endcan

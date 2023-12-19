@@ -356,20 +356,20 @@ class PayController extends Controller
     public function show(Request $request,string $id)
     {
         if(isset($_GET['vnp_Amount'])){
-            $vnpay = new vnpay();
-            $vnpay->vnp_Amount = $_GET['vnp_Amount'] / 100;
-            $vnpay->vnp_BankCode = $_GET['vnp_BankCode'];
-            $vnpay->vnp_BankTranNo = $_GET['vnp_BankTranNo'];
-            $vnpay->vnp_CardType = $_GET['vnp_CardType'];
-            $vnpay->vnp_OrderInfo = $_GET['vnp_OrderInfo'];
-            $vnpay->vnp_PayDate = $_GET['vnp_PayDate'];
-            $vnpay->vnp_ResponseCode = $_GET['vnp_ResponseCode'];
-            $vnpay->vnp_TmnCode = $_GET['vnp_TmnCode'];
-            $vnpay->vnp_TransactionNo = $_GET['vnp_TransactionNo'];
-            $vnpay->vnp_TransactionStatus = $_GET['vnp_TransactionStatus'];
-            $vnpay->vnp_TxnRef = $_GET['vnp_TxnRef'];
-            $vnpay->vnp_SecureHash = $_GET['vnp_Amount'];
-            $vnpay->save();
+            // $vnpay = new vnpay();
+            // $vnpay->vnp_Amount = $_GET['vnp_Amount'] / 100;
+            // $vnpay->vnp_BankCode = $_GET['vnp_BankCode'];
+            // $vnpay->vnp_BankTranNo = $_GET['vnp_BankTranNo'];
+            // $vnpay->vnp_CardType = $_GET['vnp_CardType'];
+            // $vnpay->vnp_OrderInfo = $_GET['vnp_OrderInfo'];
+            // $vnpay->vnp_PayDate = $_GET['vnp_PayDate'];
+            // $vnpay->vnp_ResponseCode = $_GET['vnp_ResponseCode'];
+            // $vnpay->vnp_TmnCode = $_GET['vnp_TmnCode'];
+            // $vnpay->vnp_TransactionNo = $_GET['vnp_TransactionNo'];
+            // $vnpay->vnp_TransactionStatus = $_GET['vnp_TransactionStatus'];
+            // $vnpay->vnp_TxnRef = $_GET['vnp_TxnRef'];
+            // $vnpay->vnp_SecureHash = $_GET['vnp_Amount'];
+            // $vnpay->save();
 
             $selectedDate = session('selectedDate');
             $selectedHour = session('selectedHour');
@@ -461,21 +461,21 @@ class PayController extends Controller
                 $newUrl = route('success', ['film_id' => $ShowTime->id], $queryParams);
                 return redirect($newUrl);
         }elseif(isset($_GET['amount'])){
-            $momo = new momo();
-            $momo->partnerCode = $_GET['partnerCode'];
-            $momo->orderId = $_GET['orderId'];
-            $momo->requestId = $_GET['requestId'];
-            $momo->amount = $_GET['amount'];
-            $momo->orderInfo = $_GET['orderInfo'];
-            $momo->orderType = $_GET['orderType'];
-            $momo->transId = $_GET['transId'];
-            $momo->resultCode = $_GET['resultCode'];
-            $momo->message = $_GET['message'];
-            $momo->payType = $_GET['payType'];
-            $momo->extraData = $_GET['extraData'];
-            $momo->signature = $_GET['signature'];
-            $momo->paymentOption = $_GET['paymentOption'];
-            $momo->save();
+            // $momo = new momo();
+            // $momo->partnerCode = $_GET['partnerCode'];
+            // $momo->orderId = $_GET['orderId'];
+            // $momo->requestId = $_GET['requestId'];
+            // $momo->amount = $_GET['amount'];
+            // $momo->orderInfo = $_GET['orderInfo'];
+            // $momo->orderType = $_GET['orderType'];
+            // $momo->transId = $_GET['transId'];
+            // $momo->resultCode = $_GET['resultCode'];
+            // $momo->message = $_GET['message'];
+            // $momo->payType = $_GET['payType'];
+            // $momo->extraData = $_GET['extraData'];
+            // $momo->signature = $_GET['signature'];
+            // $momo->paymentOption = $_GET['paymentOption'];
+            // $momo->save();
 
             $selectedDate = session('selectedDate');
             $selectedHour = session('selectedHour');

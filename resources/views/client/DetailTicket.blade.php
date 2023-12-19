@@ -56,7 +56,7 @@
 
                                 {{ $ticket->cinema }}<br />
                                 {{ $ticket->film_name }}<br />
-                                {{ $ticket->selected_room }}
+                                {{-- {{ $ticket->selected_room }} --}}
                             </address>
                         </div>
                         <div class="col-sm-6">

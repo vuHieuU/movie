@@ -56,7 +56,7 @@
 
                                 {{ $ticket->cinema }}<br />
                                 {{ $ticket->film_name }}<br />
-                                {{ $ticket->selected_room }}
+                                {{-- {{ $ticket->selected_room }} --}}
                             </address>
                         </div>
                         <div class="col-sm-6">
@@ -77,7 +77,7 @@
                                 <div class="col-sm-5"> <strong>Thanh toán:</strong>
                                     <p>{{ $ticket->payment }}</p>
                                 </div>
-                                <form id="paymentForm" method="post" action="{{ route('updatePaymentStatus', ['id' => $ticket->id]) }}">
+                                {{-- <form id="paymentForm" method="post" action="{{ route('updatePaymentStatus', ['id' => $ticket->id]) }}">
                                     @csrf
                                     <div class="col-sm-5">
                                         <strong>Thanh toán:</strong>
@@ -86,7 +86,7 @@
                                             <option value="Chưa thanh toán" {{ $ticket->status == 'Chưa thanh toán' ? 'selected':'' }}>Chưa thanh toán</option>
                                         </select>
                                     </div>
-                                </form>                                
+                                </form>                                 --}}
                                 <script>
                                     document.getElementById('payment_status').addEventListener('change', function() {
                                         document.getElementById('paymentForm').submit();

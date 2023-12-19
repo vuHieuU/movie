@@ -77,7 +77,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Trạng thái *</label><br>
-                                            <input type="checkbox" name="status" style="width:30px; height:30px;" required>
+                                            <input type="checkbox" name="status" style="width:30px; height:30px;">
                                         </div>
                                     </div>
                                   </div>
