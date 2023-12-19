@@ -114,10 +114,31 @@
                                                     <h6>C<input type="checkbox" class="checkboxC mx-3"></h6>
                                                     <h6>D<input type="checkbox" class="checkboxD mx-3"></h6> --}}
                                                 
-                                                    <div><h6>88 Ghế <input type="checkbox" class="check-all mx-3" id="chec96k"
-                                                        data-master-checkbox></h6></div>
-                                                    <div><h6>63 Ghế <input type="checkbox" class="check-63 mx-3" id="check63"
-                                                            data-master-checkbox></h6></div>
+                                                    <div><h6>88 Ghế <input type="checkbox" class="check-all mx-3" id="check88" data-master-checkbox></h6></div>
+                                                    <div><h6>63 Ghế <input type="checkbox" class="check-63 mx-3" id="check63" data-master-checkbox></h6></div>
+
+                                                    <script>
+                                                        // Get references to the checkboxes
+                                                        const check88 = document.getElementById('check88');
+                                                        const check63 = document.getElementById('check63');
+
+                                                        // Add event listeners to the checkboxes
+                                                        check88.addEventListener('change', function() {
+                                                        if (this.checked) {
+                                                            check63.disabled = true;
+                                                        } else {
+                                                            check63.disabled = false;
+                                                        }
+                                                        });
+
+                                                        check63.addEventListener('change', function() {
+                                                        if (this.checked) {
+                                                            check88.disabled = true;
+                                                        } else {
+                                                            check88.disabled = false;
+                                                        }
+                                                        });
+                                                    </script>
                                             </div>
                                             <div class="d-none" id="type1">
                                                 <div class="row container  " style="max-width: 1050px;">
