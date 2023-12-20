@@ -9,10 +9,10 @@
                         <div class="amy-widget amy-widget-module about ">
                             <h4 class="amy-title amy-widget-title"></h4>
                             <div class="footer-logo">
-                                <a
+                                {{-- <a
                                     href="/"><img
                                         src="uploads/slider/img_65.png" />
-                                    </a>
+                                    </a> --}}
                             </div>
                             <div class="summary">Chào mừng bạn đã đến với webiste đặt vé Tomorrow and Future. Chúc bạn sẽ có những trải nghiệm tốt nhất ở đây.</div>
                         </div>
@@ -57,7 +57,7 @@
                                 <div class="entry-item">
                                     <div class="entry-thumb">
                                         <a href="{{ route('detailblog', [$item->slug]) }}">
-                                        <img src="{{ asset("$item->thumbnail")}}" alt="" width="100px" style="height: 140px">
+                                        <img src="{{ asset('storage/images/' . $blog->thumbnail) }}" alt="" width="100px">
                                     </a>
                                     </div>
                                     <div class="entry-content">
