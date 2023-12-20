@@ -51,7 +51,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    {{-- <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Trạng thái*</label>
@@ -64,7 +64,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <button type="submit" class="btn btn-primary mr-2">Thêm mới</button>
                                     <button type="reset" class="btn btn-danger mr-2">Reset</button>
                                     <a href="{{route("categories.index")}}" class="btn btn-danger text-white">Back</a>

@@ -34,7 +34,7 @@ class categoryController extends Controller
     {
         $data = new category(); 
         $data->name = $request->input('name');
-        $data->status = $request->status == true ? "1" : "0";
+        // $data->status = $request->status == true ? "1" : "0";
         $data->save();
     
         return redirect()->route('categories.index')->with('success', 'Thêm thành công');
@@ -66,7 +66,7 @@ class categoryController extends Controller
         $data = category::find($id);
     
         $data->name = $request->input('name');
-        $data->status = $request->status == true ? "1" : "0";
+        // $data->status = $request->status == true ? "1" : "0";
 
         $data->save();
         

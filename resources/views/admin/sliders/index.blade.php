@@ -43,12 +43,13 @@
                   <table class="data-tables table mb-0 tbl-server-info">
                       <thead class="bg-white text-uppercase">
                           <tr class="ligth ligth-data">
-                              <th>
+                              {{-- <th>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox1">
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
-                              </th>
+                              </th> --}}
+                              <th>STT</th>
                               <th>Ảnh</th>
                               <th>Tiêu đề</th>
                               <th>Trạng thái</th>
@@ -57,13 +58,16 @@
                       </thead>
                       <tbody class="ligth-body">
 
-                        @forelse ($sliders as $item)
+                        @forelse ($sliders as $key => $item)
                             <tr>
-                              <td>
+                              {{-- <td>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox10">
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
+                              </td> --}}
+                              <td>
+                                  {{ $key + 1 }}
                               </td>
                               <td>
                                 <img src="{{ asset("$item->image")}}" alt="" height="200px">

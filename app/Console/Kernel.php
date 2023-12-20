@@ -15,8 +15,8 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')->hourly();
         // $schedule->command('app:clear-expired-data')->daily();
         $schedule->command('update:status')->everyTenMinutes();
-        $schedule->command('queue:work')->everyMinute();
         $schedule->command('app:update-rank')->everyMinute();
+        $schedule->command('queue:work')->everyMinute();
     }
 
     /**

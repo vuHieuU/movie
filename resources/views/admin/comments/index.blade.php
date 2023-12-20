@@ -49,13 +49,13 @@
                     </p>
                       <thead class="bg-white text-uppercase">
                           <tr class="ligth ligth-data">
-                              <th>
+                              {{-- <th>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox1">
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
-                              </th>
-                              <th>ID</th>
+                              </th> --}}
+                              <th>STT</th>
                               <th>Tên người dùng</th>
                               <th>Email</th>
                               <th>Bình luận</th>
@@ -66,15 +66,15 @@
                       </thead>
 
                       <tbody class="ligth-body">
-                             @foreach ($comments as $item)
+                             @foreach ($comments as $key => $item)
                           <tr>
-                              <td>
+                              {{-- <td>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox10">
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
-                              </td>
-                              <th>{{$item->id}}</th>
+                              </td> --}}
+                              <th>{{$key + 1}}</th>
                               <td>{{ $item->name }}</td>
                               <td>{{ $item->email }}</td>
                               <td style='word-wrap:break-word;'>{{ $item->comment_text }}</td>

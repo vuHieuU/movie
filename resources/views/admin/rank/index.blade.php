@@ -46,13 +46,13 @@
                       <thead class="bg-white text-uppercase">
                           <tr class="ligth ligth-data">
                             
-                              <th>
+                              {{-- <th>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox1">
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
-                              </th>
-                              <th>ID</th>
+                              </th> --}}
+                              <th>STT</th>
                               <th>Cấp bậc</th>
                               <th>Điểm tối thiểu</th>
                            
@@ -60,16 +60,16 @@
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
-                             @foreach ($rank as $item)
+                             @foreach ($rank as $key => $item)
                           <tr>
                             
-                              <td>
+                              {{-- <td>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox10">
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
-                              </td>
-                              <td>{{$item->id}}</td>
+                              </td> --}}
+                              <td>{{$key + 1}}</td>
                               <td>{{ $item->name }}</td>
                               <td>{{ $item->minium_score }}</td>
                               

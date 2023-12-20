@@ -281,14 +281,11 @@
                             </a>
                         </li>
 
-                    </ul>
-                    <ul id="Natification" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
                             <a href="{{ route('contact.index') }}">
                                 <i class="las la-minus"></i><span>Phản hồi từ khách hàng</span>
                             </a>
                         </li>
-
                     </ul>
                 </li>
                 @endcan
