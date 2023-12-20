@@ -131,7 +131,7 @@
                 {{-- Hội viên --}}@can('show-rank')
                 <li class=" ">
                     <a href="#rank" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                        <i class="fa-solid fa-newspaper"></i>
+                        <i class="fa-solid fa-users"></i>
                         <span class="ml-4">Hội viên</span>
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -292,7 +292,7 @@
                 @can('show-statistical')
                 <li>
                     <a href="#statistical" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                        <i class="fa-solid fa-earth-americas"></i>
+                        <i class="fa-solid fa-chart-simple"></i>
                         <span class="ml-4">Thống kê</span>
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
