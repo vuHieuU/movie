@@ -87,12 +87,12 @@ class AuthController extends Controller
 
     public function show(string $id)
     {
-        $status = Notification::where("tickets_id", $id)->value('status');
-        $Notification = Notification::where('tickets_id', $id)->first();
-            if($status==1) {
-                $Notification->status = 2 ;
-                $Notification->save();
-                }
+        // $status = Notification::where("tickets_id", $id)->value('status');
+        // $Notification = Notification::where('tickets_id', $id)->first();
+        //     if($status==1) {
+        //         $Notification->status = 2 ;
+        //         $Notification->save();
+        //         }
         $ticket = ticket::with('ticketFoods')->find($id);
 
     //   dd($ticket);

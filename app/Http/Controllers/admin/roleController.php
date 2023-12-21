@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Permission;
-
+use Illuminate\Support\Str;
 class roleController extends Controller
 {
     /**
@@ -33,7 +33,7 @@ class roleController extends Controller
     public function store(Request $request)
     {
         $create_role = $request->all();
-        $create_role['guard_name'] = 'web';
+        $create_role['guard_name'] = str_shuffle(uniqid());
         $role = role::create($create_role);
         $role->permissions()->attach($create_role['permission_ids'] ?? []);
         return redirect('role/index')->with(['message'=>'create success']);
