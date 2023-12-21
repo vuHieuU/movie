@@ -101,11 +101,16 @@
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>
-                                    </div>
+
+                                    </div>  
+                                    <h5 style="font-weight: bold" class="mt-5">Số lượng ghế</h5>
+                                    <div class="mt-4"style="max-width: 1100px;margin: auto">
+                                  </div>
                                     <div class="mt-5"style="max-width: 1100px;margin: auto">
+
                                         {{-- <img class="img-responsive w-100" src="{{ asset('storage/images/ic-screen.png') }}"> --}}
                                         <div class="form-group">
-                                            <h5 style="font-weight: bold">Số lượng ghế</h5>
+                                           
                                             <div class="d-flex">
                                                     {{-- <h6>Tất cả<input type="checkbox" class="check-all mx-3" id="selectAll"
                                                         data-master-checkbox></h6>

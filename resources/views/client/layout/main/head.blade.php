@@ -325,9 +325,9 @@
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/vendor/plyr.css?ver=1.0.0'
     type='text/css' media='all' /> --}}
     
-{{-- <link rel='stylesheet' id='amy-movie-style-css'
+<link rel='stylesheet' id='amy-movie-style-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/themes/amy-movie/css/style.css?ver=1.0.0'
-    type='text/css' media='all' />   --}}
+    type='text/css' media='all' />  
 {{--<link rel='stylesheet' id='elementor-post-142-css'
     href='http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/elementor/css/post-142.css?ver=1651872848'
     type='text/css' media='all' />  
