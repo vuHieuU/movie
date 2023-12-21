@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Models\rank;
+use App\Models\User;
 use Illuminate\Console\Command;
 
 class UpdateRank extends Command

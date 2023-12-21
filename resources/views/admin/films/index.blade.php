@@ -45,12 +45,13 @@
                     </p>
                       <thead class="bg-white text-uppercase">
                           <tr class="ligth ligth-data">
-                              <th>
+                              {{-- <th>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox1">
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
-                              </th>
+                              </th> --}}
+                              <th>STT</th>
                               <th>Tên phim</th>
                               <th>Thumbnail</th>
                               <th>Đạo diễn</th>
@@ -59,14 +60,15 @@
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
-                             @foreach ($film as $item)
+                             @foreach ($film as $key => $item)
                           <tr>
-                              <td>
+                              {{-- <td>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox10">
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
-                              </td>
+                              </td> --}}
+                              <td>{{ $key + 1 }}</td>
                               <td>{{ $item->name }}</td>
                               <td>
                                 <img src="{{ asset('storage/images/' . $item->thumb) }}" alt="Hình ảnh" style="height: 200px;width:150px;">

@@ -45,28 +45,30 @@
                     </p>
                       <thead class="bg-white text-uppercase">
                           <tr class="ligth ligth-data">
-                              <th>
+                              {{-- <th>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox1">
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
-                              </th>
+                              </th> --}}
+                              <th>Stt</th>
                               <th>Tên danh mục</th>
-                              <th>Trạng thái</th>
+                              {{-- <th>Trạng thái</th> --}}
                               <th>Action</th>
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
-                             @foreach ($cate as $item)
+                             @foreach ($cate as $key => $item)
                           <tr>
-                              <td>
+                              {{-- <td>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox10">
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
-                              </td>
+                              </td> --}}
+                              <td>{{ $key + 1 }}</td>
                               <td>{{ $item->name }}</td>
-                              <td>{{ $item->status == "1" ? "Hiện" : "Ẩn" }}</td>
+                              {{-- <td>{{ $item->status == "1" ? "Hiện" : "Ẩn" }}</td> --}}
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       {{-- <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"

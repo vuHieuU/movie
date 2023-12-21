@@ -42,36 +42,38 @@
                   <table class="data-tables table mb-0 tbl-server-info">
                       <thead class="bg-white text-uppercase">
                           <tr class="ligth ligth-data">
-                              <th>
+                              {{-- <th>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox1">
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
-                              </th>
+                              </th> --}}
+                              <th>STT</th>
                               <th>Tên rạp</th>
                               {{-- <th>Mô tả</th> --}}
                               <th>Địa chỉ</th>
-                              <th>Thành phố</th>
+                              {{-- <th>Thành phố</th> --}}
                               <th>Action</th>
                           </tr>
                       </thead>
                       <tbody class="ligth-body">
 
-                        @foreach ($cinemas as $item)
+                        @foreach ($cinemas as $key => $item)
                             
                     
               
                           <tr>
-                              <td>
+                              {{-- <td>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox10">
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
-                              </td>
+                              </td> --}}
+                              <td>{{ $key + 1 }}</td>
                               <td>{{ $item->name }}</td>
                               {{-- <td>{{ $item->description }}</td> --}}
                               <td>{{ $item->address }}</td>
-                              <td>{{ $item->city }}</td>
+                              {{-- <td>{{ $item->city }}</td> --}}
                               <td>
                                   <div class="d-flex align-items-center list-action">
                                       {{-- <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"

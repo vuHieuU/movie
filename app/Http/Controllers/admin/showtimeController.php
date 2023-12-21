@@ -60,7 +60,7 @@ class showtimeController extends Controller
     {
         $data = [
             'film_id' => $request->film_id,
-            'room_id' => '3',
+            'room_id' => $request->room_id,
             'cinema_id' => $request->cinema_id,
             'hour' => $request->hour,
             'day' => $request->day,
@@ -100,7 +100,7 @@ class showtimeController extends Controller
         $showtime = ShowTime::FindOrFail($id);
         $data = [
             'film_id' => $request->film_id,
-            'room_id' => '3',
+            'room_id' => $request->room_id,
             'cinema_id' => $request->cinema_id,
             'hour' => $request->hour,
             'day' => $request->day,

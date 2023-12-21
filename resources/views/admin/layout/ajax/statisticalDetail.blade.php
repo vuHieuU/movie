@@ -2,14 +2,14 @@
     <div class="d-flex flex-wrap align-items-center mt-2">
         <div class="d-flex align-items-center progress-order-left">
             <div class="progress progress-round m-0 orange conversation-bar"
-                data-percent="46">
+                data-percent="100">
                 <span class="progress-left">
                     <span class="progress-bar"></span>
                 </span>
                 <span class="progress-right">
                     <span class="progress-bar"></span>
                 </span>
-                <div class="progress-value text-secondary">46%</div>
+                <div class="progress-value text-secondary">100%</div>
             </div>
             <div class="progress-value ml-3 pr-5 border-right">
 

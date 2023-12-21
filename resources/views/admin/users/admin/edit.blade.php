@@ -12,7 +12,7 @@
                             <div class="content create-workform bg-body">
                                 <div class="pb-3">
                                     <label class="mb-2">Email</label>
-                                    <input required type="text" class="form-control" placeholder="Enter Name or Email">
+                                    <input  type="text" class="form-control" placeholder="Enter Name or Email">
                                 </div>
                                 <div class="col-lg-12 mt-4">
                                     <div class="d-flex flex-wrap align-items-ceter justify-content-center">
@@ -41,7 +41,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Tên người dùng *</label>
-                                            <input required type="text" class="form-control" placeholder="name"
+                                            <input  type="text" class="form-control" placeholder="name"
                                                 name="name" value="{{ $user->name }}">
                                              @error('name')
                                                     
@@ -56,7 +56,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Email *</label>
-                                                <input required type="text" class="form-control" placeholder="Enter email"
+                                                <input  type="text" class="form-control" placeholder="Enter email"
                                                     name="email" value="{{ $user->email }}">
                                                  @error('email')
                                                     
@@ -68,7 +68,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Số điện thoại</label>
-                                                <input required type="text" class="form-control" placeholder="phone"
+                                                <input  type="text" class="form-control" placeholder="phone"
                                                     name="phone" value="{{ $user->phone }}">
                                                  @error('phone')
                                                     
@@ -82,7 +82,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Địa chỉ</label>
-                                                <input required type="text" class="form-control" placeholder="address"
+                                                <input  type="text" class="form-control" placeholder="address"
                                                     name="address" value="{{ $user->address }}">
                                                  @error('address')
                                                     
@@ -94,7 +94,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Giới tính</label>
-                                                {{-- <input required type="text" class="form-control" placeholder="gender"
+                                                {{-- <input  type="text" class="form-control" placeholder="gender"
                                                     name="gender" value="{{ $user->gender }}"> --}}
                                                     <select name="gender" class="selectpicker form-control" data-style="py-0">
                                                         <option value="">Chọn giới tính</option>
@@ -118,7 +118,7 @@
                                                         <h4><b>{{ $groupName }}</b></h4>
                                                         @foreach ($role as $item)
                                                         <div class="form-check">
-                                                          <input required class="form-check-input required" name="role_ids[]" type="radio" 
+                                                          <input class="form-check-input " name="role_ids[]" type="radio" 
                                                           {{ $user->roles->contains('id',$item->id) ? 'checked':'' }} value="{{ $item->id }}">
                                                           <label class="form-check-label" for="flexCheckDefault">
                                                             {{ $item->display_name }}

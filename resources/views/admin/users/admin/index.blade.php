@@ -32,7 +32,7 @@
               <div class="col-lg-12">
                   <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                       <div>
-                          <h4 class="mb-3">Danh sách người cầm quyền tối cao</h4>
+                          <h4 class="mb-3">Danh sách Admin</h4>
                       </div>
                       <a href="/admin/create" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Thêm Admin</a>
                   </div>
@@ -42,12 +42,13 @@
                   <table class="data-tables table mb-0 tbl-server-info">
                       <thead class="bg-white text-uppercase">
                           <tr class="ligth ligth-data">
-                              <th>
+                              {{-- <th>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox1">
                                       <label for="checkbox1" class="mb-0"></label>
                                   </div>
-                              </th>
+                              </th> --}}
+                              <th>STT</th>
                               <th>Tên người dùng</th>
                               <th>Số điện thoại</th>
                               <th>Email</th>
@@ -57,17 +58,18 @@
                       </thead>
                       <tbody class="ligth-body">
 
-                        @foreach ($admins as $item)
+                        @foreach ($admins as $key => $item)
                             
                     
               
                           <tr>
-                              <td>
+                              {{-- <td>
                                   <div class="checkbox d-inline-block">
                                       <input type="checkbox" class="checkbox-input" id="checkbox10">
                                       <label for="checkbox10" class="mb-0"></label>
                                   </div>
-                              </td>
+                              </td> --}}
+                              <td>{{ $key + 1 }}</td>
                               <td>{{ $item->name }}</td>
                               <td>{{ $item->phone }}</td>
                               <td>{{ $item->email }}</td>

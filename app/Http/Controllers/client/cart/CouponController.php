@@ -40,7 +40,7 @@ class CouponController extends Controller
         session(['coupon_code' => $couponCode]);
         return redirect()->back()->with('success', 'Áp dụng mã giảm giá thành công.');
     } else {
-        session(['coupon_code' => null]);
+        session(['applied_coupon' => null, 'coupon_code' => null]);
         return redirect()->back()->with('error', 'Mã giảm giá không hợp lệ.');
     }
 }
