@@ -55,6 +55,7 @@
                               <th>Mã</th>
                               <th>Kiểu</th>
                               <th>Giá trị</th>
+                              <th>Cấp bậc sử dụng</th>
                               <th>Ngày hết hạn</th>
                               <th>Action</th>
                           </tr>
@@ -73,6 +74,13 @@
                               <td>{{ $item->name }}</td>
                               <td>{{ $item->type }}</td>
                               <td>{{ $item->value }}</td>
+                              <td>
+                                @if ($item->rank)
+                                    {{ $item->rank->name }}
+                                @else
+                                    
+                                @endif
+                            </td>
                               <td>{{ $item->expiry_date }}</td>
                               <td>
                                   <div class="d-flex align-items-center list-action">

@@ -145,6 +145,16 @@
                                             
                                         </tr>
                                         @endforeach
+                                        @php
+                                             $coupon = \App\Models\coupon::where('name',$ticket->coupon_code)->select('value')->first();
+                                             @endphp
+                                             @if ($coupon)
+                                        <tr>
+                                            <td>Mã giảm giá</td>
+                                            <td class="text-end">{{ $ticket->coupon_code }}</td>
+                                            <td class="text-end">-{{ $coupon->value }}</td>
+                                        </tr>
+                                        @endif
                                         <tr>
                                             <td>Điểm</td>
                                             <td class="text-end"></td>

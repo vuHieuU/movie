@@ -15,4 +15,8 @@ class coupon extends Model
         'value',
         'expiry_date',
     ];
+    public function rank()
+    {
+        return $this->belongsTo(rank::class, 'rank_id', 'id');
+    }
 }

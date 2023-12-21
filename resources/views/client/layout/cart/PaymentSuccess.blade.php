@@ -23,14 +23,14 @@
                         <p><strong>Tên Phim:</strong> {{ $ticket->film_name }}</p>
                         <p><strong>Thời gian:</strong> {{Carbon\Carbon::parse($ticket->selected_date)->format("d/n/Y") }}</p>
                         <p><strong>Giờ chiếu:</strong> {{ $ticket->selected_hour }} </p>
+                        @if ($FoodValueName)
                         <p><strong>Đồ Ăn:</strong> 
-                            @if ($FoodValueName)
                                 
                                    @foreach ($FoodValueName as $item) 
                                             {{ $item['name'] }} * {{ $item['quantity'] }}
                                     @endforeach
+                                </p>
                             @endif
-                        </p>
                     </div>
                 </div>
             </div>
@@ -47,6 +47,14 @@
                             <p><strong>Rạp:</strong> {{ $ticket->cinema }}</p>
                             <p class="d-none"><strong>Phòng:</strong> {{ $ticket->selected_room }}</p>
                             <p><strong>Vị trí ghế:</strong> {{ $ticket->selected_seats }}</p>
+                            @php
+                            $coupon = \App\Models\coupon::where('name',$ticket->coupon_code)->select('value')->first();
+                            @endphp
+                            @if ($coupon)
+                       <tr>
+                        <p><strong>Mã giảm giá:</strong> -{{ $coupon->value }}</p>
+                       </tr>
+                       @endif
                             <p><strong>Tổng Vé:</strong> {{ number_format($ticket->total) }} VND</p>
                             <p><strong>Điểm nhận được:</strong> {{ number_format($ticket->point) }}đ</p>
                         </div>
